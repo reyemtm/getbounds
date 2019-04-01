@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Chota Hero</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="prefetch" href="storelocate.png">
+  <link rel="prefetch" href="materialtemplate.png">
+  <!--link rel="preload" href="style.css" as="style" onload="this.rel='stylesheet'"-->
+</head>
+
+<body>
+  <header>
+    <nav class="nav nav-top">
+      <div class="nav-left">
+        <a class="brand" href="#">zerospatial</a>
+      </div>
+      <!--div class="nav-center">
+            <a href="#">Centered</a>
+          </div-->
+      <div class="nav-right"><!--move links to before serach then move below t=brand on mobile-->
+        <a href="#modal-search" style="padding-top:17px">
+          <img style="min-width:19px;filter: invert(1);" src="https://icongr.am/feather/search.svg?size=19">
+        </a>
+        <a href="#!1.html">About</a>
+        <a href="/blog.html">Blog</a>
+        <a href="#!3.html">Projects</a>
+        <a href="#modal-contact" class="button outline">Get in Touch</a>
+      </div>
+    </nav>
+    <div class="hero">
+      <img data-src="img0.jpg" data-heading="Open Parcel Viewer" data-subtitle="Hero Subtitle" data-link="#modal-contact">
+      <img class="hidden" data-src="storelocate.png" data-heading="Store Locator" data-subtitle="Subtitle 2" data-link="#modal-contact">
+      <img class="hidden" data-src="materialmaptemplate.png" data-heading="Material Design Map Template" data-subtitle="Subtitle 3" data-link="#modal-contact">
+      <div class="hero-text">
+        <h2></h4>
+        <p></p>
+        <a href="#"><button type="button" class="button outline hero-link">Learn More</button></a>
+      </div>
+      <div class="hero-overlay"></div>
+    </div>
+  </header>
+  <div class="container main">
+    <section>
+      <h1>Grid</h1>
+      <div class="row">
+        <div class="col-8">
+          <div class="card">
+            <header>
+              <h4>Card title</h4>
+            </header>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+              dolore
+              magna aliqua. Ut enim ad minim veniam, quis nostrud exercit.</p>
+            <footer class="is-right">
+              <a href="#!" class="button outline primary">Submit</a>
+              <a href="#!" class="button">Cancel</a>
+            </footer>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card">
+            <header>
+              <h4>Card title</h4>
+            </header>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+              dolore
+              magna aliqua. Ut enim ad minim veniam, quis nostrud exercit.</p>
+            <footer class="is-right">
+              <a href="#!" class="button primary">Submit</a>
+              <a href="#!" class="button">Cancel</a>
+            </footer>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <div class="is-center">
+            <p>one column</p>
+            <p>next column</p>
+          </div>
+        </div>
+        <div class="col">
+          <div class="is-center">.col</div>
+        </div>
+        <div class="col">
+          <div class="is-center">.col</div>
+        </div>
+        <div class="col">
+          <div class="is-center">.col</div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <section>
+    <div id="modal-search" class="modal">
+      <a href="#close" class="modal-overlay"></a>
+      <div class="card">
+        <header>
+          <h4>Card title</h4>
+        </header>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+          dolore
+          magna aliqua. Ut enim ad minim veniam, quis nostrud exercit.</p>
+        <footer class="is-right">
+          <a href="#!" class="button primary">Submit</a>
+          <a href="#!" class="button">Cancel</a>
+        </footer>
+      </div>
+    </div>
+    <div id="modal-contact" class="modal">
+      <a href="#close" class="modal-overlay"></a>
+      <div class="card">
+        <header>
+          <h4>Card title</h4>
+        </header>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+          dolore
+          magna aliqua. Ut enim ad minim veniam, quis nostrud exercit.</p>
+        <footer class="is-right">
+          <a href="#!" class="button primary">Submit</a>
+          <a href="#!" class="button">Cancel</a>
+        </footer>
+      </div>
+    </div>
+  </section>
+  <script>
+    var hero = document.querySelector('.hero');
+    let x = 0;
+    var n = hero.children.length;
+    
+    /* set initial caption */
+    let img = hero.children[x];
+    img.style.backgroundImage = "url('" + img.dataset.src + "')";
+    hero.children[3].children[0].innerHTML = img.dataset.heading;
+    hero.children[3].children[1].innerHTML = img.dataset.subtitle;
+    hero.children[3].children[2].href = img.dataset.link;
+
+    /* slideshow function */
+    setInterval(function () {
+      hero.children[3].style.opacity = 0;
+      let img = hero.children[x];
+      img.classList.toggle('hidden');
+      x = (x < (n-3)) ? x + 1 : 0;
+      let img1 = hero.children[x];
+      if (!img1.src) {
+        img1.style.backgroundImage = "url('" + img1.dataset.src + "')";
+      };
+      img1.classList.toggle('hidden');
+      setTimeout(function() {
+        hero.children[3].children[0].innerHTML = img1.dataset.heading;
+        hero.children[3].children[1].innerHTML = img1.dataset.subtitle;
+        hero.children[3].children[2].href = img1.dataset.link;
+        hero.children[3].style.opacity = 1;
+      }, 600); 
+    }, 6000)
+    /*1C1D21 - black
+31353D - 
+445878 - blue
+92CDCF - lightblue
+EEEFF7 - light*/
+/*for each image, c */
+  </script>
+</body>
+
+</html>

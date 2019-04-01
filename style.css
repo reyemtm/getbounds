@@ -1,0 +1,284 @@
+@import "chota.css";
+@import "montserrat/Montserrat.css";
+@import "catamaran/catamaran.css";
+
+/* DEFAULT chota css variables
+:root {
+  --color-primary: #1a9f60;
+  --color-lightGrey: #d2d6dd;
+  --color-grey: #7e818b;
+  --color-darkGrey: #3f4144;
+  --color-error: #d43939;
+  --color-success: #28bd14;
+  --grid-maxWidth: 120rem;
+  --grid-gutter: 2rem;
+  --font-size: 1.6rem;
+  --font-family: -apple-system, BlinkMacSystemFont, Avenir, "Avenir Next",
+    "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
+    "Droid Sans", "Helvetica Neue", sans-serif;
+}*/
+:root {
+  --color-primary: #6bbab5;
+  --color-lightGrey: #eeeff7;
+  --color-grey: #445878;
+  --color-dark: #1C1D21; /*added*/
+  --color-darkGrey: #31353d;
+  --color-error: #FF7F66;
+  --color-success: #28bd14;
+  --grid-maxWidth: 1600rem;
+  --grid-gutter: 4rem;
+  --font-size: 2rem;
+  --font-family-headings: "Montserrat"; /*added*/
+  --font-weight: 300; /*added*/
+  --font-family: "Catamaran", -apple-system, BlinkMacSystemFont, Avenir, "Avenir Next",
+    "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
+    "Droid Sans", "Helvetica Neue", sans-serif;
+}
+/*random tweaks and additional classes*/
+html, body {
+  min-height: 100vh;
+  color: #1c1d21;
+  font-weight: var(--font-weight);
+}
+h1,h2,h3,h4,h5,h6
+ {
+  font-family: var(--font-family-headings);
+  font-weight: 600;
+}
+button {
+  cursor: pointer;
+}
+.button:focus, [type="button"]:focus, [type="reset"]:focus, [type="submit"]:focus, button:focus {
+  border-color: white;
+  outline: transparent;
+}
+.hidden {
+  opacity: 0;
+}
+a:hover:not(.button) {
+  opacity: 1;
+}
+@media screen and (max-width: 768px) {
+  .container {
+    width: 96%;
+  }
+}
+/*NAV*/
+.nav-top {
+  padding: 0 3rem;
+  position: absolute;
+  height: auto;
+  width: 100%;
+  background: transparent;
+  z-index: 100;
+}
+.nav-right {
+  -webkit-box-flex: auto;
+  -ms-flex: auto;
+  flex: auto;
+}
+.nav a, .nav .brand {
+  color: white;
+}
+@media screen and (max-width: 768px) {
+  .nav-top .nav-left,
+  .nav-top .nav-right {
+    justify-content: center;
+  }
+  .nav-top .nav-right {
+    position: absolute;
+    top: 5rem;
+    left: 0;
+    width: 100%;
+  }
+}
+.nav .brand {
+  padding: 1rem 0;
+}
+/**
+nav animated underlne
+souurce: https://stackoverflow.com/questions/20544309/css-sliding-underline
+*/
+.nav a {
+  margin: auto 1rem;
+  display: block;
+  color: white;
+}
+.nav a:not(.button):after{
+  content: '';
+  display: block;
+  height: 1px;
+  width: 0;
+  background: transparent;
+  transition: width .5s ease, background-color .5s ease;
+}
+.nav a:not(.button):hover:after,
+.nav a:not(.button):focus:after {
+  width: 100%;
+  background: white;
+  /* background: var(--color-primary); */
+}
+/*HERO*/
+.navBulletsWrapper {display:none;}
+.hero {
+  position: relative;
+  width: 100%;
+  height: 600px;
+  max-height: 100vh;
+  background: var(--color-dark);
+  overflow: hidden;
+}
+.hero.hero-post {
+  height: 360px;
+}
+.hero img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transition: opacity 1s ease-in-out;
+  filter: brightness(75%);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.hero-text {
+  position: absolute;
+  bottom: 0;
+  padding: 4rem;
+}
+.hero-text {
+  color: white;
+  transition: opacity 0.5s ease-in-out;
+  z-index: 100;
+}
+.hero .button {
+  color: white;
+}
+.hero-overlay {
+  width: 100%;
+  height: 100%;
+  /* background-image: linear-gradient(160deg, black,black,transparent); */
+  background-image: linear-gradient(160deg, black,black, rgba(0,0,0,0.3));
+  opacity: 0.5;
+  position: absolute;
+  top: 0;
+}
+/*MAIN*/
+.main {
+  padding: 8rem 0;
+}
+/*CARDS*/
+.card {
+  height: auto;
+  padding: 2rem;
+  min-height: 400px;
+  box-shadow: none;
+  border: solid thin lightgray;
+}
+.card.related {
+  min-height: auto;
+}
+/*POST*/
+.post {
+  width: 80rem;
+  max-width: 100%;
+  margin: 0 auto 4rem;
+}
+/*HELPERS*/
+
+.zp-headline {
+  display: block;
+  text-align: center;
+  border-bottom: solid thin lightgray;
+  height: 5px;
+  line-height: 0.1em; 
+  margin: 1rem 0 4rem;
+}
+.zp-headline > span {
+  padding: 0 2rem;
+  background: #fff;
+}
+/*FOOTER*/
+.footer {
+  background: var(--color-dark);
+  color: white;
+}
+.footer .container {
+  min-height: 200px;
+}
+/* footer .row {
+  align-items: center;
+  height: 100%;
+}*/
+.footer .col div {
+  padding-top: 80px;
+  flex-direction: column;
+}
+
+/* MODAL*/
+.modal .card {
+  z-index: 100;
+  background: white;
+  width: 600px;
+  max-width: 96%;
+}
+/*css only modal - source - specrte css*/
+.modal:target {
+  opacity: 1;
+  z-index: 400;
+}
+.modal {
+  align-items: center;
+  bottom: 0;
+  display: flex;
+  display: -ms-flexbox;
+  -ms-flex-align: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  left: 0;
+  opacity: 0;
+  overflow: hidden;
+  padding: .4rem;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: -1;
+  -webkit-transition: all 0.3s ease-in;
+  -moz-transition: all 0.3s ease-in;
+  -o-transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in;
+}
+.modal:target .modal-overlay {
+  /* background: rgba(248,249,250,.75); */
+  background: rgba(28, 29, 33, 0.75);
+  bottom: 0;
+  cursor: default;
+  display: block;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+/**/
+
+/*IMAGES*/
+/*https://css-tricks.com/full-width-containers-limited-width-parents/*/
+img {
+  width: 100%;
+}
+.div-wide, .div-full {
+  max-width: 100vw;
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  /* margin-right: -50vw; */
+}
+@media screen and (min-width: 1000px) {
+  .div-wide {
+    width: calc(100% + 20rem);
+    left: -10rem;
+    position: relative;
+    margin: 2rem 0;
+  }
+}
