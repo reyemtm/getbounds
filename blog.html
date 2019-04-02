@@ -34,9 +34,9 @@
     <div class="hero hero-post">
       <img style="background-image:url(img0.jpg);">
       <div class="hero-text">
-          <h1>Post Title</h1>
+          <!-- <h1>Post Title</h1>
           <p>Post Subtitle</p>
-          <p>March 1, 2019</p>
+          <p>March 1, 2019</p> -->
       </div>
       <div class="hero-overlay"></div>
     </div>
@@ -44,7 +44,7 @@
   <div class="container main">
     <section class="post">
         <h1>Post Title</h1>
-        <p>Post Subtitle</p>
+        <h4>Post Subtitle</h4>
         <p>March 1, 2019</p>
       The goal of my original post on client-side web mapping for large datasets was to create an inexpensive, robust county-wide parcel viewer web application. The base functionality would include the ability to both identify and search the parcel data. The result of this effort was the Open Parcel Viewer. That project consists of a Leaflet map with Leaflet.VectorGrid cutting GeoJSON into vector-tiles on-the-fly. The app is performant, with the drawback being a potentially large file is loaded directly into the browser. This method works well for small datasets, but breaks down when the size and complexity of the data exceeds device or network capabilities. For example, load time for a typical 70k polygon county parcel map on mobile might exceed 30 seconds.
       <figure class="div-wide">
@@ -131,9 +131,11 @@
               <header>
                 <h4>Card title</h4>
               </header>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                dolore
-                magna aliqua. Ut enim ad minim veniam, quis nostrud exercit.</p>
+              <section>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+                  dolore
+                  magna aliqua. Ut enim ad minim veniam, quis nostrud exercit.</p>
+              </section>
               <footer>
                 <a href="#!" class="button outline primary">Read More</a>
               </footer>

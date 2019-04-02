@@ -2,21 +2,6 @@
 @import "montserrat/Montserrat.css";
 @import "catamaran/catamaran.css";
 
-/* DEFAULT chota css variables
-:root {
-  --color-primary: #1a9f60;
-  --color-lightGrey: #d2d6dd;
-  --color-grey: #7e818b;
-  --color-darkGrey: #3f4144;
-  --color-error: #d43939;
-  --color-success: #28bd14;
-  --grid-maxWidth: 120rem;
-  --grid-gutter: 2rem;
-  --font-size: 1.6rem;
-  --font-family: -apple-system, BlinkMacSystemFont, Avenir, "Avenir Next",
-    "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
-    "Droid Sans", "Helvetica Neue", sans-serif;
-}*/
 :root {
   --color-primary: #6bbab5;
   --color-lightGrey: #eeeff7;
@@ -34,6 +19,7 @@
     "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
     "Droid Sans", "Helvetica Neue", sans-serif;
 }
+
 /*random tweaks and additional classes*/
 html, body {
   min-height: 100vh;
@@ -71,6 +57,7 @@ a:hover:not(.button) {
     width: 96%;
   }
 }
+
 /*NAV*/
 .nav-top {
   padding: 0 3rem;
@@ -103,6 +90,7 @@ a:hover:not(.button) {
 .nav .brand {
   padding: 1rem 0;
 }
+
 /**
 nav animated underlne
 souurce: https://stackoverflow.com/questions/20544309/css-sliding-underline
@@ -126,6 +114,7 @@ souurce: https://stackoverflow.com/questions/20544309/css-sliding-underline
   background: white;
   /* background: var(--color-primary); */
 }
+
 /*HERO*/
 .navBulletsWrapper {display:none;}
 .hero {
@@ -136,6 +125,7 @@ souurce: https://stackoverflow.com/questions/20544309/css-sliding-underline
   background: var(--color-dark);
   overflow: hidden;
 }
+
 /* hero post see post */
 .hero img {
   position: absolute;
@@ -168,6 +158,7 @@ souurce: https://stackoverflow.com/questions/20544309/css-sliding-underline
   position: absolute;
   top: 0;
 }
+
 /*CARDS*/
 .card {
   height: auto;
@@ -180,15 +171,20 @@ souurce: https://stackoverflow.com/questions/20544309/css-sliding-underline
   flex-direction: column;
   align-items: stretch;
 }
-.card section {
+
+/* TODO REMOVE Seciton if possible */
+.card section, .card p {
   flex-grow: 1;
+  margin: 1rem 0 2rem;
+}
+.card > footer {
+  flex-shrink: 0;
+  margin-bottom: 0.5rem;
 }
 .card.related {
   min-height: auto;
 }
-.card > footer {
-  flex-shrink: 0;
-}
+
 /*POST*/
 .post {
   width: 80rem;
@@ -215,17 +211,18 @@ souurce: https://stackoverflow.com/questions/20544309/css-sliding-underline
 /*FOOTER*/
 .footer {
   background: var(--color-dark);
-  color: whitesmoke;
-  font-size: 1.8rem;
+  color: #ccc;
+  font-size: 1.6rem;
 }
 .footer .container {
   min-height: 200px;
+  padding: 4rem 0 1rem;
 }
 
-.footer .col div {
-  padding: 8rem 0 4rem;
+/* .footer .col div {
+  padding: 4rem 0 2rem;
   flex-direction: column;
-}
+} */
 
 /* MODAL*/
 .modal .card {
