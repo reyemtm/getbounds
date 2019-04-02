@@ -40,6 +40,14 @@ html, body {
   color: #1c1d21;
   font-weight: var(--font-weight);
 }
+.container {
+  width: 2000px;
+  max-width: 96%;
+  padding: 4rem 0;
+}
+.row {
+  margin-top: 2rem;
+}
 h1,h2,h3,h4,h5,h6
  {
   font-family: var(--font-family-headings);
@@ -128,9 +136,7 @@ souurce: https://stackoverflow.com/questions/20544309/css-sliding-underline
   background: var(--color-dark);
   overflow: hidden;
 }
-.hero.hero-post {
-  height: 360px;
-}
+/* hero post see post */
 .hero img {
   position: absolute;
   width: 100%;
@@ -162,10 +168,6 @@ souurce: https://stackoverflow.com/questions/20544309/css-sliding-underline
   position: absolute;
   top: 0;
 }
-/*MAIN*/
-.main {
-  padding: 8rem 0;
-}
 /*CARDS*/
 .card {
   height: auto;
@@ -173,15 +175,28 @@ souurce: https://stackoverflow.com/questions/20544309/css-sliding-underline
   min-height: 400px;
   box-shadow: none;
   border: solid thin lightgray;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+.card section {
+  flex-grow: 1;
 }
 .card.related {
   min-height: auto;
+}
+.card > footer {
+  flex-shrink: 0;
 }
 /*POST*/
 .post {
   width: 80rem;
   max-width: 100%;
   margin: 0 auto 4rem;
+}
+.hero.hero-post {
+  height: 360px;
 }
 /*HELPERS*/
 
@@ -200,17 +215,15 @@ souurce: https://stackoverflow.com/questions/20544309/css-sliding-underline
 /*FOOTER*/
 .footer {
   background: var(--color-dark);
-  color: white;
+  color: whitesmoke;
+  font-size: 1.8rem;
 }
 .footer .container {
   min-height: 200px;
 }
-/* footer .row {
-  align-items: center;
-  height: 100%;
-}*/
+
 .footer .col div {
-  padding-top: 80px;
+  padding: 8rem 0 4rem;
   flex-direction: column;
 }
 
@@ -276,8 +289,8 @@ img {
 }
 @media screen and (min-width: 1000px) {
   .div-wide {
-    width: calc(100% + 20rem);
-    left: -10rem;
+    width: calc(100% + 30rem);
+    left: -15rem;
     position: relative;
     margin: 2rem 0;
   }

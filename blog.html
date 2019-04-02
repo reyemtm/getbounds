@@ -47,7 +47,7 @@
         <p>Post Subtitle</p>
         <p>March 1, 2019</p>
       The goal of my original post on client-side web mapping for large datasets was to create an inexpensive, robust county-wide parcel viewer web application. The base functionality would include the ability to both identify and search the parcel data. The result of this effort was the Open Parcel Viewer. That project consists of a Leaflet map with Leaflet.VectorGrid cutting GeoJSON into vector-tiles on-the-fly. The app is performant, with the drawback being a potentially large file is loaded directly into the browser. This method works well for small datasets, but breaks down when the size and complexity of the data exceeds device or network capabilities. For example, load time for a typical 70k polygon county parcel map on mobile might exceed 30 seconds.
-      <figure class="div-full">
+      <figure class="div-wide">
         <img src="img0.jpg">
       </figure>
 
@@ -59,7 +59,7 @@
       Data outside the viewport is unknown to the client and therefore not searchable, which is one of the two key components needed for this application.
       
       The answer to this is a simple Node script that minimizes our GeoJSON into a JSON with only those fields we need to search, using the .map() function on the GeoJSON features object. Utilizing the turf.center() function we can also create a centroid that is used to pan the map to the search result. The original data would ideally contain a unique ID field in order for map.queryRenderedFeatures() in Mapbox GL JS to work properly. If the dataset does not have a unique ID field, this can easily be created in the Node script before cutting out data into tiles, making sure to return this ID to our searchable JSON object.
-      <figure class="div-full">
+      <figure class="div-wide">
         <img src="img4.jpg">
       </figure>      <pre><code>
       var geojson = {
@@ -116,9 +116,11 @@
               <header>
                 <h4>Card title</h4>
               </header>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                dolore
-                magna aliqua. Ut enim ad minim veniam, quis nostrud exercit.</p>
+              <section>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+                  dolore
+                  magna aliqua. Ut enim ad minim veniam, quis nostrud exercit.</p>
+              </section>
               <footer>
                 <a href="#!" class="button outline primary">Read More</a>
               </footer>
