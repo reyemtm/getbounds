@@ -1,0 +1,38 @@
+<!--footer id="footer">
+  <% if (theme.sidebar === 'bottom'){ %>
+    <%- partial('_partial/sidebar') %>
+  <% } %>
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; <%= date(new Date(), 'YYYY') %> <%= config.author || config.title %><br>
+      <%= __('powered_by') %> <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer-->
+
+<footer class="footer">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div>
+          <p>
+            <h5><a href="#modal-contact" style="border-bottom: dashed thin;">ZeroSpatial</a>
+              | by Malcolm Meyer<br>
+            </h5>
+            tw - <a href="https://twitter.com/getbounds" target="_blank">@getBounds</a><br>
+            gh - <a href="https://github.com/reyemtm" target="_blank">reyemtm</a><br>
+            built with <a href="https://jenil.github.io/chota/#docs" target="_blank">chota</a> & <a href="https://hexo.io/" target="_blank">Hexo</a></p>
+        </div>
+      </div>
+      <div class="col">
+        <%- partial('_widget/archive') %>
+      </div>
+      <div class="col">
+        <%- partial('_widget/tag') %>
+      </div>
+      <div class="col">
+        <div>Projects</div>
+      </div>
+    </div>
+  </div>
+</footer>

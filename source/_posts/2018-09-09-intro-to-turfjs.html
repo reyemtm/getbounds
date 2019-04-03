@@ -1,0 +1,9 @@
+---
+title: "Intro to Turf JS"
+subtitle: Geospatial Analysis for the Browser, Desktop & Server
+tags: ["turfjs", "slides", "mapbox"]
+image: intro-to-turfjs.png
+presentation: '/slides/2018-intro-to-turfjs/'
+published: true
+---
+This presentation was given at the 2018 Ohio GIS Conference. The NodeJS example is hard-coded from a real-world example in the original presentation. To view the presentation fullscreen click the button above.
