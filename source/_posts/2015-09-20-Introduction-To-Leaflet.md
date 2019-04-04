@@ -10,6 +10,7 @@ tags:
 external: true
 subtitle: '"The essence of software engineering is the mitigation of complexity."<br>~ Vladimir Agafonkin'
 header-img: cdbdark.jpg
+img: cdbdark.jpg
 image: intro-to-leaflet-slides.jpg
 presentation: https://www.ovrdc.org/apps/presentations/leaflet-ogrip/index.html#/
 ---

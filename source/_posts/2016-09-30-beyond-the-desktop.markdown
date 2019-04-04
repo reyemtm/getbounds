@@ -7,7 +7,8 @@ tags:
 - leaflet
 - slides
 subtitle: Open Source Experiments in Web Mapping
-feature-img:
+feature-img: ""
 image: ogrip-2016.jpg
+img: ogrip-2016.jpg
 presentation: https://www.ovrdc.org/apps/presentations/ogrip-2016/index.html#/
 ---

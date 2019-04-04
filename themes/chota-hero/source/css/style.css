@@ -175,7 +175,12 @@ souurce: https://stackoverflow.com/questions/20544309/css-sliding-underline
   flex-direction: column;
   align-items: stretch;
 }
-
+.card figure {
+  height: 240px;
+  margin: 0 0 2rem;
+  background-position: center;
+  background-size: cover;
+}
 /* TODO REMOVE Seciton if possible */
 .card section, .card p {
   flex-grow: 1;

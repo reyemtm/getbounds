@@ -23,7 +23,7 @@
           <a id="nav-rss-link" class="nav-icon" href="<%- url_for(theme.rss) %>" title="<%= __('rss_feed') %>"></a>
         <% } %>
         <a id="nav-search-btn" class="nav-icon" title="<%= __('search') %>"></a>
-      </nav>
+      </nav]>
       <div id="search-form-wrap">
         <%- search_form({button: '&#xF002;'}) %>
       </div>
@@ -32,18 +32,18 @@
 </header-->
 
 <header>
-  <div class=<% if (page.permalink == '/') {%>"hero"<%}else{%>"hero hero-post"<%}%> >
-    <img src="<%- (page.img) %>">
-    <% if (page.permalink == '/') {%>
-    <img data-src="img0.jpg" data-heading="Open Parcel Viewer" data-subtitle="Hero Subtitle" data-link="#modal-contact">
-    <img class="hidden" data-src="storelocate.png" data-heading="Store Locator" data-subtitle="Subtitle 2" data-link="#modal-contact">
-    <img class="hidden" data-src="materialmaptemplate.png" data-heading="Material Design Map Template" data-subtitle="Subtitle 3" data-link="#modal-contact">
+  <div class=<% if (url_for(page.path) == '/index.html') {%>"hero"<%}else{%>"hero hero-post"<%}%> >
+    <% if (url_for(page.path) == '/index.html') {%>
+    <img data-src="assets/img/img0.jpg" data-heading="Open Parcel Viewer" data-subtitle="Hero Subtitle" data-link="#modal-contact">
+    <img class="hidden" data-src="assets/img/storelocate.png" data-heading="Store Locator" data-subtitle="Subtitle 2" data-link="#modal-contact">
+    <img class="hidden" data-src="assets/img/materialmaptemplate.png" data-heading="Material Design Map Template" data-subtitle="Subtitle 3" data-link="#modal-contact">
     <div class="hero-text">
-      <h2></h4>
+      <h2></h2>
       <p></p>
       <a href="#"><button type="button" class="button outline hero-link">Learn More</button></a>
     </div>
-    <%}%>
+    <%}else{%><img src="<%- (page.img) %>"><%}%>
+
     <div class="hero-overlay"></div>
   </div>
 </header>

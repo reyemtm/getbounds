@@ -1,1 +1,38 @@
-<%- partial('_partial/post-cards', {pagination: 7, index: true}) %>
+<%- partial('_partial/post-cards', {pagination: 9, index: true}) %>
+<script>
+  var hero = document.querySelector('.hero');
+  let x = 0;
+  var n = hero.children.length;
+  
+  /* set initial caption */
+  let img = hero.children[x];
+  img.style.backgroundImage = "url('" + img.dataset.src + "')";
+  hero.children[3].children[0].innerHTML = img.dataset.heading;
+  hero.children[3].children[1].innerHTML = img.dataset.subtitle;
+  hero.children[3].children[2].href = img.dataset.link;
+
+  /* slideshow function */
+  setInterval(function () {
+    hero.children[3].style.opacity = 0;
+    let img = hero.children[x];
+    img.classList.toggle('hidden');
+    x = (x < (n-3)) ? x + 1 : 0;
+    let img1 = hero.children[x];
+    if (!img1.src) {
+      img1.style.backgroundImage = "url('" + img1.dataset.src + "')";
+    };
+    img1.classList.toggle('hidden');
+    setTimeout(function() {
+      hero.children[3].children[0].innerHTML = img1.dataset.heading;
+      hero.children[3].children[1].innerHTML = img1.dataset.subtitle;
+      hero.children[3].children[2].href = img1.dataset.link;
+      hero.children[3].style.opacity = 1;
+    }, 600); 
+  }, 6000)
+  /*1C1D21 - black
+31353D - 
+445878 - blue
+92CDCF - lightblue
+EEEFF7 - light*/
+/*for each image, c */
+</script>

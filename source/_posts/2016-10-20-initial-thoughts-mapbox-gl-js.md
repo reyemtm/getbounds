@@ -8,6 +8,7 @@ tags:
 - mapbox-gl
 subtitle: "This is not your mother's javascript mapping library!"
 image: mapbox-gl.jpg
+img: mapbox-gl.jpg
 ---
 ## Intro
 

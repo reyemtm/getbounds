@@ -12,6 +12,7 @@ map: leaflet-beta
 plugins: elevation
 header-img: c-hollow.jpg
 feature-img: c-hollow.jpg
+img: c-hollow.jpg
 ---
 
 <!--style>

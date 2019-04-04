@@ -1,9 +1,11 @@
 <div class="row">
   <% page.posts.each(function(post, i){ %>
-  <div class=<% if ((i === 0) || (i===3)) { %>"col-8"<%}else{%>"col"<%}%> >
+  <div class="col-6 col-6-md col-4-lg" >
     <div class="card">
       <header>
-        <h4><%- post.title %></h4>
+        <figure style="background-image: url('/assets/img/<%- post.img %>');")>        </figure>
+        <h3><%- post.title %></h3>
+
       </header>
       <section>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
@@ -15,6 +17,6 @@
       </footer>
     </div>
   </div>
-  <% if ((i === 1) || (i === 3)) {%>  <div class="is-full-width"></div><%}%>
+  <!-- <% if ((i === 2) || (i === 5)) {%><div class="is-full-width"></div><%}%> -->
   <%})%>
 </div>

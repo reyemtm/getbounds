@@ -9,6 +9,7 @@ description: >-
 tags:
   - blog
 feature-img: mgl-parcels-01.png
+img: mgl-parcels-01.png
 netlify-img: /images/post-img/original/mgl-parcels-01.png
 ---
 Local governments across the globe face many common 

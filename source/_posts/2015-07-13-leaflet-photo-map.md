@@ -13,6 +13,7 @@ plugins:
 - photo-map
 map: leaflet
 header-img: header-vacay-2.jpg
+img: header-vacay-2.jpg
 header: >-
   <script src="https://cdn.jsdelivr.net/npm/exif-js"></script>
 css: >-

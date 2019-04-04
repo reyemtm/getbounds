@@ -13,6 +13,7 @@ description: Using the power of open source through Jekyll, Leaflet and TurfJS f
 theme: blood
 image: neohio-gis-thumb.jpg
 header-img: neohiogis-header.jpg
+img: neohiogis-header.jpg
 presentation: "/slides/ne-ohio-gis-2016-jekyll-leaflet-turfjs/"
 ---
 
