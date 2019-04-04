@@ -32,8 +32,9 @@
 </header-->
 
 <header>
-  <div class=<% if (url_for(page.path) == '/index.html') {%>"hero"<%}else{%>"hero hero-post"<%}%> >
-    <% if (url_for(page.path) == '/index.html') {%>
+  <!-- <% if(is_home()) {%>homepage<%}%> -->
+  <div class=<% if(is_home()) {%>"hero"<%}else{%>"hero hero-post"<%}%> >
+    <% if(is_home()){%>
     <img data-src="assets/img/img0.jpg" data-heading="Open Parcel Viewer" data-subtitle="Hero Subtitle" data-link="#modal-contact">
     <img class="hidden" data-src="assets/img/storelocate.png" data-heading="Store Locator" data-subtitle="Subtitle 2" data-link="#modal-contact">
     <img class="hidden" data-src="assets/img/materialmaptemplate.png" data-heading="Material Design Map Template" data-subtitle="Subtitle 3" data-link="#modal-contact">

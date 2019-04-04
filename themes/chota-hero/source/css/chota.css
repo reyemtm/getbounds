@@ -255,7 +255,7 @@ iframe {
             flex: 0 0 calc((100% / (12/12)) - var(--grid-gutter));
     max-width: calc((100% / (12/12)) - var(--grid-gutter));
 }
-@media screen and (max-width: 599px) {
+@media screen and (max-width: 768px) {
     .container {
         width: 100%;
     }

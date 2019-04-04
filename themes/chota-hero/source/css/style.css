@@ -1,7 +1,22 @@
 @import "chota.css";
 @import "montserrat/Montserrat.css";
 @import "catamaran/catamaran.css";
-
+/*! chota.css v0.6.1 | MIT License | github.com/jenil/chota */
+/*
+:root {
+  --color-primary: #1a9f60;
+  --color-lightGrey: #d2d6dd;
+  --color-grey: #7e818b;
+  --color-darkGrey: #3f4144;
+  --color-error: #d43939;
+  --color-success: #28bd14;
+  --grid-maxWidth: 120rem;
+  --grid-gutter: 2rem;
+  --font-size: 1.6rem;
+  --font-family: -apple-system, BlinkMacSystemFont, Avenir, "Avenir Next",
+    "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
+    "Droid Sans", "Helvetica Neue", sans-serif;
+}*/
 :root {
   --color-primary: #6bbab5;
   --color-lightGrey: #eeeff7;
@@ -25,10 +40,16 @@ html, body {
   min-height: 100vh;
   color: #1c1d21;
   font-weight: var(--font-weight);
+  display: flex;
+  flex-direction: column;
+}
+.main {
+  flex-grow: 1;
+}
+.footer {
+  flex-shrink: 0;
 }
 .container {
-  /* width: 2000px; */
-  /* max-width: 90%; */
   padding: 4rem 0;
 }
 .row {
@@ -41,7 +62,7 @@ h1,h2,h3,h4
 }
 h5,h6 {
   font-family: var(--font-family-headings);
-  font-weight: 600;
+  font-weight: 500;
 }
 button {
   cursor: pointer;
@@ -61,8 +82,9 @@ a:hover:not(.button) {
     width: 96%;
   }
 }
-
-/*NAV*/
+/***********/
+/*** NAV ***/
+/***********/
 .nav-top {
   padding: 0 3rem;
   position: absolute;
@@ -119,12 +141,17 @@ souurce: https://stackoverflow.com/questions/20544309/css-sliding-underline
   /* background: var(--color-primary); */
 }
 
-/*HERO*/
+/***********/
+
+/**
+* HERO
+*/
+
 /* .navBulletsWrapper {display:none;} */
 .hero {
   position: relative;
   width: 100%;
-  height: 600px;
+  height: 100vh;
   max-height: 100vh;
   background: var(--color-dark);
   overflow: hidden;
@@ -221,7 +248,7 @@ souurce: https://stackoverflow.com/questions/20544309/css-sliding-underline
 .footer {
   background: var(--color-dark);
   color: #ccc;
-  font-size: 1.6rem;
+  font-size: 1.4rem;
 }
 .footer .container {
   min-height: 200px;

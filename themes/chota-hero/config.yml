@@ -1,7 +1,7 @@
 # Header
 menu:
   Home: /
-  Archives: /archive
+  Archives: /archives
 rss: /atom.xml
 
 # Content
@@ -10,7 +10,7 @@ fancybox: true
 
 # widget behavior
 archive_type: 'monthly'
-show_count: true
+show_count: false
 
 # Miscellaneous
 google_analytics:
