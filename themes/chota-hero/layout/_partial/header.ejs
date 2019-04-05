@@ -35,16 +35,18 @@
   <!-- <% if(is_home()) {%>homepage<%}%> -->
   <div class=<% if(is_home()) {%>"hero"<%}else{%>"hero hero-post"<%}%> >
     <% if(is_home()){%>
-    <img data-src="assets/img/img0.jpg" data-heading="Open Parcel Viewer" data-subtitle="Hero Subtitle" data-link="#modal-contact">
-    <img class="hidden" data-src="assets/img/storelocate.png" data-heading="Store Locator" data-subtitle="Subtitle 2" data-link="#modal-contact">
-    <img class="hidden" data-src="assets/img/materialmaptemplate.png" data-heading="Material Design Map Template" data-subtitle="Subtitle 3" data-link="#modal-contact">
+      <% site.posts.each(function(post) {%><% if (post.featured) {%>
+        <img class="hidden" data-src="assets/img/<%- post.img %>" data-heading="<%- post.title %>" data-subtitle="<%- post.subtitle %>" data-link="<%- post.permalink %>">
+        <%}%>
+      <%})%>
     <div class="hero-text">
       <h2></h2>
       <p></p>
-      <a href="#"><button type="button" class="button outline hero-link">Learn More</button></a>
+      <a href="#"><button type="button" class="button outline hero-link">Read More</button></a>
     </div>
-    <%}else{%><img src="<%- (page.img) %>"><%}%>
-
+    <%}else{%>
+      <img src="<%- (page.img) %>">
+    <%}%>
     <div class="hero-overlay"></div>
   </div>
 </header>

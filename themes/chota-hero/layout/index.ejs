@@ -1,16 +1,17 @@
-<% for (project in site.data.projects) { %>
-  <!--"<%= site.data.projects[project].name %>"> <%= project %> -->
-<% } %>
-<!----------------->
 <%- partial('_partial/post-cards', {pagination: 9, index: true}) %>
 <script>
   var hero = document.querySelector('.hero');
+  var heroText = document.querySelector('.hero-text');
+
   let x = 0;
   var n = hero.children.length;
   
   /* set initial caption */
   let img = hero.children[x];
   img.style.backgroundImage = "url('" + img.dataset.src + "')";
+  img.classList.remove("hidden");
+  heroText.children[2].href = img.dataset.link;
+  
   hero.children[3].children[0].innerHTML = img.dataset.heading;
   hero.children[3].children[1].innerHTML = img.dataset.subtitle;
   hero.children[3].children[2].href = img.dataset.link;

@@ -42,6 +42,7 @@ html, body {
   font-weight: var(--font-weight);
   display: flex;
   flex-direction: column;
+  overflow-x: hidden;
 }
 .main {
   flex-grow: 1;

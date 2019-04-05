@@ -1,5 +1,5 @@
 ---
-title: Animating Urban Growth via ArcMap's Time Slider
+title: Animating Urban Growth via the ArcMap Time Slider
 date: 2014-01-30 21:00:00 Z
 tags:
 - esri

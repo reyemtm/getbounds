@@ -11,8 +11,9 @@ description: >-
 tags:
   - mapbox
   - vector tiles
-img: mgl-parcels-01.png
+img: parcel-wide@2x.png
 netlify-img: /images/post-img/original/mgl-parcels-01.png
+featured: true
 ---
 The goal of my original post on [client-side web mapping](https://getbounds.com/blog/leaflet-and-geojson-tiles/) for large datasets was to create an inexpensive, robust county-wide parcel viewer web application. The base functionality would include the ability to both identify and search the parcel data. The result of this effort was the [Open Parcel Viewer](https://github.com/ovrdc/parcel-viewer). That project consists of a Leaflet map with [Leaflet.VectorGrid](https://github.com/Leaflet/Leaflet.VectorGrid) cutting GeoJSON into vector-tiles on-the-fly. The app is performant, with the drawback being a potentially large file is loaded directly into the browser. This method works well for small datasets, but breaks down when the size and complexity of the data exceeds device or network capabilities. For example, load time for a typical 70k polygon county parcel map on mobile might exceed 30 seconds.
 
