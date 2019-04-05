@@ -65,6 +65,10 @@ h5,h6 {
   font-family: var(--font-family-headings);
   font-weight: 500;
 }
+iframe {
+  border: 0;
+  max-width: 100%;
+}
 button {
   cursor: pointer;
 }
@@ -240,6 +244,10 @@ souurce: https://stackoverflow.com/questions/20544309/css-sliding-underline
   height: 5px;
   line-height: 0.1em; 
   margin: 1rem 0 4rem;
+}
+.zp-headline.zp-headline-dashed {
+  border-bottom: dashed thin lightgray;
+  line-height: 0.4em;
 }
 .zp-headline > span {
   padding: 0 2rem;

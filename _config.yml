@@ -81,3 +81,10 @@ deploy:
   type:
 
 include: _pages/**/*.*
+
+#Hexo Exceprt Plugin
+excerpt:
+  depth: 2
+  excerpt_excludes: []
+  more_excludes: []
+  hideWholePostExcerpts: true
