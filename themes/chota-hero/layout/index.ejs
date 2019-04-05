@@ -1,3 +1,7 @@
+<% for (project in site.data.projects) { %>
+  <!--"<%= site.data.projects[project].name %>"> <%= project %> -->
+<% } %>
+<!----------------->
 <%- partial('_partial/post-cards', {pagination: 9, index: true}) %>
 <script>
   var hero = document.querySelector('.hero');
