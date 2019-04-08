@@ -1,3 +1,14 @@
+## TODO ##
+# [ ] remove link for year on post page
+# [ ] style the tag lists on the post page
+# [ ] add subtitles to index page cards
+# [ ] add iframes to slides page/posts page
+# [ ] fix all slides
+# [ ] add redirects to all pages
+# [ ] test redirects and compare links
+# [ ] add apps check if needed
+
+
 # Hexo Configuration
 ## Docs: https://hexo.io/docs/configuration.html
 ## Source: https://github.com/hexojs/hexo/

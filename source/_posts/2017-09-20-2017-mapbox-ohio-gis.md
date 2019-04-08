@@ -1,23 +1,23 @@
 ---
-layout: slides
+layout: slides2
 theme: white
-permalink: "/slides/2017-mapbox-ohio-gis/"
+title: "Data-Driven Styling, 3D Polygons & Vector Tiles with Mapbox GL JS"
 style: >-
   * { text-shadow: none;}
+  .reveal.center {
+    min-height: calc(100vh - 600px)!important;
+  }
   .reveal h1 {
-    font-size: 3.5em;
+    font-size: 2.8em!important;
   }
   .reveal h2 {
-    font-size: 2.25em;
+    font-size: 1.8em!important;
   }
   .reveal em {
-    color: firebrick;
-  }
-  .reveal a {
-    /*background: rgba(42, 118, 221, 0.05);*/
+    color: firebrick!important;
   }
   .fa-fw {
-    line-height: 43px;
+    line-height: 43px!important;
   }
   @font-face {
     font-family: 'Cabin';
@@ -35,21 +35,25 @@ style: >-
       url('/slides/big-assets/fonts/Montserrat-Regular.woff') format('woff'),
       url('/slides/big-assets/fonts/Montserrat-Regular.woff2') format('woff2');
   }
-  h1, h2 {
-    font-family: "Montserrat";
+  .reveal h1, .reveal h2 {
+    font-family: "Montserrat"!important;
     color: firebrick!important
   }
-  body, p, h3, h4, h5, h6 {
-    font-family: 'Cabin', sans-serif;
+  # body, p, h3, h4, h5, h6 {
+  #   font-family: 'Cabin', sans-serif;
+  # }
+  .reveal br  {
+    content: ' '
+  }
+  .reveal br:after {
+    content: ' '
   }
 transition: fade
+img: "2017-mapbox-ohio-gis@2x.jpg"
 ---
-<section>
-  <img src="img/title-page.jpg" />
-
+<section>  <img src="/slides/2017-mapbox-ohio-gis/img/title-page.jpg" />
 </section>
-<section> 
-  <h2 id="-ovrdc-http-www-ovrdc-org-"><a href="http://www.ovrdc.org">OVRDC</a></h2>
+<section>   <h2 id="-ovrdc-http-www-ovrdc-org-"><a href="http://www.ovrdc.org">OVRDC</a></h2>
   <p>www.ovrdc.org</p>
   <h2 id="-ovrdc-web-map-examples-https-ovrdc-github-io-gis-tutorials-"><a href="https://ovrdc.github.io/gis-tutorials/">Map Examples</a></h2>
   <p>ovrdc.github.io/gis-tutorials</p>
@@ -70,13 +74,13 @@ transition: fade
 </section>
 <section>
   <h2>Web Map Tiles</h2>
-  <img  styl="width:80%;" src="img/map-tiles-leaflet.jpg" />
+  <img  styl="width:80%;" src="/slides/2017-mapbox-ohio-gis/img/map-tiles-leaflet.jpg" />
   <em>img source: <a href="http://leafletjs.com/examples/zoom-levels/">leafletjs.com/examples/zoom-levels</a></em>
 </section>
 <section>
   <h2 id="-mapbox-vector-tiles-mvt-https-www-mapbox-com-vector-tiles-specification-"><a href="https://www.mapbox.com/vector-tiles/specification/">Mapbox Vector Tiles (MVT)</a></h2>
   <p>MVT is slowly becoming an industry standard.</p>
-  <p><img src="img/logos2.jpg" alt=""></p>
+  <p><img src="/slides/2017-mapbox-ohio-gis/img/logos2.jpg" alt=""></p>
 </section>
 <section>
   <h1 id="why-br-use-vector-tiles-https-developmentseed-org-blog-2017-08-09-mapbox-query-data-">Why<br>Use <a href="https://developmentseed.org/blog/2017/08/09/mapbox-query-data/">Vector Tiles</a>?</h1>
@@ -86,14 +90,14 @@ transition: fade
 </section>
 <section>
   <h1 id="access-to-underlying-vector-attribute-data">Unlimited</h1>
-  <img src="img/mapbox-styles.jpg" alt="mapbox-styles"></img>
+  <img src="/slides/2017-mapbox-ohio-gis/img/mapbox-styles.jpg" alt="mapbox-styles"></img>
   <h1>Basemaps</h1>
 </section>
 <section>
   <h1 id="access-to-underlying-vector-attribute-data">Access to Attribute Data</h1>
 </section>
 <section>
-  <h2 id="performance">Performance</h1>
+  <h2 id="performance">Performance</h2>
   <p><a href="https://www.arcgis.com/home/webmap/viewer.html?useExisting=1">AGOL Raster Basemap</a></p>
   <p><strong>~70 Image Requests, 1100kb</strong>
     <br><br>
@@ -105,14 +109,14 @@ transition: fade
   <p><em>This includes feature data!!</em></p>
 </section>
 <section>
-  <iframe data-src="mapbox.html" width="1000" height="600" frameborder=no></iframe>
+  <iframe data-src="/slides/2017-mapbox-ohio-gis/mapbox.html" width="1000" height="600" frameborder=no></iframe>
 </section>
 <section>
   <h1 id="how">How</h1>
   <h3>
     <span class="fragment" data-fragment-index="0">Raw Data</span>
     <span class="fragment"  data-fragment-index="1" style="color:firebrick;">--&gt;</span><span class="fragment"  data-fragment-index="1">&nbsp;GeoJSON</span>
-    <span class="fragment" style="color:gray;" data-fragment-index="2"><br />--&gt;</span><span class="fragment" style="color:gray;"data-fragment-index="2">&nbsp;Vector Tiles</span>
+    <span class="fragment" style="color:gray;" data-fragment-index="2"><br />--&gt;</span><span class="fragment" style="color:gray;" data-fragment-index="2">&nbsp;Vector Tiles</span>
     <span class="fragment" style="color:gray;" data-fragment-index="2">--&gt;</span><span class="fragment" style="color:gray;" data-fragment-index="2">&nbsp;Server</span>
     <span class="fragment" style="color:firebrick;" data-fragment-index="4"><br />--&gt;</span><span class="fragment"  data-fragment-index="4">&nbsp;JavaScript API</span>
     <span class="fragment" style="color:firebrick;" data-fragment-index="5">--&gt;</span><span class="fragment"  data-fragment-index="5">&nbsp;Browser</span>
@@ -121,11 +125,11 @@ transition: fade
 </section>
 <section>
   <h2><a href="https://www.mapbox.com/studio">Mapbox Studio</a></h2>
-  <img src="img/studio-1.jpg" alt="">
+  <img src="/slides/2017-mapbox-ohio-gis/img/studio-1.jpg" alt="">
 </section>
 <section>
   <h2><a href="https://www.mapbox.com/studio">Mapbox Studio</a></h2>
-  <img src="img/studio-2.jpg" alt="">
+  <img src="/slides/2017-mapbox-ohio-gis/img/studio-2.jpg" alt="">
 </section>
 <section>
   <h1 id="building-the-br-mapbox-gl-js-https-www-mapbox-com-mapbox-gl-js-api-map">Coding the Map from Scratch</h1>
@@ -156,23 +160,23 @@ transition: fade
 </section>
 <section>
   <h3 id="-example-1-basic-https-ovrdc-github-io-gis-tutorials-mapbox-01-basic-map-"><a href="https://ovrdc.github.io/gis-tutorials/mapbox/03-query-features/#4/39.94/-95.52" target="_blank">Fill & Query</h3>
-  <img class="maps" src="img/example-1.jpg"></img></a>
+  <img class="maps" src="/slides/2017-mapbox-ohio-gis/img/example-1.jpg"></a>
 </section>
 <section>
   <h3 id="-example-2-swipe-map-https-ovrdc-github-io-gis-tutorials-mapbox-swipe-map-"><a href="https://ovrdc.github.io/gis-tutorials/mapbox/swipe-map/" target="_blank">Fill with Data-Driven Styles</h3>
-  <img class="maps" src="img/example-2.jpg"></img></a>
+  <img class="maps" src="/slides/2017-mapbox-ohio-gis/img/example-2.jpg"></a>
 </section>
 <section>
   <h3 id="-example-3-filter-https-www-ovrdc-org-apps-accident-explorer-html-"><a href="https://www.ovrdc.org/apps/accident-explorer.html" target="_blank">Filtering</h3>
-  <img class="maps" src="img/example-3.jpg"></img></a>
+  <img class="maps" src="/slides/2017-mapbox-ohio-gis/img/example-3.jpg"></a>
 </section>
 <section>
   <h3 id="-example-4-extrusion-https-www-ovrdc-org-apps-block-group-explorer-html-"><a href="https://www.ovrdc.org/apps/block-group-explorer.html" target="_blank">Fill-Extrusion & Pitch</h3>
-  <img class="maps" src="img/example-4.jpg"></img></a>
+  <img class="maps" src="/slides/2017-mapbox-ohio-gis/img/example-4.jpg"></a>
 </section>
 <section>
   <h3 id="-example-5-tileserver-https-tileserver-ovrdc-org-"><a href="https://www.ovrdc.org/apps/mapbox-parcel-viewer.html" target="_blank">Parcel Viewer & JSON Search</h3>
-  <img class="maps" src="img/example-5.jpg"></img></a>
+  <img class="maps" src="/slides/2017-mapbox-ohio-gis/img/example-5.jpg"></a>
 </section>
 <section>
   <h2 id="thanks-">Thanks!</h2>
@@ -180,9 +184,8 @@ transition: fade
   <p>Transportation Planning Coordinator</p>
   <p><a href="http://www.ovrdc.org">Ohio Valley Regional Development Commission</a></p>
   <br>
-  <p style="color:firebrick;">Contact</p>
   <div class="list-group">
-    <a class="list-group-item" href="mailto:mmeyer@ovrdc.org"><i class="fa fa-envelope-o fa-fw" aria-hidden="true"></i>&nbsp;mmeyer@ovrdc.org</a><br>
+    <p><a class="list-group-item" href="/#modal-contact"><i class="fa fa-envelope-o fa-fw" aria-hidden="true"></i>&nbsp;Contact Form</a></p>
     <a class="list-group-item" href=href="https://www.twitter.com/getbounds" target="_blank"><i class="fa fa-twitter fa-fw" aria-hidden="true"></i>&nbsp;@getbounds</a>
   </div>
 </section>
@@ -194,26 +197,47 @@ transition: fade
     <a href="https://blog.mapbox.com/introducing-data-driven-styling-in-mapbox-gl-js-f273121143c3">https://blog.mapbox.com/introducing-data-driven-styling-in-mapbox-gl-js-f273121143c3</a>
     <a href="https://blog.mapbox.com/dive-into-large-datasets-with-3d-shapes-in-mapbox-gl-c89023ef291">https://blog.mapbox.com/dive-into-large-datasets-with-3d-shapes-in-mapbox-gl-c89023ef291</a></p>
 </section>
+
 <script>
   var b = {
-    "500": "url('img/title-big.jpg')",
-    "11": "url('img/streets.jpg')",
-    "27": "url(img/lancaster.jpg)"
+    "500": "url('/slides/2017-mapbox-ohio-gis/img/title-big.jpg')",
+    "11": "url('/slides/2017-mapbox-ohio-gis/img/streets.jpg')",
+    "27": "url(/slides/2017-mapbox-ohio-gis/img/lancaster.jpg)"
   };
   window.addEventListener('hashchange', function() {
     changeBackground();
   }, false);
   window.onload = changeBackground();
 
+  window.onload = revealFullscreen();
+
   function changeBackground() {
+    document.body.style.background = "white";
+    var reveal = document.querySelector(".reveal");
     var query = (window.location.href).split("#/");
     var q = query[1];
     console.log(q);
     if (b[q]) {
-      document.body.style.background = b[q] //"url('img/title-big.jpg')";
+      reveal.style.background = b[q] //"url('/slides/2017-mapbox-ohio-gis/img/title-big.jpg')";
     } else {
-      document.body.style.background = "url('img/sample2.jpg')";
+      reveal.style.background = "url('/slides/2017-mapbox-ohio-gis/img/sample2.jpg')";
     }
+  }
+
+  function revealFullscreen() {
+    var revealDiv = document.querySelector(".reveal");
+		
+    var requestMethod = revealDiv.requestFullscreen ||
+							revealDiv.webkitRequestFullscreen ||
+							revealDiv.webkitRequestFullScreen ||
+							revealDiv.mozRequestFullScreen ||
+							revealDiv.msRequestFullscreen;
+
+    document.addEventListener('keyup', function (event) {
+        if( requestMethod && event.keyCode === 70) {
+          requestMethod.apply( revealDiv );
+        }
+     });
   }
 
   /*show interactive maps when clicked*/

@@ -6,9 +6,7 @@
   <%- partial('_partial/nav.ejs') %>
   <%- partial('_partial/header') %>
   <div id="content" class="container main">
-    <section>
-      <%- body %>
-    </section>
+    <%- body %>
   </div>
   <%- partial('_partial/footer', null, {cache: !config.relative_link}) %>
   <%- partial('_partial/modals.ejs') %>

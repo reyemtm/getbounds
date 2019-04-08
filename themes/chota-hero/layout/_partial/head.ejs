@@ -32,7 +32,9 @@
   <% if (config.highlight.enable){ %>
     <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
   <% } %>
-  <%- css('css/style') %>
+
+  <% if (page.slides) { %><%}else{%><%- css('css/style') %><%}%>
+  
   <% if (page.style) {%>
     <style>
       <%- page.style %>
