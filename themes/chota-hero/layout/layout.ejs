@@ -1,5 +1,8 @@
 <%- partial('_partial/head') %>
 <body>
+  <% if (page.layout === "slides") {%>
+    <%- body %>
+  <%}else{%>
   <%- partial('_partial/nav.ejs') %>
   <%- partial('_partial/header') %>
   <div id="content" class="container main">
@@ -16,5 +19,6 @@
     window.location.hash = "close"
   });
   </script>
+  <%}%>
 </body>
 </html>

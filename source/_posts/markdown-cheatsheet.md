@@ -1,6 +1,8 @@
 ---
 title: Markdown Cheatsheet
 img: pattern_00.jpg
+layout: slides
+theme: black
 ---
 [https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
 
