@@ -33,7 +33,7 @@
     <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
   <% } %>
 
-  <% if (page.slides) { %><%}else{%><%- css('css/style') %><%}%>
+  <% if (page.layout == "slides") { %><%}else{%><%- css('css/style') %><%}%>
   
   <% if (page.style) {%>
     <style>

@@ -31,8 +31,11 @@ img: c-hollow.jpg
 </style-->
 <div id="map" style="position:relative;">
 </div>
-<script src="https://www.ovrdc.org/apps/assets/cssjs/leaflet.geometryutil.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js" charset="utf-8"></script>
+
+<script src="/assets/js/leaflet.geometryutil.js"></script>
+
+<script src="/assets/js/d3.min.js"></script>
+
 <script>
 /*map*/
 	var map = L.map('map', {

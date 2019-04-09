@@ -229,7 +229,7 @@ souurce: https://stackoverflow.com/questions/20544309/css-sliding-underline
 
 /*POST*/
 .post {
-  width: 80rem;
+  width: 96rem;
   max-width: 100%;
   margin: 0 auto 4rem;
 }
@@ -254,6 +254,9 @@ souurce: https://stackoverflow.com/questions/20544309/css-sliding-underline
   padding: 0 2rem;
   background: #fff;
 }
+.zp-headline.zp-headline-dark {
+  border-bottom: solid thick #31353d;
+}
 /*FOOTER*/
 .footer {
   background: var(--color-dark);
@@ -269,7 +272,34 @@ souurce: https://stackoverflow.com/questions/20544309/css-sliding-underline
   padding: 4rem 0 2rem;
   flex-direction: column;
 } */
-
+/* ARCHIVES PAGE */
+#page-nav > a {
+  margin: 0 auto;
+}
+.archives-wrap {
+  /* margin: 2rem 0; */
+}
+.page-number {
+  /* margin: 0 1rem; */
+}
+.extend.next {
+  /* float: right; */
+}
+.archive-nav .extend,
+.archive-nav .current {
+  border: solid thin #6bbab54d;
+  padding: 0.1em 0.5em;
+}
+.archive-nav .prev {
+  float: left;
+}
+.archive-nav .page-number {
+  margin: 1em;
+  line-height: 40px;
+}
+.archive-nav .next {
+  float: right;
+}
 /* MODAL*/
 .modal .card {
   z-index: 100;

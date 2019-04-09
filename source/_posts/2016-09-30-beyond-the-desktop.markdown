@@ -10,5 +10,5 @@ subtitle: Open Source Experiments in Web Mapping
 feature-img: ""
 image: ogrip-2016.jpg
 img: ogrip-2016.jpg
-presentation: https://www.ovrdc.org/apps/presentations/ogrip-2016/index.html#/
+slides: https://www.ovrdc.org/apps/presentations/ogrip-2016/index.html#/
 ---

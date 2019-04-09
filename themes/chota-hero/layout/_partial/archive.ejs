@@ -15,7 +15,7 @@
       <section class="archives-wrap">
         <div class="archive-year-wrap">
           <!-- <a href="<%- url_for(config.archive_dir + '/' + year) %>" class="archive-year"><%= year %></a> -->
-          <h2 class="zp-headline"><span><%= year %></span</h2>
+          <h2 class="zp-headline zp-headline-dark"><span><%= year %></span</h2>
         </div>
         <div class="archives">
     <% } %>
@@ -26,12 +26,37 @@
   <% } %>
 <% } %>
 <% if (page.total > 1){ %>
-  <nav id="page-nav">
-    <% var prev_text = "&laquo; " + __('prev');var next_text = __('next') + " &raquo;"%>
+  <nav class="archive-nav">
+    <% var prev_text = "← " + __('prev');
+       var next_text = __('next') + " →";
+       var total_text = __('total of')
+    %>
     <%- paginator({
       prev_text: prev_text,
       next_text: next_text
     }) %>
   </nav>
+  <!-- <div class="pagination-bar">
+    <ul class="pagination">
+        <% if (page.prev) { %>
+          <li class="pagination-prev">
+            <a class="btn btn--default btn--small" href="<%- url_for(page.prev_link) %>">
+              <i class="fa fa-angle-left text-base icon-mr"></i>
+              <span><%= __('pagination.newer_posts') %></span>
+            </a>
+          </li>
+        <% } %>
+        <% if (page.next) { %>
+          <li class="pagination-next">
+            <a class="btn btn--default btn--small" href="<%- url_for(page.next_link) %>">
+              <span><%= __('pagination.older_posts') %></span>
+              <i class="fa fa-angle-right text-base icon-ml"></i>
+            </a>
+          </li>
+        <% } %>
+        <li class="pagination-number"><%= _p('pagination.page', page.current) + ' ' + _p('pagination.of', page.total) %></li>
+    </ul>
+</div> -->
 <% } %>
 </div>
+<!-- ←Older Posts → &laquo; -->

@@ -50,6 +50,7 @@ style: >-
   }
 transition: fade
 img: "2017-mapbox-ohio-gis@2x.jpg"
+iframe: /slides/2017-mapbox-ohio-gis/"
 ---
 <section>  <img src="/slides/2017-mapbox-ohio-gis/img/title-page.jpg" />
 </section>
