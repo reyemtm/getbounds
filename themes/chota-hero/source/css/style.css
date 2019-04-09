@@ -233,6 +233,15 @@ souurce: https://stackoverflow.com/questions/20544309/css-sliding-underline
   max-width: 100%;
   margin: 0 auto 4rem;
 }
+.post-title a {
+  color: inherit
+}
+.post-title a:hover, .post-title a:focus {
+  color: var(--color-primary);
+}
+.post-archive {
+  margin: 2rem 0 6rem;
+}
 .hero.hero-post {
   height: 360px;
 }
@@ -247,8 +256,15 @@ souurce: https://stackoverflow.com/questions/20544309/css-sliding-underline
   margin: 1rem 0 4rem;
 }
 .zp-headline.zp-headline-dashed {
-  border-bottom: dashed thin lightgray;
+  border-bottom: dashed thin var(--color-primary);
   line-height: 0.4em;
+  /* text-align: unset; */
+}
+.zp-headline.zp-headline-dashed > span {
+  /* border: solid thin var(--color-primary); */
+  padding: 0.3rem 0.5rem;
+  margin-right: 1rem;
+  font-size: 1.6rem;
 }
 .zp-headline > span {
   padding: 0 2rem;

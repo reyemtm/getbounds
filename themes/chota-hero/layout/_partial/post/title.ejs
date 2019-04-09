@@ -4,8 +4,8 @@
   </h2>
 <% } else if (post.title){ %>
   <% if (index){ %>
-    <h2 itemprop="name">
-      <%= post.title %>
+    <h2 itemprop="name" class="post-title">
+      <a href="<%- post.permalink %>"><%= post.title %></a>
     </h2>
     <p class="post-date"><%= date(post.date, 'MMMM DD, YYYY') %></p>
     <% if (post.slides) { %>
@@ -14,7 +14,7 @@
     </div>
     <%}%>
     <p><%- post.excerpt %></p>
-    <a href="<%-post.permalink %>" class="zp-headline zp-headline-dashed"><span>Read More</span></a>
+    <a href="<%-post.permalink %>" style="font-size:1.6rem;">Continue Reading...</a>
   <% } else { %>
     <h2 class="<%= class_name %>" itemprop="name">
       <%= post.title %>

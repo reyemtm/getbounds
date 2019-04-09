@@ -1,12 +1,11 @@
-## TODO ##
-# [ ] remove link for year on post page
-# [ ] style the tag lists on the post page
-# [ ] add subtitles to index page cards
-# [ ] add iframes to slides page/posts page
-# [ ] fix all slides
-# [ ] add redirects to all pages
-# [ ] test redirects and compare links
-# [ ] add apps check if needed
+# TODO [ ] remove link for year on post page
+# TODO [ ] style the tag lists on the post page
+# TODO [ ] add subtitles to index page cards
+# TODO [X] add iframes to slides page/posts page
+# TODO [ ] fix all slides
+# TODO [ ] add redirects to all pages
+# TODO [ ] test redirects and compare links
+# TODO [ ] add apps check if needed
 
 
 # Hexo Configuration
