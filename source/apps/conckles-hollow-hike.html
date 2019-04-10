@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Conckle's Hollow Hike</title>
+  <link rel="stylesheet" href="/apps-plugins/leaflet.0.7.7/leaflet.css">
+  <script src="/apps-plugins/leaflet.0.7.7/leaflet.js"></script>
+  <link rel="stylesheet" href="/apps-plugins/leaflet-elevation/leaflet.elevation-0.0.4.css">
+  <script src="/apps-plugins/leaflet-elevation/leaflet.elevation-0.0.4.src.js"></script>
+  <script src="/apps-plugins/leaflet.geometryutil.js"></script>
+  <script src="/apps-plugins/d3.min.js"></script>
+  <script src="/apps-plugins/leaflet.ajax.min.js"></script>
+  <!-- <script src="/apps-plugins/esri-leaflet.js"></script> -->
+  <style>
+    html, body, #map {
+        height: 100%;
+        width: 100%;
+        padding: 0px;
+        margin: 0px;
+    }
+    /* .dist-marker {
+      font-size: 12px;
+      border: 1px solid #888;
+      border-radius: 10px;
+      text-align: center;
+      color: #888;
+      background: #fff;
+      height: 20px!important;
+      width: 20px!important;
+      margin:-10px!important;
+      font-weight:600;
+    } */
+  </style>
+
+</head>
+
+<body>
+  <div id="map"></div>
+  <script>
+    /*map*/
+    var map = L.map('map', {
+      maxZoom: 18,
+      sleep: true
+    });
+    map.setView([39.4570, -82.5778], 16);
+    /*tiles*/
+    // var esritopo = L.esri.basemapLayer('Topographic').addTo(map);
+    var esritopo = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}', {
+      attribution: 'Tiles &copy; Esri &mdash; Esri, DeLorme, NAVTEQ, TomTom, Intermap, iPC, USGS, FAO, NPS, NRCAN, GeoBase, Kadaster NL, Ordnance Survey, Esri Japan, METI, Esri China (Hong Kong), and the GIS User Community'
+    }).addTo(map);
+    var cdb = L.tileLayer('http://a.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
+      attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> ' +
+        'contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">' +
+        'CC-BY-SA</a>. Tiles &copy; <a href="http://cartodb.com/attributions">' +
+        'CartoDB</a>'
+    });
+    /*data*/
+    var el = L.control.elevation({
+      position: 'bottomleft',
+      theme: 'green-theme',
+      width: 500,
+      height: 150,
+      imperial: false
+    }).addTo(map);
+
+    var hike = new L.geoJson.ajax("/data/c_hollow.geojson", {
+      color: '#629062',
+      weight: 6,
+      opacity: 1,
+      onEachFeature: el.addData.bind(el)
+    }).addTo(map);
+
+    hike.on('data:loaded', function () {
+      ride.addTo(map);
+      map.fitBounds(ride.getBounds());
+    });
+    /*controls*/
+    var baseMaps = {
+      "Topo": esritopo,
+      "Light": cdb
+    };
+    L.control.layers(baseMaps, null, {
+      expanded: true
+    }).addTo(map);
+  </script>
+</body>
+
+</html>

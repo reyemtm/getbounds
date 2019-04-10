@@ -1,6 +1,7 @@
 ---
 title: Conkle's Hollow Fall Hike
-date: 2015-10-12 00:00:00 Z
+date: 2019-04-10
+datefirstposted: 2015-10-12 00:00:00 Z
 tags:
 - leaflet
 layout: post
@@ -8,95 +9,19 @@ description: Using the Leaflet Elevation plugin to show a the elevation cross-se
   a GPS track recorded with MyTracks at Conkle's Hollow Nature Preserve in the Hocking
   Hills region of Ohio.
 subtitle: Mapping GPS Tracks
-map: leaflet-beta
-plugins: elevation
-header-img: c-hollow.jpg
-feature-img: c-hollow.jpg
 img: c-hollow.jpg
 ---
 
-<!--style>
-.dist-marker {
-	font-size: 12px;
-	border: 1px solid #888;
-	border-radius: 10px;
-	text-align: center;
-	color: #888;
-	background: #fff;
-  height: 20px!important;
-  width: 20px!important;
-  margin:-10px!important;
-  font-weight:600;
-}
-</style-->
-<div id="map" style="position:relative;">
-</div>
+One of the great things about the Leaflet mapping library is the wide variety of community supported plugins. This simple map uses two great plugins - [Leaflet Elevation](https://github.com/MrMufflon/Leaflet.Elevation) and [Leaflet Ajax](https://github.com/calvinmetcalf/leaflet-ajax). The ajax plugin is provides a simple way to load data, while the elevation plugin does just that - shows the elevation from a GeoJSON file in a nice little chart, added to the map as a Leaflet Control. If using a GeojSON file, the coordinates need to have a z value, for example
+```
+[
+    -82.572833,
+    39.454684,
+    235
+]
+```
+The plugin is easy to style using css, which is good because I am not a fan of the default themes. I did notice a bug when using the ``imperial: true`` option. The vertical line coming off the hike path disappears when using this option, but otherwise it works as expected. This is another simple way to show data on a map with minimal effort. The only requirements are D3 and the elevation plugin library.
 
-<script src="/assets/js/leaflet.geometryutil.js"></script>
+<iframe src="/apps/conckles-hollow-hike.html" width=100% height="600px" frameborder=0 style="border: solid thick #1c1d21;">
 
-<script src="/assets/js/d3.min.js"></script>
 
-<script>
-/*map*/
-	var map = L.map('map', {
-		maxZoom: 16,
-		sleep: true
-	});
-	map.setView([39.4570,-82.5778], 16);
-	var hash = L.hash(map);
-/*tiles*/
-	var esritopo = L.tileLayer('http://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}', {
-		attribution: 'Tiles &copy; Esri &mdash; Esri, DeLorme, NAVTEQ, TomTom, Intermap, iPC, USGS, FAO, NPS, NRCAN, GeoBase, Kadaster NL, Ordnance Survey, Esri Japan, METI, Esri China (Hong Kong), and the GIS User Community'
-		}).addTo(map);
-	var comic = L.tileLayer('http://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
-		attribution: 'Imagery from <a href="http://mapbox.com/about/maps/">MapBox</a> &mdash; Map data &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
-		subdomains: 'abcd',
-		id: 'reyemtm.mnijk2mp',
-		accessToken: 'pk.eyJ1IjoicmV5ZW10bSIsImEiOiJCTHUxSVZ3In0.Q-qbg_jG0JcT6bfBeiwXQg'
-	});
-
-	var osm = L.tileLayer('http://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png', {
-		maxZoom: 19,
-		attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>, Tiles courtesy of <a href="http://hot.openstreetmap.org/" target="_blank">Humanitarian OpenStreetMap Team</a>'
-	});
-
-	var toner = new L.StamenTileLayer("toner");
-
-	var cdb = L.tileLayer('http://a.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
-	        attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> ' +
-	                      'contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">' +
-	                      'CC-BY-SA</a>. Tiles &copy; <a href="http://cartodb.com/attributions">' +
-	                      'CartoDB</a>'
-  	});
-/*data*/
-	var el = L.control.elevation({
-		position: 'bottomleft',
-		theme: 'green-theme',
-		width: 500,
-		height: 150,
-		imperial: true
-	}).addTo(map);
-
-	var hike = new L.geoJson.ajax("../../data/c_hollow.geojson", {
-	    color: '#629062',
-	    weight: 6,
-	    opacity: 1,
-	    onEachFeature: el.addData.bind(el)
-	  }).addTo(map);
-
-	hike.on('data:loaded', function(){
-	  ride.addTo(map);
-	  map.fitBounds(ride.getBounds());
-	});
-/*controls*/
-	var baseMaps = {
-		"OpenStreetMap": osm,
-		"Contrast": toner,
-		"Comic": comic,
-		"Topo": esritopo,
-		"Light": cdb
-	};
-	L.control.layers(baseMaps, null).addTo(map);
-</script>
-
-This is a map of a hike using the Leaflet elevation plugin. I added a green theme. This map is in development.

@@ -1,5 +1,6 @@
 # TODO [ ] remove link for year on post page
-# TODO [ ] style the tag lists on the post page
+# TODO [ ] add tag name to header on tag pages
+# TODO [X] style the tag lists on the post page
 # TODO [ ] add subtitles to index page cards
 # TODO [X] add iframes to slides page/posts page
 # TODO [ ] fix all slides
@@ -36,7 +37,9 @@ archive_dir: blog
 category_dir: categories
 #code_dir: downloads/code
 i18n_dir: :lang
-skip_render:
+skip_render: 
+ - apps/**/*.*
+ - apps-plugins/**/*.*
 
 # Writing
 new_post_name: :year-:month-:day-:title.md # File name of new posts
@@ -50,8 +53,8 @@ relative_link: true
 future: true
 highlight:
   enable: true
-  line_number: true
-  auto_detect: false
+  line_number: false
+  auto_detect: true
   tab_replace:
   
 # Home page setting
@@ -72,7 +75,7 @@ tag_map:
 ## Hexo uses Moment.js to parse and display date
 ## You can customize the date format as defined in
 ## http://momentjs.com/docs/#/displaying/format/
-date_format: YYYY-MM-DD
+date_format: MMMM D, YYYY
 time_format: HH:mm:ss
 
 # Pagination

@@ -2,24 +2,10 @@
 @import "montserrat/Montserrat.css";
 @import "catamaran/catamaran.css";
 /*! chota.css v0.6.1 | MIT License | github.com/jenil/chota */
-/*
-:root {
-  --color-primary: #1a9f60;
-  --color-lightGrey: #d2d6dd;
-  --color-grey: #7e818b;
-  --color-darkGrey: #3f4144;
-  --color-error: #d43939;
-  --color-success: #28bd14;
-  --grid-maxWidth: 120rem;
-  --grid-gutter: 2rem;
-  --font-size: 1.6rem;
-  --font-family: -apple-system, BlinkMacSystemFont, Avenir, "Avenir Next",
-    "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
-    "Droid Sans", "Helvetica Neue", sans-serif;
-}*/
+
 :root {
   --color-primary: #6bbab5;
-  --color-lightGrey: #eeeff7;
+  --color-lightGrey: #bebec1;
   --color-grey: #445878;
   --color-dark: #1C1D21; /*added*/
   --color-darkGrey: #31353d;
@@ -28,14 +14,17 @@
   --grid-maxWidth: 180rem;
   --grid-gutter: 4rem;
   --font-size: 2rem;
-  --font-family-headings: "Montserrat"; /*added*/
+  --font-family-headings: "Montserrat"-apple-system, BlinkMacSystemFont, Avenir, "Avenir Next",
+  "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
+  "Droid Sans", "Helvetica Neue", sans-serif;
   --font-weight: 300; /*added*/
   --font-family: "Catamaran", -apple-system, BlinkMacSystemFont, Avenir, "Avenir Next",
     "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
     "Droid Sans", "Helvetica Neue", sans-serif;
+  --inner-width: 90rem;
 }
 
-/*random tweaks and additional classes*/
+/*random tweaks to chota*/
 html, body {
   min-height: 100vh;
   color: #1c1d21;
@@ -48,12 +37,10 @@ html, body {
   min-height: calc(100vh - 560px);
   flex-grow: 1;
 }
-.footer {
-  flex-shrink: 0;
-}
 .container {
   padding: 4rem 0;
 }
+
 .row {
   margin-top: 2rem;
 }
@@ -70,12 +57,25 @@ iframe {
   border: 0;
   max-width: 100%;
 }
-button {
+button, .button {
   cursor: pointer;
+  border-radius: 2px;
+}
+.button.small {
+  padding: 0.5rem 1rem;
+  font-size: 1.6rem;
 }
 .button:focus, [type="button"]:focus, [type="reset"]:focus, [type="submit"]:focus, button:focus {
   border-color: white;
   outline: transparent;
+}
+blockquote {
+ border-left: 3px solid var(--color-primary);
+ font-family: Montserrat, "sans-serif";
+ font-weight: 600;
+}
+blockquote p {
+  margin: 0;
 }
 .hidden {
   opacity: 0;
@@ -87,6 +87,12 @@ a:hover:not(.button) {
   .container {
     width: 96%;
   }
+}
+pre {
+  font-size: 1.6rem;
+}
+.footer {
+  flex-shrink: 0;
 }
 /***********/
 /*** NAV ***/
@@ -229,9 +235,15 @@ souurce: https://stackoverflow.com/questions/20544309/css-sliding-underline
 
 /*POST*/
 .post {
-  width: 96rem;
+  width: var(--inner-width);
   max-width: 100%;
   margin: 0 auto 4rem;
+}
+.post-header {
+  margin: 0 0 4rem;
+}
+.post-title {
+  margin: 0;
 }
 .post-title a {
   color: inherit
