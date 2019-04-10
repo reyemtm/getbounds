@@ -34,7 +34,9 @@
   <% } %>
 
   <% if (page.layout == "slides") { %><%}else{%><%- css('css/style') %><%}%>
-  
+  <% if (page.header) {%>
+  <%- page.header %>
+  <%}%>
   <% if (page.style) {%>
     <style>
       <%- page.style %>

@@ -14,18 +14,41 @@ plugins:
 map: leaflet
 header-img: header-vacay-2.jpg
 img: header-vacay-2.jpg
-header: >-
-  <script src="https://cdn.jsdelivr.net/npm/exif-js"></script>
-css: >-
-  #map{height: 580px;margin-bottom:2rem;}
-  .leaflet-touch .leaflet-control-layers, .leaflet-touch .leaflet-bar {
-    border: 2px solid rgba(0,0,0,0.2);
-  }  
+header: >-  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/leaflet.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/leaflet.js"></script>
+  <!--Leaflet Hash via Mapbox CDN-->
+  <script src='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-hash/v0.2.1/leaflet-hash.js'></script>
+  <!--leaflet providers simplify adding tiled basemaps -->
+  <script type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-providers/1.1.15/leaflet-providers.min.js"></script>
+  <!-- photo-map -->
+  <link rel="stylesheet" href="/assets/legacy/leaflet-photo/Leaflet.Photo.css" />
+  <link rel="stylesheet" href="/assets/legacy/leaflet-photo/thematic-mapping-map.css" />
+  <script src="/assets/legacy/leaflet-photo/reqwest.js"></script>
+  <script src="/assets/legacy/leaflet-photo/Leaflet.Photo.js"></script> 
+style: >-
+
+    /*custom page styles*/
+    #map {
+      height: 580px;
+      margin-bottom: 2rem;
+      width: 100%;
+      border: 1px solid #ddd;
+    }
+
+    .leaflet-touch .leaflet-control-layers,
+    .leaflet-touch .leaflet-bar {
+      border: 2px solid rgba(0, 0, 0, 0.2);
+    }
 ---
+
 **Update October, 2018** This map originally used Google's Picasa Web API, but this will [soon be shut down](https://developers.google.com/picasa-web/). Instead of migrating to another Google service, I simply extracted the EXIF data from the photos ([using this tool](http://www.br-software.com/extracter.html)). The resulting csv was converted to json, which worked as a drop-in replacement for former Picasa feed.
 
-<div id="map">
-</div>
+<div id="map"></div>
+
+This is an example of the [Leaflet.Photo](https://github.com/turban/Leaflet.Photo) plugin, based almost entirely on Bjørn Sandvik's post [here](http://blog.thematicmapping.org/2014/08/showing-geotagged-photos-on-leaflet-map.html). I did add a tweak that adjusts the photo when opened to a percentage of the size of the map div, but other than that I followed his example and the result is really cool. These are photos long since forgotten, of a trip my family took out west back in 1985. Most of the pictures were taken with a Kodak Disc 4000, or a similar model. Sod houses, the Lower Falls, Mount Rushmore, buffalo...it's all here.
+
 <script>
 
 /*map*/
@@ -39,11 +62,6 @@ css: >-
   /*5/46.408/-100.811*/
 	var hash = L.hash(map);
 /*tiles*/
-	var esritopo = L.tileLayer('http://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}', {
-		attribution: 'Tiles &copy; Esri &mdash; Esri, DeLorme, NAVTEQ, TomTom, Intermap, iPC, USGS, FAO, NPS, NRCAN, GeoBase, Kadaster NL, Ordnance Survey, Esri Japan, METI, Esri China (Hong Kong), and the GIS User Community'
-		});
-
-	var toner = new L.StamenTileLayer("toner");
 
 	var cdb = L.tileLayer('http://a.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
 	        attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> ' +
@@ -53,8 +71,6 @@ css: >-
   	}).addTo(map);
 /*controls*/
 	var baseMaps = {
-		"Contrast": toner,
-		"Topo": esritopo,
 		"Light": cdb
 	};
 
@@ -95,15 +111,8 @@ css: >-
 					thumbnail: url + data[i].image
 				});
 		}
-			L.control.navbar().addTo(map);
 			photoLayer.add(photos).addTo(map);
 		}
 	});
 
 </script>
-
-This is an example of the [Leaflet.Photo](https://github.com/turban/Leaflet.Photo) plugin, based almost entirely on Bjørn Sandvik's post [here](http://blog.thematicmapping.org/2014/08/showing-geotagged-photos-on-leaflet-map.html). I did add a tweak that adjusts the photo when opened to a percentage of the size of the map div, but other than that I followed his example and the result is really cool. These are photos long since forgotten, of a trip my family took out west back in 1985. Most of the pictures were taken with a Kodak Disc 4000, or a similar model. Sod houses, the Lower Falls, Mount Rushmore, buffalo...it's all here.
-
-
-<!--https://picasaweb.google.com/data/feed/base/user/103469053044045468318/albumid/6170973282606682673?alt=rss&kind=photo&hl=en_US-->
-<!--https://picasaweb.google.com/103469053044045468318/Picasa?authuser=0&authkey=Gv1sRgCPzEjLbb4-aHdw&feat=directlink-->
