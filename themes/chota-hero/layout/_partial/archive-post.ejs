@@ -1,8 +1,14 @@
 <article class="post-archive archive-article archive-type-<%= post.layout %>">
   <div class="archive-article-inner">
     <header class="archive-article-header">
-      <!--<%- partial('post/date', {class_name: 'archive-article-date', date_format: 'MMM D'}) %>-->
-      <%- partial('post/title', {class_name: 'archive-article-title'}) %>
+      <%- partial('post/header', {class_name: 'archive-article-title'}) %>
+      <% if (post.slides) { %>
+      <div>
+        <iframe src="<%- post.slides %>" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true" width="100%" height="600" frameborder="0" style="border:solid thick #31353d;"></iframe>
+      </div>
+      <%}%>
+      <p><%- post.excerpt %></p>
+      <a href="<%-post.permalink %>" style="font-size:1.6rem;">Continue Reading...</a>
     </header>
   </div>
 </article>

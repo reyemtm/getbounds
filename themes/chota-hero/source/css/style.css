@@ -288,6 +288,9 @@ souurce: https://stackoverflow.com/questions/20544309/css-sliding-underline
 .zp-headline.zp-headline-dark {
   border-bottom: solid thick #31353d;
 }
+.zp-text-small {
+  font-size: 1.6rem;
+}
 /*FOOTER*/
 .footer {
   background: var(--color-dark);

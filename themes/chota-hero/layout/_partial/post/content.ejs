@@ -1,14 +1,11 @@
 <article id="<%= post.layout %>-<%= post.slug %>" class="article article-type-<%= post.layout %>" itemscope itemprop="blogPost">
   <div class="post">
-    <%- partial('post/gallery') %>
-    <% if (post.link || post.title){ %>
-      <header class="post-header">
-        <%- partial('post/title', {class_name: 'post-title'}) %>
-        <%- partial('post/date', {class_name: 'article-date', date_format: null}) %>
-        <br>
-        <%- partial('post/tag') %>
-      </header>
-    <% } %>
+    <%- partial('gallery') %>
+    <header class="post-header">
+      <% if (post.link || post.title){ %>
+      <%- partial('header', {class_name: 'archive-article-title'}) %>
+      <% } %>
+    </header>
     <div itemprop="articleBody">
       <% if (post.excerpt && index){ %>
         <%- post.excerpt %>
@@ -29,7 +26,7 @@
     <br><br>
     <footer>
       <% if (!index){ %>
-        <%- partial('post/nav') %>
+        <%- partial('nav') %>
       <% } %>
     </footer>
   </div>
