@@ -40,9 +40,11 @@ html, body {
 .container {
   padding: 4rem 0;
 }
-
 .row {
   margin-top: 2rem;
+}
+h1 {
+  font-size: 3em;
 }
 h1,h2,h3,h4
  {
@@ -208,17 +210,18 @@ souurce: https://stackoverflow.com/questions/20544309/css-sliding-underline
   padding: 2rem;
   min-height: 400px;
   box-shadow: none;
-  border: solid thin lightgray;
+  border: none;
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: stretch;
 }
 .card figure {
-  height: 240px;
+  height: 260px;
   margin: 0 0 2rem;
   background-position: center;
   background-size: cover;
+  border-radius: 3px;
 }
 /* TODO REMOVE Seciton if possible */
 .card section, .card p {

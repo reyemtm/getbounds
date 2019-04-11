@@ -35,7 +35,8 @@
   <!-- <% if(is_home()) {%>homepage<%}%> -->
   <div class=<% if(is_home()) {%>"hero"<%}else{%>"hero hero-post"<%}%> >
     <% if(is_home()){%>
-      <% site.posts.each(function(post) {%><% if (post.featured) {%>
+      <% site.posts.each(function(post) {%>
+        <% if (post.featured) {%>
         <img class="hidden" data-src="assets/img/<%- post.img %>" data-heading="<%- post.title %>" data-subtitle="<%- post.subtitle %>" data-link="<%- post.permalink %>">
         <%}%>
       <%})%>
@@ -44,9 +45,34 @@
       <p></p>
       <a href="#"><button type="button" class="button outline hero-link">Read More</button></a>
     </div>
-    <%}else{%>
+    <div class="hero-overlay"></div>
+    <%}%>
+    <% if (is_post()) {%>
       <img style="background-image:url('/assets/img/<%- (page.img) %>');">
     <%}%>
-    <div class="hero-overlay"></div>
+    <% if (is_tag()) {%>
+      <div class="container" style="height:100%;">
+        <div class="row" style="height:100%;">
+          <div class="col is-vertical-align is-horizontal-align">
+            <h1 style="color:white;"><%- titlecase(page.tag) %></h1>
+            <em id="archive-page" class="is-center text-light" style="position: absolute;top: 220px;font-size:1.6rem;"></em>
+          </div>
+        </div>
+      </div>
+    <%}%>
+    <% if (is_archive()) {%>
+      <div class="container" style="height:100%;">
+        <div class="row" style="height:100%;">
+          <div class="col is-center is-vertical-align">
+            <h1 class=" is-center" style="color:white;">Blog</h1>
+            <em id="archive-page" class="is-center text-light" style="position: absolute;top: 220px;font-size:1.6rem;"></em>
+          </div>
+        </div>
+      </div>
+    <%}%>
+    <% if (is_post()) {%>
+      <img style="background-image:url('/assets/img/<%- (page.img) %>');">
+      <div class="hero-overlay"></div>
+    <%}%>
   </div>
 </header>

@@ -1,17 +1,15 @@
 <div class="row">
   <% page.posts.each(function(post, i){ %>
+    <% var content = strip_html(post.content) %>
   <div class="col-6 col-6-md col-4-lg" >
     <div class="card">
       <header>
-        <figure style="background-image: url('/assets/img/<%- post.img %>');")>        </figure>
+        <a href="<%- post.permalink %>"><figure style="background-image: url('/assets/img/<%- post.img %>');")></figure></a>
         <h3><%- post.title %></h3>
-
+        <h5><%- post.subtitle %></h5>
+        <%- partial('post/date', {post: post, class_name: 'article-date', date_format: null}) %>
       </header>
-      <section>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-          dolore
-          magna aliqua. Ut enim ad minim veniam, quis nostrud exercit.</p>
-      </section>
+      <section><%- truncate(content, {length: 200, separator: ' '}) %></section>
       <footer class="">
         <a href="<%- post.permalink %>" class="button primary outline">Read More</a>
       </footer>
@@ -23,6 +21,6 @@
     &nbsp;
   </div>
   <div class="col">
-    <a href="/blog" class="zp-headline zp-headline-dashed"><span>More Posts</span></a>
+    <a href="/blog" class="zp-headline zp-headline-dashed"><span>Older Posts</span></a>
   </div>
 </div>
