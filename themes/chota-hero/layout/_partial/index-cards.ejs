@@ -5,9 +5,10 @@
     <div class="card">
       <header>
         <a href="<%- post.permalink %>"><figure style="background-image: url('/assets/img/<%- post.img %>');")></figure></a>
-        <h3><%- post.title %></h3>
+        <!-- <h3><%- post.title %></h3>
         <h5><%- post.subtitle %></h5>
-        <%- partial('post/date', {post: post, class_name: 'article-date', date_format: null}) %>
+        <%- partial('post/date', {post: post, class_name: 'article-date', date_format: null}) %> -->
+        <%- partial('post/header', {post: post, index: true}) %>
       </header>
       <section><%- truncate(content, {length: 200, separator: ' '}) %></section>
       <footer class="">

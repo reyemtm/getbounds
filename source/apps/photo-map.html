@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Photo Map</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/leaflet.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/leaflet.js"></script>
+  <!--Leaflet Hash via Mapbox CDN-->
+  <script src='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-hash/v0.2.1/leaflet-hash.js'></script>
+  <!--leaflet providers simplify adding tiled basemaps -->
+  <!-- photo-map -->
+  <script src="/apps-plugins/leaflet.markercluster.js"></script>
+  <script src="/apps-plugins/leaflet-photo/reqwest.js"></script>
+  <script src="/apps-plugins/leaflet-photo/Leaflet.Photo.js"></script>
+  <style>
+    html,
+    body,
+    #map {
+      height: 100%;
+      width: 100%;
+      padding: 0px;
+      margin: 0px;
+    }
+
+    .leaflet-cluster-anim .leaflet-marker-icon,
+    .leaflet-cluster-anim .leaflet-marker-shadow {
+      -webkit-transition: -webkit-transform 0.3s ease-out, opacity 0.3s ease-in;
+      -moz-transition: -moz-transform 0.3s ease-out, opacity 0.3s ease-in;
+      -o-transition: -o-transform 0.3s ease-out, opacity 0.3s ease-in;
+      transition: transform 0.3s ease-out, opacity 0.3s ease-in;
+    }
+
+    .marker-cluster-small {
+      background-color: rgba(181, 226, 140, 0.6);
+    }
+
+    .marker-cluster-small div {
+      background-color: rgba(110, 204, 57, 0.6);
+    }
+
+    .marker-cluster-medium {
+      background-color: rgba(241, 211, 87, 0.6);
+    }
+
+    .marker-cluster-medium div {
+      background-color: rgba(240, 194, 12, 0.6);
+    }
+
+    .marker-cluster-large {
+      background-color: rgba(253, 156, 115, 0.6);
+    }
+
+    .marker-cluster-large div {
+      background-color: rgba(241, 128, 23, 0.6);
+    }
+
+    /* IE 6-8 fallback colors */
+    .leaflet-oldie .marker-cluster-small {
+      background-color: rgb(181, 226, 140);
+    }
+
+    .leaflet-oldie .marker-cluster-small div {
+      background-color: rgb(110, 204, 57);
+    }
+
+    .leaflet-oldie .marker-cluster-medium {
+      background-color: rgb(241, 211, 87);
+    }
+
+    .leaflet-oldie .marker-cluster-medium div {
+      background-color: rgb(240, 194, 12);
+    }
+
+    .leaflet-oldie .marker-cluster-large {
+      background-color: rgb(253, 156, 115);
+    }
+
+    .leaflet-oldie .marker-cluster-large div {
+      background-color: rgb(241, 128, 23);
+    }
+
+    .marker-cluster {
+      background-clip: padding-box;
+      border-radius: 20px;
+    }
+
+    .marker-cluster div {
+      width: 30px;
+      height: 30px;
+      margin-left: 5px;
+      margin-top: 5px;
+
+      text-align: center;
+      border-radius: 15px;
+      font: 12px "Helvetica Neue", Arial, Helvetica, sans-serif;
+    }
+
+    .marker-cluster span {
+      line-height: 30px;
+    }
+  </style>
+  <link rel="stylesheet" href="/apps-plugins/leaflet-photo/Leaflet.Photo.css" />
+  <link rel="stylesheet" href="/apps-plugins/leaflet-photo/thematic-mapping-map.css" />
+
+</head>
+
+<body>
+  <div id="map"></div>
+  <script>
+    /*map*/
+    var map = L.map('map', {
+      maxZoom: 8,
+      sleep: true,
+      fullscreenControl: true
+      /*defaultExtentControl: true*/
+    });
+    map.setView([45.446, -100.928], 4);
+    /*5/46.408/-100.811*/
+    var hash = L.hash(map);
+    /*tiles*/
+
+    var cdb = L.tileLayer('http://a.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
+      attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> ' +
+        'contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">' +
+        'CC-BY-SA</a>. Tiles &copy; <a href="http://cartodb.com/attributions">' +
+        'CartoDB</a>'
+    }).addTo(map);
+    /*controls*/
+    var baseMaps = {
+      "Light": cdb
+    };
+
+    var lyrs = new L.control.layers(baseMaps).addTo(map);
+
+    /*photo layer*/
+    var photoLayer = L.photo.cluster({
+      spiderfyDistanceMultiplier: 2
+    }).on('click', function (evt) {
+      var photo = evt.layer.photo,
+        template = '<img src="{url}"/><p>{caption}</p>';
+      /*var w = (window.innerWidth > 0) ? window.innerWidth : screen.width;*/
+      var m = document.getElementById('map');
+      var w = m.scrollWidth;
+      var x = w * 0.5;
+
+      if (photo.video && (!!document.createElement('video').canPlayType(
+          'video/mp4; codecs=avc1.42E01E,mp4a.40.2'))) {
+        template = '<video autoplay controls poster="{url}"><source src="{video}" type="video/mp4"/></video>';
+      };
+
+      evt.layer.bindPopup(L.Util.template(template, photo), {
+        className: 'leaflet-popup-photo',
+        minWidth: x,
+        keepInView: true
+      }).openPopup();
+    });
+
+    reqwest({
+      url: '/data/leaflet-photo-map.json',
+      type: 'json',
+      success: function (data) {
+        var photos = [];
+        var url = '/assets/trip-out-west/';
+        for (var i = 0; i < data.length; i++) {
+          var photo = data[i];
+          photos.push({
+            lat: data[i].lat,
+            lng: data[i].lng,
+            url: url + data[i].image,
+            caption: data[i].title,
+            thumbnail: url + data[i].image
+          });
+        }
+        photoLayer.add(photos).addTo(map);
+      }
+    });
+  </script>
+
+</body>
+
+</html>
