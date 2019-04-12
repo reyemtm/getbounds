@@ -1,0 +1,17 @@
+{
+  "name": "chota-hero",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "chota": "^0.6.1",
+    "typeface-catamaran": "0.0.72",
+    "typeface-montserrat": "0.0.54"
+  }
+}

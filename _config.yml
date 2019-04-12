@@ -10,6 +10,8 @@
 # TODO [ ] fix all featured 
 # TODO [ ] fix index cards
 # TODO [ ] clean up all titles, dates and subtitles to be the same
+# TODO [ ] clean up img folder remove all unused images
+# TODO [ ] write missing posts
 
 
 # Hexo Configuration
@@ -108,3 +110,35 @@ excerpt:
   excerpt_excludes: []
   more_excludes: []
   hideWholePostExcerpts: true
+
+#Hexo All Minifier
+js_minifier:
+  enable: false
+  mangle: true
+  silent: false
+  output:
+  compress:
+  exclude: 
+
+#not working with @imports
+css_minifier:
+  enable: false
+  silent: false
+  exclude: 
+    - -*.min.js'
+
+#not working
+html_minifier:
+  enable: false
+  ignore_error: false
+  silent: false
+  exclude:
+
+image_minifier:
+  enable: false
+  interlaced: false
+  multipass: false
+  optimizationLevel: 2
+  pngquant: false
+  progressive: false
+  silent: false

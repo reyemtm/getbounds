@@ -10,7 +10,7 @@
         <%- partial('post/date', {post: post, class_name: 'article-date', date_format: null}) %> -->
         <%- partial('post/header', {post: post, index: true}) %>
       </header>
-      <section><%- truncate(content, {length: 200, separator: ' '}) %></section>
+      <!-- <section><%- truncate(content, {length: 200, separator: ' '}) %></section> -->
       <footer class="">
         <a href="<%- post.permalink %>" class="button primary outline">Read More</a>
       </footer>

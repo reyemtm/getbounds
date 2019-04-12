@@ -6,12 +6,11 @@
 <% } else if (post.title){ %>
   <% if (index){ %>
     <!--index-->
-    <h2 itemprop="name" class="post-title">
-      <a href="<%- post.permalink %>"><%- post.title %></a>
-    </h2>
-    <%- partial('date', {class_name: 'article-date', date_format: null}) %>
-    <br>
-    <%- partial('tag') %>
+    <a href="<%- post.permalink %>" class="post-title">
+        <h2 itemprop="name" class="post-title"><%- post.title %></h2>
+        <h4><%- post.subtitle %></h4>
+        <%- partial('date', {class_name: 'article-date', date_format: null}) %>
+    </a>
   <% } else { %>
     <!--else-->
     <h2 itemprop="name" class="post-title"><%- post.title %></h2>
