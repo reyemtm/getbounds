@@ -83,7 +83,7 @@ div.slide-container {
 div.slide {
   box-sizing: border-box;
   cursor: pointer;
-  cursor: hand;
+  cursor: pointer;
   padding: 4%;
 }
 

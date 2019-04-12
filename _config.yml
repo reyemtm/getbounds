@@ -44,8 +44,11 @@ category_dir: categories
 i18n_dir: :lang
 skip_render: 
  - apps/**/*.*
- - apps-plugins/**/*.*
+ - apps-plugins/**
  - data/**/*.*
+ - js/**/*.*
+ - css/**/*.*
+ - "**/*.js"
 
 # Writing
 new_post_name: :year-:month-:day-:title.md # File name of new posts
@@ -111,34 +114,10 @@ excerpt:
   more_excludes: []
   hideWholePostExcerpts: true
 
-#Hexo All Minifier
-js_minifier:
-  enable: false
-  mangle: true
-  silent: false
-  output:
-  compress:
-  exclude: 
-
-#not working with @imports
-css_minifier:
-  enable: false
-  silent: false
-  exclude: 
-    - -*.min.js'
-
-#not working
-html_minifier:
-  enable: false
-  ignore_error: false
-  silent: false
-  exclude:
-
-image_minifier:
-  enable: false
+imagemin:
+  enable: true
   interlaced: false
   multipass: false
-  optimizationLevel: 2
-  pngquant: false
-  progressive: false
-  silent: false
+  optimizationLevel: 7
+  pngquant: true
+  progressive: true

@@ -13,9 +13,12 @@
     </a>
   <% } else { %>
     <!--else-->
-    <h2 itemprop="name" class="post-title"><%- post.title %></h2>
-    <%- partial('date', {class_name: 'article-date', date_format: null}) %>
-    <br>
-    <%- partial('tag') %>
+    <div class="post-title">
+        <h2 itemprop="name"><%- post.title %></h2>
+        <h4><%- post.subtitle %></h4>
+        <%- partial('date', {class_name: 'article-date', date_format: null}) %>
+        <br>
+        <%- partial('tag') %>
+    </div>
   <% } %>
 <% } %>

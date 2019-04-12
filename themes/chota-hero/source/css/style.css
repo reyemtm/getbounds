@@ -1,6 +1,6 @@
 /* @import "chota.css"; */
 @import "chota.css";
-@import "montserrat/Montserrat.css";
+/* @import "montserrat/Montserrat.css"; */
 @import "catamaran/catamaran.css";
 /*! chota.css v0.6.1 | MIT License | github.com/jenil/chota */
 
@@ -15,7 +15,7 @@
   --grid-maxWidth: 180rem;
   --grid-gutter: 4rem;
   --font-size: 2rem;
-  --font-family-headings: "Montserrat"-apple-system, BlinkMacSystemFont, Avenir, "Avenir Next",
+  --font-family-headings: "Catamaran",-apple-system, BlinkMacSystemFont, Avenir, "Avenir Next",
   "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
   "Droid Sans", "Helvetica Neue", sans-serif;
   --font-weight: 300; /*added*/
@@ -74,8 +74,8 @@ button, .button {
 }
 blockquote {
  border-left: 3px solid var(--color-primary);
- font-family: Montserrat, "sans-serif";
- font-weight: 600;
+ font-family: var(--font-family-headings);
+ font-weight: 500;
 }
 blockquote p {
   margin: 0;
@@ -85,6 +85,9 @@ blockquote p {
 }
 a:hover:not(.button) {
   opacity: 1;
+}
+table {
+  table-layout: fixed;
 }
 @media screen and (max-width: 768px) {
   .container {
@@ -123,7 +126,7 @@ pre {
   }
   .nav-top .nav-right {
     position: absolute;
-    top: 5rem;
+    top: 6rem;
     left: 0;
     width: 100%;
   }
@@ -181,6 +184,7 @@ souurce: https://stackoverflow.com/questions/20544309/css-sliding-underline
   filter: brightness(75%);
   background-size: cover;
   background-repeat: no-repeat;
+  background-position: center;
 }
 .hero-text {
   position: absolute;
@@ -250,7 +254,7 @@ souurce: https://stackoverflow.com/questions/20544309/css-sliding-underline
   margin: 0 0 2rem;
   color: inherit
 }
-.post-title:hover, .post-title:focus {
+a.post-title:hover, a.post-title:focus {
   color: var(--color-primary);
 }
 .post-title h4, .post-title h2 {

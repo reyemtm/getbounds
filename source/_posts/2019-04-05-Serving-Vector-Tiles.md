@@ -7,5 +7,5 @@ tags:
  - mapbox
  - vector tiles
 featured: true
-img: serving-vector-tiles.png
+img: serving-vector-tiles.jpg
 ---

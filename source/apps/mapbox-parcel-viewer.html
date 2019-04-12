@@ -1,0 +1,800 @@
+
+
+<!DOCTYPE html>
+<!--
+  Material Design Lite
+  Copyright 2015 Google Inc. All rights reserved.
+
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+      https://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+  <title>Mapbox Parcel Viewer</title>
+  <meta name="description" content="Vector Tiles Testing">
+  <meta name="keywords" content="mapboxglmaps OVRDC Ohio Valley Regional Development Commission RTPO Transportation">
+  <meta name="author" content="OVRDC">
+  <!-- Add to homescreen for Chrome on Android -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <link rel="shortcut icon" href="https://www.ovrdc.org/apps/assets/images/favicon.png">
+  <!--meta content and open graph tags for social sharing see _includes/metal.html-->
+  <title>Mapbox Parcel Viewer | OVRDC</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@ovrdc">
+  <meta name="twitter:creator" content="@ovrdc">
+  <meta name="twitter:title" content="Mapbox Parcel Viewer">
+  <meta name="twitter:description" content="Vector Tiles Testing">
+  <meta name="twitter:domain" content="www.ovrdc.org" />
+  <meta name="twitter:image" content="https://www.ovrdc.org/apps/assets/post-images/large/parcels.png" />
+  <!--Open Graph meta data-->
+  <meta property="og:title" content="Mapbox Parcel Viewer" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="" />
+  <meta property="og:image" content="https://www.ovrdc.org/apps/assets/post-images/landscape/parcels.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="627" />
+  <meta property="og:image" content="https://www.ovrdc.org/apps/assets/post-images/large/parcels.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="1200" />
+  <meta property="og:description" content="Vector Tiles Testing" />
+  <meta property="og:url" content="https://www.ovrdc.org/apps/mapbox-parcel-viewer.html" />
+  <!--end meta and open graph-->
+
+  <!--Material Design-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat|Open+Sans" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.cyan-light_blue.min.css" />
+  <link rel="stylesheet" href="https://www.ovrdc.org/apps/assets/material/mdl-dashboard-styles.css">
+  <!--Type of mapping API to use for the post used instead of page.style as in the map layout-->
+    
+  <!-- mapboxgl -->
+  <link rel="stylesheet" href="https://api.tiles.mapbox.com/mapbox-gl-js/v0.42.2/mapbox-gl.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/feature.js/1.0.1/feature.min.js"></script><script src="https://api.tiles.mapbox.com/mapbox-gl-js/v0.42.2/mapbox-gl.js"></script>
+
+  <!--map plugins-->
+    
+  <!-- jsonsearch -->
+  <script src="https://www.ovrdc.org/apps/assets/cssjs/simplejekyllsearch/search.min.js"></script>
+
+  <!--end plugins-->
+  <script>mapboxgl.accessToken = 'pk.eyJ1Ijoib3ZyZGMiLCJhIjoiY2plcjJ4MWZ5MGNqcDJ3bXZ3eDQ0N2tkMSJ9.w1q6j-h3nR6meHk4Ky8PTA'</script>
+  <link href='https://www.ovrdc.org/apps/assets/material/ovrdc-mapbox-mdl-dashboard-styles.css' rel='stylesheet' />
+  <link href='https://www.ovrdc.org/apps/assets/mapboxgl/openmaptiles/fa-cc.css' rel='stylesheet' />
+</head>
+<style>.mapboxgl-canvas-container.mapboxgl-interactive, .mapboxgl-ctrl-nav-compass{cursor:pointer;}
+</style>
+<body>
+<!--Start Post Content-->
+
+<!--div class="demo-layout-transparent mdl-layout mdl-js-layout">
+  <header class="mdl-layout__header mdl-layout__header--transparent">
+    <div class="mdl-layout__header-row">
+      <span class="mdl-layout-title">Vehicle Accident Statistics 2013-2015</span>
+      <div class="mdl-layout-spacer"></div>
+      <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" id="hdrbtn">
+        <i class="material-icons">more_vert</i>
+      </button>
+      <ul class="mdl-menu mdl-js-menu mdl-js-ripple-effect mdl-menu--bottom-right" for="hdrbtn">
+        <li class="mdl-menu__item">About</li>
+        <li class="mdl-menu__item">Contact</li>
+        <li class="mdl-menu__item">Legal information</li>
+      </ul>
+    </div>
+  </header-->
+<div class="demo-layout mdl-layout mdl-js-layout mdl-layout--fixed-drawer">
+  <div class="demo-drawer mdl-layout__drawer mdl-color--blue-grey-900 mdl-color-text--blue-grey-50">
+    <header class="demo-drawer-header">
+      <div id="map-title"><h4>Mapbox Parcel Viewer</h4></div>
+      <div class="demo-avatar-dropdown">
+        <span class="mdl-color-text--grey-600">OVRDC Web Links</span>
+        <div class="mdl-layout-spacer"></div>
+        <button id="accbtn" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+          <i class="material-icons" role="presentation">arrow_drop_down</i>
+          <span class="visuallyhidden">Accounts</span>
+        </button>
+        <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="accbtn">
+          <li class="mdl-menu__item"><a href="/">OVRDC Homepage</a></li>
+          <li class="mdl-menu__item"><a href="/gis/maps">OVRDC Map Gallery</a></li>
+        </ul>
+      </div>
+    </header>
+    <div style="height:2px;">
+      <div id="map-line--loading" class="mdl-progress mdl-js-progress mdl-progress__indeterminate" style="height:2px;display:none;"></div>
+    </div>
+    <nav class="demo-navigation mdl-navigation mdl-color--blue-grey-800">
+      <!--a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">home</i>Home</a-->
+      <div id="map-controls">
+        
+        
+        <h6 class="mdl-color-text--primary mdl-typography--text-center mdl-typography--text-uppercase">Parcel Search</h6>
+        
+        <form action="#" id="map-controls--search">
+          <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
+            <label class="mdl-button mdl-js-button mdl-button--icon" for="map-controls--search-input">
+              <i class="material-icons">search</i>
+            </label>
+            <div class="mdl-textfield__expandable-holder">
+              <input class="mdl-textfield__input" type="search" id="map-controls--search-input">
+              <label class="mdl-textfield__label" for="map-controls--search-input">Expandable Input</label>
+            </div>
+          </div>
+        </form>
+        <ul id="map-controls--search-results">
+        </ul>
+        <div class="mdl-layout-spacer">&nbsp;</div>
+        
+        <div id="map-controls--filters">
+          <div id="map-controls--data"></div>
+        </div><!--end map filters-->
+        
+      </div>
+      <div class="mdl-layout-spacer">&nbsp;</div>
+      <!-- picture button-->
+
+      <!--ABout this Map Card-->
+      <div class="map-drawer--footer">
+        <div class="mdl-typography--text-center mdl-color--blue-grey-900">
+          <a type="button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--primary" href="https://docs.google.com/forms/d/e/1FAIpQLSd53cAsweLYkkr75KUpN6lHpsQcKbV9XoRNtJEsFsUHdVIVuw/viewform?entry.1286129613&entry.2022340261&entry.519867356=https://www.ovrdc.org/apps/mapbox-parcel-viewer.html" target="_blank"><i class="material-icons">message</i></a>
+          </a>
+          <button id="map-image-btn" type="button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--primary">
+              <i class="material-icons">wallpaper</i>
+          </button>
+          <button id="map-share-btn" type="button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--primary">
+              <i class="material-icons">share</i>
+          </button>
+          <button id="map-about-btn" type="button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--primary">
+              <i class="material-icons">info_outline</i>
+          </button>
+        </div>
+      </div>
+      <!-- Square Card Hidden-->
+      <div id="map-about--card" class="mdl-card mdl-shadow--2dp">
+        <div class="mdl-card__menu">
+          <button class="map-about--card-close mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect mdl-button--colored">
+            <i class="material-icons">close</i>
+          </button>
+        </div>
+        <!--div class="mdl-card__title mdl-card--expand">
+
+        </div-->
+        <div class="mdl-card__supporting-text">
+        <h1 class="mdl-card__title-text">About this Map</h1><br />
+          <div id="map-about--txt"><p>
+  Test of using a <a href="https://m.do.co/c/dae6fb31f590" target="_blank"><strong>$10/mo</strong></a> vector tiles <a href="https://github.com/tobinbradley/mbtiles-server" target="_blank">NodeJS server</a> server to host parcel data for a county wide parcel map. Since the parcel vector tiles are being pushed to the client by the server, there is no size limit on the number of features for the parcel layer, or any other layer. For this map, <a href="http://osm2vectortiles.org/" target="_blank">the entire basemap</a> as well as the parcels are being served as vector tiles by NodeJS. These vector tiles can also be dynamically styled client-side.
+</p> <p>
+  The search function is provided by a client-side script and the loading of a json file containing parcel attribute data and a unique key. This could be adapted to NodeJS as well to run server-side for larger counties.
+</p> <p>
+  Zoom in to see the parcels.
+</p></div>
+        </div>
+        <div class="map-about--card-close mdl-card__actions mdl-card--border">
+          <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+            Close
+          </a>
+        </div>
+      </div>
+      <!--a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">help_outline</i><span class="visuallyhidden">Help</span></a-->
+    </nav>
+  </div>
+  
+  <div id="map-layer--info-box" class="mdl-cell mdl-card mdl-shadow--3dp">
+    <div class="mdl-card__title">
+       <span class="mdl-card__title-text">Parcel Details</span>
+    </div>
+    <div id="map-layer--info-txt" class="mdl-card__supporting-text mdl-typography--font-light mdl-typography--subhead"></div>
+    <div id="map-layer--info-footer" class="mdl-card__actions mdl-card--border" style="display:none;">
+    </div>
+    <div class="mdl-card__menu">
+      <button id="card01close" class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
+        <i class="material-icons">close</i>
+      </button>
+    </div>
+  </div>
+  
+  <main id="mdl_main" class="mdl-layout__content mdl-color--grey-100">
+    <!--div class="mdl-grid demo-content"></div-->
+    <div>
+      <div id="map-snackbar" class="mdl-js-snackbar mdl-snackbar">
+        <div class="mdl-snackbar__text"></div>
+        <button class="mdl-snackbar__action" type="button"></button>
+      </div>
+    </div>
+    <div id="map">
+      <div id="map-loading">
+        <div class="mdl-spinner mdl-js-spinner is-active"></div>
+      </div>
+      <!--move to map script?-->
+      
+      <div id="map-baselayers--container">
+        <button class="mdl-button mdl-js-button mdl-button--icon mdl-js-ripple-effect" id="map-baselayers">
+          <i class="material-icons">layers</i>
+        </button>
+        <ul id="map-baselayers--menu" class="mdl-menu mdl-js-menu mdl-js-ripple-effect mdl-menu--bottom-right" for="map-baselayers">
+          <li id="osm-bright" class="baselayer mdl-menu__item">Streets Basic</li>
+          <li id="positron" class="baselayer mdl-menu__item">Streets Light</li>
+          <li id="dark-matter" class="baselayer mdl-menu__item">Streets Dark</li>
+          <li id="mapbox-satellite-streets" class="baselayer mdl-menu__item">Satellite</li>
+        </ul>
+      </div>
+      <!-- Attribution move to an include? -->
+      <!--div id="attribution-container">
+        <span id="attribution" class="mdl-tooltip--left"><a href="http://www.ovrdc.org/gis/">© OVRDC</a>&nbsp;<a href="http://www.openstreetmap.org/about/" target="_blank">© OpenStreetMap</a> | Powered by <a href="https://www.mapbox.com/mapbox-gl-js/api/" target="_blank">Mapbox GL</a></span>
+        <button id="attribution-button" class="mdl-button mdl-js-button mdl-button--icon mdl-button--colored mdl-js-ripple-effect">
+          <i class="material-icons">info</i>
+        </button>
+      </div-->
+      <!-- end attribution-->
+      <div id="map-legend" class="mdl-color--blue-grey-900 mdl-color-text-blue-grey-50" style="display:none;"></div>
+    </div>
+    <!--mapillary viewer-->
+    <div id="mly"></div>
+  </main>
+  <div id="map-about-modal" class="ovrdc-modal">
+    <div class="ovrdc-modal-inner">
+      <div class="mdl-card mdl-shadow--2dp">
+        <div class="mdl-card__title mdl-card--expand">
+          <h2 class="mdl-card__title-text">Mapbox Parcel Viewer</h2>
+        </div>
+        <div class="mdl-card__supporting-text"><p>
+  Test of using a <a href="https://m.do.co/c/dae6fb31f590" target="_blank"><strong>$10/mo</strong></a> vector tiles <a href="https://github.com/tobinbradley/mbtiles-server" target="_blank">NodeJS server</a> server to host parcel data for a county wide parcel map. Since the parcel vector tiles are being pushed to the client by the server, there is no size limit on the number of features for the parcel layer, or any other layer. For this map, <a href="http://osm2vectortiles.org/" target="_blank">the entire basemap</a> as well as the parcels are being served as vector tiles by NodeJS. These vector tiles can also be dynamically styled client-side.
+</p> <p>
+  The search function is provided by a client-side script and the loading of a json file containing parcel attribute data and a unique key. This could be adapted to NodeJS as well to run server-side for larger counties.
+</p> <p>
+  Zoom in to see the parcels.
+</p></div>
+        <div class="mdl-card__actions mdl-card--border">
+          <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect ovrdc-modal--close">
+            Close
+          </a>
+        </div>
+        <div class="mdl-card__menu">
+          <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect ovrdc-modal--close">
+            <i class="material-icons">close</i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="map-image-modal" class="ovrdc-modal">
+    <div class="ovrdc-modal-inner">
+      <div class="mdl-card mdl-shadow--2dp">
+        <div class="mdl-card__title">
+          <span id="map-image"></span>
+        </div>
+        <div class="mdl-card__actions mdl-card--border">
+          <button id="map-image-href" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">Download Placeholder</button>
+          <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect ovrdc-modal--close" style="float:right;">
+            Close
+          </a>
+        </div>
+        <div class="mdl-card__menu">
+          <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect ovrdc-modal--close">
+            <i class="material-icons">close</i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="map-share-modal" class="ovrdc-modal">
+    <div class="ovrdc-modal-inner">
+      <div class="mdl-card mdl-shadow--2dp">
+        <div class="mdl-card__title mdl-card--expand">
+          <h2 class="mdl-card__title-text">Share this Map</h2>
+        </div>
+        <div class="mdl-card__supporting-text">
+          <div class="map-share-buttons">
+            <a href="//www.facebook.com/sharer.php?u=https://www.ovrdc.org/apps/mapbox-parcel-viewer.html&amp;t=Mapbox%20Parcel%20Viewer"
+            target="_blank" class="mdl-button mdl-js-button mdl-button--raised" style="background-color:#4867b4;">
+              facebook
+            </a>
+            <a class="mdl-button mdl-js-button mdl-button--raised"  style="background-color:#5db4f7;" href="//twitter.com/intent/tweet?status=Mapbox%20Parcel%20Viewer https://www.ovrdc.org/apps/mapbox-parcel-viewer.html"
+            target="_blank">Twitter</a>
+            <a class="mdl-button mdl-js-button mdl-button--raised" style="background-color:#b50015;" href="//www.pinterest.com/pin/create/button/?url=https://www.ovrdc.org/apps/mapbox-parcel-viewer.html&amp;media=https://www.ovrdc.org/apps/assets/post-images/large/parcels.png&amp;description=Mapbox Parcel Viewer"
+            target="_blank">Pinterest</a>
+          </div>
+          <div>
+            <h5>Embed Code</h5>
+            <form action="#">
+              <div class="mdl-textfield mdl-js-textfield map-share-embed" style="padding:0;border:1px solid rgba(0,0,0,.12);padding:10px;">
+                <input class="mdl-textfield__input" style="border-bottom:none;type="text" value="<iframe src='https://www.ovrdc.org/apps/mapbox-parcel-viewer.html' width='800px' height='600px' frameborder=none></iframe>" >
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="mdl-card__actions mdl-card--border">
+          <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect ovrdc-modal--close">
+            Close
+          </a>
+        </div>
+        <div class="mdl-card__menu">
+          <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect ovrdc-modal--close">
+            <i class="material-icons">close</i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+var getQuery = function(q) {
+  if (q) {
+    var params = {},
+      queries, temp, i, l;
+    /* Split into key/value pairs*/
+    queries = q.split("&");
+    /* Convert the array of strings into an object*/
+    for (i = 0, l = queries.length; i < l; i++) {
+      temp = queries[i].split('=');
+      params[temp[0]] = temp[1];
+    }
+    return params;
+  }
+};
+var query = getQuery((window.location.search).substring(1));
+if (query) {
+  var debug = query.debug;
+}else{var debug = false}
+if(debug === "true"){}else{
+  if(!window.console) window.console = {};
+  var methods = ["log", "debug", "warn", "info"];
+  for(var i=0;i<methods.length;i++){
+    console[methods[i]] = function(){};
+  }
+}
+$("#map-loading").show();
+var debug = false;
+if (window.location.search.indexOf('debug=1') > -1) {
+  debug = true;
+  console.log('debuggin on')
+}
+if ( !feature.webGL || !mapboxgl.supported()) {
+    alert('Please upgrade to a modern browser. Your current browser does not support the advanced features of of this map. OVRDC recommends Chrome.');
+} else {
+  //--------------------//
+  //start mpabox gl
+  //--------------------//
+  var view = {center: [-82.9307, 38.7876], zoom: 13, bearing: 0, pitch: 0, speed: 0.5, curve: 0.5};
+  var map = new mapboxgl.Map({
+      container: 'map', // container id
+      style: 'mapbox://styles/mapbox/dark-v9',
+      attributionControl: true,
+      pitch: 0, // pitch in degrees
+      bearing: 0, // bearing in degrees
+      center: [-82.9307, 38.7876], // starting position
+      zoom: 12,
+      //debug: true,
+      hash: true,
+      maxZoom: 18,
+      minZoom: 12,
+      maxBounds: [[-86.61, 36.63], [-75.89, 41.94]]
+  });
+  var nav = new mapboxgl.NavigationControl({position: 'top-right'}); // position is optional
+  map.addControl(nav);
+  var parcelLayer, parcelsOutline, fs, feature, filterValue, previousFilterValue, point, x, highlightLayer;
+  var searchFound = false;
+  var flown = false;
+  var filter = "";
+  var moved = false;
+  var y = 1;
+  map.on('load', function () {
+    /*setTimeout(function() {
+      map.flyTo(view);
+    }, 800);*/
+    buildMap();
+  });
+  //var attribution = new mapboxgl.AttributionControl({position: 'bottom-left'});
+  //attribution.addTo(map);
+  function buildMap() {
+    //--------------------//
+    //start build map function
+    //--------------------//
+    if(!map.getSource('parcels')) {
+      map.addSource('parcels', {
+        "type": "vector",
+        "url": "mapbox://ovrdc.9h65l843"
+      });
+    }
+    parcelLayer = {
+        "id": "parcelLayer",
+        "type": "fill",
+        "source": "parcels",
+        "source-layer": "sci-parcels-geojson-79v4aw",
+        "layout": {
+          "visibility": "visible"
+        },
+        "paint": {
+          "fill-outline-color": "orange",
+          "fill-color": "orange",
+          "fill-opacity": 0.3
+        },
+        "interactive": true,
+    };
+    /*parcelsOutline = {
+        "id": "parcelsOutline",
+        "type": "line",
+        "source": "parcels",
+        "source-layer": "sciparcelsgeojson",
+        "layout": {
+          "visibility": "visible"
+        },
+        "paint": {
+          "line-color": "orange",
+          "line-opacity": 0.3,
+          "line-width": 1
+        },
+        "interactive": false,
+    };*/
+    highlightLayer = {
+        "id": "highlightLayer",
+        "type": "line",
+        "source": "parcels",
+        "source-layer": "sci-parcels-geojson-79v4aw",
+        "layout": {
+          "visibility": "visible"
+        },
+        "paint": {
+          "line-color":"red",
+          "line-width": 4
+        },
+        "interactive": false,
+        "filter": ["==", "Shape_Leng", ""]
+    };
+    map.addLayer(parcelLayer);
+    //map.addLayer(parcelsOutline, 'waterway_name');
+    map.addLayer(highlightLayer);
+    $("#map-loading").hide();
+  }//end build map function
+  /*baselayer switcher see _includes/mapboxgl/baselayer-switcher.js*/
+//Need to put an improve this map here so that it gives a direct link to osm edit page
+function switchLayer(layer) {
+  console.log(layer.target);
+  console.log('getting current style')
+  var currentStyle = [map.getStyle()];
+  var str = currentStyle[0].name;
+  str = str.replace(/\s+/g, '-').toLowerCase();
+  console.log("current style: " + str);
+  var layerId = layer.target.id;
+  console.log("new style: " + layerId);
+  //check if the current style is the same as the clicked style - this means that the style name in the json must match the id of the clicked layer in the material-mapbox template
+  if (str != layerId) {
+    if (layerId == 'mapbox-satellite-streets') {
+      map.setStyle('mapbox://styles/mapbox/satellite-streets-v10');
+      //$('#attribution').append('&nbsp<a href="https://www.mapbox.com/about/maps/" target="_blank">© Mapbox</a> <a href="https://www.digitalglobe.com/" target="_blank">© DigitalGlobe</a>&nbsp;Powered by <a href="https://www.mapbox.com/mapbox-gl-js/api/" target="_blank">Mapbox GL</a>');
+    }else{
+      map.setStyle('https://tileserver.ovrdc.org/tileserver-styles/styles/' + layerId + '/style.json');
+      //$('#attribution').html('<a href="http://www.ovrdc.org/gis/">© OVRDC</a>&nbsp;<a href="http://www.openstreetmap.org/about/" target="_blank">© OpenStreetMap</a>&nbsp;Powered by <a href="https://www.mapbox.com/mapbox-gl-js/api/" target="_blank">Mapbox GL</a>');
+    }
+    /*map.on('style.load', function() {
+      if (typeof(mglSources) != "undefined") {
+        for (source in mglSources) {
+          if (!map.getSource(source)) {
+            map.addSource(source, mglSources[source]);
+          }
+        }
+      }
+      if (typeof(mglLayers) != "undefined") {
+        for (layer in mglLayers) {
+          console.log(mglLayers[layer]);
+          console.log(map.getLayoutProperty(layer, 'visibility'));
+          if (map.getLayer(layer) && map.getLayoutProperty(layer, 'visibility') != 'none') {
+            console.log('adding layer: ', layer)
+            map.addLayer(mglLayers[layer])
+          }
+        }
+      }
+      map.off('style.load');
+    });*/
+  }
+}
+/*var layerList = document.getElementById('map-baselayers--menu');
+var inputs = layerList.getElementsByClassName('baselayer');
+for (var i = 0; i < inputs.length; i++) {
+  inputs[i].onclick = switchLayer;
+}*/
+$("#map-baselayers--menu").on('click', '.baselayer', switchLayer);
+//end baselayer-switcher
+  //need to build map after switching layers to get the overlays to show back up
+  map.on('style.load', function() {
+    if (debug == true) {console.log('style loaded')}
+    buildMap();
+  });
+  //start interaction handlers
+  //this allows when clicking on a search result to fly to that search result
+  //map.on('moveend', function() {flown = true});
+  map.on('click', function (e) {
+    if (debug == true) {console.log('clicked map');}
+    searchFound = false;
+    getInfo(e)
+  });
+  //get the feature to show in the popup and highlight
+  function getInfo(e) {
+    var e = e;
+    if (flown == true && searchFound == true && y == 1) {
+      console.log('waiting for tiles to be rendered-1');
+      setTimeout(function() {
+        console.log('waiting for tiles to be rendered');
+        getInfo(e)
+      }, 100);
+      return false
+    }
+    //console.log(e);
+    if (debug == true) {console.log("search result: " + searchFound);}
+    //if (debug = true) {console.log(e);
+    if (debug == true) {console.log(filterValue);}
+    if (searchFound == false) {
+      if (debug == true) {console.log("searchFound == false")}
+      var query = map.queryRenderedFeatures(e.point, {layers: ["parcelLayer"]});
+      //console.log(query)
+      showInfo(query, true)
+    }
+    if (searchFound == true && flown == true ) {
+      if (debug == true) {console.log("searchFound == true && flown == true")}
+      setTimeout(function() {
+        var query = map.querySourceFeatures("parcels", {sourceLayer: ["sci-parcels-geojson-79v4aw"], filter: ["==", "geoid", filter]});
+        showInfo(query, false);
+        $("#map-loading").hide();
+      },100);
+      flown = false
+      return false
+    }
+    if (searchFound == true && flown == false ) {
+      if (debug == true) {console.log("searchFound == true && flown == false")}
+      map.flyTo({center:e,zoom:14.6});
+      setTimeout(function() {
+        var query = map.querySourceFeatures("parcels", {sourceLayer: ["sci-parcels-geojson-79v4aw"], filter: ["==", "geoid", filter]});
+        showInfo(query, false);
+        $("#map-loading").hide();
+      },100);
+      return false
+    }
+  }
+  //show the highlight and popup
+  function showInfo(q, t) {
+    if (debug == true) {console.log(q);}
+    if (q.length) {
+      var feature = q[0];
+      var currentLayer = q[0].properties["Shape_Leng"];
+      var info = q[0].properties.NAME + "<br />" +  q[0].properties.DESCRIPT;
+      if (t === false) {
+        map.setFilter("highlightLayer", ["==", "Shape_Leng", q[0].properties["Shape_Leng"]]);
+      }
+      if (typeof map.getLayer('selectedLayer') !== "undefined") {
+        map.removeLayer('selectedLayer')
+        map.removeSource('selected');
+      }
+      if (t === true) {
+        map.setFilter("highlightLayer", ["==", "Shape_Leng", ""]);
+        map.addSource('selected', {
+          "type": "geojson",
+          "data": feature.toJSON()
+        });
+        map.addLayer({
+          "id": "selectedLayer",
+          "type": "line",
+          "source": "selected",
+          "layout": {
+            "visibility": "visible"
+          },
+          "paint": {
+            "line-color":"red",
+            "line-width": 4
+          },
+          "interactive": false,
+        });
+      }
+      setTimeout(function() {
+        $("#map-layer--info-txt").html(info);
+        if (!$("#map-layer--info-box").is("visible")) {
+          $("#map-layer--info-box").fadeIn('fast');
+          if ($(window).width() < 1025 && $(".mdl-layout__drawer").hasClass('is-visible')) {
+            $(".mdl-layout__drawer-button").click();
+          }
+        }
+        var closecard = document.getElementById('card01close');
+        closecard.addEventListener('click', function() {
+          $("#map-layer--info-box").fadeOut();
+          $("#map-controls--search-results").html("");
+          if (typeof map.getLayer('selectedLayer') !== "undefined") {
+            map.removeLayer('selectedLayer')
+            map.removeSource('selected');
+          }
+          map.setFilter("highlightLayer", ["==", "Shape_Leng", ""]);
+          $(".mdl-textfield__input").val("").parent().parent().removeClass('is-focused').removeClass('is-dirty');
+        });
+      }, 10);
+      return false;
+    }
+  }
+  //--------------------//
+  //start search function
+  //--------------------//
+  //initiate search function - see simple jekyll search assets/jsonsearch/search.js
+  SimpleJekyllSearch({
+    searchInput: document.getElementById('map-controls--search-input'),
+    resultsContainer: document.getElementById('map-controls--search-results'),
+    json: 'https://www.ovrdc.org/apps/assets/data/parcels/scioto/sci-parcels.csv.min.json',
+    searchResultTemplate: '<a href="#" id="{i}" data="{l}"><li>{n}<br />Parcel ID:&nbsp;{p}</li></a><hr />',
+    noResultsText: 'No results found',
+    limit: 50,
+    fuzzy: false,
+    exclude: ['Welcome']
+  });
+  $("#map-controls--search-results").on('click', 'a', function(event) {
+    if (debug == true) {console.log('clicked search result link')}
+    searchFound = true;
+    filterValue = $(this).attr("id");
+    filter = filterValue.toString();
+    var xyString = $(this).attr("data");
+    var xy = xyString.split(",");
+    point = [Number(xy[0]),Number(xy[1])];
+    if (debug == true) {console.log(point + ", geoid: " + filter + "," + filterValue + "," + searchFound);}
+    if (debug == true) {console.log('flown:' + flown)}
+    x = 0;
+    if (previousFilterValue != filterValue) {
+      if (debug == true) {console.log(1);}
+      map.flyTo({center:point,zoom:14.6});
+      $("#map-loading").show();
+      flown = true;
+      if (debug == true) {console.log('flying');}
+      previousFilterValue = filterValue;
+      map.on('zoomend', function() {
+        if (flown == true && searchFound == true && x == 0) {
+          if (debug == true) {console.log('flown: ' + flown);}
+          setTimeout(function() {
+            if (debug == true) {console.log('fire show popup')}
+            getInfo(point);
+          }, 10);
+        }
+        x = x + 1;
+      })
+      return false
+    }
+    if (previousFilterValue == filterValue && flown == false) {
+      if (debug == true) {console.log(2);}
+      if (debug == true) {console.log('flown:' + flown)}
+      getInfo(point);
+      return false
+    }
+    if (previousFilterValue == filterValue && flown == true) {
+      if (debug == true) {console.log(4);}
+      if (debug == true) {console.log('flown:' + flown)}
+      getInfo(point);
+      return false
+    }
+    event.preventDefault();
+  });
+  //--------------------//
+  //end search function
+  //--------------------//
+  var x = 0;
+  /*var y = 1;
+  map.on('data', function(e) {
+    if (debug == true) {
+      x = x + 1;
+      //(1,2,3,4,5);
+      console.log(x,y);
+      setTimeout(function() {
+      	y = y+1; //(2,3,4,5,6);
+        console.log('new y value: ' + y)
+        if (y > x) {
+        	console.log(y > x)
+        }
+    	}, 1000);
+    }
+  });*/
+}
+map.on('sourcedataloading', function(e) {
+  y = 1;
+  console.log('sourcedataloading');
+  var checkLoaded = setInterval(loaded, 100);
+  function loaded() {
+    if (map.getLayer('parcelLayer')) {
+      console.log('tiles loaded: ', map.areTilesLoaded());
+    }
+    if (map.areTilesLoaded()) {
+      y = 0;
+      window.clearInterval(checkLoaded);
+      console.log('tiles loaded: ', map.areTilesLoaded());
+    }
+  }
+});
+//--------------------//
+//end mapbox gl function
+//--------------------//
+</script>
+
+
+<script>
+var w = (window.innerWidth > 0) ? window.innerWidth : screen.width;
+console.log(w);
+if (w < 1024) {
+  sidebar = false;
+  var showSidebar = setInterval(function() {
+    console.log('checking sidebar');
+    if ($(".mdl-layout__drawer").hasClass('is-visible') && sidebar == true) {
+      clearInterval(showSidebar)
+      return false
+    }else{
+      $(".mdl-layout__drawer-button").click();
+      sidebar = true;
+    }
+  }, 500)
+}
+/*$(".map-about--card-close").click(function() {
+  $("#map-about--card").toggle();
+  $(".ovrdc-modal").fadeOut();
+});*/
+$("#map-about-btn").click(function() {
+  //$("#map-about--card").fadeIn();
+  $("#map-about-modal").fadeIn();
+});
+$("#map-share-btn").click(function() {
+  //$("#map-about--card").fadeIn();
+  $("#map-share-modal").fadeIn();
+});
+$(function() {
+  var windowUrl = window.location.href;
+  var feedbackUrl =  + windowUrl;
+  $("#map-feeback--btn-link").html('<a href="https://docs.google.com/forms/d/e/1FAIpQLSd53cAsweLYkkr75KUpN6lHpsQcKbV9XoRNtJEsFsUHdVIVuw/viewform?entry.1286129613&entry.2022340261&entry.519867356=' + feedbackUrl + '" target="_blank"><i class="material-icons">feedback</i></a>');
+});
+
+$(".search-close").on('click', function() {
+  console.log('click');
+  $("#map-controls--search-input").html("")
+});
+
+</script>
+
+<!--End Post Content-->
+<script>
+$().ready(function() {
+  setTimeout(function() {
+    $("#map-loading").hide();
+  }, 100);
+  $(".ovrdc-modal").on('click', '.ovrdc-modal--close', function() {
+    $(".ovrdc-modal").fadeOut();
+  });
+  /* image save function */
+  $("#map-image-btn").click(function() {
+    var blobUrl = map.getCanvas().toDataURL();
+    var imgcard = $("#ovrdc-modal--map-info .mdl-card");
+    var background = "url('" + blobUrl +  "')";
+    $("#map-image").html('<img src="data:image/jpg;' + blobUrl + '" width="100%"></img>');
+    /*if (typeof map.getLayer('selected') != "undefined") {
+      var selfeature = map.queryRenderedFeatures({'layers':['selected']});
+      var imgname =  "map";
+      console.log(imgname)
+    }else{
+      var imgname = 'map';
+    }*/
+    var imgname = 'map';
+    $("#map-image-href").html('<a href="data:image/png;' + blobUrl + '" download="' + imgname + '.png"><i class="material-icons">file_download</i> Download Image</a>')
+    $("#map-image-modal").fadeIn();
+  });
+  /* end image save function */
+});
+</script>
+<script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/numeral.js/1.4.5/numeral.min.js"></script>
+<script src="https://www.ovrdc.org/apps/assets/cssjs/spin.js"></script>
+<script src="https://www.ovrdc.org/apps/assets/cssjs/jquery-spin/jquery-spin.js"></script>
+</body>
+</html>

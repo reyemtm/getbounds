@@ -36,3 +36,13 @@
     </div>
   </div>
 </footer>
+<script>
+  <% if (config.highlight.enable){ %>
+  var link = document.createElement( "link" );
+  link.href = "//fonts.googleapis.com/css?family=Source+Code+Pro";
+  link.type = "text/css";
+  link.rel = "stylesheet";
+
+  document.getElementsByTagName( "head" )[0].appendChild( link );
+  <% } %>
+</script>

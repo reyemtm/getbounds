@@ -1,6 +1,6 @@
 <%- partial('_partial/head') %>
-<body>
-  <% if (page.layout === "slides") {%>
+<body class="<% if (page.theme) {%><%- page.theme %><%}else{%>light<%}%>">
+  <% if (page.layout === "slides" || page.layout === "big") {%>
     <%- body %>
   <%}else{%>
   <%- partial('_partial/nav.ejs') %>

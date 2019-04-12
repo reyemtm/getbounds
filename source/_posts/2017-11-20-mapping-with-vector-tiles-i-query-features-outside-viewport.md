@@ -11,7 +11,7 @@ description: >-
 tags:
   - mapbox
   - vector tiles
-img: parcel-wide@2x.png
+img: mapbox-parcel-viewer-web.jpg
 netlify-img: /images/post-img/original/mgl-parcels-01.png
 featured: true
 ---
