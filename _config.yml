@@ -12,6 +12,9 @@
 # TODO [ ] clean up all titles, dates and subtitles to be the same
 # TODO [x] clean up img folder remove all unused images
 # TODO [ ] write missing posts
+# TODO [ ] add alt text to all images
+# TODO [ ] add description to all pages via site.description
+# TODO [ ] add image to all pages via site.defaultimg
 
 
 # Hexo Configuration
@@ -21,15 +24,16 @@
 # Site
 title: ZeroSpatial
 subtitle:
-description:
-keywords:
-author: Malcolm Meyer
+description: "ZeroSpatial is a blog focusing on desktop and web-based geospatial applications. ZeroSpatial is maintained by Malcolm T Meyer."
+keywords: ["gis", "blog", "geospatial", "vector tiles", "mapbox", "leaflet", "web maps", "dataviz"]
+author: Malcolm T Meyer
 language: en
 timezone: America/New_York
+defaultimage: "serving-vector-tiles.jpg"
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: /
+url: https://www.zerospatial.com/
 root: /
 permalink: :category/:title/
 permalink_defaults:
@@ -58,7 +62,7 @@ external_link: true # Open external links in new tab
 filename_case: 0
 render_drafts: false
 post_asset_folder: false
-relative_link: true
+relative_link: false
 future: true
 highlight:
   enable: true
@@ -114,6 +118,7 @@ excerpt:
   more_excludes: []
   hideWholePostExcerpts: true
 
+#https://github.com/vseventer/hexo-imagemin - makes generating very slow
 imagemin:
   enable: false
   interlaced: false

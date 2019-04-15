@@ -1,13 +1,12 @@
 /* @import "chota.css"; */
-@import "chota.css";
+@import "./chota.css";
 /* @import "montserrat/Montserrat.css"; */
-@import "catamaran/catamaran.css";
+@import "./catamaran/catamaran.css";
 /*! chota.css v0.6.1 | MIT License | github.com/jenil/chota */
 
 :root {
   --color-primary: #6bbab5;
   /* --color-primary: #1c1d21; */
-
   --color-lightGrey: #bebec1;
   --color-grey: #445878;
   --color-dark: #1C1D21; /*added*/

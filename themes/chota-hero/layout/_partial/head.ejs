@@ -28,6 +28,7 @@
     fb_app_id: theme.fb_app_id,
     image: page.img
   }) %>
+  <% if (!page.img) {%><meta name="og:image" content="/img/<%- config.defaultimage %>"><%}%>
   <% if (theme.rss){ %>
     <link rel="alternate" href="<%= url_for(theme.rss) %>" title="<%= config.title %>" type="application/atom+xml">
   <% } %>
@@ -36,7 +37,7 @@
   <% } %>
   <% if (page.layout == "slides" || page.layout == "big") { %><%}else{%>
     <!-- default styles -->
-    <%- css('css/style') %><%}%>
+    <%- css('style') %><%}%>
   <% if (page.header) {%>
     <!-- page.header -->
   <%- page.header %>

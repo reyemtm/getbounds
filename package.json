@@ -5,6 +5,10 @@
   "hexo": {
     "version": "3.8.0"
   },
+  "scripts": {
+    "build": "parcel build themes/chota-hero/source/css/style.css --out-dir themes/chota-hero/source && hexo generate",
+    "start": "parcel build themes/chota-hero/source/css/style.css --out-dir themes/chota-hero/source && hexo s"
+  },
   "dependencies": {
     "bower": "^1.8.8",
     "chota": "^0.6.1",
@@ -19,6 +23,10 @@
     "hexo-renderer-marked": "^0.3.2",
     "hexo-renderer-stylus": "^0.3.3",
     "hexo-server": "^0.3.3",
-    "hexo-slides-reveal": "0.0.5"
+    "hexo-slides-reveal": "0.0.5",
+    "parcel-bundler": "^1.12.3"
+  },
+  "devDependencies": {
+    "cssnano": "^4.1.10"
   }
 }
