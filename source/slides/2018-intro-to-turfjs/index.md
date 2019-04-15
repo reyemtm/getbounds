@@ -138,34 +138,29 @@ header: >-
   <link rel="stylesheet" href="/css/mapbox-gl.css">
   <script src="/js/mapbox-bundle-min.js"></script>
 ---
-<div markdown="1" style="width:90%;margin:0 auto;">
+<div  style="width:90%;margin:0 auto;">
 ![](img/OhioGIS_Title_Page_2018.png)
 </div>
 
 <div class="emoji">👶👧👩
 </div>
 
-<div>
-What is <strong>TurfJS?</strong>
+<div>What is <strong>TurfJS?</strong>
 </div>
 
-<div>
-Advanced <strong>geospatial analysis</strong> for browsers and Node.js
+<div>Advanced <strong>geospatial analysis</strong> for browsers and Node.js
 </div>
 
-<div>
-<strong>Modular => </strong> 
+<div><strong>Modular => </strong> 
 Area, Bounding Box, Buffer, Grids, Intersect, Isolines, Length, Random, Sample, Voroni, Within...
 </div>
 
-<div>
-JavaScript functions that speak <strong>GeoJSON</strong>
+<div>JavaScript functions that speak <strong>GeoJSON</strong>
 </div>
 
 <div><strong>What</strong> is GeoJSON?</div>
 
-<div>
-<pre><code>
+<div><pre><code>
 /** GeoJSON is a single JSON file containing one or more features */
 {
   "type": "FeatureCollection",
@@ -185,63 +180,50 @@ JavaScript functions that speak <strong>GeoJSON</strong>
 </code></pre>
 </div>
 
-<div>
-GeoJSON is <strong>Everywhere</strong>
+<div>GeoJSON is <strong>Everywhere</strong>
 </div>
 
-<div markdown="1">
-<em>ArcGIS Feature to JSON</em> [USGS Earthquake Feed](https://earthquake.usgs.gov/fdsnws/event/1/)<strong> DATA.GOV (1,600+ Datasets)</strong> <em>AGOL Query Response & Exports</em> [geojson.xyz (Natural Earth Data+)](http://geojson.xyz) <strong>Native Support in</strong> [QGIS](https://www.qgis.org/en/site/)
+<div ><em>ArcGIS Feature to JSON</em> [USGS Earthquake Feed](https://earthquake.usgs.gov/fdsnws/event/1/)<strong> DATA.GOV (1,600+ Datasets)</strong> <em>AGOL Query Response & Exports</em> [geojson.xyz (Natural Earth Data+)](http://geojson.xyz) <strong>Native Support in</strong> [QGIS](https://www.qgis.org/en/site/)
 </div>
 
-<div class="img">
-<h1>GitHub Support (2013)</h1>
+<div class="img"><h1>GitHub Support (2013)</h1>
 <img src='img/github-geojson-2.png' width='100%'>
 </div>
 
-<div markdown="1">
-Free & Open 
+<div>Free & Open 
 
 Source Software
 [github.com/Turfjs](https://github.com/Turfjs)
 </div>
 
-<div markdown="1">
-# Include in your HTML
-<br>
+<div ># Include in your HTML
 <pre><code>https://cdnjs.cloudflare.com/ajax/libs/Turf.js/5.1.5/turf.min.js</code></pre>
 <br><br>
 # Install via NodeJS  
-<br>
 <pre><code>npm install @turf/turf --OR-- npm install @turf/bbox</code></pre>
 </div>
 
-<div>
-Why use <strong>TurfJS?</strong>
+<div>Why use <strong>TurfJS?</strong>
 </div>
 
-<div>
-<strong>Simple geospatial queries</strong>
+<div><strong>Simple geospatial queries</strong>
 </div>
 
-<div>
-Complex geospatial analysis <strong>(in NodeJS)</strong>
+<div>Complex geospatial analysis <strong>(in NodeJS)</strong>
 </div>
 
 <div style="border: solid thick #2ecc71;">
 Creating spatial metadata (bounding box)
 </div>
 
-<div>
-A Few Examples
+<div>A Few Examples
 </div>
 
-<div>
-  Turf Within
+<div>  Turf Within
   <pre><code>turf.booleanWithin(point, polygon)</code></pre>
 </div>
 
-<div>
-<h1>Where am I?</h1>
+<div><h1>Where am I?</h1>
 <pre><code>
 var result = "";
 counties.features.map(function(county) {
@@ -251,9 +233,7 @@ counties.features.map(function(county) {
     }
 });
 </code></pre>
-<div class="input-group">
-  <input type="text" class="form-input" value="-82,39">
-  <button class="btn btn-primary input-group-btn" id="withinSubmit">Submit</button>
+<div class="input-group">  <input type="text" class="form-input" value="-82,39">  <button class="btn btn-primary input-group-btn" id="withinSubmit">Submit</button>
 </div>
 </div>
 
@@ -263,22 +243,18 @@ counties.features.map(function(county) {
 
 <div class="emoji">🤨😭😕</div>
 
-<div>
-  Practical Applications
+<div>  Practical Applications
 </div>
 
-<div>
-  Local <strong>Authoritative</strong> Open Data
+<div>  Local <strong>Authoritative</strong> Open Data
 </div>
 
-<div>
-  Turf Nearest
+<div>  Turf Nearest
   <pre><code>Array.filter()</code></pre>
   <pre><code>turf.nearestPoint(point, points)</code></pre>
 </div>
 
-<div markdown="1">
-# Find the Closest Playground
+<div ># Find the Closest Playground
 <pre><code>
 var data = amenities.features.filter(function(a) {
   return a.properties.TYPE === 'Playground' 
@@ -289,9 +265,7 @@ var playgrounds = turf.featureCollection(data);
 var result = turf.nearestPoint(point, playgrounds)
 </code></pre>
 
-<div class="input-group">
-  <input type="text" value="-82.007054,39.942022">
-  <button class="btn btn-primary input-group-btn" id="nearestSubmit">Submit</button>
+<div class="input-group">  <input type="text" value="-82.007054,39.942022">  <button class="btn btn-primary input-group-btn" id="nearestSubmit">Submit</button>
 </div>
 </div>
 
@@ -302,18 +276,15 @@ Loading...
 
 <div class="emoji">😍😍😍</div>
 
-<div markdown="1">
-Advanced Analysis in <strong>TurfJS</strong>
+<div >Advanced Analysis in <strong>TurfJS</strong>
 </div>
 
 <div class="emoji">🐨😴💤</div>
 
-<div>
-Visualizing <strong>Crashes</strong> in Muskingum County (>7k)
+<div>Visualizing <strong>Crashes</strong> in Muskingum County (>7k)
 </div>
 
-<div>
-Hexgrids
+<div>Hexgrids
 <pre><code>turf.hexGrid(bbox, size, opts)</code></pre>
 Intersect
 <pre><code>turf.intersect(a,b)</code></pre>
@@ -321,8 +292,7 @@ Collect
 <pre><code>turf.collect(p, pts, field, name)</code></pre>
 </div>
 
-<div>
-<h1>Turf Hexgrids</h1>
+<div><h1>Turf Hexgrids</h1>
 <pre><code>
 var bbox = [-82.5, 39.7, -81.5, 40.18];
 var size = 1;
@@ -333,12 +303,12 @@ var options = {
 var hexgrid = turf.hexGrid(bbox, size, options)
 </code></pre>
 </div>
-<div markdown="1">
+<div >
 Turf Intersect 
 <pre><code>
-/* loop through each grid
- * add the intersecting areas to the clippedGrid
- * calculate the area in sq miles */
+// loop through each grid
+// add the intersecting areas to the clippedGrid
+// calculate the area in sq miles
 
 var clippedGrid = { "type":"FeatureCollection", "features":[] }
 
@@ -354,46 +324,34 @@ hexgrid.features.map(function(grid) {
 
 </div>
 
-<div>
-  Turf Collect
+<div>  Turf Collect
   <pre><code>turf.collect(clippedGrid, crashes, "count", "total")</code></pre>
 </div>
 
-<div class="display-content">
-  <div id="map" class="map">
-    <div id="buttons" class="buttons"></div>
+<div class="display-content">  <div id="map" class="map">    <div id="buttons" class="buttons"></div>
   </div>
 </div>
 
-<div markdown="1">
-Turf in <strong>Node JS</strong>
+<div >Turf in <strong>Node JS</strong>
 </div>
-<div>
-Find the Nearest 🏕️ National Park</div>
+
+<div>Find the Nearest 🏕️ National Park</div>
 <div>45MB GeoJSON Park Boundary File
 </div>
 
-<div>
-<pre><code>var points = turf.explode(polygon)</code></pre>
+<div><pre><code>var points = turf.explode(polygon)</code></pre>
 
 <pre><code>turf.nearestPoint(point, points)</code></pre>
 </div>
 
-<div>
-Query NodeJS
-<form class="input-group">
-    <div class="input-group">
-      <input class="form-input" name="lng" type="text" id="lng" placeholder="Longitude" value="-82">
+<div>Query NodeJS
+<form class="input-group">    <div class="input-group">      <input class="form-input" name="lng" type="text" id="lng" placeholder="Longitude" value="-82">
     </div>
-    <div class="input-group">
-      <input class="form-input" type="text" id="lat" placeholder="Latitude" name="lat" value="39">
-    </div>
-    <button class="btn btn-primary form-input" id="nearestPolySubmit" style="float:left;">Submit</button>
+    <div class="input-group">      <input class="form-input" type="text" id="lat" placeholder="Latitude" name="lat" value="39">    </div>    <button class="btn btn-primary form-input" id="nearestPolySubmit" style="float:left;">Submit</button>
   </form>
 </div>
 
-<div id="nearestPolyResult">
-No Node JS Server Running! Tested Benchmark ~ 2 seconds
+<div id="nearestPolyResult">No Node JS Server Running! Tested Benchmark ~ 2 seconds
 </div>
 
 <!--div>
@@ -412,20 +370,18 @@ hexgrid.features.map(function (feature) {
 </code></pre>
 </div-->
 
-<div markdown="1">
-No Coding
+<div >No Coding
 [Dropchop](http://dropchop.io/)
 </div>
 
-<div markdown="1">
-Support [TurfJS](https://opencollective.com/turf)
+<div >Support [TurfJS](https://opencollective.com/turf)
 </div>
 
-<div markdown="1">
-Thanks!
+<div >Thanks!
 Malcolm Meyer
 [@getbounds](https://twitter.com/getbounds)
 </div>
+
 <script>
 var counties, map, labels, crashes;
 var playgrounds = {
@@ -817,6 +773,26 @@ function buildMap() {
   };
 
   map.on('load', function () {
+    window.onhashchange = function () {
+      map.resize();
+      var div = document.body
+      var hash = window.location.hash;
+      var opt = {
+        margin: 0,
+        filename: hash + '.pdf',
+        image: {
+          type: 'jpeg',
+          quality: 0.98
+        },
+        // html2canvas:  { scale: -1 },
+        jsPDF: {
+          unit: 'in',
+          format: 'tabloid',
+          orientation: 'landscape'
+        }
+      };
+    }
+
     map.resize();
     map.addLayer({
       'id': "crashes",
@@ -869,6 +845,8 @@ function buildMap() {
   nearestLoc.addEventListener('click', function (e) {
     e.preventDefault();
     var loc = this.parentElement.children[0].value;
+      console.log(this)
+
     var coord = loc.split(",");
     var point = turf.point([Number(coord[0]), Number(coord[1])]);
     if (playgrounds.features.length == 0) {
@@ -899,10 +877,11 @@ function buildMap() {
     r.innerHTML = '<strong>' + playground.properties.PARK + ' (' + Math.round((playground.properties.distanceToPoint * 0.621371) * 100) / 100 + ' mi)</strong>';
   }
 
-  // var nearestPolySubmit = document.getElementById('nearestPolySubmit');
+  var nearestPolySubmit = document.getElementById('nearestPolySubmit');
 
-  // nearestPolySubmit.addEventListener('click', function (e) {
-  //   e.preventDefault();
+  nearestPolySubmit.addEventListener('click', function (e) {
+    e.preventDefault();
+  });
   //   var loading = document.getElementById('findthenearestpolygon');
   //   var result = document.getElementById('nearestPolyResult');
   //   result.innerHTML = "Loading...";

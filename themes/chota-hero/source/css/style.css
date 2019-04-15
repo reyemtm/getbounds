@@ -6,6 +6,8 @@
 
 :root {
   --color-primary: #6bbab5;
+  /* --color-primary: #1c1d21; */
+
   --color-lightGrey: #bebec1;
   --color-grey: #445878;
   --color-dark: #1C1D21; /*added*/
@@ -55,6 +57,9 @@ h1,h2,h3
 h5,h6 {
   font-family: var(--font-family-headings);
   font-weight: 500;
+}
+.post a:hover:not(.post-title) {
+  text-decoration: underline;
 }
 iframe {
   border: 0;
@@ -119,6 +124,9 @@ pre {
 .nav a, .nav .brand {
   color: white;
 }
+.nav .brand {
+  padding: 1rem 0;
+}
 @media screen and (max-width: 768px) {
   .nav-top .nav-left,
   .nav-top .nav-right {
@@ -130,9 +138,17 @@ pre {
     left: 0;
     width: 100%;
   }
+  .nav-top .nav-right .button.outline {
+    padding: 1rem;
+  }
+  .post-prev, .post-next {
+    font-size: 1.4rem;
+  }
 }
-.nav .brand {
-  padding: 1rem 0;
+
+.post-prev:hover, .post-next:hover {
+  color: var(--color-primary);
+  border-color: var(--color-primary);
 }
 
 /**

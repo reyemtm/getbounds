@@ -1,16 +1,16 @@
-# TODO [ ] remove link for year on post page
-# TODO [ ] add tag name to header on tag pages
+# TODO [x] remove link for year on post page
+# TODO [x] add tag name to header on tag pages
 # TODO [X] style the tag lists on the post page
-# TODO [ ] add subtitles to index page cards
+# TODO [x] add subtitles to index page cards
 # TODO [X] add iframes to slides page/posts page
 # TODO [ ] fix all slides
 # TODO [ ] add redirects to all pages
 # TODO [ ] test redirects and compare links
 # TODO [ ] add apps check if needed
 # TODO [ ] fix all featured 
-# TODO [ ] fix index cards
+# TODO [x] fix index cards
 # TODO [ ] clean up all titles, dates and subtitles to be the same
-# TODO [ ] clean up img folder remove all unused images
+# TODO [x] clean up img folder remove all unused images
 # TODO [ ] write missing posts
 
 
@@ -79,7 +79,7 @@ index_generator:
 ## Set per_page to 0 to disable pagination
 per_page: 6
 pagination_dir: page
-archive: 4
+archive: 6
 
 # Category & Tag
 default_category: blog
@@ -115,9 +115,9 @@ excerpt:
   hideWholePostExcerpts: true
 
 imagemin:
-  enable: true
+  enable: false
   interlaced: false
   multipass: false
   optimizationLevel: 7
-  pngquant: true
+  pngquant: false
   progressive: true

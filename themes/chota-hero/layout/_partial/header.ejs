@@ -37,7 +37,7 @@
     <% if(is_home()){%>
       <% site.posts.each(function(post) {%>
         <% if (post.featured) {%>
-        <img class="hidden" data-src="assets/img/<%- post.img %>" data-heading="<%- post.title %>" data-subtitle="<%- post.subtitle %>" data-link="<%- post.permalink %>">
+        <img class="hidden" data-src="/img/<%- post.img %>" data-heading="<%- post.title %>" data-subtitle="<%- post.subtitle %>" data-link="<%- post.permalink %>">
         <%}%>
       <%})%>
     <div class="hero-text">
@@ -48,7 +48,7 @@
     <div class="hero-overlay"></div>
     <%}%>
     <% if (is_post()) {%>
-      <img style="background-image:url('/assets/img/<%- (page.img) %>');">
+      <img style="background-image:url('/img/<%- (page.img) %>');">
     <%}%>
     <% if (is_tag()) {%>
       <div class="container" style="height:100%;">
@@ -71,7 +71,7 @@
       </div>
     <%}%>
     <% if (is_post()) {%>
-      <img style="background-image:url('/assets/img/<%- (page.img) %>');">
+      <img style="background-image:url('/img/<%- (page.img) %>');">
       <div class="hero-overlay"></div>
     <%}%>
   </div>
