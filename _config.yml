@@ -33,7 +33,7 @@ defaultimage: "serving-vector-tiles.jpg"
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: https://www.zerospatial.com/
+url: /
 root: /
 permalink: :category/:title/
 permalink_defaults:
@@ -126,3 +126,37 @@ imagemin:
   optimizationLevel: 7
   pngquant: false
   progressive: true
+
+# More detailed settings
+popularPosts:
+
+  # (optional) Popular posts options
+  # googleAnalyticsAPI:
+  #   clientId: ******.apps.googleusercontent.com
+  #   serviceEmail: *****@developer.gserviceaccount.com
+  #   key: /hexo-project-root/path/to/google-services.pem
+  #   viewId: 12345678
+  #   dateRange: 30
+  #   expiresDate: 10
+  #   pvMeasurementsStartDate: 2015/11/01
+  #   rankingSheet: rankingSheet.txt
+    # cache:            # (Deprecated) This options is Deprecated > v0.1.3
+    #  path: hexo-related-popular-posts-ga-cached.json  # (Deprecated) This options is Deprecated > v0.1.3
+    #  expiresDate: 10  # (Deprecated) This options is Deprecated > v0.1.3
+    
+  # (optional) Advanced Related posts options
+  # morphologicalAnalysis: 
+  #   negativeKeywordsList: pluginSettings/hexo-rpp-negativewords.txt
+  #   limit: 300
+    
+  # (optional) Related post's weight options
+  weight:
+    tagRelevancy: 1.0
+    contentsRelevancy: 1.0
+    
+  # (optional) Cache options (Improve generation speed.)
+  cache:
+    path: .cache/hexo-popular-related-posts-ga-cached.json
+    
+  # (optional) Log options
+  log: true

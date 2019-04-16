@@ -32,6 +32,19 @@
       <% } %>
     </footer>
   </div>
+    <div class="container post">
+      <%- list_related_posts({
+        maxCount: 2, 
+        orderBy: 'random', 
+        pClass: 'post-realted-p',
+        ulClass: 'post-related-ul',
+        liClass: 'post-related-li',
+        aClass: 'post-related-a',
+        generateAbstract: true,
+        abstractClass: 'post-related-abstract',
+        abstractLength: 200
+        }) %>
+    </div>
 </article>
 
 <% if (!index && post.comments && config.disqus_shortname){ %>

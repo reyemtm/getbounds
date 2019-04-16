@@ -24,7 +24,9 @@
     "hexo-renderer-stylus": "^0.3.3",
     "hexo-server": "^0.3.3",
     "hexo-slides-reveal": "0.0.5",
-    "parcel-bundler": "^1.12.3"
+    "lodash.assign": "^4.2.0",
+    "parcel-bundler": "^1.12.3",
+    "striptags": "^3.1.1"
   },
   "devDependencies": {
     "cssnano": "^4.1.10"

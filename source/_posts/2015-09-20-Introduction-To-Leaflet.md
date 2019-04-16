@@ -8,7 +8,7 @@ tags:
 - slides
 - jekyll
 external: true
-subtitle: '"The essence of software engineering is the mitigation of complexity."<br>~ Vladimir Agafonkin'
+subtitle: '<blockquote>The essence of software engineering is the mitigation of complexity.<br>~ Vladimir Agafonkin</blockquote>'
 header-img: cdbdark.jpg
 img: cdbdark.jpg
 image: intro-to-leaflet-slides.jpg
