@@ -37,7 +37,7 @@
     <% if(is_home()){%>
       <% site.posts.each(function(post) {%>
         <% if (post.featured) {%>
-        <img class="hidden" data-src="/img/<%- post.img %>" data-heading="<%- post.title %>" data-subtitle="<%- post.subtitle %>" data-link="<%- post.permalink %>">
+        <img class="hidden" data-src="/img/<%- post.img %>" data-heading="<%- post.title %>" data-subtitle="<%- post.subtitle %>" data-link="<%- config.root %><%- post.path %>">
         <%}%>
       <%})%>
     <div class="hero-text">

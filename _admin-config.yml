@@ -1,0 +1,8 @@
+options:
+  spellcheck: true
+  askImageFilename: true
+  imagePath: /img
+  imagePrefix: hexo-admin-
+editor:
+  inputStyle: contenteditable
+  spellcheck: true

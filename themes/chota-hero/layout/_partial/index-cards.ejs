@@ -4,7 +4,7 @@
     <div class="col-6 col-6-md col-4-lg" >
       <div class="card">
         <header>
-          <a rel="prefetch" href="<%- post.permalink %>"><figure style="background-image: url('/img/<%- post.img %>');")></figure></a>
+          <a rel="prefetch" href="<%- config.root %><%- post.path %>"><figure style="background-image: url('/img/<%- post.img %>');")></figure></a>
           <%- partial('post/header', {post: post, index: true}) %>
         </header>
       </div>
