@@ -30,7 +30,7 @@ author: Malcolm T Meyer
 language: en
 timezone: America/New_York
 defaultimage: "serving-vector-tiles.jpg"
-header-img: "serving-vector-tiles.jpg"
+headerimg: "serving-vector-tiles.jpg"
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'

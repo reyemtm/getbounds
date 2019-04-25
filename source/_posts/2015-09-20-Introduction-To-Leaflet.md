@@ -8,9 +8,10 @@ tags:
 - slides
 - jekyll
 external: true
-subtitle: '<blockquote>The essence of software engineering is the mitigation of complexity.<br>~ Vladimir Agafonkin</blockquote>'
+subtitle: A Presentation for the 2015 Ohio GIS Conference
 header-img: cdbdark.jpg
 img: cdbdark.jpg
 image: intro-to-leaflet-slides.jpg
 slides: https://www.ovrdc.org/apps/presentations/leaflet-ogrip/index.html#/
 ---
+<blockquote>The essence of software engineering is the mitigation of complexity.<br>~ Vladimir Agafonkin</blockquote>
