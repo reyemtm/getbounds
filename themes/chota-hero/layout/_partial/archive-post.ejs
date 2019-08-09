@@ -9,7 +9,7 @@
       </div>
       <%}%>
       <p><%- post.excerpt %></p>
-      <a href="<%-post.permalink %>" style="font-size:1.6rem;">Continue Reading...</a>
+      <a href="<%- url_for(post.path) %>" style="font-size:1.6rem;">Continue Reading...</a>
     </header>
   </div>
 </article>

@@ -103,7 +103,12 @@ function listRelatedPosts(options) {
     if (options.card) {
       for (var i = 0; i < count; i++) {
         // result += '<li class="' + options.liClass + '">' + '<a class="' + options.aClass + '" href="' + root + postList[i].path + '">' + postList[i].title + '<br>' + postList[i].subtitle + '</a><div class="' + options.abstractClass + '">' + striptags(postList[i].content).substring(0, options.abstractLength) + '</div></li>';
-
+        if (!postList[i].img) {
+          postList[i].img = "serving-vector-tiles.jpg";
+        }
+        if (!postList[i].susbtitle) {
+          postList[i].subtitle = "";
+        }
         result += `
         <div class="col-6 col-6-md col-6-lg" >
           <div class="card">

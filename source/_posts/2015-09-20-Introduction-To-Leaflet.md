@@ -14,4 +14,3 @@ img: cdbdark.jpg
 image: intro-to-leaflet-slides.jpg
 slides: https://www.ovrdc.org/apps/presentations/leaflet-ogrip/index.html#/
 ---
-<blockquote>The essence of software engineering is the mitigation of complexity.<br>~ Vladimir Agafonkin</blockquote>

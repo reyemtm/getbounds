@@ -243,7 +243,6 @@ souurce: https://stackoverflow.com/questions/20544309/css-sliding-underline
   background-size: cover;
   border-radius: 3px;
 }
-/* TODO REMOVE Seciton if possible */
 .card section, .card p {
   flex-grow: 1;
   margin: 1rem 0 2rem;

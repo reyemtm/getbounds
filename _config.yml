@@ -1,21 +1,10 @@
-# TODO [x] remove link for year on post page
-# TODO [x] add tag name to header on tag pages
-# TODO [X] style the tag lists on the post page
-# TODO [x] add subtitles to index page cards
-# TODO [X] add iframes to slides page/posts page
-# TODO [ ] fix all slides
+# TODO [ ] check all slides
 # TODO [ ] add redirects to all pages
 # TODO [ ] test redirects and compare links
 # TODO [ ] add apps check if needed
-# TODO [ ] fix all featured 
-# TODO [x] fix index cards
+# TODO [ ] finish serving vector tiles post
+# TODO [ ] add more to leaflet store locator post
 # TODO [ ] clean up all titles, dates and subtitles to be the same
-# TODO [x] clean up img folder remove all unused images
-# TODO [ ] write missing posts
-# TODO [ ] add alt text to all images
-# TODO [ ] add description to all pages via site.description
-# TODO [ ] add image to all pages via site.defaultimg
-
 
 # Hexo Configuration
 ## Docs: https://hexo.io/docs/configuration.html
