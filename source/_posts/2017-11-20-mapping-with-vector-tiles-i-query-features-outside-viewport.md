@@ -62,6 +62,6 @@ There are a wide variety of JSON search plugins, ~~and since I use Jekyll for my
 
 One final problem exists before we can call this project a success, and that is knowing when the Mapbox GL map has all loaded and rendered all the tiles after zooming to the search result. This is necessary in order to highlight the feature and access any additional attributes stored in the vector tile. One method to check for loaded tiles is to set an interval function on the `sourcedataloading` event, then check to see if this event still fired x seconds later. Once this event is no longer fired, then all the tiles have loaded. Another, more simpler method is to simply query the features and check if anything is returned, and if not query them again in 500ms or so, and do this for maybe five seconds. If nothing is returned simply send an alert to the client.
 
-![](/img/mgl-1.gif)
+![](/assets/img/mgl-1.gif)
 
 As long as the searchable JSON file is small enough, this method allows for easily searching data beyond the viewport in Mapbox GL JS. Once the size of the data grows, this client-side operation will have to be moved server-side and replaced with some type of geocoder instance.

@@ -12,7 +12,7 @@ demo: https://ovrdc.github.io/parcel-viewer
 ---
 The Open Parcel Viewer is a client-side application written in plain javascript and jquery. It is capable of rendering up to 50k polygons on desktop and mobile. The app uses Leaflet as the mapping api and Jekyll as a build tool. Color, initial map center/zoom and the search field can be defined in the yaml front matter, with minimal to zero extra coding needed. The polygons should be in topojson format.
 
-<div id="iframe"><img id="img" src="/img/open-parcel-viewer-web.jpg"></div>
+<div id="iframe"><img id="img" src="/assets/img/open-parcel-viewer-web.jpg"></div>
 
 For more on the backstory of the Open Parcel Viewer check out my post on [Leaflet & GeoJSON Tiles](blog/leaflet-and-geojson-tiles/)
 

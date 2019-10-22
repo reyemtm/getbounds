@@ -22,7 +22,7 @@ It all started with this simple question from a county engineer: Would it be pos
 
 Yearly hosting costs for apps such as this can run in the thousands if not tens of thousands, so having a free alternative could be of great economic benefit to many counties across the country. With the average parcel count per county in the US right around 50k (see [Core Logic](http://www.corelogic.com/products/parcelpoint.aspx)) and the upper limit of client-side rendering between 25k and 40k features, it follows that at least a third if not half of US counties could share their parcels with the public via client-side web apps such as this one.
 
-![](/img/parcelviewer1.jpg)
+![](/assets/img/parcelviewer1.jpg)
 
 ## Simplification & TopoJson
 
@@ -50,4 +50,4 @@ The one issue with the geojson tiles is that they are not interactive, so I used
 
 To test the limits of this method I tested the app with another county parcel layer, this time with over 70k features. The app would load fine on desktops, but would performance was not ideal on mobile devices and sometimes crashed the mobile browser. To get around this I broke apart the county by township and city boundaries (using model builder in Esri's ArcMap), allowing the user to switch between these areas via the sidebar. When the user switches to another area, the entire map gets redrawn with the map.destroy() function. One drawback is that the search and point in polygon only work on one area of the county at a time.
 
-![](/img/parcelviewer2.jpg)
+![](/assets/img/parcelviewer2.jpg)

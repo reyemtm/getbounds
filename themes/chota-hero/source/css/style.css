@@ -5,7 +5,7 @@
 /*! chota.css v0.6.1 | MIT License | github.com/jenil/chota */
 
 :root {
-  --color-primary: #6bbab5;
+  --color-primary: lightseagreen;/*#6bbab5;*/
   /* --color-primary: #1c1d21; */
   --color-lightGrey: #bebec1;
   --color-grey: #445878;
@@ -186,10 +186,12 @@ souurce: https://stackoverflow.com/questions/20544309/css-sliding-underline
   width: 100%;
   height: 100vh;
   max-height: 100vh;
-  background: var(--color-dark);
   overflow: hidden;
+  background: var(--color-dark);
 }
-
+.hero h1 {
+  z-index: 2;
+}
 /* hero post see post */
 .hero img {
   position: absolute;
@@ -205,8 +207,7 @@ souurce: https://stackoverflow.com/questions/20544309/css-sliding-underline
   position: absolute;
   bottom: 0;
   padding: 4rem;
-}
-.hero-text {
+  z-index: 2;
   color: white;
   transition: opacity 0.4s ease-in-out;
   z-index: 100;

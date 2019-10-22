@@ -6,7 +6,8 @@ date: 2019-04-05 12:08:36
 tags:
  - mapbox
  - vector tiles
-featured: true
+featured: false
+draft: true
 img: serving-vector-tiles.jpg
 ---
 ## Tegola

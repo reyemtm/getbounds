@@ -1,4 +1,8 @@
 User-agent: *
-Disallow: /
 Disallow: /apps/
 Disallow: /apps-plugins/
+Disallow: /slides/
+Disallow: /projects/
+Disallow: /admin/
+Disallow: /reveal.js/
+Disallow: /web-resume/

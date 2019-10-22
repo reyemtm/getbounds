@@ -1,0 +1,42 @@
+<div class="post">
+
+  <h2>
+    <%- page.name %>
+  </h2>
+
+  <p style="font-size: 2.5rem; margin-top: -3rem;"><%- page.caption %></p>
+  <p>
+  <div class="carousel">
+    <!-- carousel locator -->
+    <input class="carousel-locator" id="slide-1" type="radio" name="carousel-radio" hidden="" checked="">
+
+    <% page.images.forEach(function(img,i) {%>
+    <% if (i > 0) { %>
+    <input class="carousel-locator" id="slide-<%- i + 1 %>" type="radio" name="carousel-radio" hidden="">
+    <%}%>
+          <% }) %>
+
+    <!-- carousel container -->
+    <div class="carousel-container">
+      <!-- carousel item -->
+    <% page.images.forEach(function(img,i) {%>
+      <figure class="carousel-item">
+        <label class="item-prev btn btn-action btn-lg" for="slide-<%- i %>"><i
+            class="icon icon-arrow-left"></i></label>
+        <label class="item-next btn btn-action btn-lg" for="slide-<%- i + 2%>"><i
+            class="icon icon-arrow-right"></i></label>
+        <img class="img-responsive rounded" src="/assets/img/project-img/original/<%- img %>" alt="image">
+      </figure>
+      <% }) %>
+    </div>
+    <!-- carousel navigation -->
+    <div class="carousel-nav">
+      <% page.images.map(function(img, i) { %>
+      <label class="nav-item text-hide c-hand" for="slide-<%- i  + 1 %>"></label>
+      <% }) %>
+    </div>
+  </div>
+    <p>
+      <%- markdown(page.about) %>
+    </p>
+</div>

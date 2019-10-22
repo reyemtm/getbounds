@@ -4,7 +4,7 @@
     "/reveal.js/css/reset.css",
     "/reveal.js/css/reveal.css",
     "/reveal.js/css/theme/<%= page.theme %>.css",
-    "/reveal.js/lib/css/monokai.css"
+    "/reveal.js/lib/css/<% if (page.highlight) {%><%= page.highlight %><%}else{%>monokai.css<%}%>"
   ]
 
   function addStyles(stylesheets) {

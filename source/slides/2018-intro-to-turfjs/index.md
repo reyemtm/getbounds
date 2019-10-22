@@ -135,8 +135,8 @@ style: >-
   }
 header: >-
   <link rel="stylesheet" href="/css/montserrat/Montserrat.css" />
-  <link rel="stylesheet" href="/css/mapbox-gl.css">
-  <script src="/js/mapbox-bundle-min.js"></script>
+  <link rel="stylesheet" href="css/mapbox-gl.css">
+  <script src="js/mapbox-bundle-min.js"></script>
 ---
 <div  style="width:90%;margin:0 auto;">
 ![](img/OhioGIS_Title_Page_2018.png)
@@ -720,7 +720,7 @@ function buildMap() {
           data: counties
         }
       },
-      "glyphs": "http://127.0.0.1:4000/slides/2018-intro-to-turfjs/{fontstack}/{range}.pbf",
+      "glyphs": "http://www.getbounds.com/slides/2018-intro-to-turfjs/{fontstack}/{range}.pbf",
       layers: [{
         id: "background",
         "type": "background",

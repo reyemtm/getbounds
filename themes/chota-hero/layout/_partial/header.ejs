@@ -35,9 +35,9 @@
   <!-- <% if(is_home()) {%>homepage<%}%> -->
   <div class=<% if(is_home()) {%>"hero"<%}else{%>"hero hero-post"<%}%> >
     <% if(is_home()){%>
-      <% site.posts.each(function(post) {%>
-        <% if (post.featured) {%>
-        <img class="hidden" data-src="/img/<%- post.img %>" data-heading="<%- post.title %>" data-subtitle="<%- post.subtitle %>" data-link="<%- config.root %><%- post.path %>">
+      <% site.posts.sort('date', -1).each(function(post, i) {%>
+        <% if (post.featured || i === 1) {%>
+        <img class="hidden" data-src="/assets/img/<%- post.img %>" data-heading="<%- post.title %>" data-subtitle="<%- post.subtitle %>" data-link="<%- config.root %><%- post.path %>">
         <%}%>
       <%})%>
     <div class="hero-text">
@@ -46,9 +46,6 @@
       <a href="#"><button type="button" class="button outline hero-link">Read More</button></a>
     </div>
     <div class="hero-overlay"></div>
-    <%}%>
-    <% if (is_post()) {%>
-      <img style="background-image:url('/img/<%- (page.img) %>');">
     <%}%>
     <% if (is_tag()) {%>
       <div class="container" style="height:100%;">
@@ -61,7 +58,7 @@
       </div>
     <%}%>
     <% if (is_archive()) {%>
-      <img style="background-image:url('/img/<%- (config.headerimg) %>');">
+      <img style="background-image:url('/assets/img/<%- (config.headerimg) %>');">
       <div class="container" style="height:100%;position:relative;">
         <div class="row" style="height:100%;">
           <div class="col is-center is-vertical-align">
@@ -72,14 +69,17 @@
       </div>
     <%}%>
     <% if (is_post()) {%>
-      <img style="background-image:url('/img/<%- (page.img) %>');">
+      <img style="background-image:url('/assets/img/<%- (page.img) %>');">
       <div class="hero-overlay"></div>
     <%}%>
     <% if (is_page()) {%>
+      <% if (page.img) {%>
+        <img style="background-image:url('/assets/img/<%- (page.img) %>');">
+      <%}%>
       <div class="container" style="height:100%;">
         <div class="row" style="height:100%;">
           <div class="col is-center is-vertical-align">
-            <h1 class=" is-center" style="color:white;"><%- page.title %></h1>
+            <h1 class="is-center" style="color:white;"><%- page.title %></h1>
           </div>
         </div>
       </div>

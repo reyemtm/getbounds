@@ -106,16 +106,16 @@ function listRelatedPosts(options) {
         if (!postList[i].img) {
           postList[i].img = "serving-vector-tiles.jpg";
         }
-        if (!postList[i].susbtitle) {
+        if (!postList[i].subtitle) {
           postList[i].subtitle = "";
         }
         result += `
         <div class="col-6 col-6-md col-6-lg" >
           <div class="card">
             <header>
-              <a rel="prefetch" href="/${postList[i].path}"><figure style="background-image: url('/img/${postList[i].img}');")></figure></a>
-              <a class="post-title" rel="prefetch" href="/${postList[i].path}"><h3>${postList[i].title}</h3>
-              <h5>${postList[i].subtitle}</h5></a>
+              <a rel="prefetch" href="/${postList[i].path}"><figure style="background-image: url('/assets/img/${postList[i].img}');")></figure></a>
+              <a class="post-title" rel="prefetch" href="/${postList[i].path}"><h4>${postList[i].title}</h4>
+              <p>${postList[i].subtitle}</p></a>
             </header>
           </div>
         </div>`

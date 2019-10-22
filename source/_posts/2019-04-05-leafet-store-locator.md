@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Leaflet Store Locator
-subtitle: A Leaflet Version of the Original Mapbox JS Example
+subtitle: A Leaflet Version of the Original Mapbox JS Store Locator Example
 date: 2019-04-05 11:57:15
 tags:
  - mapbox
