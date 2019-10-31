@@ -97,6 +97,10 @@ table {
   .container {
     width: 96%;
   }
+  .post-prev, .post-next {
+    float: left!important;
+    margin: 5px 0 0 0!important;
+  }
 }
 pre {
   font-size: 1.6rem;
