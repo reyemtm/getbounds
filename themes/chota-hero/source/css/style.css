@@ -67,6 +67,7 @@ iframe {
 button, .button {
   cursor: pointer;
   border-radius: 2px;
+  font-family: inherit;
 }
 .button.small {
   padding: 0.5rem 1rem;
