@@ -11,9 +11,9 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: ZeroSpatial
+title: getBounds
 subtitle:
-description: "ZeroSpatial is a blog focusing on desktop and web-based geospatial applications. ZeroSpatial is maintained by Malcolm T Meyer."
+description: "getBounds is a blog focusing on desktop and web-based geospatial applications. getBounds is maintained by Malcolm T Meyer."
 keywords: ["gis", "blog", "geospatial", "vector tiles", "mapbox", "leaflet", "web maps", "dataviz"]
 author: Malcolm T Meyer
 language: en
@@ -23,7 +23,7 @@ headerimg: "serving-vector-tiles.jpg"
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: "https://zerospatial.com"
+url: "https://www.getBounds.com"
 root: /
 permalink: :category/:title/
 permalink_defaults:

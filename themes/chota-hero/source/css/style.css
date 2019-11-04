@@ -130,6 +130,7 @@ pre {
 }
 .nav .brand {
   padding: 1rem 0;
+  font-size: 1.3em;
 }
 @media screen and (max-width: 768px) {
   .nav-top .nav-left,
