@@ -1,10 +1,10 @@
 # TODO [ ] check all slides
-# TODO [ ] add redirects to all pages
-# TODO [ ] test redirects and compare links
 # TODO [ ] add apps check if needed
 # TODO [ ] finish serving vector tiles post
 # TODO [ ] add more to leaflet store locator post
 # TODO [ ] clean up all titles, dates and subtitles to be the same
+# TODO [ ] Fix code highlighting
+# TODO [ ] Make tag link buttons smaller
 
 # Hexo Configuration
 ## Docs: https://hexo.io/docs/configuration.html
@@ -98,7 +98,6 @@ deploy:
   type:
 
 include: 
- - _pages/**/*.*
  - slides/**/*.*
  - apps/**/*.*
  
@@ -109,7 +108,7 @@ excerpt:
   more_excludes: []
   hideWholePostExcerpts: true
 
-#https://github.com/vseventer/hexo-imagemin - makes generating very slow
+#https://github.com/vseventer/hexo-imagemin - makes generating very slow took out due to issue with Node 12
 imagemin:
   enable: false
   interlaced: false
