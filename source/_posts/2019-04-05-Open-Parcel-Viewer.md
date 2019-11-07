@@ -20,6 +20,6 @@ For more on the backstory of the Open Parcel Viewer check out my post on [Leafle
 <script>
 var iframe = document.getElementById('img');
 iframe.addEventListener('click', function() {
-  this.parentElement.innerHTML = '<iframe src="https://ovrdc.github.io/parcel-viewer" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true" width="100%" height="460" frameborder="0" style="border: solid thick #333;"></iframe>'
+  this.parentElement.innerHTML = '<iframe src="https://reyemtm.github.io/parcel-viewer/#11/38.8103/-82.3933" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true" width="100%" height="460" frameborder="0" style="border: solid thick #333;"></iframe>'
 });
 </script>
