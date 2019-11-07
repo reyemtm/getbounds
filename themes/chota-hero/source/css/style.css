@@ -203,7 +203,7 @@ souurce: https://stackoverflow.com/questions/20544309/css-sliding-underline
   z-index: 2;
 }
 /* hero post see post */
-.hero img {
+.hero .img {
   position: absolute;
   width: 100%;
   height: 100%;

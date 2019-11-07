@@ -37,7 +37,7 @@
     <% if(is_home()){%>
       <% site.posts.sort('date', -1).each(function(post, i) {%>
         <% if (post.featured || i === 1) {%>
-        <img class="hidden" alt="Image for <%- post.title %>" data-src="/assets/img/<%- post.img %>" data-heading="<%- post.title %>" data-subtitle="<%- post.subtitle %>" data-link="<%- config.root %><%- post.path %>">
+        <div class="hidden img" data-src="/assets/img/<%- post.img %>" data-heading="<%- post.title %>" data-subtitle="<%- post.subtitle %>" data-link="<%- config.root %><%- post.path %>"></div>
         <%}%>
       <%})%>
     <div class="hero-text">
