@@ -5,9 +5,10 @@
 /*! chota.css v0.6.1 | MIT License | github.com/jenil/chota */
 
 :root {
-  --color-primary: lightseagreen;/*#6bbab5;*/
+  --color-primary: #136a66;/*#6bbab5;*/
+  --color-primaryLight: lightseagreen;
   /* --color-primary: #1c1d21; */
-  --color-lightGrey: #bebec1;
+  --color-lightGrey: #67676b;
   --color-grey: #445878;
   --color-dark: #1C1D21; /*added*/
   --color-darkGrey: #31353d;
@@ -108,6 +109,9 @@ pre {
 }
 .footer {
   flex-shrink: 0;
+}
+.footer a {
+  color: var(--color-primaryLight);
 }
 /***********/
 /*** NAV ***/
@@ -215,11 +219,12 @@ souurce: https://stackoverflow.com/questions/20544309/css-sliding-underline
   padding: 4rem;
   z-index: 2;
   color: white;
-  transition: opacity 0.4s ease-in-out;
+  transition: opacity 0.8s ease-in-out;
   z-index: 100;
 }
-.hero .button {
+.hero .button.outline {
   color: white;
+  border-color: white;
 }
 .hero-overlay {
   width: 100%;
