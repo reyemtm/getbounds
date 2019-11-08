@@ -2,12 +2,9 @@
   <div class="archive-article-inner">
     <header class="archive-article-header">
       <%- partial('post/header', {class_name: 'archive-article-title'}) %>
-      <% if (post.slides) { %>
-      <div>
-        <p></p>
-        <iframe src="<%- post.slides %>" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true" width="100%" height="600" frameborder="0" style="border:solid thick #31353d;"></iframe>
-      </div>
-      <%}%>
+      <p></p>
+      <a href="<%- url_for(post.path) %>"><img src="/assets/img/<% if (post.img) {%><%- post.img %><%}else{%><%- config.defaultimage %><%}%>" width="100%" alt="<%- post.title %>"></img></a>
+
       <p><%- post.excerpt %></p>
       <a rel="prefetch" href="<%- url_for(post.path) %>" style="font-size:1.6rem;">Continue Reading...</a>
     </header>

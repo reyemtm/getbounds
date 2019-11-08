@@ -103,7 +103,7 @@ include:
  
 #Hexo Exceprt Plugin
 excerpt:
-  depth: 2
+  depth: 1
   excerpt_excludes: []
   more_excludes: []
   hideWholePostExcerpts: true
