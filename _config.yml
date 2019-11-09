@@ -129,7 +129,7 @@ feed:
   content_limit_delim: ' '
   order_by: -date
 
-# google_analytics_id: UA-81870902-1
+google_analytics: UA-81870902-1
 # More detailed settings
 popularPosts:
 
