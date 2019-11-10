@@ -43,7 +43,7 @@ skip_render:
  - js/**/*.*
  - css/**/*.*
  - "**/*.js"
- - admin/*.*
+ - admin/index.html
  - admin/config.yml
 
 # Writing
