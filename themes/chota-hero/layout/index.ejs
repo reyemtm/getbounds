@@ -43,3 +43,19 @@
 EEEFF7 - light*/
 /*for each image, c */
 </script>
+<script>
+/****
+NETLIFY LOGIN 
+****/
+if (window.netlifyIdentity) {
+  window.netlifyIdentity.on("init", function(user) {
+    if (!user) {
+      window.netlifyIdentity.on("login", function() {
+        document.location.href = "/admin/";
+      });
+    }else{
+      console.log("no user")
+    }
+  });
+}
+</script>
