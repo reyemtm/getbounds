@@ -1,0 +1,22 @@
+{
+  "name": "getBounds",
+  "short_name": "getBounds",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#136a66",
+  "theme_color": "#136a66",
+  "description": "getBounds is a blog focusing on desktop and web-based geospatial applications. getBounds is maintained by Malcolm T Meyer.",
+  "icons": [{
+    "src": "assets/icons/icon128.png",
+    "sizes": "128x128",
+    "type": "image/png"
+  }, {
+    "src": "assets/icons/icon256.png",
+    "sizes": "256x256",
+    "type": "image/png"
+  },{
+    "src": "assets/icons/icon512.png",
+    "sizes": "512x512",
+    "type": "image/png"
+  }]
+}

@@ -1,9 +1,8 @@
 /* @import "chota.css"; */
 @import "./chota.css";
-/* @import "montserrat/Montserrat.css"; */
 @import "./catamaran/catamaran.css";
 /*! chota.css v0.6.1 | MIT License | github.com/jenil/chota */
-
+/* @import url('https://fonts.googleapis.com/css?family=Aleo:300,400'); */
 :root {
   --color-primary: #136a66;/*#6bbab5;*/
   --color-primaryLight: lightseagreen;
@@ -20,7 +19,7 @@
   --font-family-headings: "Catamaran",-apple-system, BlinkMacSystemFont, Avenir, "Avenir Next",
   "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
   "Droid Sans", "Helvetica Neue", sans-serif;
-  --font-weight: 300; /*added*/
+  --font-weight: 400; /*added*/
   --font-family: "Catamaran", -apple-system, BlinkMacSystemFont, Avenir, "Avenir Next",
     "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
     "Droid Sans", "Helvetica Neue", sans-serif;
@@ -35,6 +34,7 @@ html, body {
   display: flex;
   flex-direction: column;
   overflow-x: hidden;
+  line-height: 1.4;
 }
 .main {
   min-height: calc(100vh - 560px);
@@ -46,6 +46,9 @@ html, body {
 .row {
   margin-top: 2rem;
 }
+h1, h2, h3, h4, h5, h6 {
+  margin: 0.35em 0 0.5em 0;
+}
 h1 {
   font-size: 3em;
 }
@@ -54,9 +57,12 @@ h1,h2,h3
   font-family: var(--font-family-headings);
   font-weight: 600;
 }
-h5,h6 {
+h4, h5,h6 {
   font-family: var(--font-family-headings);
-  font-weight: 500;
+  font-weight: 400;
+}
+.post a {
+  background: #f3f3f6;
 }
 .post a:hover:not(.post-title):not(.button) {
   text-decoration: underline;
@@ -72,7 +78,7 @@ button, .button {
 }
 .button.small {
   padding: 0.5rem 1rem;
-  font-size: 1.6rem;
+  font-size: 1.2rem;
 }
 .button:focus, [type="button"]:focus, [type="reset"]:focus, [type="submit"]:focus, button:focus {
   border-color: white;
@@ -81,7 +87,8 @@ button, .button {
 blockquote {
  border-left: 3px solid var(--color-primary);
  font-family: var(--font-family-headings);
- font-weight: 500;
+ font-weight: 600;
+ margin: 2rem 0;
 }
 blockquote p {
   margin: 0;
@@ -94,6 +101,9 @@ a:hover:not(.button) {
 }
 table {
   table-layout: fixed;
+}
+form, button, .button {
+  font-family: var(--font-family-headings);
 }
 @media screen and (max-width: 768px) {
   .container {
@@ -123,6 +133,7 @@ pre {
   width: 100%;
   background: transparent;
   z-index: 100;
+  font-family: var(--font-family-headings);
 }
 .nav-right {
   -webkit-box-flex: auto;
@@ -140,12 +151,6 @@ pre {
   .nav-top .nav-left,
   .nav-top .nav-right {
     justify-content: center;
-  }
-  .nav-top .nav-right {
-    position: absolute;
-    top: 6rem;
-    left: 0;
-    width: 100%;
   }
   .nav-top .nav-right .button.outline {
     padding: 1rem;
@@ -165,7 +170,7 @@ nav animated underlne
 souurce: https://stackoverflow.com/questions/20544309/css-sliding-underline
 */
 .nav a {
-  margin: auto 1rem;
+  margin: 0 1rem 0 0;
   display: block;
   color: white;
 }
@@ -176,6 +181,7 @@ souurce: https://stackoverflow.com/questions/20544309/css-sliding-underline
   width: 0;
   background: transparent;
   transition: width .5s ease, background-color .5s ease;
+  opacity: 0.8;
 }
 .nav a:not(.button):hover:after,
 .nav a:not(.button):focus:after {
@@ -222,6 +228,9 @@ souurce: https://stackoverflow.com/questions/20544309/css-sliding-underline
   transition: opacity 0.8s ease-in-out;
   z-index: 100;
 }
+.hero-text h5 {
+  margin: 1rem 0 2rem 0;
+}
 .hero .button.outline {
   color: white;
   border-color: white;
@@ -235,7 +244,9 @@ souurce: https://stackoverflow.com/questions/20544309/css-sliding-underline
   position: absolute;
   top: 0;
 }
-
+.hero-page {
+  height: auto;
+}
 /*CARDS*/
 .card {
   height: auto;
@@ -300,7 +311,8 @@ a.post-title:hover, a.post-title:focus {
   border-bottom: solid thin lightgray;
   height: 5px;
   line-height: 0.1em; 
-  margin: 1rem 0 4rem;
+  margin: 4rem 0;
+  font-family: var(--font-family-headings);
 }
 .zp-headline.zp-headline-dashed {
   border-bottom: dashed thin var(--color-primary);
@@ -341,15 +353,6 @@ a.post-title:hover, a.post-title:focus {
 /* ARCHIVES PAGE */
 #page-nav > a {
   margin: 0 auto;
-}
-.archives-wrap {
-  /* margin: 2rem 0; */
-}
-.page-number {
-  /* margin: 0 1rem; */
-}
-.extend.next {
-  /* float: right; */
 }
 .archive-nav .extend,
 .archive-nav .current {
@@ -432,5 +435,60 @@ img {
     left: -15rem;
     position: relative;
     margin: 2rem 0;
+  }
+}
+
+.mobile-img {
+  display: none;
+  margin: 2rem 0;
+}
+
+@media screen and (max-width: 768px) {
+  .nav-top {
+    padding: 0 2rem;
+    font-size: 16px;
+    /* background: var(--color-dark);
+    min-height: 0;
+    position: relative; */
+  }
+  .nav-top .nav-left {
+    justify-content: left;
+  }
+  .nav-top .nav-left a {
+    padding-left: 0;
+  }
+  .nav-top .nav-right {
+    justify-content: flex-end;
+    position: absolute;
+    right: 0;
+  }
+  .nav a {
+    margin: 0;
+  }
+  .button {
+    font-size: inherit;
+  }
+  .hero.hero-post {
+    height: 40px;
+  }
+  .container {
+    padding: 2rem;
+  }
+  .post-header {
+    margin: 0;
+  }
+  .mobile-img {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .nav-right a { 
+    padding: 1rem 1rem 1rem 0.6rem 
+  }
+}
+@media screen and (max-width: 300px) {
+  .nav-right a { 
+    display: none; 
   }
 }

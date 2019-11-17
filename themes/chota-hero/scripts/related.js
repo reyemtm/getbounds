@@ -111,11 +111,13 @@ function listRelatedPosts(options) {
         }
         result += `
         <div class="col-6 col-6-md col-6-lg" >
-          <div class="card">
+          <div class="card" style="padding:0;">
             <header>
               <a rel="prefetch" href="/${postList[i].path}"><figure style="background-image: url('/assets/img/${postList[i].img}');")></figure></a>
-              <a class="post-title" rel="prefetch" href="/${postList[i].path}"><h4>${postList[i].title}</h4>
-              <p>${postList[i].subtitle}</p></a>
+              <a class="post-title" rel="prefetch" href="/${postList[i].path}">
+                <h3>${postList[i].title}</h3>
+                <h5>${postList[i].subtitle}</h5>
+              </a>
             </header>
           </div>
         </div>`

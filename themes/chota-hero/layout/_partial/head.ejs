@@ -4,6 +4,8 @@
 <head>
   <meta charset="utf-8">
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#136a66"/>
   <%
   var title = page.title;
 
@@ -40,7 +42,7 @@
   <% } %>
   <% if (page.layout == "slides" || page.layout == "big") { %><%}else{%>
   <!-- default styles -->
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/style.css">
   <%}%>
   <% if (page.header) {%>
   <!-- page.header -->
@@ -53,7 +55,7 @@
   </style>
   <%}%>
 
-  <link rel="stylesheet" href="/assets/prism.css">
+  <!--link rel="stylesheet" href="/assets/prism.css"-->
   <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.16.1/build/styles/default.min.css">
   
   <% if (page.layout === "projects") { %>

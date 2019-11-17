@@ -6,9 +6,7 @@
     "version": "3.9.0"
   },
   "scripts": {
-    "build-dev": "parcel build themes/chota-hero/source/css/style.css --no-minify --out-dir source/",
-    "build": "parcel build themes/chota-hero/source/css/style.css --no-minify --out-dir source/",
-    "deploy": "hexo clean & hexo build"
+    "build": "hexo clean && hexo generate && parcel build public/style.css --out-dir public/"
   },
   "dependencies": {
     "bower": "^1.8.8",

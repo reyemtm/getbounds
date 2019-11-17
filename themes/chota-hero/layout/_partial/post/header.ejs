@@ -9,8 +9,9 @@
     <a rel="prefetch" href="<%- url_for(post.path) %>" class="post-title">
         <h2 itemprop="name" class="post-title"><%- post.title %></h2>
         <h4><%- post.subtitle %></h4>
-        <%- partial('date', {class_name: 'article-date', date_format: null}) %>
-    </a><br>
+    </a>
+    <%- partial('date', {class_name: 'article-date', date_format: null}) %>
+    <br>
     <!--tag-->
     <%- partial('tag') %>
   <% } else { %>
