@@ -1,22 +1,26 @@
----
 layout: post
 title: Beyond Blogging
-subtitle: "Publishing Webmaps with Static Site Generators"  
-date: 2019-04-18 12:03:38
+subtitle: Publishing Webmaps with Static Site Generators
 tags:
- - hexo
- - jekyll
- - leaflet
- - mapbox
-img: 
+  - hexo
+  - jekyll
+  - leaflet
+  - mapbox
 published: false
+date: 2019-04-18 12:03:38
+img:
 ---
-Maintaining a consistent UI can be a complex task, which is why at OVRDC and the City of Zanesville I decided to manage this task via [static site generators](https://www.staticgen.io). I prefer to keep the web applications I build focused, instead of creating a catch-all web app with every map layer and application widget. What this also means is instead of maintaining one application, I need to maintain multiple applications. In the same vein as GeoNode and ArcGIS Online, the public facing result is an application portal with multiple, targeted web applications. In the context of a municipality, most if not all of these applications share similar components. While it mightHowever this means creating multiple web applicati, but this also means that I need to have some way to maintain a consistent UI between all the web applications. 
+Maintaining a consistent UI across all your web applications can be a complex task. While this can be managed by using a framework template, I prefer to keep it simple and use [static site generators](https://www.staticgen.io). In the same vein as GeoNode and ArcGIS Online, the public facing result o is an application portal with multiple, targeted web applications, all with a consistent UI.
+
+![[map-portal]](/assets/img/coz-map-portal.png)
+
+Instead of using a UI shell and a configuration file that then loads components, this method allows for the majority of the code to be static HTML, CSS and JavaScript. This equates to fast load times and simple deployment. 
 
 map gallery which is just post loop
 ui customizations across all posts or maps
 css frameworks built upon any framework and switch
  layer toggles, icons
+ frontmatter to customize each post with css, header, etc
  frontmatter to customize each post with css, header, etc
  - simple to add build tools like parcel or gulp into the build process
  - ability to move maps from development to staging to production using categories

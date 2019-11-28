@@ -12,6 +12,7 @@
     "bower": "^1.8.8",
     "chota": "^0.6.1",
     "hexo": "^3.9.0",
+    "hexo-admin": "^2.3.0",
     "hexo-excerpt": "^1.1.4",
     "hexo-generator-archive": "^0.1.5",
     "hexo-generator-category": "^0.1.3",

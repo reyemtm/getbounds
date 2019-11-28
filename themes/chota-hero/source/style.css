@@ -1,6 +1,8 @@
 /* @import "chota.css"; */
 @import "./chota.css";
-@import "./catamaran/catamaran.css";
+/* @import "./catamaran/catamaran.css"; */
+@import "./xcode.css";
+@import url('https://fonts.googleapis.com/css?family=Quicksand:300,400,700&display=swap');
 /*! chota.css v0.6.1 | MIT License | github.com/jenil/chota */
 /* @import url('https://fonts.googleapis.com/css?family=Aleo:300,400'); */
 :root {
@@ -16,11 +18,11 @@
   --grid-maxWidth: 180rem;
   --grid-gutter: 4rem;
   --font-size: 2rem;
-  --font-family-headings: "Catamaran",-apple-system, BlinkMacSystemFont, Avenir, "Avenir Next",
+  --font-family-headings: "quicksand",-apple-system, BlinkMacSystemFont, Avenir, "Avenir Next",
   "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
   "Droid Sans", "Helvetica Neue", sans-serif;
   --font-weight: 400; /*added*/
-  --font-family: "Catamaran", -apple-system, BlinkMacSystemFont, Avenir, "Avenir Next",
+  --font-family: "quicksand", -apple-system, BlinkMacSystemFont, Avenir, "Avenir Next",
     "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
     "Droid Sans", "Helvetica Neue", sans-serif;
   --inner-width: 90rem;
@@ -48,18 +50,10 @@ html, body {
 }
 h1, h2, h3, h4, h5, h6 {
   margin: 0.35em 0 0.5em 0;
+  font-family: var(--font-family-headings);
 }
 h1 {
-  font-size: 3em;
-}
-h1,h2,h3
- {
-  font-family: var(--font-family-headings);
-  font-weight: 600;
-}
-h4, h5,h6 {
-  font-family: var(--font-family-headings);
-  font-weight: 400;
+  font-size: 2.8em;
 }
 .post a {
   background: #f3f3f6;
@@ -116,6 +110,12 @@ form, button, .button {
 }
 pre {
   font-size: 1.6rem;
+  border: solid thin #121212;
+  border-radius: 2px;
+  background: white;
+}
+pre code.hljs {
+  background: transparent;
 }
 .footer {
   flex-shrink: 0;
@@ -304,6 +304,10 @@ a.post-title:hover, a.post-title:focus {
   height: 360px;
 }
 /*HELPERS*/
+
+a.zp-headline {
+  background: transparent;
+}
 
 .zp-headline {
   display: block;
