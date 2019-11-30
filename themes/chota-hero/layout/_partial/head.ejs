@@ -203,4 +203,13 @@
     }
   </style>
   <%}%>
+  <% if (is_home()) {%>
+    <script>
+      window.addEventListener("load",function() {
+        setTimeout(function(){
+          window.scrollTo(0, 0);
+        }, 0);
+      });
+    </script>  
+  <%}%>
 </head>

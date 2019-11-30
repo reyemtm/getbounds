@@ -7,8 +7,8 @@
   <% if (index){ %>
     <!--index-->
     <a rel="prefetch" href="<%- url_for(post.path) %>" class="post-title">
-        <h1 itemprop="name" class="post-title"><%- post.title %></h2>
-        <h3><%- post.subtitle %></h4>
+        <h2 itemprop="name" class="post-title"><%- post.title %></h2>
+        <h4><%- post.subtitle %></h4>
     </a>
     <%- partial('date', {class_name: 'article-date', date_format: null}) %>
     <br>

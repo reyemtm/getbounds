@@ -2,6 +2,7 @@
 @import "./chota.css";
 /* @import "./catamaran/catamaran.css"; */
 @import "./xcode.css";
+/* @import "./zenburn.css"; */
 @import "./quicksand/quicksand.css";
 /*! chota.css v0.6.1 | MIT License | github.com/jenil/chota */
 /* @import url('https://fonts.googleapis.com/css?family=Aleo:300,400'); */
@@ -55,6 +56,10 @@ h1, h2, h3, h4, h5, h6 {
 h1 {
   font-size: 2.8em;
 }
+input {
+  border-radius: 2px!important;
+}
+/******/
 .post a {
   background: #f3f3f6;
 }
@@ -79,10 +84,11 @@ button, .button {
   outline: transparent;
 }
 blockquote {
- border-left: 3px solid var(--color-primary);
+ border: none;
  font-family: var(--font-family-headings);
  font-weight: 600;
  margin: 2rem 0;
+ background: transparent;
 }
 blockquote p {
   margin: 0;
@@ -110,9 +116,9 @@ form, button, .button {
 }
 pre {
   font-size: 1.6rem;
-  border: solid thin #121212;
+  background: #f9f9f9;
+  border-left: solid 3px var(--color-dark);
   border-radius: 2px;
-  background: white;
 }
 pre code.hljs {
   background: transparent;

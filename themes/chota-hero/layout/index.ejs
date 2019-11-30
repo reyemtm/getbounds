@@ -23,23 +23,23 @@
   heroText.children[2].href = img.dataset.link;
 
   /* slideshow function */
-  // setInterval(function () {
-  //   heroText.style.opacity = 0;
-  //   let img = hero.children[x];
-  //   img.classList.toggle('hidden');
-  //   x = (x < (n-3)) ? x + 1 : 0;
-  //   let img1 = hero.children[x];
-  //   if (!img1.src) {
-  //     img1.style.backgroundImage = "url('" + img1.dataset.src + "')";
-  //   };
-  //   img1.classList.toggle('hidden');
-  //   setTimeout(function() {
-  //     heroText.children[0].innerHTML = img1.dataset.heading;
-  //     heroText.children[1].innerHTML = img1.dataset.subtitle;
-  //     heroText.children[2].href = img1.dataset.link;
-  //     heroText.style.opacity = 1;
-  //   }, 400); 
-  // }, 4000)
+  setInterval(function () {
+    heroText.style.opacity = 0;
+    let img = hero.children[x];
+    img.classList.toggle('hidden');
+    x = (x < (n-3)) ? x + 1 : 0;
+    let img1 = hero.children[x];
+    if (!img1.src) {
+      img1.style.backgroundImage = "url('" + img1.dataset.src + "')";
+    };
+    img1.classList.toggle('hidden');
+    setTimeout(function() {
+      heroText.children[0].innerHTML = img1.dataset.heading;
+      heroText.children[1].innerHTML = img1.dataset.subtitle;
+      heroText.children[2].href = img1.dataset.link;
+      heroText.style.opacity = 1;
+    }, 400); 
+  }, 4000)
   /*1C1D21 - black
 31353D - 
 445878 - blue

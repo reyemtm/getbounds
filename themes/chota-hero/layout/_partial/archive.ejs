@@ -22,22 +22,22 @@
     <%- partial('archive-post', {post: post, even: i % 2 == 0}) %>
   <% }) %>
   <% if (page.posts.length){ %>
+    <% if (page.total > 1){ %>
+      <nav class="archive-nav">
+        <% var prev_text = "← " + __('prev');
+           var next_text = __('next') + " →";
+           var total_text = __('total of')
+        %>
+        <%- paginator({
+          prev_text: prev_text,
+          next_text: next_text
+        }) %>
+      </nav>
+    <% } %>
     </div></section>
   <% } %>
 <% } %>
-</div>
-<% if (page.total > 1){ %>
-  <nav class="archive-nav">
-    <% var prev_text = "← " + __('prev');
-       var next_text = __('next') + " →";
-       var total_text = __('total of')
-    %>
-    <%- paginator({
-      prev_text: prev_text,
-      next_text: next_text
-    }) %>
-  </nav>
-<% } %>
+</div></section>
 <!-- ←Older Posts → &laquo; -->
 <script>
 <% if (page.total > 1){ %>

@@ -3,7 +3,7 @@
   <div class=<% if(is_home()) {%>"hero"<%} else if (is_post()){%>"hero hero-post"<%}else{%>"hero hero-page"<%}%> >
     <% if(is_home()){%>
       <% site.posts.sort('date', -1).each(function(post, i) {%>
-        <% if (post.featured || i === 1) {%>
+        <% if (post.featured || i === 0) {%>
         <div class="hidden img" data-src="/assets/img/<%- post.img %>" data-heading="<%- post.title %>" data-subtitle="<%- post.subtitle %>" data-link="<%- config.root %><%- post.path %>"></div>
         <%}%>
       <%})%>
@@ -36,7 +36,7 @@
       </div>
     <%}%>
     <% if (is_post()) {%>
-      <div style="background-image:url('/assets/img/<%- (page.img) %>');background-size: cover;width: 100%;height: 100%;"></div>
+      <div style="background-image:url('/assets/img/<%- (page.img) %>');background-size: cover;background-position: center;width: 100%;height: 100%;"></div>
       <div class="hero-overlay"></div>
     <%}%>
     <% if (is_page()) {%>
