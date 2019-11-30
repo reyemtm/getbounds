@@ -207,7 +207,9 @@
     <script>
       window.addEventListener("load",function() {
         setTimeout(function(){
-          window.scrollTo(0, 0);
+          var hero = document.querySelector(".hero");
+          console.log(window.innerHeight)
+          hero.style.height = window.innerHeight + "px";
         }, 0);
       });
     </script>  
