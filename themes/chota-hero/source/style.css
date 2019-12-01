@@ -487,6 +487,15 @@ img {
   .post-header {
     margin: 0;
   }
+  .card header {
+    height: 260px;
+  }
+  .card figure {
+    width: 100vw;
+    margin-left: -60px;
+    border-radius: 0;
+    position: absolute;
+  }
   .mobile-img {
     display: block;
   }

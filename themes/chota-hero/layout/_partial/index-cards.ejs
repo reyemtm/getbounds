@@ -5,8 +5,10 @@
       <div class="card">
         <header>
           <a rel="prefetch" href="<%- url_for(post.path) %>"><figure style="background-image: url('/assets/img/<%- post.img %>');")></figure></a>
-          <%- partial('post/header', {post: post, index: true}) %>
         </header>
+        <section>
+          <%- partial('post/header', {post: post, index: true}) %>
+        </section>
       </div>
     </div>
     <%})%>
