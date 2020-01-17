@@ -1,2 +1,3 @@
-# chota-hero
-A blog hero template using chota css and hexo
+# getBounds
+
+A geospatial blog built with Hexo and Chota css.
