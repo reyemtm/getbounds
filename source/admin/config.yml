@@ -24,7 +24,6 @@ collections:
       - {label: "Featured Image", name: "img", widget: "image"}
       - {label: "Tags", name: "tags", widget: "string"}
       - {label: "Custom Style", name: "style", widget: "code"}
-      - {label: "Location", name: "location", widget: "map" }
-      - {label: "Head Links", name: "header", widget: "string" }
+      - {label: "Addintional Styles and Scripts", name: "header", widget: "string" }
       - {label: "Featured", name: "featured", widget: "boolean", default: false}
       - {label: "Body", name: "body", widget: "markdown"}
