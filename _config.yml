@@ -45,6 +45,7 @@ skip_render:
  - "**/*.js"
  - admin/index.html
  - admin/config.yml
+ - _redirects
 
 # Writing
 new_post_name: :year-:month-:day-:title.md # File name of new posts
