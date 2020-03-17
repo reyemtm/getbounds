@@ -103,6 +103,7 @@ deploy:
 include: 
  - slides/**/*.*
  - apps/**/*.*
+ - _redirects
  
 #Hexo Exceprt Plugin
 excerpt:
