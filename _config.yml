@@ -104,6 +104,7 @@ include:
  - slides/**/*.*
  - apps/**/*.*
  - _redirects
+ - admin/config.yml
  
 #Hexo Exceprt Plugin
 excerpt:
