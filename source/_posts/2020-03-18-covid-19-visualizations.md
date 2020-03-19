@@ -1,18 +1,29 @@
 ---
 layout: post
-title: COVID-19 Visualizations
+title: COVID-19 Data & Visualizations
 subtitle: >-
-  A Curated List of Dashboards, Maps and Visualizations of the Coronavirus
+  A Curated List of Dashboards, Data, Maps and Visualizations of the Coronavirus
   Epidemic
 date: 2020-03-18T16:57:33.178Z
-img: assets/img/1.png
+img: assets/img/corona.jpg
 tags: 'mapbox, esri'
 style:
   code: none
 header: none
 featured: false
 ---
+*Data and resources around this epidemic are constantly changing. Please consult the source website to determine data licensing.*
+
+New visualizations around the tragic worldwide COVID-19 epidemic seem to be popping up on a daily basis, and the sources powering these charts, dashboards and maps are also in constant flux. From GitHub repositories to publicly available CSV files, publicly available source data ranges in both scope and format. Some sources include sub-admin level data, such as US Counties, while others focus solely on countries or states/provinces.
+
+The following is a list of data and visualization resources around the COVID-19 epidemic.
+
+### United States
+
+### Outside the US
 [Singapore](https://co.vid19.sg/)
+
+### Worldwide
 
 [University of Washington](https://hgis.uw.edu/virus/)
 https://hgis.uw.edu/virus/assets/virus.csv
