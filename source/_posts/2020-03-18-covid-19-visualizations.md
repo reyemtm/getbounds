@@ -12,9 +12,14 @@ style:
 header: none
 featured: false
 ---
+[Singapore](https://co.vid19.sg/)
+
+[University of Washington](https://hgis.uw.edu/virus/)
+https://hgis.uw.edu/virus/assets/virus.csv
+
+
 [NBC News US Map](https://dataviz.nbcnews.com/projects/20200128-coronavirus-us-count/index.html)
 
-[Singapore](https://co.vid19.sg/)
 
 [Florida](https://fdoh.maps.arcgis.com/apps/opsdashboard/index.html#/8d0de33f260d444c852a615dc7837c86)
 
