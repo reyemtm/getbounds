@@ -5,7 +5,7 @@ subtitle: >-
   A Curated List of Dashboards, Data, Maps and Visualizations of the Coronavirus
   Epidemic
 date: 2020-03-18T16:57:33.178Z
-img: assets/img/corona.jpg
+img: /assets/img/corona.jpg
 tags: 'mapbox, esri'
 style:
   code: none
