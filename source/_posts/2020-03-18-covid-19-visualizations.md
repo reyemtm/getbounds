@@ -25,6 +25,7 @@ The following is a list of data and visualization resources around the COVID-19 
 
 ### Worldwide
 
+
 [University of Washington](https://hgis.uw.edu/virus/)
 https://hgis.uw.edu/virus/assets/virus.csv
 
