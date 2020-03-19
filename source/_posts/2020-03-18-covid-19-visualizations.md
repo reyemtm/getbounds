@@ -13,3 +13,21 @@ header: none
 featured: false
 ---
 [NBC News US Map](https://dataviz.nbcnews.com/projects/20200128-coronavirus-us-count/index.html)
+
+[Singapore](https://co.vid19.sg/)
+
+[Florida](https://fdoh.maps.arcgis.com/apps/opsdashboard/index.html#/8d0de33f260d444c852a615dc7837c86)
+
+https://www.worldometers.info/coronavirus/
+
+https://nssac.bii.virginia.edu/covid-19/dashboard/
+
+https://www.bbc.com/news/world-51235105
+
+https://experience.arcgis.com/experience/685d0ace521648f8a5beeeee1b9125cd
+
+https://covid-19.splunkforgood.com/coronavirus__covid_19_
+
+https://bing.com/covid
+
+https://www.wolframcloud.com/obj/examples/COVID19Dashboard
