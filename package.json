@@ -6,10 +6,12 @@
     "version": "3.9.0"
   },
   "scripts": {
-    "build": "hexo clean && hexo generate && parcel build public/style.css --out-dir public/"
+    "build": "node covid19-oh/scrape-oh.js && hexo clean && hexo generate && parcel build public/style.css --out-dir public/",
+    "covid": "node covid19-oh/scrape-oh.js"
   },
   "dependencies": {
     "bower": "^1.8.8",
+    "cheerio": "^1.0.0-rc.3",
     "chota": "^0.6.1",
     "hexo": "^3.9.0",
     "hexo-admin": "^2.3.0",
@@ -26,6 +28,8 @@
     "hexo-server": "^0.3.3",
     "hexo-slides-reveal": "0.0.5",
     "lodash.assign": "^4.2.0",
+    "node-fetch": "^2.6.0",
+    "papaparse": "^5.1.1",
     "striptags": "^3.1.1"
   },
   "devDependencies": {
