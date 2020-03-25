@@ -125,9 +125,9 @@
       The data scraper for all data after March 24, 2020 is based on the <a href="https://coronadatascraper.com/#home" target="_blank">Corona Data Scraper</a> project, licensed <a href="https://github.com/lazd/coronadatascraper/blob/master/LICENSE" target="_blank">BSD-2</a>.
     </p>
     <p>
-      <a href="covid19-oh-counties-timeseries.json" target="_blank">json timeseries data</a>
+      <a href="/covid19-oh/covid19-oh-counties-timeseries.json" target="_blank">json timeseries data</a>
       <br>
-      <a href="covid19-oh-counties-cases.csv" target="_blank">csv total cases timeseries data</a>
+      <a href="/covid19-oh/covid19-oh-counties-cases.csv" target="_blank">csv total cases timeseries data</a>
     </p>
   </div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/mapbox-gl/1.8.1/mapbox-gl.js"></script>
@@ -150,7 +150,7 @@
       recovered: 0
     }
 
-    fetch("covid19-oh-counties-timeseries.json")
+    fetch("/covid19-oh/covid19-oh-counties-timeseries.json")
     .then(res => res.json())
     .then(data => {
       initChart(data, "Ohio")
@@ -266,8 +266,8 @@
       start: Date.now()
     }
     var sources = [
-      "counties-10m.json",
-      "states-10m.json",
+      "/covid19-oh/counties-10m.json",
+      "/covid19-oh/states-10m.json",
     ]
     Promise.all(sources.map(url => fetch(url))).then(responses =>
       Promise.all(responses.map(res => {
