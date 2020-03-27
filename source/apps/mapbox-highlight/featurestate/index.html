@@ -46,13 +46,14 @@
           "id": "background",
           "type": "background",
           "paint": {
-            "background-color": "#1d1f20"
+            "background-color": "#121212",
+            "background-opacity": 0.9
           }
         }]
       },
       center: [-95.52, 39.94],
-      zoom: 4,
-      debug: 1
+      zoom: 5,
+      scrollZoom: false
     });
     // map.addControl(new mapboxgl.NavigationControl());
     // map.addControl(new mapboxgl.FullscreenControl());
@@ -78,7 +79,7 @@
           'visibility': 'visible'
         },
         'paint': {
-          'fill-color': 'skyblue',
+          'fill-color': 'transparent',
           'fill-outline-color': 'white',
           'fill-opacity': 0.9
         }
@@ -112,7 +113,7 @@
       layer.filter = ["==", "FIPS", features[0].properties.FIPS]
       layer.type = "line";
       layer.paint = {
-        "line-color": "yellow",
+        "line-color": "red",
         "line-width": 4
       }
 
@@ -150,7 +151,7 @@
       layer.paint = {
         "line-color": ["case",
           ["boolean", ["feature-state", "highlight"], false],
-          "yellow",
+          "red",
           "transparent"
         ],
         "line-width": 4

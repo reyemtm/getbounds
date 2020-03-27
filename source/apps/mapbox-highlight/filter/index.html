@@ -27,7 +27,7 @@
   <script>
     //https://docs.mapbox.com/help/troubleshooting/mapbox-gl-js-performance/
     /*Blank Mapbox GL Map*/
-
+//1d1f20
     var map = new mapboxgl.Map({
       container: 'map',
       hash: true,
@@ -46,13 +46,13 @@
           "id": "background",
           "type": "background",
           "paint": {
-            "background-color": "#1d1f20"
+            "background-color": "whitesmoke"
           }
         }]
       },
       center: [-95.52, 39.94],
-      zoom: 4,
-      debug: 1
+      zoom: 5,
+      scrollZoom: false
     });
     // map.addControl(new mapboxgl.NavigationControl());
     // map.addControl(new mapboxgl.FullscreenControl());
@@ -78,8 +78,8 @@
           'visibility': 'visible'
         },
         'paint': {
-          'fill-color': 'skyblue',
-          'fill-outline-color': 'white',
+          'fill-color': 'transparent',
+          'fill-outline-color': '#121212',
           'fill-opacity': 0.9
         }
       });
@@ -111,7 +111,7 @@
       layer.filter = ["==", "FIPS", features[0].properties.FIPS]
       layer.type = "line";
       layer.paint = {
-        "line-color": "yellow",
+        "line-color": "red",
         "line-width": 4
       }
 
@@ -149,7 +149,7 @@
       layer.paint = {
         "line-color": ["case",
           ["boolean", ["feature-state", "highlight"], false],
-          "yellow",
+          "red",
           "transparent"
         ],
         "line-width": 4
