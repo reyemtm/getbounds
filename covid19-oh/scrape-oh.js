@@ -57,10 +57,10 @@ function processData(data) {
 
     for (let i in countyData) {
       if (c.fips == countyData[i].FIPS) {
-        c.dates[dates[0]].cases = countyData[i].Confirmed
-        c.dates[dates[0]].deaths = countyData[i].Deaths;
-        c.dates[dates[0]].active = countyData[i].Active;
-        c.dates[dates[0]].recovered = countyData[i].Recovered
+        c.dates[dates[0]].cases = Number(countyData[i].Confirmed)
+        c.dates[dates[0]].deaths = Number(countyData[i].Deaths);
+        c.dates[dates[0]].active = Number(countyData[i].Active);
+        c.dates[dates[0]].recovered = Number(countyData[i].Recovered)
       }
     }
   })
