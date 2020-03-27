@@ -26,16 +26,20 @@ const dates = [
 
 console.log(dates);
 
-process.exit(0)
-
 fetch(`https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_daily_reports/${formatDateDash(t)}.csv`)
-  .then(res => res.text())
+  .then(res => {
+    if (res.status != 200) {
+      throw ("error, response not 200")
+    }else{
+      return res.text()
+    }
+  })
   .then(csv => {
     console.log("covid data download successful")
     var results = Papa.parse(csv, {
       header: true
     });
-    processData(results.data)
+    processData(results.data);
   })
   .catch(err => {
     console.log(err)
