@@ -6,7 +6,7 @@
     "version": "3.9.0"
   },
   "scripts": {
-    "build": "node covid19-oh/scrape-oh.js && hexo clean && hexo generate && parcel build public/style.css --out-dir public/",
+    "build": "hexo clean && hexo generate && parcel build public/style.css --out-dir public/",
     "covid": "node covid19-oh/scrape-oh.js"
   },
   "dependencies": {
