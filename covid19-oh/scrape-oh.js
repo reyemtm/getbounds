@@ -24,6 +24,10 @@ const dates = [
   formatDate(t), formatDate(yesterday), formatDate(twodays)
 ]
 
+console.log(dates);
+
+process.exit(0)
+
 fetch(`https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_daily_reports/${formatDateDash(t)}.csv`)
   .then(res => res.text())
   .then(csv => {
