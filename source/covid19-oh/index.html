@@ -225,7 +225,7 @@
         fill: {
           type: "gradient"
         },
-        colors: ["#7a0177"],
+        colors: ["#c51b8a"],
         // grid: {
         //   row: {
         //     colors: ['#f3f3f3', 'transparent'], // takes an array which will be repeated on columns
@@ -355,8 +355,8 @@
         if (d.cases > max) max = Number(d.cases);
       })
 
-      var limits = chroma.limits([min, max], 'l', 4);
-      var scale = chroma.scale(["#fcc5c0", "#7a0177"]).colors(5);
+      var limits = chroma.limits([min, max], 'l', 5);
+      var scale = chroma.scale(["#feebe2", "#7a0177"]).colors(5);
 
       console.log(limits, scale)
 
@@ -400,10 +400,11 @@
         },
         'paint': {
           'fill-color': ["case",
-            [">", ["get", "cases"], limits[3]], scale[4],
-            [">", ["get", "cases"], limits[2]], scale[3],
-            [">", ["get", "cases"], limits[1]], scale[2],
-            [">=", ["get", "cases"], limits[0]], scale[1],
+            [">", ["get", "cases"], limits[4]], scale[4],
+            [">", ["get", "cases"], limits[3]], scale[3],
+            [">", ["get", "cases"], limits[2]], scale[2],
+            [">", ["get", "cases"], limits[1]], scale[1],
+            [">=", ["get", "cases"], limits[0]], scale[0],
             "white"
           ],
           'fill-opacity': ["case", ['boolean', ['feature-state', 'hover'], false], 1, 0.8 ],
