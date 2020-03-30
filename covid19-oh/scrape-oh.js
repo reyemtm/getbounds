@@ -29,7 +29,21 @@ console.log(dates);
 fetch(`https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_daily_reports/${formatDateDash(t)}.csv`)
   .then(res => {
     if (res.status != 200) {
-      throw ("error, response not 200")
+      fetch(`https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_daily_reports/${formatDateDash(yesterday)}.csv`)
+      .then(res => {
+        if (res.status != 200) {
+          throw("error, res not 200")
+        }else{
+          return res.text()
+        }
+      })
+      .then(csv => {
+        console.log("covid data download successful")
+        var results = Papa.parse(csv, {
+          header: true
+        });
+        processData(results.data);
+      })
     }else{
       return res.text()
     }
