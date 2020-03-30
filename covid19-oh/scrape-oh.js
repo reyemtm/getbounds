@@ -35,7 +35,7 @@ function getData(date) {
   .then(res => {
     if (res.status != 200) {
       if (tries) {
-        getDate(formatDate(yesterday))
+        getData(formatDate(yesterday))
       }else{
         throw("error, res not 200")
       }
