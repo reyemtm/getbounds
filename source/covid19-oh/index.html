@@ -39,7 +39,7 @@
     }
     #map {
       position: relative;
-      height: calc(100vh - 450px);
+      height: calc(100vh - 480px);
       width: 100%;
       border: solid;
     }
@@ -94,9 +94,8 @@
 
   <div class="container">
     <p style="font-size:larger;">
-      The current rate of growth from yesterday is <span id="rate" style="font-weight: 600;">&nbsp;&nbsp;</span> percent. <span id="content"></span>
-    </p>
-    <p><a href="https://coronavirus.ohio.gov/wps/portal/gov/covid-19/home/dashboard">Official State of Ohio COVID-19 Dashboard</a></p>
+      The current rate of growth from the last update is <span id="rate" style="font-weight: 600;">&nbsp;&nbsp;</span> percent. <span id="content"></span>
+    <br></p>
     <!-- <div class="row">
       <div class="col">
         <h1 id="confirmed">Confirmed Cases:</h1>
@@ -121,10 +120,12 @@
         <div id="map" ></div>
       </div>
     </div>
-    <h4>Sources</h4>
+    <h4>Sources
+      <br><em style="font-weight:300;font-size:16px;">Data was last updated on <span id="updated"></span></em>
+    </h4>
     <a href="https://github.com/CSSEGISandData/COVID-19" target="_blank">2019 Novel Coronavirus COVID-19 (2019-nCoV) Data Repository by Johns Hopkins CSSE</a><br>
 
-    <a href="https://coronavirus.ohio.gov/wps/portal/gov/covid-19/home/dashboard" target="_blank">Ohio Coronavirus CDC website</a><br>
+    <a href="https://coronavirus.ohio.gov/wps/portal/gov/covid-19/home/dashboard" target="_blank">Official Ohio Coronavirus Dashboard</a><br>
 
     <a href="https://coronadatascraper.com/#home" target="_blank">Corona Data Scraper</a>
     <h4>Compiled Data</h4>
@@ -146,6 +147,8 @@
     var chartConfirmedDataGlobal;
     var chartDataTotals = [];
 
+    var latestDate = "";
+
     fetch("/covid19-oh/covid19-oh-counties-timeseries.json")
     .then(res => res.json())
     .then(data => {
@@ -165,14 +168,19 @@
 
       for (let k in chartData[0].dates) {
         if (k.includes("\/20")) {
+          latestDate = k;
           var date = k.split("/");
           var date2 = date[2] + "-0" + date[0] + "-" + date[1];
           chartDataTotals.push({
             x: date2,
             y: 0
-          })
+          });
         }
       }
+
+
+      var dateOptions = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };;
+      document.querySelector("#updated").innerText = new Date(latestDate).toLocaleDateString('en-US', dateOptions);
 
       chartData.map(d => {
         for (let k in d.dates) {
