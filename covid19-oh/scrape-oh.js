@@ -37,6 +37,7 @@ function getData(date) {
       if (tries) {
         console.log("no data trying yesterday")
         getData(formatDate(yesterday))
+      tries =0
         return 0
       }else{
         console.log("error, res not 200")
