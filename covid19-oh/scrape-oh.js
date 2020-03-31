@@ -38,7 +38,7 @@ function getData(date) {
     if (res.status != 200) {
       if (tries) {
         console.log("no data trying yesterday")
-        getData(formatDate(yesterday))
+        getData(formatDateDash(yesterday))
       tries =0
         return 0
       }else{
