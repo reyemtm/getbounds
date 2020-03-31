@@ -45,11 +45,13 @@ function getData(date) {
     }
   })
   .then(csv => {
-    console.log("covid data download successful")
+    if (csv) {
+    console.log("covid data download successful", date)
     var results = Papa.parse(csv, {
       header: true
     });
     processData(results.data);
+      }
   })
   .catch(err => {
     console.log(err)
