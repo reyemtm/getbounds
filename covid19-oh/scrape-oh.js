@@ -2,7 +2,7 @@ const fetch = require("node-fetch")
 const cheerio = require("cheerio")
 const fs = require("fs");
 const Papa = require("papaparse")
-const t = new Date();
+const t = new Date(Date.now());
 const yesterday = new Date(Date.now() - 86400000);
 const twodays = new Date(Date.now() - (86400000 * 2))
 
@@ -37,7 +37,7 @@ function getData(date) {
       if (tries) {
         getData(formatDate(yesterday))
       }else{
-        throw("error, res not 200")
+        console.log("error, res not 200")
       }
       tries = 0;
     }else{
@@ -55,7 +55,7 @@ function getData(date) {
   })
   .catch(err => {
     console.log(err)
-    process.exit(0)
+  
   });
 }
 
