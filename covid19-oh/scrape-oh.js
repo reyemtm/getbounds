@@ -35,7 +35,9 @@ function getData(date) {
   .then(res => {
     if (res.status != 200) {
       if (tries) {
+        console.log("no data trying yesterday")
         getData(formatDate(yesterday))
+        return 0
       }else{
         console.log("error, res not 200")
       }
