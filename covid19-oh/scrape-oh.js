@@ -28,11 +28,13 @@ console.log(dates);
 
 var tries = 1;
 
-getData(formatDate(t))
+getData(formatDateDash(t))
 
 function getData(date) {
-  fetch(`https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_daily_reports/${date}.csv`)
+  var url = `https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_daily_reports/${date}.csv`
+  fetch(url)
   .then(res => {
+    console.log(res.status, url)
     if (res.status != 200) {
       if (tries) {
         console.log("no data trying yesterday")
