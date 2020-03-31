@@ -7,7 +7,6 @@
   <title>Ohio COVID 19 Tracker</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mapbox-gl/1.8.1/mapbox-gl.css">
   <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/spectre.css/0.5.8/spectre.min.css"> -->
-  <link rel="stylesheet" href="https://unpkg.com/chota">
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.16.1/apexcharts.css' />
 
   <!-- <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script> -->
@@ -27,25 +26,65 @@
   <meta name="twitter:creator" content="@getbounds" />
 
   <style>
+    @import url("https://unpkg.com/chota");
+
+    :root {
+      --color-primary: #c51b8a;
+    }
 
     html,
     body {
       background: white;
       height: calc(100vh - 2rem);
       background: white;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
     }
-    body, p {
+
+    body,
+    p {
       font-weight: 300;
     }
+
+    main {
+      flex: 1;
+    }
+
+    footer {
+      flex-shrink: 0;
+      background-color: #f5f5f587;
+      padding: 2rem 0;
+    }
+
+    .heading {
+      box-shadow: 0px 1px 5px 0px gainsboro;
+      padding: 1rem calc(var(--grid-gutter)/2);
+      margin-bottom: 1rem;
+      font-size: 2rem;
+    }
+    
+    .nav {
+      box-shadow: 0px 1px 5px 0px gainsboro;
+      padding: 0 5rem;
+      margin-bottom: 1rem;
+    }
+
     #map {
       position: relative;
       height: 815px;
       width: 100%;
       border: solid;
     }
+
+    .mapboxgl-map {
+      font-family: -apple-system, BlinkMacSystemFont, Avenir, "Avenir Next", "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+    }
+
     .apexcharts-canvas {
       border: solid;
     }
+
     .mapboxgl-canvas:focus {
       outline: none;
     }
@@ -53,7 +92,7 @@
     .container {
       max-width: 100%;
       margin: 0 auto;
-      width: 96%;
+      /* width: 96%; */
       padding: 0 calc(var(--grid-gutter)/2);
     }
 
@@ -61,25 +100,32 @@
       background: rgba(255, 255, 255, 0.05);
       margin-top: 2rem;
     }
-    .nav {
-      box-shadow: 0px 1px 5px 0px lightgray;
-      padding: 0 5rem;
-      margin-bottom: 1rem;
-    }
+
     .headline {
       font-size: 2rem;
       color: #121212;
       font-weight: 300;
     }
+
     .headline-2 {
       font-size: 2rem;
       color: #121212;
-      font-weight: 300;
+      font-weight: 600;
+      position: absolute;
+      z-index: 10;
     }
+
     @media screen and (max-width: 600px) {
       .is-right {
         float: none;
       }
+    }
+
+    text {
+      font-family: BlinkMacSystemFont, Avenir, "Avenir Next", "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      fill: #121212;
     }
   </style>
 
@@ -92,10 +138,14 @@
     </div>
   </nav>
 
-  <div class="container">
+  <main class="container">
     <p style="font-size:larger;">
-      The current rate of growth from the last update is <span id="rate" style="font-weight: 600;">&nbsp;&nbsp;</span> percent. <span id="content"></span> 
-    <br></p>
+      The current rate of growth from the last update is <span id="rate" style="font-weight: 600;">&nbsp;&nbsp;</span>
+      percent. <span id="content"></span> For hospitalizations,
+      breakdown by age, and other metrics see the official <a
+        href="https://coronavirus.ohio.gov/wps/portal/gov/covid-19/home/dashboard" target="_blank">Ohio
+        Coronavirus Dashboard</a>.
+      <br></p>
     <!-- <div class="row">
       <div class="col">
         <h1 id="confirmed">Confirmed Cases:</h1>
@@ -110,102 +160,111 @@
         
       </div>
     </div> -->
-    <div class="row">
+    <div class="row" style="margin-top:3rem;">
       <div class="col-12 col-4-md">
-        <div style="font-size:2rem">&nbsp;</div>
         <div id="casesChart"></div>
         <div id="rateChart"></div>
       </div>
       <div class="col-12 col-8-md">
-        <span class="headline-2">Interact with the map to view cases by county</span>
-        <div id="map" ></div>
+        <div id="map">
+          <div class="headline-2" style="margin:1rem;">Interact with the map to view cases by county</div>
+
+        </div>
         <em>Circles represent total confirmed cases. Colors represent cases per thousand people.</em>
       </div>
     </div>
-    <h4>Sources
-      <br><em style="font-weight:300;font-size:16px;">Data was last updated on <span id="updated"></span></em>
-    </h4>
-    <a href="https://github.com/CSSEGISandData/COVID-19" target="_blank">2019 Novel Coronavirus COVID-19 (2019-nCoV) Data Repository by Johns Hopkins CSSE</a><br>
+  </main>
+  <footer>
+    <div class="container">
+      <h4>Sources</h4>
 
-    <a href="https://coronavirus.ohio.gov/wps/portal/gov/covid-19/home/dashboard" target="_blank">Official Ohio Coronavirus Dashboard</a><br>
-
-    <a href="https://coronadatascraper.com/#home" target="_blank">Corona Data Scraper</a>
-    <h4>Compiled Data</h4>
-    <p>
-      <a href="/covid19-oh/covid19-oh-counties-timeseries.json" target="_blank">json timeseries data</a>
-      <br>
-      <a href="/covid19-oh/covid19-oh-counties-cases.csv" target="_blank">csv total cases timeseries data</a>
-    </p>
-  </div>
+      <a href="https://coronavirus.ohio.gov/wps/portal/gov/covid-19/home/dashboard" target="_blank">Ohio Coronavirus
+        Dashboard</a><br>
+  
+      <a href="https://github.com/CSSEGISandData/COVID-19" target="_blank">2019 Novel Coronavirus COVID-19 (2019-nCoV)
+        Data Repository by Johns Hopkins CSSE &copy; 2020 Johns Hopkins University</a><br>
+  
+      <em style="font-weight:300;font-size:16px;">Data was last updated on <span id="updated"></span></em><br>
+  
+      <!-- <h4>Compiled Data</h4>
+      <p>
+        <a href="/covid19-oh/covid19-oh-counties-timeseries.json" target="_blank">json timeseries data</a>
+        <br>
+        <a href="/covid19-oh/covid19-oh-counties-cases.csv" target="_blank">csv total cases timeseries data</a>
+      </p> -->
+    </div>
+  </footer>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/mapbox-gl/1.8.1/mapbox-gl.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Turf.js/5.1.5/turf.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/chroma-js/2.1.0/chroma.min.js"
     integrity="sha256-gX8uuyxN8stSMHWO9arnnKyenTOALaVAcVB3b6P87e4=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/topojson/3.0.2/topojson.min.js" integrity="sha256-tHoAPGoNdhIR28YHl9DWLzeRfdwigkH7OCBXMrHXhoM=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/topojson/3.0.2/topojson.min.js"
+    integrity="sha256-tHoAPGoNdhIR28YHl9DWLzeRfdwigkH7OCBXMrHXhoM=" crossorigin="anonymous"></script>
   <script>
-    var casesChart, rateChart;
+    var casesChart, rateChart, lastUpdate, chartConfirmedDataGlobal;
     var urlParams = new URLSearchParams(window.location.search);
     var stateQuery = (!urlParams.get('state')) ? "Ohio" : urlParams.get('state');
-    var chartConfirmedDataGlobal;
-
-    var lastUpdate = "";
+    var regex = new RegExp(/[0-9]*\/[0-9]*\/[0-9]*/g);
 
     fetch("/covid19-oh/covid19-oh-counties-timeseries.json")
-    .then(res => res.json())
-    .then(data => {
-      console.log(data);
+      .then(res => res.json())
+      .then(data => {
+        var filtered = data.filter(d => {
+          return d.state == stateQuery
+        });
+        chartConfirmedDataGlobal = filtered.slice();
 
-      var chartDataTotals = [];
+        var chartData = initData(filtered);
+        initCasesChart(chartData);
+        initRateChart(chartData)
+      })
 
-      var region = "Ohio"
+    function initData(data) {
+      var totals = [];
 
-      var chartData = data.filter(d => {
-        return d.state == region
-      });
-
-      chartConfirmedDataGlobal = chartData.slice();
-
-      for (let k in chartData[0].dates) {
+      for (let k in data[0].dates) {
         if (k.includes("\/20")) {
           latestDate = k;
           var date = k.split("/");
           var date2 = date[2] + "-0" + date[0] + "-" + date[1];
-          chartDataTotals.push({
+          totals.push({
             x: date2,
             y: 0
           });
         }
       }
 
-      chartData.map(d => {
+      data.map(d => {
         for (let k in d.dates) {
           if (k.includes("\/20")) {
             var date = k.split("/");
             var date2 = date[2] + "-0" + date[0] + "-" + date[1];
-            chartDataTotals.map((x,i) => {
+            totals.map((x, i) => {
               if (x.x === date2) x.y = x.y + Number(d.dates[k].cases)
             })
             lastUpdate = k
           }
         }
+      });
+
+      document.querySelector("#updated").innerText = (new Date(lastUpdate)).toLocaleDateString("en-US", {
+        weekday: 'long',
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
       })
 
-      document.querySelector("#updated").innerText = (new Date(lastUpdate)).toLocaleDateString("en-US", { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })
-
-      initCasesChart(chartDataTotals);
-      initRateChart(chartDataTotals)
-    })
-
-    var regex = new RegExp(/[0-9]*\/[0-9]*\/[0-9]*/g);
+      return totals
+    }
 
     function initRateChart(data, region) {
 
       var chartDataRate = []
 
-      data.map((d,i) => {
+      data.map((d, i) => {
         if (d.y > 50) {
           var x = d.x;
-          var y = (i < 1) ? 0 : (i === 1) ? 0 : ((((d.y / data[i - 1].y)) -1 ) * 100).toFixed(2);
+          var y = (i < 1) ? 0 : (i === 1) ? 0 : ((((d.y / data[i - 1].y)) - 1) * 100).toFixed(2);
           chartDataRate.push({
             x: x,
             y: y
@@ -216,14 +275,14 @@
       console.log(chartDataRate)
 
       var options = {
-          series: [{
-            name: "Rate",
-            data: chartDataRate,
-            type: 'bar',
-            stroke: false
-          }
-        ],
-          chart: {
+        series: [{
+          name: "Rate",
+          data: chartDataRate,
+          type: 'bar',
+          stroke: false
+        }],
+        chart: {
+          fontFamily: '-apple-system,BlinkMacSystemFont,Avenir,"Avenir Next","Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif',
           height: 400,
           zoom: {
             enabled: false
@@ -236,23 +295,23 @@
           curve: 'smooth'
         },
         title: {
-          text: 'Rolling Rate of Change Since 50 Cases (Latest ' + chartDataRate[chartDataRate.length - 1].y + '%)',
+          text: '% Change Since 50 Cases (Latest ' + chartDataRate[chartDataRate.length - 1].y + '%)',
           align: 'left'
         },
         grid: {
           show: true
         },
         fill: {
-          type: "solid",
-          colors: ["#c51b8a"]
+          type: "solid"
         },
+        colors: ["#c51b8a"],
         stroke: {
           show: false,
           curve: 'smooth',
           lineCap: 'butt',
           colors: undefined,
           width: 2,
-          dashArray: 0,      
+          dashArray: 0,
         },
         // grid: {
         //   row: {
@@ -272,38 +331,37 @@
         yaxis: {
           show: true
         }
-        };
-        if (!rateChart) {
-          rateChart = new ApexCharts(document.querySelector("#rateChart"), options);
-          rateChart.render();
-        }else{
-          rateChart.destroy();
-          rateChart = new ApexCharts(document.querySelector("#rateChart"), options);
-          rateChart.render();
-        }
+      };
+      if (!rateChart) {
+        rateChart = new ApexCharts(document.querySelector("#rateChart"), options);
+        rateChart.render();
+      } else {
+        rateChart.destroy();
+        rateChart = new ApexCharts(document.querySelector("#rateChart"), options);
+        rateChart.render();
+      }
     }
 
     function initCasesChart(data, region) {
       var caseData = data.slice(0)
 
       console.log(caseData)
-/*          series: [{
-          name: 'Website Blog',
-          type: 'column',
-          data: [440, 505, 414, 671, 227, 413, 201, 352, 752, 320, 257, 160]
-        }, {
-          name: 'Social Media',
-          type: 'line',
-          data: [23, 42, 35, 27, 43, 22, 17, 31, 22, 22, 12, 16]
-        }],*/
+      /*          series: [{
+                name: 'Website Blog',
+                type: 'column',
+                data: [440, 505, 414, 671, 227, 413, 201, 352, 752, 320, 257, 160]
+              }, {
+                name: 'Social Media',
+                type: 'line',
+                data: [23, 42, 35, 27, 43, 22, 17, 31, 22, 22, 12, 16]
+              }],*/
       var options = {
-          series: [
-            {
-              name: "Confirmed",
-              data: caseData
-            }
-          ],
-          chart: {
+        series: [{
+          name: "Confirmed",
+          data: caseData
+        }],
+        chart: {
+          fontFamily: '-apple-system,BlinkMacSystemFont,Avenir,"Avenir Next","Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif',
           height: 400,
           type: 'bar',
           zoom: {
@@ -314,7 +372,8 @@
           enabled: false
         },
         title: {
-          text: 'Confirmed Cases over Time (Latest ' + caseData[caseData.length - 1].y + ')',
+          text: 'Confirmed Cases over Time (Latest ' + (caseData[caseData.length - 1].y)
+            .toLocaleString() + ')',
           align: 'left'
         },
         grid: {
@@ -342,19 +401,20 @@
         yaxis: {
           show: true
         }
-        };
-        if (!casesChart) {
-          casesChart = new ApexCharts(document.querySelector("#casesChart"), options);
-          casesChart.render();
-        }else{
-          casesChart.destroy();
-          casesChart = new ApexCharts(document.querySelector("#casesChart"), options);
-          casesChart.render();
-        }
+      };
+      if (!casesChart) {
+        casesChart = new ApexCharts(document.querySelector("#casesChart"), options);
+        casesChart.render();
+      } else {
+        casesChart.destroy();
+        casesChart = new ApexCharts(document.querySelector("#casesChart"), options);
+        casesChart.render();
+      }
 
-        var rate = Number( (((caseData[caseData.length - 1].y / caseData[caseData.length - 2].y) - 1) * 100).toFixed(2))
-        document.querySelector("#rate").innerText = rate;
-    }  
+      var rate = Number((((caseData[caseData.length - 1].y / caseData[caseData.length - 2].y) - 1) * 100).toFixed(
+        2))
+      document.querySelector("#rate").innerText = rate;
+    }
 
     var sources = [
       "/covid19-oh/us_counties.topo.json",
@@ -362,15 +422,15 @@
       "/covid19-oh/county_centroids.geojson"
     ]
     Promise.all(sources.map(url => fetch(url))).then(responses =>
-      Promise.all(responses.map(res => {
-        if (res.status === 200) {
-          return res.json()
-        } else {
-          return {}
-        }
-      })))
+        Promise.all(responses.map(res => {
+          if (res.status === 200) {
+            return res.json()
+          } else {
+            return {}
+          }
+        })))
       .then(raw => {
-        console.log(raw)
+        // console.log(raw)
         var data = [];
         data[0] = chartConfirmedDataGlobal;
         data[1] = topojson.feature(raw[0], raw[0].objects.us_counties)
@@ -412,7 +472,7 @@
       })
 
       data[1].features.map(f => {
-        f.properties.state = (f.properties.FIPS).substr(0,2);
+        f.properties.state = (f.properties.FIPS).substr(0, 2);
         f.properties["cases"] = 0;
         f.properties.casesperthousand = 0;
         f.properties.deaths = 0;
@@ -421,8 +481,9 @@
           if (d.fips == f.properties.FIPS && d.cases > 0) {
             f.properties["cases"] = Number(d.cases);
             if (f.properties.pop2017 > 1) {
-              f.properties.casesperthousand = (Number(d.cases) / (f.properties.pop2017 / 1000)) * 100
-            }           
+              f.properties.casesperthousand = (Number(d.cases) / (f.properties.pop2017 /
+                1000)) * 100
+            }
             f.properties.deaths = (!d.deaths) ? 0 : d.deaths
             totals.count = totals.count + 1;
             totals.counties = totals.counties - 1;
@@ -437,7 +498,7 @@
       }
 
       data[3].features.map(f => {
-        f.properties.state = (f.properties.fips).substr(0,2);
+        f.properties.state = (f.properties.fips).substr(0, 2);
         f.properties["cases"] = 0;
         f.properties.casesperthousand = 0
         f.properties.deaths = 0;
@@ -445,7 +506,8 @@
           if (d.fips == f.properties.fips && d.cases > 0) {
             f.properties["cases"] = Number(d.cases);
             if (f.properties.pop2017 > 1) {
-              f.properties.casesperthousand = (Number(d.cases) / (f.properties.pop2017 / 1000)) * 100
+              f.properties.casesperthousand = (Number(d.cases) / (f.properties.pop2017 /
+                1000)) * 100
             }
             f.properties.deaths = (!d.deaths) ? 0 : d.deaths
           }
@@ -462,7 +524,7 @@
       })
 
       var limits = chroma.limits([min, max], 'l', 5);
-      var scale = chroma.scale(["#feebe2", "#7a0177"]).colors(5);
+      var scale = chroma.scale(["#fbe4f3", "#c51b8a"]).colors(5);
 
       console.log(limits, scale)
 
@@ -484,7 +546,7 @@
       })
 
       // map.addLayer({
-      //   "id": "counties",
+      //   "id": "counties_bkacground",
       //   'type': 'fill',
       //   'source': 'counties',
       //   'layout': {
@@ -496,6 +558,20 @@
       //     'fill-outline-color': 'transparent'
       //   }
       // })
+
+      map.addLayer({
+        "id": "states_outline",
+        'type': 'line',
+        'source': 'states',
+        'layout': {
+          'visibility': 'visible'
+        },
+        'paint': {
+          'line-color': "gray",
+          'line-opacity': 0.2,
+          'line-width': 2
+        }
+      });
 
       map.addLayer({
         "id": "counties",
@@ -513,7 +589,7 @@
             [">", ["get", "casesperthousand"], 0], scale[0],
             "whitesmoke"
           ],
-          'fill-opacity': ["case", ['boolean', ['feature-state', 'hover'], false], 1, 0.8 ],
+          'fill-opacity': ["case", ['boolean', ['feature-state', 'hover'], false], 1, 0.8],
           'fill-outline-color': 'transparent'
         },
         "filter": ["==", ["get", "state"], "39"]
@@ -527,40 +603,41 @@
           'visibility': 'visible'
         },
         'paint': {
-          'line-color':   ["case", ['boolean', ['feature-state', 'hover'], false],"black", "#121212" ],
-          'line-opacity': ["case", ['boolean', ['feature-state', 'hover'], false], 1, 0.5 ],
-          'line-width':   ["case", ['boolean', ['feature-state', 'hover'], false], 1.6,1 ],
+          'line-color': ["case", ['boolean', ['feature-state', 'hover'], false], "black", "#121212"],
+          'line-opacity': ["case", ['boolean', ['feature-state', 'hover'], false], 1, 0.5],
+          'line-width': ["case", ['boolean', ['feature-state', 'hover'], false], 1.6, 1],
         },
         "filter": ["==", ["get", "state"], "39"]
       });
 
-      map.addLayer({
-        "id": "states",
-        'type': 'fill',
-        'source': 'states',
-        'layout': {
-          'visibility': 'visible'
-        },
-        'paint': {
-          'fill-color':   "white",
-          'fill-opacity': 0,
-          'fill-outline-color':   "#121212"
-        }
-      });
+      // map.addLayer({
+      //   "id": "states",
+      //   'type': 'fill',
+      //   'source': 'states',
+      //   'layout': {
+      //     'visibility': 'visible'
+      //   },
+      //   'paint': {
+      //     'fill-color': "white",
+      //     'fill-opacity': 0,
+      //     'fill-outline-color': "#121212"
+      //   }
+      // });
 
-      map.addLayer({
-        "id": "states_outline",
-        'type': 'line',
-        'source': 'states',
-        'layout': {
-          'visibility': 'visible'
-        },
-        'paint': {
-          'line-color':   "gray",
-          'line-opacity': 0.8,
-          'line-width':   2
-        }
-      })
+      // map.addLayer({
+      //   "id": "ohio_outline",
+      //   'type': 'line',
+      //   'source': 'states',
+      //   'layout': {
+      //     'visibility': 'visible'
+      //   },
+      //   'paint': {
+      //     'line-color': "black",
+      //     'line-opacity': 0.8,
+      //     'line-width': 2
+      //   },
+      //   filter: ["==", ["get", "name"], "Ohio"]
+      // })
 
       map.addLayer({
         id: "points",
@@ -569,17 +646,17 @@
         paint: {
           "circle-radius": ["interpolate",
             ['linear'],
-            ["get", "cases"], 
+            ["get", "cases"],
             0, 0,
-            1,4,
-            1000,100
+            1, 4,
+            1000, 100
           ],
           "circle-color": "#feebe2",
           "circle-opacity": 0.5,
           "circle-stroke-color": scale[4],
           "circle-stroke-width": 1
         },
-        "filter": ["all", 
+        "filter": ["all",
           ["==", ["get", "state"], "39"],
           [">", ["get", "cases"], 0]
         ]
@@ -601,7 +678,7 @@
       //     stateQuery = currentState;
       //     initChart(chartConfirmedDataGlobal, stateQuery)
       //   }
-        
+
       // })
 
       // map.on("click", "ohio", function (e) {
@@ -619,17 +696,21 @@
           map.getCanvas().style.cursor = 'pointer';
           setInfoBox(e.features[0], e.lngLat, map)
           if (hoveredStateId) {
-            map.setFeatureState(
-              { source: 'counties', id: hoveredStateId },
-              { hover: false }
-            );
+            map.setFeatureState({
+              source: 'counties',
+              id: hoveredStateId
+            }, {
+              hover: false
+            });
           }
           hoveredStateId = e.features[0].id;
-          map.setFeatureState(
-            { source: 'counties', id: hoveredStateId },
-            { hover: true }
-          );
-        }else{
+          map.setFeatureState({
+            source: 'counties',
+            id: hoveredStateId
+          }, {
+            hover: true
+          });
+        } else {
           map.getCanvas().style.cursor = '';
 
           setInfoBox()
@@ -640,10 +721,12 @@
         if (hoveredStateId) {
           map.getCanvas().style.cursor = '';
 
-          map.setFeatureState(
-            { source: 'counties', id: hoveredStateId },
-            { hover: false }
-          );
+          map.setFeatureState({
+            source: 'counties',
+            id: hoveredStateId
+          }, {
+            hover: false
+          });
         }
         hoveredStateId = null;
       });
@@ -654,7 +737,8 @@
     function setInfoBox(data, point, map) {
       if (!data) return
       // console.log(data)
-      document.querySelector(".headline-2").innerText = data.properties.NAME + ": " + data.properties.cases + " (Total Cases) | " + data.properties.deaths + " (Total Deaths)"
+      document.querySelector(".headline-2").innerText = data.properties.NAME + ": " + data.properties.cases +
+        " (Total Cases) | " + data.properties.deaths + " (Total Deaths)"
       // new mapboxgl.Popup()
       // .setLngLat(point)
       // .setHTML()
