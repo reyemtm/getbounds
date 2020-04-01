@@ -54,7 +54,7 @@ h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-family-headings);
 }
 h1 {
-  font-size: 2.8em;
+  font-size: 2.4em;
 }
 input {
   border-radius: 2px!important;
