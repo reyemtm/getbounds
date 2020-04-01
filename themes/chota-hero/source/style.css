@@ -50,7 +50,7 @@ html, body {
   margin-top: 2rem;
 }
 h1, h2, h3, h4, h5, h6 {
-  margin: 0.35em 0 0.5em 0;
+  margin: 0.1em 0 0.1em 0;
   font-family: var(--font-family-headings);
 }
 h1 {
@@ -59,13 +59,7 @@ h1 {
 input {
   border-radius: 2px!important;
 }
-/******/
-.post a {
-  background: #f3f3f6;
-}
-.post a:hover:not(.post-title):not(.button) {
-  text-decoration: underline;
-}
+
 iframe {
   border: 0;
   max-width: 100%;
@@ -98,6 +92,17 @@ blockquote p {
 }
 a:hover:not(.button) {
   opacity: 1;
+}
+
+.post a:hover:not(.post-title):not(.button),
+.post a:focus:not(.post-title):not(.button),
+.post a:active:not(.post-title):not(.button),
+.footer a:hover, .footer a:active, .footer a:focus {
+  /* background: whitesmoke; */
+  opacity: 0.8;
+}
+.post a:not(.post-title):not(.button) {
+  text-decoration: underline;
 }
 table {
   table-layout: fixed;

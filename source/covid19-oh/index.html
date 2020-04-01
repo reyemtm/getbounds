@@ -132,14 +132,14 @@
 </head>
 
 <body>
-  <nav class="nav">
+  <nav class="nav js-static">
     <div class="nav-left">
       <span class="headline is-left">Ohio COVID-19 Tracker</span>
     </div>
   </nav>
 
   <main class="container">
-    <p style="font-size:larger;">
+    <p style="font-size:larger;" class="js-static">
       The current rate of growth from the last update is <span id="rate" style="font-weight: 600;">&nbsp;&nbsp;</span>
       percent. <span id="content"></span> For hospitalizations,
       breakdown by age, and other metrics see the official <a
@@ -174,7 +174,7 @@
       </div>
     </div>
   </main>
-  <footer>
+  <footer class="js-static">
     <div class="container">
       <h5>Current Source</h5>
 
@@ -201,6 +201,15 @@
     var casesChart, rateChart, lastUpdate, chartConfirmedDataGlobal;
     var urlParams = new URLSearchParams(window.location.search);
     var stateQuery = (!urlParams.get('state')) ? "Ohio" : urlParams.get('state');
+    var static = (!urlParams.get('static')) ? false : true;
+
+    if (static) {
+      var staticElements = document.getElementsByClassName("js-static");
+      for (var i = 0; i < staticElements.length; i++) {
+        staticElements[i].style.display = "none"
+      }
+    }
+
     var regex = new RegExp(/[0-9]*\/[0-9]*\/[0-9]*/g);
 
     fetch("/covid19-oh/covid19-oh-counties-timeseries.json")
@@ -369,7 +378,7 @@
           enabled: false
         },
         title: {
-          text: 'Confirmed Cases over Time (Latest ' + (caseData[caseData.length - 1].y)
+          text: 'Cases over Time (Latest ' + (caseData[caseData.length - 1].y)
             .toLocaleString() + ')',
           align: 'left'
         },
@@ -414,7 +423,7 @@
     }
 
     var sources = [
-      "/covid19-oh/us_counties.topo.json",
+      "/covid19-oh/ohio.geojson",
       "/covid19-oh/states-10m.json",
       "/covid19-oh/county_centroids.geojson"
     ]
@@ -430,7 +439,7 @@
         // console.log(raw)
         var data = [];
         data[0] = chartConfirmedDataGlobal;
-        data[1] = topojson.feature(raw[0], raw[0].objects.us_counties)
+        data[1] = raw[0];
         data[2] = topojson.feature(raw[1], raw[1].objects.states);
         data[3] = raw[2]
 
@@ -588,8 +597,7 @@
           ],
           'fill-opacity': ["case", ['boolean', ['feature-state', 'hover'], false], 1, 0.8],
           'fill-outline-color': 'transparent'
-        },
-        "filter": ["==", ["get", "state"], "39"]
+        }
       })
 
       map.addLayer({
@@ -603,8 +611,7 @@
           'line-color': ["case", ['boolean', ['feature-state', 'hover'], false], "black", "#121212"],
           'line-opacity': ["case", ['boolean', ['feature-state', 'hover'], false], 1, 0.5],
           'line-width': ["case", ['boolean', ['feature-state', 'hover'], false], 1.6, 1],
-        },
-        "filter": ["==", ["get", "state"], "39"]
+        }
       });
 
       // map.addLayer({
