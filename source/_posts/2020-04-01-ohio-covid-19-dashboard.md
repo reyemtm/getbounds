@@ -10,7 +10,7 @@ date: 2020-04-01 14:55:00
 ---
 Ohio and Governor Mike Dewine have been at the forefront of the fight against the coronavirus epidemic. This pandemic has reached all corners of Ohio, from rural Appalachia to our urban centers. To track the spread and scope of the virus for my home state I created a simple [COVID-19 tracking dashboard](/covid19-oh/). This dashboard tracks total cases, the rate of growth, and the spread of the virus by county.
 
-<iframe src="/covid19-oh/?static=true" class="div-wide" width="100%" height="900px" frameborder="none" scrolling="no" style="border:none;"></iframe>
+<iframe src="/covid19-oh/?static=true" class="div-wide covid" width="100%" height="900px" frameborder="none" scrolling="no" style="border:none;"></iframe>
 
 Data for this dashboard comes directly from Ohio Department of Health (ODH). For a in-depth analysis of this data, ODH has created a [detailed dashboard](https://coronavirus.ohio.gov/wps/portal/gov/covid-19/home/dashboard) that breaks down infections by age, gender, hospitalizations, and more.
 

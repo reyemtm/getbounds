@@ -516,3 +516,13 @@ img {
     display: none; 
   }
 }
+
+.covid {
+  height: 900px;
+}
+
+@media screen and (max-width: 900px) {
+  .covid {
+    height: 1750px;
+  }
+}
