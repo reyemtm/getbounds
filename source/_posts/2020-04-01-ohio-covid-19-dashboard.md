@@ -17,7 +17,7 @@ Data for this dashboard comes directly from Ohio Department of Health (ODH). For
 I originally published this dashboard before the official ODH visualization went live. Access to reliable data has been a challenge, and data sources have changed multiple times since I first began tracking the epidemic in Ohio in early March. Initially the data source for this dashboard consisted of a shared Google spreadsheet. As the virus began to spread to more and more counties, keeping this sheet updated became increasingly difficult. Fortunately the ODH began publishing their data in a machine-readable format. Using a simple NodeJS script this dashboard can now be updated automatically once new ODH data is available. Other sources consulted for the initial stages of this project include the [Johns Hopkins University GitHub repo](https://github.com/CSSEGISandData/COVID-19/tree/master/csse_covid_19_data), the [Corona Data Scraper](https://coronadatascraper.com/) project, and the [University of Virginia](https://www.trackcorona.live/).
 
 <br>
-<h3 class="zp-headline zp-headline"><span>Global COVID-19 Dashboards</span></h3>
+<h5>Global COVID-19 Dashboards</h5>
 
 
 [Bing Dashboard](https://bing.com/covid)
