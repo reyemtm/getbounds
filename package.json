@@ -7,9 +7,9 @@
   },
   "scripts": {
     "build": "hexo clean && hexo generate && parcel build public/style.css --out-dir public/",
-    "covid": "node covid19-oh/scrape-oh.js",
-    "covidnew": "node covid19-oh/scrape-oh-csv.js"
-
+    "covidold": "node covid19-oh/scrape-oh.js",
+    "covid": "node covid19-oh/scrape-oh-csv.js",
+    "covidtest": "node covid19-oh/scrape-test.js"
   },
   "dependencies": {
     "bower": "^1.8.8",

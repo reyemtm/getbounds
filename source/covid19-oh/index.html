@@ -63,7 +63,7 @@
       margin-bottom: 1rem;
       font-size: 2rem;
     }
-    
+
     .nav {
       box-shadow: 0px 1px 5px 0px gainsboro;
       padding: 0 5rem;
@@ -72,7 +72,7 @@
 
     #map {
       position: relative;
-      height: 815px;
+      height: 855px;
       width: 100%;
       border: solid;
     }
@@ -161,9 +161,10 @@
       </div>
     </div> -->
     <div class="row" style="margin-top:3rem;">
-      <div class="col-12 col-4-md">
+      <div class="col-12 col-4-md" id="charts">
         <div id="casesChart"></div>
         <div id="rateChart"></div>
+        <div id="deathsChart"></div>
       </div>
       <div class="col-12 col-8-md">
         <div id="map">
@@ -180,7 +181,7 @@
 
       <a href="https://coronavirus.ohio.gov/wps/portal/gov/covid-19/home/dashboard" target="_blank">Ohio Coronavirus
         Dashboard</a><br>
-  
+
       <em style="font-weight:300;font-size:16px;">Data was last updated on <span id="updated"></span></em><br>
 
       <h5>Compiled Data for this Dashboard</h5>
@@ -198,7 +199,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/topojson/3.0.2/topojson.min.js"
     integrity="sha256-tHoAPGoNdhIR28YHl9DWLzeRfdwigkH7OCBXMrHXhoM=" crossorigin="anonymous"></script>
   <script>
-    var casesChart, rateChart, lastUpdate, chartConfirmedDataGlobal;
+    var casesChart, rateChart, deathsChart, chartConfirmedDataGlobal;
     var urlParams = new URLSearchParams(window.location.search);
     var stateQuery = (!urlParams.get('state')) ? "Ohio" : urlParams.get('state');
     var static = (!urlParams.get('static')) ? false : true;
@@ -210,22 +211,72 @@
       }
     }
 
-    var regex = new RegExp(/[0-9]*\/[0-9]*\/[0-9]*/g);
-
     fetch("/covid19-oh/covid19-oh-counties-timeseries.json")
       .then(res => res.json())
       .then(data => {
         var filtered = data.filter(d => {
           return d.state == stateQuery
         });
+
+        initUpdated(filtered)
+
         chartConfirmedDataGlobal = filtered.slice();
 
-        var chartData = initData(filtered);
-        initCasesChart(chartData);
-        initRateChart(chartData)
+        var chartDataCases = initData(filtered, "cases");
+
+        initCasesChart(chartDataCases);
+        initRateChart(chartDataCases)
+
+        var chartDataDeaths = initData(filtered, "deaths");
+
+        console.log(chartDataDeaths)
+
+        initDeathsChart(chartDataDeaths)
+
+        var em = document.createElement("em");
+        em.innerText = "Data on deaths is preliminary and only tracked since March 24."
+
+        document.getElementById("deathsChart").appendChild(em)
+
       })
 
-    function initData(data) {
+    function formatDate(d) {
+      let ye = new Intl.DateTimeFormat('en', {
+        year: 'numeric'
+      }).format(d)
+      let mo = new Intl.DateTimeFormat('en', {
+        month: '2-digit'
+      }).format(d)
+      let da = new Intl.DateTimeFormat('en', {
+        day: '2-digit'
+      }).format(d)
+      return `${mo}/${da}/${ye}`
+    }
+
+    function initUpdated(data) {
+      //GET SOME DATE USING TWO WEEKS FROM TODAY
+      var lastUpdate = formatDate(new Date(Date.now() - 86400000 * 14));
+      console.log(lastUpdate)
+      data.map(d => {
+        for (let k in d.dates) {
+          if (k.includes("\/20")) {
+            var _updated = new Date(k);
+            if (_updated >= new Date(lastUpdate)) {
+              lastUpdate = k
+            }
+          }
+        }
+      });
+
+      document.querySelector("#updated").innerText = (new Date(lastUpdate)).toLocaleDateString("en-US", {
+        weekday: 'long',
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
+      })
+    }
+
+    function initData(data, type) {
       var totals = [];
 
       for (let k in data[0].dates) {
@@ -246,106 +297,15 @@
             var date = k.split("/");
             var date2 = date[2] + "-0" + date[0] + "-" + date[1];
             totals.map((x, i) => {
-              if (x.x === date2) x.y = x.y + Number(d.dates[k].cases)
+              if (d.dates[k][type]) {
+                if (x.x === date2) x.y = x.y + Number(d.dates[k][type])
+              }
             })
-            lastUpdate = k
           }
         }
       });
 
-      document.querySelector("#updated").innerText = (new Date(lastUpdate)).toLocaleDateString("en-US", {
-        weekday: 'long',
-        year: 'numeric',
-        month: 'long',
-        day: 'numeric'
-      })
-
       return totals
-    }
-
-    function initRateChart(data, region) {
-
-      var chartDataRate = []
-
-      data.map((d, i) => {
-        if (d.y > 50) {
-          var x = d.x;
-          var y = (i < 1) ? 0 : (i === 1) ? 0 : ((((d.y / data[i - 1].y)) - 1) * 100).toFixed(2);
-          chartDataRate.push({
-            x: x,
-            y: y
-          })
-        }
-      })
-
-      console.log(chartDataRate)
-
-      var options = {
-        series: [{
-          name: "Rate",
-          data: chartDataRate,
-          type: 'bar',
-          stroke: false
-        }],
-        chart: {
-          fontFamily: '-apple-system,BlinkMacSystemFont,Avenir,"Avenir Next","Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif',
-          height: 400,
-          zoom: {
-            enabled: false
-          }
-        },
-        dataLabels: {
-          enabled: false
-        },
-        stroke: {
-          curve: 'smooth'
-        },
-        title: {
-          text: '% Change Since 50 Cases (Latest ' + chartDataRate[chartDataRate.length - 1].y + '%)',
-          align: 'left'
-        },
-        grid: {
-          show: true
-        },
-        fill: {
-          type: "solid"
-        },
-        colors: ["#c51b8a"],
-        stroke: {
-          show: false,
-          curve: 'smooth',
-          lineCap: 'butt',
-          colors: undefined,
-          width: 2,
-          dashArray: 0,
-        },
-        // grid: {
-        //   row: {
-        //     colors: ['#f3f3f3', 'transparent'], // takes an array which will be repeated on columns
-        //     opacity: 0.5
-        //   },
-        // },
-        // labels: {
-        //   confirmedDates
-        // },
-        // xaxis: {
-        //   categories: confirmedDates
-        // },
-        xaxis: {
-          type: 'datetime'
-        },
-        yaxis: {
-          show: true
-        }
-      };
-      if (!rateChart) {
-        rateChart = new ApexCharts(document.querySelector("#rateChart"), options);
-        rateChart.render();
-      } else {
-        rateChart.destroy();
-        rateChart = new ApexCharts(document.querySelector("#rateChart"), options);
-        rateChart.render();
-      }
     }
 
     function initCasesChart(data, region) {
@@ -368,7 +328,7 @@
         }],
         chart: {
           fontFamily: '-apple-system,BlinkMacSystemFont,Avenir,"Avenir Next","Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif',
-          height: 400,
+          height: 275,
           type: 'bar',
           zoom: {
             enabled: false
@@ -417,9 +377,163 @@
         casesChart.render();
       }
 
-      var rate = Number((((caseData[caseData.length - 1].y / caseData[caseData.length - 2].y) - 1) * 100).toFixed(
-        2))
+      var rate = Number((((caseData[caseData.length - 1].y / caseData[caseData.length - 2].y) - 1) * 100).toFixed(2))
       document.querySelector("#rate").innerText = rate;
+    }
+
+    function initRateChart(data, region) {
+
+      var chartDataRate = []
+
+      data.map((d, i) => {
+        if (d.y > 50) {
+          var x = d.x;
+          var y = (i < 1) ? 0 : (i === 1) ? 0 : ((((d.y / data[i - 1].y)) - 1) * 100).toFixed(2);
+          chartDataRate.push({
+            x: x,
+            y: y
+          })
+        }
+      })
+
+      console.log(chartDataRate)
+
+      var options = {
+        series: [{
+          name: "Rate",
+          data: chartDataRate,
+          type: 'bar',
+          stroke: false
+        }],
+        chart: {
+          fontFamily: '-apple-system,BlinkMacSystemFont,Avenir,"Avenir Next","Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif',
+          height: 275,
+          zoom: {
+            enabled: false
+          }
+        },
+        dataLabels: {
+          enabled: false
+        },
+        stroke: {
+          curve: 'smooth'
+        },
+        title: {
+          text: 'Case Increase Since 50 Cases (Latest ' + chartDataRate[chartDataRate.length - 1].y + '%)',
+          align: 'left'
+        },
+        grid: {
+          show: true
+        },
+        fill: {
+          type: "solid"
+        },
+        colors: ["#c51b8a"],
+        stroke: {
+          show: false,
+          curve: 'smooth',
+          lineCap: 'butt',
+          colors: undefined,
+          width: 2,
+          dashArray: 0,
+        },
+        // grid: {
+        //   row: {
+        //     colors: ['#f3f3f3', 'transparent'], // takes an array which will be repeated on columns
+        //     opacity: 0.5
+        //   },
+        // },
+        // labels: {
+        //   confirmedDates
+        // },
+        // xaxis: {
+        //   categories: confirmedDates
+        // },
+        xaxis: {
+          type: 'datetime'
+        },
+        yaxis: {
+          show: true
+        }
+      };
+      if (!rateChart) {
+        rateChart = new ApexCharts(document.querySelector("#rateChart"), options);
+        rateChart.render();
+      } else {
+        rateChart.destroy();
+        rateChart = new ApexCharts(document.querySelector("#rateChart"), options);
+        rateChart.render();
+      }
+    }
+
+    function initDeathsChart(data, region) {
+
+      var options = {
+        series: [{
+          name: "Deaths",
+          data: data,
+          type: 'bar',
+          stroke: false
+        }],
+        chart: {
+          fontFamily: '-apple-system,BlinkMacSystemFont,Avenir,"Avenir Next","Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif',
+          height: 275,
+          zoom: {
+            enabled: false
+          }
+        },
+        dataLabels: {
+          enabled: false
+        },
+        stroke: {
+          curve: 'smooth'
+        },
+        title: {
+          text: 'Deaths over Time (Latest ' + (data[data.length - 1].y) + ')',
+          align: 'left'
+        },
+        grid: {
+          show: true
+        },
+        fill: {
+          type: "solid"
+        },
+        colors: ["#c51b8a"],
+        stroke: {
+          show: false,
+          curve: 'smooth',
+          lineCap: 'butt',
+          colors: undefined,
+          width: 2,
+          dashArray: 0,
+        },
+        // grid: {
+        //   row: {
+        //     colors: ['#f3f3f3', 'transparent'], // takes an array which will be repeated on columns
+        //     opacity: 0.5
+        //   },
+        // },
+        // labels: {
+        //   confirmedDates
+        // },
+        // xaxis: {
+        //   categories: confirmedDates
+        // },
+        xaxis: {
+          type: 'datetime'
+        },
+        yaxis: {
+          show: true
+        }
+      };
+      if (!deathsChart) {
+        deathsChart = new ApexCharts(document.querySelector("#deathsChart"), options);
+        deathsChart.render();
+      } else {
+        deathsChart.destroy();
+        deathsChart = new ApexCharts(document.querySelector("#deathsChart"), options);
+        deathsChart.render();
+      }
     }
 
     var sources = [
@@ -427,6 +541,7 @@
       "/covid19-oh/states-10m.json",
       "/covid19-oh/county_centroids.geojson"
     ]
+
     Promise.all(sources.map(url => fetch(url))).then(responses =>
         Promise.all(responses.map(res => {
           if (res.status === 200) {
@@ -530,7 +645,7 @@
       })
 
       var limits = chroma.limits([min, max], 'l', 5);
-      var scale = chroma.scale(["#fbe4f3", "#c51b8a"]).colors(5);
+      var scale = chroma.scale(["#fbe4f3", "#c51b8a", "#550c3c"]).colors(8);
 
       console.log(limits, scale)
 
@@ -588,9 +703,9 @@
         },
         'paint': {
           'fill-color': ["case",
-            [">", ["get", "casesperthousand"], limits[4]], scale[4],
-            [">", ["get", "casesperthousand"], limits[3]], scale[3],
-            [">", ["get", "casesperthousand"], limits[2]], scale[2],
+            [">", ["get", "casesperthousand"], limits[4]], scale[7],
+            [">", ["get", "casesperthousand"], limits[3]], scale[5],
+            [">", ["get", "casesperthousand"], limits[2]], scale[3],
             [">", ["get", "casesperthousand"], limits[1]], scale[1],
             [">", ["get", "casesperthousand"], 0], scale[0],
             "whitesmoke"
@@ -655,9 +770,10 @@
             1, 4,
             1000, 100
           ],
-          "circle-color": "#feebe2",
+          "circle-color": scale[0],
           "circle-opacity": 0.5,
-          "circle-stroke-color": scale[4],
+          "circle-stroke-color": scale[2],
+          "circle-stroke-opacity": 0.8,
           "circle-stroke-width": 1
         },
         "filter": ["all",
@@ -676,25 +792,38 @@
         map.fitBounds(turf.bbox(stateQueryFeature[0]))
       }
 
-      // map.on("click", "states", function (e) {
-      //   var currentState = e.features[0].properties.name;
-      //   if (currentState != stateQuery) {
-      //     stateQuery = currentState;
-      //     initChart(chartConfirmedDataGlobal, stateQuery)
-      //   }
-
       // })
 
       // map.on("click", "ohio", function (e) {
       //   console.log(e.features[0])
       // })
 
-      map.on("click", "counties", function (e) {
-        console.log(e.features[0])
-      })
       var hoveredStateId = null;
 
+      var popup = new mapboxgl.Popup({
+        closeButton: false
+      }).addTo(map);
+
+      map.on("click", "counties", function (e) {
+        var currentCounty = e.features[0].properties.name;
+        // if (currentState != stateQuery) {
+        //   stateQuery = currentState;
+        //   initChart(chartConfirmedDataGlobal, stateQuery)
+        // }
+          popup
+          .setLngLat(e.lngLat)
+          .setHTML(buildPopup(e.features[0].properties))
+          .addTo(map);
+      })
+
+      function buildPopup(props) {
+        var html = `${props.NAME} County has ${props.cases} confirmed cases and ${props.deaths} reported death${(props.deaths === 1) ? '' : 's'}.`
+
+        return html
+      }
+
       map.on('mousemove', 'counties', function (e) {
+        popup.remove()
         // console.log(e)
         if (e.features.length > 0) {
           map.getCanvas().style.cursor = 'pointer';

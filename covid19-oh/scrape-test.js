@@ -1,8 +1,5 @@
 const fetch = require("node-fetch")
-const fs = require("fs");
 const Papa = require("papaparse")
-const t = new Date(Date.now());
-const yesterday = new Date(Date.now() - 86400000);
 
 function formatDate(d) {
   let ye = new Intl.DateTimeFormat('en', { year: 'numeric' }).format(d)
@@ -10,16 +7,6 @@ function formatDate(d) {
   let da = new Intl.DateTimeFormat('en', { day: '2-digit' }).format(d)
   return `${mo}/${da}/${ye}`
 }
-
-function formatDateDash(d) {
-  let ye = new Intl.DateTimeFormat('en', { year: 'numeric' }).format(d)
-  let mo = new Intl.DateTimeFormat('en', { month: '2-digit' }).format(d)
-  let da = new Intl.DateTimeFormat('en', { day: '2-digit' }).format(d)
-  return `${mo}-${da}-${ye}`
-}
-
-let cache = JSON.parse(fs.readFileSync("./source/covid19-oh/covid19-oh-counties-timeseries.json"));
-fs.writeFileSync(`./source/covid19-oh/archive/covid19-oh-counties-timeseries-cache-${formatDateDash(yesterday)}.json`, JSON.stringify(cache, 0, 2));
 
 fetch("https://coronavirus.ohio.gov/static/COVIDSummaryData.csv")
   .then(res => {
@@ -103,59 +90,5 @@ function parseData (data) {
     totals[c] = dates
   });
   console.log(totals)
-  addToCache(cache, totals)
 
-}
-
-function addToCache (cache, countyData) {
-  cache.map(c => {
-    
-    var date = formatDate(t);
-
-    c.checked = new Date(Date.now());
-    c.dates[date] = {}
-    c.dates[date].cases = 0;
-    c.dates[date].recovered = 0;
-    c.dates[date].deaths = 0;
-    c.dates[date].active = 0;
-
-
-    for (let i in countyData) {
-      if (c.name == i) {
-        var date = Object.keys(countyData[i])[0];
-        var obj = countyData[i][date]
-
-        console.log(obj)
-
-        c.dates[date].cases = Number(obj.cases)
-        c.dates[date].deaths = Number(obj.deaths);
-        c.dates[date].active = Number(obj.active);
-        c.dates[date].recovered = Number(obj.recovered)
-      }
-    }
-  })
-
-  console.log(JSON.stringify(cache[0],0,2))
-
-  fs.writeFileSync("./source/covid19-oh/covid19-oh-counties-timeseries.json", JSON.stringify(cache, 0, 2))
-  console.log("finished writing new covid data");
-
-  var totalcases = [];
-
-  cache.map(c => {
-    var cases = 0;
-    for (let d in c.dates) {
-      cases = c.dates[d].cases
-      c[d] = c.dates[d].cases
-    }
-    delete c.dates
-    delete c.rate
-    delete c.dailyrate
-    delete c.new
-    c.totalcases = cases
-    totalcases.push(c);
-
-  });
-
-  fs.writeFileSync("./source/covid19-oh/covid19-oh-counties-cases.csv", Papa.unparse(totalcases))
 }
