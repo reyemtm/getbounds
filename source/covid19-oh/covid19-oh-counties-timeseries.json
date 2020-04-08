@@ -126,9 +126,15 @@
         "recovered": 0,
         "deaths": 0,
         "active": 2
+      },
+      "04/08/2020": {
+        "cases": 2,
+        "recovered": 0,
+        "deaths": 0,
+        "active": 2
       }
     },
-    "checked": "2020-04-05T18:26:22.506Z",
+    "checked": "2020-04-08T18:59:42.645Z",
     "new": null,
     "rate": null,
     "dailyrate": 0
@@ -260,9 +266,15 @@
         "recovered": 0,
         "deaths": 0,
         "active": 18
+      },
+      "04/08/2020": {
+        "cases": 23,
+        "recovered": 0,
+        "deaths": 1,
+        "active": 22
       }
     },
-    "checked": "2020-04-05T18:26:22.507Z",
+    "checked": "2020-04-08T18:59:42.696Z",
     "new": null,
     "rate": null,
     "dailyrate": 0
@@ -394,9 +406,15 @@
         "recovered": 0,
         "deaths": 0,
         "active": 3
+      },
+      "04/08/2020": {
+        "cases": 3,
+        "recovered": 0,
+        "deaths": 0,
+        "active": 3
       }
     },
-    "checked": "2020-04-05T18:26:22.508Z",
+    "checked": "2020-04-08T18:59:42.700Z",
     "new": null,
     "rate": null,
     "dailyrate": 1
@@ -528,9 +546,15 @@
         "recovered": 0,
         "deaths": 0,
         "active": 12
+      },
+      "04/08/2020": {
+        "cases": 20,
+        "recovered": 0,
+        "deaths": 0,
+        "active": 20
       }
     },
-    "checked": "2020-04-05T18:26:22.508Z",
+    "checked": "2020-04-08T18:59:42.703Z",
     "new": null,
     "rate": null,
     "dailyrate": 1
@@ -662,9 +686,15 @@
         "recovered": 0,
         "deaths": 1,
         "active": 2
+      },
+      "04/08/2020": {
+        "cases": 3,
+        "recovered": 0,
+        "deaths": 1,
+        "active": 2
       }
     },
-    "checked": "2020-04-05T18:26:22.509Z",
+    "checked": "2020-04-08T18:59:42.711Z",
     "new": null,
     "rate": null,
     "dailyrate": 0
@@ -796,9 +826,15 @@
         "recovered": 0,
         "deaths": 0,
         "active": 6
+      },
+      "04/08/2020": {
+        "cases": 8,
+        "recovered": 0,
+        "deaths": 0,
+        "active": 8
       }
     },
-    "checked": "2020-04-05T18:26:22.510Z",
+    "checked": "2020-04-08T18:59:42.737Z",
     "new": null,
     "rate": null,
     "dailyrate": 0
@@ -930,9 +966,15 @@
         "recovered": 0,
         "deaths": 0,
         "active": 20
+      },
+      "04/08/2020": {
+        "cases": 30,
+        "recovered": 0,
+        "deaths": 1,
+        "active": 29
       }
     },
-    "checked": "2020-04-05T18:26:22.510Z",
+    "checked": "2020-04-08T18:59:42.747Z",
     "new": null,
     "rate": null,
     "dailyrate": 1
@@ -1064,9 +1106,15 @@
         "recovered": 0,
         "deaths": 1,
         "active": 2
+      },
+      "04/08/2020": {
+        "cases": 4,
+        "recovered": 0,
+        "deaths": 1,
+        "active": 3
       }
     },
-    "checked": "2020-04-05T18:26:22.511Z",
+    "checked": "2020-04-08T18:59:42.832Z",
     "new": null,
     "rate": null,
     "dailyrate": 0
@@ -1198,9 +1246,15 @@
         "recovered": 0,
         "deaths": 2,
         "active": 66
+      },
+      "04/08/2020": {
+        "cases": 102,
+        "recovered": 0,
+        "deaths": 2,
+        "active": 100
       }
     },
-    "checked": "2020-04-05T18:26:22.512Z",
+    "checked": "2020-04-08T18:59:42.837Z",
     "new": null,
     "rate": null,
     "dailyrate": 1
@@ -1332,9 +1386,15 @@
         "recovered": 0,
         "deaths": 0,
         "active": 8
+      },
+      "04/08/2020": {
+        "cases": 9,
+        "recovered": 0,
+        "deaths": 0,
+        "active": 9
       }
     },
-    "checked": "2020-04-05T18:26:22.512Z",
+    "checked": "2020-04-08T18:59:42.867Z",
     "new": null,
     "rate": null,
     "dailyrate": 1
@@ -1466,9 +1526,15 @@
         "recovered": 0,
         "deaths": 0,
         "active": 5
+      },
+      "04/08/2020": {
+        "cases": 5,
+        "recovered": 0,
+        "deaths": 0,
+        "active": 5
       }
     },
-    "checked": "2020-04-05T18:26:22.513Z",
+    "checked": "2020-04-08T18:59:42.879Z",
     "new": null,
     "rate": null,
     "dailyrate": 1
@@ -1600,9 +1666,15 @@
         "recovered": 0,
         "deaths": 0,
         "active": 8
+      },
+      "04/08/2020": {
+        "cases": 13,
+        "recovered": 0,
+        "deaths": 0,
+        "active": 13
       }
     },
-    "checked": "2020-04-05T18:26:22.514Z",
+    "checked": "2020-04-08T18:59:42.907Z",
     "new": null,
     "rate": null,
     "dailyrate": 1
@@ -1734,9 +1806,15 @@
         "recovered": 0,
         "deaths": 1,
         "active": 20
+      },
+      "04/08/2020": {
+        "cases": 27,
+        "recovered": 0,
+        "deaths": 1,
+        "active": 26
       }
     },
-    "checked": "2020-04-05T18:26:22.514Z",
+    "checked": "2020-04-08T18:59:42.948Z",
     "new": null,
     "rate": null,
     "dailyrate": 1
@@ -1868,9 +1946,15 @@
         "recovered": 0,
         "deaths": 0,
         "active": 8
+      },
+      "04/08/2020": {
+        "cases": 11,
+        "recovered": 0,
+        "deaths": 1,
+        "active": 10
       }
     },
-    "checked": "2020-04-05T18:26:22.515Z",
+    "checked": "2020-04-08T18:59:42.979Z",
     "new": null,
     "rate": null,
     "dailyrate": 1
@@ -2002,9 +2086,15 @@
         "recovered": 0,
         "deaths": 5,
         "active": 37
+      },
+      "04/08/2020": {
+        "cases": 71,
+        "recovered": 0,
+        "deaths": 6,
+        "active": 65
       }
     },
-    "checked": "2020-04-05T18:26:22.515Z",
+    "checked": "2020-04-08T18:59:43.013Z",
     "new": null,
     "rate": null,
     "dailyrate": 1
@@ -2136,9 +2226,15 @@
         "recovered": 0,
         "deaths": 0,
         "active": 9
+      },
+      "04/08/2020": {
+        "cases": 10,
+        "recovered": 0,
+        "deaths": 0,
+        "active": 10
       }
     },
-    "checked": "2020-04-05T18:26:22.516Z",
+    "checked": "2020-04-08T18:59:43.062Z",
     "new": null,
     "rate": null,
     "dailyrate": 1
@@ -2270,9 +2366,15 @@
         "recovered": 0,
         "deaths": 0,
         "active": 9
+      },
+      "04/08/2020": {
+        "cases": 9,
+        "recovered": 0,
+        "deaths": 0,
+        "active": 9
       }
     },
-    "checked": "2020-04-05T18:26:22.517Z",
+    "checked": "2020-04-08T18:59:43.088Z",
     "new": null,
     "rate": null,
     "dailyrate": 1
@@ -2404,9 +2506,15 @@
         "recovered": 0,
         "deaths": 14,
         "active": 812
+      },
+      "04/08/2020": {
+        "cases": 960,
+        "recovered": 0,
+        "deaths": 23,
+        "active": 937
       }
     },
-    "checked": "2020-04-05T18:26:22.517Z",
+    "checked": "2020-04-08T18:59:43.132Z",
     "new": null,
     "rate": null,
     "dailyrate": 1
@@ -2538,9 +2646,15 @@
         "recovered": 0,
         "deaths": 4,
         "active": 28
+      },
+      "04/08/2020": {
+        "cases": 38,
+        "recovered": 0,
+        "deaths": 7,
+        "active": 31
       }
     },
-    "checked": "2020-04-05T18:26:22.518Z",
+    "checked": "2020-04-08T18:59:43.137Z",
     "new": null,
     "rate": null,
     "dailyrate": 1
@@ -2672,9 +2786,15 @@
         "recovered": 0,
         "deaths": 0,
         "active": 7
+      },
+      "04/08/2020": {
+        "cases": 10,
+        "recovered": 0,
+        "deaths": 0,
+        "active": 10
       }
     },
-    "checked": "2020-04-05T18:26:22.519Z",
+    "checked": "2020-04-08T18:59:43.145Z",
     "new": null,
     "rate": null,
     "dailyrate": 1
@@ -2806,9 +2926,15 @@
         "recovered": 0,
         "deaths": 1,
         "active": 69
+      },
+      "04/08/2020": {
+        "cases": 79,
+        "recovered": 0,
+        "deaths": 1,
+        "active": 78
       }
     },
-    "checked": "2020-04-05T18:26:22.519Z",
+    "checked": "2020-04-08T18:59:43.167Z",
     "new": null,
     "rate": null,
     "dailyrate": 1
@@ -2940,9 +3066,15 @@
         "recovered": 0,
         "deaths": 1,
         "active": 7
+      },
+      "04/08/2020": {
+        "cases": 10,
+        "recovered": 0,
+        "deaths": 1,
+        "active": 9
       }
     },
-    "checked": "2020-04-05T18:26:22.520Z",
+    "checked": "2020-04-08T18:59:43.170Z",
     "new": null,
     "rate": null,
     "dailyrate": 1
@@ -3074,9 +3206,15 @@
         "recovered": 0,
         "deaths": 0,
         "active": 46
+      },
+      "04/08/2020": {
+        "cases": 65,
+        "recovered": 0,
+        "deaths": 0,
+        "active": 65
       }
     },
-    "checked": "2020-04-05T18:26:22.521Z",
+    "checked": "2020-04-08T18:59:43.180Z",
     "new": null,
     "rate": null,
     "dailyrate": 1
@@ -3208,9 +3346,15 @@
         "recovered": 0,
         "deaths": 0,
         "active": 2
+      },
+      "04/08/2020": {
+        "cases": 4,
+        "recovered": 0,
+        "deaths": 0,
+        "active": 4
       }
     },
-    "checked": "2020-04-05T18:26:22.521Z",
+    "checked": "2020-04-08T18:59:43.203Z",
     "new": null,
     "rate": null,
     "dailyrate": 0
@@ -3342,9 +3486,15 @@
         "recovered": 0,
         "deaths": 8,
         "active": 589
+      },
+      "04/08/2020": {
+        "cases": 761,
+        "recovered": 0,
+        "deaths": 12,
+        "active": 749
       }
     },
-    "checked": "2020-04-05T18:26:22.522Z",
+    "checked": "2020-04-08T18:59:43.213Z",
     "new": null,
     "rate": null,
     "dailyrate": 1
@@ -3476,9 +3626,15 @@
         "recovered": 0,
         "deaths": 0,
         "active": 5
+      },
+      "04/08/2020": {
+        "cases": 5,
+        "recovered": 0,
+        "deaths": 0,
+        "active": 5
       }
     },
-    "checked": "2020-04-05T18:26:22.523Z",
+    "checked": "2020-04-08T18:59:43.234Z",
     "new": null,
     "rate": null,
     "dailyrate": 0
@@ -3610,9 +3766,15 @@
         "recovered": 0,
         "deaths": 1,
         "active": 3
+      },
+      "04/08/2020": {
+        "cases": 4,
+        "recovered": 0,
+        "deaths": 1,
+        "active": 3
       }
     },
-    "checked": "2020-04-05T18:26:22.523Z",
+    "checked": "2020-04-08T18:59:43.246Z",
     "new": null,
     "rate": null,
     "dailyrate": 1
@@ -3744,9 +3906,15 @@
         "recovered": 0,
         "deaths": 0,
         "active": 38
+      },
+      "04/08/2020": {
+        "cases": 44,
+        "recovered": 0,
+        "deaths": 1,
+        "active": 43
       }
     },
-    "checked": "2020-04-05T18:26:22.524Z",
+    "checked": "2020-04-08T18:59:43.265Z",
     "new": null,
     "rate": null,
     "dailyrate": 1
@@ -3878,9 +4046,15 @@
         "recovered": 0,
         "deaths": 1,
         "active": 12
+      },
+      "04/08/2020": {
+        "cases": 21,
+        "recovered": 0,
+        "deaths": 1,
+        "active": 20
       }
     },
-    "checked": "2020-04-05T18:26:22.524Z",
+    "checked": "2020-04-08T18:59:43.268Z",
     "new": null,
     "rate": null,
     "dailyrate": 1
@@ -4012,9 +4186,15 @@
         "recovered": 0,
         "deaths": 0,
         "active": 1
+      },
+      "04/08/2020": {
+        "cases": 2,
+        "recovered": 0,
+        "deaths": 0,
+        "active": 2
       }
     },
-    "checked": "2020-04-05T18:26:22.525Z",
+    "checked": "2020-04-08T18:59:43.278Z",
     "new": null,
     "rate": null,
     "dailyrate": 0
@@ -4146,9 +4326,15 @@
         "recovered": 0,
         "deaths": 3,
         "active": 316
+      },
+      "04/08/2020": {
+        "cases": 437,
+        "recovered": 0,
+        "deaths": 13,
+        "active": 424
       }
     },
-    "checked": "2020-04-05T18:26:22.526Z",
+    "checked": "2020-04-08T18:59:43.323Z",
     "new": null,
     "rate": null,
     "dailyrate": 1
@@ -4280,9 +4466,15 @@
         "recovered": 0,
         "deaths": 0,
         "active": 11
+      },
+      "04/08/2020": {
+        "cases": 17,
+        "recovered": 0,
+        "deaths": 0,
+        "active": 17
       }
     },
-    "checked": "2020-04-05T18:26:22.527Z",
+    "checked": "2020-04-08T18:59:43.351Z",
     "new": null,
     "rate": null,
     "dailyrate": 1
@@ -4414,9 +4606,15 @@
         "recovered": 0,
         "deaths": 0,
         "active": 1
+      },
+      "04/08/2020": {
+        "cases": 2,
+        "recovered": 0,
+        "deaths": 0,
+        "active": 2
       }
     },
-    "checked": "2020-04-05T18:26:22.528Z",
+    "checked": "2020-04-08T18:59:43.363Z",
     "new": null,
     "rate": null,
     "dailyrate": 0
@@ -4548,9 +4746,15 @@
         "recovered": 0,
         "deaths": 0,
         "active": 0
+      },
+      "04/08/2020": {
+        "cases": 0,
+        "recovered": 0,
+        "deaths": 0,
+        "active": 0
       }
     },
-    "checked": "2020-04-05T18:26:22.528Z",
+    "checked": "2020-04-08T18:59:43.397Z",
     "new": null,
     "rate": null,
     "dailyrate": 0
@@ -4682,9 +4886,15 @@
         "recovered": 0,
         "deaths": 0,
         "active": 0
+      },
+      "04/08/2020": {
+        "cases": 1,
+        "recovered": 0,
+        "deaths": 0,
+        "active": 1
       }
     },
-    "checked": "2020-04-05T18:26:22.529Z",
+    "checked": "2020-04-08T18:59:43.400Z",
     "new": null,
     "rate": null,
     "dailyrate": 0
@@ -4816,9 +5026,15 @@
         "recovered": 0,
         "deaths": 0,
         "active": 4
+      },
+      "04/08/2020": {
+        "cases": 6,
+        "recovered": 0,
+        "deaths": 0,
+        "active": 6
       }
     },
-    "checked": "2020-04-05T18:26:22.530Z",
+    "checked": "2020-04-08T18:59:43.418Z",
     "new": null,
     "rate": null,
     "dailyrate": 1
@@ -4950,9 +5166,15 @@
         "recovered": 0,
         "deaths": 0,
         "active": 0
+      },
+      "04/08/2020": {
+        "cases": 0,
+        "recovered": 0,
+        "deaths": 0,
+        "active": 0
       }
     },
-    "checked": "2020-04-05T18:26:22.531Z",
+    "checked": "2020-04-08T18:59:43.432Z",
     "new": null,
     "rate": null,
     "dailyrate": 0
@@ -5084,9 +5306,15 @@
         "recovered": 0,
         "deaths": 0,
         "active": 1
+      },
+      "04/08/2020": {
+        "cases": 3,
+        "recovered": 0,
+        "deaths": 0,
+        "active": 3
       }
     },
-    "checked": "2020-04-05T18:26:22.532Z",
+    "checked": "2020-04-08T18:59:43.435Z",
     "new": null,
     "rate": null,
     "dailyrate": 0
@@ -5218,9 +5446,15 @@
         "recovered": 0,
         "deaths": 1,
         "active": 5
+      },
+      "04/08/2020": {
+        "cases": 9,
+        "recovered": 0,
+        "deaths": 1,
+        "active": 8
       }
     },
-    "checked": "2020-04-05T18:26:22.532Z",
+    "checked": "2020-04-08T18:59:43.478Z",
     "new": null,
     "rate": null,
     "dailyrate": 1
@@ -5352,9 +5586,15 @@
         "recovered": 0,
         "deaths": 0,
         "active": 0
+      },
+      "04/08/2020": {
+        "cases": 2,
+        "recovered": 0,
+        "deaths": 0,
+        "active": 2
       }
     },
-    "checked": "2020-04-05T18:26:22.533Z",
+    "checked": "2020-04-08T18:59:43.485Z",
     "new": null,
     "rate": null,
     "dailyrate": 0
@@ -5486,9 +5726,15 @@
         "recovered": 0,
         "deaths": 0,
         "active": 14
+      },
+      "04/08/2020": {
+        "cases": 18,
+        "recovered": 0,
+        "deaths": 0,
+        "active": 18
       }
     },
-    "checked": "2020-04-05T18:26:22.534Z",
+    "checked": "2020-04-08T18:59:43.493Z",
     "new": null,
     "rate": null,
     "dailyrate": 0
@@ -5620,9 +5866,15 @@
         "recovered": 0,
         "deaths": 1,
         "active": 6
+      },
+      "04/08/2020": {
+        "cases": 7,
+        "recovered": 0,
+        "deaths": 1,
+        "active": 6
       }
     },
-    "checked": "2020-04-05T18:26:22.535Z",
+    "checked": "2020-04-08T18:59:43.520Z",
     "new": null,
     "rate": null,
     "dailyrate": 1
@@ -5754,9 +6006,15 @@
         "recovered": 0,
         "deaths": 3,
         "active": 76
+      },
+      "04/08/2020": {
+        "cases": 99,
+        "recovered": 0,
+        "deaths": 4,
+        "active": 95
       }
     },
-    "checked": "2020-04-05T18:26:22.535Z",
+    "checked": "2020-04-08T18:59:43.533Z",
     "new": null,
     "rate": null,
     "dailyrate": 1
@@ -5888,9 +6146,15 @@
         "recovered": 0,
         "deaths": 0,
         "active": 8
+      },
+      "04/08/2020": {
+        "cases": 13,
+        "recovered": 0,
+        "deaths": 0,
+        "active": 13
       }
     },
-    "checked": "2020-04-05T18:26:22.536Z",
+    "checked": "2020-04-08T18:59:43.569Z",
     "new": null,
     "rate": null,
     "dailyrate": 0
@@ -6022,9 +6286,15 @@
         "recovered": 0,
         "deaths": 2,
         "active": 53
+      },
+      "04/08/2020": {
+        "cases": 64,
+        "recovered": 0,
+        "deaths": 3,
+        "active": 61
       }
     },
-    "checked": "2020-04-05T18:26:22.537Z",
+    "checked": "2020-04-08T18:59:43.685Z",
     "new": null,
     "rate": null,
     "dailyrate": 1
@@ -6156,9 +6426,15 @@
         "recovered": 0,
         "deaths": 0,
         "active": 5
+      },
+      "04/08/2020": {
+        "cases": 5,
+        "recovered": 0,
+        "deaths": 0,
+        "active": 5
       }
     },
-    "checked": "2020-04-05T18:26:22.537Z",
+    "checked": "2020-04-08T18:59:43.691Z",
     "new": null,
     "rate": null,
     "dailyrate": 1
@@ -6290,9 +6566,15 @@
         "recovered": 0,
         "deaths": 3,
         "active": 107
+      },
+      "04/08/2020": {
+        "cases": 136,
+        "recovered": 0,
+        "deaths": 4,
+        "active": 132
       }
     },
-    "checked": "2020-04-05T18:26:22.538Z",
+    "checked": "2020-04-08T18:59:43.716Z",
     "new": null,
     "rate": null,
     "dailyrate": 1
@@ -6424,9 +6706,15 @@
         "recovered": 0,
         "deaths": 8,
         "active": 294
+      },
+      "04/08/2020": {
+        "cases": 371,
+        "recovered": 0,
+        "deaths": 16,
+        "active": 355
       }
     },
-    "checked": "2020-04-05T18:26:22.539Z",
+    "checked": "2020-04-08T18:59:43.718Z",
     "new": null,
     "rate": null,
     "dailyrate": 1
@@ -6558,9 +6846,15 @@
         "recovered": 0,
         "deaths": 2,
         "active": 15
+      },
+      "04/08/2020": {
+        "cases": 20,
+        "recovered": 0,
+        "deaths": 2,
+        "active": 18
       }
     },
-    "checked": "2020-04-05T18:26:22.539Z",
+    "checked": "2020-04-08T18:59:43.722Z",
     "new": null,
     "rate": null,
     "dailyrate": 1
@@ -6692,9 +6986,15 @@
         "recovered": 0,
         "deaths": 15,
         "active": 246
+      },
+      "04/08/2020": {
+        "cases": 305,
+        "recovered": 0,
+        "deaths": 28,
+        "active": 277
       }
     },
-    "checked": "2020-04-05T18:26:22.540Z",
+    "checked": "2020-04-08T18:59:43.733Z",
     "new": null,
     "rate": null,
     "dailyrate": 1
@@ -6826,9 +7126,15 @@
         "recovered": 0,
         "deaths": 0,
         "active": 19
+      },
+      "04/08/2020": {
+        "cases": 32,
+        "recovered": 0,
+        "deaths": 0,
+        "active": 32
       }
     },
-    "checked": "2020-04-05T18:26:22.541Z",
+    "checked": "2020-04-08T18:59:43.749Z",
     "new": null,
     "rate": null,
     "dailyrate": 1
@@ -6960,9 +7266,15 @@
         "recovered": 0,
         "deaths": 2,
         "active": 76
+      },
+      "04/08/2020": {
+        "cases": 94,
+        "recovered": 0,
+        "deaths": 4,
+        "active": 90
       }
     },
-    "checked": "2020-04-05T18:26:22.541Z",
+    "checked": "2020-04-08T18:59:43.817Z",
     "new": null,
     "rate": null,
     "dailyrate": 1
@@ -7094,9 +7406,15 @@
         "recovered": 0,
         "deaths": 0,
         "active": 0
+      },
+      "04/08/2020": {
+        "cases": 1,
+        "recovered": 0,
+        "deaths": 0,
+        "active": 1
       }
     },
-    "checked": "2020-04-05T18:26:22.542Z",
+    "checked": "2020-04-08T18:59:43.819Z",
     "new": null,
     "rate": null,
     "dailyrate": 0
@@ -7228,9 +7546,15 @@
         "recovered": 0,
         "deaths": 1,
         "active": 6
+      },
+      "04/08/2020": {
+        "cases": 11,
+        "recovered": 0,
+        "deaths": 1,
+        "active": 10
       }
     },
-    "checked": "2020-04-05T18:26:22.543Z",
+    "checked": "2020-04-08T18:59:43.822Z",
     "new": null,
     "rate": null,
     "dailyrate": 0
@@ -7362,9 +7686,15 @@
         "recovered": 0,
         "deaths": 10,
         "active": 66
+      },
+      "04/08/2020": {
+        "cases": 107,
+        "recovered": 0,
+        "deaths": 14,
+        "active": 93
       }
     },
-    "checked": "2020-04-05T18:26:22.543Z",
+    "checked": "2020-04-08T18:59:43.844Z",
     "new": null,
     "rate": null,
     "dailyrate": 1
@@ -7496,9 +7826,15 @@
         "recovered": 0,
         "deaths": 0,
         "active": 2
+      },
+      "04/08/2020": {
+        "cases": 2,
+        "recovered": 0,
+        "deaths": 0,
+        "active": 2
       }
     },
-    "checked": "2020-04-05T18:26:22.544Z",
+    "checked": "2020-04-08T18:59:43.858Z",
     "new": null,
     "rate": null,
     "dailyrate": 0
@@ -7630,9 +7966,15 @@
         "recovered": 0,
         "deaths": 2,
         "active": 82
+      },
+      "04/08/2020": {
+        "cases": 147,
+        "recovered": 0,
+        "deaths": 2,
+        "active": 145
       }
     },
-    "checked": "2020-04-05T18:26:22.544Z",
+    "checked": "2020-04-08T18:59:43.874Z",
     "new": null,
     "rate": null,
     "dailyrate": 1
@@ -7764,9 +8106,15 @@
         "recovered": 0,
         "deaths": 0,
         "active": 0
+      },
+      "04/08/2020": {
+        "cases": 2,
+        "recovered": 0,
+        "deaths": 0,
+        "active": 2
       }
     },
-    "checked": "2020-04-05T18:26:22.545Z",
+    "checked": "2020-04-08T18:59:43.888Z",
     "new": null,
     "rate": null,
     "dailyrate": 0
@@ -7898,9 +8246,15 @@
         "recovered": 0,
         "deaths": 0,
         "active": 5
+      },
+      "04/08/2020": {
+        "cases": 6,
+        "recovered": 0,
+        "deaths": 0,
+        "active": 6
       }
     },
-    "checked": "2020-04-05T18:26:22.545Z",
+    "checked": "2020-04-08T18:59:43.919Z",
     "new": null,
     "rate": null,
     "dailyrate": 0
@@ -8032,9 +8386,15 @@
         "recovered": 0,
         "deaths": 0,
         "active": 4
+      },
+      "04/08/2020": {
+        "cases": 6,
+        "recovered": 0,
+        "deaths": 0,
+        "active": 6
       }
     },
-    "checked": "2020-04-05T18:26:22.546Z",
+    "checked": "2020-04-08T18:59:43.921Z",
     "new": null,
     "rate": null,
     "dailyrate": 0
@@ -8166,9 +8526,15 @@
         "recovered": 0,
         "deaths": 0,
         "active": 0
+      },
+      "04/08/2020": {
+        "cases": 0,
+        "recovered": 0,
+        "deaths": 0,
+        "active": 0
       }
     },
-    "checked": "2020-04-05T18:26:22.547Z",
+    "checked": "2020-04-08T18:59:43.928Z",
     "new": null,
     "rate": null,
     "dailyrate": 0
@@ -8300,9 +8666,15 @@
         "recovered": 0,
         "deaths": 0,
         "active": 5
+      },
+      "04/08/2020": {
+        "cases": 6,
+        "recovered": 0,
+        "deaths": 0,
+        "active": 6
       }
     },
-    "checked": "2020-04-05T18:26:22.548Z",
+    "checked": "2020-04-08T18:59:43.930Z",
     "new": null,
     "rate": null,
     "dailyrate": 0
@@ -8434,9 +8806,15 @@
         "recovered": 0,
         "deaths": 0,
         "active": 0
+      },
+      "04/08/2020": {
+        "cases": 2,
+        "recovered": 0,
+        "deaths": 0,
+        "active": 2
       }
     },
-    "checked": "2020-04-05T18:26:22.549Z",
+    "checked": "2020-04-08T18:59:43.943Z",
     "new": null,
     "rate": null,
     "dailyrate": 0
@@ -8568,9 +8946,15 @@
         "recovered": 0,
         "deaths": 0,
         "active": 3
+      },
+      "04/08/2020": {
+        "cases": 6,
+        "recovered": 0,
+        "deaths": 0,
+        "active": 6
       }
     },
-    "checked": "2020-04-05T18:26:22.550Z",
+    "checked": "2020-04-08T18:59:43.963Z",
     "new": null,
     "rate": null,
     "dailyrate": 0
@@ -8702,9 +9086,15 @@
         "recovered": 0,
         "deaths": 0,
         "active": 29
+      },
+      "04/08/2020": {
+        "cases": 35,
+        "recovered": 0,
+        "deaths": 0,
+        "active": 35
       }
     },
-    "checked": "2020-04-05T18:26:22.551Z",
+    "checked": "2020-04-08T18:59:43.980Z",
     "new": null,
     "rate": null,
     "dailyrate": 0
@@ -8836,9 +9226,15 @@
         "recovered": 0,
         "deaths": 0,
         "active": 1
+      },
+      "04/08/2020": {
+        "cases": 1,
+        "recovered": 0,
+        "deaths": 0,
+        "active": 1
       }
     },
-    "checked": "2020-04-05T18:26:22.552Z",
+    "checked": "2020-04-08T18:59:43.983Z",
     "new": null,
     "rate": null,
     "dailyrate": 0
@@ -8970,9 +9366,15 @@
         "recovered": 0,
         "deaths": 4,
         "active": 80
+      },
+      "04/08/2020": {
+        "cases": 108,
+        "recovered": 0,
+        "deaths": 8,
+        "active": 100
       }
     },
-    "checked": "2020-04-05T18:26:22.553Z",
+    "checked": "2020-04-08T18:59:43.985Z",
     "new": null,
     "rate": null,
     "dailyrate": 1
@@ -9104,9 +9506,15 @@
         "recovered": 0,
         "deaths": 0,
         "active": 5
+      },
+      "04/08/2020": {
+        "cases": 8,
+        "recovered": 0,
+        "deaths": 0,
+        "active": 8
       }
     },
-    "checked": "2020-04-05T18:26:22.554Z",
+    "checked": "2020-04-08T18:59:43.988Z",
     "new": null,
     "rate": null,
     "dailyrate": 0
@@ -9238,9 +9646,15 @@
         "recovered": 0,
         "deaths": 0,
         "active": 0
+      },
+      "04/08/2020": {
+        "cases": 0,
+        "recovered": 0,
+        "deaths": 0,
+        "active": 0
       }
     },
-    "checked": "2020-04-05T18:26:22.555Z",
+    "checked": "2020-04-08T18:59:44.012Z",
     "new": null,
     "rate": null,
     "dailyrate": 0
@@ -9372,9 +9786,15 @@
         "recovered": 0,
         "deaths": 0,
         "active": 17
+      },
+      "04/08/2020": {
+        "cases": 25,
+        "recovered": 0,
+        "deaths": 0,
+        "active": 25
       }
     },
-    "checked": "2020-04-05T18:26:22.556Z",
+    "checked": "2020-04-08T18:59:44.015Z",
     "new": null,
     "rate": null,
     "dailyrate": 1
@@ -9506,9 +9926,15 @@
         "recovered": 0,
         "deaths": 0,
         "active": 4
+      },
+      "04/08/2020": {
+        "cases": 10,
+        "recovered": 0,
+        "deaths": 0,
+        "active": 10
       }
     },
-    "checked": "2020-04-05T18:26:22.557Z",
+    "checked": "2020-04-08T18:59:44.028Z",
     "new": null,
     "rate": null,
     "dailyrate": 0
@@ -9640,9 +10066,15 @@
         "recovered": 0,
         "deaths": 0,
         "active": 5
+      },
+      "04/08/2020": {
+        "cases": 5,
+        "recovered": 0,
+        "deaths": 1,
+        "active": 4
       }
     },
-    "checked": "2020-04-05T18:26:22.558Z",
+    "checked": "2020-04-08T18:59:44.046Z",
     "new": null,
     "rate": null,
     "dailyrate": 1
@@ -9774,9 +10206,15 @@
         "recovered": 0,
         "deaths": 0,
         "active": 0
+      },
+      "04/08/2020": {
+        "cases": 1,
+        "recovered": 0,
+        "deaths": 0,
+        "active": 1
       }
     },
-    "checked": "2020-04-05T18:26:22.559Z",
+    "checked": "2020-04-08T18:59:44.068Z",
     "new": null,
     "rate": null,
     "dailyrate": 0
@@ -9908,9 +10346,15 @@
         "recovered": 0,
         "deaths": 1,
         "active": 5
+      },
+      "04/08/2020": {
+        "cases": 6,
+        "recovered": 0,
+        "deaths": 1,
+        "active": 5
       }
     },
-    "checked": "2020-04-05T18:26:22.560Z",
+    "checked": "2020-04-08T18:59:44.071Z",
     "new": null,
     "rate": null,
     "dailyrate": 0
@@ -10042,9 +10486,15 @@
         "recovered": 0,
         "deaths": 0,
         "active": 12
+      },
+      "04/08/2020": {
+        "cases": 19,
+        "recovered": 0,
+        "deaths": 0,
+        "active": 19
       }
     },
-    "checked": "2020-04-05T18:26:22.561Z",
+    "checked": "2020-04-08T18:59:44.096Z",
     "new": null,
     "rate": null,
     "dailyrate": 0
@@ -10176,9 +10626,15 @@
         "recovered": 0,
         "deaths": 5,
         "active": 90
+      },
+      "04/08/2020": {
+        "cases": 114,
+        "recovered": 0,
+        "deaths": 7,
+        "active": 107
       }
     },
-    "checked": "2020-04-05T18:26:22.562Z",
+    "checked": "2020-04-08T18:59:44.109Z",
     "new": null,
     "rate": null,
     "dailyrate": 1
@@ -10310,9 +10766,15 @@
         "recovered": 0,
         "deaths": 9,
         "active": 175
+      },
+      "04/08/2020": {
+        "cases": 211,
+        "recovered": 0,
+        "deaths": 12,
+        "active": 199
       }
     },
-    "checked": "2020-04-05T18:26:22.563Z",
+    "checked": "2020-04-08T18:59:44.115Z",
     "new": null,
     "rate": null,
     "dailyrate": 1
@@ -10444,9 +10906,15 @@
         "recovered": 0,
         "deaths": 7,
         "active": 82
+      },
+      "04/08/2020": {
+        "cases": 126,
+        "recovered": 0,
+        "deaths": 8,
+        "active": 118
       }
     },
-    "checked": "2020-04-05T18:26:22.564Z",
+    "checked": "2020-04-08T18:59:44.117Z",
     "new": null,
     "rate": null,
     "dailyrate": 1
@@ -10578,9 +11046,15 @@
         "recovered": 0,
         "deaths": 0,
         "active": 20
+      },
+      "04/08/2020": {
+        "cases": 26,
+        "recovered": 0,
+        "deaths": 0,
+        "active": 26
       }
     },
-    "checked": "2020-04-05T18:26:22.565Z",
+    "checked": "2020-04-08T18:59:44.119Z",
     "new": null,
     "rate": null,
     "dailyrate": 1
@@ -10712,9 +11186,15 @@
         "recovered": 0,
         "deaths": 0,
         "active": 8
+      },
+      "04/08/2020": {
+        "cases": 8,
+        "recovered": 0,
+        "deaths": 0,
+        "active": 8
       }
     },
-    "checked": "2020-04-05T18:26:22.565Z",
+    "checked": "2020-04-08T18:59:44.121Z",
     "new": null,
     "rate": null,
     "dailyrate": 1
@@ -10846,9 +11326,15 @@
         "recovered": 0,
         "deaths": 0,
         "active": 2
+      },
+      "04/08/2020": {
+        "cases": 2,
+        "recovered": 0,
+        "deaths": 0,
+        "active": 2
       }
     },
-    "checked": "2020-04-05T18:26:22.566Z",
+    "checked": "2020-04-08T18:59:44.130Z",
     "new": null,
     "rate": null,
     "dailyrate": 0
@@ -10980,9 +11466,15 @@
         "recovered": 0,
         "deaths": 0,
         "active": 0
+      },
+      "04/08/2020": {
+        "cases": 0,
+        "recovered": 0,
+        "deaths": 0,
+        "active": 0
       }
     },
-    "checked": "2020-04-05T18:26:22.567Z",
+    "checked": "2020-04-08T18:59:44.146Z",
     "new": null,
     "rate": null,
     "dailyrate": 0
@@ -11114,9 +11606,15 @@
         "recovered": 0,
         "deaths": 0,
         "active": 36
+      },
+      "04/08/2020": {
+        "cases": 46,
+        "recovered": 0,
+        "deaths": 0,
+        "active": 46
       }
     },
-    "checked": "2020-04-05T18:26:22.567Z",
+    "checked": "2020-04-08T18:59:44.148Z",
     "new": null,
     "rate": null,
     "dailyrate": 1
@@ -11248,9 +11746,15 @@
         "recovered": 0,
         "deaths": 0,
         "active": 8
+      },
+      "04/08/2020": {
+        "cases": 30,
+        "recovered": 0,
+        "deaths": 0,
+        "active": 30
       }
     },
-    "checked": "2020-04-05T18:26:22.568Z",
+    "checked": "2020-04-08T18:59:44.163Z",
     "new": null,
     "rate": null,
     "dailyrate": 1
@@ -11382,9 +11886,15 @@
         "recovered": 0,
         "deaths": 0,
         "active": 26
+      },
+      "04/08/2020": {
+        "cases": 30,
+        "recovered": 0,
+        "deaths": 0,
+        "active": 30
       }
     },
-    "checked": "2020-04-05T18:26:22.568Z",
+    "checked": "2020-04-08T18:59:44.178Z",
     "new": null,
     "rate": null,
     "dailyrate": 0
@@ -11516,9 +12026,15 @@
         "recovered": 0,
         "deaths": 0,
         "active": 1
+      },
+      "04/08/2020": {
+        "cases": 1,
+        "recovered": 0,
+        "deaths": 0,
+        "active": 1
       }
     },
-    "checked": "2020-04-05T18:26:22.569Z",
+    "checked": "2020-04-08T18:59:44.194Z",
     "new": null,
     "rate": null,
     "dailyrate": 0
@@ -11650,9 +12166,15 @@
         "recovered": 0,
         "deaths": 0,
         "active": 29
+      },
+      "04/08/2020": {
+        "cases": 41,
+        "recovered": 0,
+        "deaths": 2,
+        "active": 39
       }
     },
-    "checked": "2020-04-05T18:26:22.570Z",
+    "checked": "2020-04-08T18:59:44.207Z",
     "new": null,
     "rate": null,
     "dailyrate": 1
@@ -11784,9 +12306,15 @@
         "recovered": 0,
         "deaths": 0,
         "active": 5
+      },
+      "04/08/2020": {
+        "cases": 5,
+        "recovered": 0,
+        "deaths": 0,
+        "active": 5
       }
     },
-    "checked": "2020-04-05T18:26:22.570Z",
+    "checked": "2020-04-08T18:59:44.224Z",
     "new": null,
     "rate": null,
     "dailyrate": 0
