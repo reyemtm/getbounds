@@ -44,3 +44,5 @@ cache(urls[0], { folder: './agol-cache' })
 ```
 
 The tool works with ArcGIS Online Feature Services and has not been tested with Map Services or services published from ArcGIS Server. While the tool accomplishes everything needed for this use case, pull requests for additional features are welcome.
+
+Now even after extracting the data to GeoJSON, the data is still not ready to be pulled into a Mapbox web map. This is due to the fact that, as stated above, some of the files are extremely large and should not be loaded directly into the client. The next step in my workflow is to cut the raw data larger than two megabytes into vector tiles using [geojson2mvt](https://www.npmjs.com/package/geojson2mvt).
