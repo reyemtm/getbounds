@@ -3,7 +3,7 @@ layout: post
 title: Exporting AGOL Feature Services
 subtitle: A Simple Method to Export an ArcGIS Online Feature Service to GeoJSON
 date: 2020-04-09T17:39:25.792Z
-img: screenshot-codepen.io-2020.04.10-09_55_09.png
+img: agol-cache.png
 tags: esri
 style:
   code: |-
