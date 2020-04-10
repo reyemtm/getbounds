@@ -13,4 +13,34 @@ style:
 header: none
 featured: false
 ---
-Recently in my day job I had the need to pull data from ArcGIS Online into my custom Mapbox web maps. While it would be possible to simply use the WMS publishing feature in AGOL and display this layer, what would be ideal is to have access to the raw data. In addition, this data needs updated on a daily basis, so manually downloading a copy is out of the question. While iIt is possible to query a feature service and return GeoJSON, some of the features exceed the default ``maxRecordsCount`` in AGOL. 
+Recently I had the need to pull data from ArcGIS Online into my custom Mapbox web maps. While it would be possible to simply use the WMS publishing feature in AGOL and display this layer, what would be ideal is to have access to the raw data. In addition, this data needs updated on a daily basis, so manually downloading a copy is out of the question.
+
+While it is possible to query a feature service and return GeoJSON, some of the features exceed the default ``maxRecordsCount`` in AGOL. To get around this limitation I followed the advice from [this post](https://blog.cartong.org/2019/03/29/harvesting-large-quantity-data-from-arcgis-rest-services-using-tool/) and created a simple NodeJS tool to export all the layers listed in the feature service definition to GeoJSON -  [agol-cache](https://www.npmjs.com/package/agol-cache) .
+
+```JavaScript
+"layers": [
+  {
+    "id": 0,
+    "name": "Benchmarks",
+    "parentLayerId": -1,
+    "defaultVisibility": true,
+    "subLayerIds": null,
+    "minScale": 0,
+    "maxScale": 0,
+    "geometryType": "esriGeometryPoint"
+  }
+]
+```
+To run the tool simply define a valid Feature Service url and an optional path to extract the GeoJSON files.
+
+```JavaScript
+const cache = require('agol-cache');
+
+const urls = [
+  'https://services9.arcgis.com/IUhP9plEzDTayUVC/arcgis/rest/services/Water_System_View/FeatureServer'
+]
+
+cache(urls[0], { folder: './agol-cache' })
+```
+
+The tool works with ArcGIS Online Feature Services and has not been tested with Map Services or services published from ArcGIS Server. While the tool accomplishes everything needed for this use case, pull requests for additional features are welcome.
