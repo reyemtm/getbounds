@@ -5,7 +5,7 @@ backend:
 publish_mode: editorial_workflow
 
 media_folder: "/source/assets/img" # Media files will be stored in the repo under images/uploads
-public_folder: "/assets/img"
+public_folder: ""
 
 # test deploy
 # another test
