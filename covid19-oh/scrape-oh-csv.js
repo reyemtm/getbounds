@@ -30,6 +30,7 @@ fetch("https://coronavirus.ohio.gov/static/COVIDSummaryData.csv")
     }
   })
   .then(csv => {
+    fs.writeFileSync("./source/covid19-oh/current.csv", csv)
     var results = Papa.parse(csv, {
       header: true
     });  
@@ -85,11 +86,12 @@ function parseData (data) {
     var deaths = 0;
     var recovered = 0;
 
-    data.map(row => {
+    data.map((row,i) => {
       var county = Object.values(row)[0];
       if (county == c) {
-        cases = cases + Number(Object.values(row)[5])
-        deaths = deaths + Number(Object.values(row)[6])
+        if (i === 1) console.log(Object.keys(row))
+        cases = cases + Number(Object.values(row)[6])
+        deaths = deaths + Number(Object.values(row)[7])
       }
     })
 
