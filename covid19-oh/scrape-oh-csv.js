@@ -4,6 +4,9 @@ const Papa = require("papaparse")
 const t = new Date(Date.now());
 const yesterday = new Date(Date.now() - 86400000);
 
+
+//NEED TO GET LAST DATE IN CSV AND THEN USE THIS AS THE DATE TOWARDS THE END
+
 function formatDate(d) {
   let ye = new Intl.DateTimeFormat('en', { year: 'numeric' }).format(d)
   let mo = new Intl.DateTimeFormat('en', { month: '2-digit' }).format(d)
@@ -43,6 +46,22 @@ fetch("https://coronavirus.ohio.gov/static/COVIDSummaryData.csv")
 function parseData (data) {
   //GET COUNTIES
 
+  //CREATE ARRAY OF DATES AND FIND LATEST ONE AND USE THIS FOR EXTRACTING THE LATEST NEW CASES
+
+  var dates = [];
+  data.map(row => {
+    var d1 = Object.values(row)[3];
+    if (d1 && dates.indexOf(new Date(d1).getTime()) < 0 && d1 != "Total" && d1 != null) {
+      dates.push(new Date(d1).getTime())
+    }
+  });
+
+  dates.sort();
+
+  var latest = formatDate(new Date(dates[dates.length - 1]))
+
+  console.log("last date with new cases", latest)
+
   var counties = [];
 
   data.map(row => {
@@ -74,8 +93,7 @@ function parseData (data) {
   console.log(date);
 
   if (formatDate(today) != formatDate(date)) {
-    console.log("error latest update from csv does not match today's date");
-    process.exit(0)
+    console.warn("warning...latest update from csv does not match today's date");
   }
   
   //PARSE TOTALS FOR DATE
@@ -105,34 +123,33 @@ function parseData (data) {
     totals[c] = dates
   });
   console.log(totals)
-  addToCache(cache, totals)
+  addToCache(cache, totals, latest)
 
 }
 
-function addToCache (cache, countyData) {
+function addToCache (cache, countyData, latestDate) {
   cache.map(c => {
     
-    var date = formatDate(t);
+    var today = formatDate(t);
 
     c.checked = new Date(Date.now());
-    c.dates[date] = {}
-    c.dates[date].cases = 0;
-    c.dates[date].recovered = 0;
-    c.dates[date].deaths = 0;
-    c.dates[date].active = 0;
+    c.dates[today] = {}
+    c.dates[today].cases = 0;
+    c.dates[today].recovered = 0;
+    c.dates[today].deaths = 0;
+    c.dates[today].active = 0;
 
 
     for (let i in countyData) {
       if (c.name == i) {
-        var date = Object.keys(countyData[i])[0];
-        var obj = countyData[i][date]
+        var obj = countyData[i][latestDate]
 
         console.log(obj)
 
-        c.dates[date].cases = Number(obj.cases)
-        c.dates[date].deaths = Number(obj.deaths);
-        c.dates[date].active = Number(obj.active);
-        c.dates[date].recovered = Number(obj.recovered)
+        c.dates[today].cases = Number(obj.cases)
+        c.dates[today].deaths = Number(obj.deaths);
+        c.dates[today].active = Number(obj.active);
+        c.dates[today].recovered = Number(obj.recovered);
       }
     }
   })

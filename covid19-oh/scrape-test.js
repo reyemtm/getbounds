@@ -63,8 +63,8 @@ function parseData (data) {
   console.log(date);
 
   if (formatDate(today) != formatDate(date)) {
-    console.log("error latest update from csv does not match today's date");
-    process.exit(0)
+    console.warn("error latest update from csv does not match today's date");
+    // process.exit(0)
   }
   
   //PARSE TOTALS FOR DATE
