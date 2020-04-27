@@ -1,8 +1,9 @@
 ---
 layout: post
-title: Exporting AGOL Feature Services
-subtitle: Using NodeJS to Export an ArcGIS Online Feature Service to GeoJSON
-date: 2020-04-09T17:39:25.792Z
+title: Exporting AGOL Feature Services to GeoJSON
+subtitle: Using NodeJS and Batches to Transform an ArcGIS Online Feature Service
+  to GeoJSON
+date: 2020-04-27T23:32:02.125Z
 img: agol-cache2.png
 tags: esri, nodejs
 style:
