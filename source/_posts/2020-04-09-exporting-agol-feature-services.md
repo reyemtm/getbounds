@@ -13,9 +13,9 @@ style:
 header: none
 featured: false
 ---
-Recently I had the need to pull data from ArcGIS Online into my custom Mapbox web maps. While it would be possible to use the WMS publishing feature in AGOL to display this layer, what would be ideal is to have access to the raw data. The data also needs updated on a daily basis, so manually downloading a copy is out of the question.
+Recently I had the need to pull data from ArcGIS Online into my custom Mapbox web maps. While it would be possible to use the WMS publishing feature in AGOL to display this layer, what would be ideal is to have access to the raw data. The data also needs updated on a regular basis, so manually downloading a copy is out of the question.
 
-Another method to view this data would be to query a feature service and return GeoJSON. While this would work from some of the layers, a few contain too many features and exceed the default `maxRecordsCount` in AGOL. To get around this limitation I followed advice from [this post](https://blog.cartong.org/2019/03/29/harvesting-large-quantity-data-from-arcgis-rest-services-using-tool/). The result is NodeJS tool that extracts all the layers from a Feature Service URL, then exports them all to GeoJSON by batch-downloading files that exceed the limit. The tool [agol-cache](https://www.npmjs.com/package/agol-cache) is available on npm and GitHub.
+Another method to view this data would be to query a feature service directly from AGOL and return GeoJSON. While this would work from some of the layers, a few exceed the default `maxRecordsCount` in AGOL. To get around this limitation I followed advice from [this post](https://blog.cartong.org/2019/03/29/harvesting-large-quantity-data-from-arcgis-rest-services-using-tool/). The result is a NodeJS tool that extracts all the layers from a Feature Service URL and exports them all to GeoJSON. It does this by downloading the individual features in batches until all the features have been extracted. The tool [agol-cache](https://www.npmjs.com/package/agol-cache) is available on npm and GitHub.
 
 A sample of the service definition can be found below.
 ```JavaScript
@@ -33,7 +33,7 @@ A sample of the service definition can be found below.
 ]
 ```
 
-To run the tool simply define a valid Feature Service url and an optional path to extract the GeoJSON files.
+To run the tool provide a valid Feature Service url and an optional path to extract the GeoJSON files.
 
 ```JavaScript
 const cache = require('agol-cache');
@@ -45,8 +45,4 @@ const urls = [
 cache(urls[0], { folder: './agol-cache' })
 ```
 
-The tool works with ArcGIS Online Feature Services and has not been tested with Map Services or services published from ArcGIS Server. While the tool accomplishes everything needed for this use case, pull requests for additional features are welcome.
-
-Now even after extracting the data to GeoJSON, the data is still not ready to be pulled into a Mapbox web map. This is due to the fact that, as stated above, some of the files are extremely large and should not be loaded directly into the client. The next step in my workflow is to cut the raw data larger than two megabytes into vector tiles using [geojson2mvt](https://www.npmjs.com/package/geojson2mvt).
-
-Test
+The tool works with ArcGIS Online Feature Services and has not been tested with Map Services or services published from ArcGIS Server. 
