@@ -236,7 +236,7 @@ souurce: https://stackoverflow.com/questions/20544309/css-sliding-underline
   padding: 4rem;
   z-index: 2;
   color: white;
-  transition: opacity 0.8s ease-in-out;
+  transition: opacity 0.9s ease-in-out;
   z-index: 100;
 }
 .hero-text h5 {
