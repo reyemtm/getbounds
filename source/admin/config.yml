@@ -23,7 +23,7 @@ collections:
       - {label: "Publish Date", name: "date", widget: "datetime"}
       - {label: "Featured Image", name: "img", widget: "image"}
       - {label: "Tags", name: "tags", widget: "string"}
-      - {label: "Custom Style", name: "style", widget: "code"}
-      - {label: "Additional Styles and Scripts", name: "header", widget: "string" }
+      - {label: "Custom Style", name: "style", widget: "code", required: false}
+      - {label: "Additional Styles and Scripts", name: "header", widget: "string", required: false }
       - {label: "Featured", name: "featured", widget: "boolean", default: false}
       - {label: "Body", name: "body", widget: "markdown"}
