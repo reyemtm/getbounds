@@ -58,6 +58,8 @@ function parseData (data) {
 
   dates.sort();
 
+  console.log(dates)
+
   var latest = formatDate(new Date(dates[dates.length - 1]))
 
   console.log("last date with new cases", latest)
@@ -72,6 +74,9 @@ function parseData (data) {
     var county = Object.values(row)[0]
     if (counties.indexOf(county) < 0 && county.length > 1 && county != "Grand Total") counties.push(county)
   })
+
+  // console.log(counties)
+  // process.exit(0)
 
   //DATE TWO WEEKS AGO
   var date = new Date(Date.now() - (86400000 * 14))
@@ -90,7 +95,7 @@ function parseData (data) {
 
   })
 
-  console.log(date);
+  // console.log(date);
 
   if (formatDate(today) != formatDate(date)) {
     console.warn("warning...latest update from csv does not match today's date");
@@ -107,14 +112,14 @@ function parseData (data) {
     data.map((row,i) => {
       var county = Object.values(row)[0];
       if (county == c) {
-        if (i === 1) console.log(Object.keys(row))
+        // if (i === 1) console.log(Object.keys(row))
         cases = cases + Number(Object.values(row)[6])
         deaths = deaths + Number(Object.values(row)[7])
       }
     })
 
     var dates = {};
-    dates[formatDate(date)] = {
+    dates[latest] = {
       cases: Number(cases),
       deaths: Number(deaths),
       recovered: 0,
@@ -122,14 +127,14 @@ function parseData (data) {
     }
     totals[c] = dates
   });
-  console.log(totals)
+  // console.log(totals)
   addToCache(cache, totals, latest)
 
 }
 
 function addToCache (cache, countyData, latestDate) {
   cache.map(c => {
-    
+    console.log(latestDate)
     var today = formatDate(t);
 
     c.checked = new Date(Date.now());
@@ -142,9 +147,8 @@ function addToCache (cache, countyData, latestDate) {
 
     for (let i in countyData) {
       if (c.name == i) {
+        console.log(countyData[i])
         var obj = countyData[i][latestDate]
-
-        console.log(obj)
 
         c.dates[today].cases = Number(obj.cases)
         c.dates[today].deaths = Number(obj.deaths);
