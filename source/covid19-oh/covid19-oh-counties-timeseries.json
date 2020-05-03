@@ -284,7 +284,7 @@
         "active": 5
       }
     },
-    "checked": "2020-05-03T00:14:52.136Z",
+    "checked": "2020-05-03T00:26:30.052Z",
     "new": null,
     "rate": null,
     "dailyrate": 0
@@ -574,10 +574,10 @@
         "active": 100
       }
     },
-    "checked": "2020-05-03T00:14:52.271Z",
+    "checked": "2020-05-03T00:26:30.066Z",
     "new": null,
     "rate": null,
-    "dailyrate": 0
+    "dailyrate": 0.02
   },
   {
     "name": "Ashland",
@@ -864,10 +864,10 @@
         "active": 8
       }
     },
-    "checked": "2020-05-03T00:14:52.403Z",
+    "checked": "2020-05-03T00:26:30.074Z",
     "new": null,
     "rate": null,
-    "dailyrate": 1
+    "dailyrate": 0.14
   },
   {
     "name": "Ashtabula",
@@ -1154,10 +1154,10 @@
         "active": 127
       }
     },
-    "checked": "2020-05-03T00:14:52.591Z",
+    "checked": "2020-05-03T00:26:30.085Z",
     "new": null,
     "rate": null,
-    "dailyrate": 1
+    "dailyrate": 0.04
   },
   {
     "name": "Athens",
@@ -1444,7 +1444,7 @@
         "active": 3
       }
     },
-    "checked": "2020-05-03T00:14:52.645Z",
+    "checked": "2020-05-03T00:26:30.101Z",
     "new": null,
     "rate": null,
     "dailyrate": 0
@@ -1734,10 +1734,10 @@
         "active": 31
       }
     },
-    "checked": "2020-05-03T00:14:52.803Z",
+    "checked": "2020-05-03T00:26:30.117Z",
     "new": null,
     "rate": null,
-    "dailyrate": 0
+    "dailyrate": 0.03
   },
   {
     "name": "Belmont",
@@ -2024,10 +2024,10 @@
         "active": 149
       }
     },
-    "checked": "2020-05-03T00:14:52.908Z",
+    "checked": "2020-05-03T00:26:30.133Z",
     "new": null,
     "rate": null,
-    "dailyrate": 1
+    "dailyrate": 0.02
   },
   {
     "name": "Brown",
@@ -2314,7 +2314,7 @@
         "active": 10
       }
     },
-    "checked": "2020-05-03T00:14:53.072Z",
+    "checked": "2020-05-03T00:26:30.153Z",
     "new": null,
     "rate": null,
     "dailyrate": 0
@@ -2604,10 +2604,10 @@
         "active": 311
       }
     },
-    "checked": "2020-05-03T00:14:53.277Z",
+    "checked": "2020-05-03T00:26:30.166Z",
     "new": null,
     "rate": null,
-    "dailyrate": 1
+    "dailyrate": 0.07
   },
   {
     "name": "Carroll",
@@ -2894,10 +2894,10 @@
         "active": 20
       }
     },
-    "checked": "2020-05-03T00:14:53.392Z",
+    "checked": "2020-05-03T00:26:30.183Z",
     "new": null,
     "rate": null,
-    "dailyrate": 1
+    "dailyrate": 0
   },
   {
     "name": "Champaign",
@@ -3184,10 +3184,10 @@
         "active": 13
       }
     },
-    "checked": "2020-05-03T00:14:53.557Z",
+    "checked": "2020-05-03T00:26:30.191Z",
     "new": null,
     "rate": null,
-    "dailyrate": 1
+    "dailyrate": 0
   },
   {
     "name": "Clark",
@@ -3474,10 +3474,10 @@
         "active": 61
       }
     },
-    "checked": "2020-05-03T00:14:53.753Z",
+    "checked": "2020-05-03T00:26:30.203Z",
     "new": null,
     "rate": null,
-    "dailyrate": 1
+    "dailyrate": 0.11
   },
   {
     "name": "Clermont",
@@ -3764,10 +3764,10 @@
         "active": 96
       }
     },
-    "checked": "2020-05-03T00:14:53.875Z",
+    "checked": "2020-05-03T00:26:30.231Z",
     "new": null,
     "rate": null,
-    "dailyrate": 1
+    "dailyrate": 0.06
   },
   {
     "name": "Clinton",
@@ -4054,10 +4054,10 @@
         "active": 31
       }
     },
-    "checked": "2020-05-03T00:14:53.942Z",
+    "checked": "2020-05-03T00:26:30.241Z",
     "new": null,
     "rate": null,
-    "dailyrate": 1
+    "dailyrate": 0
   },
   {
     "name": "Columbiana",
@@ -4344,10 +4344,10 @@
         "active": 250
       }
     },
-    "checked": "2020-05-03T00:14:54.159Z",
+    "checked": "2020-05-03T00:26:30.252Z",
     "new": null,
     "rate": null,
-    "dailyrate": 1
+    "dailyrate": 0.03
   },
   {
     "name": "Coshocton",
@@ -4634,10 +4634,10 @@
         "active": 17
       }
     },
-    "checked": "2020-05-03T00:14:54.353Z",
+    "checked": "2020-05-03T00:26:30.265Z",
     "new": null,
     "rate": null,
-    "dailyrate": 1
+    "dailyrate": 0
   },
   {
     "name": "Crawford",
@@ -4924,10 +4924,10 @@
         "active": 50
       }
     },
-    "checked": "2020-05-03T00:14:54.536Z",
+    "checked": "2020-05-03T00:26:30.272Z",
     "new": null,
     "rate": null,
-    "dailyrate": 1
+    "dailyrate": 0.04
   },
   {
     "name": "Cuyahoga",
@@ -5214,10 +5214,10 @@
         "active": 2190
       }
     },
-    "checked": "2020-05-03T00:14:54.643Z",
+    "checked": "2020-05-03T00:26:30.285Z",
     "new": null,
     "rate": null,
-    "dailyrate": 1
+    "dailyrate": 0.04
   },
   {
     "name": "Darke",
@@ -5504,10 +5504,10 @@
         "active": 62
       }
     },
-    "checked": "2020-05-03T00:14:54.846Z",
+    "checked": "2020-05-03T00:26:30.300Z",
     "new": null,
     "rate": null,
-    "dailyrate": 1
+    "dailyrate": 0
   },
   {
     "name": "Defiance",
@@ -5794,10 +5794,10 @@
         "active": 19
       }
     },
-    "checked": "2020-05-03T00:14:55.011Z",
+    "checked": "2020-05-03T00:26:30.307Z",
     "new": null,
     "rate": null,
-    "dailyrate": 1
+    "dailyrate": 0
   },
   {
     "name": "Delaware",
@@ -6084,10 +6084,10 @@
         "active": 164
       }
     },
-    "checked": "2020-05-03T00:14:55.177Z",
+    "checked": "2020-05-03T00:26:30.318Z",
     "new": null,
     "rate": null,
-    "dailyrate": 1
+    "dailyrate": 0.03
   },
   {
     "name": "Erie",
@@ -6374,10 +6374,10 @@
         "active": 55
       }
     },
-    "checked": "2020-05-03T00:14:55.319Z",
+    "checked": "2020-05-03T00:26:30.333Z",
     "new": null,
     "rate": null,
-    "dailyrate": 1
+    "dailyrate": 0.04
   },
   {
     "name": "Fairfield",
@@ -6664,10 +6664,10 @@
         "active": 138
       }
     },
-    "checked": "2020-05-03T00:14:55.377Z",
+    "checked": "2020-05-03T00:26:30.349Z",
     "new": null,
     "rate": null,
-    "dailyrate": 1
+    "dailyrate": 0.01
   },
   {
     "name": "Fayette",
@@ -6954,10 +6954,10 @@
         "active": 17
       }
     },
-    "checked": "2020-05-03T00:14:55.463Z",
+    "checked": "2020-05-03T00:26:30.358Z",
     "new": null,
     "rate": null,
-    "dailyrate": 0
+    "dailyrate": 0.06
   },
   {
     "name": "Franklin",
@@ -7244,10 +7244,10 @@
         "active": 2620
       }
     },
-    "checked": "2020-05-03T00:14:55.726Z",
+    "checked": "2020-05-03T00:26:30.369Z",
     "new": null,
     "rate": null,
-    "dailyrate": 1
+    "dailyrate": 0.04
   },
   {
     "name": "Fulton",
@@ -7534,7 +7534,7 @@
         "active": 24
       }
     },
-    "checked": "2020-05-03T00:14:55.874Z",
+    "checked": "2020-05-03T00:26:30.385Z",
     "new": null,
     "rate": null,
     "dailyrate": 0
@@ -7824,10 +7824,10 @@
         "active": 5
       }
     },
-    "checked": "2020-05-03T00:14:56.013Z",
+    "checked": "2020-05-03T00:26:30.398Z",
     "new": null,
     "rate": null,
-    "dailyrate": 1
+    "dailyrate": 0
   },
   {
     "name": "Geauga",
@@ -8114,10 +8114,10 @@
         "active": 146
       }
     },
-    "checked": "2020-05-03T00:14:56.139Z",
+    "checked": "2020-05-03T00:26:30.406Z",
     "new": null,
     "rate": null,
-    "dailyrate": 1
+    "dailyrate": 0.03
   },
   {
     "name": "Greene",
@@ -8404,10 +8404,10 @@
         "active": 44
       }
     },
-    "checked": "2020-05-03T00:14:56.302Z",
+    "checked": "2020-05-03T00:26:30.418Z",
     "new": null,
     "rate": null,
-    "dailyrate": 1
+    "dailyrate": 0.04
   },
   {
     "name": "Guernsey",
@@ -8694,10 +8694,10 @@
         "active": 16
       }
     },
-    "checked": "2020-05-03T00:14:56.486Z",
+    "checked": "2020-05-03T00:26:30.431Z",
     "new": null,
     "rate": null,
-    "dailyrate": 0
+    "dailyrate": 0.07
   },
   {
     "name": "Hamilton",
@@ -8984,10 +8984,10 @@
         "active": 1275
       }
     },
-    "checked": "2020-05-03T00:14:56.721Z",
+    "checked": "2020-05-03T00:26:30.444Z",
     "new": null,
     "rate": null,
-    "dailyrate": 1
+    "dailyrate": 0.04
   },
   {
     "name": "Hancock",
@@ -9274,10 +9274,10 @@
         "active": 37
       }
     },
-    "checked": "2020-05-03T00:14:56.743Z",
+    "checked": "2020-05-03T00:26:30.464Z",
     "new": null,
     "rate": null,
-    "dailyrate": 1
+    "dailyrate": 0.03
   },
   {
     "name": "Hardin",
@@ -9564,10 +9564,10 @@
         "active": 26
       }
     },
-    "checked": "2020-05-03T00:14:56.754Z",
+    "checked": "2020-05-03T00:26:30.474Z",
     "new": null,
     "rate": null,
-    "dailyrate": 0
+    "dailyrate": 0.04
   },
   {
     "name": "Harrison",
@@ -9854,10 +9854,10 @@
         "active": 5
       }
     },
-    "checked": "2020-05-03T00:14:56.967Z",
+    "checked": "2020-05-03T00:26:30.486Z",
     "new": null,
     "rate": null,
-    "dailyrate": 0
+    "dailyrate": 0.25
   },
   {
     "name": "Henry",
@@ -10144,7 +10144,7 @@
         "active": 5
       }
     },
-    "checked": "2020-05-03T00:14:57.090Z",
+    "checked": "2020-05-03T00:26:30.499Z",
     "new": null,
     "rate": null,
     "dailyrate": 0
@@ -10434,10 +10434,10 @@
         "active": 10
       }
     },
-    "checked": "2020-05-03T00:14:57.206Z",
+    "checked": "2020-05-03T00:26:30.506Z",
     "new": null,
     "rate": null,
-    "dailyrate": 1
+    "dailyrate": 0
   },
   {
     "name": "Hocking",
@@ -10724,10 +10724,10 @@
         "active": 18
       }
     },
-    "checked": "2020-05-03T00:14:57.307Z",
+    "checked": "2020-05-03T00:26:30.517Z",
     "new": null,
     "rate": null,
-    "dailyrate": 0
+    "dailyrate": 0.06
   },
   {
     "name": "Holmes",
@@ -11014,7 +11014,7 @@
         "active": 5
       }
     },
-    "checked": "2020-05-03T00:14:57.312Z",
+    "checked": "2020-05-03T00:26:30.533Z",
     "new": null,
     "rate": null,
     "dailyrate": 0
@@ -11304,10 +11304,10 @@
         "active": 30
       }
     },
-    "checked": "2020-05-03T00:14:57.429Z",
+    "checked": "2020-05-03T00:26:30.540Z",
     "new": null,
     "rate": null,
-    "dailyrate": 1
+    "dailyrate": 0.07
   },
   {
     "name": "Jackson",
@@ -11594,7 +11594,7 @@
         "active": 4
       }
     },
-    "checked": "2020-05-03T00:14:57.478Z",
+    "checked": "2020-05-03T00:26:30.553Z",
     "new": null,
     "rate": null,
     "dailyrate": 0
@@ -11884,7 +11884,7 @@
         "active": 42
       }
     },
-    "checked": "2020-05-03T00:14:57.491Z",
+    "checked": "2020-05-03T00:26:30.565Z",
     "new": null,
     "rate": null,
     "dailyrate": 0
@@ -12174,10 +12174,10 @@
         "active": 17
       }
     },
-    "checked": "2020-05-03T00:14:57.530Z",
+    "checked": "2020-05-03T00:26:30.570Z",
     "new": null,
     "rate": null,
-    "dailyrate": 1
+    "dailyrate": 0.13
   },
   {
     "name": "Lake",
@@ -12464,10 +12464,10 @@
         "active": 162
       }
     },
-    "checked": "2020-05-03T00:14:57.629Z",
+    "checked": "2020-05-03T00:26:30.582Z",
     "new": null,
     "rate": null,
-    "dailyrate": 1
+    "dailyrate": 0
   },
   {
     "name": "Lawrence",
@@ -12754,10 +12754,10 @@
         "active": 25
       }
     },
-    "checked": "2020-05-03T00:14:57.738Z",
+    "checked": "2020-05-03T00:26:30.587Z",
     "new": null,
     "rate": null,
-    "dailyrate": 0
+    "dailyrate": 0.04
   },
   {
     "name": "Licking",
@@ -13044,10 +13044,10 @@
         "active": 117
       }
     },
-    "checked": "2020-05-03T00:14:57.785Z",
+    "checked": "2020-05-03T00:26:30.598Z",
     "new": null,
     "rate": null,
-    "dailyrate": 1
+    "dailyrate": 0.01
   },
   {
     "name": "Logan",
@@ -13334,10 +13334,10 @@
         "active": 19
       }
     },
-    "checked": "2020-05-03T00:14:57.827Z",
+    "checked": "2020-05-03T00:26:30.608Z",
     "new": null,
     "rate": null,
-    "dailyrate": 1
+    "dailyrate": 0.06
   },
   {
     "name": "Lorain",
@@ -13624,10 +13624,10 @@
         "active": 447
       }
     },
-    "checked": "2020-05-03T00:14:57.840Z",
+    "checked": "2020-05-03T00:26:30.619Z",
     "new": null,
     "rate": null,
-    "dailyrate": 1
+    "dailyrate": 0.02
   },
   {
     "name": "Lucas",
@@ -13914,10 +13914,10 @@
         "active": 1212
       }
     },
-    "checked": "2020-05-03T00:14:57.889Z",
+    "checked": "2020-05-03T00:26:30.632Z",
     "new": null,
     "rate": null,
-    "dailyrate": 1
+    "dailyrate": 0.03
   },
   {
     "name": "Madison",
@@ -14204,10 +14204,10 @@
         "active": 61
       }
     },
-    "checked": "2020-05-03T00:14:57.934Z",
+    "checked": "2020-05-03T00:26:30.649Z",
     "new": null,
     "rate": null,
-    "dailyrate": 1
+    "dailyrate": 0
   },
   {
     "name": "Mahoning",
@@ -14494,10 +14494,10 @@
         "active": 801
       }
     },
-    "checked": "2020-05-03T00:14:58.002Z",
+    "checked": "2020-05-03T00:26:30.659Z",
     "new": null,
     "rate": null,
-    "dailyrate": 1
+    "dailyrate": 0.04
   },
   {
     "name": "Marion",
@@ -14784,10 +14784,10 @@
         "active": 2290
       }
     },
-    "checked": "2020-05-03T00:14:58.042Z",
+    "checked": "2020-05-03T00:26:30.673Z",
     "new": null,
     "rate": null,
-    "dailyrate": 1
+    "dailyrate": 0.01
   },
   {
     "name": "Medina",
@@ -15074,10 +15074,10 @@
         "active": 157
       }
     },
-    "checked": "2020-05-03T00:14:58.089Z",
+    "checked": "2020-05-03T00:26:30.685Z",
     "new": null,
     "rate": null,
-    "dailyrate": 1
+    "dailyrate": 0.01
   },
   {
     "name": "Meigs",
@@ -15364,7 +15364,7 @@
         "active": 2
       }
     },
-    "checked": "2020-05-03T00:14:58.093Z",
+    "checked": "2020-05-03T00:26:30.699Z",
     "new": null,
     "rate": null,
     "dailyrate": 0
@@ -15654,10 +15654,10 @@
         "active": 27
       }
     },
-    "checked": "2020-05-03T00:14:58.108Z",
+    "checked": "2020-05-03T00:26:30.707Z",
     "new": null,
     "rate": null,
-    "dailyrate": 0
+    "dailyrate": 0.08
   },
   {
     "name": "Miami",
@@ -15944,10 +15944,10 @@
         "active": 116
       }
     },
-    "checked": "2020-05-03T00:14:58.146Z",
+    "checked": "2020-05-03T00:26:30.724Z",
     "new": null,
     "rate": null,
-    "dailyrate": 1
+    "dailyrate": 0.01
   },
   {
     "name": "Monroe",
@@ -16234,10 +16234,10 @@
         "active": 4
       }
     },
-    "checked": "2020-05-03T00:14:58.241Z",
+    "checked": "2020-05-03T00:26:30.742Z",
     "new": null,
     "rate": null,
-    "dailyrate": 0
+    "dailyrate": 0.33
   },
   {
     "name": "Montgomery",
@@ -16524,10 +16524,10 @@
         "active": 301
       }
     },
-    "checked": "2020-05-03T00:14:58.246Z",
+    "checked": "2020-05-03T00:26:30.767Z",
     "new": null,
     "rate": null,
-    "dailyrate": 1
+    "dailyrate": 0.06
   },
   {
     "name": "Morgan",
@@ -16814,7 +16814,7 @@
         "active": 4
       }
     },
-    "checked": "2020-05-03T00:14:58.395Z",
+    "checked": "2020-05-03T00:26:30.786Z",
     "new": null,
     "rate": null,
     "dailyrate": 0
@@ -17104,10 +17104,10 @@
         "active": 74
       }
     },
-    "checked": "2020-05-03T00:14:58.443Z",
+    "checked": "2020-05-03T00:26:30.803Z",
     "new": null,
     "rate": null,
-    "dailyrate": 0
+    "dailyrate": 0.67
   },
   {
     "name": "Muskingum",
@@ -17394,10 +17394,10 @@
         "active": 17
       }
     },
-    "checked": "2020-05-03T00:14:58.452Z",
+    "checked": "2020-05-03T00:26:30.821Z",
     "new": null,
     "rate": null,
-    "dailyrate": 0
+    "dailyrate": 0.13
   },
   {
     "name": "Noble",
@@ -17684,7 +17684,7 @@
         "active": 5
       }
     },
-    "checked": "2020-05-03T00:14:58.507Z",
+    "checked": "2020-05-03T00:26:30.859Z",
     "new": null,
     "rate": null,
     "dailyrate": 0
@@ -17974,7 +17974,7 @@
         "active": 39
       }
     },
-    "checked": "2020-05-03T00:14:58.546Z",
+    "checked": "2020-05-03T00:26:30.873Z",
     "new": null,
     "rate": null,
     "dailyrate": 0
@@ -18264,7 +18264,7 @@
         "active": 8
       }
     },
-    "checked": "2020-05-03T00:14:58.606Z",
+    "checked": "2020-05-03T00:26:30.894Z",
     "new": null,
     "rate": null,
     "dailyrate": 0
@@ -18554,10 +18554,10 @@
         "active": 13
       }
     },
-    "checked": "2020-05-03T00:14:58.655Z",
+    "checked": "2020-05-03T00:26:30.917Z",
     "new": null,
     "rate": null,
-    "dailyrate": 0
+    "dailyrate": 0.08
   },
   {
     "name": "Pickaway",
@@ -18844,7 +18844,7 @@
         "active": 1702
       }
     },
-    "checked": "2020-05-03T00:14:58.706Z",
+    "checked": "2020-05-03T00:26:30.934Z",
     "new": null,
     "rate": null,
     "dailyrate": 0
@@ -19134,7 +19134,7 @@
         "active": 3
       }
     },
-    "checked": "2020-05-03T00:14:58.751Z",
+    "checked": "2020-05-03T00:26:30.954Z",
     "new": null,
     "rate": null,
     "dailyrate": 0
@@ -19424,10 +19424,10 @@
         "active": 202
       }
     },
-    "checked": "2020-05-03T00:14:58.839Z",
+    "checked": "2020-05-03T00:26:30.994Z",
     "new": null,
     "rate": null,
-    "dailyrate": 1
+    "dailyrate": 0.03
   },
   {
     "name": "Preble",
@@ -19714,7 +19714,7 @@
         "active": 26
       }
     },
-    "checked": "2020-05-03T00:14:58.891Z",
+    "checked": "2020-05-03T00:26:31.026Z",
     "new": null,
     "rate": null,
     "dailyrate": 0
@@ -20004,10 +20004,10 @@
         "active": 60
       }
     },
-    "checked": "2020-05-03T00:14:58.928Z",
+    "checked": "2020-05-03T00:26:31.060Z",
     "new": null,
     "rate": null,
-    "dailyrate": 0
+    "dailyrate": 0.01
   },
   {
     "name": "Richland",
@@ -20294,10 +20294,10 @@
         "active": 87
       }
     },
-    "checked": "2020-05-03T00:14:58.941Z",
+    "checked": "2020-05-03T00:26:31.104Z",
     "new": null,
     "rate": null,
-    "dailyrate": 1
+    "dailyrate": 0.05
   },
   {
     "name": "Ross",
@@ -20584,10 +20584,10 @@
         "active": 39
       }
     },
-    "checked": "2020-05-03T00:14:58.996Z",
+    "checked": "2020-05-03T00:26:31.129Z",
     "new": null,
     "rate": null,
-    "dailyrate": 0
+    "dailyrate": 0.03
   },
   {
     "name": "Sandusky",
@@ -20874,10 +20874,10 @@
         "active": 26
       }
     },
-    "checked": "2020-05-03T00:14:59.160Z",
+    "checked": "2020-05-03T00:26:31.160Z",
     "new": null,
     "rate": null,
-    "dailyrate": 1
+    "dailyrate": 0.14
   },
   {
     "name": "Scioto",
@@ -21164,7 +21164,7 @@
         "active": 11
       }
     },
-    "checked": "2020-05-03T00:14:59.256Z",
+    "checked": "2020-05-03T00:26:31.197Z",
     "new": null,
     "rate": null,
     "dailyrate": 0
@@ -21454,7 +21454,7 @@
         "active": 13
       }
     },
-    "checked": "2020-05-03T00:14:59.339Z",
+    "checked": "2020-05-03T00:26:31.211Z",
     "new": null,
     "rate": null,
     "dailyrate": 0
@@ -21744,7 +21744,7 @@
         "active": 29
       }
     },
-    "checked": "2020-05-03T00:14:59.388Z",
+    "checked": "2020-05-03T00:26:31.224Z",
     "new": null,
     "rate": null,
     "dailyrate": 0
@@ -22034,10 +22034,10 @@
         "active": 327
       }
     },
-    "checked": "2020-05-03T00:14:59.393Z",
+    "checked": "2020-05-03T00:26:31.242Z",
     "new": null,
     "rate": null,
-    "dailyrate": 1
+    "dailyrate": 0.04
   },
   {
     "name": "Summit",
@@ -22324,10 +22324,10 @@
         "active": 622
       }
     },
-    "checked": "2020-05-03T00:14:59.407Z",
+    "checked": "2020-05-03T00:26:31.269Z",
     "new": null,
     "rate": null,
-    "dailyrate": 1
+    "dailyrate": 0.06
   },
   {
     "name": "Trumbull",
@@ -22614,10 +22614,10 @@
         "active": 293
       }
     },
-    "checked": "2020-05-03T00:14:59.453Z",
+    "checked": "2020-05-03T00:26:31.285Z",
     "new": null,
     "rate": null,
-    "dailyrate": 1
+    "dailyrate": 0.02
   },
   {
     "name": "Tuscarawas",
@@ -22904,10 +22904,10 @@
         "active": 109
       }
     },
-    "checked": "2020-05-03T00:14:59.537Z",
+    "checked": "2020-05-03T00:26:31.305Z",
     "new": null,
     "rate": null,
-    "dailyrate": 1
+    "dailyrate": 0.16
   },
   {
     "name": "Union",
@@ -23194,10 +23194,10 @@
         "active": 22
       }
     },
-    "checked": "2020-05-03T00:14:59.671Z",
+    "checked": "2020-05-03T00:26:31.337Z",
     "new": null,
     "rate": null,
-    "dailyrate": 1
+    "dailyrate": 0
   },
   {
     "name": "Van Wert",
@@ -23484,7 +23484,7 @@
         "active": 3
       }
     },
-    "checked": "2020-05-03T00:14:59.726Z",
+    "checked": "2020-05-03T00:26:31.357Z",
     "new": null,
     "rate": null,
     "dailyrate": 0
@@ -23774,7 +23774,7 @@
         "active": 6
       }
     },
-    "checked": "2020-05-03T00:14:59.786Z",
+    "checked": "2020-05-03T00:26:31.376Z",
     "new": null,
     "rate": null,
     "dailyrate": 0
@@ -24064,10 +24064,10 @@
         "active": 155
       }
     },
-    "checked": "2020-05-03T00:14:59.878Z",
+    "checked": "2020-05-03T00:26:31.393Z",
     "new": null,
     "rate": null,
-    "dailyrate": 1
+    "dailyrate": 0.04
   },
   {
     "name": "Washington",
@@ -24354,10 +24354,10 @@
         "active": 88
       }
     },
-    "checked": "2020-05-03T00:14:59.968Z",
+    "checked": "2020-05-03T00:26:31.424Z",
     "new": null,
     "rate": null,
-    "dailyrate": 1
+    "dailyrate": 0.01
   },
   {
     "name": "Wayne",
@@ -24644,10 +24644,10 @@
         "active": 117
       }
     },
-    "checked": "2020-05-03T00:15:00.092Z",
+    "checked": "2020-05-03T00:26:31.452Z",
     "new": null,
     "rate": null,
-    "dailyrate": 0
+    "dailyrate": 0.04
   },
   {
     "name": "Williams",
@@ -24934,7 +24934,7 @@
         "active": 35
       }
     },
-    "checked": "2020-05-03T00:15:00.105Z",
+    "checked": "2020-05-03T00:26:31.468Z",
     "new": null,
     "rate": null,
     "dailyrate": 0
@@ -25224,10 +25224,10 @@
         "active": 160
       }
     },
-    "checked": "2020-05-03T00:15:00.158Z",
+    "checked": "2020-05-03T00:26:31.483Z",
     "new": null,
     "rate": null,
-    "dailyrate": 1
+    "dailyrate": 0.05
   },
   {
     "name": "Wyandot",
@@ -25514,7 +25514,7 @@
         "active": 22
       }
     },
-    "checked": "2020-05-03T00:15:00.264Z",
+    "checked": "2020-05-03T00:26:31.503Z",
     "new": null,
     "rate": null,
     "dailyrate": 0

@@ -72,7 +72,7 @@
 
     #map {
       position: relative;
-      height: 855px;
+      height: 825px;
       width: 100%;
       border: solid;
     }
@@ -159,7 +159,7 @@
         
       </div>
     </div> -->
-    <div class="row" style="margin-top:3rem;">
+    <div class="row" style="margin-top:1rem;">
       <div class="col-12 col-4-md" id="charts">
         <div id="casesChart"></div>
         <div id="rateChart"></div>
@@ -327,7 +327,7 @@
         }],
         chart: {
           fontFamily: '-apple-system,BlinkMacSystemFont,Avenir,"Avenir Next","Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif',
-          height: 275,
+          height: 265,
           type: 'bar',
           zoom: {
             enabled: false
@@ -406,7 +406,7 @@
         }],
         chart: {
           fontFamily: '-apple-system,BlinkMacSystemFont,Avenir,"Avenir Next","Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif',
-          height: 275,
+          height: 265,
           zoom: {
             enabled: false
           }
@@ -476,7 +476,7 @@
         }],
         chart: {
           fontFamily: '-apple-system,BlinkMacSystemFont,Avenir,"Avenir Next","Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif',
-          height: 275,
+          height: 265,
           zoom: {
             enabled: false
           }
@@ -591,7 +591,8 @@
         };
       })
 
-      data[1].features.map(f => {
+      data[1].features.map((f,i) => {
+        f.properties.mapboxkey = i + 1;
         f.properties.state = (f.properties.FIPS).substr(0, 2);
         f.properties["cases"] = 0;
         f.properties.casesperthousand = 0;
@@ -599,6 +600,7 @@
 
         data[0].map(d => {
           if (d.fips == f.properties.FIPS && d.cases > 0) {
+            f.properties.dailyrate = d.dailyrate;
             f.properties["cases"] = Number(d.cases);
             if (f.properties.pop2017 > 1) {
               f.properties.casesperthousand = (Number(d.cases) / (f.properties.pop2017 /
@@ -629,7 +631,7 @@
               f.properties.casesperthousand = (Number(d.cases) / (f.properties.pop2017 /
                 1000)) * 100
             }
-            f.properties.deaths = (!d.deaths) ? 0 : d.deaths
+            f.properties.deaths = (!d.deaths) ? 0 : d.deaths;
           }
         })
       });
@@ -651,7 +653,7 @@
       map.addSource("counties", {
         type: "geojson",
         data: data[1],
-        generateId: true
+        promoteId: "mapboxkey"
       })
 
       map.addSource("points", {
@@ -715,6 +717,27 @@
       })
 
       map.addLayer({
+        "id": "counties_outline_rate",
+        'type': 'line',
+        'source': 'counties',
+        'layout': {
+          'visibility': 'visible'
+        },
+        'paint': {
+          'line-color': ["interpolate",
+            ["linear"],
+
+            ["get", "dailyrate"], 0, scale[1], 0.15, scale[5], 0.6, scale[7]
+          ] ,
+
+          'line-opacity': 1,
+          'line-width': ["interpolate",
+            ["linear"],
+            ["get", "dailyrate"], 0, 0, 0.15, 4, 0.6, 8],
+        }
+      });
+
+      map.addLayer({
         "id": "counties_outline",
         'type': 'line',
         'source': 'counties',
@@ -722,11 +745,13 @@
           'visibility': 'visible'
         },
         'paint': {
-          'line-color': ["case", ['boolean', ['feature-state', 'hover'], false], "black", "#121212"],
-          'line-opacity': ["case", ['boolean', ['feature-state', 'hover'], false], 1, 0.5],
-          'line-width': ["case", ['boolean', ['feature-state', 'hover'], false], 1.6, 1],
+          'line-color': ["case", ['boolean', ['feature-state', 'hover'], false], "goldenrod", "black"],
+          'line-opacity': ["case", ['boolean', ['feature-state', 'hover'], false], 1, 0.3],
+          'line-width': ["case", ['boolean', ['feature-state', 'hover'], false], 4, 1],
         }
       });
+
+
 
       // map.addLayer({
       //   "id": "states",
@@ -767,7 +792,7 @@
             ["get", "cases"],
             0, 0,
             1, 4,
-            2000, 80
+            2000, 50
           ],
           "circle-color": scale[0],
           "circle-opacity": 0.5,
@@ -868,9 +893,9 @@
 
     function setInfoBox(data, point, map) {
       if (!data) return
-      // console.log(data)
+      console.log(data)
       document.querySelector(".headline-2").innerText = data.properties.NAME + ": " + data.properties.cases +
-        " (Total Cases) | " + data.properties.deaths + " (Total Deaths)"
+        " (Total Cases) | " + data.properties.deaths + " (Total Deaths) " + (data.properties.dailyrate * 100).toFixed(0) + "% (Case Daily Increase)"
       // new mapboxgl.Popup()
       // .setLngLat(point)
       // .setHTML()

@@ -154,6 +154,8 @@ function addToCache (cache, countyData, latestDate) {
         c.dates[today].deaths = Number(obj.deaths);
         c.dates[today].active = Number(obj.active);
         c.dates[today].recovered = Number(obj.recovered);
+        var rate = c.dates[today].cases - c.dates[formatDate(yesterday)].cases
+        c.dailyrate = (rate === 0) ? 0 : Number( (rate / c.dates[formatDate(yesterday)].cases).toFixed(2) )
       }
     }
   })
