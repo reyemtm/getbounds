@@ -3,7 +3,7 @@ layout: post
 title: GIS and Remote Work
 subtitle: An Exploration of my GIS Remote Work Toolkit
 date: 2020-05-05T10:28:13.739Z
-img: random1.png
+img: remote_setup.jpg
 tags: '["mapbox", "qgis", "esri"]'
 featured: false
 ---
