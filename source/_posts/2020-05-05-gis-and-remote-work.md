@@ -26,11 +26,11 @@ LG 24" LCD TV (External Monitor)\
 Samsung T320 Tablet (Media)\
 Zagg Keyfit Keyboard Case for Tablet
 
-**Desktop**
+**Desktop GIS**
 
-GIS QGIS
-PostgreSQL/PostGIS
-ArcGIS Pro
+QGIS 12
+PostgreSQL 11/PostGIS 3
+ArcGIS Pro (Latest)
 
 **Web Applications**
 
