@@ -11,9 +11,20 @@ Remote work during the world-wide Coronavirus pandemic may well be come the new 
 
 Here is a list of the most important tools in my current remote work toolkit.
 
-**Operating System**
+**Hardware**
 
-Windows 10
+Lenovo Yoga 14\
+NVIDIA 940M\
+8GB Ram\
+Intel i5-6200U @ 2.3 GHz\
+256 GB SSD (OS)\
+256 GB m.2 SSD (Data Drive)\
+5 TB USB 3.0 External (Remote Work Data)\
+2 TB WDMYCLOUD (External USB Backup)\
+Windows 10\
+LG 24" LCD TV (External Monitor)\
+Samsung T320 Tablet (Media)\
+Zagg Keyfit Keyboard Case for Tablet
 
 **Desktop**
 
