@@ -3,13 +3,15 @@ layout: post
 title: GIS and Remote Work
 subtitle: An Exploration of a GIS Remote Work Toolkit
 date: 2020-05-05T10:28:13.739Z
-img: remote_work_ii.jpg
+img: remote_work_iii.jpg
 tags: '["mapbox", "qgis", "esri"]'
 featured: false
 ---
-Remote work during the world-wide Coronavirus pandemic may well be come the new normal as businesses and government agencies discover that work can indeed be completed with remote workers. Even without a VPN, a remotely accessible central database or even a cloud file service, remote GIS work is still possible.
+Remote work during the world-wide Coronavirus pandemic may well be come the new normal as businesses and government agencies discover that work can indeed be completed with remote workers. Even without a VPN, a remotely accessible central database or even a cloud file service, remote GIS work is still possible. Much of tools and processes that have lead to the success of my transition to remote work was already in place.
 
 Here is a list of the most important tools in my current remote work toolkit.
+
+
 
 **Hardware**
 
@@ -28,14 +30,12 @@ Zagg Keyfit Keyboard Case for Tablet
 
 **Desktop GIS**
 
-QGIS 12
-PostgreSQL 11/PostGIS 3
+QGIS 12 PostgreSQL 11/PostGIS 3
 ArcGIS Pro (Latest)
 
 **Web Applications**
 
-VS Code
-Netlify
+VS Code Netlify
 Mapbox GL JS
 Mapbox Print PDF\
 ArcGIS Online
