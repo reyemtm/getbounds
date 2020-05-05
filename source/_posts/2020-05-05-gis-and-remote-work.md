@@ -34,11 +34,11 @@ ArcGIS Pro (Latest)
 
 **Web Applications**
 
-ArcGIS Online
 VS Code
 Netlify
 Mapbox GL JS
-Mapbox Print PDF
+Mapbox Print PDF\
+ArcGIS Online
 
 **Command-Line Tools**
 
