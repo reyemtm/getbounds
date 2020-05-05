@@ -1,33 +1,43 @@
 ---
 layout: post
 title: GIS and Remote Work
-subtitle: An Exploration of my GIS Remote Work Toolkit
+subtitle: An Exploration of a GIS Remote Work Toolkit
 date: 2020-05-05T10:28:13.739Z
 img: remote_setup.jpg
 tags: '["mapbox", "qgis", "esri"]'
 featured: false
 ---
-Remote work during the world-wide Coronavirus pandemic may well be come the new normal as businesses and government agencies discover that work can indeed be completed with remote workers.
+Remote work during the world-wide Coronavirus pandemic may well be come the new normal as businesses and government agencies discover that work can indeed be completed with remote workers. Even without a VPN, a remotely accessible central database or even a cloud file service, remote GIS work is still possible.
 
 Here is a list of the most important tools in my current remote work toolkit.
 
-Operating System
+**Operating System**
+
 Windows 10
 
-Desktop GIS
-QGIS
+**Desktop**
+
+GIS QGIS
 PostgreSQL/PostGIS
 ArcGIS Pro
 
-Web Applications
+**Web Applications**
+
 ArcGIS Online
 VS Code
 Netlify
 Mapbox GL JS
 Mapbox Print PDF
 
-Command-Line Tools
+**Command-Line Tools**
+
 NodeJS
 
-Backup & Sync
+**Backup & Sync**
+
 FreeFileSync
+
+**Media**
+
+Plex\
+Pandora
