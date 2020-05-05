@@ -4,7 +4,7 @@ title: GIS and Remote Work
 subtitle: An Exploration of a GIS Remote Work Toolkit
 date: 2020-05-05T10:28:13.739Z
 img: remote_work_iii.jpg
-tags: '["mapbox", "qgis", "esri"]'
+tags: mapbox esri qgis
 featured: false
 ---
 Remote work during the world-wide Coronavirus pandemic may well be come the new normal as businesses and governmental agencies discover that work can indeed be completed with remote workers. And the tools to implement remote work are neither complicated or expensive. Even without a high-end laptop, a VPN, a remotely accessible central database, or even a cloud-based file sync service, remote GIS work is still very manageable.
