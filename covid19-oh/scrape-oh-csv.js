@@ -22,7 +22,6 @@ function formatDateDash(d) {
 }
 
 let cache = JSON.parse(fs.readFileSync("./source/covid19-oh/covid19-oh-counties-timeseries.json"));
-fs.writeFileSync(`./source/covid19-oh/archive/covid19-oh-counties-timeseries-cache-${formatDateDash(yesterday)}.json`, JSON.stringify(cache, 0, 2));
 
 fetch("https://coronavirus.ohio.gov/static/COVIDSummaryData.csv")
   .then(res => {
@@ -132,10 +131,21 @@ function parseData (data) {
 
 }
 
-function addToCache (cache, countyData, latestDate) {
+function addToCache (cache, countyData, latestDate, date) {
+
+  console.log(latestDate)
+  var today = (!date) ? formatDate(t) : date;
+  var previous = new Date();
+  var todayDate = new Date(today);
+  previous.setDate(todayDate.getDate() - 1);
+
+  console.log(formatDate(previous));
+
+  // process.exit()
+
+  fs.writeFileSync(`./source/covid19-oh/archive/covid19-oh-counties-timeseries-cache-${formatDateDash(previous)}.json`, JSON.stringify(cache, 0, 2));
+
   cache.map(c => {
-    console.log(latestDate)
-    var today = formatDate(t);
 
     c.checked = new Date(Date.now());
     c.dates[today] = {}
@@ -154,8 +164,8 @@ function addToCache (cache, countyData, latestDate) {
         c.dates[today].deaths = Number(obj.deaths);
         c.dates[today].active = Number(obj.active);
         c.dates[today].recovered = Number(obj.recovered);
-        var rate = c.dates[today].cases - c.dates[formatDate(yesterday)].cases
-        c.dailyrate = (rate === 0) ? 0 : Number( (rate / c.dates[formatDate(yesterday)].cases).toFixed(2) )
+        var rate = c.dates[today].cases - c.dates[formatDate(previous)].cases
+        c.dailyrate = (rate === 0) ? 0 : Number( (rate / c.dates[formatDate(previous)].cases).toFixed(2) )
       }
     }
   })
