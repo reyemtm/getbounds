@@ -4,6 +4,9 @@ const Papa = require("papaparse")
 const t = new Date(Date.now());
 const yesterday = new Date(Date.now() - 86400000);
 
+const argv = process.argv;
+
+const customDate = (argv.length === 3) ? argv[2] : 0;
 
 //NEED TO GET LAST DATE IN CSV AND THEN USE THIS AS THE DATE TOWARDS THE END
 
@@ -127,13 +130,13 @@ function parseData (data) {
     totals[c] = dates
   });
   // console.log(totals)
-  addToCache(cache, totals, latest)
+  addToCache(cache, totals, latest, customDate)
 
 }
 
 function addToCache (cache, countyData, latestDate, date) {
 
-  console.log(latestDate)
+  console.log(latestDate, date)
   var today = (!date) ? formatDate(t) : date;
   var previous = new Date();
   var todayDate = new Date(today);
