@@ -450,18 +450,12 @@
         "recovered": 0,
         "deaths": 1,
         "active": 8
-      },
-      "05/31/2020": {
-        "cases": 10,
-        "recovered": 0,
-        "deaths": 1,
-        "active": 9
       }
     },
-    "checked": "2020-06-01T01:25:15.467Z",
+    "checked": "2020-05-31T13:26:19.446Z",
     "new": null,
     "rate": null,
-    "dailyrate": 0.11
+    "dailyrate": 0
   },
   {
     "name": "Allen",
@@ -914,15 +908,9 @@
         "recovered": 0,
         "deaths": 32,
         "active": 179
-      },
-      "05/31/2020": {
-        "cases": 212,
-        "recovered": 0,
-        "deaths": 32,
-        "active": 180
       }
     },
-    "checked": "2020-06-01T01:25:15.488Z",
+    "checked": "2020-05-31T13:26:19.448Z",
     "new": null,
     "rate": null,
     "dailyrate": 0
@@ -1378,15 +1366,9 @@
         "recovered": 0,
         "deaths": 0,
         "active": 20
-      },
-      "05/31/2020": {
-        "cases": 20,
-        "recovered": 0,
-        "deaths": 0,
-        "active": 20
       }
     },
-    "checked": "2020-06-01T01:25:15.491Z",
+    "checked": "2020-05-31T13:26:19.450Z",
     "new": null,
     "rate": null,
     "dailyrate": 0
@@ -1842,18 +1824,12 @@
         "recovered": 0,
         "deaths": 34,
         "active": 304
-      },
-      "05/31/2020": {
-        "cases": 339,
-        "recovered": 0,
-        "deaths": 34,
-        "active": 305
       }
     },
-    "checked": "2020-06-01T01:25:15.492Z",
+    "checked": "2020-05-31T13:26:19.451Z",
     "new": null,
     "rate": null,
-    "dailyrate": 0
+    "dailyrate": 0.02
   },
   {
     "name": "Athens",
@@ -2306,15 +2282,9 @@
         "recovered": 0,
         "deaths": 1,
         "active": 17
-      },
-      "05/31/2020": {
-        "cases": 18,
-        "recovered": 0,
-        "deaths": 1,
-        "active": 17
       }
     },
-    "checked": "2020-06-01T01:25:15.495Z",
+    "checked": "2020-05-31T13:26:19.455Z",
     "new": null,
     "rate": null,
     "dailyrate": 0
@@ -2770,18 +2740,12 @@
         "recovered": 0,
         "deaths": 3,
         "active": 70
-      },
-      "05/31/2020": {
-        "cases": 73,
-        "recovered": 0,
-        "deaths": 3,
-        "active": 70
       }
     },
-    "checked": "2020-06-01T01:25:15.499Z",
+    "checked": "2020-05-31T13:26:19.457Z",
     "new": null,
     "rate": null,
-    "dailyrate": 0
+    "dailyrate": 0.03
   },
   {
     "name": "Belmont",
@@ -3234,18 +3198,12 @@
         "recovered": 0,
         "deaths": 12,
         "active": 416
-      },
-      "05/31/2020": {
-        "cases": 429,
-        "recovered": 0,
-        "deaths": 12,
-        "active": 417
       }
     },
-    "checked": "2020-06-01T01:25:15.523Z",
+    "checked": "2020-05-31T13:26:19.469Z",
     "new": null,
     "rate": null,
-    "dailyrate": 0
+    "dailyrate": 0.02
   },
   {
     "name": "Brown",
@@ -3698,18 +3656,12 @@
         "recovered": 0,
         "deaths": 1,
         "active": 27
-      },
-      "05/31/2020": {
-        "cases": 29,
-        "recovered": 0,
-        "deaths": 1,
-        "active": 28
       }
     },
-    "checked": "2020-06-01T01:25:15.526Z",
+    "checked": "2020-05-31T13:26:19.501Z",
     "new": null,
     "rate": null,
-    "dailyrate": 0.04
+    "dailyrate": 0
   },
   {
     "name": "Butler",
@@ -4162,18 +4114,12 @@
         "recovered": 0,
         "deaths": 29,
         "active": 845
-      },
-      "05/31/2020": {
-        "cases": 893,
-        "recovered": 0,
-        "deaths": 29,
-        "active": 864
       }
     },
-    "checked": "2020-06-01T01:25:15.536Z",
+    "checked": "2020-05-31T13:26:19.514Z",
     "new": null,
     "rate": null,
-    "dailyrate": 0.02
+    "dailyrate": 0.01
   },
   {
     "name": "Carroll",
@@ -4626,18 +4572,12 @@
         "recovered": 0,
         "deaths": 3,
         "active": 27
-      },
-      "05/31/2020": {
-        "cases": 31,
-        "recovered": 0,
-        "deaths": 3,
-        "active": 28
       }
     },
-    "checked": "2020-06-01T01:25:15.566Z",
+    "checked": "2020-05-31T13:26:19.517Z",
     "new": null,
     "rate": null,
-    "dailyrate": 0.03
+    "dailyrate": 0
   },
   {
     "name": "Champaign",
@@ -5090,18 +5030,12 @@
         "recovered": 0,
         "deaths": 1,
         "active": 26
-      },
-      "05/31/2020": {
-        "cases": 28,
-        "recovered": 0,
-        "deaths": 1,
-        "active": 27
       }
     },
-    "checked": "2020-06-01T01:25:15.598Z",
+    "checked": "2020-05-31T13:26:19.519Z",
     "new": null,
     "rate": null,
-    "dailyrate": 0.04
+    "dailyrate": 0
   },
   {
     "name": "Clark",
@@ -5554,18 +5488,12 @@
         "recovered": 0,
         "deaths": 6,
         "active": 271
-      },
-      "05/31/2020": {
-        "cases": 285,
-        "recovered": 0,
-        "deaths": 6,
-        "active": 279
       }
     },
-    "checked": "2020-06-01T01:25:15.628Z",
+    "checked": "2020-05-31T13:26:19.522Z",
     "new": null,
     "rate": null,
-    "dailyrate": 0.03
+    "dailyrate": 0.1
   },
   {
     "name": "Clermont",
@@ -6018,18 +5946,12 @@
         "recovered": 0,
         "deaths": 5,
         "active": 201
-      },
-      "05/31/2020": {
-        "cases": 211,
-        "recovered": 0,
-        "deaths": 5,
-        "active": 206
       }
     },
-    "checked": "2020-06-01T01:25:15.661Z",
+    "checked": "2020-05-31T13:26:19.530Z",
     "new": null,
     "rate": null,
-    "dailyrate": 0.02
+    "dailyrate": 0
   },
   {
     "name": "Clinton",
@@ -6482,15 +6404,9 @@
         "recovered": 0,
         "deaths": 1,
         "active": 42
-      },
-      "05/31/2020": {
-        "cases": 43,
-        "recovered": 0,
-        "deaths": 1,
-        "active": 42
       }
     },
-    "checked": "2020-06-01T01:25:15.666Z",
+    "checked": "2020-05-31T13:26:19.532Z",
     "new": null,
     "rate": null,
     "dailyrate": 0
@@ -6946,18 +6862,12 @@
         "recovered": 0,
         "deaths": 52,
         "active": 691
-      },
-      "05/31/2020": {
-        "cases": 793,
-        "recovered": 0,
-        "deaths": 53,
-        "active": 740
       }
     },
-    "checked": "2020-06-01T01:25:15.693Z",
+    "checked": "2020-05-31T13:26:19.533Z",
     "new": null,
     "rate": null,
-    "dailyrate": 0.07
+    "dailyrate": 0.01
   },
   {
     "name": "Coshocton",
@@ -7410,18 +7320,12 @@
         "recovered": 0,
         "deaths": 0,
         "active": 38
-      },
-      "05/31/2020": {
-        "cases": 40,
-        "recovered": 0,
-        "deaths": 0,
-        "active": 40
       }
     },
-    "checked": "2020-06-01T01:25:15.698Z",
+    "checked": "2020-05-31T13:26:19.536Z",
     "new": null,
     "rate": null,
-    "dailyrate": 0.05
+    "dailyrate": 0
   },
   {
     "name": "Crawford",
@@ -7874,18 +7778,12 @@
         "recovered": 0,
         "deaths": 4,
         "active": 110
-      },
-      "05/31/2020": {
-        "cases": 114,
-        "recovered": 0,
-        "deaths": 4,
-        "active": 110
       }
     },
-    "checked": "2020-06-01T01:25:15.729Z",
+    "checked": "2020-05-31T13:26:19.540Z",
     "new": null,
     "rate": null,
-    "dailyrate": 0
+    "dailyrate": 0.04
   },
   {
     "name": "Cuyahoga",
@@ -8338,18 +8236,12 @@
         "recovered": 0,
         "deaths": 226,
         "active": 4143
-      },
-      "05/31/2020": {
-        "cases": 4444,
-        "recovered": 0,
-        "deaths": 226,
-        "active": 4218
       }
     },
-    "checked": "2020-06-01T01:25:15.731Z",
+    "checked": "2020-05-31T13:26:19.542Z",
     "new": null,
     "rate": null,
-    "dailyrate": 0.02
+    "dailyrate": 0.01
   },
   {
     "name": "Darke",
@@ -8802,18 +8694,12 @@
         "recovered": 0,
         "deaths": 21,
         "active": 146
-      },
-      "05/31/2020": {
-        "cases": 170,
-        "recovered": 0,
-        "deaths": 21,
-        "active": 149
       }
     },
-    "checked": "2020-06-01T01:25:15.763Z",
+    "checked": "2020-05-31T13:26:19.550Z",
     "new": null,
     "rate": null,
-    "dailyrate": 0.02
+    "dailyrate": 0
   },
   {
     "name": "Defiance",
@@ -9266,18 +9152,12 @@
         "recovered": 0,
         "deaths": 2,
         "active": 31
-      },
-      "05/31/2020": {
-        "cases": 34,
-        "recovered": 0,
-        "deaths": 2,
-        "active": 32
       }
     },
-    "checked": "2020-06-01T01:25:15.792Z",
+    "checked": "2020-05-31T13:26:19.552Z",
     "new": null,
     "rate": null,
-    "dailyrate": 0.03
+    "dailyrate": 0
   },
   {
     "name": "Delaware",
@@ -9730,18 +9610,12 @@
         "recovered": 0,
         "deaths": 13,
         "active": 318
-      },
-      "05/31/2020": {
-        "cases": 337,
-        "recovered": 0,
-        "deaths": 13,
-        "active": 324
       }
     },
-    "checked": "2020-06-01T01:25:15.800Z",
+    "checked": "2020-05-31T13:26:19.553Z",
     "new": null,
     "rate": null,
-    "dailyrate": 0.02
+    "dailyrate": 0.03
   },
   {
     "name": "Erie",
@@ -10194,18 +10068,12 @@
         "recovered": 0,
         "deaths": 14,
         "active": 157
-      },
-      "05/31/2020": {
-        "cases": 172,
-        "recovered": 0,
-        "deaths": 14,
-        "active": 158
       }
     },
-    "checked": "2020-06-01T01:25:15.829Z",
+    "checked": "2020-05-31T13:26:19.628Z",
     "new": null,
     "rate": null,
-    "dailyrate": 0.01
+    "dailyrate": 0.02
   },
   {
     "name": "Fairfield",
@@ -10658,18 +10526,12 @@
         "recovered": 0,
         "deaths": 6,
         "active": 253
-      },
-      "05/31/2020": {
-        "cases": 267,
-        "recovered": 0,
-        "deaths": 6,
-        "active": 261
       }
     },
-    "checked": "2020-06-01T01:25:15.862Z",
+    "checked": "2020-05-31T13:26:19.633Z",
     "new": null,
     "rate": null,
-    "dailyrate": 0.03
+    "dailyrate": 0
   },
   {
     "name": "Fayette",
@@ -11122,15 +10984,9 @@
         "recovered": 0,
         "deaths": 0,
         "active": 40
-      },
-      "05/31/2020": {
-        "cases": 40,
-        "recovered": 0,
-        "deaths": 0,
-        "active": 40
       }
     },
-    "checked": "2020-06-01T01:25:15.872Z",
+    "checked": "2020-05-31T13:26:19.651Z",
     "new": null,
     "rate": null,
     "dailyrate": 0
@@ -11586,15 +11442,9 @@
         "recovered": 0,
         "deaths": 260,
         "active": 5513
-      },
-      "05/31/2020": {
-        "cases": 5862,
-        "recovered": 0,
-        "deaths": 262,
-        "active": 5600
       }
     },
-    "checked": "2020-06-01T01:25:15.907Z",
+    "checked": "2020-05-31T13:26:19.666Z",
     "new": null,
     "rate": null,
     "dailyrate": 0.02
@@ -12050,15 +11900,9 @@
         "recovered": 0,
         "deaths": 0,
         "active": 40
-      },
-      "05/31/2020": {
-        "cases": 41,
-        "recovered": 0,
-        "deaths": 0,
-        "active": 41
       }
     },
-    "checked": "2020-06-01T01:25:15.910Z",
+    "checked": "2020-05-31T13:26:19.675Z",
     "new": null,
     "rate": null,
     "dailyrate": 0.03
@@ -12514,18 +12358,12 @@
         "recovered": 0,
         "deaths": 1,
         "active": 8
-      },
-      "05/31/2020": {
-        "cases": 8,
-        "recovered": 0,
-        "deaths": 1,
-        "active": 7
       }
     },
-    "checked": "2020-06-01T01:25:15.913Z",
+    "checked": "2020-05-31T13:26:19.680Z",
     "new": null,
     "rate": null,
-    "dailyrate": -0.11
+    "dailyrate": 0.29
   },
   {
     "name": "Geauga",
@@ -12978,18 +12816,12 @@
         "recovered": 0,
         "deaths": 32,
         "active": 250
-      },
-      "05/31/2020": {
-        "cases": 284,
-        "recovered": 0,
-        "deaths": 32,
-        "active": 252
       }
     },
-    "checked": "2020-06-01T01:25:15.960Z",
+    "checked": "2020-05-31T13:26:19.684Z",
     "new": null,
     "rate": null,
-    "dailyrate": 0.01
+    "dailyrate": 0.02
   },
   {
     "name": "Greene",
@@ -13442,15 +13274,9 @@
         "recovered": 0,
         "deaths": 5,
         "active": 96
-      },
-      "05/31/2020": {
-        "cases": 101,
-        "recovered": 0,
-        "deaths": 5,
-        "active": 96
       }
     },
-    "checked": "2020-06-01T01:25:15.967Z",
+    "checked": "2020-05-31T13:26:19.689Z",
     "new": null,
     "rate": null,
     "dailyrate": 0
@@ -13906,18 +13732,12 @@
         "recovered": 0,
         "deaths": 1,
         "active": 34
-      },
-      "05/31/2020": {
-        "cases": 35,
-        "recovered": 0,
-        "deaths": 1,
-        "active": 34
       }
     },
-    "checked": "2020-06-01T01:25:16.005Z",
+    "checked": "2020-05-31T13:26:19.694Z",
     "new": null,
     "rate": null,
-    "dailyrate": 0
+    "dailyrate": 0.03
   },
   {
     "name": "Hamilton",
@@ -14370,15 +14190,9 @@
         "recovered": 0,
         "deaths": 148,
         "active": 2494
-      },
-      "05/31/2020": {
-        "cases": 2672,
-        "recovered": 0,
-        "deaths": 150,
-        "active": 2522
       }
     },
-    "checked": "2020-06-01T01:25:16.008Z",
+    "checked": "2020-05-31T13:26:19.698Z",
     "new": null,
     "rate": null,
     "dailyrate": 0.01
@@ -14834,15 +14648,9 @@
         "recovered": 0,
         "deaths": 1,
         "active": 49
-      },
-      "05/31/2020": {
-        "cases": 50,
-        "recovered": 0,
-        "deaths": 1,
-        "active": 49
       }
     },
-    "checked": "2020-06-01T01:25:16.011Z",
+    "checked": "2020-05-31T13:26:19.724Z",
     "new": null,
     "rate": null,
     "dailyrate": 0
@@ -15298,18 +15106,12 @@
         "recovered": 0,
         "deaths": 0,
         "active": 60
-      },
-      "05/31/2020": {
-        "cases": 61,
-        "recovered": 0,
-        "deaths": 0,
-        "active": 61
       }
     },
-    "checked": "2020-06-01T01:25:16.014Z",
+    "checked": "2020-05-31T13:26:19.733Z",
     "new": null,
     "rate": null,
-    "dailyrate": 0.02
+    "dailyrate": 0.33
   },
   {
     "name": "Harrison",
@@ -15762,15 +15564,9 @@
         "recovered": 0,
         "deaths": 0,
         "active": 10
-      },
-      "05/31/2020": {
-        "cases": 10,
-        "recovered": 0,
-        "deaths": 0,
-        "active": 10
       }
     },
-    "checked": "2020-06-01T01:25:16.057Z",
+    "checked": "2020-05-31T13:26:19.808Z",
     "new": null,
     "rate": null,
     "dailyrate": 0
@@ -16226,15 +16022,9 @@
         "recovered": 0,
         "deaths": 0,
         "active": 15
-      },
-      "05/31/2020": {
-        "cases": 15,
-        "recovered": 0,
-        "deaths": 0,
-        "active": 15
       }
     },
-    "checked": "2020-06-01T01:25:16.058Z",
+    "checked": "2020-05-31T13:26:19.883Z",
     "new": null,
     "rate": null,
     "dailyrate": 0
@@ -16690,18 +16480,12 @@
         "recovered": 0,
         "deaths": 1,
         "active": 22
-      },
-      "05/31/2020": {
-        "cases": 25,
-        "recovered": 0,
-        "deaths": 1,
-        "active": 24
       }
     },
-    "checked": "2020-06-01T01:25:16.060Z",
+    "checked": "2020-05-31T13:26:19.933Z",
     "new": null,
     "rate": null,
-    "dailyrate": 0.09
+    "dailyrate": 0
   },
   {
     "name": "Hocking",
@@ -17154,15 +16938,9 @@
         "recovered": 0,
         "deaths": 4,
         "active": 65
-      },
-      "05/31/2020": {
-        "cases": 69,
-        "recovered": 0,
-        "deaths": 4,
-        "active": 65
       }
     },
-    "checked": "2020-06-01T01:25:16.071Z",
+    "checked": "2020-05-31T13:26:19.936Z",
     "new": null,
     "rate": null,
     "dailyrate": 0
@@ -17618,18 +17396,12 @@
         "recovered": 0,
         "deaths": 1,
         "active": 33
-      },
-      "05/31/2020": {
-        "cases": 39,
-        "recovered": 0,
-        "deaths": 1,
-        "active": 38
       }
     },
-    "checked": "2020-06-01T01:25:16.107Z",
+    "checked": "2020-05-31T13:26:19.941Z",
     "new": null,
     "rate": null,
-    "dailyrate": 0.15
+    "dailyrate": 0.06
   },
   {
     "name": "Huron",
@@ -18082,15 +17854,9 @@
         "recovered": 0,
         "deaths": 1,
         "active": 56
-      },
-      "05/31/2020": {
-        "cases": 58,
-        "recovered": 0,
-        "deaths": 1,
-        "active": 57
       }
     },
-    "checked": "2020-06-01T01:25:16.109Z",
+    "checked": "2020-05-31T13:26:20.107Z",
     "new": null,
     "rate": null,
     "dailyrate": 0.02
@@ -18546,18 +18312,12 @@
         "recovered": 0,
         "deaths": 0,
         "active": 14
-      },
-      "05/31/2020": {
-        "cases": 14,
-        "recovered": 0,
-        "deaths": 0,
-        "active": 14
       }
     },
-    "checked": "2020-06-01T01:25:16.112Z",
+    "checked": "2020-05-31T13:26:20.180Z",
     "new": null,
     "rate": null,
-    "dailyrate": 0
+    "dailyrate": 0.08
   },
   {
     "name": "Jefferson",
@@ -19010,15 +18770,9 @@
         "recovered": 0,
         "deaths": 2,
         "active": 65
-      },
-      "05/31/2020": {
-        "cases": 67,
-        "recovered": 0,
-        "deaths": 2,
-        "active": 65
       }
     },
-    "checked": "2020-06-01T01:25:16.120Z",
+    "checked": "2020-05-31T13:26:20.226Z",
     "new": null,
     "rate": null,
     "dailyrate": 0
@@ -19474,18 +19228,12 @@
         "recovered": 0,
         "deaths": 1,
         "active": 24
-      },
-      "05/31/2020": {
-        "cases": 25,
-        "recovered": 0,
-        "deaths": 1,
-        "active": 24
       }
     },
-    "checked": "2020-06-01T01:25:16.199Z",
+    "checked": "2020-05-31T13:26:20.282Z",
     "new": null,
     "rate": null,
-    "dailyrate": 0
+    "dailyrate": 0.04
   },
   {
     "name": "Lake",
@@ -19938,15 +19686,9 @@
         "recovered": 0,
         "deaths": 12,
         "active": 294
-      },
-      "05/31/2020": {
-        "cases": 308,
-        "recovered": 0,
-        "deaths": 12,
-        "active": 296
       }
     },
-    "checked": "2020-06-01T01:25:16.241Z",
+    "checked": "2020-05-31T13:26:20.285Z",
     "new": null,
     "rate": null,
     "dailyrate": 0.01
@@ -20402,15 +20144,9 @@
         "recovered": 0,
         "deaths": 0,
         "active": 30
-      },
-      "05/31/2020": {
-        "cases": 30,
-        "recovered": 0,
-        "deaths": 0,
-        "active": 30
       }
     },
-    "checked": "2020-06-01T01:25:16.243Z",
+    "checked": "2020-05-31T13:26:20.296Z",
     "new": null,
     "rate": null,
     "dailyrate": 0
@@ -20866,18 +20602,12 @@
         "recovered": 0,
         "deaths": 10,
         "active": 233
-      },
-      "05/31/2020": {
-        "cases": 248,
-        "recovered": 0,
-        "deaths": 10,
-        "active": 238
       }
     },
-    "checked": "2020-06-01T01:25:16.244Z",
+    "checked": "2020-05-31T13:26:20.379Z",
     "new": null,
     "rate": null,
-    "dailyrate": 0.02
+    "dailyrate": 0.06
   },
   {
     "name": "Logan",
@@ -21330,15 +21060,9 @@
         "recovered": 0,
         "deaths": 0,
         "active": 38
-      },
-      "05/31/2020": {
-        "cases": 39,
-        "recovered": 0,
-        "deaths": 0,
-        "active": 39
       }
     },
-    "checked": "2020-06-01T01:25:16.256Z",
+    "checked": "2020-05-31T13:26:20.387Z",
     "new": null,
     "rate": null,
     "dailyrate": 0.03
@@ -21794,15 +21518,9 @@
         "recovered": 0,
         "deaths": 59,
         "active": 619
-      },
-      "05/31/2020": {
-        "cases": 687,
-        "recovered": 0,
-        "deaths": 59,
-        "active": 628
       }
     },
-    "checked": "2020-06-01T01:25:16.327Z",
+    "checked": "2020-05-31T13:26:20.401Z",
     "new": null,
     "rate": null,
     "dailyrate": 0.01
@@ -22258,18 +21976,12 @@
         "recovered": 0,
         "deaths": 242,
         "active": 1999
-      },
-      "05/31/2020": {
-        "cases": 2267,
-        "recovered": 0,
-        "deaths": 242,
-        "active": 2025
       }
     },
-    "checked": "2020-06-01T01:25:16.364Z",
+    "checked": "2020-05-31T13:26:20.496Z",
     "new": null,
     "rate": null,
-    "dailyrate": 0.01
+    "dailyrate": 0.02
   },
   {
     "name": "Madison",
@@ -22722,18 +22434,12 @@
         "recovered": 0,
         "deaths": 7,
         "active": 145
-      },
-      "05/31/2020": {
-        "cases": 156,
-        "recovered": 0,
-        "deaths": 7,
-        "active": 149
       }
     },
-    "checked": "2020-06-01T01:25:16.457Z",
+    "checked": "2020-05-31T13:26:20.611Z",
     "new": null,
     "rate": null,
-    "dailyrate": 0.03
+    "dailyrate": 0
   },
   {
     "name": "Mahoning",
@@ -23186,18 +22892,12 @@
         "recovered": 0,
         "deaths": 174,
         "active": 1254
-      },
-      "05/31/2020": {
-        "cases": 1431,
-        "recovered": 0,
-        "deaths": 174,
-        "active": 1257
       }
     },
-    "checked": "2020-06-01T01:25:16.492Z",
+    "checked": "2020-05-31T13:26:20.680Z",
     "new": null,
     "rate": null,
-    "dailyrate": 0
+    "dailyrate": 0.02
   },
   {
     "name": "Marion",
@@ -23650,15 +23350,9 @@
         "recovered": 0,
         "deaths": 28,
         "active": 2632
-      },
-      "05/31/2020": {
-        "cases": 2666,
-        "recovered": 0,
-        "deaths": 28,
-        "active": 2638
       }
     },
-    "checked": "2020-06-01T01:25:16.498Z",
+    "checked": "2020-05-31T13:26:20.735Z",
     "new": null,
     "rate": null,
     "dailyrate": 0
@@ -24114,18 +23808,12 @@
         "recovered": 0,
         "deaths": 23,
         "active": 314
-      },
-      "05/31/2020": {
-        "cases": 337,
-        "recovered": 0,
-        "deaths": 22,
-        "active": 315
       }
     },
-    "checked": "2020-06-01T01:25:16.540Z",
+    "checked": "2020-05-31T13:26:20.749Z",
     "new": null,
     "rate": null,
-    "dailyrate": 0
+    "dailyrate": 0.03
   },
   {
     "name": "Meigs",
@@ -24578,15 +24266,9 @@
         "recovered": 0,
         "deaths": 0,
         "active": 6
-      },
-      "05/31/2020": {
-        "cases": 6,
-        "recovered": 0,
-        "deaths": 0,
-        "active": 6
       }
     },
-    "checked": "2020-06-01T01:25:16.542Z",
+    "checked": "2020-05-31T13:26:20.810Z",
     "new": null,
     "rate": null,
     "dailyrate": 0
@@ -25042,18 +24724,12 @@
         "recovered": 0,
         "deaths": 7,
         "active": 203
-      },
-      "05/31/2020": {
-        "cases": 211,
-        "recovered": 0,
-        "deaths": 7,
-        "active": 204
       }
     },
-    "checked": "2020-06-01T01:25:16.543Z",
+    "checked": "2020-05-31T13:26:20.812Z",
     "new": null,
     "rate": null,
-    "dailyrate": 0
+    "dailyrate": 0.03
   },
   {
     "name": "Miami",
@@ -25506,18 +25182,12 @@
         "recovered": 0,
         "deaths": 30,
         "active": 325
-      },
-      "05/31/2020": {
-        "cases": 357,
-        "recovered": 0,
-        "deaths": 30,
-        "active": 327
       }
     },
-    "checked": "2020-06-01T01:25:16.550Z",
+    "checked": "2020-05-31T13:26:20.816Z",
     "new": null,
     "rate": null,
-    "dailyrate": 0.01
+    "dailyrate": 0
   },
   {
     "name": "Monroe",
@@ -25970,18 +25640,12 @@
         "recovered": 0,
         "deaths": 12,
         "active": 66
-      },
-      "05/31/2020": {
-        "cases": 78,
-        "recovered": 0,
-        "deaths": 12,
-        "active": 66
       }
     },
-    "checked": "2020-06-01T01:25:16.590Z",
+    "checked": "2020-05-31T13:26:20.817Z",
     "new": null,
     "rate": null,
-    "dailyrate": 0
+    "dailyrate": 0.01
   },
   {
     "name": "Montgomery",
@@ -26434,15 +26098,9 @@
         "recovered": 0,
         "deaths": 16,
         "active": 640
-      },
-      "05/31/2020": {
-        "cases": 663,
-        "recovered": 0,
-        "deaths": 16,
-        "active": 647
       }
     },
-    "checked": "2020-06-01T01:25:16.592Z",
+    "checked": "2020-05-31T13:26:20.829Z",
     "new": null,
     "rate": null,
     "dailyrate": 0.01
@@ -26898,15 +26556,9 @@
         "recovered": 0,
         "deaths": 0,
         "active": 5
-      },
-      "05/31/2020": {
-        "cases": 5,
-        "recovered": 0,
-        "deaths": 0,
-        "active": 5
       }
     },
-    "checked": "2020-06-01T01:25:16.598Z",
+    "checked": "2020-05-31T13:26:20.883Z",
     "new": null,
     "rate": null,
     "dailyrate": 0
@@ -27362,18 +27014,12 @@
         "recovered": 0,
         "deaths": 1,
         "active": 106
-      },
-      "05/31/2020": {
-        "cases": 107,
-        "recovered": 0,
-        "deaths": 1,
-        "active": 106
       }
     },
-    "checked": "2020-06-01T01:25:16.642Z",
+    "checked": "2020-05-31T13:26:20.885Z",
     "new": null,
     "rate": null,
-    "dailyrate": 0
+    "dailyrate": 0.02
   },
   {
     "name": "Muskingum",
@@ -27826,18 +27472,12 @@
         "recovered": 0,
         "deaths": 0,
         "active": 50
-      },
-      "05/31/2020": {
-        "cases": 52,
-        "recovered": 0,
-        "deaths": 0,
-        "active": 52
       }
     },
-    "checked": "2020-06-01T01:25:16.643Z",
+    "checked": "2020-05-31T13:26:20.897Z",
     "new": null,
     "rate": null,
-    "dailyrate": 0.04
+    "dailyrate": 0
   },
   {
     "name": "Noble",
@@ -28290,15 +27930,9 @@
         "recovered": 0,
         "deaths": 0,
         "active": 6
-      },
-      "05/31/2020": {
-        "cases": 6,
-        "recovered": 0,
-        "deaths": 0,
-        "active": 6
       }
     },
-    "checked": "2020-06-01T01:25:16.649Z",
+    "checked": "2020-05-31T13:26:20.951Z",
     "new": null,
     "rate": null,
     "dailyrate": 0
@@ -28754,18 +28388,12 @@
         "recovered": 0,
         "deaths": 16,
         "active": 83
-      },
-      "05/31/2020": {
-        "cases": 99,
-        "recovered": 0,
-        "deaths": 16,
-        "active": 83
       }
     },
-    "checked": "2020-06-01T01:25:16.701Z",
+    "checked": "2020-05-31T13:26:21.018Z",
     "new": null,
     "rate": null,
-    "dailyrate": 0
+    "dailyrate": 0.04
   },
   {
     "name": "Paulding",
@@ -29218,15 +28846,9 @@
         "recovered": 0,
         "deaths": 0,
         "active": 14
-      },
-      "05/31/2020": {
-        "cases": 14,
-        "recovered": 0,
-        "deaths": 0,
-        "active": 14
       }
     },
-    "checked": "2020-06-01T01:25:16.747Z",
+    "checked": "2020-05-31T13:26:21.086Z",
     "new": null,
     "rate": null,
     "dailyrate": 0
@@ -29682,15 +29304,9 @@
         "recovered": 0,
         "deaths": 1,
         "active": 17
-      },
-      "05/31/2020": {
-        "cases": 18,
-        "recovered": 0,
-        "deaths": 1,
-        "active": 17
       }
     },
-    "checked": "2020-06-01T01:25:16.794Z",
+    "checked": "2020-05-31T13:26:21.098Z",
     "new": null,
     "rate": null,
     "dailyrate": 0
@@ -30146,18 +29762,12 @@
         "recovered": 0,
         "deaths": 37,
         "active": 2013
-      },
-      "05/31/2020": {
-        "cases": 2074,
-        "recovered": 0,
-        "deaths": 37,
-        "active": 2037
       }
     },
-    "checked": "2020-06-01T01:25:16.849Z",
+    "checked": "2020-05-31T13:26:21.161Z",
     "new": null,
     "rate": null,
-    "dailyrate": 0.01
+    "dailyrate": 0
   },
   {
     "name": "Pike",
@@ -30610,15 +30220,9 @@
         "recovered": 0,
         "deaths": 0,
         "active": 6
-      },
-      "05/31/2020": {
-        "cases": 6,
-        "recovered": 0,
-        "deaths": 0,
-        "active": 6
       }
     },
-    "checked": "2020-06-01T01:25:16.895Z",
+    "checked": "2020-05-31T13:26:21.220Z",
     "new": null,
     "rate": null,
     "dailyrate": 0
@@ -31074,18 +30678,12 @@
         "recovered": 0,
         "deaths": 57,
         "active": 266
-      },
-      "05/31/2020": {
-        "cases": 325,
-        "recovered": 0,
-        "deaths": 57,
-        "active": 268
       }
     },
-    "checked": "2020-06-01T01:25:16.904Z",
+    "checked": "2020-05-31T13:26:21.226Z",
     "new": null,
     "rate": null,
-    "dailyrate": 0.01
+    "dailyrate": 0
   },
   {
     "name": "Preble",
@@ -31538,18 +31136,12 @@
         "recovered": 0,
         "deaths": 1,
         "active": 34
-      },
-      "05/31/2020": {
-        "cases": 37,
-        "recovered": 0,
-        "deaths": 1,
-        "active": 36
       }
     },
-    "checked": "2020-06-01T01:25:16.945Z",
+    "checked": "2020-05-31T13:26:21.278Z",
     "new": null,
     "rate": null,
-    "dailyrate": 0.06
+    "dailyrate": 0
   },
   {
     "name": "Putnam",
@@ -32002,15 +31594,9 @@
         "recovered": 0,
         "deaths": 14,
         "active": 77
-      },
-      "05/31/2020": {
-        "cases": 92,
-        "recovered": 0,
-        "deaths": 14,
-        "active": 78
       }
     },
-    "checked": "2020-06-01T01:25:16.956Z",
+    "checked": "2020-05-31T13:26:21.343Z",
     "new": null,
     "rate": null,
     "dailyrate": 0.01
@@ -32466,15 +32052,9 @@
         "recovered": 0,
         "deaths": 3,
         "active": 196
-      },
-      "05/31/2020": {
-        "cases": 200,
-        "recovered": 0,
-        "deaths": 3,
-        "active": 197
       }
     },
-    "checked": "2020-06-01T01:25:17.010Z",
+    "checked": "2020-05-31T13:26:21.347Z",
     "new": null,
     "rate": null,
     "dailyrate": 0.01
@@ -32930,18 +32510,12 @@
         "recovered": 0,
         "deaths": 2,
         "active": 69
-      },
-      "05/31/2020": {
-        "cases": 71,
-        "recovered": 0,
-        "deaths": 2,
-        "active": 69
       }
     },
-    "checked": "2020-06-01T01:25:17.078Z",
+    "checked": "2020-05-31T13:26:21.351Z",
     "new": null,
     "rate": null,
-    "dailyrate": 0
+    "dailyrate": 0.04
   },
   {
     "name": "Sandusky",
@@ -33394,18 +32968,12 @@
         "recovered": 0,
         "deaths": 11,
         "active": 62
-      },
-      "05/31/2020": {
-        "cases": 79,
-        "recovered": 0,
-        "deaths": 11,
-        "active": 68
       }
     },
-    "checked": "2020-06-01T01:25:17.090Z",
+    "checked": "2020-05-31T13:26:21.364Z",
     "new": null,
     "rate": null,
-    "dailyrate": 0.08
+    "dailyrate": 0
   },
   {
     "name": "Scioto",
@@ -33858,18 +33426,12 @@
         "recovered": 0,
         "deaths": 0,
         "active": 15
-      },
-      "05/31/2020": {
-        "cases": 16,
-        "recovered": 0,
-        "deaths": 0,
-        "active": 16
       }
     },
-    "checked": "2020-06-01T01:25:17.129Z",
+    "checked": "2020-05-31T13:26:21.415Z",
     "new": null,
     "rate": null,
-    "dailyrate": 0.07
+    "dailyrate": 0
   },
   {
     "name": "Seneca",
@@ -34322,15 +33884,9 @@
         "recovered": 0,
         "deaths": 2,
         "active": 18
-      },
-      "05/31/2020": {
-        "cases": 20,
-        "recovered": 0,
-        "deaths": 2,
-        "active": 18
       }
     },
-    "checked": "2020-06-01T01:25:17.182Z",
+    "checked": "2020-05-31T13:26:21.522Z",
     "new": null,
     "rate": null,
     "dailyrate": 0
@@ -34786,18 +34342,12 @@
         "recovered": 0,
         "deaths": 3,
         "active": 38
-      },
-      "05/31/2020": {
-        "cases": 43,
-        "recovered": 0,
-        "deaths": 3,
-        "active": 40
       }
     },
-    "checked": "2020-06-01T01:25:17.234Z",
+    "checked": "2020-05-31T13:26:21.528Z",
     "new": null,
     "rate": null,
-    "dailyrate": 0.05
+    "dailyrate": 0.03
   },
   {
     "name": "Stark",
@@ -35250,15 +34800,9 @@
         "recovered": 0,
         "deaths": 91,
         "active": 632
-      },
-      "05/31/2020": {
-        "cases": 727,
-        "recovered": 0,
-        "deaths": 91,
-        "active": 636
       }
     },
-    "checked": "2020-06-01T01:25:17.282Z",
+    "checked": "2020-05-31T13:26:21.534Z",
     "new": null,
     "rate": null,
     "dailyrate": 0.01
@@ -35714,18 +35258,12 @@
         "recovered": 0,
         "deaths": 172,
         "active": 1218
-      },
-      "05/31/2020": {
-        "cases": 1420,
-        "recovered": 0,
-        "deaths": 173,
-        "active": 1247
       }
     },
-    "checked": "2020-06-01T01:25:17.336Z",
+    "checked": "2020-05-31T13:26:21.537Z",
     "new": null,
     "rate": null,
-    "dailyrate": 0.02
+    "dailyrate": 0.01
   },
   {
     "name": "Trumbull",
@@ -36178,15 +35716,9 @@
         "recovered": 0,
         "deaths": 48,
         "active": 521
-      },
-      "05/31/2020": {
-        "cases": 573,
-        "recovered": 0,
-        "deaths": 48,
-        "active": 525
       }
     },
-    "checked": "2020-06-01T01:25:17.385Z",
+    "checked": "2020-05-31T13:26:21.611Z",
     "new": null,
     "rate": null,
     "dailyrate": 0.01
@@ -36642,18 +36174,12 @@
         "recovered": 0,
         "deaths": 3,
         "active": 339
-      },
-      "05/31/2020": {
-        "cases": 343,
-        "recovered": 0,
-        "deaths": 4,
-        "active": 339
       }
     },
-    "checked": "2020-06-01T01:25:17.439Z",
+    "checked": "2020-05-31T13:26:21.670Z",
     "new": null,
     "rate": null,
-    "dailyrate": 0
+    "dailyrate": 0.01
   },
   {
     "name": "Union",
@@ -37106,18 +36632,12 @@
         "recovered": 0,
         "deaths": 1,
         "active": 50
-      },
-      "05/31/2020": {
-        "cases": 52,
-        "recovered": 0,
-        "deaths": 1,
-        "active": 51
       }
     },
-    "checked": "2020-06-01T01:25:17.442Z",
+    "checked": "2020-05-31T13:26:21.681Z",
     "new": null,
     "rate": null,
-    "dailyrate": 0.02
+    "dailyrate": 0
   },
   {
     "name": "Van Wert",
@@ -37570,15 +37090,9 @@
         "recovered": 0,
         "deaths": 0,
         "active": 6
-      },
-      "05/31/2020": {
-        "cases": 6,
-        "recovered": 0,
-        "deaths": 0,
-        "active": 6
       }
     },
-    "checked": "2020-06-01T01:25:17.445Z",
+    "checked": "2020-05-31T13:26:21.794Z",
     "new": null,
     "rate": null,
     "dailyrate": 0
@@ -38034,18 +37548,12 @@
         "recovered": 0,
         "deaths": 2,
         "active": 19
-      },
-      "05/31/2020": {
-        "cases": 21,
-        "recovered": 0,
-        "deaths": 2,
-        "active": 19
       }
     },
-    "checked": "2020-06-01T01:25:17.450Z",
+    "checked": "2020-05-31T13:26:21.866Z",
     "new": null,
     "rate": null,
-    "dailyrate": 0
+    "dailyrate": 0.11
   },
   {
     "name": "Warren",
@@ -38498,15 +38006,9 @@
         "recovered": 0,
         "deaths": 21,
         "active": 345
-      },
-      "05/31/2020": {
-        "cases": 373,
-        "recovered": 0,
-        "deaths": 21,
-        "active": 352
       }
     },
-    "checked": "2020-06-01T01:25:17.494Z",
+    "checked": "2020-05-31T13:26:21.869Z",
     "new": null,
     "rate": null,
     "dailyrate": 0.02
@@ -38962,15 +38464,9 @@
         "recovered": 0,
         "deaths": 19,
         "active": 99
-      },
-      "05/31/2020": {
-        "cases": 118,
-        "recovered": 0,
-        "deaths": 19,
-        "active": 99
       }
     },
-    "checked": "2020-06-01T01:25:17.502Z",
+    "checked": "2020-05-31T13:26:21.879Z",
     "new": null,
     "rate": null,
     "dailyrate": 0
@@ -39426,18 +38922,12 @@
         "recovered": 0,
         "deaths": 50,
         "active": 222
-      },
-      "05/31/2020": {
-        "cases": 274,
-        "recovered": 0,
-        "deaths": 50,
-        "active": 224
       }
     },
-    "checked": "2020-06-01T01:25:17.548Z",
+    "checked": "2020-05-31T13:26:21.936Z",
     "new": null,
     "rate": null,
-    "dailyrate": 0.01
+    "dailyrate": 0.02
   },
   {
     "name": "Williams",
@@ -39890,18 +39380,12 @@
         "recovered": 0,
         "deaths": 1,
         "active": 53
-      },
-      "05/31/2020": {
-        "cases": 55,
-        "recovered": 0,
-        "deaths": 1,
-        "active": 54
       }
     },
-    "checked": "2020-06-01T01:25:17.595Z",
+    "checked": "2020-05-31T13:26:21.951Z",
     "new": null,
     "rate": null,
-    "dailyrate": 0.02
+    "dailyrate": 0
   },
   {
     "name": "Wood",
@@ -40354,18 +39838,12 @@
         "recovered": 0,
         "deaths": 46,
         "active": 241
-      },
-      "05/31/2020": {
-        "cases": 294,
-        "recovered": 0,
-        "deaths": 46,
-        "active": 248
       }
     },
-    "checked": "2020-06-01T01:25:17.609Z",
+    "checked": "2020-05-31T13:26:22.069Z",
     "new": null,
     "rate": null,
-    "dailyrate": 0.02
+    "dailyrate": 0.01
   },
   {
     "name": "Wyandot",
@@ -40818,15 +40296,9 @@
         "recovered": 0,
         "deaths": 2,
         "active": 38
-      },
-      "05/31/2020": {
-        "cases": 41,
-        "recovered": 0,
-        "deaths": 2,
-        "active": 39
       }
     },
-    "checked": "2020-06-01T01:25:17.643Z",
+    "checked": "2020-05-31T13:26:22.202Z",
     "new": null,
     "rate": null,
     "dailyrate": 0.03
