@@ -134,7 +134,7 @@ feed:
   limit: 1000
   hub:
   content:
-  content_limit: 50
+  content_limit: 200
   content_limit_delim: ' '
   order_by: -date
 
