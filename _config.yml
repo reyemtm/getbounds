@@ -108,6 +108,7 @@ include:
  - apps/**/*.*
  - _redirects
  - admin/config.yml
+ - _headers
  
 #Hexo Exceprt Plugin
 excerpt:
