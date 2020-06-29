@@ -131,7 +131,7 @@ imagemin:
 feed:
   type: atom
   path: feed.xml
-  limit: 20
+  limit: 1000
   hub:
   content:
   content_limit: 50
