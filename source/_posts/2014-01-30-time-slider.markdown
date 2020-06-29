@@ -2,6 +2,7 @@
 title: Animating Urban Growth via the ArcMap Time Slider
 subtitle: One Hundred Years of Urban Growth in Ten Seconds
 date: 2014-01-30 21:00:00 Z
+description: This video shows the growth of urban infrastructure from 1850 (blue) through to the present (red).
 tags:
 - esri
 layout: post
