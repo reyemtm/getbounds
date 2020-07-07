@@ -7,6 +7,7 @@ description: Using NodeJS and Batches to Transform an ArcGIS Online Feature Serv
   to GeoJSON
 date: 2020-04-27T23:32:02.125Z
 img: agol-cache2.png
+image: https://www.getbounds.com/assets/img/agol-cache2.png
 tags: 
  - esri
  - javascript
