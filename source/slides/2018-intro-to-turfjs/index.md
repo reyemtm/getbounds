@@ -139,7 +139,9 @@ header: >-
   <script src="js/mapbox-bundle-min.js"></script>
 ---
 <div  style="width:90%;margin:0 auto;">
+
 ![](img/OhioGIS_Title_Page_2018.png)
+
 </div>
 
 <div class="emoji">👶👧👩
@@ -183,7 +185,14 @@ Area, Bounding Box, Buffer, Grids, Intersect, Isolines, Length, Random, Sample, 
 <div>GeoJSON is <strong>Everywhere</strong>
 </div>
 
-<div ><em>ArcGIS Feature to JSON</em> [USGS Earthquake Feed](https://earthquake.usgs.gov/fdsnws/event/1/)<strong> DATA.GOV (1,600+ Datasets)</strong> <em>AGOL Query Response & Exports</em> [geojson.xyz (Natural Earth Data+)](http://geojson.xyz) <strong>Native Support in</strong> [QGIS](https://www.qgis.org/en/site/)
+<div><em>
+
+ArcGIS Feature to JSON</em> 
+[USGS Earthquake Feed](https://earthquake.usgs.gov/fdsnws/event/1/)<strong>
+DATA.GOV (1,600+ Datasets)</strong> <em>AGOL Query Response & Exports</em>
+[geojson.xyz (Natural Earth Data+)](http://geojson.xyz)
+<strong>Native Support in</strong> [QGIS](https://www.qgis.org/en/site/)
+
 </div>
 
 <div class="img"><h1>GitHub Support (2013)</h1>
@@ -370,16 +379,25 @@ hexgrid.features.map(function (feature) {
 </code></pre>
 </div-->
 
-<div >No Coding
+<div >
+
+No Coding
 [Dropchop](http://dropchop.io/)
+
 </div>
 
-<div >Support [TurfJS](https://opencollective.com/turf)
+<div >
+
+Support [TurfJS](https://opencollective.com/turf)
+
 </div>
 
-<div >Thanks!
+<div >
+
+Thanks!
 Malcolm Meyer
 [@getbounds](https://twitter.com/getbounds)
+
 </div>
 
 <script>
