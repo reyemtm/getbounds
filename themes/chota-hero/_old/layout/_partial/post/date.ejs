@@ -1,0 +1,5 @@
+<em class="text-light" style="font-size: 1.6rem;">
+  <% if (post.datefirstposted) {%>Posted <time datetime="<%= date_xml(post.datefirstposted) %>" itemprop="datePublished"><%= date(post.datefirstposted, date_format) %></time> | Updated <time datetime="<%= date_xml(post.date) %>" itemprop="dateUpdated"><%= date(post.date, date_format) %></time><%}else{%>
+    Posted <time datetime="<%= date_xml(post.date) %>" itemprop="datePublished"><%= date(post.date, date_format) %></time>
+  <%}%>
+</em>

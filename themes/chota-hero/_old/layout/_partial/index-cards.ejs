@@ -1,0 +1,21 @@
+<div class="row">
+  <% page.posts.each(function(post, i){ %>
+    <% var content = strip_html(post.content) %>
+    <div class="col-6 col-6-md col-4-lg" >
+      <div class="card">
+        <header>
+          <a rel="prefetch" href="<%- url_for(post.path) %>"><figure style="background-image: url('/assets/img/<%- post.img %>');")></figure></a>
+        </header>
+        <section>
+          <%- partial('post/header', {post: post, index: true}) %>
+        </section>
+      </div>
+    </div>
+    <%})%>
+  <div class="is-full-width">
+    &nbsp;
+  </div>
+  <div class="col">
+    <a href="/blog/page/2/" class="zp-headline zp-headline-dashed"><span style="font-size: 2.3rem;letter-spacing:6px;">View More</span></a>
+  </div>
+</div>

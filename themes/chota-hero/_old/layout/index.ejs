@@ -1,0 +1,65 @@
+<%- partial('_partial/index-cards') %>
+
+<!-- <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css">
+
+<script src="https://unpkg.com/swiper/js/swiper.js"></script> -->
+<script>
+  var hero = document.querySelector('.hero');
+  var heroText = document.querySelector('.hero-text');
+
+  console.log(hero.children)
+
+  let x = 0;
+  var n = hero.children.length;
+  
+  /* set initial caption */
+  let img = hero.children[x];
+  img.style.backgroundImage = "url('" + img.dataset.src + "')";
+  img.classList.remove("hidden");
+  heroText.children[2].href = img.dataset.link;
+  
+  heroText.children[0].innerHTML = img.dataset.heading;
+  heroText.children[1].innerHTML = img.dataset.subtitle;
+  heroText.children[2].href = img.dataset.link;
+
+  /* slideshow function */
+  setInterval(function () {
+    heroText.style.opacity = 0;
+    let img = hero.children[x];
+    img.classList.toggle('hidden');
+    x = (x < (n-3)) ? x + 1 : 0;
+    let img1 = hero.children[x];
+    if (!img1.src) {
+      img1.style.backgroundImage = "url('" + img1.dataset.src + "')";
+    };
+    img1.classList.toggle('hidden');
+    setTimeout(function() {
+      heroText.children[0].innerHTML = img1.dataset.heading;
+      heroText.children[1].innerHTML = img1.dataset.subtitle;
+      heroText.children[2].href = img1.dataset.link;
+      heroText.style.opacity = 1;
+    }, 800); 
+  }, 7000)
+  /*1C1D21 - black
+31353D - 
+445878 - blue
+92CDCF - lightblue
+EEEFF7 - light*/
+/*for each image, c */
+</script>
+<script>
+/****
+NETLIFY LOGIN 
+****/
+if (window.netlifyIdentity) {
+  window.netlifyIdentity.on("init", function(user) {
+    if (!user) {
+      window.netlifyIdentity.on("login", function() {
+        document.location.href = "/admin/";
+      });
+    }else{
+      console.log("no user")
+    }
+  });
+}
+</script>

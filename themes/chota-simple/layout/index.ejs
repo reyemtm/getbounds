@@ -1,0 +1,113 @@
+<div class="container">
+
+  <div class="row columns">
+
+    <div class="gb-sidebar column col-12 col-3-md">
+
+      <!-- nav-sidebar -->
+      <div class="gb-sidebar--menu">
+        <a href="#" class="title">About</a>
+        <a href="#" class="title">Blog</a>
+        <a href="#" class="title">Portfolio</a>
+      </div>
+      <hr>
+
+      <!-- tag-cloud -->
+      <div class="gb-sidebar--tags"></div>
+
+      <hr>
+
+      <!-- social-buttons -->
+      <div class="is-center gb-sidebar--social">
+        <a class="button clear"><img src="https://icongr.am/feather/twitter.svg?size=24&color=1fada6"></a>
+        <a class="button clear"><img src="https://icongr.am/feather/github.svg?size=24&color=1fada6"></a>
+        <a class="button clear"><img src="https://icongr.am/feather/mail.svg?size=24&color=1fada6"></a>
+        <a class="button clear js-nightmode-toggle"><img
+            src="https://icongr.am/feather/moon.svg?size=24&color=1fada6"></a>
+
+      </div>
+
+      <!--   v2 <div class="gb-sidebar--signup">
+     <form>
+       <input type="email" placeholder="email newsletter"/>
+       <button type="Submit">Submit</button>
+     </form>
+    </div> -->
+
+    </div>
+    <div id="app" class="column col-12 col-9-md col-9-lg">
+
+      <% page.posts.each(function(post, i){ %>
+      <% var content = strip_html(post.content) %>
+      <section>
+        <figure class="col col-2">
+          <img src="https://www.getbounds.com/assets/img/agol-cache2.png">
+        </figure>
+
+        <header>
+          <div>
+            <h4 id="<%- post.title.toLowerCase().split(" ").join("-")%>">
+              <!-- add tags to class for filter -->
+              <a rel="prefetch" class='title' href="<%- url_for(post.path) %>"><%- post.title %></a>
+            </h4>
+            <span>
+              <% if (post.datefirstposted) {%>Posted <time datetime="<%= date_xml(post.datefirstposted) %>" itemprop="datePublished"><%= date(post.datefirstposted, null) %></time> | Updated <time datetime="<%= date_xml(post.date) %>" itemprop="dateUpdated"><%= date(post.date, null) %></time><%}else{%>
+                Posted <time datetime="<%= date_xml(post.date) %>" itemprop="datePublished"><%= date(post.date, null) %></time>
+              <%}%>
+            </span>
+          </div>
+        </header>
+        <article>
+          <p><%- post.excerpt %>
+            <!--a class='' href='${p.id}' style="font-size:1.4rem;text-decoration:none;">Read More</-->
+          </p>
+        </article>
+      </section>
+    <%})%>
+<!-- 
+    function gen(feed) {
+
+    var options = { year: 'numeric', month: 'long', day: 'numeric' };
+    var tags = [];
+    var tagsCount = {};
+
+    Object.keys(feed.feed.entry).map(i => {
+    let p = feed.feed.entry[i];
+    let pTags = [];
+
+    if (p.category.length) {
+    p.category.forEach(tag => {
+    pTags.push(tag._term)
+    if (tags.indexOf(tag._term) < 0) { tags.push(tag._term) tagsCount[tag._term]=1 }else{
+      tagsCount[tag._term]=tagsCount[tag._term] + 1 } }) } if (p.category._term) { pTags.push(p.category._term) if
+      (tags.indexOf(p.category._term) < 0) { tags.push(p.category._term) tagsCount[p.category._term]=1 }else{
+      tagsCount[p.category._term]=tagsCount[p.category._term] + 1 } } //CONVERT TO TEMPLATE OR CREATE ELEMENT
+      app.innerHTML +=` ` }) console.log(tags, tagsCount) tagCloud(tagsCount, ".gb-sidebar--tags" ) }
+
+      
+      function tagCloud(array, el) { var
+      tagDiv=document.querySelector(el); Object.keys(array).forEach(tag=> {
+      var fontSize = 0.8 + (array[tag] * 0.1);
+      tagDiv.innerHTML += `<span style="font-size:${fontSize}rem;">${tag} </span>`
+      })
+      }
+
+
+      } -->
+
+  </div>
+</div>
+</div>
+
+<footer>
+
+  <div class="row">
+    <div class="column col-2">
+    </div>
+    <div class="column col is-center">
+
+    </div>
+    <div class="column col-2">
+    </div>
+  </div>
+</footer>
