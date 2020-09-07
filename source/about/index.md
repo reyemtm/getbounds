@@ -1,5 +1,5 @@
 ---
-title: About getBounds
+title: About
 layout: default
 permalink: about/
 ---
