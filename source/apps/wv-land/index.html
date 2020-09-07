@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title>The WV Land</title>
+  <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+  <script src="https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js"></script>
+  <link href="https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    #map {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 100%;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="map"></div>
+  <script>
+
+    mapboxgl.accessToken = 'pk.eyJ1IjoicmV5ZW10bSIsImEiOiJCTHUxSVZ3In0.Q-qbg_jG0JcT6bfBeiwXQg';
+    var map = new mapboxgl.Map({
+      container: 'map',
+      zoom: 17,
+      center: [-80.6875020101, 38.905444664606506],//Dl {lng: -80.6875020101096, lat: 38.905444664606506}
+      style: 'mapbox://styles/mapbox/satellite-streets-v9'
+    });
+
+    map.on("load", function() {
+      map.addLayer({
+        id: "land_fill",
+        type: "fill",
+        source: {
+          type: "geojson",
+          data: "/assets/data/land.geojson"
+        },
+        paint: {
+          "fill-color": "skyblue",
+          "fill-opacity": 0.3
+        }
+      });
+
+      map.addLayer({
+        id: "land_outline",
+        type: "line",
+        source: {
+          type: "geojson",
+          data: "/assets/data/land.geojson"
+        },
+        paint: {
+          "line-color": "skyblue",
+          "line-width": 3
+        }
+      })
+
+      fetch("https://raw.githubusercontent.com/billcccheng/US-county-boundaries/master/states%20json/West%20Virginia.json")
+      .then(res => res.json())
+      .then(data => {
+        var counties = {
+          type: "FeatureCollection",
+          features: []
+        }
+        data.forEach(f => {
+          // console.log(f)
+          if (f.geometry) {
+            var geom = [[]]
+            var geometry = f.geometry.split(" ");
+            geometry.map(g => {
+              var c = g.split(",");
+              var coords = [Number(c[0]), Number(c[1])];
+              geom[0].push(coords)
+            })
+            delete f.geometry;
+            counties.features.push({
+              type: "Feature",
+              geometry: {
+                type: "Polygon",
+                coordinates: geom
+              },
+              properties: f
+            })
+          } 
+        })
+
+        map.addLayer({
+          id: "counties",
+          type: "line",
+          source: {
+            type: "geojson",
+            data: counties
+          },
+          paint: {
+            "line-color": "black",
+            "line-width": 3
+          }
+        })
+
+
+      })
+
+
+    })
+
+  </script>
+
+</body>
+
+</html>
