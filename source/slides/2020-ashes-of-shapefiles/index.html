@@ -2,7 +2,7 @@
 title: Ashes of Shapefiles Presentation
 subtitle: The Search for an Enterprise Data Format
 layout: slides
-theme: blood
+theme: stark
 date: 2020-09-09
 tags: slides
 transition: fade
@@ -12,160 +12,138 @@ style: >-
     font-size: 6rem;
     margin: 10px 0;
   }
+  .reveal section h2 {
+    color: #7ca62b;
+  }
+head: >-
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
 ---
 
 <section data-markdown data-separator="---">
 <script type="text/template">
 
-  🔥 🔥 🔥 🔥 🔥 <br />from the ashes<br />of shapefiles<br />
-  🔥 🔥 🔥 🔥 🔥
+🔥 🔥 🔥 🔥 🔥 <br />from the ashes<br />of shapefiles<br />
+🔥 🔥 🔥 🔥 🔥
 
 ---
 
-  City of Smallville, USA
+## Anytown, USA
+
+- Two GIS Users<!-- .element: class="fragment" -->
+- Esri Licensing Since 2000<!-- .element: class="fragment" -->
+
+---
+## Legacy Data Structure
+
+- Internal Network Share<!-- .element: class="fragment" -->
+- Shapefiles & Rasters<!-- .element: class="fragment" -->
+- 20 Years of Data, Files, Folders and Maps<!-- .element: class="fragment" -->
+- 20GB Vector Data <!-- .element: class="fragment" -->
+- ~300 Shapefiles<!-- .element: class="fragment" -->
+- 100s of MXDs<!-- .element: class="fragment" -->
+- 100s of .lock Files<!-- .element: class="fragment" -->
 
 ---
 
-  Two GIS Users
+<img src="https://media.giphy.com/media/XWJhb2RI0qjnO/giphy.gif">
 
 ---
 
-  Esri Licensing Since 2000
+<img src="https://media.giphy.com/media/pylpD8AoQCf3CQ1oO2/giphy.gif">
 
 ---
 
-  20 Years of Data, Files, Folders and Maps
+❗❗❗❗❗❗<br><strong>File</strong> <span>Geodatabases</span> ❗❗❗❗❗❗
 
 ---
 
-  20GB Vector Data
+<span>BUT...</span>
 
 ---
 
-  ~300 Shapefiles
+<img src="https://media.giphy.com/media/3o7buhiXgPU8GmQp4A/giphy.gif" width="50%">
+
+---
+## FGDB Issues
+- Local FGDB Not Backed Up<!-- .element: class="fragment" -->
+- S  l  o  w Network<!-- .element: class="fragment" -->
+- rANd0m Data Loss<!-- .element: class="fragment" -->
 
 ---
 
-  100s of MXDs
+## Esri Support
+- FGDB NOT Supported over Network Share<!-- .element: class="fragment" -->
+- Solution: RDMS Database on Enterprise<!-- .element: class="fragment" -->
 
 ---
 
-  100s of <span>.lock</span> Files
+😟 No Esri Enterprise
 
 ---
 
-  <img src="https://media.giphy.com/media/XWJhb2RI0qjnO/giphy.gif">
+SQL Server Express 😺
 
 ---
 
-  <img src="https://media.giphy.com/media/pylpD8AoQCf3CQ1oO2/giphy.gif">
+Get Glowing Review From SQL Exp User
 
 ---
 
-  ❗❗❗❗❗❗<br><strong>File</strong> <span>Geodatabases</span> ❗❗❗❗❗❗
+IT Gives me Spare Server
 
 ---
 
-  <span>BUT...</span>
+Setup SQL Server Express, Permissions & Import Data
 
 ---
 
-  <img src="https://media.giphy.com/media/3o7buhiXgPU8GmQp4A/giphy.gif" width="50%">
+![](pitfall_01.jpg)
+
+---
+## SQL Express Issues
+- Three Connection Limit!!<!-- .element: class="fragment" -->
+- 4GB Mem 👿<!-- .element: class="fragment" -->
+- Select/Start Editing Took Forever<!-- .element: class="fragment" -->
+---
+
+<img src="https://thumbs.gfycat.com/BriefWeeGalah-small.gif" style="width:100%">
 
 ---
 
-  <span>Slow</span> <strong>Network</strong>
+<span style="text-decoration:line-through;text-decoration-color:red;">Shapefiles<br>FBGB<br>SQL Server Express</span>
 
 ---
 
-  <span class="red">R</span><span class="green">a</span>n<span>d</span><span class="red">o</span><span class="green">m</span>
-  Data Loss
+Show Must Go On
 
 ---
 
-  <span class="esri">Esri</span> Support
+Start Exploring Alternatives
 
 ---
 
-  FGDB <span class="red">NOT</span> Supported over Network Share
-
-
----
-
-  <span class="esri">Esri</span> Solution: Enterprise Database
+<img src="https://i.pinimg.com/originals/85/45/27/85452729e29da56b29ed73ac93dfcd79.gif">
 
 ---
 
-  😟 No Esri Enterprise
+<img src="https://cdn.glitch.com/08811e29-66d4-4db8-9f1b-57c0d4d342fe%2Fqgis_azure.png?v=1596030658715">
 
 ---
 
-  SQL Server Express 😺
+PostgreSQL & PostGIS for the Database
 
 ---
 
-  Get Glowing Review From SQL Exp User
+Postgres First Release in 1996
 
 ---
 
-  IT Gives me Spare Server
+Postgres View-Only Supported in Arc*
 
 ---
 
-  Setup SQL Server Express, Permissions & Import Data
-
----
-
-  But Wait...
-
----
-
-  Three Connection Limit!!
-
----
-
-  4GB Mem 👿
-
----
-
-  <img src="https://thumbs.gfycat.com/BriefWeeGalah-small.gif" style="width:100%">
-
----
-
-  <span style="text-decoration:line-through;text-decoration-color:red;">Shapefiles<br>FBGB<br>SQL Server Express</span>
-
----
-
-  Show Must Go On
-
----
-
-  Start Exploring Alternatives
-
----
-
-  <img src="https://i.pinimg.com/originals/85/45/27/85452729e29da56b29ed73ac93dfcd79.gif">
-
----
-
-  <img src="https://cdn.glitch.com/08811e29-66d4-4db8-9f1b-57c0d4d342fe%2Fqgis_azure.png?v=1596030658715">
-
----
-
-  PostgreSQL & PostGIS for the Database
-
----
-
-  Postgres First Release in 1996
-
----
-
-  Postgres View-Only Supported in Arc*
-
----
-
-  <span class="green">QGIS</span> for Editing
-  <!-- <notes>Had to find a solution quickly that would work out of the box.</notes> -->
+<span class="green">QGIS</span> for Editing
+<!-- <notes>Had to find a solution quickly that would work out of the box.</notes> -->
 
 ---
 
@@ -185,7 +163,9 @@ Create Standard Data Naming Schema
 
 ---
 
-Add a Desktop to Web Pipeline (Node JS)
+Add a Desktop to Web Pipeline
+
+(Node JS)
 
 ---
 
@@ -235,37 +215,41 @@ Current Setup
 
 ---
 
-<strong>Desktop</strong>
+# Desktop
 
 ---
 
-<span class="green">QGIS</span> v3.1<br>
+## QGIS 3.1
 
 Editing & Print Maps
 
 ---
 
-<span class="red">ArcPro</span><br>Editing of AGOL & Print Maps
+## ArcGIS Pro
+
+Editing of AGOL & Print Maps
 
 ---
 
-<span class="red">ArcMap</span><br>Viewing for Legacy Users (2)
+## ArcMap
+
+Viewing for Legacy Users (2)
 
 ---
 
-<span>Web</span>
+# Web
 
 ---
 
-Mapbox WebMap<br>
+Mapbox Viewers
 
-WebAppBuilder<br>
+WebAppBuilder
 
 Collector
 
 ---
 
-Benefits
+# Benefits
 
 ---
 
@@ -280,7 +264,7 @@ No Licensing Costs
 
 ---
 
-Issues
+# Issues
 
 ---
 
@@ -296,7 +280,7 @@ No Staff Developer
 
 ---
 
-Future Direction
+# Future Direction
 
 ---
 
