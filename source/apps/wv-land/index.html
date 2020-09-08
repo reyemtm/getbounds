@@ -34,7 +34,19 @@
       style: 'mapbox://styles/mapbox/satellite-streets-v9'
     });
 
+    
     map.on("load", function() {
+      // map.addLayer({
+      //   id: "ortho",
+      //   type: "raster",
+      //   source: {
+      //     type: "raster",
+      //     scheme: "xyz",
+      //     tileSize: 256,
+      //     tiles: ["https://services.wvgis.wvu.edu/arcgis/rest/services/Imagery_BaseMaps_EarthCover/wv_imagery_WVGISTC_leaf_off_mosaic/MapServer/tile/{z}/{x}/{y}"]
+      //   }
+      // })
+
       map.addLayer({
         id: "land_fill",
         type: "fill",
@@ -105,9 +117,8 @@
 
 
       })
-
-
     })
+
 
   </script>
 
