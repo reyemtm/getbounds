@@ -15,6 +15,20 @@
         ]
       }
     },
+        {
+      "type": "Feature",
+      "properties": {
+        "title": "Cooper's Rock",
+        "zoom": 15
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.81575965881348,
+          39.63643098669977
+        ]
+      }
+    },
     {
       "type": "Feature",
       "properties": {
