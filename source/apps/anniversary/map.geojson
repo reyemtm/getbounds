@@ -1,6 +1,21 @@
 {
   "type": "FeatureCollection",
   "features": [
+        {
+      "type": "Feature",
+      "properties": {
+      "title": "The Midwest is our Home",
+       "description": "Here are some highlights!",
+        "zoom": 5
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.244140625,
+          37.33522435930639
+        ]
+      }
+    },
     {
       "type": "Feature",
       "properties": {
