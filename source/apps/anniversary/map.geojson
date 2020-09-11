@@ -34,6 +34,21 @@
         {
       "type": "Feature",
       "properties": {
+        "title": "Assateague National Seashore",
+        "description": "One of the coolest memories from this trip was the scores of people fishing along the docks. If only I had gotten a pciture of the woman with the intricate sushi in her lunch box. This is where I lost that nice knife Pop's got for me that was the same one I got when I worked at Kimberton CSA.",
+        "link": "https://photos.app.goo.gl/2B8i1uHybhw7A3WZ6"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.22785186767578,
+          38.05295746694274
+        ]
+      }
+    }
+        {
+      "type": "Feature",
+      "properties": {
         "title": "Cooper's Rock",
         "description": "I've been to this rock three times and this one is the most memorable.",
         "zoom": 15,
