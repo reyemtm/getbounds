@@ -35,8 +35,9 @@
       "type": "Feature",
       "properties": {
         "title": "Cooper's Rock",
-        "description": "I almost proposed to you out on this rock. Maybe I got cold feet then, but wasn't it worth the wait!",
-        "zoom": 15
+        "description": "I've been to this rock three times and this one is the most memorable.",
+        "zoom": 15,
+        "images": "coopers-rock.jpg"
       },
       "geometry": {
         "type": "Point",
@@ -54,7 +55,8 @@
         "marker-symbol": "",
         "title": "Shawnee Backpack Trail",
         "description": "You did not want to go on this three day hike as it was hot, you were pregnant, and the 1970s backpack was not a comfotable fit. Stil, I do have some fond memories. Most memorable to me were the howling screech owls in the middle of the second night and the overlook on the final day."
-        "zoom": 17
+        "zoom": 17,
+        "images": "shawnee.jpg"
       },
       "geometry": {
         "type": "Point",
@@ -71,7 +73,8 @@
         "marker-size": "medium",
         "marker-symbol": "",
         "title": "Late Honeymoon to Clearwater",
-        "zoom": 15
+        "zoom": 15,
+        "images":"clearwater-02.jpg"
 
       },
       "geometry": {
