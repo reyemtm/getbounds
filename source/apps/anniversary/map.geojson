@@ -4,6 +4,20 @@
     {
       "type": "Feature",
       "properties": {
+        "title": "Red River Gorge",
+        "zoom": 14
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -83.64217758178711,
+          37.81019081527746
+        ]
+      }
+    }
+    {
+      "type": "Feature",
+      "properties": {
         "marker-color": "#7e7e7e",
         "marker-size": "medium",
         "marker-symbol": "",
@@ -25,7 +39,7 @@
         "marker-size": "medium",
         "marker-symbol": "",
         "title": "Late Honeymoon to Clearwater",
-        "zoom": 17
+        "zoom": 15
 
       },
       "geometry": {
