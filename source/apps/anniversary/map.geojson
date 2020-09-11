@@ -20,7 +20,7 @@
       "type": "Feature",
       "properties": {
         "title": "Red River Gorge",
-        "description": "This was one of the best trips I have ever been on. Complete with rain, snakes, Ale-8-One and so much amazing...nature!"
+        "description": "This was one of the best trips I have ever been on. Complete with rain, snakes, Ale-8-One and so much amazing...nature!",
         "zoom": 14
       },
       "geometry": {
@@ -35,7 +35,7 @@
       "type": "Feature",
       "properties": {
         "title": "Cooper's Rock",
-        "description": "I almost proposed to you out on this rock. Maybe I got cold feet then, but wasn't it worth the wait!"
+        "description": "I almost proposed to you out on this rock. Maybe I got cold feet then, but wasn't it worth the wait!",
         "zoom": 15
       },
       "geometry": {
