@@ -17,6 +17,24 @@
           38.741732848875834
         ]
       }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#7e7e7e",
+        "marker-size": "medium",
+        "marker-symbol": "",
+        "title": "Late Honeymoon to Clearwater",
+        "zoom": 17
+
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -82.82873868942261,
+          27.985382269269753
+        ]
+      }
     }
   ]
 }
