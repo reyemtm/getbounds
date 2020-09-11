@@ -35,6 +35,7 @@
       "type": "Feature",
       "properties": {
         "title": "Cooper's Rock",
+        "description": "I almost proposed to you out on this rock. Maybe I got cold feet then, but wasn't it worth the wait!"
         "zoom": 15
       },
       "geometry": {
