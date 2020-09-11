@@ -46,6 +46,22 @@
         ]
       }
     },
+    {
+      "type": "Feature",
+      "properties": {
+        "title": "Delaware",
+        "description": "",
+        "link": "https://photos.app.goo.gl/AgJvr3t1YMoEDmAQ7",
+        "images": "delaware-01.jpg"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.09017944335936,
+          38.80011914392429 
+        ]
+      }
+    },
         {
       "type": "Feature",
       "properties": {
@@ -97,6 +113,21 @@
         "coordinates": [
           -82.82873868942261,
           27.985382269269753
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "title": "Asheville, NC",
+        "images": "asheville.jpg",
+        "description": "Would love to go back some time."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -82.287922,
+          35.637312
         ]
       }
     }
