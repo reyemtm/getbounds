@@ -1,0 +1,22 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#7e7e7e",
+        "marker-size": "medium",
+        "marker-symbol": "",
+        "title": "Shawnee Backpack Trail",
+        "zoom": 17
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -83.19748878479004,
+          38.741732848875834
+        ]
+      }
+    }
+  ]
+}
