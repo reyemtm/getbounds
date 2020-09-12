@@ -7,7 +7,11 @@
       "title": "The Midwest is our Home",
        "description": "Here some highlights of the coolest places we've visited over the years.",
         "zoom": 5,
-        "styles": ["mapbox://styles/reyemtm/ckeynwdip13zi1apldw932om9"]
+        "styles": [
+          "mapbox://styles/reyemtm/ckeynwdip13zi1apldw932om9", 
+          "mapbox://styles/reyemtm/cjaa1t19g22f52rmnmnbjvx2q",
+          "mapbox://styles/reyemtm/ckeyxgmno31oh19nyas7dg8dq"
+        ]
       },
       "geometry": {
         "type": "Point",
@@ -38,6 +42,7 @@
         "title": "Assateague National Seashore",
         "description": "One of the coolest memories from this trip was the scores of people fishing along the docks. If only I had gotten a pciture of the woman with the intricate sushi in her lunch box. This is where I lost that nice knife Pop's got for me that was the same one I got when I worked at Kimberton CSA.",
         "link": "https://photos.app.goo.gl/2B8i1uHybhw7A3WZ6",
+        "images": "https://www.getbounds.com/apps/anniversary/assateague.jpg",
         "zoom": 11
       },
       "geometry": {
@@ -52,7 +57,7 @@
       "type": "Feature",
       "properties": {
         "title": "Delaware",
-        "description": "",
+        "description": "One of the most laid back campgrounds on the east coast. We used to come to the 'Jersey Shore' every summer as a kid and it's been so cool to keep those memories alive with you and keep that tradition going.",
         "link": "https://photos.app.goo.gl/AgJvr3t1YMoEDmAQ7",
         "images": "https://www.getbounds.com/apps/anniversary/delaware-02.jpg",
         "zoom": 11
@@ -69,7 +74,7 @@
       "type": "Feature",
       "properties": {
         "title": "Cooper's Rock",
-        "description": "I've been to this rock three times and this one is the most memorable.",
+        "description": "This was one of my favorite places, though I had only been here once or twice. I was so excited to take you here. We have to go back sometime.",
         "zoom": 13,
         "images": "https://www.getbounds.com/apps/anniversary/coopers-rock.jpg"
       },
@@ -88,7 +93,7 @@
         "marker-size": "medium",
         "marker-symbol": "",
         "title": "Shawnee Backpack Trail",
-        "description": "You did not want to go on this three day hike as it was hot, you were pregnant, and the 1970s backpack was not a comfotable fit. Stil, I do have some fond memories. Most memorable to me were the howling screech owls in the middle of the second night and the overlook on the final day.",
+        "description": "You did not want to go on this three day hike as it was rainy, you were pregnant, and the 1970s backpack was not a comfotable fit. Stil, I do have some fond memories. Most memorable to me were the howling screech owls in the middle of the second night and the overlook on the final day.",
         "zoom": 14,
         "images": "https://www.getbounds.com/apps/anniversary/shawnee.jpg",
         "link": "https://photos.app.goo.gl/AsGUTRdfMB3S12kp6"
@@ -107,8 +112,8 @@
         "marker-color": "#7e7e7e",
         "marker-size": "medium",
         "marker-symbol": "",
-        "title": "Late Honeymoon to Clearwater",
-        "zoom": 15,
+        "title": "Five Year Anniversary to Clearwater",
+        "zoom": 13,
         "images":"https://www.getbounds.com/apps/anniversary/clearwater-02.jpg",
         "link": "https://photos.app.goo.gl/SkMuhsqJTFNdH99J9"
 
