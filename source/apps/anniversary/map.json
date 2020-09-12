@@ -5,7 +5,7 @@
       "type": "Feature",
       "properties": {
       "title": "The Midwest is our Home",
-       "description": "Here are some highlights!",
+       "description": "Here some highlights of the coolest places we've visited over the years.",
         "zoom": 5,
         "styles": ["mapbox://styles/reyemtm/ckeynwdip13zi1apldw932om9"]
       },
@@ -54,7 +54,7 @@
         "title": "Delaware",
         "description": "",
         "link": "https://photos.app.goo.gl/AgJvr3t1YMoEDmAQ7",
-        "images": "https://www.getbounds.com/apps/anniversary/delaware-01.jpg",
+        "images": "https://www.getbounds.com/apps/anniversary/delaware-02.jpg",
         "zoom": 11
       },
       "geometry": {
@@ -89,8 +89,9 @@
         "marker-symbol": "",
         "title": "Shawnee Backpack Trail",
         "description": "You did not want to go on this three day hike as it was hot, you were pregnant, and the 1970s backpack was not a comfotable fit. Stil, I do have some fond memories. Most memorable to me were the howling screech owls in the middle of the second night and the overlook on the final day.",
-        "zoom": 17,
-        "images": "https://www.getbounds.com/apps/anniversary/shawnee.jpg"
+        "zoom": 14,
+        "images": "https://www.getbounds.com/apps/anniversary/shawnee.jpg",
+        "link": "https://photos.app.goo.gl/AsGUTRdfMB3S12kp6"
       },
       "geometry": {
         "type": "Point",
@@ -108,7 +109,8 @@
         "marker-symbol": "",
         "title": "Late Honeymoon to Clearwater",
         "zoom": 15,
-        "images":"https://www.getbounds.com/apps/anniversary/clearwater-02.jpg"
+        "images":"https://www.getbounds.com/apps/anniversary/clearwater-02.jpg",
+        "link": "https://photos.app.goo.gl/SkMuhsqJTFNdH99J9"
 
       },
       "geometry": {
