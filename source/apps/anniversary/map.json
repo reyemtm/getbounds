@@ -6,7 +6,8 @@
       "properties": {
       "title": "The Midwest is our Home",
        "description": "Here are some highlights!",
-        "zoom": 5
+        "zoom": 5,
+        "styles": ["mapbox://styles/reyemtm/ckeynwdip13zi1apldw932om9"]
       },
       "geometry": {
         "type": "Point",
@@ -21,7 +22,7 @@
       "properties": {
         "title": "Red River Gorge",
         "description": "This was one of the best trips I have ever been on. Complete with rain, snakes, Ale-8-One and so much amazing...nature!",
-        "zoom": 14
+        "zoom": 13
       },
       "geometry": {
         "type": "Point",
@@ -36,7 +37,8 @@
       "properties": {
         "title": "Assateague National Seashore",
         "description": "One of the coolest memories from this trip was the scores of people fishing along the docks. If only I had gotten a pciture of the woman with the intricate sushi in her lunch box. This is where I lost that nice knife Pop's got for me that was the same one I got when I worked at Kimberton CSA.",
-        "link": "https://photos.app.goo.gl/2B8i1uHybhw7A3WZ6"
+        "link": "https://photos.app.goo.gl/2B8i1uHybhw7A3WZ6",
+        "zoom": 11
       },
       "geometry": {
         "type": "Point",
@@ -52,7 +54,8 @@
         "title": "Delaware",
         "description": "",
         "link": "https://photos.app.goo.gl/AgJvr3t1YMoEDmAQ7",
-        "images": "https://www.getbounds.com/apps/anniversary/delaware-01.jpg"
+        "images": "https://www.getbounds.com/apps/anniversary/delaware-01.jpg",
+        "zoom": 11
       },
       "geometry": {
         "type": "Point",
@@ -67,7 +70,7 @@
       "properties": {
         "title": "Cooper's Rock",
         "description": "I've been to this rock three times and this one is the most memorable.",
-        "zoom": 15,
+        "zoom": 13,
         "images": "https://www.getbounds.com/apps/anniversary/coopers-rock.jpg"
       },
       "geometry": {
