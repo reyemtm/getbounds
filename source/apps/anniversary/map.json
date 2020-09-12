@@ -52,7 +52,7 @@
         "title": "Delaware",
         "description": "",
         "link": "https://photos.app.goo.gl/AgJvr3t1YMoEDmAQ7",
-        "images": "delaware-01.jpg"
+        "images": "https://www.getbounds.com/apps/anniversary/delaware-01.jpg"
       },
       "geometry": {
         "type": "Point",
@@ -68,7 +68,7 @@
         "title": "Cooper's Rock",
         "description": "I've been to this rock three times and this one is the most memorable.",
         "zoom": 15,
-        "images": "coopers-rock.jpg"
+        "images": "https://www.getbounds.com/apps/anniversary/coopers-rock.jpg"
       },
       "geometry": {
         "type": "Point",
@@ -87,7 +87,7 @@
         "title": "Shawnee Backpack Trail",
         "description": "You did not want to go on this three day hike as it was hot, you were pregnant, and the 1970s backpack was not a comfotable fit. Stil, I do have some fond memories. Most memorable to me were the howling screech owls in the middle of the second night and the overlook on the final day.",
         "zoom": 17,
-        "images": "shawnee.jpg"
+        "images": "https://www.getbounds.com/apps/anniversary/shawnee.jpg"
       },
       "geometry": {
         "type": "Point",
@@ -105,7 +105,7 @@
         "marker-symbol": "",
         "title": "Late Honeymoon to Clearwater",
         "zoom": 15,
-        "images":"clearwater-02.jpg"
+        "images":"https://www.getbounds.com/apps/anniversary/clearwater-02.jpg"
 
       },
       "geometry": {
@@ -120,7 +120,7 @@
       "type": "Feature",
       "properties": {
         "title": "Asheville, NC",
-        "images": "asheville.jpg",
+        "images": "https://www.getbounds.com/apps/anniversary/asheville.jpg",
         "description": "Would love to go back some time."
       },
       "geometry": {
