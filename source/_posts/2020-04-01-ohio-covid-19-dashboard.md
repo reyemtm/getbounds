@@ -7,7 +7,11 @@ img: covid-19.png
 tags:
   - mapbox
 date: 2020-04-01 14:55:00
+updated: 2020-09-13
 ---
+
+*Update: There are a wide variety of great COVID-19 trackers in the wild, including ones from Bing, Google, National Geographic, and the New York Times. Therefore I will no longer be updating this data visualization.*
+
 Ohio and Governor Mike Dewine have been at the forefront of the fight against the coronavirus epidemic. This pandemic has reached all corners of Ohio, from rural Appalachia to our urban centers. To track the spread and scope of the virus for my home state I created a simple [COVID-19 tracking dashboard](/covid19-oh/). This dashboard tracks total cases, the rate of growth, and the spread of the virus by county.
 
 <iframe src="/covid19-oh/?static=true" class="div-wide covid" width="100%" height="900px" frameborder="none" scrolling="no" style="border:none;"></iframe>
