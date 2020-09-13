@@ -9,8 +9,8 @@ description: >-
   GPS track recorded with MyTracks at Conkle's Hollow Nature Preserve in the
   Hocking Hills region of Ohio.
 img: c-hollow.jpg
-date: 2019-04-10 00:00:00
-datefirstposted: 2015-10-12 00:00:00
+date_updated: 2019-04-10 00:00:00
+date: 2015-10-12 00:00:00
 ---
 One of the benefits of using the open source Leaflet mapping library is the wide variety of available community supported plugins. This simple map uses two great plugins - [Leaflet Elevation](https://github.com/MrMufflon/Leaflet.Elevation) and [Leaflet Ajax](https://github.com/calvinmetcalf/leaflet-ajax). The ajax plugin provides a simple way to load data, while the elevation plugin shows elevation from a GeoJSON file in an interactive chart, added to the map as a Leaflet Control. The GeoJSON file must include coordinates.
 

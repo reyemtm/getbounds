@@ -1,7 +1,7 @@
 ---
 title: Leaflet Photo Map
-date: 2018-10-28
-posted-date: 2015-07-13 00:00:00 Z
+date_updated: 2018-10-28
+date: 2015-07-13 00:00:00 Z
 tags:
 - leaflet
 layout: post

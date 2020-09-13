@@ -26,7 +26,9 @@
           <%}else{%>
           <div class="mobile-img" style="height: 200px;overflow:hidden;background-image:url('/assets/img/<%- post.img %>');background-size: cover;background-position: center;"></div>
           <%}%>
+        <!-- prior post content -->
         <%- post.content %>
+        <!-- end post content -->
       <% } %>
     </div>
 
@@ -39,12 +41,11 @@
     async>
     </script> -->
 
-    <br><br>
-    <footer>
-      <% if (!index){ %>
+    <!--footer>
+      <%/* if (!index){ %>
         <%- partial('nav') %>
-      <% } %>
-    </footer>
+      <% } */%>
+    </footer-->
   </div>
     <div class="container post">
       <%- list_related_posts({
