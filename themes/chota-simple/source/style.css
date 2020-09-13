@@ -18,7 +18,7 @@
   --color-success: #28bd14;
   --grid-maxWidth: 180rem;
   --grid-gutter: 4rem;
-  --font-size: 2rem;
+  --font-size: 1.8rem;
   --font-family-headings: "Quicksand",-apple-system, BlinkMacSystemFont, Avenir, "Avenir Next",
   "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
   "Droid Sans", "Helvetica Neue", sans-serif;
@@ -52,9 +52,6 @@ html, body {
 h1, h2, h3, h4, h5, h6 {
   margin: 0.1em 0 0.1em 0;
   font-family: var(--font-family-headings);
-}
-h1 {
-  font-size: 2.4em;
 }
 input {
   border-radius: 2px!important;
@@ -233,11 +230,16 @@ souurce: https://stackoverflow.com/questions/20544309/css-sliding-underline
 .hero-text {
   position: absolute;
   bottom: 0;
-  padding: 4rem;
+  padding: 2rem;
   z-index: 2;
   color: white;
   transition: opacity 0.9s ease-in-out;
   z-index: 100;
+}
+@media screen and (min-width: 768px) {
+  .hero-text {
+    padding: 4rem;
+  }
 }
 .hero-text h5 {
   margin: 1rem 0 2rem 0;
@@ -354,7 +356,7 @@ a.zp-headline {
 .footer {
   background: var(--color-dark);
   color: #ccc;
-  font-size: 1.4rem;
+  font-size: 1.5rem;
 }
 .footer .container {
   min-height: 200px;
@@ -388,8 +390,12 @@ a.zp-headline {
 .modal .card {
   z-index: 100;
   background: white;
+  padding: 2rem;
   width: 600px;
   max-width: 96%;
+}
+.modal .card header {
+  height: auto;
 }
 /*css only modal - source - specrte css*/
 .modal {
@@ -492,14 +498,19 @@ img {
   .post-header {
     margin: 0;
   }
+  .card {
+    padding: 1rem 0;
+  }
   .card header {
     height: 260px;
   }
   .card figure {
-    width: 110vw;
-    margin-left: -60px;
+    width: 100vw;
+    margin-left: -8%;
     border-radius: 0;
-    position: absolute;
+  }
+  .post .card figure {
+    margin-left: -10%;
   }
   .mobile-img {
     display: block;
