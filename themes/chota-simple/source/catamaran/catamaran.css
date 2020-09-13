@@ -1,0 +1,20 @@
+@font-face {
+  font-family: "Catamaran";
+  font-weight: 400;
+  font-style: normal;
+  font-display: fallback;
+  src: local("Catamaran"),
+      url('files/catamaran-latin-400.woff2'),
+      url('files/catamaran-latin-400.woff'),
+      url("v4/Catamaran-Light.ttf");
+}
+@font-face {
+    font-family: "Catamaran";
+    font-weight: 600;
+    font-style: normal;
+    font-display: fallback;
+    src: local("Catamaran-Bold"),
+        url('files/catamaran-latin-600.woff2'),
+        url('files/catamaran-latin-600.woff'),
+        url("v4/Catamaran-Bold.ttf");
+}

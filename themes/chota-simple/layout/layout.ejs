@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="<%- config.theme_color %>" />
+
+  <%- open_graph({
+    twitter_id: theme.twitter,
+    image: "/assets/img/" + page.img
+  }) %>
+  <% if (!page.img) {%>
+  <!--images-->
+  <meta name="og:image" content="/assets/img/<%- config.defaultimage %>"><%}%>
+
+  <% if (theme.rss){ %>
+  <link rel="alternate" href="<%= url_for(theme.rss) %>" title="<%= config.title %>" type="application/atom+xml">
+  <% } %>
+
+  <% if (theme.favicon){ %>
+  <link rel="icon" href="<%- theme.favicon %>">
+  <% } %>
+
+  <% if (page.layout == "slides" || page.layout == "big") { %><%}else{%>
+  <!-- default styles -->
+  <link href="https://fonts.googleapis.com/css2?family=Hind:wght@300;400;500;700&family=Palanquin:wght@300;400;500&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/text-ui.css">
+  <%}%>
+
+  <% if (page.header) {%>
+  <!-- scripts and styles in page.header -->
+  <%- page.header %>
+  <%}%>
+
+  <% if (page.style) {%>
+  <!-- page.style -->
+  <style>
+    <%- page.style %>
+  </style>
+  <%}%>
+
+  <% if (is_home()) {%>
+  <script>
+    console.log("home")
+  </script>
+  <%}%>
+</head>
+  <body class="<% if (page.theme) {%><%- page.theme %><%}else{%>light<%}%>">
+    <% if (page.layout === "slides" || page.layout === "big") {%>
+  <%- body %>
+  <%}else{%>
+
+  <!-- nav and header -->
+
+  <!-- body -->
+  <div id="content" class="container main">
+    <%- body %>
+  </div>
+
+  <!-- footer -->
+
+  <!-- modal -->
+  <%- partial('modal.ejs') %>
+  <!-- scripts -->
+  <script>
+    document.getElementById("modal-contact-cancel").addEventListener('click', function (e) {
+      e.preventDefault();
+      window.location.hash = "close"
+    });
+  </script>
+  <%}%>
+    <script src="/highlight.min.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function (event) {
+        document.querySelectorAll('pre code').forEach(function (block) {
+          hljs.highlightBlock(block);
+        });
+      });
+    </script>
+    <script>
+
+      window.onload = function() {
+        if (localStorage.getItem("nightmode")) {
+          document.body.classList.add("nightmode")
+        }
+      }
+
+      document.querySelector(".js-nightmode-toggle").addEventListener("click", function () { nightmodeToggle("nightmode") })
+      
+      function nightmodeToggle(classname) {
+        const body = document.body;
+        if (body.classList.contains(classname)) {
+          body.classList.remove(classname)
+          localStorage.removeItem(classname)
+        } else {
+          body.classList.add(classname)
+          localStorage.setItem(classname, 1)
+        }
+      }
+    </script>
+
+</body>
+</html>

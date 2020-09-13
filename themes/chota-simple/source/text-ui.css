@@ -1,0 +1,163 @@
+:root {
+  --color-primary: hsla(177, 70%, 30%, 1);
+  --grid-maxWidth: 120rem;
+  --grid-gutter: 1.4rem;
+}
+
+body,
+p,
+em,
+span,
+div,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+a,
+header,
+main,
+section,
+article,
+footer {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: "Hind", sans-serif;
+  font-weight: 300;
+}
+
+code,
+kbd,
+pre,
+samp,
+tt {
+  font-family: monospace;
+}
+
+@media screen and (min-width: 900px) {
+  .gb-sidebar {
+    position: fixed;
+    max-width: 300px;
+  }
+
+  .col-9-md,
+  .col-9-lg {
+    position: relative;
+    left: 320px;
+    max-width: calc(100vw - 380px);
+  }
+}
+
+.container {
+  max-width: 1300px;
+}
+
+.post {
+  max-width: 700px;
+}
+.post h1 {
+  font-size: 4rem;
+  font-family: "Palanquin";
+  font-weight: 600;
+}
+.title {
+  margin-bottom: 5px;
+  font-weight: 500;
+  font-family: "Palanquin"
+}
+
+.tag-cloud span {
+  opacity: 0.8;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
+.gb-sidebar {
+  width: 100%;
+}
+
+.gb-sidebar--menu {
+  margin-top: 0.7rem;
+  text-align: center;
+}
+
+.gb-sidebar--menu .title {
+  font-weight: 400;
+  margin: 0 1rem;
+}
+
+.gb-sidebar hr {
+  background-color: hsla(177, 70%, 40%, 0.2);
+}
+
+.gb-sidebar--social .button.clear {
+  margin: 0 1rem;
+  padding: 12px;
+}
+
+@media screen and (max-width: 900px) {
+  .gb-sidebar--menu {
+    text-align: center;
+  }
+}
+
+
+a {
+  color: hsla(177, 70%, 8%, 1);
+  text-decoration: none;
+}
+
+a:not(.title) {
+  text-decoration: underline;
+}
+
+a:hover,
+a:focus {
+  text-decoration: underline;
+  color: var(--color-primary);
+}
+
+a:hover:not(.title),
+a:focus:not(.title) {
+  background-color: whitesmoke;
+}
+
+
+.nightmode {
+  color: rgba(255, 255, 255, 0.9);
+  background: #121212;
+}
+
+.nightmode a:not(hover),
+.nightmode a:not(focus) {
+  color: var(--color-primary);
+}
+
+.nightmode a:hover:not(.title),
+a:focus:not(.title) {
+  background-color: rgba(245, 245, 245, 0.2);
+}
+
+.nightmode .gb-sidebar hr {
+  background-color: hsla(177, 70%, 30%, 0.7);
+}
+
+figure {
+  margin: 1rem 0;
+}
+/* figure {
+  width: 100%;
+  height: 60px;
+  overflow: hidden;
+  float: left;
+  margin: 0 2rem 0 0;
+  border-radius: 3px;
+  display: none;
+}
+
+figure>img {
+  min-width: 100%;
+  min-height: 100%;
+  object-fit: cover;
+} */

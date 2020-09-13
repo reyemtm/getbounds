@@ -1,0 +1,21 @@
+# Header
+menu:
+  Home: /
+  Archives: /archives
+rss: /feed.rss
+
+# Content
+excerpt_link: Read More
+# fancybox: true???
+
+# widget behavior
+archive_type: 'yearly'
+show_count: false
+
+# Miscellaneous
+google_analytics:
+gauges_analytics:
+favicon: /favicon.png
+twitter: getBounds
+
+theme_color: "#136a66"
