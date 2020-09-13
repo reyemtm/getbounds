@@ -97,7 +97,7 @@ time_format: HH:mm:ss
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: chota-simple
+theme: chota-hero
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
