@@ -16,7 +16,7 @@ header-img: header-vacay-2.jpg
 img: header-vacay-2.jpg
 ---
 
-**Update October, 2018** This map originally used Google's Picasa Web API, but this will [soon be shut down](https://developers.google.com/picasa-web/). Instead of migrating to another Google service, I simply extracted the EXIF data from the photos ([using this tool](http://www.br-software.com/extracter.html)). The resulting csv was converted to json, which worked as a drop-in replacement for former Picasa feed.
+*Update: This map originally used Google's Picasa Web API, but this will [soon be shut down](https://developers.google.com/picasa-web/). Instead of migrating to another Google service, I simply extracted the EXIF data from the photos ([using this tool](http://www.br-software.com/extracter.html)). The resulting csv was converted to json, which worked as a drop-in replacement for former Picasa feed.*
 
 <iframe src="/apps/photo-map.html" width="100%" height="600px" frameborder="0" style="border: solid thick #1c1d21;"></iframe>
 

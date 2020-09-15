@@ -3,18 +3,20 @@
 
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   <link rel="manifest" href="/manifest.json">
   <meta name="theme-color" content="<%- config.theme_color %>" />
-
+  <!-- opengraph -->
   <%- open_graph({
     twitter_id: theme.twitter,
     image: "/assets/img/" + page.img
   }) %>
   <% if (!page.img) {%>
-  <!--images-->
-  <meta name="og:image" content="/assets/img/<%- config.defaultimage %>"><%}%>
-
+  <!-- image -->
+  <meta name="og:image" content="/assets/img/<%- config.defaultimage %>">
+  <%}%>
+  <!-- rss -->
   <% if (theme.rss){ %>
   <link rel="alternate" href="<%= url_for(theme.rss) %>" title="<%= config.title %>" type="application/atom+xml">
   <% } %>
@@ -44,9 +46,7 @@
   <%}%>
 
   <% if (is_home()) {%>
-  <script>
-    console.log("home")
-  </script>
+  <!-- is_home -->
   <%}%>
 </head>
   <body class="<% if (page.theme) {%><%- page.theme %><%}else{%>light<%}%>">

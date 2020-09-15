@@ -114,8 +114,8 @@ include:
 #Hexo Exceprt Plugin
 excerpt:
   depth: 1
-  excerpt_excludes: []
-  more_excludes: []
+  excerpt_excludes: ["iframe", "img"]
+  more_excludes: ["iframe", "img"]
   hideWholePostExcerpts: true
 
 #https://github.com/vseventer/hexo-imagemin - makes generating very slow took out due to issue with Node 12
@@ -179,3 +179,26 @@ popularPosts:
   # tail: v=2019042200000
   tags:
     'img[data-orign]':  data-orign
+
+html_prettify:
+  enable: true
+  #exclude:
+  #   - "*/**/test"
+  options:
+    indent_size: 2
+    indent_char: " "
+    max_preserve_newlines: "-1"
+    preserve_newlines: false
+    keep_array_indentation: true
+    break_chained_methods: false
+    indent_scripts: normal
+    brace_style: expand
+    space_before_conditional: true
+    unescape_strings: false
+    jslint_happy: true
+    end_with_newline: true
+    wrap_line_length: "0"
+    indent_inner_html: false
+    comma_first: false
+    e4x: false
+    indent_empty_lines: false

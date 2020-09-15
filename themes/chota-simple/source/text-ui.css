@@ -50,6 +50,7 @@ tt {
 
 .container {
   max-width: 1300px;
+  padding: 1rem 0;
 }
 
 .post {
