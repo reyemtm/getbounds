@@ -68,7 +68,7 @@ head: >-
 ///
 
 ## Legacy Setup
-
+- ArcMap & ArcPad
 - Shapefiles & Rasters
 - Internal Network Share
 
@@ -142,7 +142,7 @@ RDMS Database on Enterprise
 
 ///
 
-### New (Unsused) Server
+## Repurposed Server
 - Windows Server 2012
 - 8 Cores
 - 16GB RAM
@@ -153,16 +153,20 @@ RDMS Database on Enterprise
 
 ///
 
-![](pitfall_01.jpg)
+# Everything was working great...
+
+///
+
+![](pitfall_02.jpg)
 
 ///
 ## SQL Express Issues
 - Select/Start Editing Took Forever
-- Three Connection Limit!!
+- Three Connection Limit
 - 4GB Mem 👿
 ///
 
-<img src="https://thumbs.gfycat.com/BriefWeeGalah-small.gif" style="width:100%">
+![](https://thumbs.gfycat.com/BriefWeeGalah-small.gif)
 
 ///
 
@@ -181,7 +185,7 @@ RDMS Database on Enterprise
 
 ///
 
-<img src="https://i.pinimg.com/originals/85/45/27/85452729e29da56b29ed73ac93dfcd79.gif">
+![](https://i.pinimg.com/originals/85/45/27/85452729e29da56b29ed73ac93dfcd79.gif)
 
 ///
 
@@ -203,11 +207,13 @@ PostGIS v3.0
 
 ///
 
-Postgres First Release in 1996
+Postgres First Released in 1996
 
 ///
 
-Postgres View-Only Supported in Arc*
+ArcMap & ArcPro
+
+View-Only Support
 
 ///
 
@@ -220,7 +226,7 @@ Postgres View-Only Supported in Arc*
 
 ///
 
-QGIS First Release in 2002
+QGIS First Released in 2002
 
 ///
 
@@ -252,32 +258,35 @@ Vector Tiles
 
 ///
 
-# Benefits of a RDMS
+# Benefits
 
 ///
 
-Geometry Checks<br>
+Geometry Checks
 
-Database Views<br>
+Database Views
 
-Simple Backups<br>
+Simple Backups
 
-No Licensing Costs
+No Additional Licensing Costs
 
-
-///
-
-# Issues with Postgres & PostGIS
 
 ///
 
-No Simple Editor Tracking
+# Issues
 
-No Auto "ShapeLength" Fields
+///
 
-Transformation Issues
+Editor Tracking
 
-No Staff Developer or DB Admin
+"ShapeLength" Fields
+
+Transformations
+
+DB Admin
+
+Editing in ArcMap or Pro
+
 
 ///
 
@@ -285,17 +294,14 @@ No Staff Developer or DB Admin
 
 ///
 
-pg_featureserv
+## Live Web Services
 
-pg_tileserv
-
-///
-
-Vector & Feature Web Services written in GO
+> pg_featureserv
+> pg_tileserv
 
 ///
 
-## Why Not Enterprise?
+## Enterprise?
 
 ///
 
@@ -307,7 +313,7 @@ COVID-19 & Budget Cuts
 
 ///
 
-# Overview of Current Setup
+# Overview
 
 ///
 ## Database
@@ -356,17 +362,16 @@ Collector on iOS
 
 ///
 
-Water Utility Data Stored on AGOL
+## AGOL Data
+
+- Authoritative Water Utility Data
+- Constantly Updated in Collector
+- Downloaded Each Night
+- Converted to Vector Tiles for Mapbox Viewer
 
 ///
 
-Downloaded Each Night for Mapbox Map Viewer
-
-///
-
-# Thanks
-
-## Questions?
+# Questions?
 
 ///
 
