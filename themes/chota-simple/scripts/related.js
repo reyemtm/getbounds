@@ -72,11 +72,14 @@ function listRelatedPosts(options) {
   }
 
   var postList = [];
-  this.post.tags.each(function(tag){
-    tag.posts.each(function(post){
-      postList.push(post);
+  if (this.post.tags) {
+    this.post.tags.each(function(tag){
+      tag.posts.each(function(post){
+        postList.push(post);
+      });
     });
-  });
+  }
+
 
   postList = addCount(postList, '_id', 'count');
 
@@ -99,7 +102,9 @@ function listRelatedPosts(options) {
     result += "";
   }else{
     // result += '<ul class="' + options.ulClass + '">';
-    result += '<h3 class="zp-headline zp-headline-dark"><span>Related Posts</span></h3><div class="row">';
+    result += '<div class="container post">';
+    result += '<h3 class="zp-headline zp-headline-dark"><span>Related Posts</span></h3>'
+    result += '<div class="row">';
     if (options.card) {
       for (var i = 0; i < count; i++) {
         // result += '<li class="' + options.liClass + '">' + '<a class="' + options.aClass + '" href="' + root + postList[i].path + '">' + postList[i].title + '<br>' + postList[i].subtitle + '</a><div class="' + options.abstractClass + '">' + striptags(postList[i].content).substring(0, options.abstractLength) + '</div></li>';
@@ -128,7 +133,7 @@ function listRelatedPosts(options) {
       }
     }
     // result += "</ul>"
-    result += '</div>';
+    result += '</div></div>';
   }
 
   return result;

@@ -54,14 +54,10 @@ tt {
 }
 
 .post {
-  max-width: 700px;
+  width: 100%;
+  max-width: 800px;
 }
-.post h1 {
-  font-size: 4rem;
-  font-family: "Palanquin";
-  font-weight: 600;
-}
-.title {
+.title, .post .title {
   margin-bottom: 5px;
   font-weight: 500;
   font-family: "Palanquin"

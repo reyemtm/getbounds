@@ -18,7 +18,7 @@
   --color-success: #28bd14;
   --grid-maxWidth: 180rem;
   --grid-gutter: 4rem;
-  --font-size: 1.8rem;
+  --font-size: 1.6rem;
   --font-family-headings: "Quicksand",-apple-system, BlinkMacSystemFont, Avenir, "Avenir Next",
   "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
   "Droid Sans", "Helvetica Neue", sans-serif;
@@ -208,8 +208,8 @@ souurce: https://stackoverflow.com/questions/20544309/css-sliding-underline
 .hero {
   position: relative;
   width: 100%;
-  height: 100vh;
-  max-height: 100vh;
+  height: 440px!important;
+  max-height: 50vh;
   overflow: hidden;
   background: var(--color-dark);
 }
@@ -307,8 +307,11 @@ souurce: https://stackoverflow.com/questions/20544309/css-sliding-underline
 a.post-title:hover, a.post-title:focus {
   color: var(--color-primary);
 }
-.post-title h4, .post-title h2 {
+.post-title h2, .post-title h4 {
   margin: 0;
+}
+.post-title h4 {
+  font-size: 1em;
 }
 .post-archive {
   margin: 2rem 0 6rem;

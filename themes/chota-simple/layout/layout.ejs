@@ -89,7 +89,9 @@
         }
       }
 
-      document.querySelector(".js-nightmode-toggle").addEventListener("click", function () { nightmodeToggle("nightmode") })
+      if (document.querySelector(".js-nightmode-toggle")) {
+        document.querySelector(".js-nightmode-toggle").addEventListener("click", function () { nightmodeToggle("nightmode") })
+      }
       
       function nightmodeToggle(classname) {
         const body = document.body;

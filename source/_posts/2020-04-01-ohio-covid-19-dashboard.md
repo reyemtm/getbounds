@@ -10,7 +10,7 @@ date: 2020-04-01 14:55:00
 date_updated: 2020-09-13
 ---
 
-*Update: This visualization is no longer being date_updated. There are a wide variety of authoritative COVID-19 trackers on the internet, including ones from Bing, Google, National Geographic, the New York Times, asl well as the sites liseted at the bottom of this post. Please refer to these for the latest updates. What follows below is my take on a COVID-19 tracker using open source tools.*
+*Update: This visualization is no longer being updated. There are a wide variety of authoritative COVID-19 trackers on the internet, including ones from Bing, Google, National Geographic, the New York Times, asl well as the sites liseted at the bottom of this post. Please refer to these for the latest updates. What follows below is my take on a COVID-19 tracker using open source tools.*
 
 Ohio and Governor Mike Dewine have been at the forefront of the fight against the coronavirus epidemic. This pandemic has reached all corners of Ohio, from rural Appalachia to our urban centers. To track the spread and scope of the virus for my home state I created a simple [COVID-19 tracking dashboard](/covid19-oh/). This dashboard tracks total cases, the rate of growth, and the spread of the virus by county.
 

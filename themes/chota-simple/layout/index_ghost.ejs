@@ -1,0 +1,168 @@
+<main class="container">
+  <div class="row">
+    <% site.posts.sort('-date').each(function(post,i){ %>
+      <% if ( i === 0) {%>
+        <a href="<%= post.path %>"  class="hide-md hide-lg col-12 col-4-md js-card">
+          <div class="card card-sm">
+          <img src="/assets/img/<% if (post.img) {%><%- post.img %><%}else{%>serving-vector-tiles.jpg<%}%>">
+          <header>
+          <h4><%= post.title %></h4>
+          </header>
+        </a>
+          <!--span class="subtitle"><%= post.subtitle %></span-->
+          <p><%- post.excerpt %></p>
+
+          <footer>
+          <div class="tagline"><%- date(post.date), 'D MMM YYYY' %> <%- ((post.content).split(" ").length / 200).toFixed(0) %> Min Read</div>
+          </footer>
+          </div>
+
+        <a href="<%= post.path %>" class="hide-sm hide-xs col-12 col-8-md js-card">
+          <div class="card card-lg card-img">
+            <img src="/assets/img/<% if (post.img) {%><%- post.img %><%}else{%>serving-vector-tiles.jpg<%}%>">
+          </div>
+        </a>
+      
+        <a href="<%= post.path %>" class="hide-sm hide-xs col-12 col-4-md is-vertical-align js-card" data-link="/blog/test">
+         <div class="card card-lg js-card">
+          <header>
+            <h3><%= post.title %></h3>
+          </header>
+          <!--span class="subtitle"><%= post.subtitle %></span-->
+          <p><%- post.excerpt %></p>
+          <footer>
+          <div class="tagline"><%- date(post.date), 'D MMM YYYY' %>  <%- ((post.content).split(" ").length/ 200).toFixed(0) %>  Min Read</div>
+          </footer>
+          </div>
+        </a>
+        <hr>
+      <%}%>
+ <% if ( i === 1) {%>
+  <a href="<%= post.path %>"  class="col-6 col-4-md js-card">
+    <div class="card card-sm">
+      <img src="/assets/img/<% if (post.img) {%><%- post.img %><%}else{%>serving-vector-tiles.jpg<%}%>">
+      <header>
+      <h4><%= post.title %></h4>
+      </header>
+        <p><%= post.subtitle %></p>
+        <p><%- post.excerpt %></p>
+
+      <footer>
+      <div class="tagline"><%- date(post.date), 'D MMM YYYY' %> <%- ((post.content).split(" ").length/ 200).toFixed(0) %>  Min Read</div>
+      </footer>
+    </div>
+  </a>
+  <%}%>
+  <% if ( i === 2) {%>
+
+    <a href="<%= post.path %>"  class="col-6 col-4-md js-card">
+    <div class="card card-sm">
+      <img src="/assets/img/<% if (post.img) {%><%- post.img %><%}else{%>serving-vector-tiles.jpg<%}%>">
+      <header>
+      <h4><%= post.title %></h4>
+      </header>
+          <!--span class="subtitle"><%= post.subtitle %></span-->
+          <p><%- post.excerpt %></p>
+
+      <footer>
+      <div class="tagline"><%- date(post.date), 'D MMM YYYY' %> <%- ((post.content).split(" ").length/ 200).toFixed(0) %>  Min Read</div>
+      </footer>
+    </div>
+  </a>
+  <%}%>
+  <% if ( i === 3) {%>
+  <hr class="hide-md hide-lg 3">
+  <a href="<%= post.path %>"  class="col-6 col-4-md js-card">
+    <div class="card card-sm">
+      <img src="/assets/img/<% if (post.img) {%><%- post.img %><%}else{%>serving-vector-tiles.jpg<%}%>">
+      <header>
+      <h4><%= post.title %></h4>
+      </header>
+          <!--span class="subtitle"><%= post.subtitle %></span-->
+          <p><%- post.excerpt %></p>
+
+      <footer>
+      <div class="tagline"><%- date(post.date), 'D MMM YYYY' %> <%- ((post.content).split(" ").length/ 200).toFixed(0) %>  Min Read</div>
+      </footer>
+    </div>
+  </a>
+  <%}%>
+
+
+  <% if ( i === 4) {%>
+    <hr class="hide-sm md">
+    <a href="<%= post.path %>" class="col-6 col-6-md js-card">
+    <div class="card card-sm">
+      <img src="/assets/img/<% if (post.img) {%><%- post.img %><%}else{%>serving-vector-tiles.jpg<%}%>">
+      <header>
+      <h4><%= post.title %></h4>
+      </header>
+          <!--span class="subtitle"><%= post.subtitle %></span-->
+          <p><%- post.excerpt %></p>
+
+      <footer>
+      <div class="tagline"><%- date(post.date), 'D MMM YYYY' %> <%- ((post.content).split(" ").length/ 200).toFixed(0) %>  Min Read</div>
+      </footer>
+    </div>
+  </a>
+  <%}%>
+  <% if ( i === 5) {%>
+  <hr class="hide-md hide-lg">
+  <a href="<%= post.path %>" class="col-12 col-6-md js-card">
+    <div class="card card-sm">
+      <img src="/assets/img/<% if (post.img) {%><%- post.img %><%}else{%>serving-vector-tiles.jpg<%}%>">
+      <header>
+      <h4><%= post.title %></h4>
+      </header>
+          <!--span class="subtitle"><%= post.subtitle %></span-->
+          <p><%- post.excerpt %></p>
+
+      <footer>
+      <div class="tagline"><%- date(post.date), 'D MMM YYYY' %> <%- ((post.content).split(" ").length/ 200).toFixed(0) %>  Min Read</div>
+      </footer>
+    </div>
+  </a>
+  <!-- <hr class="hide-sm hide-md hide-lg md2"> -->
+  <%}%>
+  <% if ( i === 6) {%>
+
+  <hr>
+  <a href="<%= post.path %>"  class="hide-md hide-lg col-12 col-4-md js-card">'"
+    <div class="card card-sm">
+      <img src="/assets/img/<% if (post.img) {%><%- post.img %><%}else{%>serving-vector-tiles.jpg<%}%>">
+      <header>
+      <h4><%= post.title %></h4>
+      </header>
+          <!--span class="subtitle"><%= post.subtitle %></span-->
+          <p><%- post.excerpt %></p>
+
+      <footer>
+      <div class="tagline"><%- date(post.date), 'D MMM YYYY' %> <%- ((post.content).split(" ").length/ 200).toFixed(0) %>  Min Read</div>
+      </footer>
+    </div>
+  </a>
+
+  <a href="<%= post.path %>"  class="hide-sm hide-xs col-12 col-8-md js-card">
+    <div class="card card-lg card-img">
+      <img src="/assets/img/<% if (post.img) {%><%- post.img %><%}else{%>serving-vector-tiles.jpg<%}%>">
+    </div>
+  </a>
+
+  <a href="<%= post.path %>"  class="hide-sm hide-xs col-12 col-4-md is-vertical-align js-card" data-link="/blog/test">
+   <div class="card card-lg js-card">
+    <header>
+    <h4><%= post.title %></h4>
+    </header>
+          <!--span class="subtitle"><%= post.subtitle %></span-->
+          <p><%- post.excerpt %></p>
+
+    <footer>
+    <div class="tagline"><%- date(post.date), 'D MMM YYYY' %> <%- ((post.content).split(" ").length/ 200).toFixed(0) %>  Min Read</div>
+    </footer>
+    </div>
+  </a>
+  <hr>
+  <%}%>
+  <% }) %>
+</div>
+</main>
