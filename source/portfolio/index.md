@@ -19,11 +19,10 @@ header: >-
 </a>
 </div>
 
-<script defer src="https://malcolmmeyer.com/dist/js/lightgallery.min.js"></script>
-<script defer src="https://malcolmmeyer.com/dist/js/lg-share.min.js"></script>
-<script defer src="https://malcolmmeyer.com/dist/js/lg-zoom.min.js"></script>
-<script defer src="https://malcolmmeyer.com/dist/js/lg-zoom.min.js"></script>
-<script defer src="https://malcolmmeyer.com/dist/js/lg-thumbnail.min.js"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery-js/1.3.0/js/lightgallery.min.jss"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/lg-share/1.2.1/lg-share.min.js"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/lg-zoom/1.2.1/lg-zoom.min.js"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/lg-thumbnail/1.2.1/lg-thumbnail.min.js"></script>
 <script defer src="https://unpkg.com/webp-hero@0.0.0-dev.21/dist-cjs/polyfills.js"></script>
 <script defer src="https://unpkg.com/webp-hero@0.0.0-dev.21/dist-cjs/webp-hero.bundle.js"></script>
 <script>
