@@ -1,18 +1,18 @@
 ---
-title: Malcolm Meyer
-subtitle: Portfolio
+title: Portfolio
+subtitle: code | gis | print | web
 ---
 <div class="columns row" id="lightgallery">
-<a class="col-4" data-sub-html="A prototype application for client-side analysis of COVID 19 in the US. <br><a href='https://pandemix.getbounds.com/' target='_blank'>Project Link</a>" href="https://malcolmmeyer.com/img/pandemix_web.jpg" >
+<a class="col-3" data-sub-html="A prototype application for client-side analysis of COVID 19 in the US. <br><a href='https://pandemix.getbounds.com/' target='_blank'>Project Link</a>" href="https://malcolmmeyer.com/img/pandemix_web.jpg" >
   <img loading="lazy" data-src="https://malcolmmeyer.com/img/thumbs/pandemix_web.webp"  src="https://malcolmmeyer.com/img/thumbs/pandemix_web.webp" alt="A prototype application for client-side analysis of COVID 19 in the US.">
 </a>
-<a class="col-4" data-sub-html="A web application exploring data from the American Community Survey with a story component. <br><a href='https://www.ovrdc.org/apps/block-group-explorer.html#8/40.129/-82.719' target='_blank'>Project Link</a>" href="img/01-ohio-block-group-explorer-explorer-story-with-3d-views.png" >
+<a class="col-3" data-sub-html="A web application exploring data from the American Community Survey with a story component. <br><a href='https://www.ovrdc.org/apps/block-group-explorer.html#8/40.129/-82.719' target='_blank'>Project Link</a>" href="img/01-ohio-block-group-explorer-explorer-story-with-3d-views.png" >
   <img loading="lazy" data-src="https://malcolmmeyer.com/img/thumbs/01-ohio-block-group-explorer-explorer-story-with-3d-views.webp"  src="https://malcolmmeyer.com/img/thumbs/01-ohio-block-group-explorer-explorer-story-with-3d-views.webp" alt="A web application exploring data from the American Community Survey with a story component.">
 </a>
-<a class="col-4" data-sub-html="A web application exploring data from the American Community Survey with a story component. <br><a href='https://www.ovrdc.org/apps/block-group-explorer.html#8/40.129/-82.719' target='_blank'>Project Link</a>" href="img/01-ohio-block-group-explorer-explorer-story-with-3d-views.png" >
+<a class="col-3" data-sub-html="A web application exploring data from the American Community Survey with a story component. <br><a href='https://www.ovrdc.org/apps/block-group-explorer.html#8/40.129/-82.719' target='_blank'>Project Link</a>" href="img/01-ohio-block-group-explorer-explorer-story-with-3d-views.png" >
   <img loading="lazy" data-src="https://malcolmmeyer.com/img/thumbs/01-ohio-block-group-explorer-explorer-story-with-3d-views.webp"  src="https://malcolmmeyer.com/img/thumbs/01-ohio-block-group-explorer-explorer-story-with-3d-views.webp" alt="A web application exploring data from the American Community Survey with a story component.">
 </a>
-<a class="col-4" data-sub-html="A web application exploring data from the American Community Survey with a story component. <br><a href='https://www.ovrdc.org/apps/block-group-explorer.html#8/40.129/-82.719' target='_blank'>Project Link</a>" href="img/01-ohio-block-group-explorer-explorer-story-with-3d-views.png" >
+<a class="col-3" data-sub-html="A web application exploring data from the American Community Survey with a story component. <br><a href='https://www.ovrdc.org/apps/block-group-explorer.html#8/40.129/-82.719' target='_blank'>Project Link</a>" href="img/01-ohio-block-group-explorer-explorer-story-with-3d-views.png" >
   <img loading="lazy" data-src="https://malcolmmeyer.com/img/thumbs/01-ohio-block-group-explorer-explorer-story-with-3d-views.webp"  src="https://malcolmmeyer.com/img/thumbs/01-ohio-block-group-explorer-explorer-story-with-3d-views.webp" alt="A web application exploring data from the American Community Survey with a story component.">
 </a>
 </div>
