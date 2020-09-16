@@ -2,7 +2,7 @@
 title: Portfolio
 subtitle: code | gis | print | web
 header: >-
- <link rel="stylesheet" href="https://www.malcolmmeyer.com/dist/css/lightgallery.css" />
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery-js/1.3.0/css/lightgallery.min.css" />
 css: >-
  .post {
     max-width: 120rem
