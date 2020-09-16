@@ -4,6 +4,71 @@
 
 <script src="https://unpkg.com/swiper/js/swiper.js"></script> -->
 <script>
+
+  function elemArray(el, parent) {
+    var array = [];
+    var els = (!parent) ? document.querySelectorAll(el) : parent.querySelectorAll(el);
+    for (var i = 0; i < els.length; i++) {
+      array.push(els[i])
+    }
+    return array
+  }
+
+  var tags = elemArray(".tag");
+  var cards = elemArray(".card")
+
+  // tags.forEach(function(tag) {
+  //   tag.addEventListener("click", function(e) {
+  //     e.preventDefault()     
+      
+  //     //ADD ACTIVE CLASS TO CURRENT TAG
+  //     tags.forEach(function(t) {
+  //       if (t.innerText === tag.innerText) {
+  //         if (t.classList.contains("active")) {
+  //           t.classList.remove("active")
+  //         }else{
+  //           t.classList.add("active");
+  //         }
+  //       }
+  //     });
+
+  //     //COLLECT ACTIVE TAGS
+  //     var activeTags = [];
+  //     tags.forEach(function(t) {
+  //       if (t.classList.contains("active") && activeTags.indexOf(t.innerText) < 0) activeTags.push(t.innerText)
+  //     })
+
+  //     if (!activeTags.length) {
+  //       cards.forEach(function(card) {
+  //         card.parentElement.style.display = "block"
+  //       })
+  //       return
+  //     }
+
+  //     //HIDE CARDS WITH NO ACTIVE TAGS
+  //     cards.forEach(function(card) {
+  //       var cardTags = elemArray(".tag", card)
+  //       var boolean = cardTags.every(function(c) { 
+  //         return activeTags.indexOf(c.innerText) > -1 
+  //       })
+  //       console.log(boolean, activeTags)
+  //       if (!boolean) {
+  //         card.parentElement.style.display = "none"
+  //       }else{
+  //         card.parentElement.style.display = "block"
+  //       }
+  //     })
+
+  //   })
+  // })
+
+  function checkActiveTags(obj, tag) {    
+    return obj.some(o => {
+      console.log(o)
+      return o.classList.contains(tag)
+    })
+  }
+
   var hero = document.querySelector('.hero');
   var heroText = document.querySelector('.hero-text');
 

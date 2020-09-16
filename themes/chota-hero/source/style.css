@@ -56,7 +56,6 @@ h1, h2, h3, h4, h5, h6 {
 input {
   border-radius: 2px!important;
 }
-
 iframe {
   border: 0;
   max-width: 100%;
@@ -88,6 +87,19 @@ blockquote p {
   opacity: 0;
 }
 a:hover:not(.button) {
+  opacity: 1;
+}
+
+.tag {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+  font-size: 1rem;
+  opacity: 0.7
+}
+
+a.tag:focus, a.tag:hover, a.tag.active {
+  background: var(--color-primary);
+  color: white;
   opacity: 1;
 }
 
