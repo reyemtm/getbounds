@@ -3,6 +3,10 @@ title: Portfolio
 subtitle: code | gis | print | web
 header: >-
  <link rel="stylesheet" href="https://www.malcolmmeyer.com/dist/css/lightgallery.css" />
+css: >-
+ .post {
+    max-width: 120rem
+ }
 ---
 <div class="columns row" id="lightgallery">
 <a class="col-3" data-sub-html="A prototype application for client-side analysis of COVID 19 in the US. <br><a href='https://pandemix.getbounds.com/' target='_blank'>Project Link</a>" href="https://malcolmmeyer.com/img/pandemix_web.jpg" >
@@ -19,7 +23,7 @@ header: >-
 </a>
 </div>
 
-<script defer src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery-js/1.3.0/js/lightgallery.min.jss"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery-js/1.3.0/js/lightgallery.min.js"></script>
 <script defer src="https://cdnjs.cloudflare.com/ajax/libs/lg-share/1.2.1/lg-share.min.js"></script>
 <script defer src="https://cdnjs.cloudflare.com/ajax/libs/lg-zoom/1.2.1/lg-zoom.min.js"></script>
 <script defer src="https://cdnjs.cloudflare.com/ajax/libs/lg-thumbnail/1.2.1/lg-thumbnail.min.js"></script>
