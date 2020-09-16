@@ -31,9 +31,6 @@ subtitle: Portfolio
   var gallery = document.getElementById("lightgallery")
 
   window.onload = function() {
-    console.log("loaded")
-    document.body.querySelector("main").style.opacity = 1;
-    document.body.querySelector("footer").style.opacity = 1;
 
   lightGallery(gallery, {
       mode: 'lg-fade',
