@@ -1,7 +1,8 @@
 ---
 title: Portfolio
 subtitle: code | gis | print | web
-header: "https://www.malcolmmeyer.com/dist/css/lightgallery.css"
+header: >-
+ <link rel="stylesheet" href="https://www.malcolmmeyer.com/dist/css/lightgallery.css" />
 ---
 <div class="columns row" id="lightgallery">
 <a class="col-3" data-sub-html="A prototype application for client-side analysis of COVID 19 in the US. <br><a href='https://pandemix.getbounds.com/' target='_blank'>Project Link</a>" href="https://malcolmmeyer.com/img/pandemix_web.jpg" >
