@@ -23,7 +23,7 @@ css: >-
 </a>
 </div>
 
-<script defer src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery-js/1.3.0/js/lightgallery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery-js/1.3.0/js/lightgallery.min.js"></script>
 <script defer src="https://cdnjs.cloudflare.com/ajax/libs/lg-share/1.2.1/lg-share.min.js"></script>
 <script defer src="https://cdnjs.cloudflare.com/ajax/libs/lg-zoom/1.2.1/lg-zoom.min.js"></script>
 <script defer src="https://cdnjs.cloudflare.com/ajax/libs/lg-thumbnail/1.2.1/lg-thumbnail.min.js"></script>
