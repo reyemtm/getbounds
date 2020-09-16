@@ -7,6 +7,11 @@ css: >-
  .post {
     max-width: 120rem
  }
+ .post .col-3 {
+   flex: 0 0 calc(25% - 10px);
+   margin: 5px;
+   max-width: 25%;
+ }
 ---
 <div class="columns row" id="lightgallery">
 <a class="col-3" data-sub-html="A prototype application for client-side analysis of COVID 19 in the US. <br><a href='https://pandemix.getbounds.com/' target='_blank'>Project Link</a>" href="https://malcolmmeyer.com/img/pandemix_web.jpg" >
