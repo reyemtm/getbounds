@@ -1,6 +1,19 @@
 /* quicksand-regular - latin */
 @font-face {
   font-family: 'Quicksand';
+  font-style: lighter;
+  font-weight: 300;
+  src: url('/quicksand/quicksand-v19-latin-300.eot'); /* IE9 Compat Modes */
+  src: local(''),
+       url('/quicksand/quicksand-v19-latin-300.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('/quicksand/quicksand-v19-latin-300.woff2') format('woff2'), /* Super Modern Browsers */
+       url('/quicksand/quicksand-v19-latin-300.woff') format('woff'), /* Modern Browsers */
+       url('/quicksand/quicksand-v19-latin-300.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('/quicksand/quicksand-v19-latin-300.svg#Quicksand') format('svg'); /* Legacy iOS */
+}
+
+@font-face {
+  font-family: 'Quicksand';
   font-style: normal;
   font-weight: 400;
   src: url('/quicksand/quicksand-v19-latin-regular.eot'); /* IE9 Compat Modes */
@@ -14,7 +27,7 @@
 /* quicksand-600 - latin */
 @font-face {
   font-family: 'Quicksand';
-  font-style: normal;
+  font-style: bold;
   font-weight: 600;
   src: url('/quicksand/quicksand-v19-latin-600.eot'); /* IE9 Compat Modes */
   src: local(''),
