@@ -11,7 +11,7 @@ In the aftermath of the Coronavirus pandemic, remote work may well be come the n
 
 Much of tools and processes that led to the success of my transition to remote work were already in place before the pandemic. ArcGIS Pro was my go-to GIS desktop application for managing cloud GIS data, QGIS was my daily-driver for GIS editing, and our web applications not managed via ArcGIS Online were, for the most part, hosted and deployed using [Netlify](https://www.netlify.com). Both of these applications can installed on any modern laptop, though it does help to have a dedicated graphics card. And thanks to the cloud-based licensing of ArcGIS Pro (and of course the open license of QGIS) there was no need to checkout a license or revoke the license on the office desktop. 
 
-![](This data can be editing with QGIS and viewed in ArcGIS Pro.)
+![](https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/QGIS_logo%2C_2017.svg/500px-QGIS_logo%2C_2017.svg.png)
 
 As for the database to house our enterprise GIS data, I had recently migrated 90% of our GIS data from shapefiles to a PostgreSQL database. To access this data remotely without a VPN or by opening up remote ports, I simply created a backup from the existing Postgres database via pgAdmin to use as my temporary database. Since both Postgres and PostGIS use an open license, I was able to install these on my laptop and restored the backup without issue. This whole process was seamless and I was up and running in less than an hour. I did refrain from editing the data in Postgres backup, but for daily tasks involving analysis and map-making this setup worked out quite well.
 
