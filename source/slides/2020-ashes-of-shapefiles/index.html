@@ -26,6 +26,9 @@ style: >-
   del {
     text-decoration-color: red;
   }
+  .reveal section strong {
+    color: red;
+  }
 head: >-
   <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
 ---
@@ -33,7 +36,8 @@ head: >-
 <section data-markdown data-separator="///">
 <script type="text/template">
 
-🔥 🔥 🔥 🔥 🔥 <br />from the ashes<br />of shapefiles<br />
+🔥 🔥 🔥 🔥 🔥
+<br />from the ashes<br />of shapefiles<br />
 🔥 🔥 🔥 🔥 🔥
 
 ///
@@ -74,16 +78,16 @@ head: >-
 
 ///
 
-![](legacy.jpg)
-
-///
-
 ## 20 Years of Data
 
 - ~300 Shapefiles
 - 20GB Vector Data 
 - 100s of MXDs
 - **100s of .lock Files**
+
+///
+
+![](legacy.jpg)
 
 ///
 
@@ -95,7 +99,11 @@ head: >-
 
 ///
 
-❗❗❗❗❗❗<br><strong>File</strong> <span>Geodatabases</span> ❗❗❗❗❗❗
+❗❗❗❗❗❗
+<br>
+File Geodatabases
+<br>
+❗❗❗❗❗❗
 
 ///
 
@@ -111,13 +119,13 @@ head: >-
 
 ///
 
-<img src="https://media.giphy.com/media/3o7buhiXgPU8GmQp4A/giphy.gif" width="50%">
+<img src="https://media.giphy.com/media/3o7buhiXgPU8GmQp4A/giphy.gif">
 
 ///
 ## FGDB Issues
 - Local FGDB Not Backed Up
 - S  l  o  w Network
-- rANd0m Data Loss
+- **rANd0m Data Loss**
 
 ///
 
@@ -148,8 +156,7 @@ RDMS Database on Enterprise
 
 ## Repurposed Server
 - Windows Server 2012
-- 8 Cores
-- 16GB RAM
+- 8 Cores, 16GB RAM
 
 ///
 
@@ -165,9 +172,9 @@ RDMS Database on Enterprise
 
 ///
 ## SQL Express Issues
-- Select/Start Editing Took Forever
+- Slow to Select/Start Editing
 - Three Connection Limit
-- 4GB Mem 👿
+- 4GB Mem Limit
 ///
 
 ![](https://thumbs.gfycat.com/BriefWeeGalah-small.gif)
@@ -179,9 +186,6 @@ RDMS Database on Enterprise
 ~~FGDB~~
 
 ~~SQL Server Express~~
-///
-
-### Show Must Go On
 
 ///
 
@@ -266,14 +270,13 @@ Vector Tiles
 
 ///
 
-Geometry Checks
+## Postgres/QGIS Benefits
 
-Database Views
-
-Simple Backups
-
-No Additional Licensing Costs
-
+- Database Views
+- Geometry Checks
+- QGIS Projects stored in DB
+- **Open Licensing**
+- QGIS Plugins
 
 ///
 
@@ -281,16 +284,12 @@ No Additional Licensing Costs
 
 ///
 
-Editor Tracking
+## Missing Features
 
-"ShapeLength" Fields
-
-Transformations
-
-DB Admin
-
-Editing in ArcMap or Pro
-
+- Editor Tracking
+- Editing in ArcMap or Pro
+- Esri Projections
+- Geometry Fields
 
 ///
 
@@ -300,8 +299,8 @@ Editing in ArcMap or Pro
 
 ## Live Web Services
 
-> pg_featureserv
-> pg_tileserv
+> [pg_featureserv](https://311.coz.org/api/v1/feature-server/collections.html)
+> [pg_tileserv](https://311.coz.org/api/v1/vector-tiles/public.adm_mus_parcels.html)
 
 ///
 
@@ -309,11 +308,11 @@ Editing in ArcMap or Pro
 
 ///
 
-Benefits Difficult to Communicate
+## Issues with Upgrading
 
-Administration Changes 
-
-COVID-19 & Budget Cuts
+- Administration Changes 
+- Benefits Difficult to Communicate
+- COVID-19 & Budget Cuts
 
 ///
 
@@ -354,29 +353,26 @@ Viewer for Legacy Users (2)
 
 ///
 
-Mapbox Viewers
-
-AGOL Dashboards
-
-AGOL Story Maps
-
-AGOL WebAppBuilder
-
-Collector on iOS
+## Mapbox GL JS
+- Internal Applications
+- Public Map Viewer
+- **Simple Print Maps**
 
 ///
 
-## AGOL Data
+<img src="./web-print-map-ii.jpg" width="80%">
 
-- Authoritative Water Utility Data
-- Constantly Updated in Collector
-- Downloaded Each Night
-- Converted to Vector Tiles for Mapbox Viewer
+///
+## ArcGIS Online
+
+- Water Utility Data
+- Collector
+- Dashboards
+- WebAppBuilder
+- Story Maps
 
 ///
 
-# Questions?
-
-///
+# Thanks!
 
 </script>
