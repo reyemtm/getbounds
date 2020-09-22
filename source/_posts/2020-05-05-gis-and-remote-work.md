@@ -9,13 +9,17 @@ featured: false
 ---
 In the aftermath of the Coronavirus pandemic, remote work may well be come the new normal, as businesses and government agencies discover that productivity can be maintained or even increased when implementing remote work options. And the tools to implement this transition at the employee level are neither complicated or expensive. In my case, even without a high-end laptop, a VPN connection, a remotely accessible central database, or even a cloud-based file sync service, remote GIS work was a painless transition from the traditional office setting.
 
-Much of tools and processes that led to the success of my transition to remote work were already in place before the pandemic. ArcGIS Pro was my go-to GIS desktop application for managing cloud GIS data, QGIS was my daily-driver for GIS editing, and our web applications not managed via ArcGIS Online were, for the most part, hosted and deployed using [Netlify](https://www.netlify.com). Both of these applications can installed on any modern laptop, though it does help to have a dedicated graphics card. And thanks to the cloud-based licensing of ArcGIS Pro (and of course the open license of QGIS) there was no need to checkout a license or revoke the license on the office desktop. 
+Much of tools and processes that led to the success of my transition to remote work were already in place before the pandemic. ArcGIS Pro was my go-to GIS desktop application for managing cloud GIS data, QGIS was my daily-driver for GIS editing, and our web applications not managed via ArcGIS Online were, for the most part, hosted and deployed using [Netlify](https://www.netlify.com). All of the tools to manage these applications can installed on any modern laptop, though it does help to have a dedicated graphics card for GIS workflows. And thanks to the cloud-based licensing of ArcGIS Pro (and of course the open license of QGIS, VS Code, netlify-cli, etc.) there was no need for me to mess with software license wrangling. 
 
-As for the database to house our enterprise GIS data, I had recently migrated 90% of our GIS data from shapefiles to a PostgreSQL database. To access this data remotely without a VPN or by opening up remote ports, I simply created a backup from the existing Postgres database via pgAdmin to use as my temporary database. Since both Postgres and PostGIS use an open license, I was able to install these on my laptop and restored the backup without issue. This whole process was seamless and I was up and running in less than an hour. I did refrain from editing the data in Postgres backup, but for daily tasks involving analysis and map-making this setup worked out quite well.
+As for the database to house our enterprise GIS data, I had recently migrated 90% of our GIS data from shapefiles to a PostgreSQL database. To access this data remotely without a VPN or by opening up remote ports, I simply created a backup from the existing Postgres database via pgAdmin to use as my temporary database. Since both Postgres and PostGIS use an open license, I was able to install these on my laptop and restore the backup without issue. This whole process was seamless and I was up and running in my new home office in less than an hour. I did refrain from performing many edits to the data in Postgres backup during this initial phase. Still, for daily tasks involving analysis and map-making this setup worked out quite well.
 
-A few months into the lockdown my employer provided me with a new laptop and a VPN connection, so I am back to using the main enterprise database with full editing ability via QGIS while remote. If there is one area where this whole approach falls short it is with the local editing of data hosted in ArcGIS Online via ArcGIS Pro. But this is not due to working remotely; rather it is due to the shortcomings of using a feature service as an authoritative data store.
+![](assets/img/home_office.jpg)
 
-For those wanting a deeper dive into the software and tools in my toolkit, here is a list of the main hardware and software components when I started my remote work journey.
+A few months into the lockdown my employer provided me with a new laptop and a VPN connection, so I am back to using the main enterprise database with the full editing ability via QGIS while remote. Accessing Postgres via the VPN connection is not ideal, but the editing and select lag time is tolerable.
+
+If there is one area where this whole approach falls short it is with the local editing of data hosted in ArcGIS Online via ArcGIS Pro. This is not due to working remotely; rather it is due to the shortcomings of using a feature service as an authoritative data store. While I plan to deploy "Enterprise" at some point in the future, for the moment ArcGIS Online will have to do.
+
+For those wanting a deeper dive into the software and tools in my toolkit, here is a list of the main hardware and software components I have used throughout my remote work journey.
 
 **Hardware**
 
@@ -35,7 +39,7 @@ For those wanting a deeper dive into the software and tools in my toolkit, here 
 * ArcGIS Pro (Latest)
 * PostgreSQL 11/PostGIS 3
 * ``npm install -g live-server mapshaper netlify-cli``
-* QGIS 3.0
+* QGIS 3.10
 * VS Code
 
 **Desktop Misc Software**
