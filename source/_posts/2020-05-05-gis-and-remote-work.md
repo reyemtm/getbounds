@@ -3,7 +3,7 @@ layout: post
 title: GIS and Remote Work
 subtitle: An Exploration of a GIS Remote Work Toolkit
 date: 2020-09-20T12:21:00.000Z
-img: remote_work_iii.jpg
+img: home_office.jpg
 tags: List [ "mapbox", "esri", "qgis", "hardware" ]
 featured: false
 ---
