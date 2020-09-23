@@ -9,9 +9,9 @@ featured: false
 ---
 In the aftermath of the Coronavirus pandemic, remote work may well be come the new normal, as businesses and government agencies discover that productivity can be maintained or even increased when implementing remote work options. And the tools to implement this transition at the employee level are neither complicated or expensive. In my case, even without a high-end laptop, a VPN connection, a remotely accessible central database, or even a cloud-based file sync service, remote GIS work was a painless transition from the traditional office setting.
 
-Much of tools and processes that led to the success of my transition to remote work were already in place before the pandemic. ArcGIS Pro was my go-to GIS desktop application for managing cloud GIS data, QGIS was my daily-driver for GIS editing, and our web applications not managed via ArcGIS Online were, for the most part, hosted and deployed using [Netlify](https://www.netlify.com). All of the tools to manage these applications can installed on any modern laptop, though it does help to have a dedicated graphics card for GIS workflows. And thanks to the cloud-based licensing of ArcGIS Pro (and of course the open license of QGIS, VS Code, netlify-cli, etc.) there was no need for me to mess with software license wrangling. 
+Much of tools and processes that led to the success of my transition to remote work were already in place before the pandemic. I use ArcGIS Pro as my go-to GIS desktop application for managing our limited cloud GIS data, QGIS for my daily-driver for enterprise GIS editing, and our web applications not managed via ArcGIS Online are hosted and deployed using [Netlify](https://www.netlify.com). All of the tools to manage these applications can installed on any modern laptop, though it does help to have a dedicated graphics card for certain GIS workflows. And thanks to the cloud-based licensing of ArcGIS Pro (and of course the open license of QGIS, VS Code, netlify-cli, etc.) there was no need for me to mess with complex software licensing. 
 
-As for the database to house our enterprise GIS data, I had recently migrated 90% of our GIS data from shapefiles to a PostgreSQL database. To access this data remotely without a VPN or by opening up remote ports, I simply created a backup from the existing Postgres database via pgAdmin to use as my temporary database. Since both Postgres and PostGIS use an open license, I was able to install these on my laptop and restore the backup without issue. This whole process was seamless and I was up and running in my new home office in less than an hour. I did refrain from performing many edits to the data in Postgres backup during this initial phase. Still, for daily tasks involving analysis and map-making this setup worked out quite well.
+As for the database to house our enterprise GIS data, I had recently migrated 90% of our GIS data from shapefiles to a PostgreSQL database. To access this data remotely without a VPN or by opening up remote ports, I simply created a backup from the existing Postgres database via pgAdmin to use as my temporary database. Since both Postgres and PostGIS use an open license, I was able to install these on my laptop and restore the backup without issue. This whole process was seamless and I was up and running in my new home office in less than an hour. I did refrain from performing many edits to the data in the Postgres backup during this initial phase. Still, for daily tasks involving analysis and map-making this setup worked out quite well.
 
 ![](assets/img/home_office.jpg)
 
@@ -38,7 +38,7 @@ For those wanting a deeper dive into the software and tools in my toolkit, here 
 
 * ArcGIS Pro (Latest)
 * PostgreSQL 11/PostGIS 3
-* ``npm install -g live-server mapshaper netlify-cli``
+* ``npm install -g live-server mapshaper netlify-cli vtile agol-cache``
 * QGIS 3.10
 * VS Code
 
@@ -47,7 +47,7 @@ For those wanting a deeper dive into the software and tools in my toolkit, here 
 * FreeFileSync
 * Xcopy
 
-**Web Software**
+**Web Services**
 * ArcGIS Online
 * Mapbox
 * Netlify
