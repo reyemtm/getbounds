@@ -62,5 +62,8 @@ For those wanting a deeper dive into the software and tools in my toolkit, here 
 **Media Software**
 
 * Chromecast
-* Plex hosted on the Lenovo M93P
 * Pandora
+* Plex hosted on the Lenovo M93P
+* TuneIn Radio
+
+The only thing that's missing from my hardware setup is a standing desk and an awesome map to hang on my wall.
