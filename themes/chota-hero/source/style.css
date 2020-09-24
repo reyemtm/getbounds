@@ -506,7 +506,7 @@ img {
     font-size: inherit;
   }
   .hero.hero-post {
-    height: 40px;
+    height: 40px!important;
   }
   .container {
     padding: 2rem;
