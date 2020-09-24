@@ -329,6 +329,10 @@ a.post-title:hover, a.post-title:focus {
 .post-title h4 {
   font-size: 1em;
 }
+.post img + br + em {
+  font-size: 1.6rem;
+  opacity: 0.6;
+}
 .post-archive {
   margin: 2rem 0 6rem;
 }
