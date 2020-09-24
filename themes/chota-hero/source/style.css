@@ -320,6 +320,9 @@ souurce: https://stackoverflow.com/questions/20544309/css-sliding-underline
 a.post-title:hover, a.post-title:focus {
   color: var(--color-primary);
 }
+.post-title h1 {
+  font-weight: 600;
+}
 .post-title h2, .post-title h4 {
   margin: 0;
 }
