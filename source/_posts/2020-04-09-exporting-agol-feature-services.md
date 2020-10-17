@@ -1,18 +1,19 @@
----
 layout: post
 title: Exporting AGOL Feature Services to GeoJSON
-subtitle: Using NodeJS and Batches to Transform an ArcGIS Online Feature Service
-  to GeoJSON
-description: Using NodeJS and Batches to Transform an ArcGIS Online Feature Service
-  to GeoJSON
-date: 2020-04-27T23:32:02.125Z
+subtitle: >-
+  Using NodeJS and Batches to Transform an ArcGIS Online Feature Service to
+  GeoJSON
+description: >-
+  Using NodeJS and Batches to Transform an ArcGIS Online Feature Service to
+  GeoJSON
 img: agol-cache2.png
-image: https://www.getbounds.com/assets/img/agol-cache2.png
-tags: 
- - esri
- - javascript
- - nodejs
+image: 'https://www.getbounds.com/assets/img/agol-cache2.png'
+tags:
+  - esri
+  - nodejs
 featured: false
+categories: []
+date: 2020-04-27 23:32:00
 ---
 Recently I had the need to pull data from ArcGIS Online into a Mapbox GL JS web map. While it would be possible to use the WMS publishing feature in AGOL to display this layer, what would be ideal is to have access to the raw data. The data also needs updated on a regular basis, so manually downloading a copy from AGOL is not an option.
 

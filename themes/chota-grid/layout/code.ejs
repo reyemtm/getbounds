@@ -1,0 +1,21 @@
+<main class="container repos">
+  <h3 style="margin-bottom: 3rem" class="alt-color">Selected Repositories</h3>
+  <section class="grid grid-2x">
+    <% for (var i in site.data.repos) { %>
+      <div class="repo">
+        <header>
+          <a href="<%= site.data.repos[i].repo%>"><strong><%= site.data.repos[i].name %></strong></a>
+        </header>
+        <section>
+          <%= site.data.repos[i].description %>
+          <% if (site.data.repos[i].homepage) {%>
+            <div><a class="demo" href="<%= site.data.repos[i].homepage %>">Demo</a></div>
+          <%}%>
+        </section>
+        <footer>
+          <%= site.data.repos[i].language %> <% if (site.data.repos[i].forks) {%> <span style="float:right;display:flex;"><img src="https://icongr.am/fontawesome/code-fork.svg?size=20&color=121212">&nbsp;<%= site.data.repos[i].forks %></span><%}%>
+        </footer>
+      </div>
+    <% } %>
+  </section>
+</main>

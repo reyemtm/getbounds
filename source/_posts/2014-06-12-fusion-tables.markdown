@@ -1,14 +1,14 @@
----
 title: Google Drive Fusion Tables
-date: 2014-06-12 00:00:00 Z
 tags:
-- esri
-- google
+  - esri
+  - google
 layout: post
-date_updated: 2020-09-13
+categories: []
+author: ''
+date: 2014-06-12 00:00:00
+date_updated: 2020-09-13 00:00:00
 ---
-
-*Google has deprecated Google Fusion Tables.*
+*Update: Google has deprecated Google Fusion Tables.*
 
 Recently I had to do a series of field checks scattered throughout the city. There are several ways one could tackle this task in order to create a table of all the locations and find a good route. There are mobile apps, various websites, utilizing google maps (10 location limit) or using tools within ArcMap. I could have also utilized our own address database, or our customer database, selected all 20 entries and gone from there. However, I thought this would be a great opportunity to test out Google's new fusion tables/mapping feature.
 

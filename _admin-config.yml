@@ -1,7 +1,7 @@
 options:
   spellcheck: true
   askImageFilename: true
-  imagePath: /img
+  imagePath: /assets/img
   imagePrefix: hexo-admin-
 editor:
   inputStyle: contenteditable

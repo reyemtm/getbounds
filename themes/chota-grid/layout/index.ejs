@@ -1,0 +1,65 @@
+<main class="container">
+<div class="grid grid-7x-3x">
+  <section>
+  <% if (is_home()) {%>
+ 
+    <h3 style="margin-bottom: 3rem" class="alt-color">Latest Posts</h3>
+    <% page.posts.each(function(post, i){ %>
+      <a rel="prefetch" href="<%- url_for(post.path) %>" class="clean">
+        <article class="index-card grid">
+          <img src="/assets/img/4x3_<% if (post.img) {%><%- post.img %><%}else{%><%- config.defaultimage %><%}%>">
+          <div>
+            <h1>
+              <%- post.title %>
+            </h1>
+            <h2>
+              <%- post.subtitle %>
+            </h2>
+            <p>
+              <%- strip_html(post.excerpt).substring(0, 80) %>...
+            </p>
+          </div>
+        </article>
+      </a>
+    <%})%>
+
+      <a href="/blog" class="text-expanded">View All Posts <img style="transform: rotate(90deg);margin-top:-2px" src="https://icongr.am/clarity/angle-double.svg?size=18&color=049DBF"></a>
+      <%} else {%>
+    <h3 style="margin-bottom: 3rem" class="alt-color">
+      <% if (is_tag()) {%>TOPIC | <%- titlecase(page.tag) %><% } %>
+      <% if (is_archive()) {%>BLOG ARCHIVE<% } %>
+    </h3>
+
+    <% page.posts.each(function(post){ %>
+    <a rel="prefetch" href="<%- url_for(post.path) %>" class="clean">
+      <article class="index-card grid">
+        <img src="/assets/img/4x3_<% if (post.img) {%><%- post.img %><%}else{%><%- config.defaultimage %><%}%>" loading=lazy>
+        <div>
+          <h1>
+            <%- post.title %>
+          </h1>
+          <h2>
+            <%- post.subtitle %>
+          </h2>
+          <span style="display:flex;opacity:0.6;font-size:1.4rem;">
+            <% if (post.date_updated) {%>Posted&nbsp;<time datetime="<%= date_xml(post.date) %>" itemprop="datePublished"><%= date(post.date) %></time>&nbsp;| Updated&nbsp;<time datetime="<%= date_xml(post.date_updated) %>" itemprop="dateUpdated"><%= date(post.date_updated) %></time><%}else{%>
+              Posted&nbsp;<time datetime="<%= date_xml(post.date) %>" itemprop="datePublished"><%= date(post.date) %></time>
+            <%}%>
+          </span>
+        </div>
+        <!-- <p>
+          <%- (post.excerpt).substring(0, 200) %>...
+        </p> -->
+      </article>
+    </a>
+  <%})%>
+  <% if (is_tag()) {%>
+    <a href="/blog" class="text-expanded">View All Posts <img style="transform: rotate(90deg);margin-top:-2px" src="https://icongr.am/clarity/angle-double.svg?size=18&color=049DBF"></a>
+  <%}%>
+ <%}%>
+  </section>
+
+  <%- partial('_partial/sidebar') %>
+ 
+ </div>
+</main>

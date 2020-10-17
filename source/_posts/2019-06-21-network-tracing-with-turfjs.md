@@ -21,22 +21,22 @@ My first attempt at network tracing involved looping through all the linear feat
 
 The basic idea became quit simple: find all the connected lines to an origin point using [`turf.booleanPointOnLine()`](http://turfjs.org/docs/#booleanPointOnLine) and then use these resulting lines to seed the network trace. By iterating over this method the tool could return the entire network.
 
-
-    function getIntersectingLines(point, lines) {
-      var point = point;
-      var network = {
-        type: "FeatureCollection",
-        features: []
-      };
-      lines.features.map(function(f) {
-        if (turf.booleanPointOnLine(point, f)) {
-          network.features.push(f)
-        }
-      });
-
-      return network 
+```javascript
+function getIntersectingLines(point, lines) {
+  var point = point;
+  var network = {
+    type: "FeatureCollection",
+    features: []
+  };
+  lines.features.map(function(f) {
+    if (turf.booleanPointOnLine(point, f)) {
+      network.features.push(f)
     }
+  });
 
+  return network 
+}
+```
 
 In the first iteration I focused solely on identifying all the intersecting lines of the origin point to test the `turf.booleanPointOnLine()` method. I ran into some issues with the points and lines not being coincident, possibly due to rounding of extremely long decimal places. I decided to borrow the method used by the [geojson-equality](https://www.npmjs.com/package/geojson-equality) package and limit the coordinate check to six decimals using `.toFixed(6)`. The coordinates could also be trimmed before adding them to the browser using QGIS, in NodeJS using [geojson-precision](https://www.npmjs.com/package/geojson-precision), or with the command-line [mapshaper](https://github.com/mbloch/mapshaper/wiki/Command-Reference) tool. 
 

@@ -1,19 +1,24 @@
----
 layout: post
-title: "Web Maps from Scratch"
-date: 2017-05-16
-description: "This workshop/presentation is a ground-level introduction to the mapping api behind Facebook Live’s interactive map, Flikr’s world map, and maps used by NPR, USA Today, Evernote, Pinterest, and many other organizations and governments world-wide. We go over the basics of building a fullscreen web map, from adding data, styling, interaction, and basic GIS analysis in the browser. We cover Leaflet, GitHub and Jekyll."
+title: Web Maps from Scratch
+description: >-
+  This workshop/presentation is a ground-level introduction to the mapping api
+  behind Facebook Live’s interactive map, Flikr’s world map, and maps used by
+  NPR, USA Today, Evernote, Pinterest, and many other organizations and
+  governments world-wide. We go over the basics of building a fullscreen web
+  map, from adding data, styling, interaction, and basic GIS analysis in the
+  browser. We cover Leaflet, GitHub and Jekyll.
 external: true
 tags:
-- leaflet
-- slides
-- mapbox
-- github
-subtitle: An Introduction to Leaflet, GitHub & Jekyll
-feature-img:
+  - slides
+  - mapbox
+  - leaflet
+subtitle: 'An Introduction to Leaflet, GitHub & Jekyll'
 image: web-maps-from-scratch-min.jpg
 img: web-maps-from-scratch-min.jpg
-slides: https://slides.com/malm-1/web-maps-from-scratch/embed
-press: 
-- "https://www.ohurisa.org/events/gis-education-series/" 
+slides: 'https://slides.com/malm-1/web-maps-from-scratch/embed'
+press:
+  - 'https://www.ohurisa.org/events/gis-education-series/'
+categories: []
+date: 2017-05-16 00:00:00
+feature-img:
 ---

@@ -16,7 +16,7 @@ title: getBounds
 subtitle:
 description: "getBounds is a blog focusing on desktop and web-based geospatial applications. getBounds is maintained by Malcolm T Meyer."
 keywords: ["gis", "blog", "geospatial", "vector tiles", "mapbox", "leaflet", "web maps", "dataviz"]
-author: Malcolm T Meyer
+author: Malcolm Meyer
 language: en
 timezone: America/New_York
 defaultimage: "serving-vector-tiles.jpg"
@@ -61,26 +61,33 @@ render_drafts: false
 post_asset_folder: false
 relative_link: false
 future: true
+
 highlight:
-  enable: true
-  line_number: false
+  enable: false
   auto_detect: true
-  tab_replace:
-  
+  line_number: true
+  tab_replace: ''
+  wrap: true
+  hljs: true
+prismjs:
+  enable: false
+  preprocess: true
+  line_number: true
+  tab_replace: ''
+
 # Home page setting
 # path: Root path for your blogs index page. (default = '')
 # per_page: Posts displayed per page. (0 = disable pagination)
 # order_by: Posts order. (Order by date descending by default)
 index_generator:
-  path: ''
-  per_page: 0
+  per_page: 4
   order_by: -date
 
 # Pagination
 ## Set per_page to 0 to disable pagination
-per_page: 6
+per_page: 1000
 pagination_dir: page
-archive: 6
+archive: 1000
 
 # Category & Tag
 default_category: blog
@@ -97,7 +104,7 @@ time_format: HH:mm:ss
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: chota-hero
+theme: chota-grid
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
@@ -118,15 +125,15 @@ excerpt:
   more_excludes: ["iframe", "img"]
   hideWholePostExcerpts: true
 
-#https://github.com/vseventer/hexo-imagemin - makes generating very slow took out due to issue with Node 12
-imagemin:
-  enable: false
-  interlaced: false
-  multipass: false
-  optimizationLevel: 7
-  pngquant: false
-  progressive: true
-
+responsive_images:
+  - pattern: '**/*.+(png|jpg|jpeg)'
+    sizes: #4x3
+      4x3:
+        width: 480
+        height: 360 
+      16x9:
+        width: 1280
+        height: 720
 
 #feed hexo-generator-feed
 feed:
@@ -202,3 +209,7 @@ html_prettify:
     comma_first: false
     e4x: false
     indent_empty_lines: false
+
+#resume
+resume:
+  title: GIS Specialist  

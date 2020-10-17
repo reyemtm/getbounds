@@ -1,0 +1,182 @@
+---
+layout: false
+---
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="/resume-style.css">
+
+  <title itemprop="name">Resume | <%- (config.author).toUpperCase() %></title>
+</head>
+
+<body>
+  <main class="resumeCanvas">
+    <div class="gridParent">
+      <header class="flex-row">
+        <div class="titleHeader">
+
+          <h1 class="name"><%- (config.author).toUpperCase() %></h1>
+          <h3 class="tagline"><%- config.resume.title %></h3>
+
+
+        </div>
+        <!-- AVATAR -->
+        <!-- <div><img class="avatar right" src="avatar.jpg"></div> -->
+      </header>
+
+      <div class="leftSide">
+
+
+
+        <div class="section">
+          <h1 class="section-title">Experience</h1>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          <div class="item group">
+            <h3 class="item-title">Turkish Technic</h3>
+
+            <div class="item">
+              <div class="flex-row">
+                <span class="job-title">Monitoring Team Leader</span>
+                <span class="date">2019 - Present</span></div>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ornare sollicitudin fringilla.
+                Aenean nec volutpat arcu. Maecenas quis tempus risus. Curabitur condimentum ligula in erat pharetra
+                porta. Nam suscipit nisi a bibendum lacinia. Donec aliquet, nibh dignissim placerat efficit</p>
+            </div>
+
+            <div class="item">
+              <div class="flex-row">
+                <span class="job-title">System Engineer</span>
+                <span class="date">10.2018 - Present</span></div>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ornare sollicitudin fringilla.
+                Aenean nec volutpat arcu. Maecenas quis tempus risus. Curabitur condimentum ligula in erat pharetra
+                porta. Nam suscipit nisi a bibendum lacinia. Donec aliquet, nibh dignissim placerat efficit</p>
+            </div>
+
+          </div>
+
+
+
+          <div class="item group">
+            <h3 class="item-title">Turkish Aerospace Industries</h3>
+
+            <div class="item">
+              <div class="flex-row">
+                <span class="job-title">Graduate Project - Intern</span>
+                <span class="date">11.2016 - 07.2017</span></div>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ornare sollicitudin fringilla.
+                Aenean nec volutpat arcu. Maecenas quis tempus risus. Curabitur condimentum ligula in erat pharetra
+                porta. Nam suscipit nisi a bibendum lacinia. Donec aliquet, nibh dignissim placerat efficit</p>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="rightSide">
+
+        <div class="section">
+          <h1 class="section-title">Education</h1>
+
+          <div class="item">
+            <h3 class="item-title">MA | International Affairs</h3>
+            <span>Ohio University</span><br>
+            <span>2005- 2007</span>
+          </div>
+
+          <div class="item">
+            <h3 class="item-title">BA | Sociology/Urban Studies</h3>
+            <span>The College of Wooster</span><br>
+            <span>1994 - 1998</span>
+          </div>
+
+        </div>
+
+        <!-- <div class="section">
+          <h1 class="section-title">Languages</h1>
+
+          <div class="item">
+            <h3 class="item-title">Turkish
+              <span class="item-title-span"> - Native</span></h3>
+
+          </div>
+
+          <div class="item">
+            <h3 class="item-title">English
+              <span class="item-title-span"> - Professional</span></h3>
+
+            <li>YDS: 86.25 - 2018</li>
+
+            <li>TOEFL: 109 - 2021</li>
+
+          </div>
+
+        </div> -->
+
+        <div class="section">
+          <h1 class="section-title">Map Awards</h1>
+
+          <div class="item">
+            <h3 class="item-title">Best Web Map</h3>
+            Ohio Vehicle Crash Explorer<br>2015
+          </div>
+
+        </div>
+
+        <div class="section">
+          <h1 class="section-title">Skills</h1>
+          <div class="item">
+
+            <li>ArcMap, ArcPro & QGIS</li>
+            <li>JavaScript & NodeJS</li>
+            <li>Leaflet & Mapbox GL JS</li>
+            <li>PostgreSQL/PostGIS</li>
+
+
+          </div>
+        </div>
+
+        <div class="section">
+          <h1 class="section-title">Interests</h1>
+          <div class="item">
+
+            <li>Community Development</li>
+            <li>Open Source Software</li>
+            <li>Urban Planning</li>
+
+          </div>
+        </div>
+
+      </div>
+  </main>
+
+  <footer>
+    <span class="footer-item" id="credits">
+      Return to <a href="/"><span class="link-text"><%- config.title %></span></a> | 
+      Template by<a href="https://gitlab.com/mertbakir/resume-A4"><span class="link-text">Mert
+          Bakır </span></a>
+    </span>
+  </footer>
+
+</body>
+
+</html>

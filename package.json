@@ -6,17 +6,20 @@
     "version": "5.1.1"
   },
   "scripts": {
-    "build": "hexo clean && hexo generate && parcel build public/style.css --out-dir public/",
+    "build": "node github && hexo clean && hexo generate && parcel build public/style.css --out-dir public/",
     "gen": "hexo generate",
     "clean": "hexo clean",
     "deploy": "hexo deploy",
-    "server": "hexo server"
+    "start": "node github && hexo server"
   },
   "dependencies": {
     "bower": "^1.8.8",
     "chota": "^0.8.0",
     "hexo": "^5.0.0",
+    "hexo-admin": "^2.3.0",
+    "hexo-browsersync": "^0.3.0",
     "hexo-excerpt": "^1.1.6",
+    "hexo-filter-responsive-images": "^1.5.0",
     "hexo-generator-archive": "^1.0.0",
     "hexo-generator-category": "^1.0.0",
     "hexo-generator-feed": "^3.0.0",
@@ -29,7 +32,8 @@
     "hexo-renderer-stylus": "^2.0.0",
     "hexo-server": "^2.0.0",
     "hexo-slides-reveal": "0.0.5",
-    "lodash.assign": "^4.2.0"
+    "lodash.assign": "^4.2.0",
+    "node-fetch": "^2.6.1"
   },
   "devDependencies": {
     "cssnano": "^4.1.10",
