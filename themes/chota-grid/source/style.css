@@ -173,7 +173,7 @@ main {
 
 footer {
   font-size: 1.4rem;
-  padding:2rem;
+  padding: 4rem 1rem 6rem;
   text-align:center;
 }
 
@@ -313,7 +313,7 @@ footer {
   .nav-mobile a {
      text-align: center;
      background: var(--bg-light);
-     padding: 0.5rem;
+     padding: 0.8rem;
   }
   .nav-mobile a:hover,
   .nav-mobile a:focus {
@@ -321,9 +321,6 @@ footer {
   }
   [data-theme="dark"] .nav-mobile a img {
     filter: invert();
-  }
-  .nav-mobile a:active {
-     filter: opacity(0.7);
   }
 }
 
