@@ -11,7 +11,20 @@
   }
 
   if (document.querySelector(".js-nightmode-toggle")) {
-    document.querySelector(".js-nightmode-toggle").addEventListener("click", function(e) {
+    var toggles = document.querySelectorAll(".js-nightmode-toggle");
+    toggles[0].addEventListener("click", function(e) {
+      e.preventDefault()
+      console.log(localStorage.getItem("theme"))
+      // nightmodeToggle("nightmode")
+      if (document.documentElement.getAttribute('data-theme') === 'dark') {
+        document.documentElement.setAttribute('data-theme', 'light');
+        localStorage.setItem("theme", "light")
+      }else{
+        document.documentElement.setAttribute('data-theme', 'dark');
+        localStorage.setItem("theme", "dark")
+      }
+    });
+    toggles[1].addEventListener("click", function(e) {
       e.preventDefault()
       console.log(localStorage.getItem("theme"))
       // nightmodeToggle("nightmode")
