@@ -298,13 +298,13 @@ footer {
   display: none;
 }
 
-@media screen and (max-width:480px) {
+@media screen and (max-width:500px) {
   .nav-links {
     display: none;
   }
   .nav-mobile {
      display: grid;
-     grid-template-columns: repeat(5, 20%);
+     grid-template-columns: repeat(6, 16.667%);
      position: fixed;
      bottom: 0;
      width: 100%;
