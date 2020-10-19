@@ -173,7 +173,7 @@ main {
 
 footer {
   font-size: 1.4rem;
-  padding: 4rem 1rem 6rem;
+  padding: 2rem;
   text-align:center;
 }
 
@@ -322,6 +322,9 @@ footer {
   [data-theme="dark"] .nav-mobile a img {
     filter: invert();
   }
+    footer {
+        padding: 4rem 1rem 6rem;
+    }
 }
 
 /**/
