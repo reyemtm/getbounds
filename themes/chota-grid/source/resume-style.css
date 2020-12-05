@@ -1,12 +1,12 @@
 @import url('/montserrat/Montserrat.css');
-@import url("https://fonts.googleapis.com/css2?family=Hind:wght@400;500");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@100;200;300;400;500&family=Source+Sans+Pro:wght@100;200;300;400;500;600;700");
 
 :root {
   --link-color: #049DBF;
-  --alt-color: #D93D04;
+  --alt-color: #202020;
   --font-color: #202020;
   --font-heading: "Montserrat",-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  --font-body: "Hind", -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  --font-body: "Source Sans Pro", -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 * {
@@ -16,12 +16,13 @@
 
 body {
   background: #fff;
-  font-family: pt sans, ibm plex sans, arial, sans-serif;
+  font-family: var(--font-body);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale
 }
 
 a {
+  color: #202020;
   text-decoration: none
 }
 a:hover, a:focus, a:active {
@@ -29,8 +30,9 @@ a:hover, a:focus, a:active {
   background: var(--alt-color);
 }
 
-* {
-  font-family: Hind, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+h1.section-title {
+  letter-spacing: 2px;
+  text-transform: uppercase;
 }
 
 h1, h2, h3, h4, h5 {
@@ -39,9 +41,9 @@ h1, h2, h3, h4, h5 {
 
 li {
   list-style-type: square;
-  padding-left: 0;
+  padding-left: 10px;
   list-style-position: inside;
-  margin: 8px 0
+  margin: 2px 0; /*8px 0*/
 }
 
 .resumeCanvas {
@@ -60,16 +62,22 @@ li {
   width: 100%;
   height: 100%;
   display: grid;
-  grid-template-columns: repeat(7, 1fr);
-  grid-template-rows: repeat(6, 1fr);
+  grid-template-columns: repeat(9, 1fr);
+  grid-template-rows: repeat(7, 1fr);
   grid-column-gap: 0;
   grid-row-gap: 0
 }
 
+.item span {
+  font-weight: 400;;
+  opacity: 0.5;
+}
 .flex-row {
   display: flex;
   flex-direction: row;
-  justify-content: space-between
+  font-weight: 400;
+  justify-content: space-between;
+  margin-bottom: 6px;
 }
 
 .titleHeader {
@@ -81,16 +89,20 @@ li {
 .titleHeader h1 {
   font-size: 64px;
   color: var(--font-color);
-  letter-spacing: .15rem
+  letter-spacing: .15rem;
 }
 
 header {
-  grid-area: 1/1/2/8;
-  border-bottom: #bfbfbf 1px solid
+  grid-area: 1/1/1/10;
+  border-bottom: #bfbfbf 1px solid;
+}
+
+header.flex-row {
+  margin-bottom: 10px;
 }
 
 .leftSide {
-  grid-area: 2/1/7/6;
+  grid-area: 2/1/7/7;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -99,11 +111,11 @@ header {
 }
 
 .rightSide {
-  grid-area: 2/6/7/8;
+  grid-area: 2/7/7/10;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  margin-left: 8px
+  margin-left: 20px
 }
 
 .rightSide li {
@@ -128,7 +140,7 @@ header {
 
 .leftSide h1,
 .rightSide h1 {
-  margin-bottom: 16px;
+  margin-bottom: 14px;
   font-size: 24px
 }
 
@@ -220,6 +232,11 @@ footer a:hover {
   margin-bottom: 14px
 }
 
+.item p, .item li {
+  /* color: gray; */
+  font-weight: 300;
+}
+
 .section .item:last-child {
   margin-bottom: 0
 }
@@ -229,23 +246,26 @@ footer a:hover {
 }
 
 .section-title {
+  background: whitesmoke;
   border-left: solid 6px var(--font-color);
   /* border-left: solid 6px #D93D04; */
+  border-color: #202020;
+  color: #202020;
   /* color: #049DBF; */
   padding-left: 8px;
   /* font-family: pt sans, ibm plex sans, arial, sans-serif */
 }
 
 h1.name {
-  font-size: 4rem;
+  font-size: 2.6rem;
   letter-spacing: 0.5rem;
 }
 
 .tagline {
-  font-size: 32px;
+  font-size: 1.8rem;
   font-weight: 400;
   letter-spacing: 0.3rem;
-  margin-left: 4px;
+  /* margin-left: 4px; */
 }
 
 .job-title {
@@ -253,7 +273,9 @@ h1.name {
 }
 
 .item-title {
-  margin-bottom: 2px
+  font-weight: 500;
+  letter-spacing: 1px;
+  margin-bottom: 2px;
 }
 
 .item-title-span {
@@ -303,4 +325,24 @@ h1.name {
     -webkit-box-shadow: none;
     box-shadow: none
   }
+}
+
+.flex li {
+  display: flex;
+  align-items: center;;
+}
+.flex li img {
+  margin-right: 2px;
+  opacity: 0.8;
+}
+@media print {
+	a,
+	a:visited {
+		text-decoration: underline;
+	}
+  .flex li a[href]:after,
+  .show-print a[href]:after {
+    content: ' ' attr(href) '';
+    letter-spacing: unset;
+	}
 }

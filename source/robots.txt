@@ -7,3 +7,4 @@ Disallow: /admin/
 Disallow: /reveal.js/
 Disallow: /web-resume/
 Disallow: /admin/
+Disallow: /landing/

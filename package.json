@@ -3,23 +3,22 @@
   "version": "0.0.0",
   "private": true,
   "hexo": {
-    "version": "5.1.1"
+    "version": "5.2.0"
   },
   "scripts": {
     "build": "node github && hexo clean && hexo generate && parcel build public/style.css --out-dir public/",
     "gen": "hexo generate",
     "clean": "hexo clean",
     "deploy": "hexo deploy",
-    "start": "node github && hexo server"
+    "start": "node github && hexo server",
+    "avif": "avif --input='public/assets/img/*.{jpg, png}' --speed=0 --quality=80"
   },
   "dependencies": {
-    "bower": "^1.8.8",
+    "bluebird": "^3.7.2",
     "chota": "^0.8.0",
     "hexo": "^5.0.0",
     "hexo-admin": "^2.3.0",
-    "hexo-browsersync": "^0.3.0",
     "hexo-excerpt": "^1.1.6",
-    "hexo-filter-responsive-images": "^1.5.0",
     "hexo-generator-archive": "^1.0.0",
     "hexo-generator-category": "^1.0.0",
     "hexo-generator-feed": "^3.0.0",
@@ -33,10 +32,16 @@
     "hexo-server": "^2.0.0",
     "hexo-slides-reveal": "0.0.5",
     "lodash.assign": "^4.2.0",
-    "node-fetch": "^2.6.1"
+    "micromatch": "^4.0.2",
+    "node-fetch": "^2.6.1",
+    "sharp": "^0.26.3",
+    "stream-to-array": "^2.3.0",
+    "stream-to-promise": "^3.0.0"
   },
   "devDependencies": {
+    "bower": "^1.8.8",
     "cssnano": "^4.1.10",
+    "hexo-browsersync": "^0.3.0",
     "parcel-bundler": "^1.12.3"
   }
 }
