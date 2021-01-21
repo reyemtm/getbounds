@@ -1,6 +1,21 @@
+<nav id="nav-links-mobile" class="nav-links-mobile">
+  <!-- <div> -->
+    <a href="#about">About</a>
+
+    <a href="#portfolio">Portfolio</a>
+
+    <a href="#writings-talks">Writings & Talks</a>
+
+    <a href="#code">Code</a>
+
+    <a href="#footer">Contact</a>
+    <a href="#close" class="nav-links-mobile--close"></a>
+    <!-- </div> -->
+</nav>
 <div class="landing-page-wrapper">
   <nav class="p1">
-    <a href="/">getBounds</a>
+    <a class="brand" href="/">getBounds</a>
+    <a href="#nav-links-mobile" class="nav-links-mobile--button" style="  background-image: url(https://icongr.am/feather/menu.svg?size=24&color=currentColor);"></a>
     <div class="nav-links float-right">
       <a href="#about">About</a>
 
@@ -10,14 +25,14 @@
 
       <a href="#code">Code</a>
 
-      <a href="#contact">Contact</a>
+      <a href="#footer">Contact</a>
     </div>
   </nav>
   <header class="hero">
     <img></img>
     <h1 class="clear fw5 m0" style="letter-spacing: 0.5rem;font-size:2.8rem;">Malcolm Meyer</h1>
     <h2 class="clear fw3 m0">Data | GIS | Maps | Web</h2>
-    <a href="#contact">Contact</a>
+    <a href="#footer">Contact</a>
   </header>
   <main>
 
@@ -26,7 +41,7 @@
       <div>
 
         <p>
-          <strong>getBounds</strong> is a portfolio and blog created by Malcolm Meyer. I have a passion for ecology, open source, urban planning, and web mapping. I create projects using a variety of desktop and web tools including Leaflet JS, Mapbox GL JS, Postgres/PostGIS and QGIS.
+          <strong>getBounds</strong> is a portfolio and blog desgined and maintained by Malcolm Meyer. I have ten years of experience in geospatial sector and a passion for ecology, maps, open source software, urban planning, and web design. I create projects using a variety of software and tools. Some of my favorite tools include Leaflet JS, Mapbox GL JS, Postgres/PostGIS and QGIS.
         </p>
         <!-- <h3>Analysis</h3> -->
         <!-- <p>From data cleaning to geocoding to advanced geospatial analysis, I strive to find the most appropriate and cost effective data analysis solutions to fulfill project requirements.</p>
@@ -76,7 +91,7 @@
       </div>
     </section>
 
-    <section id="code" class='inverse'>
+    <section id="code" class='code inverse'>
       <h2 class="fw6">Code</h2>
       <div>
         <% for (var i in site.data.repos) { %>
@@ -97,11 +112,11 @@
           </article>
           <%}%>
         <% } %>
-        <a href="/code" style="text-decoration: underline;">View All Code Projects</a>
+        <a href="https://github.com/reyemtm?tab=repositories" style="text-decoration: underline;">View More on GitHub</a>
       </div>
     </section>
 
-    <section id="contact">
+    <section id="Contact">
       <h2 class="fw6">Contact</h2>
       <div>
 
@@ -129,10 +144,51 @@
   </div>
   <footer class="footer p1 center">
     &copy 2020 <%= config.author %> | <a href="/" class="clear"><%= config.title%></a>
+    <span id="footer"></span>
   </footer>
 </div>
 
 <script>
+  /*!
+  * Run a callback function after scrolling has stopped
+  * (c) 2017 Chris Ferdinandi, MIT License, https://gomakethings.com
+  * @param  {Function} callback The function to run after scrolling
+  */
+  function scrollStop(callback) {
+
+  // Make sure a valid callback was provided
+  if (!callback || typeof callback !== 'function') return;
+
+    // Setup scrolling variable
+    var isScrolling;
+
+    // Listen for scroll events
+    window.addEventListener('scroll', function (event) {
+
+      // Clear our timeout throughout the scroll
+      window.clearTimeout(isScrolling);
+
+      // Set a timeout to run after scrolling ends
+      isScrolling = setTimeout(function() {
+
+        // Run the callback
+        callback();
+
+      }, 66);
+
+    }, false);
+
+  };
+
+// scrollStop(function() {
+//   if(window.history.replaceState) {
+//       window.history.replaceState('', '/', window.location.pathname)
+//   } else {
+//       window.location.hash = '';
+//   }
+
+// })
+
 var about = {
   title: "About",
   html: [`

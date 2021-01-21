@@ -2,10 +2,10 @@
 /* @import url('/montserrat/Montserrat.css'); */
 
 :root {
- --color-dark: #121212;
+ --color-dark: #09090A;
  --color-accent: pink;
  background: white;
- color: #121212;
+ color: #09090A;
  font-size: 18px;
 }
 
@@ -52,14 +52,86 @@ nav a {
  padding: 0.2rem 0.2rem;
  text-decoration: none;
 }
-nav > a:hover {
- background: white;
- filter: invert(1);
+
+nav a:hover, nav a:hover {
+  text-decoration: underline;
 }
-nav a:hover,
+nav a.brand:hover {
+  background-color: white;
+  filter: invert(1);
+  text-decoration: none;
+ }
+/* nav a:hover,
 nav a:focus {
- outline: solid thin black;
+ outline: solid thin var(--clolor-dark);
+} */
+
+.nav-links {
+  display: none;
 }
+
+.nav-links-mobile {
+  display: none;
+}
+
+.nav-links-mobile:target {
+  background: var(--color-dark);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-content: space-around;
+  position: fixed;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+.nav-links-mobile--close {
+  background-position: center;
+  background-repeat: no-repeat;
+  position: absolute;
+  right: 8px;
+  top: 8px;
+  background-image: url(https://icongr.am/feather/x-circle.svg?size=32&color=currentColor);
+  width: 32px;
+  height: 32px;
+  filter: invert();
+}
+
+.nav-links-mobile--button {
+  background-image: url(https://icongr.am/feather/menu.svg?size=24&color=currentColor);
+  background-color: white;
+  background-position: center;
+  background-repeat: no-repeat;
+  border: solid thin black;
+  border-radius: 2px;
+  display: block;
+  float:  right;
+  height: 20px;
+  padding: 4px;
+  position: fixed;
+  top: 10px;
+  width: 20px;
+  right: 10px;
+}
+
+@media screen and (min-width: 768px) {
+  .nav-links {
+    display: flex;
+  }
+  .nav-links-mobile,  .nav-links-mobile:target {
+    display: none;
+  }
+  .nav-links-mobile--button {
+    display: none;
+  }
+
+}
+
 @media screen and (min-width: 540px) {
  nav {
   display: block;
@@ -117,7 +189,7 @@ header.hero > a {
 
 header.hero > a:hover,
 header.hero > a:focus {
- background: black;
+ background-color: var(--color-dark);
  filter: invert(1);
  outline: none;
 }
@@ -135,10 +207,10 @@ section {
 section > h2 {
  text-align: center;
 }
-
+/* 
 section > div {
  overflow: auto;
-}
+} */
 
 section:not(.full) > div {
  align-items: center;
@@ -266,7 +338,8 @@ section form {
 
 section form input,
 section form textarea {
- border: solid thin black;
+ border: solid thin var(--color-dark);
+ border-color: var(--color-dark);
  border-radius: 3px;
  font-family: monospace;
  font-size: 0.8rem;
@@ -275,9 +348,10 @@ section form textarea {
 }
 
 section form button {
- background: #202020;
+ background: var(--color-dark);
  box-shadow: 0;
- border: solid thin black;
+ border: solid thin var(--clolor-dark);
+ border-color: var(--color-dark);
  border-radius: 3px;
  color: white;
  cursor: pointer;
@@ -288,7 +362,7 @@ section form button {
 }
 section form button:hover,
 section form button:focus {
- background: black;
+ background-color: var(--clolor-dark);
  border-color: white;
  filter: invert(1);
 }
@@ -364,7 +438,7 @@ footer.footer {
  padding: 0;
 }
 .p1 {
- padding: 1rem;
+ padding: 0.6rem 1rem;
 }
 .float-right {
  text-align: center;
@@ -376,7 +450,7 @@ footer.footer {
 }
 
 .inverse {
- background: #121212;
+ background-color: var(--color-dark);
  color: white;
  /* filter: invert(1); */
 }
@@ -394,12 +468,20 @@ footer.footer {
 }
 
 ::-webkit-scrollbar {
- width: 0.3rem;
- height: 0.3rem;
+ width: 0.4rem;
+ height: 0.4rem;
  background-color: white; /* or add it to the track */
 }
 
 /* Add a thumb */
 ::-webkit-scrollbar-thumb {
  background: #505050;
+}
+
+.code article {
+  padding:1rem;
+  background: #212121;
+  border-radius:3px;
+  margin-bottom: 2rem;
+  width: calc(100% - 2rem);
 }
