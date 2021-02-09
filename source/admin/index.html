@@ -19,5 +19,15 @@
 <body>
   <!-- Include the script that builds the page and powers Netlify CMS -->
   <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
+  <script>
+    window.onhashchange = function() {
+      const hash = window.location.hash;
+      if (hash.includes("entries") {
+          document.body.style.filter = "none";
+      }else{
+        document.body.style.filter = "invert()"
+      }
+    }
+  </script>
 </body>
 </html>
