@@ -2,7 +2,7 @@
 title: Progressive Web Apps
 subtitle: Using PWA Components for Web Maps
 date: 2019-05-10
-slides: '/slides/2019-pwa-maps/'
+slides: 'https://slides.getbounds.com/2019-pwa-maps/index.html'
 tags: 
  - mapbox
  - slides
