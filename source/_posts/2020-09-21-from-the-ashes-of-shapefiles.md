@@ -7,7 +7,7 @@ description: >-
 date: 2020-09-21
 img: "ashes.jpg"
 tags: ["postgres", "qgis", "mapbox", "esri"]
-slides: "/slides/2020-ashes-of-shapefiles/"
+slides: "https://slides.getbounds.com/2020-ashes-of-shapefiles/index.html"
 ---
 
 
