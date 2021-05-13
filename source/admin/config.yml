@@ -26,4 +26,5 @@ collections:
       - {label: "Custom Style", name: "style", widget: "code", required: false}
       - {label: "Additional Styles and Scripts", name: "header", widget: "string", required: false }
       - {label: "Featured", name: "featured", widget: "boolean", default: false}
+      - {label: "Presentation URL", name: "slides", widget: "string", required: false}
       - {label: "Body", name: "body", widget: "markdown"}
