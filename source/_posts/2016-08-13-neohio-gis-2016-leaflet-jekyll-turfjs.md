@@ -11,9 +11,9 @@ description: Using the power of open source through Jekyll, Leaflet and TurfJS f
   web mapping. A Presentation to the 2016 Northeast Ohio GIS Symposium. August 25,
   2016.
 theme: blood
-image: neohio-gis-thumb.jpg
-header-img: neohiogis-header.jpg
-img: neohiogis-header.jpg
+image: neohio-gis-thumb.png
+header-img: neohiogis-header.png
+img: neohiogis-header.png
 slides: "https://slides.getbounds.com/2016-jekyll-leaflet-turfjs/"
 ---
 

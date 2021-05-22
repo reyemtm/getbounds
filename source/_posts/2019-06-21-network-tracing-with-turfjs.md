@@ -9,7 +9,7 @@ description: >-
   A Client Side Solutions for Simple Upstream and Downstream Linear Network
   Analysis
 netlify-img: /images/post-img/original/trace.jpg
-img: trace.jpg
+img: trace.png
 tags:
   - turfjs
   - mapbox

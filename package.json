@@ -1,6 +1,6 @@
 {
   "name": "getbounds",
-  "version": "0.0.0",
+  "version": "3.0.0",
   "private": true,
   "hexo": {
     "version": "5.2.0"
@@ -10,6 +10,7 @@
     "gen": "hexo generate",
     "clean": "hexo clean",
     "deploy": "hexo deploy",
+    "serve": "hexo server",
     "start": "node github && hexo server",
     "avif": "avif --input='public/assets/img/*.{jpg, png}' --speed=0 --quality=80"
   },
@@ -23,6 +24,7 @@
     "hexo-generator-category": "^1.0.0",
     "hexo-generator-feed": "^3.0.0",
     "hexo-generator-index": "^2.0.0",
+    "hexo-generator-json-content": "^4.2.3",
     "hexo-generator-seo-friendly-sitemap": "0.0.25",
     "hexo-generator-tag": "^1.0.0",
     "hexo-html-prettify": "^1.1.1",
@@ -31,12 +33,14 @@
     "hexo-renderer-stylus": "^2.0.0",
     "hexo-server": "^2.0.0",
     "hexo-slides-reveal": "0.0.5",
+    "hexo-util": "^2.5.0",
     "lodash.assign": "^4.2.0",
     "micromatch": "^4.0.2",
     "node-fetch": "^2.6.1",
     "sharp": "^0.26.3",
     "stream-to-array": "^2.3.0",
-    "stream-to-promise": "^3.0.0"
+    "stream-to-promise": "^3.0.0",
+    "striptags": "^3.1.1"
   },
   "devDependencies": {
     "bower": "^1.8.8",

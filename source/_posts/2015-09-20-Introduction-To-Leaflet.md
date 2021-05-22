@@ -9,8 +9,8 @@ tags:
 - jekyll
 external: true
 subtitle: A Presentation for the 2015 Ohio GIS Conference
-header-img: cdbdark.jpg
-img: cdbdark.jpg
-image: intro-to-leaflet-slides.jpg
+header-img: cdbdark.png
+img: cdbdark.png
+image: intro-to-leaflet-slides.png
 slides: https://www.ovrdc.org/apps/presentations/leaflet-ogrip/index.html#/
 ---

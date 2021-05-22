@@ -7,19 +7,22 @@ layout: post
 ---
 This little trick came from GIS stack exchange. To run a model using only selected features, open your model and in the model builder window right click and select 'Model Only Tools/Calculate Value'. In the 'Expression' box type:
 
-    hasSelection ("%your input layer here%")
-
+```Python
+hasSelection ("%your input layer here%")
+```
 
 Then in the 'Code Block' type:
 
-    def hasSelection(layer):
-        desc = arcpy.Describe(layer)
-        fidset = desc.FIDSet
-        if fidset =="":
-            return "False"
-        else:
-            # A selection exists so OK to execute
-            return "True"
+```Python
+def hasSelection(layer):
+    desc = arcpy.Describe(layer)
+    fidset = desc.FIDSet
+    if fidset =="":
+        return "False"
+    else:
+        # A selection exists so OK to execute
+        return "True"
+```
 
 Finally the 'Data type' should be set to Boolean and be sure to save your model.
 

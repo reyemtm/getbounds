@@ -7,7 +7,7 @@ tags:
  - mapbox
  - leaflet
 featured: true
-img: storelocate.jpg
+img: storelocate.png
 repo: https://github.com/reyemtm/leaflet-store-locator/
 ---
 

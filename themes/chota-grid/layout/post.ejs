@@ -1,61 +1,62 @@
-<main class="container">
-<div class="post grid">
-  <section>
-    <artcile>
-      <header>
-        <h1><%- page.title %></h1>
-        <!-- <h3 style="margin-bottom: 3rem" class="alt-color"><%- page.subtitle %></h3> -->
+<article class="post">
+  <header>
+    <h1 class="post--title"><%- page.title %></h1>
+    <h2 class="post--subtitle"><%- page.subtitle %></h2>
 
-        <h2><%- page.subtitle %></h2>
+    <span class="post--meta">
+      <%- partial('_partial/date', {post: page}) %>
+    </span>
 
-        <span>
-          <% if (page.date_updated) {%>
-            Posted&nbsp;<time datetime="<%= date_xml(page.date) %>" itemprop="datePublished"><%= date(page.date) %></time>&nbsp;| Updated&nbsp;<time datetime="<%= date_xml(page.date_updated) %>" itemprop="dateUpdated"><%= date(page.date_updated) %></time>
-            <%}else{%>
-            Posted&nbsp;<time datetime="<%= date_xml(page.date) %>" itemprop="datePublished"><%= date(page.date) %></time>
-          <%}%>
-        </span>
-        <span>
-          <%- list_tags(page.tags, {
-            show_count: false,
-            class: 'clean tag'
-          }) %>
-        </span>
+    <span>
+      <%- list_tags(page.tags, {
+        show_count: false,
+        class: 'clean tag'
+      }) %>
+    </span>
 
-        <% if (page.slides || page.iframe) { %>
-          <% if (page.slides) { %>
-            <% var iframe = (page.slides) %>
-            <%}else{%>
-            <% var iframe = (page.iframe) %>
-          <%}%>
-          <div style="margin-bottom: 20px;">
-            <iframe src="<%= iframe %>" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true" height="700" frameborder="0"></iframe>
-            <em style="font-size: smaller;"><a href="<%= iframe %>" target="_blank">View this presentation fullscreen in a new tab.</a></em>
-          </div>
-          <%}else{%>
-          <img src="/assets/img/16x9_<% if (page.img) {%><%- page.img %><%} else {%><%- config.defaultimage %><%}%>">
-        <%}%>
+    <% if (page.slides || page.iframe) { %>
+      <% if (page.slides) { %>
+        <% var iframe = (page.slides) %>
+        <%}else{%>
+        <% var iframe = (page.iframe) %>
+      <%}%>
+      <div style="margin-bottom: 20px;">
+        <iframe src="<%= iframe %>" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true" height="700" frameborder="0"></iframe>
+        <br>
+        <em style="font-size: smaller;"><a href="<%= iframe %>" target="_blank">View this presentation fullscreen in a new tab.</a></em>
+      </div>
+      <%}else{%>
+        <!-- <picture>
+          <img src="/assets/img/16x9_<% if (page.img) {%><%- (page.img).replace('.png', '.webp').replace('.jpg', '.webp') %><%}%>" alt="<%- page.img %>" loading=lazy />
+        </picture> -->
+      <%}%>
 
-      </header>
-      <%- page.content %>
-    </artcile>
-  </section>
-</div>
-</main>
-<section class="bg-lighter">
-<div class="container grid grid-7x-3x">
-  <%- list_related_posts({
-    maxCount: 2, 
-    orderBy: 'random', 
-    pClass: 'post-realted-p',
-    ulClass: 'post-related-ul',
-    liClass: 'post-related-li',
-    aClass: 'post-related-a',
-    generateAbstract: true,
-    abstractClass: 'post-related-abstract',
-    abstractLength: 200
-    }) %>
-    
-  <%- partial('_partial/sidebar') %>
-</div>
+  </header>
+  <%- page.content %>
+</article>
+
+<section class="post--pager">
+    <% if (page.prev){ %>
+      <a href="<%- url_for(page.prev.path) %>"><span style="color:gray">Newer Post</span><br><span style="text-decoration: underline;"><%= page.prev.title %></span></a>
+    <% } %>
+    <% if (page.next){ %>
+      <a href="<%- url_for(page.next.path) %>"><span style="color:gray">Older Post</span><br><span style="text-decoration: underline;"><%= page.next.title %></span></a>
+    <% } %>
+</section>
+
+<section class="inverse">
+  <!-- <h2 class="center">Related Posts</h2> -->
+  <div class="post--related">
+    <%- list_related_posts({
+      maxCount: 2, 
+      orderBy: 'random', 
+      pClass: 'post--realted-p',
+      ulClass: 'post--related-ul',
+      liClass: 'post--related-li',
+      aClass: 'post--related-a',
+      generateAbstract: true,
+      abstractClass: 'post-related-abstract',
+      abstractLength: 200
+      }) %>
+  </div>
 </section>

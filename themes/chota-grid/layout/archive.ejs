@@ -1,0 +1,24 @@
+<header class="hero" style="height: 30vh">
+  <img class="hero--background-img" src="/assets/img/lg_cover_dem_rivers_wide.webp" alt="Background Image of a River"></img>
+  <div class="hero--inner">
+    <h1 class="hero--title"><% if (page.tag) {%>Topic | <%- titlecase(page.tag) %><%}else{%>Blog Archive<%}%></h1>
+  </div>
+</header>
+
+
+<section id="blog">
+  <div class="blog">
+    <% page.posts.sort('date', -1).each(function(post, i) {%>
+    <a rel="prefetch" href="<%- url_for(post.path) %>">
+      <article class="">
+        <div>
+          <%- partial('_partial/date', {post: post}) %>
+          <h2> <%= post.title %></h4>
+          <h3> <%= post.subtitle %></h5>
+          <p><%- strip_html((post.excerpt).substring(0, 150)) %>...</p>
+        </div>
+      </article>
+    </a>
+    <%})%>
+  </div>
+</section>

@@ -5,16 +5,13 @@
   <%- partial('_partial/head') %>
 </head> 
 <body>
-  
-  <% if (page.layout == "slides" || page.layout == "big" || page.layout == "landing") { %>
-  <%- body %>
-  <%}else{%>
-
+ 
   <%- partial('_partial/nav') %>
+  <main>
   <%- body %>
+  </main>
   <%- partial('_partial/footer') %>
   <%- partial('_partial/site-scripts') %>
-  <%}%>
 
 </body>
 

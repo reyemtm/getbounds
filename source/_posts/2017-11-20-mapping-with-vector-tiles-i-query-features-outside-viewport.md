@@ -10,7 +10,7 @@ description: >-
 tags:
   - mapbox
   - vector tiles
-img: mapbox-parcel-viewer-web.jpg
+img: mapbox-parcel-viewer-web.png
 netlify-img: /images/post-img/original/mgl-parcels-01.png
 featured: true
 date_updated: 2019-04-12 00:00:00
@@ -24,40 +24,40 @@ To get around this dilemma, one option is to create the vector tiles first, then
 
 The answer to this is a simple Node script that minimizes the GeoJSON data into a JSON file with only those fields we need to search. This is accomplished using the `.map()` function on the GeoJSON features object. Utilizing the `turf.center()` function we can also create a centroid that is used to pan the map to the search result. The original data would ideally contain a unique ID field in order for `map.queryRenderedFeatures()` in Mapbox GL JS to work properly. If the dataset does not have a unique ID field, this can easily be created in the Node script before cutting out data into tiles, making sure to return this ID to our searchable JSON object.
 
-
-    var geojson = {
-      "type": "FeatureCollection",
-      "features": [
-        {
-          "type": "Feature",
-          "properties": {
-            "id":"0ABCDE",
-            "name": "point",
-            "label": "nowhere",
-            "type":"nothing"
-          },
-          "geometry": {
-            "type": "Point",
-            "coordinates": [
-              105.77636718749999,
-              69.76375692223178
-            ]
-          }
-        }
-      ]
-    }
-
-    var json = (geojson.features).map(function(feature) {
-      var keys = ["id","label","name"];
-      var obj = {};
-      for (prop in feature.properties) {
-        if (keys.includes(prop)) {
-            obj[prop] = feature.properties[prop]
-        }
+```Javascript
+var geojson = {
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "id":"0ABCDE",
+        "name": "point",
+        "label": "nowhere",
+        "type":"nothing"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.77636718749999,
+          69.76375692223178
+        ]
       }
-      return obj
-    });
+    }
+  ]
+}
 
+var json = (geojson.features).map(function(feature) {
+  var keys = ["id","label","name"];
+  var obj = {};
+  for (prop in feature.properties) {
+    if (keys.includes(prop)) {
+        obj[prop] = feature.properties[prop]
+    }
+  }
+  return obj
+});
+```
 
 There are a wide variety of JSON search plugins, ~~and since I use Jekyll for my website~~ and since I am familiar with Jekyll I decided to use the [simple-jekyll-search](https://github.com/christian-fei/Simple-Jekyll-Search) plugin for this project. This plugin has the advantage of having a built-in search results preview. This is shown in the image below.
 

@@ -98,8 +98,7 @@ function listRelatedPosts(options) {
     result += "";
   }else{
     // result += '<ul class="' + options.ulClass + '">';
-    result += '<div><h3 class="alt-color">Related Posts</h3>';
-    if (options.card) {
+      if (options.card) {
       for (var i = 0; i < count; i++) {
         var post = postList[i];
         // result += '<li class="' + options.liClass + '">' + '<a class="' + options.aClass + '" href="' + root + postList[i].path + '">' + postList[i].title + '<br>' + postList[i].subtitle + '</a><div class="' + options.abstractClass + '">' + striptags(postList[i].content).substring(0, options.abstractLength) + '</div></li>';
@@ -110,19 +109,19 @@ function listRelatedPosts(options) {
           post.subtitle = "";
         }
         result += `
-        <a rel="prefetch" href="/${post.path}" class="clean">
-        <article class="index-card related grid">
-          <!--img src="/assets/img/4x3_${post.img}"-->
-          <div>
-            <h1>
+        <a rel="prefetch" href="/${post.path}" class="">
+          <article class="">
+            <img src="/assets/img/2x1_${post.img.split(".")[0]}.webp" alt="${post.img.replace(".png", "")}" loading=lazy>
+            <div>
+              <h2>
               ${post.title}
-            </h1>
-            <h2>
-              ${post.subtitle}
-            </h2>
-          </div>
-        </article>
-      </a>
+              </h2>
+              <p>
+                ${post.subtitle}
+              </p>
+            </div>
+          </article>
+        </a>
         `
       }
     } else {
@@ -130,8 +129,6 @@ function listRelatedPosts(options) {
         result += '<li class="' + options.liClass + '">' + '<a class="' + options.aClass + '" href="' + root + postList[i].path + '">' + postList[i].title + '</a></li>';
       }
     }
-    // result += "</ul>"
-    result += '</div>';
   }
 
   return result;

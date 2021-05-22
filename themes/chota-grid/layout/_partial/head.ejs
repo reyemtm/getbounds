@@ -2,41 +2,35 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <!-- <link rel="manifest" href="/manifest.json"> -->
 <meta name="theme-color" content="<%- config.color %>" />
+<title><%- config.title %> </title>
 
 <!-- hexo opengraph -->
 <%- open_graph({
-  twitter_id: config.twitter,
-  image: "/assets/img/" + config.defaultimage
+  twitter_id: config.twitter
 }) %>
 
-<% if (!page.img) {%>
-<!-- image -->
-<meta name="og:image" content="/assets/img/<%- config.defaultimage %>">
-<%}%>
+<meta property="og:image" content="/assets/img/<% if (page.img) {%><%- (page.img) %><%}else{%><%- config.defaultimage %><%}%>">
 
 <% if (config.favicon){ %>
 <link rel="icon" href="<%- config.favicon %>">
 <% } %>
 
-<% if (page.layout == "landing") {%>
+<% if (is_home()) {%>
 <link rel="stylesheet" href="/landing.css">
+<%}else{%>
+<!-- <link rel="stylesheet" href="/style.css"> -->
+<link rel="stylesheet" href="/simple.css">
 <%}%>
 
-<% if (page.layout == "slides" || page.layout == "big" || page.layout === "landing") { %><%}else{%>
-<!-- default styles -->
-<link rel="stylesheet" href="/style.css">
-<!-- <link rel="stylesheet" href="/prism.css"> -->
-<link rel="stylesheet" href="/xcode.css">
+<link rel="stylesheet" href="/stackoverflow-dark.css">
 
-<%}%>
-</head>
-
-<% if (page.head) {%>
 <!-- scripts and styles in page.header -->
+<% if (page.head) {%>
 <%- page.head %>
 <%}%>
 
-<!-- page.style -->
+
+<!-- page.style page.css -->
 <% if (page.style) {%>
 <style>
 <%- page.style %>
@@ -49,6 +43,4 @@
 </style>
 <%}%>
 
-<% if (is_home()) {%>
-<!-- is_home -->
-<%}%>
+</head>

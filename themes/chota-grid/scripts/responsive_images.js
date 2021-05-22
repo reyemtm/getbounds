@@ -36,6 +36,7 @@ function generateResponsiveImages() {
       return Promise.all(sizes.map(function (sizeSets) {
         return Promise.all(Object.keys(sizeSets).map(function (name) {
           var newPath = getNewPath(filePath, {prefix: name})
+          newPath = newPath.replace(".png", ".webp").replace(".jpg", ".webp")
           return route.set(newPath, resizeImageFn(hexo, buffer, sizeSets[name]))
         }))
       }))
@@ -58,8 +59,10 @@ function resizeImageFn(hexo, buffer, config) {
   return function () {
     var img = sharp(buffer)
     var resizeOptions = getResizeOptions(hexo, config)
-
-    return applySharpApiOptions(img, config).resize(config.width, config.height, resizeOptions).toBuffer()
+    // resizeOptions["withoutEnlargement"] = true
+    return applySharpApiOptions(img, config).resize(config.width, config.height, resizeOptions).toFormat('webp', {
+      nearLossless: true
+      }).toBuffer()
   }
 }
 

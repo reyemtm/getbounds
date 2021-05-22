@@ -1,21 +1,25 @@
-<nav class="nav container">
-  <div class="nav-logo">
-    <a href="/">getBounds | Malcolm Meyer</a>
-  </div>
-  <div class="nav-links">
-    <a href="/blog"><img src="https://icongr.am/clarity/edit.svg?size=20&color=currentColor"> Blog</a>
-    <a href="/code"><img src="https://icongr.am/clarity/code.svg?size=20&color=currentColor"> Code</a>
-    <a href="https://malcolmmeyer.com"><img src="https://icongr.am/clarity/image-gallery.svg?size=20&color=currentColor"> Work</a>
-    <a href="/contact"><img src="https://icongr.am/clarity/email.svg?size=20&color=currentColor"> Contact</a>
-    <a href="#" class="js-nightmode-toggle"><img src="https://icongr.am/clarity/moon.svg?size=20&color=currentColor"> Theme</a>
-  </div>
+<nav id="nav-links-mobile" class="nav-links-mobile">
+  <a href="/#">Home</a>
+  <% if (is_home()) {%><a href="/#blog">Blog</a><%}else{%><a href="/blog/">Blog</a><%}%>
+  <a href="/#code">Code</a>
+  <a href="/#portfolio">Portfolio</a>
+  <a href="/tags/slides">Slides</a>
+  <a href="/#about">Contact</a>
+  <a href="/#close" class="nav-links-mobile--close"></a>
 </nav>
-
-<nav class="nav-mobile">
-  <a href="/"><img src="https://icongr.am/clarity/home.svg?size=20&color=currentColor"></a>
-  <a href="/blog"><img src="https://icongr.am/clarity/edit.svg?size=20&color=currentColor"></a>
-  <a href="/code"><img src="https://icongr.am/clarity/code.svg?size=20&color=currentColor"></a>
-  <a href="https://malcolmmeyer.com"><img src="https://icongr.am/clarity/image-gallery.svg?size=20&color=currentColor"></a>
-  <a href="/contact"><img src="https://icongr.am/clarity/email.svg?size=20&color=currentColor"></a>
-  <a href="#" class="js-nightmode-toggle"><img src="https://icongr.am/clarity/moon.svg?size=20&color=currentColor"></a>
+<nav>
+  <div>
+    <a class="brand" href="/">getBounds</a>
+    <a href="#nav-links-mobile" class="nav-links-mobile--button" style="  background-image: url(https://icongr.am/feather/menu.svg?size=24&color=currentColor);"></a>
+    <div class="nav-links float-right">
+      <!-- <a href="#about">About</a> -->
+      <!-- <a href="#writings-talks">Blog</a> -->
+  
+      <!-- <a href="#about">About</a> -->
+      <% if (is_home()) {%><a href="/#blog">Blog</a><%}else{%><a href="/blog/">Blog</a><%}%>
+      <a href="/#code">Code</a>
+      <a href="/#portfolio">Portfolio</a>
+      <a href="/tags/slides">Slides</a>
+      <a href="/#about">Contact</a>
+  </div>
 </nav>

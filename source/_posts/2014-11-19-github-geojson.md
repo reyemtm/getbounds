@@ -11,11 +11,13 @@ GitHub will host and preview your geojson files! [Geomusings](http://blog.geomus
 
 So how do you host and share a single gis point/line/polygon layer on GitHub? A quick web search will point you in the right direction. Here is the work flow I followed. First off you need a free GitHub account and data. I used a package layer (park trails) downloaded from the public repository in ArcMap (you could also get data directly from ArcGIS Online or anywhere). The data needs to be in geojson format, you can use [this](http://ogre.adc4gis.com/) to convert your data. You can upload a zip file if you have multiple files, such as shapefiles. If you don't know the code for your projection you can look that up [here.]("http://spatialreference.org/ref/) I converted the trail data to WGS1984 in ArcMap, so my online conversion to geojson looked like this:
 
-    Source SRS:
-    EPSG:4326
+```
+Source SRS:
+EPSG:4326
 
-    Target SRS:
-    urn:ogc:def:crs:OGC:1.3:CRS84
+Target SRS:
+urn:ogc:def:crs:OGC:1.3:CRS84
+```
 
 *(This is the only projection used by GitHub according to [this article.](https://help.github.com/articles/mapping-geojson-files-on-github/))*
 

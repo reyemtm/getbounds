@@ -10,7 +10,7 @@ description: Improving Leaflet performance using the geojson-vt plugin with two 
 subtitle: 'A County Parcel App: No GIS Server? No Problem!'
 header-img: parcel-wide-2.jpg
 feature-img: parcel-wide.jpg
-img: parcel-wide-new.png
+img: parcel-wide-new.jpg
 ---
 *Update 2017-08-01 This app has seen two more iterations. These each utilize an mbtiles-server to host the vector tiles, but still use client-side search for the data. The updated examples can be viewed here - a [Leaflet/Bootstrap Version](https://www.ovrdc.org/apps/vector-grid-pbf.html#13/38.7580/-82.9717) and a [Mapbox/Material Design Lite Version](https://www.ovrdc.org/apps/mapbox-parcel-viewer.html).*
 
@@ -32,6 +32,7 @@ One of the first things to prepare a shapefile for hosting on a web app is to el
 
 The bulk of the code for creation of this app comes from [Sumbera](http://bl.ocks.org/Sumbera/c67e5551b21c68dc8299). This method uses the leaflet canvas layer to draw the tiles (deprecated in leaflet 1.0 in favor of the new grid layer). As you can see above, this method easily renders the 22k parcels in the map above. The only major difference with this map as compared to most web maps is that touch zoom has been disabled on mobile, which eliminates some issues with zoom animations. I am using the following parameters for the geojson-vt tile options:
 
+```Javascript
     var tileOptions = {
       maxZoom: 22,  
       tolerance: 7,
@@ -41,6 +42,7 @@ The bulk of the code for creation of this app comes from [Sumbera](http://bl.ock
       indexMaxZoom: 0,       
       indexMaxPoints: 100000,
     };
+```
 
 <h2>Search and Identify</h2>
 
