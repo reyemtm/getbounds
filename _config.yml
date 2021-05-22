@@ -134,9 +134,9 @@ responsive_images:
       md: 
         width: 1000
         height:
-      16x9:
-        width: 870
-        height: 490
+      # 16x9:
+      #   width: 870
+      #   height: 490
       2x1:
         width: 340
         height: 170

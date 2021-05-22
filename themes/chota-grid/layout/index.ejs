@@ -51,10 +51,10 @@
       <div>
 
         <div class="portfolio">
-          <img class="portfolio-img" src="/assets/img/16x9_storelocate.webp" alt="Portfolio Image" loading=lazy>
-          <img class="portfolio-img" alt="Portfolio Image" src="/assets/img/16x9_08-ohio-vehicle-crash-explorer-with-heatmap.webp" loading=lazy>
-          <img class="portfolio-img" alt="Portfolio Image" src="/assets/img/16x9_04-zanesville-zoning-interactive-web-map.webp" loading=lazy>
-          <img class="portfolio-img" alt="Portfolio Image" src="/assets/img/16x9_01-ohio-block-group-explorer-explorer-story-with-3d-views.webp" loading=lazy>
+          <img class="portfolio-img" src="/assets/img/md_storelocate.webp" alt="Portfolio Image" loading=lazy>
+          <img class="portfolio-img" alt="Portfolio Image" src="/assets/img/md_08-ohio-vehicle-crash-explorer-with-heatmap.webp" loading=lazy>
+          <img class="portfolio-img" alt="Portfolio Image" src="/assets/img/md_04-zanesville-zoning-interactive-web-map.webp" loading=lazy>
+          <img class="portfolio-img" alt="Portfolio Image" src="/assets/img/md_01-ohio-block-group-explorer-explorer-story-with-3d-views.webp" loading=lazy>
           <img class="portfolio-img" alt="Portfolio Image" src="https://www.malcolmmeyer.com/img/06-gpx-visualization-web-application.png" loading=lazy>
         </div>
 
@@ -164,10 +164,10 @@ document.addEventListener('mouseup', function(e) {
   }else{
     if (e.target.classList.contains("portfolio-img")) {
       var img = modal.getElementsByTagName("img")[0];
-      img.src = e.target.src.replace("16x9_", "md_")
-      if (e.target.dataset.info) {
-        modal.querySelector("figcaption").innerText = e.target.dataset.info
-      }
+      img.src = e.target.src
+      // if (e.target.dataset.info) {
+      //   modal.querySelector("figcaption").innerText = e.target.dataset.info
+      // }
       modal.classList.add("modal-active")
     }
   }
