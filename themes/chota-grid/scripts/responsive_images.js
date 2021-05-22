@@ -61,7 +61,7 @@ function resizeImageFn(hexo, buffer, config) {
     var resizeOptions = getResizeOptions(hexo, config)
     // resizeOptions["withoutEnlargement"] = true
     return applySharpApiOptions(img, config).resize(config.width, config.height, resizeOptions).toFormat('webp', {
-      nearLossless: true
+      quality: 90
       }).toBuffer()
   }
 }

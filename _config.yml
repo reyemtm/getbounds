@@ -63,7 +63,7 @@ relative_link: false
 future: true
 
 highlight:
-  enable: false
+  enable: true
   auto_detect: true
   line_number: false
   tab_replace: ''
@@ -134,15 +134,9 @@ responsive_images:
       md: 
         width: 1000
         height:
-      4x3:
-        width: 480
-        height: 360
       16x9:
         width: 870
         height: 490
-      5x3:
-        width: 320
-        height: 192
       2x1:
         width: 340
         height: 170
