@@ -4,7 +4,6 @@ tags:
   - mapbox
   - web maps
 img: featurestate.png
-categories: []
 date: 2019-11-17 16:36:00
 ---
 
@@ -13,6 +12,7 @@ Creating a 'hover' effect is a great way to add interactivity to web maps. In ma
 In my current setup, the ``setFilter`` method works by adding a copy of the active layer to the map. To achieve the highlight effect the layer filter is set to a unique field of the layer from the clicked or moused-over feature. An example of this method is shown in the map below. 
 
 <iframe height="400px" width="100%" src="/apps/mapbox-highlight/filter/"></iframe>
+
 *A map with the setFilter method.*
 
 Although this method works, if the user moves quickly across the map, the filter takes a few seconds to 'catch-up'. If this method is used just for highlighting clicked features, this lag may not be noticeable, however it is not well suited for a hover effect.
