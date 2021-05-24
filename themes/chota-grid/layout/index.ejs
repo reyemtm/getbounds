@@ -48,17 +48,12 @@
 
     <section id="portfolio" class="full">
       <h2 class="section--heading">Portfolio</h2>
-      <div>
-
-        <div class="portfolio">
-          <img class="portfolio-img" src="/assets/img/md_storelocate.webp" alt="Portfolio Image" loading=lazy>
-          <img class="portfolio-img" alt="Portfolio Image" src="/assets/img/md_08-ohio-vehicle-crash-explorer-with-heatmap.webp" loading=lazy>
-          <img class="portfolio-img" alt="Portfolio Image" src="/assets/img/md_04-zanesville-zoning-interactive-web-map.webp" loading=lazy>
-          <img class="portfolio-img" alt="Portfolio Image" src="/assets/img/md_01-ohio-block-group-explorer-explorer-story-with-3d-views.webp" loading=lazy>
-          <img class="portfolio-img" alt="Portfolio Image" src="https://www.malcolmmeyer.com/img/06-gpx-visualization-web-application.png" loading=lazy>
-        </div>
-
-
+      <div class="portfolio">
+        <img class="portfolio-img" src="/assets/img/md_storelocate.webp" alt="Portfolio Image" loading=lazy>
+        <img class="portfolio-img" alt="Portfolio Image" src="/assets/img/lg_08-ohio-vehicle-crash-explorer-with-heatmap.webp" loading=lazy>
+        <img class="portfolio-img" alt="Portfolio Image" src="/assets/img/lg_04-zanesville-zoning-interactive-web-map.webp" loading=lazy>
+        <img class="portfolio-img" alt="Portfolio Image" src="/assets/img/lg_01-ohio-block-group-explorer-explorer-story-with-3d-views.webp" loading=lazy>
+        <img class="portfolio-img" alt="Portfolio Image" src="https://www.malcolmmeyer.com/img/06-gpx-visualization-web-application.png" loading=lazy>
       </div>
       <div class="center">
         <a href="https://malcolmmeyer.com" class="hero--btn inverse">Full Portfolio</a>
@@ -87,14 +82,16 @@
       <h2 class="section--heading">Contact</h2>
       <div>
 
-        <form>
+        <form class="grid" style="grid-row-gap: 1rem" name="contact" method="POST" data-netlify="true">
           <label for="name">Name</label>
-          <input type="text" name="name" placeholder="Jane Smith">
+          <input type="text" id="name" name="name" placeholder="Jane Doe">
+      
           <label for="email">Email</label>
-          <input type="email" name="email" placeholder="email@email.com">
-          <label for="message">What can I help you with?</label>
-
-          <textarea name="message" placeholder="Message" rows="6"></textarea>
+          <input type="email" id="email" name="email" placeholder="jdoe@email.com" >
+      
+          <label for="message">Message</label>
+          <textarea id="message" name="message" placeholder="Message..." style="height:200px"></textarea>
+      
           <button type="submit">Submit</button>
         </form>
 

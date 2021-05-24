@@ -1,8 +1,8 @@
 @import url(landing.css);
 
-:root {
+/* :root {
   line-height: 1.6rem;
-}
+} */
 
 blockquote {
   background: var(--color-accent-light);
@@ -26,7 +26,7 @@ POST
 */
 
 article.post {
-  margin: 2rem auto;
+  margin: 0 auto;
   max-width: 80ch;
   padding: 1rem;
 }
@@ -37,7 +37,7 @@ article.post {
 
 .post--title {
   font-size: 2.5rem;
-  line-height: 2.5rem;
+  /* line-height: 2.5rem; */
 }
 
 .post--subtitle {
