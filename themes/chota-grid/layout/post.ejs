@@ -13,26 +13,24 @@
         class: 'clean tag'
       }) %>
     </span>
-
-    <% if (page.slides || page.iframe) { %>
-      <% if (page.slides) { %>
-        <% var iframe = (page.slides) %>
-        <%}else{%>
-        <% var iframe = (page.iframe) %>
-      <%}%>
-      <div style="margin-bottom: 20px;">
-        <iframe src="<%= iframe %>" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true" height="700" frameborder="0"></iframe>
-        <br>
-        <em style="font-size: smaller;"><a href="<%= iframe %>" target="_blank">View this presentation fullscreen in a new tab.</a></em>
-      </div>
-      <%}else{%>
-        <!-- <picture>
-          <img src="/assets/img/16x9_<% if (page.img) {%><%- (page.img).replace('.png', '.webp').replace('.jpg', '.webp') %><%}%>" alt="<%- page.img %>" loading=lazy />
-        </picture> -->
-      <%}%>
-
   </header>
   <%- page.content %>
+  <% if (page.slides || page.iframe) { %>
+    <% if (page.slides) { %>
+      <% var iframe = (page.slides) %>
+      <%}else{%>
+      <% var iframe = (page.iframe) %>
+    <%}%>
+    <div style="margin-bottom: 20px;">
+      <iframe src="<%= iframe %>" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true" height="700" frameborder="0"></iframe>
+      <br>
+      <em style="font-size: smaller;"><a href="<%= iframe %>" target="_blank">View this presentation fullscreen in a new tab.</a></em>
+    </div>
+    <%}else{%>
+      <!-- <picture>
+        <img src="/assets/img/16x9_<% if (page.img) {%><%- (page.img).replace('.png', '.webp').replace('.jpg', '.webp') %><%}%>" alt="<%- page.img %>" loading=lazy />
+      </picture> -->
+    <%}%>
 </article>
 
 <section class="post--pager">

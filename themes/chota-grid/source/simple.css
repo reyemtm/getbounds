@@ -61,6 +61,7 @@ article.post {
   border-radius: 3px;
   margin-right: 0.5rem;
   padding: 0.2rem;
+  opacity: 0.9;
 }
 
 .post .tag-list-item a:not(:hover) {
@@ -69,6 +70,10 @@ article.post {
 
 .post a {
   background-color: var(--color-accent-light)
+}
+.post a:hover, .post a:focus, .post a:Active {
+  background-color: var(--color-dark);
+  color: var(--color-light);
 }
 
 .post img {
@@ -100,6 +105,10 @@ article.post {
   font-size: 0.8rem;
   line-height: 1.2rem;
   padding: 1rem;
+}
+
+.post p>img {
+  margin-bottom: 0;
 }
 
 /*
