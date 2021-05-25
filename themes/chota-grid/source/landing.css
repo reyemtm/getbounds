@@ -2,6 +2,7 @@
 
 :root {
   --color-dark: hsl(240deg 5% 2%);
+  --color-light: hsl(240deg 5% 95%);
   --color-accent: hsl(313deg 100% 20%);
   --color-accent-bright: hsl(313deg 100% 40%);
   --color-accent-light: #8500680c;
@@ -443,8 +444,8 @@ section form {
 
 section form input,
 section form textarea {
-  border: solid thin var(--color-dark);
-  border-color: var(--color-dark);
+  background-color: var(--color-light);
+  border: none;
   border-radius: 3px;
   font-family: monospace;
   font-size: 0.8rem;
@@ -457,11 +458,11 @@ section form button {
   box-shadow: none;
   border: solid thin var(--clolor-dark);
   border-color: var(--color-dark);
-  border-radius: 3px;
+  border-radius: 2rem;
   color: white;
   cursor: pointer;
   font-size: 0.9rem;
-  letter-spacing: 2px;
+  letter-spacing: 0.5rem;
   padding: 0.5rem;
   text-transform: uppercase;
 }
@@ -496,7 +497,6 @@ MODALS
   opacity: 0;
   position: fixed;
   transition: opacity 0.3s ease-in-out;
-  top: -100vh;
   visibility: none;
   width: calc(100% - 2rem);
 }
