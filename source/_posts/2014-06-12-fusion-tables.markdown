@@ -1,3 +1,4 @@
+---
 title: Google Drive Fusion Tables
 tags:
   - esri

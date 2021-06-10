@@ -1,3 +1,4 @@
+---
 title: Highlighting Features in Mapbox GL JS
 subtitle: A Comparison of Filter and Feature-State
 tags:

@@ -1,3 +1,4 @@
+---
 layout: post
 title: Ohio COVID-19 Dashboard
 subtitle: 'A Simple, Client Side Tracking Dashboard for COVID-19 in Ohio'
