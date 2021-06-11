@@ -9,7 +9,7 @@ featured: false
 ---
 Both the [USGS](https://nationalmap.gov/epqs/) and the [GMRT](https://www.gmrt.org/services/index.php) provide APIs to query elevations at a given location. Using these APIs, and with a bit of help from [TurfJS](https://turfjs.org), we can easily enhance geographic data with elevations. The following examples use a simple Node script called **elevation-query** which exposes the global variable **elQ**. The tool takes in an array of points and returns an array of elevations for each point as well as a GeoJSON FeatureCollection of point features with elevation in the coordinates. Elevations are in meters. 
 
-```
+```JavaScript
 elQ.getElevations([[-82,39], [-82,40]])
 ```
 
@@ -22,7 +22,7 @@ It is also possible to create the point array from a GeoJSON LineString by using
 
 In order to use USGS as the provider it needs to be specified in the options. This API will use data from the 3DEP program where available, and fallback to the SRTM 30 meter data if the 3DEP is not available for that location.
 
-```
+```JavaScript
 elQ.getElevations(pointArray, {provider: 'usgs'})
 ```
 
