@@ -26,4 +26,6 @@ In order to use USGS as the provider it needs to be specified in the options. Th
 elQ.getElevations(pointArray, {provider: 'usgs'})
 ```
 
+---
+
 *An interactive version of this post is published on Observable at [https://observablehq.com/@reyemtm/query-elevations-using-usgs-and-gmrt](https://observablehq.com/@reyemtm/query-elevations-using-usgs-and-gmrt).*
