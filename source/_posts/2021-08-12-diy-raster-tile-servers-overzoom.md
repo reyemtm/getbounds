@@ -22,3 +22,13 @@ Why might I want to do this? In many web map libraries such as Leaflet and Mapbo
 
 Since we have access to the actual tile server, the idea is simple: when the client requests a tile beyond the maximum zoom level of the tile cache, we fetch the parent tile from the database, expand this image (tile width x 2, or 512x512 in this case), and clip our the requested portion of the parent tile. As the missing zoom levels increase, we simply repeat this process until we have the desired child tile to send to the client. 
 
+Initially I though that using some sort of Artificial Intelligence to enhance the existing parent tile would be necessary, but after failing to find a working AI library for NodeJS, I quickly abandoned this idea. It turns out that the result of the expand and clip method works perfectly fine, and the image clarity as compared to the overview representation of the original tiff image is about even - see the sample images above.
+
+# Implementation
+
+The resulting `OverZoom` function uses the `sharp` library to expand and clip the tiles, and the `tilebelt` library for fetching the parent tiles.
+
+```JavaScript
+
+```
+
