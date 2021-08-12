@@ -3,7 +3,7 @@ layout: post
 title: Creating a DIY Raster Tile Server | Overzoom
 subtitle: Utilizing NodeJS to Implement 2x Overzoom
 date: 2021-08-12T13:54:22.764Z
-img: https://unsplash.com/photos/orEnWh0zdyw/download?force=true&w=1920
+img: lazy_camera_girl-orenwh0zdyw-unsplash.jpg
 tags: raster tile
 featured: true
 ---
