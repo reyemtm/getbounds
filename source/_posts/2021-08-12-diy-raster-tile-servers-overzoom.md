@@ -9,7 +9,10 @@ featured: true
 ---
 One of the benefits from running an open source raster tile server and is total control over what gets returned to the client. In the [wmts-server](https://github.com/reyemtm/wmts-server) project I aim to extent the `maxzoom` of all raster tile endpoints by two levels. While the current function only uses a very basic method to create the necessary tile from its parent or grandparent tile, the outcome is very usable for web mapping.
 
-
+<div style="columns:2">
+<span style="width:48%;margin:1%;">![](/assets/img/overzoomx2tile.png)</span>
+<span style="width:48%;margin:1%;">![](/assets/img/original_tile.png)</span>
+</div>
 
 ## Why?
 
