@@ -20,7 +20,7 @@ The following outlines the basic steps for generating Cloud Optimized GeoTIFFs a
 
 1. Load raw TIFFs into QGIS.
 2. Load reference points to verify accuracy of the original imagery.
-3. [Create a mosaic using `gdalbuildvrt`](#build-a-mosaic).
+3. [Create a mosaic using `gdalbuildvrt`](#Build-a-Mosaic).
 4. Create a Cloud Optimized GeoTIFF (COG) from the mosaic using either `gdalwarp` or `gdal_translate` in your desired projection.
 5. Create another COG or VRT in EPSG:3857.
 6. Create an MBTiles database from this file using `gdal_translate`.
