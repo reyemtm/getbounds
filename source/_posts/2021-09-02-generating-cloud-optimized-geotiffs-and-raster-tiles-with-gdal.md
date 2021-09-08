@@ -37,7 +37,7 @@ The following outlines the basic steps for generating Cloud Optimized GeoTIFFs a
 
 [GDAL Build VRT Reference](https://gdal.org/programs/gdalbuildvrt.html)
 
-Build the mosaic using only the first three bands and adding a fourth alpha band to allow for transparency. 
+Build the mosaic using only the first three bands and add a fourth alpha band to allow for transparency. 
 
 > Generating a new alpha band will allow the COG created in the next step to have transparency on the edges and not in the black or white values.
 
