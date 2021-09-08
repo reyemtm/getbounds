@@ -5,6 +5,13 @@ subtitle: "TLDR: gdalbuildvrt, gdal_translate, gdal_warp and gdaladdo"
 date: 2021-09-02T17:38:58.483Z
 img: cover_dem_rivers_wide.png
 tags: gdal
+style:
+  code: |-2
+      hr {
+        border: transparent;
+        border-bottom: 2px solid var(--color-accent-light);
+        height: 2px;
+      }
 featured: true
 ---
 ## Overview
