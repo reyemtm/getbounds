@@ -20,14 +20,14 @@ The following outlines the basic steps for generating Cloud Optimized GeoTIFFs a
 
 1. Load raw TIFFs into QGIS.
 2. Load reference points to verify accuracy of the original imagery.
-3. Create a mosaic using `gdalbuildvrt`.
+3. [Create a mosaic using `gdalbuildvrt`](#build-a-mosaic).
 4. Create a Cloud Optimized GeoTIFF (COG) from the mosaic using either `gdalwarp` or `gdal_translate` in your desired projection.
 5. Create another COG or VRT in EPSG:3857.
 6. Create an MBTiles database from this file using `gdal_translate`.
 7. Add additional overviews to the MBTiles database using `gdaladdo`.
 8. Serve the MBTiles with one of many available servers OR extract the raw files and serve with any web server or CDN.
     * **OR** 
-9. Use COG in WebMercator as the input for a COG-based tile server:
+9. Use the COG in WebMercator as the input for a COG-based tile server:
   * Split the COG into 3 separate bands
   * Serve with Terracotta
 
