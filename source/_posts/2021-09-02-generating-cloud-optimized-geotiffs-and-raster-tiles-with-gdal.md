@@ -14,22 +14,20 @@ style:
       }
 featured: true
 ---
+The following outlines the basic steps for generating Cloud Optimized GeoTIFFs and raster tiles from one or more raw TIFF files.
+
 ## Overview
 
-* Load raw TIFFs into QGIS
-* Load reference GPS points
-* Check the accuracy of the raw TIFFs
-* Create a mosaic
-* Create a Cloud Optimized GeoTIFF from the mosaic in your desired projection and transformation
-* Create another COG or mosaic in EPSG:3857
-
-  * Create an MBTiles database from the TIFF created above
-  * Add additional overviews to the MBTiles database
-  * Serve with an mbtiles server OR extract the raw files and serve with a web server
-
+1. Load raw TIFFs into QGIS.
+2. Load reference GPS points to verify accuracy of the original imagery.
+3. Create a mosaic using `gdalbuildvrt`.
+4. Create a Cloud Optimized GeoTIFF (COG) from the mosaic using either `gdalwarp` or `gdal_translate`.
+5. Create another COG or VRT in EPSG:3857.
+6. Create an MBTiles database using `gdal_translate`.
+7. Add additional overviews to the MBTiles database using `gdaladdo`.
+8. Serve the MBTiles with one of many available servers OR extract the raw files and serve with any web server or CDN.
     * **OR** 
-* Use COG in WebMercator as the input for the tile server
-
+9. Use COG in WebMercator as the input for a COG-based tile server:
   * Split the COG into 3 separate bands
   * Serve with Terracotta
 
