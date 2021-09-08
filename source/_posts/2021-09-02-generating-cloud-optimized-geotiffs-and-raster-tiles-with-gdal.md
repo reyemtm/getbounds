@@ -7,8 +7,6 @@ img: cover_dem_rivers_wide.png
 tags: gdal
 featured: true
 ---
-# Generating Cloud Optimized GeoTIFFs and Raster Tiles with GDAL
-
 ## Overview
 
 * Load raw TIFFs into QGIS
