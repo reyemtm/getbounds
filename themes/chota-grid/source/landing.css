@@ -6,6 +6,9 @@
   --color-accent: hsl(313deg 100% 20%);
   --color-accent-bright: hsl(313deg 100% 40%);
   --color-accent-light: hsl(313deg 100% 10% / 10%);
+  --color-accent-alt: hsl(177deg 70% 50%);
+  --color-accent-alt-dark: hsl(177deg 70% 20%);
+  --color-accent-alt-light(177deg 70% 90%);
   --container-width: 1200px;
   --max-width: calc(100% - 2rem);
   background: white;
