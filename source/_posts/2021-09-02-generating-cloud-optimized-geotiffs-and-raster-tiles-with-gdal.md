@@ -42,7 +42,7 @@ gdalbuildvrt -b 1 -b 2 -b 3 -addalpha mosaic.vrt REF/*.tif
 
 - - -
 
-## Generate a Cloud Optimized GeoTIFF in NAD83
+## Generate a Cloud Optimized GeoTIFF in NAD83 2011 SP South
 
 [GDAL Translate Reference](https://gdal.org/programs/gdal_translate.html)
 
@@ -51,7 +51,7 @@ gdalbuildvrt -b 1 -b 2 -b 3 -addalpha mosaic.vrt REF/*.tif
 > The COG generated from GDAL is much smaller than the output from Arc*. In testing the ArcGIS Pro countywide export took over a week and was canceled.
 
 ```bash
-gdal_translate mosaic.vrt cog.tif -a_srs EPSG:3735 -of COG -co COMPRESS=JPEG -co BIGTIFF=YES -co QUALITY=85
+gdal_translate mosaic.vrt cog.tif -a_srs EPSG:6551 -of COG -co COMPRESS=JPEG -co BIGTIFF=YES -co QUALITY=85
 ```
 
 - - -
@@ -114,7 +114,7 @@ web.vrt tiles.mbtiles
 ```
 
 ```bash
-gdaladdo tiles.mbtiles -r cubic 2 4 8 16 32 64 128 256
+gdaladdo tiles.mbtiles -r average 2 4 8 16 32 64 128 256
 ```
 
 **Notes**
