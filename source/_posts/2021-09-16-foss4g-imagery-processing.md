@@ -4,7 +4,7 @@ title: FOSS4G Image Processing
 subtitle: Creating Cloud Optimized GeoTIFFs and Raster Tiles using GDAL and QGIS
 date: 2021-09-16T00:31:17.351Z
 img: rastertiles.png
-tags: List ["qgis", "gdal", "imagery", "rasters", "web maps"]
+tags: ["qgis", "gdal", "imagery", "rasters", "web maps"]
 featured: true
 slides: https://slides.getbounds.com/2021-creating-raster-tiles-with-gdal/#/
 ---
