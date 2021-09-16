@@ -1,6 +1,6 @@
 ---
 layout: post
-title: FOSS4G Imagery Processing
+title: FOSS4G Image Processing
 subtitle: Creating Cloud Optimized GeoTIFFs and Raster Tiles using GDAL and QGIS
 date: 2021-09-16T00:31:17.351Z
 img: rastertiles.png
