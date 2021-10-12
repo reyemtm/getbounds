@@ -556,6 +556,9 @@ MODALS
   .float-right {
     float: right;
   }
+  .hero--inner {
+    margin: 0
+  }
 }
 
 .inverse {
