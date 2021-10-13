@@ -5,7 +5,7 @@
 } */
 
 blockquote {
-  background: var(--color-accent-alt-light);
+  background: var(--color-accent-light);
   border-left: solid 4px var(--color-accent-alt-dark);
   margin-left: 0;
   margin-right: 0;
@@ -78,9 +78,6 @@ article.post {
   color: var(--color-dark);
 }
 
-.post a {
-  background-color: var(--color-accent-light)
-}
 .post a:hover, .post a:focus, .post a:Active {
   background-color: var(--color-dark);
   color: var(--color-light);
