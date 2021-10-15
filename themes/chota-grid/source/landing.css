@@ -266,8 +266,17 @@ a.hero--btn:focus {
   outline: none;
 }
 
+/*
+main and containers
+*/
+
 main {
   flex: 1;
+}
+
+.inner-container {
+  width: 100%;
+  max-width: 1200px;
 }
 
 /*
