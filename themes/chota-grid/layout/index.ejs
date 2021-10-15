@@ -11,10 +11,12 @@
 
     <section id="blog">
       <!-- <h2 class="fw6">Recent Posts</h2> -->
-      <div class="blog inner-container">
-        <% page.posts.sort('date', -1).each(function(post, i) {%>
-          <%- partial('_partial/post_card', {post: post}) %>
-        <%})%>
+      <div class="blog">
+        <div class="inner-container">
+          <% page.posts.sort('date', -1).each(function(post, i) {%>
+            <%- partial('_partial/post_card', {post: post}) %>
+          <%})%>
+        </div>
       </div>
       <div>
         <a href="/blog" class="hero--btn inverse">View All</a>
