@@ -1,7 +1,7 @@
 <div class="landing-page">
   <header class="hero">
     <img class="hero--background-img" src="/assets/img/lg_cover_dem_rivers_wide.webp" alt="Background Image of a River"></img>
-    <div class="hero--inner">
+    <div class="hero--inner inner-container">
       <h1 class="hero--title"><%- config.title %> <span style="font-size: 1rem">by <%- config.author %></span></h1>
       <h2 class="hero--subtitle"><%- config.tagline %></h2>
       <a class="hero--btn" href="#footer">Contact</a>
@@ -11,7 +11,7 @@
 
     <section id="blog">
       <!-- <h2 class="fw6">Recent Posts</h2> -->
-      <div class="blog">
+      <div class="blog inner-container">
         <% page.posts.sort('date', -1).each(function(post, i) {%>
           <%- partial('_partial/post_card', {post: post}) %>
         <%})%>
@@ -23,7 +23,7 @@
 
     <section id="code" class='code inverse'>
       <h2 class="section--heading">Code</h2>
-      <div>
+      <div class="inner-container">
         <% for (var i in site.data.repos) { %>
           <% if (i < 10) {%>
           <article style="padding:1rem;background: hsl(0deg 0% 10%);border-radius:3px;margin-bottom: 2rem;">
@@ -63,7 +63,7 @@
 
     <section id="about" class="inverse">
       <h2 class="section--heading">About</h2>
-      <div>
+      <div class="inner-container">
 
         <p>
           <strong>getBounds</strong> is a portfolio and blog desgined and maintained by Malcolm Meyer. I have ten years of experience in geospatial sector and a passion for ecology, maps, open source software, urban planning, and web design. I create projects using a variety of software and tools. Some of my favorite tools include Leaflet JS, Mapbox GL JS, Postgres/PostGIS and QGIS. Feel free to contact me using the form below or on twitter <a href="https://twitter.com/getbounds">@getbounds</a>.
