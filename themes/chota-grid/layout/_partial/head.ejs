@@ -9,7 +9,7 @@
   twitter_id: config.twitter
 }) %>
 
-<meta property="og:image" content="/assets/img/<% if (page.img) {%><%- (page.img) %><%}else{%><%- config.defaultimage %><%}%>">
+<meta property="og:image" content="<%- config.url %>/assets/img/<% if (page.img) {%><%- (page.img) %><%}else{%><%- config.defaultimage %><%}%>">
 
 <% if (config.favicon){ %>
 <link rel="icon" href="<%- config.favicon %>">
