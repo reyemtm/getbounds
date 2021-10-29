@@ -628,13 +628,17 @@ SCROLLBAR
   }
   .inverse {
     filter: invert(1);
-    background-color: ghostwhite;
   }
 }
 
-.dark-mode main,
+.dark-mode main {
+  filter: invert(1);
+  background-color: ghostwhite;
+}
 .dark-mode .inverse {
-    filter: invert(1);
-    background-color: ghostwhite;
+  filter: invert(1);
+}
+
+
 }
 
