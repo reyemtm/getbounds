@@ -213,9 +213,9 @@ HERO
   flex-direction: column;
   line-height: 1.4rem;
   margin: 0 auto;
-  width: var(--container-width);
-  max-width: calc(100% - 4rem);
-  padding: 2rem;
+  width: 260px;
+  max-width: calc(100% - 2rem);
+  padding: 1rem;
   z-index: 1;
 }
 
@@ -563,12 +563,18 @@ MODALS
   text-align: center;
 }
 
+@media screen and (min-width: 400px) {
+  .hero--inner {
+    margin: 0;
+    padding: 2rem;
+    width: 100%;
+    max-width: var(--container-width);
+  }
+}
+
 @media screen and (min-width: 480px) {
   .float-right {
     float: right;
-  }
-  .hero--inner {
-    margin: 0
   }
 }
 
@@ -608,3 +614,21 @@ SCROLLBAR
 ::-webkit-scrollbar-thumb {
   background: #505050;
 }
+
+@media (prefers-color-scheme: dark) {
+  main {
+    filter: invert(1);
+    background-color: ghostwhite;
+  }
+  .inverse {
+    filter: invert(1);
+    background-color: ghostwhite;
+  }
+}
+
+.dark-mode main,
+.dark-mode .inverse {
+    filter: invert(1);
+    background-color: ghostwhite;
+}
+
