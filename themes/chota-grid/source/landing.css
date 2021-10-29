@@ -615,6 +615,12 @@ SCROLLBAR
   background: #505050;
 }
 
+/* utterances comments styling */
+.utterances {
+  max-width: inherit;
+  margin: 0;
+}
+
 @media (prefers-color-scheme: dark) {
   main {
     filter: invert(1);
