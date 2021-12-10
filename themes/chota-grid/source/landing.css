@@ -570,6 +570,9 @@ MODALS
     width: 100%;
     max-width: var(--container-width);
   }
+  .hero--inner.inner-container {
+    margin: 0 auto;
+  }
 }
 
 @media screen and (min-width: 480px) {
