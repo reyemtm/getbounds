@@ -6,14 +6,10 @@
 
 blockquote {
   background: var(--color-accent-light);
-  border-left: solid 4px var(--color-accent-alt-dark);
+  border-left: solid 4px var(--color-accent);
   margin-left: 0;
   margin-right: 0;
-  padding: 0.5rem 0.8rem;
-}
-
-blockquote p {
-  margin: 0;
+  padding: 0.5rem 1rem 0.5rem 1.5rem;
 }
 
 nav {
@@ -23,12 +19,6 @@ nav {
 nav a:hover,nav a:focus, nav a:active {
   color: var(--color-accent-bright);
   filter: invert(1)
-}
-
-hr {
-  border: none;
-  border-bottom: 2px solid var(--color-accent-light);
-  height: 2px;
 }
 
 /*
@@ -71,16 +61,14 @@ article.post {
   border-radius: 3px;
   margin-right: 0.5rem;
   padding: 0.2rem;
-  opacity: 0.9;
 }
 
 .post .tag-list-item a:not(:hover) {
   color: var(--color-dark);
 }
 
-.post a:hover, .post a:focus, .post a:Active {
-  background-color: var(--color-dark);
-  color: var(--color-light);
+.post a {
+  background-color: var(--color-accent-light)
 }
 
 .post img {
@@ -111,11 +99,7 @@ article.post {
   width: 100%;
   font-size: 0.8rem;
   line-height: 1.2rem;
-  padding: 0.2rem 0.8rem;
-}
-
-.post p>img {
-  margin-bottom: 0;
+  padding: 1rem;
 }
 
 /*
