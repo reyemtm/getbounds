@@ -36,7 +36,7 @@
     "hexo-util": "^2.5.0",
     "lodash.assign": "^4.2.0",
     "micromatch": "^4.0.4",
-    "node-fetch": "^2.6.1",
+    "node-fetch": "^3.1.1",
     "postcss": "^8.4.5",
     "sharp": "^0.29.3",
     "stream-to-array": "^2.3.0",
