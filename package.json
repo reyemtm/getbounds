@@ -6,7 +6,7 @@
     "version": "6.0.0"
   },
   "scripts": {
-    "build": "node github && hexo clean && hexo generate && parcel build public/style.css --dist-dir public/",
+    "build": "node github && hexo clean && hexo generate",
     "css": "parcel build public/style.css --dist-dir public/",
     "gen": "hexo generate",
     "clean": "hexo clean",
