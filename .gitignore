@@ -8,6 +8,7 @@ public/
 .cache/
 repos.json
 repos-2.json
+.parcel-cache
 
 # Logs
 logs
