@@ -3,9 +3,18 @@
 blockquote {
   background: var(--color-accent-light);
   border-left: solid 4px var(--color-accent);
+  border-radius: var(--border-radius);
+  font-weight: 300;
   margin-left: 0;
   margin-right: 0;
-  padding: 0.5rem 1rem 0.5rem 1.5rem;
+  padding: 1rem 1rem 1rem 1.5rem;
+}
+
+blockquote p,
+blockquote em,
+blockquote span {
+  margin: 0;
+  padding: 0;
 }
 
 nav {
@@ -57,7 +66,7 @@ article.post header {
 
 .post .tag-list-item a {
   background: var(--color-accent-light);
-  border-radius: 3px;
+  border-radius: var(--border-radius);
   color: var(--color-muted);
   font-weight: 300;
   font-size: 0.7rem;
@@ -72,11 +81,16 @@ article.post header {
 }
 
 .post a {
-  background-color: var(--color-accent-light)
+  background-color: var(--color-accent-light);
+}
+
+.post a:hover, .psot a:active, .post a:focus {
+  background-color: var(--color-accent-bright);
+  color: white;
 }
 
 .post img {
-  border-radius: 3px;
+  border-radius: var(--border-radius);
   margin: 0.25rem 0;
   max-width: 100%;
 }
@@ -116,7 +130,7 @@ article.post header {
 .post figure.highlight {
   margin: 1rem 0;
   overflow: auto;
-  border-radius: 3px;
+  border-radius: var(--border-radius);
   background: #1c1b1b;
 }
 
@@ -145,7 +159,7 @@ post pager
 .post--pager a {
   padding: 1rem 2rem;
   border: solid thin var(--color-dark);
-  border-radius: 5px;
+  border-radius: var(--border-radius);
   text-decoration: none;
 }
 
@@ -167,7 +181,7 @@ main section .post--related {
 }
 
 .post--related img {
-  border-radius: 3px;;
+  border-radius: var(--border-radius);;
   width: 100%;
   object-fit: cover;
 }
