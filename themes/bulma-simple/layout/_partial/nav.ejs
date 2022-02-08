@@ -1,0 +1,33 @@
+<nav class="navbar is-dark" role="navigation" aria-label="main navigation">
+  <div class="container">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="<% if (is_home()) {%>#<%}else{%>/<%}%>">
+        getBounds
+      </a>
+
+      <a
+        role="button"
+        class="navbar-burger"
+        aria-label="menu"
+        aria-expanded="false"
+        data-target="nav"
+      >
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+
+    <div id="nav" class="navbar-menu inverse">
+      <div class="navbar-start"></div>
+
+      <div class="navbar-end">
+        <a class="navbar-item" href="/#services"> Services </a>
+        <a class="navbar-item" href="<% if (is_home()) {%>#<%}else{%>/<%}%>work"> Work </a>
+        <a class="navbar-item" href="/blog"> Writings </a>
+
+        <a class="navbar-item" href="/#contact"> Contact </a>
+      </div>
+    </div>
+  </div>
+</nav>

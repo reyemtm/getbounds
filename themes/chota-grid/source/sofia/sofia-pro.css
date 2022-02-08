@@ -1,0 +1,83 @@
+/** =================== Sofia-Pro-=================== **/
+/** Sofia-Pro-Thin **/
+@font-face {
+  font-family: "Sofia Pro";
+  font-weight: 100;
+  font-style: normal;
+  src: url("Sofia-Pro-UltraLight-Az.otf");
+}
+
+/** Sofia-Pro-Thin-Italic **/
+@font-face {
+  font-family: "Sofia Pro";
+  font-weight: 100;
+  font-style: italic;
+  src: url("Sofia-Pro-UltraLight-Italic-Az.otf");
+}
+
+/** Sofia-Pro-ExtraLight **/
+@font-face {
+  font-family: "Sofia Pro";
+  font-weight: 200;
+  font-style: normal;
+  src: url("Sofia-Pro-ExtraLight-Az.otf");
+}
+
+/** Sofia-Pro-ExtraLight-Italic **/
+@font-face {
+  font-family: "Sofia Pro";
+  font-weight: 200;
+  font-style: italic;
+  src: url("Sofia-Pro-ExtraLight-Italic-Az.otf");
+}
+
+/** Sofia-Pro-Light **/
+@font-face {
+  font-family: "Sofia Pro";
+  font-weight: 300;
+  font-style: normal;
+  src: url("Sofia-Pro-Light-Az.otf");
+}
+
+/** Sofia-Pro-Light-Italic **/
+@font-face {
+  font-family: "Sofia Pro";
+  font-weight: 300;
+  font-style: italic;
+  src: url("Sofia-Pro-Light-Italic-Az.otf");
+}
+
+/** Sofia-Pro-Regular **/
+@font-face {
+  font-family: "Sofia Pro";
+  font-weight: 400;
+  font-style: normal;
+  font-display: fallback;
+  src: url("Sofia-Pro-Regular-Az.otf");
+}
+
+/** Sofia-Pro-Regular **/
+@font-face {
+  font-family: "Sofia Pro";
+  font-weight: 400;
+  font-style: italic;
+  font-display: fallback;
+  src: url("Sofia-Pro-Regular-Italic-Az.otf");
+}
+
+/** Sofia-Pro-Medium **/
+@font-face {
+  font-family: "Sofia Pro";
+  font-weight: 500;
+  font-style: normal;
+  src: url("Sofia-Pro-Semi-Bold-Az.otf");
+}
+
+/** Sofia-Pro-SemiBold **/
+@font-face {
+  font-family: "Sofia Pro";
+  font-weight: 600;
+  font-style: bold;
+  font-display: fallback;
+  src: url("Sofia-Pro-Bold-Az.otf");
+}

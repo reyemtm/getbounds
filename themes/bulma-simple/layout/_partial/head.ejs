@@ -1,0 +1,35 @@
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- <link rel="manifest" href="/manifest.json"> -->
+<meta name="theme-color" content="<%- config.color %>" />
+<title><%- config.title %> </title>
+<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+<!-- hexo opengraph -->
+<%- open_graph({
+  twitter_id: config.twitter
+}) %>
+
+<meta property="og:image" content="<%- config.url %>/assets/img/<% if (page.img) {%><%- (page.img) %><%}else{%><%- config.defaultimage %><%}%>">
+
+<% if (config.favicon){ %>
+<link rel="icon" href="<%- config.favicon %>">
+<% } %>
+<link href="http://fonts.cdnfonts.com/css/sofia-pro" rel="stylesheet" />
+<link rel="stylesheet" href="/style.css" />
+<link rel="stylesheet" href="/stackoverflow-dark.css">
+<!-- scripts and styles in page.header -->
+<% if (page.head) {%>
+<%- page.head %>
+<%}%>
+
+<!-- page.style page.css -->
+<style>
+<% if (page.style) {%>
+  <%- page.style %>
+<%}%>
+<% if (page.css) {%>
+  <%- page.css %>
+<%}%>
+</style>
+
+</head>

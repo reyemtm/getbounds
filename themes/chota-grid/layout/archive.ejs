@@ -1,24 +1,39 @@
 <header class="hero" style="height: 30vh">
-  <img class="hero--background-img" src="/assets/img/lg_cover_dem_rivers_wide.webp" alt="Background Image of a River"></img>
+  <img class="hero--background-img" src="/assets/img/lg_cover_dem_rivers_wide.webp"
+    alt="Background Image of a River"></img>
   <div class="hero--inner">
-    <h1 class="hero--title"><% if (page.tag) {%>Topic | <%- titlecase(page.tag) %><%}else{%>Blog Archive<%}%></h1>
+    <h1 class="hero--title">
+      <% if (page.tag) {%>Topic | <%- titlecase(page.tag) %>
+          <%}else{%>Blog Archive<%}%>
+    </h1>
   </div>
 </header>
 
-
 <section id="blog">
-  <div class="blog">
+  <div class="lg" style="margin:1rem auto;align-items: baseline;">
     <% page.posts.sort('date', -1).each(function(post, i) {%>
-    <a rel="prefetch" href="<%- url_for(post.path) %>">
-      <article class="">
+      <a rel="prefetch" href="<%- url_for(post.path) %>" style="text-decoration: none;">
         <div>
           <%- partial('_partial/date', {post: post}) %>
-          <h2> <%= post.title %></h4>
-          <h3> <%= post.subtitle %></h5>
-          <p><%- strip_html((post.excerpt).substring(0, 150)) %>...</p>
+            <h2 style="margin:0 0 0.5rem 0">
+              <%= post.title %>
+            </h2>
+            <h3 style="margin:0;font-weight:300">
+              <%= post.subtitle %>
+            </h3>
+            <!-- <p><%- strip_html((post.excerpt).substring(0, 150)) %>...</p> -->
         </div>
-      </article>
-    </a>
-    <%})%>
+      </a>
+      <div class="post" style="margin-bottom:0.5rem;width: 100%;display: flex;">
+        <% if(!url_for(page.path).includes("blog") ) {%>
+          <ul class="tag-list">
+            <li class="tag-list-item">
+              <a class="clean tag-list-link" href="/blog/" rel="tag">view all</a>
+            </li>
+          </ul>
+          <%}%>
+            <%- list_tags(post.tags, { show_count: false, class: 'clean tag' }) %>
+      </div>
+      <%})%>
   </div>
 </section>

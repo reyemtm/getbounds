@@ -1,0 +1,61 @@
+<article>
+  <header class="hero is-medium is-dark">
+    <div class="hero-body">
+      <div class="container">
+        <div class="has-text-weight-light px-1 my-2">
+          <%- partial('_partial/date', {post: page}) %>
+        </div>
+        <h1 class="title is-size-1"><%= page.title %></h1>
+        <h2 class="subtitle"><%= page.subtitle %></h2>
+
+        <div class="is-flex">
+          <%- list_tags(page.tags, {
+            show_count: false,
+            style: false,
+            separator: '',
+            class: {
+              a: 'tag mr-2 is-black '
+            }
+          }) %>
+        </div>
+      </div>
+    </div>
+  </header>
+  <section class="container is-max-desktop">
+  <%- page.content %>
+  <% if (page.slides || page.iframe) { %>
+    <% if (page.slides) { %>
+      <% var iframe = (page.slides) %>
+      <%}else{%>
+      <% var iframe = (page.iframe) %>
+    <%}%>
+    <div>
+      <iframe src="<%= iframe %>" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true" height="700" frameborder="0"></iframe>
+      <br>
+      <em><a href="<%= iframe %>" target="_blank">View this presentation fullscreen in a new tab.</a></em>
+    </div>
+    <%}else{%>
+      <!-- <picture>
+        <img src="/assets/img/16x9_<% if (page.img) {%><%- (page.img).replace('.png', '.webp').replace('.jpg', '.webp') %><%}%>" alt="<%- page.img %>" loading=lazy />
+      </picture> -->
+    <%}%>
+  </section>
+</article>
+<aside style="margin: 0 auto; max-width: 80ch;padding: 1rem;">
+<script src="https://utteranc.es/client.js"
+        repo="reyemtm/getbounds"
+        issue-term="og:title"
+        theme="github-light"
+        label="utterance-comment"
+        crossorigin="anonymous"
+        async>
+</script>
+</aside>
+<section class="">
+    <% if (page.prev){ %>
+      <a href="<%- url_for(page.prev.path) %>"><span style="color:gray">Newer Post</span><br><span style="text-decoration: underline;"><%= page.prev.title %></span></a>
+    <% } %>
+    <% if (page.next){ %>
+      <a href="<%- url_for(page.next.path) %>"><span style="color:gray">Older Post</span><br><span style="text-decoration: underline;"><%= page.next.title %></span></a>
+    <% } %>
+</section>

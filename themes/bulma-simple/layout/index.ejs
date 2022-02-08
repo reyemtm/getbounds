@@ -1,0 +1,82 @@
+<section  class="hero is-medium is-dark"
+  style="background-size: cover;
+  background-image: url(/assets/img/<%= config.img %>);
+  background-blend-mode: overlay">
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title is-size-1 is-size-3-mobile"><%= config.title %></h1>
+      <h2 class="has-text-weight-light"><%= config.tagline %></h2>
+    </div>
+  </div>
+</section>
+
+<section id="services" class="section is-medium has-text-black">
+  <div class="container has-text-centered">
+    <h2 class="is-size-1">Services</h2>
+    <p class="">Hero subtitle</p>
+  </div>
+</section>
+<section class="section is-small has-text-black">
+  <div class="container has-text-centered">
+    <h2 class="is-size-1">Latest from the Blog</h2>
+  </div>
+</section>
+<main class="container is-max-desktop mt-6">
+
+  <% page.posts.sort('date', -1).each(function(post, i) {%>
+    <a href="<%- url_for(post.path) %>">
+      <article class="box my-6">
+        <figure class="image is-16by9">
+          <picture>
+            <source srcset="/assets/img/lg_<% if (post.img) {%><%- (post.img).replace(".png", ".webp").replace(".jpg", ".webp") %><%}else{%><%- config.defaultimage %><%}%>" media="(min-width: 768px)" loading=lazy>
+            <img src="/assets/img/lg_<% if (post.img) {%><%- (post.img).replace(".png", ".webp").replace(".jpg", ".webp") %><%}else{%><%- config.defaultimage %><%}%>" alt="<%- post.img %>" loading=lazy />
+          </picture>
+        </figure>
+        <div class="block p-6">
+          <h2 class="title px-6"><%= post.title %></h2>
+          <h3 class="subtitle py-4 px-6"><%= post.subtitle %></h3>
+        </div>
+      </article>
+    </a>
+  <%})%>
+  <section id="contact" class="my-6">
+    <div class="container has-text-centered">
+      <h2 class="is-size-1 my-6">Contact</h2>
+    </div>
+    <form>
+    <div class="field">
+      <label class="label">Name</label>
+      <div class="control">
+        <input class="input" type="text" placeholder="Text input">
+      </div>
+    </div>
+    
+    <div class="field">
+      <label class="label">Email</label>
+      <div class="control">
+        <input class="input" type="email" placeholder="Email input" aria-placeholder="">
+        <!-- <span class="icon is-small is-left">
+          <i class="fas fa-envelope"></i>
+        </span> -->
+        <!-- <span class="icon is-small is-right">
+          <i class="fas fa-exclamation-triangle"></i>
+        </span> -->
+      </div>
+    </div>
+
+    
+    <div class="field">
+      <label class="label">Message</label>
+      <div class="control">
+        <textarea class="textarea" placeholder="Textarea"></textarea>
+      </div>
+    </div>
+    
+    <div class="field">
+      <div class="control">
+        <button class="button" type="submit">Submit</button>
+      </div>
+    </div>
+  </form>
+  </section>
+</main>

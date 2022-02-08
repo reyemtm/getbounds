@@ -8,8 +8,10 @@ layout: false
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title itemprop="name">Resume | <%- config.author %></title>
-  <meta name="description" content="This is the professional resume for Malcolm Meyer, Data & Geospatial Analyst and JavaScript Developer.">
+  <title itemprop="name">Resume | <%- config.author %>
+  </title>
+  <meta name="description"
+    content="This is the professional resume for Malcolm Meyer, Data & Geospatial Analyst and JavaScript Developer.">
   <meta property="og:type" content="article">
   <meta property="og:title" content="Resume | Malcolm Meyer">
   <meta property="og:url" content="https://www.getbounds.com/resume/">
@@ -29,8 +31,12 @@ layout: false
       <header class="flex-row">
         <div class="titleHeader">
 
-          <h1 class="name"><%- (config.author).toUpperCase() %></h1>
-          <h3 class="tagline"><%- config.resume.title %></h3>
+          <h1 class="name">
+            <%- (config.author).toUpperCase() %>
+          </h1>
+          <h3 class="tagline">
+            <%- config.resume.title %>
+          </h3>
 
         </div>
         <!-- AVATAR -->
@@ -57,11 +63,30 @@ layout: false
 
           <div class="item">
             <h3 class="item-title">
+              GIS Coordinator
+            </h3>
+            <div class="flex-row">
+              <span class="job-title">City of Lancaster (Lancaster, OH)</span>
+              <span class="date">3/2021 – Present</span>
+            </div>
+            <li>
+              Maintain ArcGIS Server & the Enterprise GIS Database
+            </li>
+            <li>
+              Administer Cartegraph (Asset Management System)
+            </li>
+            <li>
+              Produce custom print maps and custom web applications using ArcGIS Desktop/Pro, Mapbox & QGIS
+            </li>
+          </div>
+
+          <div class="item">
+            <h3 class="item-title">
               GIS Specialist
             </h3>
             <div class="flex-row">
               <span class="job-title">City of Zanesville (Zanesville, OH)</span>
-              <span class="date">4/2018 – Present</span>
+              <span class="date">4/2018 – 2/2021</span>
             </div>
             <li>
               Maintain the PostgreSQL/PostGIS database and feature server
@@ -148,23 +173,6 @@ layout: false
 
           <div class="item">
             <h3 class="item-title">
-              Park Ranger Part-Time
-            </h3>
-            <div class="flex-row">
-              <span class="job-title">Franklin County Metro Parks (Columbus, OH)</span><span class="date">8/2011 –
-                1/2013</span>
-            </div>
-
-            <li>
-              Patrolled the park and performed opening and closing duties
-            </li>
-            <li>
-              Assisted on the coordination of special projects and programs
-            </li>
-          </div>
-
-          <div class="item">
-            <h3 class="item-title">
               GIS Quality Control Technician 1
             </h3>
             <div class="flex-row">
@@ -189,14 +197,16 @@ layout: false
             <div class="item">
               <div class="flex-row">
                 <span class="job-title"></span>
-                <span class="date"></span></div>
+                <span class="date"></span>
+              </div>
               <p></p>
             </div>
 
             <div class="item">
               <div class="flex-row">
                 <span class="job-title"></span>
-                <span class="date"></span></div>
+                <span class="date"></span>
+              </div>
               <p></p>
             </div>
 
@@ -315,9 +325,9 @@ none">Turkish
               <img src="link.svg"><a href="https://peaks.getbounds.com">US Mtn Peaks Viewer</a>
             </li>
 
-            <li>
+            <!-- <li>
               <img src="link.svg"><a href="https://pandemix.getbounds.com">Pandemix Visualization</a>
-            </li>
+            </li> -->
 
             <li>
               <img src="link.svg"><a href="https://www.malcolmmeyer.com">Project Portfolio</a>
@@ -331,15 +341,19 @@ none">Turkish
         </div>
       </div>
     </div>
-    <div class="show-print" style="letter-spacing: 1px;width: 100%; font-size: 0.8rem; opacity: 0.6;text-align: center;">malcolmtmeyer (at) gmail.com | 330 464 4765</div>
+    <div class="show-print"
+      style="letter-spacing: 1px;width: 100%; font-size: 0.8rem; opacity: 0.6;text-align: center;">malcolmtmeyer (at)
+      gmail.com | 330 464 4765</div>
     <!-- <div class="show-print" style="letter-spacing: 1px;width: 100%; font-size: 0.8rem; opacity: 0.6;text-align: center;"> <a href="https://www.malcolmmeyer.com">Portfolio </a>| <a href="https://www.getbounds.com">Website</a> </div> -->
   </main>
   <footer>
     <span class="footer-item" id="credits">
-      Return to <a href="/"><span class="link-text"><%- config.title %></span></a> |
+      Return to <a href="/"><span class="link-text">
+          <%- config.title %>
+        </span></a> |
       Template by<a href="https://gitlab.com/mertbakir/resume-A4"><span class="link-text">Mert
           Bakır </span></a>
-           <!-- | <a href="https://themes.gohugo.io/theme/resume-a4/">Demo</a> -->
+      <!-- | <a href="https://themes.gohugo.io/theme/resume-a4/">Demo</a> -->
     </span>
   </footer>
 

@@ -11,16 +11,31 @@
 ## Docs: https://hexo.io/docs/configuration.html
 ## Source: https://github.com/hexojs/hexo/
 
-# Site
+# Site used in various parts of the site
 title: getBounds
 tagline: Data | GIS | Maps | Web
-description: "getBounds is a blog focusing on desktop and web-based geospatial applications. getBounds is maintained by Malcolm T Meyer."
-keywords: ["gis", "blog", "geospatial", "vector tiles", "mapbox", "leaflet", "web maps", "dataviz"]
+description: >-
+  <strong>getBounds</strong> is run by Malcolm Meyer and provides custom geospatial consulting services. I have ten years
+  of experience in GIS and a passion for ecology, maps, open source software, urban planning, and
+  web design. I specialize in backend data analysis using PostgreSQL/PostGIS and Mapbox GL JS web map development.
+  Interested in collaborating or need help on a GIS project? Reach out using the form below and be sure to provide any specifics that will help get the conversation started.
+keywords:
+  [
+    "gis",
+    "blog",
+    "geospatial",
+    "vector tiles",
+    "mapbox",
+    "leaflet",
+    "web maps",
+    "dataviz",
+  ]
 author: Malcolm Meyer
 language: en
 timezone: America/New_York
 defaultimage: "serving-vector-tiles.jpg"
 headerimg: "serving-vector-tiles.jpg"
+img: cover_dem_rivers_wide.png
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
@@ -37,19 +52,18 @@ archive_dir: blog
 category_dir: categories
 #code_dir: downloads/code
 i18n_dir: :lang
-skip_render: 
- - apps/**/*.*
- - apps-plugins/**
- - data/**/*.*
- - js/**/*.*
- - css/**/*.*
- - "**/*.js"
- - admin/index.html
- - admin/config.yml
- - covid19-oh/index.html
- - covid19-oh/leaflet.html
- - _redirects
-
+skip_render:
+  - apps/**/*.*
+  - apps-plugins/**
+  - data/**/*.*
+  - js/**/*.*
+  - css/**/*.*
+  - "**/*.js"
+  - admin/index.html
+  - admin/config.yml
+  - covid19-oh/index.html
+  - covid19-oh/leaflet.html
+  - _redirects
 
 # Writing
 new_post_name: :year-:month-:day-:title.md # File name of new posts
@@ -66,21 +80,21 @@ highlight:
   enable: true
   auto_detect: true
   line_number: false
-  tab_replace: ''
+  tab_replace: ""
   wrap: true
   hljs: true
 prismjs:
   enable: false
   preprocess: true
   line_number: true
-  tab_replace: ''
+  tab_replace: ""
 
 # Home page setting
 # path: Root path for your blogs index page. (default = '')
 # per_page: Posts displayed per page. (0 = disable pagination)
 # order_by: Posts order. (Order by date descending by default)
 index_generator:
-  per_page: 9
+  per_page: 6
   order_by: -date
 
 # Pagination
@@ -111,13 +125,13 @@ theme: chota-grid
 deploy:
   type:
 
-include: 
- - slides/**/*.*
- - apps/**/*.*
- - _redirects
- - admin/config.yml
- - _headers
- 
+include:
+  - slides/**/*.*
+  - apps/**/*.*
+  - _redirects
+  - admin/config.yml
+  - _headers
+
 #Hexo Exceprt Plugin
 excerpt:
   depth: 1
@@ -126,13 +140,13 @@ excerpt:
   hideWholePostExcerpts: true
 
 responsive_images:
-  - pattern: '**/*.+(png|jpg|jpeg)'
-    sizes: 
+  - pattern: "**/*.+(png|jpg|jpeg)"
+    sizes:
       lg:
-        width:  1800
-        height: 
-      md: 
-        width: 1000
+        width: 1200
+        height:
+      md:
+        width: 600
         height:
       # 16x9:
       #   width: 870
@@ -149,7 +163,7 @@ feed:
   hub:
   content:
   content_limit: 200
-  content_limit_delim: '.'
+  content_limit_delim: "."
   order_by: -date
 
 # hexo-generator-json-content
@@ -159,7 +173,8 @@ jsonContent:
   file: posts.json
   keywords: undefined
   dateFormat: undefined
-  pages: false
+  pages:
+    false
     # title: true
     # slug: true
     # date: true
@@ -194,7 +209,6 @@ jsonContent:
 
 # More detailed settings
 popularPosts:
-
   # (optional) Popular posts options
   # googleAnalyticsAPI:
   #   clientId: ******.apps.googleusercontent.com
@@ -205,24 +219,24 @@ popularPosts:
   #   expiresDate: 10
   #   pvMeasurementsStartDate: 2015/11/01
   #   rankingSheet: rankingSheet.txt
-    # cache:            # (Deprecated) This options is Deprecated > v0.1.3
-    #  path: hexo-related-popular-posts-ga-cached.json  # (Deprecated) This options is Deprecated > v0.1.3
-    #  expiresDate: 10  # (Deprecated) This options is Deprecated > v0.1.3
-    
+  # cache:            # (Deprecated) This options is Deprecated > v0.1.3
+  #  path: hexo-related-popular-posts-ga-cached.json  # (Deprecated) This options is Deprecated > v0.1.3
+  #  expiresDate: 10  # (Deprecated) This options is Deprecated > v0.1.3
+
   # (optional) Advanced Related posts options
-  # morphologicalAnalysis: 
+  # morphologicalAnalysis:
   #   negativeKeywordsList: pluginSettings/hexo-rpp-negativewords.txt
   #   limit: 300
-    
+
   # (optional) Related post's weight options
   weight:
     tagRelevancy: 1.0
     contentsRelevancy: 1.0
-    
+
   # (optional) Cache options (Improve generation speed.)
   cache:
     path: .cache/hexo-popular-related-posts-ga-cached.json
-    
+
   # (optional) Log options
   log: true
 
@@ -231,7 +245,7 @@ popularPosts:
   base: /
   # tail: v=2019042200000
   tags:
-    'img[data-orign]':  data-orign
+    "img[data-orign]": data-orign
 
 html_prettify:
   enable: true
@@ -258,4 +272,4 @@ html_prettify:
 
 #resume
 resume:
-  title: Data & Geospatial Analyst  
+  title: Data & Geospatial Analyst

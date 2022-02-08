@@ -1,69 +1,67 @@
 <article class="post">
   <header>
-    <h1 class="post--title"><%- page.title %></h1>
-    <h2 class="post--subtitle"><%- page.subtitle %></h2>
 
     <span class="post--meta">
       <%- partial('_partial/date', {post: page}) %>
     </span>
 
+    <h1 class="post--title">
+      <%- page.title %>
+    </h1>
+    <h2 class="post--subtitle">
+      <%- page.subtitle %>
+    </h2>
     <span>
-      <%- list_tags(page.tags, {
-        show_count: false,
-        class: 'clean tag'
-      }) %>
+      <%- list_tags(page.tags, { show_count: false, class: 'clean tag' }) %>
     </span>
   </header>
   <%- page.content %>
-  <% if (page.slides || page.iframe) { %>
-    <% if (page.slides) { %>
-      <% var iframe = (page.slides) %>
-      <%}else{%>
-      <% var iframe = (page.iframe) %>
-    <%}%>
-    <div style="margin-bottom: 20px;">
-      <iframe src="<%= iframe %>" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true" height="700" frameborder="0"></iframe>
-      <br>
-      <em style="font-size: smaller;"><a href="<%= iframe %>" target="_blank">View this presentation fullscreen in a new tab.</a></em>
-    </div>
-    <%}else{%>
-      <!-- <picture>
+    <% if (page.slides || page.iframe) { %>
+      <% if (page.slides) { %>
+        <% var iframe=(page.slides) %>
+          <%}else{%>
+            <% var iframe=(page.iframe) %>
+              <%}%>
+                <div style="margin-bottom: 20px;">
+                  <iframe src="<%= iframe %>" allowfullscreen="true" mozallowfullscreen="true"
+                    webkitallowfullscreen="true" height="700" frameborder="0"></iframe>
+                  <br>
+                  <em style="font-size: smaller;"><a href="<%= iframe %>" target="_blank">View this presentation
+                      fullscreen in a new tab.</a></em>
+                </div>
+                <%}else{%>
+                  <!-- <picture>
         <img src="/assets/img/16x9_<% if (page.img) {%><%- (page.img).replace('.png', '.webp').replace('.jpg', '.webp') %><%}%>" alt="<%- page.img %>" loading=lazy />
       </picture> -->
-    <%}%>
+                  <%}%>
 </article>
+
 <aside style="margin: 0 auto; max-width: 80ch;padding: 1rem;">
-<script src="https://utteranc.es/client.js"
-        repo="reyemtm/getbounds"
-        issue-term="og:title"
-        theme="github-light"
-        label="utterance-comment"
-        crossorigin="anonymous"
-        async>
-</script>
+  <script src="https://utteranc.es/client.js" repo="reyemtm/getbounds" issue-term="og:title" theme="github-light"
+    label="utterance-comment" crossorigin="anonymous" async>
+    </script>
 </aside>
 <section class="post--pager">
-    <% if (page.prev){ %>
-      <a href="<%- url_for(page.prev.path) %>"><span style="color:gray">Newer Post</span><br><span style="text-decoration: underline;"><%= page.prev.title %></span></a>
+  <% if (page.prev){ %>
+    <a href="<%- url_for(page.prev.path) %>"><span style="color:gray">Newer Post</span><br><span
+        style="text-decoration: underline;">
+        <%= page.prev.title %>
+      </span></a>
     <% } %>
-    <% if (page.next){ %>
-      <a href="<%- url_for(page.next.path) %>"><span style="color:gray">Older Post</span><br><span style="text-decoration: underline;"><%= page.next.title %></span></a>
-    <% } %>
+      <% if (page.next){ %>
+        <a href="<%- url_for(page.next.path) %>"><span style="color:gray">Older Post</span><br><span
+            style="text-decoration: underline;">
+            <%= page.next.title %>
+          </span></a>
+        <% } %>
 </section>
 
 <section class="inverse">
-  <!-- <h2 class="center">Related Posts</h2> -->
-  <div class="post--related">
-    <%- list_related_posts({
-      maxCount: 2, 
-      orderBy: 'random', 
-      pClass: 'post--realted-p',
-      ulClass: 'post--related-ul',
-      liClass: 'post--related-li',
-      aClass: 'post--related-a',
-      generateAbstract: true,
-      abstractClass: 'post-related-abstract',
-      abstractLength: 200
-      }) %>
+  <h2 class="center">Related Posts</h2>
+  <div class="post--related lg">
+
+    <%- list_related_posts({ maxCount: 2, orderBy: 'random' , pClass: 'post--realted-p' , ulClass: 'post--related-ul' ,
+      liClass: 'post--related-li' , aClass: 'post--related-a' , generateAbstract: true,
+      abstractClass: 'post-related-abstract' , abstractLength: 200 }) %>
   </div>
 </section>

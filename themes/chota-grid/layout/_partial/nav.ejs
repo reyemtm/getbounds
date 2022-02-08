@@ -1,6 +1,6 @@
 <nav id="nav-links-mobile" class="nav-links-mobile">
   <a href="/#">Home</a>
-  <% if (is_home()) {%><a href="/#blog">Blog</a><%}else{%><a href="/blog/">Blog</a><%}%>
+  <a href="/blog/">Blog</a>
   <a href="/#code">Code</a>
   <a href="/#portfolio">Portfolio</a>
   <a href="/tags/slides">Slides</a>
@@ -10,16 +10,14 @@
 <nav>
   <div>
     <a class="brand" href="/">getBounds</a>
-    <a href="#nav-links-mobile" class="nav-links-mobile--button" style="  background-image: url(https://icongr.am/feather/menu.svg?size=24&color=currentColor);"></a>
+    <a href="#nav-links-mobile" class="nav-links-mobile--button"
+      style="background-image: url(/assets/icons/menu.svg);"></a>
     <div class="nav-links float-right">
-      <!-- <a href="#contact">About</a> -->
-      <!-- <a href="#writings-talks">Blog</a> -->
-  
-      <!-- <a href="#contact">About</a> -->
-      <% if (is_home()) {%><a href="/#blog">Blog</a><%}else{%><a href="/blog/">Blog</a><%}%>
+      <a href="/blog/">Blog</a>
       <a href="/#code">Code</a>
       <a href="/#portfolio">Portfolio</a>
       <a href="/tags/slides">Slides</a>
       <a href="/#contact">Contact</a>
+    </div>
   </div>
 </nav>

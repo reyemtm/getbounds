@@ -1,0 +1,5 @@
+<% if (post.date_updated) {%>
+  <time datetime="<%= date_xml(post.date) %>" itemprop="datePublished"><%= date(post.date) %></time><time datetime="<%= date_xml(post.date_updated) %>" itemprop="dateUpdated">&nbsp;Updated&nbsp; <%= date(post.date_updated) %></time>
+  <%}else{%>
+  <time datetime="<%= date_xml(post.date) %>" itemprop="datePublished"><%= date(post.date) %></time>
+<%}%>

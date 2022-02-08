@@ -16,6 +16,7 @@
     "avif": "avif --input='public/assets/img/*.{jpg, png}' --speed=0 --quality=80"
   },
   "dependencies": {
+    "avif": "^0.1.0",
     "bluebird": "^3.7.2",
     "chota": "^0.8.0",
     "hexo": "^6.0.0",

@@ -1,14 +1,26 @@
 <a rel="prefetch" href="<%- url_for(post.path) %>">
   <article>
     <picture>
-      <source srcset="/assets/img/2x1_<% if (post.img) {%><%- (post.img).replace(".png", ".webp").replace(".jpg", ".webp") %><%}else{%><%- config.defaultimage %><%}%>" media="(min-width: 768px)" loading=lazy>
-      <img src="/assets/img/2x1_<% if (post.img) {%><%- (post.img).replace(".png", ".webp").replace(".jpg", ".webp") %><%}else{%><%- config.defaultimage %><%}%>" alt="<%- post.img %>" loading=lazy />
+      <source srcset="/assets/img/md_<% if (post.img) {%><%- (post.img).replace(".png", ".webp"
+        ).replace(".jpg", ".webp" ) %>
+      <%}else{%>
+        <%- config.defaultimage %>
+          <%}%>" media="(min-width: 768px)" loading=lazy>
+            <img src="/assets/img/md_<% if (post.img) {%><%- (post.img).replace(".png", ".webp"
+              ).replace(".jpg", ".webp" ) %>
+            <%}else{%>
+              <%- config.defaultimage %>
+                <%}%>" alt="<%- post.img %>" loading=lazy />
     </picture>
     <div>
       <%- partial('_partial/date', {post: post}) %>
-      <h2> <%= post.title %></h2>
-      <h3><%= post.subtitle %></h3>
-      <p><%- strip_html((post.excerpt).substring(0, 100)) %>...</p>
+        <h2>
+          <%= post.title %>
+        </h2>
+        <h3>
+          <%= post.subtitle %>
+        </h3>
+        <!-- <p><%- strip_html((post.excerpt).substring(0, 100)) %>...</p> -->
     </div>
   </article>
 </a>
