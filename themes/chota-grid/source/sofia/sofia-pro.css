@@ -1,25 +1,27 @@
 /** =================== Sofia-Pro-=================== **/
 /** Sofia-Pro-Thin **/
-@font-face {
+/* @font-face {
   font-family: "Sofia Pro";
   font-weight: 100;
   font-style: normal;
+  font-display: fallback;
   src: url("Sofia-Pro-UltraLight-Az.otf");
-}
+} */
 
 /** Sofia-Pro-Thin-Italic **/
-@font-face {
+/* @font-face {
   font-family: "Sofia Pro";
   font-weight: 100;
   font-style: italic;
   src: url("Sofia-Pro-UltraLight-Italic-Az.otf");
-}
+} */
 
 /** Sofia-Pro-ExtraLight **/
 @font-face {
   font-family: "Sofia Pro";
   font-weight: 200;
   font-style: normal;
+  font-display: fallback;
   src: url("Sofia-Pro-ExtraLight-Az.otf");
 }
 
@@ -28,6 +30,7 @@
   font-family: "Sofia Pro";
   font-weight: 200;
   font-style: italic;
+  font-display: fallback;
   src: url("Sofia-Pro-ExtraLight-Italic-Az.otf");
 }
 
@@ -36,6 +39,7 @@
   font-family: "Sofia Pro";
   font-weight: 300;
   font-style: normal;
+  font-display: fallback;
   src: url("Sofia-Pro-Light-Az.otf");
 }
 
@@ -44,6 +48,7 @@
   font-family: "Sofia Pro";
   font-weight: 300;
   font-style: italic;
+  font-display: fallback;
   src: url("Sofia-Pro-Light-Italic-Az.otf");
 }
 
@@ -70,6 +75,7 @@
   font-family: "Sofia Pro";
   font-weight: 500;
   font-style: normal;
+  font-display: fallback;
   src: url("Sofia-Pro-Semi-Bold-Az.otf");
 }
 

@@ -146,7 +146,7 @@ responsive_images:
         width: 1200
         height:
       md:
-        width: 600
+        width: 574
         height:
       # 16x9:
       #   width: 870
