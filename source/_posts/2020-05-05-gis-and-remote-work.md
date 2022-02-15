@@ -10,6 +10,7 @@ tags:
  - qgis
  - hardware
 featured: false
+categories: ["blog"]
 ---
 In the aftermath of the Coronavirus pandemic, remote work may well be come the new normal, as businesses and government agencies discover that productivity can be maintained or even increased when implementing remote work options. And the tools to implement this transition at the employee level are neither complicated or expensive. In my case, even without a high-end laptop, a VPN connection, a remotely accessible central database, or even a cloud-based file sync service, remote GIS work was a painless transition from the traditional office setting.
 

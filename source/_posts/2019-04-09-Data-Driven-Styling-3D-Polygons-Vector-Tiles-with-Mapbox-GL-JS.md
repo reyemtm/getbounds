@@ -7,4 +7,5 @@ description: >-
 tags: ["vector tiles", "slides", "mapbox"]
 img: "2017-mapbox-ohio-gis@2x.png"
 slides: "https://slides.getbounds.com/2017-mapbox-ohio-gis/index.html"
+categories: ["blog"]
 ---

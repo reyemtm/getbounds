@@ -1,0 +1,30 @@
+<header class="hero hero--md">
+  <img class="hero--background-img" src="/assets/img/lg_cover_dem_rivers_wide.webp"
+    alt="Background Image of a River"></img>
+  <div class="hero--inner inner-container">
+    <h1 class="hero--title">
+      Featured Projects
+    </h1>
+    <!-- <h2 class="hero--subtitle">
+      <%- config.tagline %>
+    </h2>
+    <a class="hero--btn" href="#footer">Contact</a> -->
+  </div>
+</header>
+<section id="projects">
+  <!-- <h2 class="fw6">Recent Posts</h2> -->
+  <div class="blog lg">
+
+    <% site.categories.sort('date', -1).map(function(category){ %>
+      <% if(category.name == 'projects' ) { %>
+        <% category.posts.sort('date', -1).each(function(post, i) {%>
+          <%- partial('_partial/post_card', {post: post}) %>
+        <%})%>
+        <% } %>
+    <% }) %>
+
+  </div>
+  <div>
+    <a href="/projects/" class="inverse btn">All Projects</a>
+  </div>
+</section>

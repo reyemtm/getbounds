@@ -13,4 +13,5 @@ header-img: cdbdark.png
 img: cdbdark.png
 image: intro-to-leaflet-slides.png
 slides: https://www.ovrdc.org/apps/presentations/leaflet-ogrip/index.html#/
+categories: ["blog"]
 ---

@@ -8,7 +8,7 @@ subtitle: One Data Set Four Ways
 old: 'https://getbounds.com/apps/cdb-animation-1/'
 feature-img: cartodb-viz.png
 img: cartodb-viz.png
-categories: []
+categories: ["blog"]
 date: 2015-12-18 00:00:00
 ---
 

@@ -15,6 +15,7 @@ image: neohio-gis-thumb.png
 header-img: neohiogis-header.png
 img: neohiogis-header.png
 slides: "https://slides.getbounds.com/2016-jekyll-leaflet-turfjs/"
+categories: ["blog"]
 ---
 
 This presentation was given at the Northeast Ohio GIS Sympoisum on August 25, 2016. The primary objective was to give an overview of using [LeafletJS](http://leafletjs.com/index.html) in the real world, using actual data. In addition, I show a quick example using [TurfJS](http://turfjs.org/), and show how this can all be tied together for quick map iteration using [Jekyll](https://jekyllrb.com/) templates.

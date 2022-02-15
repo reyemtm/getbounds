@@ -4,7 +4,10 @@
   <div class="hero--inner">
     <h1 class="hero--title">
       <% if (page.tag) {%>Topic | <%- titlecase(page.tag) %>
-          <%}else{%>Blog Archive<%}%>
+      <%}else if (page.category){%>Archive | <%- titlecase(page.category) %>
+        <% if (page.category === 'blog') {%> Posts <%}%>
+        <% if (page.category === 'featured') {%> Projects <%}%>
+      <%}else{%>Projects & Posts<%}%>
     </h1>
   </div>
 </header>
@@ -25,15 +28,14 @@
         </div>
       </a>
       <div class="post" style="margin-bottom:0.5rem;width: 100%;display: flex;">
-        <% if(!url_for(page.path).includes("blog") ) {%>
+          <%- list_categories(post.categories, { show_count: false, class: 'clean category tag', separator: "|" }) %>
+          <%- list_tags(post.tags, { show_count: false, class: 'clean tag' }) %>
           <ul class="tag-list">
             <li class="tag-list-item">
-              <a class="clean tag-list-link" href="/blog/" rel="tag">view all</a>
+              <a class="clean tag-list-link" href="/archive/" rel="tag">view all</a>
             </li>
           </ul>
-          <%}%>
-            <%- list_tags(post.tags, { show_count: false, class: 'clean tag' }) %>
-      </div>
+        </div>
       <%})%>
   </div>
 </section>

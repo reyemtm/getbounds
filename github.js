@@ -29,7 +29,7 @@ fetch("https://api.github.com/users/reyemtm/repos?per_page=100")
 
 function filterRepos(data) {
   const filtered = data.filter(d => { 
-    return !d.fork && !d.archived && (d.forks > 1 || d.watchers > 4 || d.startgazers_count > 2)&& new Date(d.updated_at) > new Date(new Date().setFullYear(new Date().getFullYear() - 1))
+    return !d.fork && !d.archived && (d.forks > 2 || d.watchers > 4 || d.startgazers_count > 2)&& new Date(d.updated_at) > new Date(new Date().setFullYear(new Date().getFullYear() - 1))
   })
   console.log(filtered.length)
   const repos = [];

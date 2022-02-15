@@ -6,6 +6,7 @@ description: This video shows the growth of urban infrastructure from 1850 (blue
 tags:
 - esri
 layout: post
+categories: ["blog"]
 ---
 This video shows the growth of urban infrastructure from 1850 (blue) through to the present (red). I utilized the time/timeslider/export video feature of ArcMap to produce the video. I suffered numerous crashes while attempting to utilize the time slider in a meaningful way into my actual production mxd, though I use several third party extensions which may interfere with native ArcMap features. Still I find this simple project mesmerizing.
 

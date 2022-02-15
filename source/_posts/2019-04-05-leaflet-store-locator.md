@@ -9,6 +9,7 @@ tags:
 featured: true
 img: storelocate.png
 repo: https://github.com/reyemtm/leaflet-store-locator/
+categories: ["blog"]
 ---
 
 This simple, responsive store locator is based on the original [Mapbox JS](https://www.mapbox.com/help/building-a-store-locator/) example, tweaked to use Leaflet 1.0 and custom icons. The sidebar uses a jQuery filter function (thanks jsfiddle). The nearest store function uses TurfJS, based loosely on [this example](https://www.mapbox.com/blog/coffee-with-turf/). The production version uses [surge.sh](https://surge.sh) for deployment. This app was originnally created in collaboration with Nick Kroncke for [Shagbark](https://shagbarkmill.com/).

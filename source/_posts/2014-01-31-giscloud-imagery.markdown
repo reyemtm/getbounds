@@ -4,6 +4,7 @@ date: 2014-01-31 21:00:00 Z
 tags:
 - esri
 layout: post
+categories: ["blog"]
 ---
 One of the clients I work with utilizes unmanaged raster catalogs as part of their work flow. We manage over 20 raster catalogs with close to 4gb of imagery in both georeferenced jpgs and regular tifs. The imagery is black and white for the most part, some using the cg4 compression to get insanely small file sizes. We are now in the process of moving to the cloud, and they have chosen www.giscloud.com for their hosting, for reasons beyond the scope of this short post. The question: how to get these raster catalogs - which multiple images stitched together via the catalog with no data set so that they can overlap - into one image, small in file size and readable on the cloud.
 

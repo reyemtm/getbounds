@@ -15,10 +15,7 @@
 title: getBounds
 tagline: Data | GIS | Maps | Web
 description: >-
-  <strong>getBounds</strong> is run by Malcolm Meyer and provides custom geospatial consulting services. I have ten years
-  of experience in GIS and a passion for ecology, maps, open source software, urban planning, and
-  web design. I specialize in backend data analysis using PostgreSQL/PostGIS and Mapbox GL JS web map development.
-  Interested in collaborating or need help on a GIS project? Reach out using the form below and be sure to provide any specifics that will help get the conversation started.
+  <strong>getBounds</strong>, owned and operated by Malcolm Meyer, provides custom geospatial consulting services. What started out as a simple GIS blog a decade ago has now turned into a part-time business and full-time passion. With ten years of experience in GIS and a passion for ecology, maps, open source software, urban planning, and web design, I am ready to tackle your next GIS project. I specialize in backend data analysis using PostgreSQL/PostGIS and Mapbox GL JS web map development. Interested in collaborating? Fill out the contact form and be sure to provide any specifics that will help get the conversation started.
 keywords:
   [
     "gis",
@@ -48,8 +45,8 @@ permalink_defaults:
 source_dir: source
 public_dir: public
 tag_dir: tags
-archive_dir: blog
-category_dir: categories
+archive_dir: archive
+category_dir: ""
 #code_dir: downloads/code
 i18n_dir: :lang
 skip_render:
@@ -83,18 +80,13 @@ highlight:
   tab_replace: ""
   wrap: true
   hljs: true
-prismjs:
-  enable: false
-  preprocess: true
-  line_number: true
-  tab_replace: ""
 
 # Home page setting
 # path: Root path for your blogs index page. (default = '')
 # per_page: Posts displayed per page. (0 = disable pagination)
 # order_by: Posts order. (Order by date descending by default)
 index_generator:
-  per_page: 6
+  per_page: 4
   order_by: -date
 
 # Pagination
@@ -145,9 +137,10 @@ responsive_images:
       lg:
         width: 1200
         height:
-      md:
-        width: 861
-        height:
+      # Original 1440x960 4x3 with a ratio of 1.5
+      md: 
+        width: 860
+        height: 574
       # 16x9:
       #   width: 870
       #   height: 490

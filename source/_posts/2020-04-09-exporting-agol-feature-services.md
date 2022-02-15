@@ -13,7 +13,7 @@ tags:
   - esri
   - nodejs
 featured: false
-categories: []
+categories: ["blog"]
 date: 2020-04-27 23:32:00
 ---
 Recently I had the need to pull data from ArcGIS Online into a Mapbox GL JS web map. While it would be possible to use the WMS publishing feature in AGOL to display this layer, what would be ideal is to have access to the raw data. The data also needs updated on a regular basis, so manually downloading a copy from AGOL is not an option.

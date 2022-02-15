@@ -1,12 +1,12 @@
-/* @import url("https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700"); */
 @import url(/sofia/sofia-pro.css);
-
+@import url(modals.css);
+/*teal, hsl(181deg 100% 41%);, hsl(313deg 100% 60%);*/
 :root {
   --color-dark: hsl(240deg 5% 2%);
+  --color-gray: hsl(240deg 5% 80%);
   --color-muted: hsl(0, 0%, 30%);
-  --color-accent: hsl(313deg 100% 20%);
-  --color-accent-bright: hsl(313deg 100% 40%);
-  --color-accent-light: hsla(312, 100%, 60%, 0.1);
+  --color-accent: hsl(181deg 100% 21%);
+  --color-accent-light: hsl(181deg 100% 21% / 10%);
   --container-width: 1200px;
   --max-width: calc(100% - 2rem);
   --border-radius: 3px;
@@ -18,16 +18,16 @@
   line-height: 1.4;
 }
 
-iframe {
-  border: solid thin whitesmoke;
-}
-
-h1,h2,h3,h4 {
-  line-height: 1.25;
-}
+/* GLOBAL SETTINGS MAIN ELEMENTS */
 
 html, body {
   min-height: 100vh;
+}
+
+@media screen and (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto!important;
+  }
 }
 
 body {
@@ -42,10 +42,8 @@ main {
   flex: 1;
 }
 
-@media screen and (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto!important;
-  }
+h1,h2,h3,h4 {
+  line-height: 1.25;
 }
 
 p {
@@ -66,9 +64,17 @@ a:hover,a:focus,a:active {
   color: var(--color-accent);
 }
 
-/*
-NAV
-*/
+figure {
+  margin: 0
+}
+
+figcaption {
+  color: var(--color-muted);
+  font-style: italic;
+  font-size: smaller;
+}
+
+/* NAV */
 nav {
   background: white;
   z-index: 1;
@@ -84,6 +90,12 @@ nav a {
   letter-spacing: 2px;
   padding: 0.2rem 0.2rem;
   text-decoration: none;
+}
+
+nav:not(.nav-links-mobile) a:hover {
+  background-color: var(--color-accent-light);
+  /* color: inherit; */
+  border-radius: var(--border-radius);
 }
 
 .nav-links {
@@ -141,7 +153,7 @@ nav a {
   right: 5px;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 600px) {
   .nav-links {
     display: flex;
   }
@@ -171,9 +183,7 @@ nav a {
   }
 }
 
-/*
-HERO
-*/
+/* HERO */
 
 .hero {
   background: black;
@@ -184,6 +194,10 @@ HERO
   height: calc(54vh - 40px);
   overflow: hidden;
   position: relative;
+}
+
+.hero--md {
+  height: calc(35vh);
 }
 
 .hero--background-img {
@@ -233,54 +247,61 @@ HERO
 }
 
 a.hero--btn {
-  border: solid thin white;
+  border: none;
+  outline: solid thin white;
   border-radius: 2rem;
   color: white;
   font-size: clamp(0.8rem, 2vw, 1.1rem);
   font-weight: 400;
   letter-spacing: 0.5rem;
-  margin: 1rem 0;
+  margin: 1rem 0 0 0;
   padding: 0.5rem 1rem;
   text-align: center;
   text-decoration: none;
   text-transform: uppercase;
-  width: 288px;
+  /* width: auto; */
   max-width: calc(100% - 2rem);
+}
+
+@media screen and (min-width: 340px) {
+  a.hero--btn {
+    width: 288px;
+  }
 }
 
 a.hero--btn:hover,
 a.hero--btn:focus {
   background-color: var(--color-dark);
   filter: invert(1);
-  outline: none;
-}
-
-main {
-  flex: 1;
+  /* outline: none; */
 }
 
 /*TODO merge these button styles*/
-.inverse a.btn {
+.inverse a.btn,
+a.inverse.btn {
   color:white;
   text-decoration: none;
   text-transform: uppercase;
-  border: solid 1px white;
+  text-align: center;
+  border: none;
+  outline: solid 1px white;
   border-radius:2rem;
   padding:0.5rem 1rem;
   letter-spacing:0.5rem;
+  margin-top: 4rem;
 }
+a.btn:hover,
 .inverse a.btn:hover {
-  background-color: white;
-  color: var(--color-dark);
-  border: solid 1x white;
+  background-color: var(--color-accent);
+  color: #fff;
+  outline: solid 1x var(--color-accent);
 }
-/*
-SECTIONS
-*/
+
+/* SECTIONS */
 
 section {
   overflow: hidden;
-  padding: 5rem 0;
+  padding: 4rem 0;
 }
 
 section .section--heading {
@@ -323,7 +344,6 @@ section .portfolio img {
   min-width: 200px;
   object-fit: cover;
   object-position: center;
-  /* width: 100%; */
 }
 
 /**********/
@@ -392,15 +412,12 @@ section .portfolio img {
   width: calc(100% - 2rem);
 }
 
-/*
-FORMS
-*/
+/* FORMS */
 
 section form {
   display: flex;
   flex-direction: column;
-  width: calc(100% - 1rem);
-  max-width: 600px;
+  width: 100%;
 }
 
 section form input,
@@ -417,8 +434,8 @@ section form textarea {
 section form button {
   background: var(--color-dark);
   box-shadow: none;
-  border: solid thin var(--clolor-dark);
-  border-color: var(--color-dark);
+  border: none;
+  outline: solid thin var(--color-dark);
   border-radius: 2rem;
   color: white;
   cursor: pointer;
@@ -431,14 +448,11 @@ section form button {
 section form button:hover,
 section form button:focus,
 section form button:active {
-  /* background-color: var(--color-accent);*/
-  border: solid thin #fff;
-  filter: invert(1);
+  background-color: var(--color-accent);
+  outline: none;
 }
 
-/*
-FOOTER
-*/
+/* FOOTER */
 
 footer.footer {
   align-items: flex-end;
@@ -448,47 +462,7 @@ footer.footer {
   padding: 1rem
 }
 
-/*
-MODALS
-*/
-
-.modal {
-  left: 0;
-  height: 100vh;
-  opacity: 0;
-  position: fixed;
-  transition: opacity 0.3s ease-in-out;
-  top: -100vh;
-  visibility: none;
-  width: calc(100% - 2rem);
-}
-
-.modal:not(picture):not(figcaption) {
-  cursor: pointer;
-}
-.modal picture>img {
-  cursor: auto;
-  width: 100%;
-  max-width: 90vh;
-}
-.modal figcaption {
-  color: white;
-  font-weight: 300;
-}
-
-.modal.modal-active {
-  align-items: center;
-  justify-content: center;
-  display: flex;
-  background: rgba(0, 0, 0, 0.9);
-  top: 0;
-  padding: 1rem;
-  opacity: 1;
-  visibility: visible;
-  z-index: 11;
-}
-
-/*UTILITY CLASSES*/
+/* UTILITY CLASSES */
 
 .center {
   align-items: center;
@@ -515,7 +489,6 @@ MODALS
 .inverse {
   background-color: var(--color-dark);
   color: white;
-  /* filter: invert(1); */
 }
 
 .inverse a {
@@ -530,21 +503,31 @@ MODALS
 .inverse a:hover,
 .inverse a:focus,
 .inverse a:active {
-  color: var(--color-accent-bright);
+  color: var(--color-accent);
 }
 
-/*
-SCROLLBAR
-*/
+/* SIDE BY SIDE */
+
+.side-by-side {
+  display: block;
+}
+
+@media screen and (min-width: 1200px) {
+  .side-by-side {
+    display:grid!important;
+    grid-template-columns:50% 50%;
+    grid-gap:3rem;
+    direction:rtl;
+  }
+}
+
+/* SCROLLBAR */
 
 ::-webkit-scrollbar {
   width: 0.4rem;
   height: 0.4rem;
   background-color: white;
-  /* or add it to the track */
 }
-
-/* Add a thumb */
 ::-webkit-scrollbar-thumb {
   background: #505050;
 }

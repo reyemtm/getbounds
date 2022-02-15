@@ -4,7 +4,7 @@ date: 2014-11-19 17:47:09 Z
 tags:
 - leaflet
 layout: post
-style: "iframe{width:100%!important;}"
+categories: ["blog"]
 ---
 This is a quick look at Leaflet, Google MyMaps and Esri's ArcGIS Online.
 

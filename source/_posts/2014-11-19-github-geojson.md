@@ -4,6 +4,7 @@ date: 2014-11-19 00:00:00 Z
 tags:
 - leaflet
 layout: post
+categories: ["blog"]
 ---
 GitHub will host and preview your geojson files! [Geomusings](http://blog.geomusings.com/2013/06/18/geojson-on-github-now-what/) gives a good explanation of some pros and cons. Here is an example of a geojson stored on GitHub, then shared. GitHub takes care of the rendering via [Mapbox](https://www.mapbox.com).
 

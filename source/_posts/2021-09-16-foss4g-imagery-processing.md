@@ -13,6 +13,7 @@ tags:
   - open data
 featured: true
 slides: https://slides.getbounds.com/2021-creating-raster-tiles-with-gdal/#/
+categories: ["blog"]
 ---
 This is a talk I gave at the 2021 Ohio GIS Conference. It outlines an open source pipeline for creating Cloud Optimized GeoTIFFs and raster tiles from a collection of TIFF files.
 

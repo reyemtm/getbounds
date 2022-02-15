@@ -9,6 +9,7 @@ tags:
 img: open-parcel-viewer-web.png
 code: https://github.com/ovrdc/parcel-viewer
 demo: https://ovrdc.github.io/parcel-viewer
+categories: ["blog"]
 ---
 The Open Parcel Viewer is a client-side application written in plain javascript and jquery. It is capable of rendering up to 50k polygons on desktop and mobile. The app uses Leaflet as the mapping api and Jekyll as a build tool. Color, initial map center/zoom and the search field can be defined in the yaml front matter, with minimal to zero extra coding needed. The polygons should be in topojson format.
 

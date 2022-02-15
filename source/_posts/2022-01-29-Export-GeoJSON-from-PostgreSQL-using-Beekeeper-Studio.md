@@ -7,7 +7,7 @@ tags:
   - postgres
   - postgis
   - open data
-categories: []
+categories: ["blog"]
 date: 2022-01-29 12:25:00
 ---
 

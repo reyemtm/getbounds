@@ -8,6 +8,7 @@ tags:
   - mapbox
 date: 2020-04-01 14:55:00
 date_updated: 2020-09-13 00:00:00
+categories: ["blog"]
 ---
 *Update: This visualization is no longer being updated. There are a wide variety of authoritative COVID-19 trackers on the internet, including ones from Bing, Google, National Geographic, the New York Times, as well as the sites listed at the bottom of this post. Please refer to these for the latest updates. What follows below is my take on a COVID-19 tracker using open source tools.*
 

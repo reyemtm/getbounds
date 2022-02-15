@@ -3,6 +3,7 @@ layout: post
 title: Generating Cloud Optimized GeoTIFFs and Raster Tiles with GDAL
 subtitle: "TLDR: gdalbuildvrt, gdal_translate, gdal_warp and gdaladdo"
 date: 2021-09-02T17:38:58.483Z
+date_updated: 2022-02-10
 img: tiles.png
 tags:
  - gdal
@@ -10,6 +11,7 @@ tags:
 style:
   code: ""
 featured: true
+categories: ["blog"]
 ---
 The following outlines the basic steps for generating Cloud Optimized GeoTIFFs and raster tiles from one or more raw TIFF files.
 
@@ -37,25 +39,20 @@ gdalbuildvrt mosaic.vrt -b 1 -b 2 -b 3 -addalpha //path/to/tif/files/*.tif
 
 > Force the NAD83 projection using either EPSG:6551 (NAD83 2011) or 3735.
 
-
+*Update 2/10/2022 - For Desktop GIS usage, higher clarity may be found by using the NEAREST resampling method at the expense of pixelation. When using this method, set the resampling to `bilinear` or `cubic` in the GIS software when adding the COG.*
 
 ```bash
 gdal_translate mosaic.vrt cog.tif ^
 -a_srs EPSG:6551 ^
--of COG -co RESAMPLING=CUBIC -co COMPRESS=JPEG -co BIGTIFF=YES ^
+-of COG -co RESAMPLING=AVERAGE -co NUM_THREADS=ALL_CPUS -co COMPRESS=JPEG ^
+-co BIGTIFF=YES -co QUALITY=85 -co PREDICTOR=YES -co LEVEL=9 -co OVERVIEW_QUALITY=95 ^
 --config GDAL_CACHEMAX 9999 ^
 --config GDAL_NUM_THREADS ALL_CPUS
 ```
 
-
-
 ## Create a Mosaic in WebMercator from the Original Mosaic
 
-
-
 > Use the ITRF00 transformation suitable for both 6551 and 3735.
-
-
 
 ```bash
 gdalwarp mosaic.vrt web.vrt ^
@@ -74,15 +71,11 @@ gdalwarp mosaic.vrt web.vrt ^
 
 [GDAL Warp Reference](https://gdal.org/programs/gdalwarp.html)
 
-
-
 *If you want to use the COG in ArcGIS Server then use JPEG compression.*
-
-
 
 > Using the default resampling works fine as does AVERAGE, BILINEAR and CUBIC (default).
 
-
+*Update 2/10/2022 - Using AVERAGE may provide more clarity for the overviews.*
 
 ```bash
 gdal_translate web.vrt cog_web.tif ^
@@ -92,6 +85,7 @@ gdal_translate web.vrt cog_web.tif ^
 -co BIGTIFF=yes ^
 -co BLOCKSIZE=256 ^
 -co COMPRESS=WEBP ^
+-co RESAMPLING=AVERAGE ^
 -co QUALITY=65 ^
 -co OVERVIEWS=IGNORE_EXISTING ^
 -co OVERVIEW_COMPRESS=WEBP ^
@@ -100,21 +94,13 @@ gdal_translate web.vrt cog_web.tif ^
 --config GDAL_NUM_THREADS ALL_CPUS
 ```
 
-
-
 ## Check your COG with the `coggeotiff` cli tool
-
-
 
 ```bash
 cogeotiff --info -f cog_web.tif -t
 ```
 
-
-
 ---
-
-
 
 ## Generate Tiles with gdal_translate and gdaladdo
 

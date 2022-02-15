@@ -14,6 +14,7 @@ plugins:
 map: leaflet
 header-img: header-vacay-2.png
 img: header-vacay-2.png
+categories: ["blog"]
 ---
 
 *Update: This map originally used Google's Picasa Web API, but this will [soon be shut down](https://developers.google.com/picasa-web/). Instead of migrating to another Google service, I simply extracted the EXIF data from the photos ([using this tool](http://www.br-software.com/extracter.html)). The resulting csv was converted to json, which worked as a drop-in replacement for former Picasa feed.*

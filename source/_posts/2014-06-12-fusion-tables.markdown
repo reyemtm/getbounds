@@ -4,7 +4,7 @@ tags:
   - esri
   - google
 layout: post
-categories: []
+categories: ["blog"]
 author: ''
 date: 2014-06-12 00:00:00
 date_updated: 2020-09-13 00:00:00

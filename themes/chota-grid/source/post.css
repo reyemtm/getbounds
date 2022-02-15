@@ -18,12 +18,15 @@ blockquote span {
 }
 
 nav {
-  filter: invert(1)
+  filter: invert(1);
+  /* background: transparent;
+  position: absolute;
+  width: 100%; */
 }
 
 nav a:hover,nav a:focus, nav a:active {
-  color: var(--color-accent-bright);
-  filter: invert(1)
+  color: var(--color-accent);
+  filter: invert(1) saturate(2)
 }
 
 /*
@@ -53,8 +56,15 @@ article.post header {
 }
 
 .post--meta {
-  font-size: smaller;
+  font-size: 0.9rem;
   opacity: 0.7;
+}
+
+.project-tag {
+  border-radius: var(--border-radius);
+  background-color: var(--color-gray);
+  padding: 0.2rem 0.4rem;
+  font-size: smaller;
 }
 
 .post .tag-list {
@@ -75,17 +85,29 @@ article.post header {
   padding: 0.2rem;
 }
 
+.post .category.tag-list-item a:not(:hover) {
+  background-color: var(--color-gray);
+  color: var(--color-dark);
+}
+
+.post .category ul {
+  list-style: none;
+  display: inline-flex;
+  margin: 0;
+  padding: 0;
+}
+
 .post .tag-list-item a:hover {
-  background-color: var(--color-accent-bright);
+  background-color: var(--color-accent);
   color: white;
 }
 
-.post a {
+/* .post a {
   background-color: var(--color-accent-light);
-}
+} */
 
 .post a:hover, .psot a:active, .post a:focus {
-  background-color: var(--color-accent-bright);
+  background-color: var(--color-accent);
   color: white;
 }
 
@@ -188,4 +210,27 @@ main section .post--related {
 
 .post--related h2, .post--related h3 {
   margin: 0.5rem 0;
+}
+
+.post--related .card-subtitle,
+.featured .card-subtitle {
+  display: none;
+}
+
+section div.featured {
+  display: flex;
+  grid-gap:4rem;
+  flex-direction:column;
+  align-items:flex-start;
+}
+
+section div.featured article img {
+  border-radius: 5px;
+  width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+  section div.featured {
+    flex-direction: row
+  }
 }

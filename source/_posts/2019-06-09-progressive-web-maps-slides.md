@@ -7,6 +7,7 @@ tags:
  - mapbox
  - slides
 img: pwa.png
+categories: ["blog"]
 ---
 
 The GitHub repository with all the code needed to follow along with this presentation can be found at [github.com/reyemtm/pwa-maps](https://github.com/reyemtm/pwa-maps). The live demo is available at [pwa-trails.netlify.com](https://pwa-trails.netlify.com).

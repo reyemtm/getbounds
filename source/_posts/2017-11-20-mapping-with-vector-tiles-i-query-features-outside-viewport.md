@@ -15,6 +15,7 @@ netlify-img: /images/post-img/original/mgl-parcels-01.png
 featured: true
 date_updated: 2019-04-12 00:00:00
 date: 2018-02-12 00:00:00
+categories: ["blog"]
 ---
 The goal of my original post on [client-side web mapping](https://getbounds.com/blog/leaflet-and-geojson-tiles/) for large datasets was to create an inexpensive, robust county-wide parcel viewer web application. The base functionality would include the ability to both identify and search the parcel data. The result of this effort was the [Open Parcel Viewer](https://github.com/ovrdc/parcel-viewer). That project consists of a Leaflet map with [Leaflet.VectorGrid](https://github.com/Leaflet/Leaflet.VectorGrid) cutting GeoJSON into vector-tiles on-the-fly. The app is performant, with the drawback being a potentially large file loaded directly into the browser. This method works well for small datasets, but breaks down when the size and complexity of the data exceeds device or network capabilities. For example, load time for a typical 70k polygon county parcel map on mobile might exceed 30 seconds.
 

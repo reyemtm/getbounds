@@ -1,0 +1,62 @@
+<article class="post" style="margin:2rem auto">
+  <header>
+    <span>
+      <%- partial('_partial/date', {post: page}) %>
+    </span>
+
+    <h1 class="post--title">
+      <%- page.title %>
+    </h1>
+    <h2 class="post--subtitle">
+      <%- page.subtitle %>
+    </h2>
+    <p class="post--meta">
+      <%= page.project[0].client %>
+    </p> 
+    <!-- <span>
+      <%- list_tags(page.tags, { show_count: false, class: 'clean tag' }) %>
+    </span> -->
+  </header>
+
+  <main>
+    <% project = page.project[0] %>
+    <% images = project.images %>
+    <% tech = page.project[0].tech %>
+    <p>
+      <img src="/assets/img/lg_<%= project.images[0] %>.webp">
+    </p>
+    <p>
+      <%- markdown(page.project[0].description) %>
+    </p>
+    <p>
+      <% if (project.url) {%><a href="<%= project.url %>" target="_blank">Project Link</a><%}%>
+    </p>
+    <p>
+      <% for (i = 0; i < page.project[0].tech.length; i++) {%>
+        <span class="project-tag"><%= tech[i] %></span>
+      <%}%>
+    </p>   
+    <p>
+      <!-- <% for (i = 0; i < project.images.length; i++) {%>
+        <%= images[i] %>
+      <%}%> -->
+    </p>
+    <p>
+      <a href="/projects" class="btn">Project Archive</a>
+    </p>
+  </main>
+</article>
+<section class="inverse">
+  <h2 class="section--heading">Featured Projects</h2>
+  <div class="featured">
+    <% site.categories.sort('name').map(function(category){ %>
+      <% if(category.name == 'featured' ) { %>
+        <% category.posts.sort('date', -1).each(function(post, i) {%>
+          <% if ((post.title != page.title) && (i < 3)) {%>
+            <%- partial('_partial/post_card', {post: post}) %>
+          <%}%>
+        <%})%>
+      <% } %>
+    <% }) %>
+  </div>
+</section>

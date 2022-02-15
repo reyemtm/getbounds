@@ -11,4 +11,5 @@ feature-img: ""
 image: ogrip-2016.png
 img: ogrip-2016.png
 slides: https://www.ovrdc.org/apps/presentations/ogrip-2016/index.html#/
+categories: ["blog"]
 ---

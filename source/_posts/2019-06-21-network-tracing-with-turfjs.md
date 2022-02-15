@@ -14,6 +14,7 @@ tags:
   - turfjs
   - mapbox
 featured: true
+categories: ["blog"]
 ---
 A primary focus of my day job is managing utility datasets for a small municipality. I am currently in the process of taking a simple database of lines and points and turning it into a true utility network. One of the benefits of having this new seamless database is to perform network traces. This is possible using a variety of desktop and server tools including [geometric networks in ArcGIS Desktop](http://desktop.arcgis.com/en/arcmap/10.3/manage-data/geometric-networks/what-are-geometric-networks-.htm), the [ArcGIS Utility Network Management extension for ArcGIS Server/Enterprise](https://pro.arcgis.com/en/pro-app/help/data/utility-network/what-is-a-utility-network-.htm), [pgRouting](https://pgrouting.org/), and via [various QGIS plugins](https://plugins.qgis.org/search/?q=network). However, the utility field crews and managers only have access to our [web maps](https://gis.coz.org), so I wondered if I could program a Mapbox GL JS plugin to do some simple network tracing directly in the browser. Fortunately in my case the entire database is less than 3MB, so all the data can be loaded into the browser via GeoJSON. This data can  then be visualized and analyzed using client-side libraries, in this instance [Mapbox GL](https://docs.mapbox.com/mapbox-gl-js/api/) and [Turf JS](https://github.com/Turfjs/turf). 
 
