@@ -50,6 +50,7 @@ category_dir: ""
 #code_dir: downloads/code
 i18n_dir: :lang
 skip_render:
+  - sample-apps/animated.html
   - apps/**/*.*
   - apps-plugins/**
   - data/**/*.*
@@ -266,3 +267,6 @@ html_prettify:
 #resume
 resume:
   title: Data & Geospatial Analyst
+
+# grid icons
+# https://www.reshot.com/free-svg-icons/item/admin-dashboard-line-green-black-icons-s2-G5EX79VWFN/

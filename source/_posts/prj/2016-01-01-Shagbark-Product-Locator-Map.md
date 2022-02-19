@@ -16,6 +16,7 @@ categories:
  - projects
  - featured
 published: true
+featured: true
 # Project Settings for new Projects Layout
 project:
   -

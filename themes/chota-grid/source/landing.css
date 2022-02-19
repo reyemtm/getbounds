@@ -1,12 +1,18 @@
 @import url(/sofia/sofia-pro.css);
 @import url(modals.css);
-/*teal, hsl(181deg 100% 41%);, hsl(313deg 100% 60%);*/
+/*
+teal, hsl(181deg 100% 41%);
+hsl(313deg 100% 60%);
+hsl(181deg 100% 21%);
+hsl(181deg 100% 21% / 10%);
+*/
 :root {
   --color-dark: hsl(240deg 5% 2%);
   --color-gray: hsl(240deg 5% 80%);
   --color-muted: hsl(0, 0%, 30%);
-  --color-accent: hsl(181deg 100% 21%);
-  --color-accent-light: hsl(181deg 100% 21% / 10%);
+  --color-accent: hsl(314 52% 40%);
+  --color-accent-dark: hsl(314 52% 5%);
+  --color-accent-light: hsl(314 52% 30% / 15%);
   --container-width: 1200px;
   --max-width: calc(100% - 2rem);
   --border-radius: 3px;
@@ -72,6 +78,12 @@ figcaption {
   color: var(--color-muted);
   font-style: italic;
   font-size: smaller;
+}
+
+.container {
+  margin: 6rem auto;
+  width: var(--container-width);
+  max-width: var(--max-width);
 }
 
 /* NAV */
@@ -187,7 +199,6 @@ nav:not(.nav-links-mobile) a:hover {
 
 .hero {
   background: black;
-  justify-content: center;
   display: flex;
   color: white;
   flex-direction: column;
@@ -196,8 +207,21 @@ nav:not(.nav-links-mobile) a:hover {
   position: relative;
 }
 
+.hero {
+  background: linear-gradient(135deg, hsl(314, 52%, 0%), hsla(314, 52%, 30%, 0.4)); /* W3C */
+}
+
+.hero:not(.hero--full) {
+  justify-content: center;
+}
+
 .hero--md {
   height: calc(35vh);
+}
+
+.hero--full {
+  height: auto;
+  min-height: calc(100vh + 0rem);
 }
 
 .hero--background-img {
@@ -206,19 +230,23 @@ nav:not(.nav-links-mobile) a:hover {
   margin: 0 -3rem;
   position: absolute;
   object-fit: cover;
-  object-position: left;
+  /* object-position: left; */
   width: calc(100% + 6rem);
+  z-index: -1;
 }
 
 .hero--inner {
   display: flex;
   flex-direction: column;
-  line-height: 1.4rem;
   margin: 0 auto;
   width: var(--container-width);
   max-width: calc(100% - 4rem);
   padding: 2rem;
   z-index: 1;
+}
+
+.hero--full .hero--inner {
+  margin: 4em auto;
 }
 
 .hero--title {
@@ -296,6 +324,63 @@ a.btn:hover,
   color: #fff;
   outline: solid 1x var(--color-accent);
 }
+
+/* SIMPLE GRID */
+
+.grid {
+  display: grid!important;
+  grid-gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+@media screen and (min-width: 768px) {
+  .grid.grid-2 {
+    grid-template-columns: calc(50% - 1rem) calc(50% - 1rem);
+  }
+}
+
+/* @media screen and (min-width: 1200px) {
+  .grid.grid-2 {
+    grid-template-columns: repeat(4, calc(25% - 0.25rem));
+  }
+} */
+
+.grid--card {
+  border-radius: var(--border-radius);
+  background: hsl(240deg 5% 2% / 50%);
+  padding: 1rem 1.5rem;
+  position: relative;
+}
+
+.grid--card h3  {
+  font-weight: 400;
+}
+
+.grid--card p {
+  font-weight: 200;
+}
+
+.grid--icon {
+  display: none;
+  position: absolute;
+  right: 1.5rem;
+  top: 2rem;
+}
+
+.grid--icon img {
+  width: 2rem
+}
+
+@media screen and (min-width: 400px) {
+  .grid--icon {
+    display: block;
+  }
+}
+
+.grid--card a:not(:hover) {
+  color: white;
+}
+
 
 /* SECTIONS */
 
@@ -432,10 +517,10 @@ section form textarea {
 }
 
 section form button {
-  background: var(--color-dark);
+  background: var(--color-accent-dark);
   box-shadow: none;
   border: none;
-  outline: solid thin var(--color-dark);
+  outline: solid thin var(--color-accent-dark);
   border-radius: 2rem;
   color: white;
   cursor: pointer;
@@ -487,7 +572,7 @@ footer.footer {
 }
 
 .inverse {
-  background-color: var(--color-dark);
+  background-color: var(--color-accent-dark);
   color: white;
 }
 
@@ -516,7 +601,7 @@ footer.footer {
   .side-by-side {
     display:grid!important;
     grid-template-columns:50% 50%;
-    grid-gap:3rem;
+    grid-gap: 3rem;
     direction:rtl;
   }
 }

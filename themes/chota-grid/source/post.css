@@ -72,6 +72,7 @@ article.post header {
   font-size: 0.8rem;
   list-style: none;
   padding: 0;
+  margin: 0.3rem 0;
 }
 
 .post .tag-list-item a {
@@ -185,37 +186,7 @@ post pager
   text-decoration: none;
 }
 
-/* 
-related posts section
-*/
-
-main section .post--related {
-  align-items: baseline;
-  display: grid;
-  grid-template-columns: repeat(2, calc(50% - 1rem));
-  grid-gap: 2rem;
-  opacity: 0.8;
-  text-align: left;
-}
-
-.post--related a {
-  text-decoration: none;
-}
-
-.post--related img {
-  border-radius: var(--border-radius);;
-  width: 100%;
-  object-fit: cover;
-}
-
-.post--related h2, .post--related h3 {
-  margin: 0.5rem 0;
-}
-
-.post--related .card-subtitle,
-.featured .card-subtitle {
-  display: none;
-}
+/* RELATED AND FEATURED POSTS AND PROJECTS */
 
 section div.featured {
   display: flex;
@@ -227,6 +198,10 @@ section div.featured {
 section div.featured article img {
   border-radius: 5px;
   width: 100%;
+}
+
+.featured a {
+  text-decoration: none;
 }
 
 @media screen and (min-width: 768px) {

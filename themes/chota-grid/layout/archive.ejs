@@ -27,7 +27,7 @@
             <!-- <p><%- strip_html((post.excerpt).substring(0, 150)) %>...</p> -->
         </div>
       </a>
-      <div class="post" style="margin-bottom:0.5rem;width: 100%;display: flex;">
+      <div class="post" style="margin:0.5rem 0 0.5rem 0;width: 100%;display: flex;white-space: nowrap;flex-flow: wrap;">
           <%- list_categories(post.categories, { show_count: false, class: 'clean category tag', separator: "|" }) %>
           <%- list_tags(post.tags, { show_count: false, class: 'clean tag' }) %>
           <ul class="tag-list">

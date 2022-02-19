@@ -58,10 +58,8 @@
 
 <section class="inverse">
   <h2 class="section--heading">Related Posts</h2>
-  <div class="post--related">
+  <div class="featured">
 
-    <%- list_related_posts({ maxCount: 2, orderBy: 'random' , pClass: 'post--realted-p' , ulClass: 'post--related-ul' ,
-      liClass: 'post--related-li' , aClass: 'post--related-a' , generateAbstract: true,
-      abstractClass: 'post-related-abstract' , abstractLength: 200 }) %>
+    <%- list_related_posts({ maxCount: 2, orderBy: 'random'}) %>
   </div>
 </section>

@@ -23,7 +23,7 @@
     <% images = project.images %>
     <% tech = page.project[0].tech %>
     <p>
-      <img src="/assets/img/lg_<%= project.images[0] %>.webp">
+      <img id="project-images" src="/assets/img/lg_<%= project.images[0] %>.webp">
     </p>
     <p>
       <%- markdown(page.project[0].description) %>
@@ -36,11 +36,6 @@
         <span class="project-tag"><%= tech[i] %></span>
       <%}%>
     </p>   
-    <p>
-      <!-- <% for (i = 0; i < project.images.length; i++) {%>
-        <%= images[i] %>
-      <%}%> -->
-    </p>
     <p style="margin-top:4rem">
       <a href="/projects" class="btn">Project Archive</a>
     </p>
@@ -60,3 +55,16 @@
     <% }) %>
   </div>
 </section>
+
+<% if (images.length == 2) {%>
+  <script>
+    const images = ["<%= project.images[0] %>","<%= project.images[1] %>"];
+    const div = document.querySelector("#project-images");
+    div.style.cursor = "pointer"
+    let currentImage = 0;
+    div.addEventListener("click", () => {
+      currentImage = (!currentImage) ? 1 : 0;
+      div.src = "/assets/img/lg_" + images[currentImage] + ".webp"
+    })
+  </script>
+<%}%>

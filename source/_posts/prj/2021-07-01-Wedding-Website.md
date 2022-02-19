@@ -10,7 +10,6 @@ tags:
   - demo
 categories: 
  - projects
- - featured
 published: true
 project:
   -

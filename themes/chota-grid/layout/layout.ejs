@@ -7,12 +7,22 @@
 <body>
  
   <%- partial('_partial/nav') %>
-  <main>
   <%- body %>
-  </main>
   <%- partial('_partial/footer') %>
-  <%- partial('_partial/site-scripts') %>
-
+  <% if (is_home() === true) {%>
+  <%- partial('_partial/homepage-scripts') %>
+  <script>
+    const links = document.querySelectorAll("a");
+    links.forEach(l => {
+      if (l.href.includes("/#")) {
+        l.addEventListener("click", (e) => {
+          e.preventDefault()
+          window.location.replace(e.target.href);
+        })
+      }
+    })
+  </script>
+  <%}%>
 </body>
 
 </html>
