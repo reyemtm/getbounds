@@ -200,16 +200,13 @@ nav:not(.nav-links-mobile) a:hover {
 
 .hero {
   background: black;
+  background: linear-gradient(135deg, hsl(314, 52%, 0%), hsla(314, 52%, 30%, 0.4)); /* W3C */
   display: flex;
   color: white;
   flex-direction: column;
   height: calc(54vh - 40px);
   overflow: hidden;
   position: relative;
-}
-
-.hero {
-  background: linear-gradient(135deg, hsl(314, 52%, 0%), hsla(314, 52%, 30%, 0.4)); /* W3C */
 }
 
 .hero:not(.hero--full) {
@@ -391,7 +388,7 @@ section {
 }
 
 section.inverse {
-  background-image: linear-gradient(135deg, hsl(314, 52%, 0%), hsla(314, 52%, 30%, 0.4)), url(/assets/bg-2.jpg);
+  background-image: linear-gradient(135deg, hsl(314, 52%, 0%), hsla(314, 52%, 30%, 0.4)), url(/assets/lg_bg-2.webp);
   background-size: cover;
   background-position: left;
 }

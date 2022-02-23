@@ -136,7 +136,7 @@ responsive_images:
   - pattern: "**/*.+(png|jpg|jpeg)"
     sizes:
       lg:
-        width: 1200
+        width: 1440
         height:
       # Original 1440x960 4x3 with a ratio of 1.5
       md: 

@@ -6,7 +6,7 @@
       <%}else{%>
         <%- config.defaultimage %>
       <%}%>" media="(min-width: 768px)" loading=lazy>
-            <img src="/assets/img/md_<% if (post.img) {%><%- (post.img).replace(".png", ".webp"
+            <img loading="lazy" src="/assets/img/md_<% if (post.img) {%><%- (post.img).replace(".png", ".webp"
               ).replace(".jpg", ".webp" ) %>
       <%}else{%>
               <%- config.defaultimage %>
