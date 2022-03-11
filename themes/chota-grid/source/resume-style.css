@@ -63,9 +63,10 @@ li {
   height: 100%;
   display: grid;
   grid-template-columns: repeat(9, 1fr);
-  grid-template-rows: repeat(7, 1fr);
+  grid-template-rows: repeat(9, 1fr);
   grid-column-gap: 0;
-  grid-row-gap: 0
+  grid-row-gap: 0;
+  margin-bottom: 10px;
 }
 
 .item span {
@@ -99,10 +100,11 @@ header {
 
 header.flex-row {
   margin-bottom: 10px;
+  height: 110px;
 }
 
 .leftSide {
-  grid-area: 2/1/7/7;
+  grid-area: 2/1/10/7;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -257,12 +259,12 @@ footer a:hover {
 }
 
 h1.name {
-  font-size: 2.6rem;
+  font-size: 2.2rem;
   letter-spacing: 0.5rem;
 }
 
 .tagline {
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   font-weight: 400;
   letter-spacing: 0.3rem;
   color: hsl(180deg 100% 25%);
