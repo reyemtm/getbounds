@@ -35,6 +35,7 @@ POST
 
 article.post {
   margin: 0 auto;
+  width: calc(100% - 2rem);
   max-width: 65ch;
   padding: 1rem;
 }
