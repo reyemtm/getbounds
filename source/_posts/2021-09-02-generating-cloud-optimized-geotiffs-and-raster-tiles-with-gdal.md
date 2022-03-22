@@ -3,7 +3,7 @@ layout: post
 title: Generating Cloud Optimized GeoTIFFs and Raster Tiles with GDAL
 subtitle: "TLDR: gdalbuildvrt, gdal_translate, gdal_warp and gdaladdo"
 date: 2021-09-02T17:38:58.483Z
-date_updated: 2022-02-10
+date_updated: 2022-03-22
 img: tiles.png
 tags:
  - gdal
@@ -27,7 +27,17 @@ The following outlines the basic steps for generating Cloud Optimized GeoTIFFs a
 gdalbuildvrt mosaic.vrt -b 1 -b 2 -b 3 -addalpha //path/to/tif/files/*.tif
 ```
 
+*Update 3/22/2022 - If you run into the error "gdalbuildvrt does not support heterogeneous projection" you can warp all the source TIFF files into the desired projection, then run the command above, using the warped vrt files as the source files. See [this Stack Exchange post](https://gis.stackexchange.com/questions/394249/gdalbuildvrt-does-not-support-heterogeneous-projection)*
 
+```
+for %%i IN ("\\192.168.168.23\2009_Orthos\*.tif") do (
+  gdalwarp -of VRT -dstalpha -t_srs "EPSG:3735" %%i %%i_nad83.vrt
+)
+```
+
+```bash
+gdalbuildvrt mosaic.vrt -b 1 -b 2 -b 3 -addalpha //path/to/tif/files/*_nad83.tif
+```
 
 ## Create the Desktop Cloud Optimized GeoTIFF
 
