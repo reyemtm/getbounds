@@ -413,7 +413,7 @@ section:not(.full)>div {
   justify-content: center;
   margin: 4rem auto;
   max-width: var(--max-width);
-  width: 70ch;
+  width: 65ch;
 }
 
 section:not(.full)>div.lg {
