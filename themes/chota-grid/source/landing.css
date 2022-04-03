@@ -113,6 +113,20 @@ nav > div {
   margin: 0.25rem;
 }
 
+nav > div {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  width: var(--container-width);
+  max-width: calc(100% - 2rem);
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+nav a {
+  padding: 0.2rem 0.2rem;
+}
+
 nav a {
   color: inherit;
   letter-spacing: 2px;
@@ -171,14 +185,9 @@ nav:not(.nav-links-mobile):not(.brand) a:hover {
   background-repeat: no-repeat;
   border: solid thin black;
   border-radius: var(--border-radius);
-  display: block;
-  float: right;
   height: 20px;
   padding: 4px;
-  position: fixed;
-  top: 8px;
   width: 20px;
-  right: 5px;
 }
 
 @media screen and (min-width: 600px) {
@@ -193,21 +202,6 @@ nav:not(.nav-links-mobile):not(.brand) a:hover {
 
   .nav-links-mobile--button {
     display: none;
-  }
-}
-
-@media screen and (min-width: 540px) {
-  nav > div {
-    display: flex;
-    justify-content: space-between;
-    width: var(--container-width);
-    max-width: calc(100% - 2rem);
-    margin: 0 auto;
-    padding: 0 1rem;
-  }
-
-  nav a {
-    padding: 0.2rem 0.4rem;
   }
 }
 
