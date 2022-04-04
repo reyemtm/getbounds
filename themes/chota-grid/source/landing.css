@@ -134,6 +134,10 @@ nav a {
   text-decoration: none;
 }
 
+nav a:not(.nav-links-mobile--button) {
+  margin-right: 0.5rem
+}
+
 nav:not(.nav-links-mobile):not(.brand) a:hover {
   background-color: var(--color-accent-light);
   /* color: inherit; */
@@ -360,13 +364,17 @@ a.btn:hover,
 /* SIMPLE GRID */
 
 .grid {
-  display: grid!important;
-  grid-gap: 2rem;
+  display: flex;
+  grid-gap: 1rem;
   margin-bottom: 2rem;
+  flex-direction: column;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 720px) {
   .grid.grid-2 {
+    display: grid!important;
+    grid-gap: 2rem;
+    margin-bottom: 2rem;
     grid-template-columns: calc(50% - 1rem) calc(50% - 1rem);
   }
 }

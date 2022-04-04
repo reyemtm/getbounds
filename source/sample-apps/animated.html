@@ -48,6 +48,7 @@
 
     #info {
       position: absolute;
+      display: none;
       top: 1rem;
       left: 1rem;
       background: hsl(314 52% 5% / 80%);
@@ -63,6 +64,12 @@
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
       font-family: "Sofia Pro";
       font-weight: 300;
+    }
+
+    @media screen and (max-width:768px) {
+      #info {
+        display: none;
+      }
     }
   
 </style>
@@ -735,7 +742,7 @@ function animateLine(index, next) {
         map.getSource("geojsonFillSource").setData(turf.lineToPolygon(geojsonLine.features[next]));
         map.setLayoutProperty("fill", "visibility", "visible");
         map.getSource("geojsonPointSource").setData(turf.featureCollection([]));
-        document.getElementById("info").style.display = "block";
+        document.getElementById("info").style.display = "none";
         map.flyTo({
             center: [
                 -82.646628,
