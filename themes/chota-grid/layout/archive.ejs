@@ -14,6 +14,12 @@
 
 <section id="blog">
   <div class="lg" style="margin:1rem auto;align-items: baseline;">
+    <!-- <div class="filter-buttons">
+      <a href="#" class="btn">Analysis</a>
+      <a href="#" class="btn">Data Processing</a>
+      <a href="#" class="btn">Data Visualization</a>
+      <a href="#" class="btn">Web Mapping</a>
+    </div> -->
     <% page.posts.sort('date', -1).each(function(post, i) {%>
       <a rel="prefetch" href="<%- url_for(post.path) %>" style="text-decoration: none;">
         <div>

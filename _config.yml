@@ -99,6 +99,11 @@ archive: 0
 # Category & Tag
 default_category: blog
 category_map:
+#   "analysis": .
+#   "data processing": .
+#   "web mapping": .
+#   "visualization": .
+#   "featured": .
 tag_map:
 
 # Date / Time format

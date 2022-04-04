@@ -656,3 +656,24 @@ footer.footer {
 ::-webkit-scrollbar-thumb {
   background: #505050;
 }
+
+
+
+/* archive filter buttons */
+
+.filter-buttons {
+  display: flex;
+  margin: -3rem 0 2rem;
+  flex-wrap: wrap;
+}
+
+.filter-buttons a.btn {
+  /* background-color: var(--color-accent-light); */
+  border: solid thin var(--color-accent);
+  border-radius: var(--border-radius);
+  padding: 0.25rem 0.5rem;
+  text-decoration: none;
+  margin: 1rem 1rem 0 0;
+  color: white;
+  background-color: var(--color-accent-dark);
+}
