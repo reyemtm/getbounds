@@ -233,7 +233,7 @@ nav:not(.nav-links-mobile):not(.brand) a:hover {
 
 .hero--background-img {
   background-color: #212121;
-  filter: saturate(0.7) brightness(0.8);
+  filter: saturate(0.7) brightness(1.5);
   height: 100%;
   margin: 0 -3rem;
   position: absolute;
@@ -241,6 +241,12 @@ nav:not(.nav-links-mobile):not(.brand) a:hover {
   object-position: right;
   width: calc(100% + 6rem);
   z-index: -1;
+}
+
+@media screen and (min-width: 768px) {
+  .hero--background-img {
+    filter: saturate(0.7) brightness(0.8);
+  }
 }
 
 .hero--inner {
