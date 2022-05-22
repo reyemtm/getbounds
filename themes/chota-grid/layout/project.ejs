@@ -29,7 +29,7 @@
       <%- markdown(page.project[0].description) %>
     </p>
     <p>
-      <% if (project.url) {%><a href="<%= project.url %>" target="_blank">Project Link</a><%}%>
+      <% if (project.url) {%><a href="<%= project.url %>" target="_blank"  style="display:inline-flex;align-items:center"><img src="/assets/icons/external-link.svg">&nbsp;Project Link</a><%}%>
     </p>
     <p>
       <% for (i = 0; i < page.project[0].tech.length; i++) {%>

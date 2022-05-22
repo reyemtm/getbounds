@@ -11,7 +11,6 @@ categories:
  - projects
 date: 2018-01-01
 published: true
-featured: true
 # Project Settings for new Projects Layout
 project:
   - 
