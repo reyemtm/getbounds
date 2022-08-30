@@ -630,7 +630,7 @@ $("#map-baselayers--menu").on('click', '.baselayer', switchLayer);
   SimpleJekyllSearch({
     searchInput: document.getElementById('map-controls--search-input'),
     resultsContainer: document.getElementById('map-controls--search-results'),
-    json: 'https://www.ovrdc.org/apps/assets/data/parcels/scioto/sci-parcels.csv.min.json',
+    json: '/apps/data/sci-parcels.csv.min.json',
     searchResultTemplate: '<a href="#" id="{i}" data="{l}"><li>{n}<br />Parcel ID:&nbsp;{p}</li></a><hr />',
     noResultsText: 'No results found',
     limit: 50,
