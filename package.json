@@ -7,6 +7,7 @@
   },
   "scripts": {
     "build": "node github && hexo clean && hexo generate",
+    "build:watch": "node github && hexo clean && hexo generate --watch",
     "css": "parcel build public/style.css --dist-dir public/",
     "gen": "hexo generate",
     "clean": "hexo clean",

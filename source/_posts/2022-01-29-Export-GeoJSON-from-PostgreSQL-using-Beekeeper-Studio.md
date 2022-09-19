@@ -35,3 +35,10 @@ FROM (
 3. Open a text editor such as [VS Code](https://code.visualstudio.com/) and paste the data.
 4. ~~Use the **Home** button to go to the beginning of the text and delete "jsonb_build_object"~~.
 5. Save the result as a **.geojson** file.
+
+<script>
+  (async () => {
+    const data = await fetch("/.netlify/functions/spatial-sql?test=true").then(res => res.json());
+    console.log(data)
+  })()
+</script>

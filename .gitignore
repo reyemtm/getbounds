@@ -9,6 +9,7 @@ public/
 repos.json
 repos-2.json
 .parcel-cache
+*.http
 
 # Logs
 logs
@@ -52,3 +53,5 @@ node_modules/
 
 # dotenv environment variables file
 .env
+# Local Netlify folder
+.netlify

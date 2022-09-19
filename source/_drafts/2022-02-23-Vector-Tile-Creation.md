@@ -1,15 +1,17 @@
 ---
 layout: draft
 title: Vector Tile Creation
-subtitle: Three Methods to Generate Vector Tiles from the Command Line
+subtitle: Various Methods to Generate Vector Tiles
 author: Malcolm Meyer
 tags:
   - vector tiles
   - mapbox
   - open data
-date: 2022-02-23 09:54:00
+date: 2022-09-15 09:54:00
 ---
 ## Tools
+
+### QGIS
 
 ### ogr2ogr
  - You probably already have this installed on your machine
@@ -26,3 +28,4 @@ date: 2022-02-23 09:54:00
  - No support for multiple files (not yet)
  - Support for large files dependent on available memory (Node setting)
  - Tile creation uses the same library used in Mapbox GL JS <= v1.3.0
+ - Output a directory of folders or an `.mbtile` sqlite file.

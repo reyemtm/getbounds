@@ -238,7 +238,7 @@ nav:not(.nav-links-mobile):not(.brand) a:hover {
 
 .hero--background-img {
   background-color: #212121;
-  filter: saturate(0.7) brightness(1.5);
+  /* filter: saturate(0.7) brightness(0.8); */
   height: 100%;
   margin: 0 -3rem;
   position: absolute;
@@ -246,21 +246,31 @@ nav:not(.nav-links-mobile):not(.brand) a:hover {
   object-position: right;
   width: calc(100% + 6rem);
   z-index: -1;
+  animation: huerotate 30s linear infinite;
 }
 
-@media screen and (min-width: 768px) {
-  .hero--background-img {
-    filter: saturate(0.7) brightness(0.8);
+@keyframes huerotate {
+  0% {
+    filter: saturate(0.7) brightness(0.8) hue-rotate(0deg);
+  }
+  100% {
+    filter: saturate(0.7) brightness(0.8) hue-rotate(359deg);
   }
 }
+
+/* @media screen and (min-width: 768px) {
+  .hero--background-img {
+    filter: saturate(0.7) brightness(0.4);
+  }
+} */
 
 .hero--inner {
   display: flex;
   flex-direction: column;
   margin: 0 auto;
   width: var(--container-width);
-  max-width: calc(100% - 4rem);
-  padding: 2rem;
+  max-width: calc(100% - 2rem);
+  padding: 0;
   z-index: 1;
 }
 
@@ -319,6 +329,10 @@ a.hero--btn {
 }
 
 @media screen and (min-width: 360px) {
+  .hero--inner {
+    max-width: calc(100% - 4rem);
+    padding: 2rem;
+  }
   a.hero--btn {
     width: 288px;
   }

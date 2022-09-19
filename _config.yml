@@ -43,7 +43,7 @@ permalink_defaults:
 
 # Directory
 source_dir: source
-public_dir: public
+# public_dir: public
 tag_dir: tags
 archive_dir: archive
 category_dir: ""
