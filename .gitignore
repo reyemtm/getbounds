@@ -10,6 +10,7 @@ repos.json
 repos-2.json
 .parcel-cache
 *.http
+tmp/
 
 # Logs
 logs
