@@ -1,26 +1,24 @@
-<a rel="prefetch" href="<%- url_for(post.path) %>" style="text-decoration: none;">
   <article>
+    <a rel="prefetch" href="<%- url_for(post.path) %>" style="text-decoration: none;">
     <picture>
-      <source srcset="/assets/img/md_<% if (post.img) {%><%- (post.img).replace(".png", ".webp"
-        ).replace(".jpg", ".webp" ) %>
+      <source srcset="/assets/img/md_<% if (post.img) {%><%- (post.img).replace(".png", ".webp").replace(".jpg", ".webp" ) %>
       <%}else{%>
         <%- config.defaultimage %>
       <%}%>" media="(min-width: 768px)" loading=lazy>
-            <img loading="lazy" src="/assets/img/md_<% if (post.img) {%><%- (post.img).replace(".png", ".webp"
-              ).replace(".jpg", ".webp" ) %>
+            <img loading="lazy" src="/assets/img/md_<% if (post.img) {%><%- (post.img).replace(".png", ".webp").replace(".jpg", ".webp" ) %>
       <%}else{%>
               <%- config.defaultimage %>
       <%}%>" alt="<%- post.img %>" loading=lazy />
     </picture>
-    <div>
+    <div class="post-card">
       <!-- <%- partial('_partial/date', {post: post}) %> -->
-        <h2 style="font-weight: 400">
+        <h2 style="font-weight: 500">
           <%= post.title %>
         </h2>
-        <h3 class="card-subtitle" style="font-weight:300">
+        <h3 class="card-subtitle" style="font-weight:400">
           <%= post.subtitle %>
         </h3>
-        <!-- <p><%- strip_html((post.excerpt).substring(0, 100)) %>...</p> -->
-    </div>
+        <p style="font-weight:300;text-decoration: none;color: black"><%- strip_html((post.excerpt).substring(0, 200)) %></p>
+      </div>
+    </a>
   </article>
-</a>

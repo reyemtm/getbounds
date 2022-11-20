@@ -1,4 +1,4 @@
-<header class="hero" style="height: 30vh">
+<header class="hero" style="height: 14vh; min-height: 140px;">
   <img class="hero--background-img" src="/assets/img/lg_cover_dem_rivers_wide.webp"
     alt="Background Image of a River"></img>
   <div class="hero--inner">
@@ -12,8 +12,22 @@
   </div>
 </header>
 
-<section id="blog">
-  <div class="lg" style="margin:1rem auto;align-items: baseline;">
+<section id="archive">
+  <aside id="archive-recent-posts">
+    <h3>Recent Posts</h3>
+    <% site.categories.sort('name').map(function(category){ %>
+      <% if(category.name == 'blog' ) { %>
+        <% category.posts.sort('date', -1).each(function(post, i) {%>
+        <% if (i < 6) {%>
+        <p style="margin:0.5rem 0; text-align: left;opacity: 0.8; font-size: 0.9rem;">
+          <a href="<%- url_for(post.path)%>" style="text-decoration: none"><%- post.title %></a>
+        </p>
+      <%}%>
+      <%})%>
+    <%}%>
+  <%})%>
+  </aside>
+  <div class="lg" style="margin:1rem auto;align-items: baseline;justify-content: flex-start;">
     <!-- <div class="filter-buttons">
       <a href="#" class="btn">Analysis</a>
       <a href="#" class="btn">Data Processing</a>
@@ -21,22 +35,31 @@
       <a href="#" class="btn">Web Mapping</a>
     </div> -->
     <% page.posts.sort('date', -1).each(function(post, i) {%>
-      <a rel="prefetch" href="<%- url_for(post.path) %>" style="text-decoration: none;">
         <div>
-          <%- partial('_partial/date', {post: post}) %>
+          <a rel="prefetch" href="<%- url_for(post.path) %>" style="text-decoration: none;">
             <h2 style="margin:0 0 0.5rem 0">
               <%= post.title %>
             </h2>
-            <h3 style="margin:0;font-weight:300">
-              <%= post.subtitle %>
-            </h3>
-            <!-- <p><%- strip_html((post.excerpt).substring(0, 150)) %>...</p> -->
+          </a>
+          <h3 style="margin-top:0;font-weight:300">
+            <%= post.subtitle %>
+            <br />
+            <%- partial('_partial/date', {post: post}) %>
+          </h3>
+          <% if (post.project) {%>
+            <p style="text-align: left"><%- markdown(post.project[0].description) %></p>
+          <%}else{%>
+            <p><%- strip_html((post.excerpt).substring(0, 300)) %>...</p>
+          <%}%>
         </div>
-      </a>
-      <div class="post" style="margin:0.5rem 0 0.5rem 0;width: 100%;display: flex;white-space: nowrap;flex-flow: wrap;">
+      
+      <div class="post" style="margin:0 0 1.5rem 0;width: 100%;display: flex;white-space: nowrap;flex-flow: wrap;">
           <%- list_categories(post.categories, { show_count: false, class: 'clean category tag', separator: "|" }) %>
           <%- list_tags(post.tags, { show_count: false, class: 'clean tag' }) %>
           <ul class="tag-list">
+            <!-- <li class="tag-list-item">
+              <a class="clean tag-list-link" href="/blog/" rel="tag">posts</a>
+            </li> -->
             <li class="tag-list-item">
               <a class="clean tag-list-link" href="/archive/" rel="tag">view all</a>
             </li>

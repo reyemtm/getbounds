@@ -1,47 +1,66 @@
 <header class="hero hero--full">
   <img class="hero--background-img" src="/assets/bg-3.jpg"
     alt="Background Image of a River"></img>
-  <div class="hero--inner inner-container">
-    <h1 class="hero--title" style="display:inline-flex;align-items:center">
-      <img class="logo" src="/assets/logo.svg" /> <%- config.title %> <span style="font-size: 1rem"></span>
-    </h1>
-    <h2 class="hero--subtitle">
-      <%- config.tagline %>
-    </h2>
-    <a class="hero--btn" href="#contact">Contact</a>
-  </div>
-  <div id="services" class="container" style="z-index:1">
-    <div class="grid grid-2">
-      <div class="grid--card">
-        <h3>Data Visualization</h3>
-        <span class="grid--icon">
-          <img src="/assets/icons/grid-icons/reports.svg" alt="Charts">
-        </span>
-        <p>Maps are just the beginning. <a href="/#map-visuals">Interactive visuals</a> help communicate the story behind the data.</p>
+  <div>
+    <div class="hero--inner inner-container">
+      <div style="padding: 1rem 1.5rem">
+        <h1 class="hero--title" style="display:inline-flex;align-items:center;margin-top:0">
+          <img class="logo" src="/assets/logo.svg" /> <%- config.title %> <span style="font-size: 1rem"></span>
+        </h1>
+        <h2 class="hero--subtitle">
+          <%- config.tagline %>
+        </h2>
+        <!-- <a class="hero--btn" style="width:100%" href="#contact">Contact</a> -->
       </div>
-      <div class="grid--card">
-        <h3>Mapbox GL JS Maps</h3>
-        <span class="grid--icon">
-          <img src="/assets/icons/grid-icons/maps.svg" alt="Map">
-        </span>
-        <p>Brand matters. Enhance user experience with <a href="/#map-styles">custom map designs</a> to match your brand.</p>
-      </div>
-      <div class="grid--card">
-        <h3>Spatial Analysis</h3>
-        <span class="grid--icon">
-          <img src="/assets/icons/grid-icons/tracking.svg" alt="Data Grid">
-        </span>
-        <p>Spatial analytics can enrich and enhance any type of data associated with a physical location.</p>
-      </div>
-      <div class="grid--card">
-        <h3>Vector Tile Hosting</h3>
-        <span class="grid--icon">
-          <img src="/assets/icons/grid-icons/manage-data.svg" alt="Data Servers">
-        </span>
-        <p>Take control of web map data with a database-to-map pipeline or a <a href="/#tileserver-custom">self-hosted vector tile server</a>.</p>
+      <div id="post-preview" class="grid--card" style="background-color: var(--color-accent-light)">
+        <% site.categories.sort('name').map(function(category){ %>
+          <% if(category.name == 'blog' ) { %>
+            <% category.posts.sort('date', -1).each(function(post, i) {%>
+              <% if (i < 1) {%>
+                <a href="<%- url_for(post.path)%>" style="text-decoration: none";><h3><%- post.title %></h3>
+                <span class="grid--icon">
+                  <img src="/assets/icons/grid-icons/grid-view.svg" alt="Data Servers">
+                </span>
+                <p><%- post.subtitle %></p></a>
+              <%}%>
+            <%})%>
+          <% } %>
+        <% }) %>
       </div>
     </div>
-  </section>
+    <div id="services" class="container" style="z-index:1">
+      <div class="grid grid-2">
+        <div class="grid--card">
+          <h3>Data Visualization</h3>
+          <span class="grid--icon">
+            <img src="/assets/icons/grid-icons/reports.svg" alt="Charts">
+          </span>
+          <p>Maps are just the beginning. <a href="/#map-visuals">Interactive visuals</a> help communicate the story behind the data.</p>
+        </div>
+        <div class="grid--card">
+          <h3>Mapbox GL JS Maps</h3>
+          <span class="grid--icon">
+            <img src="/assets/icons/grid-icons/maps.svg" alt="Map">
+          </span>
+          <p>Brand matters. Enhance user experience with <a href="/#map-styles">custom map designs</a> to match your brand.</p>
+        </div>
+        <div class="grid--card">
+          <h3>Spatial Analysis</h3>
+          <span class="grid--icon">
+            <img src="/assets/icons/grid-icons/tracking.svg" alt="Data Grid">
+          </span>
+          <p>Spatial analytics can enrich and enhance any type of data associated with a physical location.</p>
+        </div>
+        <div class="grid--card">
+          <h3>Vector Tile Hosting</h3>
+          <span class="grid--icon">
+            <img src="/assets/icons/grid-icons/manage-data.svg" alt="Data Servers">
+          </span>
+          <p>Take control of web map data with a database-to-map pipeline or a <a href="/#tileserver-custom">self-hosted vector tile server</a>.</p>
+        </div>
+      </div>
+    </div>
+  </div>
 </header>
 
 <main>

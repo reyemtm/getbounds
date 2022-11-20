@@ -139,14 +139,18 @@ excerpt:
 
 responsive_images:
   - pattern: "**/*.+(png|jpg|jpeg)"
+    withoutEnlargement: false
     sizes:
       lg:
         width: 1440
         height:
       # Original 1440x960 4x3 with a ratio of 1.5
       md: 
-        width: 860
-        height: 574
+        width: 960
+        height: 540
+      # md: 
+      #   width: 860
+      #   height: 574
       # 16x9:
       #   width: 870
       #   height: 490
