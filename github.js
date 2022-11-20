@@ -17,6 +17,8 @@ class Repo {
   }
 }
 
+if (!fs.existsSync("./public")) fs.mkdirSync("./public")
+
 fetch("https://api.github.com/users/reyemtm/repos?per_page=100")
 .then(res => res.json())
 .then(data => {
