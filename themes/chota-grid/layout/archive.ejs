@@ -4,10 +4,10 @@
   <div class="hero--inner">
     <h1 class="hero--title">
       <% if (page.tag) {%>Topic | <%- titlecase(page.tag) %>
-      <%}else if (page.category){%>Archive | <%- titlecase(page.category) %>
-        <% if (page.category === 'blog') {%> Posts <%}%>
+      <%}else if (page.category){%><%- titlecase(page.category) %>
+        <% if (page.category === 'blog') {%><%}%>
         <% if (page.category === 'featured') {%> Projects <%}%>
-      <%}else{%>Projects & Posts<%}%>
+      <%}else{%>Site Archive<%}%>
     </h1>
   </div>
 </header>
@@ -26,6 +26,9 @@
       <%})%>
     <%}%>
   <%})%>
+  <a href="/blog"><h3 style="font-weight:400">Posts</h3></a>
+  <a href="/projects"><h3 style="font-weight:400">Projects</h3></a>
+  <a href="/archive"><h3 style="font-weight:400">Archive</h3></a>
   </aside>
   <div class="lg" style="margin:1rem auto;align-items: baseline;justify-content: flex-start;">
     <!-- <div class="filter-buttons">
@@ -47,6 +50,11 @@
             <%- partial('_partial/date', {post: post}) %>
           </h3>
           <% if (post.project) {%>
+            <% if (post.project[0].images) {%>
+            <a rel="prefetch" href="<%- url_for(post.path) %>" style="text-decoration: none;">
+              <img id="project-images" src="/assets/img/lg_<%= post.project[0].images[0] %>.webp" style="width:100%">
+            </a>
+            <%}%>
             <p style="text-align: left"><%- markdown(post.project[0].description) %></p>
           <%}else{%>
             <p><%- strip_html((post.excerpt).substring(0, 300)) %>...</p>

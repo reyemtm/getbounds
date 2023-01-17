@@ -73,15 +73,63 @@ a:hover,a:focus,a:active {
 }
 
 figure {
-  margin: 0
+  margin: 0 0 1rem 0;
 }
 
 figcaption {
   color: var(--color-muted);
   font-style: italic;
   font-size: smaller;
+  text-align: center;
 }
 
+hr {
+  border-style: none;
+  height: 2px;
+  border-bottom: solid thin lightgray;
+}
+/**************/
+/* LINK CARDS */
+/**************/
+.link-card {
+  padding: 0;
+  border: 1px solid lightgray;
+  margin: 1.5rem 0;
+  display: flex;
+  min-height: 120px;
+}
+.post .link-card a {
+  text-decoration: none;
+}
+.post .link-card a:hover,.post .link-card a:focus,.post .link-card a:active {
+  text-decoration: none;
+  opacity: 0.8;
+  color: inherit
+}
+.link-card h3 {
+  font-size: 1.1rem;
+  margin: 0;
+}
+.post .link-card img {
+  margin: 0;
+  width: 140px;
+  height: 100%;
+  object-fit: none;
+  border-radius: 0;
+}
+.link-card .desc-wrapper {
+  flex: 1;
+  margin-left: 0.5rem;
+  padding: 0.5rem
+}
+.link-card .desc-wrapper .desc {
+  font-size: 0.8rem;
+  font-weight: 400;
+  opacity: 0.7;
+}
+/**************/
+/* END        */
+/**************/
 .container {
   margin: 6rem auto;
   width: var(--container-width);

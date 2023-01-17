@@ -14,6 +14,8 @@
     "deploy": "hexo deploy",
     "serve": "hexo server",
     "start": "node github && hexo server",
+    "dev": "node github && hexo server --draft",
+    "drafts": "hexo generate --draft --watch & live-server --port=4000 public",
     "avif": "avif --input='public/assets/img/*.{jpg, png}' --speed=0 --quality=80"
   },
   "dependencies": {
@@ -36,9 +38,12 @@
     "hexo-renderer-stylus": "^2.0.1",
     "hexo-server": "^3.0.0",
     "hexo-util": "^2.5.0",
+    "install": "^0.13.0",
     "lodash.assign": "^4.2.0",
     "micromatch": "^4.0.4",
     "node-fetch": "^2.6.1",
+    "npm": "^9.2.0",
+    "nunjucks": "^3.2.3",
     "parcel": "^2.2.1",
     "postcss": "^8.4.5",
     "sharp": "^0.29.3",
