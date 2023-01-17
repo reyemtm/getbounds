@@ -9,6 +9,7 @@ hsl(181deg 100% 21% / 10%);
 :root {
   --color-dark: hsl(240deg 5% 2%);
   --color-gray: hsl(240deg 5% 80%);
+  --color-lightgray: hsl(240deg 5% 70%);
   --color-muted: hsl(0, 0%, 30%);
   --color-accent: hsl(314 52% 40%);
   --color-accent-dark: hsl(314 52% 5%);
@@ -251,6 +252,20 @@ nav:not(.nav-links-mobile):not(.brand) a:hover {
   .nav-links-mobile--button {
     display: none;
   }
+}
+
+nav.inverse-nav {
+  background-color: #212121;
+  color: white;
+}
+
+nav.inverse-nav .brand img {
+  filter: invert(1);
+}
+
+nav.inverse-nav:not(.nav-links-mobile):not(.brand) a:hover {
+  background-color: var(--color-accent);
+  color: white
 }
 
 /* HERO */
