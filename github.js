@@ -17,13 +17,14 @@ class Repo {
   }
 }
 
-if (!fs.existsSync("./public")) fs.mkdirSync("./public")
+if (!fs.existsSync("./public")) fs.mkdirSync("./public");
 
 fetch("https://api.github.com/users/reyemtm/repos?per_page=100")
 .then(res => res.json())
-.then(data => {
-  fs.writeFileSync("repos.json", JSON.stringify(data,0,2))
-  filterRepos(data)
+.then(async data => {
+  // fs.writeFileSync("repos.json", JSON.stringify(data,0,2))
+  const repos = await filterRepos(data);
+  console.log(repos[0])
 })
 .catch(err => {
   console.log(err)
