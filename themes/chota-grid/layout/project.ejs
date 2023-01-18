@@ -23,7 +23,7 @@
     <% images = project.images %>
     <% tech = page.project[0].tech %>
     <p>
-      <img id="project-images" src="/assets/img/lg_<%= project.images[0] %>.webp">
+      <img id="project-images" src="/assets/img/md_<%= project.images[0] %>.webp" alt="<%= page.title %>">
     </p>
     <p>
       <%- markdown(page.project[0].description) %>
@@ -64,7 +64,7 @@
     let currentImage = 0;
     div.addEventListener("click", () => {
       currentImage = (!currentImage) ? 1 : 0;
-      div.src = "/assets/img/lg_" + images[currentImage] + ".webp"
+      div.src = "/assets/img/md_" + images[currentImage] + ".webp"
     })
   </script>
 <%}%>

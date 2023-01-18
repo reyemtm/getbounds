@@ -113,7 +113,7 @@ function listRelatedPosts(options) {
           <article class="">
             <img src="/assets/img/md_${post.img.split(".")[0]}.webp" alt="${post.img.replace(".png", "")}" loading=lazy>
             <div>
-              <h2>
+              <h2 style="font-weight:400">
               ${post.title}
               </h2>
               <p>

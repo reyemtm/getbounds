@@ -11,7 +11,7 @@
     </h1>
   </div>
 </header>
-
+<!-- <% if (is_archive()) {%>archive<%}%>-->
 <section id="archive">
   <aside id="archive-recent-posts">
     <h3>Recent Posts</h3>
@@ -49,7 +49,9 @@
             <br />
             <%- partial('_partial/date', {post: post}) %>
           </h3>
-          <% if (post.project) {%>
+          <% if (!is_archive()) {%>
+            <% if (post.project) {%>
+
             <% if (post.project[0].images) {%>
             <a rel="prefetch" href="<%- url_for(post.path) %>" style="text-decoration: none;">
               <img id="project-images" src="/assets/img/sm_<%= post.project[0].images[0] %>.webp" style="width:100%">
@@ -59,6 +61,7 @@
             <% if (post.project[0].url) {%><div style="display:inline-flex;margin-bottom: 1rem;"><img src="/assets/icons/external-link.svg" alt="project-link">&nbsp;<a href="<%=post.project[0].url%>" >Live Demo</a></div><%}%>
             <%}else{%>
             <p><%- strip_html((post.excerpt).substring(0, 300)) %>...</p>
+            <%}%>
           <%}%>
         </div>
       

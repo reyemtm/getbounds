@@ -148,7 +148,7 @@
       <a href="/projects/" class="inverse btn">All Projects</a>
     </div> -->
   </section>
-  <section class="full inverse" style="background-color:#121212;background-image:none;padding:4rem"></section>
+  <section class="full inverse" style="background-position:bottom;padding:4rem"></section>
   <!-- QUICK PORTFOLIO -->
   <!-- <section id="portfolio" class="full inverse" style="background-color:#121212;background-image:none">
     <h2 class="section--heading">Portfolio</h2>
@@ -190,7 +190,12 @@
         <p><%- config.description %></p>
       </div>
       <div style="direction: ltr;width: 100%">
-        <form name="contact" method="POST" data-netlify="true">
+        <form
+          name="contact"
+          method="POST"
+          netlify-honeypot="bot-field"
+          data-netlify="true"
+          >
           <label for="name">Name</label>
           <input type="text" id="name" name="name" placeholder="Jane Doe">
 
@@ -199,6 +204,12 @@
 
           <label for="message">Message</label>
           <textarea id="message" name="message" placeholder="Tell me about your project..." style="height:200px"></textarea>
+
+          <span class="hidden" style="height:20px">
+            <label>
+              Bot Field <input name="bot-field" />
+            </label>
+          </span>
 
           <button type="submit">Submit</button>
         </form>
@@ -226,7 +237,7 @@
         <figcaption>A map animation highlighting the smooth scroll and pitch effects available in modern mapping libraries.</figcaption>
       </figure>
       <figure>
-        <img src="/assets/img/md_map-demo.webp">
+        <img src="/assets/img/lg_map-demo.webp">
         <figcaption>A custom map UI built powered by Mapbox GL JS with a layer control, popup window and geocoder.</figcaption>
       </figure>
     </div> 

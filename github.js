@@ -40,5 +40,5 @@ function filterRepos(data) {
     repos.push(new Repo(d))
   })
   fs.writeFileSync("source/_data/repos.json", JSON.stringify(repos, 0, 2))
-  return filtered
+  return repos
 }

@@ -20,6 +20,6 @@ project:
       - Mapbox GL JS
       - Node JS
     images: ["mbtiles-serverless.netlify"]
-    description: "This project uses the sql.js-httpvfs library to serve vector and raster tiles from mbtiles hosted on object storage. The mbtiles could live alongside the website or be hosted on any publicly accessible url. A service worker intercepts the tile requests and fetches returns the tile data fetched using simple SQL queries."
+    description: "This project uses the sql.js-httpvfs library to serve vector and raster tiles from mbtiles hosted on object storage. The mbtiles could live alongside the website or be hosted on any publicly accessible url. A service worker intercepts the tile requests then returns tile data from the mbtiles fetched using simple SQL queries."
     client: "Demo"
 ---

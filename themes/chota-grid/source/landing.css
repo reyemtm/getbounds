@@ -478,9 +478,10 @@ a.inverse.btn {
   border: none;
   outline: solid 1px white;
   border-radius: 2rem;
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 1.5rem;
   letter-spacing: 0.5rem;
   margin-top: 4rem;
+  font-size: 0.8rem;
 }
 
 a.btn:hover,
@@ -534,7 +535,7 @@ a:active .post-card h3 {
 
 @media screen and (min-width: 768px) {
   .post-card {
-    padding: 2rem 4rem;
+    padding: 0.5rem 1rem;
   }
 }
 
@@ -694,7 +695,7 @@ a:active .post-card h3 {
 
 section {
   overflow: hidden;
-  padding: 4rem 0;
+  padding: 2rem 0;
 }
 
 section.inverse {
@@ -705,10 +706,10 @@ section.inverse {
 }
 
 section .section--heading {
-  font-size: clamp(2rem, 5vw, 2.8rem);
+  font-size: clamp(1.7rem, 5vw, 2.8rem);
   font-weight: 400;
   letter-spacing: 0.5rem;
-  margin-bottom: 5rem;
+  margin: 0 0.5rem;
   text-align: center;
   text-transform: uppercase;
 }
@@ -722,13 +723,25 @@ section:not(.full)>div {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin: 4rem auto;
+  margin: 2rem auto;
   max-width: var(--max-width);
   width: 65ch;
 }
 
 section:not(.full)>div.lg {
   width: var(--container-width)
+}
+
+@media screen and (min-width: 480px) {
+  section .section--heading {
+    margin-bottom: 5rem;
+  }
+  section {
+    padding: 4rem 0;
+  }
+  section:not(.full)>div {
+    margin: 4rem auto;
+  }
 }
 
 section .portfolio {
@@ -919,7 +932,7 @@ footer.footer {
   display: block;
 }
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 900px) {
   .side-by-side {
     display: grid !important;
     grid-template-columns: 50% 50%;
@@ -959,4 +972,7 @@ footer.footer {
   margin: 1rem 1rem 0 0;
   color: white;
   background-color: var(--color-accent-dark);
+}
+.hidden {
+  visibility: hidden;
 }
