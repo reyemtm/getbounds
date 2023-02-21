@@ -732,6 +732,10 @@ section:not(.full)>div.lg {
   width: var(--container-width)
 }
 
+section .section--heading {
+  margin-bottom: 2rem;
+}
+
 @media screen and (min-width: 480px) {
   section .section--heading {
     margin-bottom: 5rem;
