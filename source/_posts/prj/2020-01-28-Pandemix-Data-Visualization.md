@@ -14,7 +14,6 @@ featured: true
 published: true
 project:
   - 
-    url: https://pandemix.getbounds.com
     tech:
       - Mapbox GL JS
       - Turf JS
