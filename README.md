@@ -4,6 +4,8 @@ A geospatial blog built with Hexo and Chota css.
 
 This site is built and maintained by Malcolm Meyer.
 
+## Updates
+
 ## Focus on Blog
 
 - [ ] Migrate portfolio?
