@@ -18,17 +18,50 @@
     <% site.categories.sort('name').map(function(category){ %>
       <% if(category.name == 'blog' ) { %>
         <% category.posts.sort('date', -1).each(function(post, i) {%>
-        <% if (i < 6) {%>
-        <p style="margin:0.5rem 0; text-align: left;opacity: 0.8; font-size: 0.9rem;">
+        <% if (i < 4) {%>
+        <p style="margin:0.3rem 0; text-align: left;opacity: 0.6; font-size: 0.9rem;">
           <a href="<%- url_for(post.path)%>" style="text-decoration: none"><%- post.title %></a>
         </p>
       <%}%>
       <%})%>
     <%}%>
   <%})%>
-  <a href="/blog"><h3 style="font-weight:400">Post List</h3></a>
-  <a href="/projects"><h3 style="font-weight:400">Project List</h3></a>
-  <a href="/archive"><h3 style="font-weight:400">Archive</h3></a>
+
+  <details>
+    <summary>Posts
+    </summary>
+      <a href="/blog">
+        <h3 style="font-weight:400;margin-bottom: 0.5rem;font-size:1rem">Post Archive</h3>
+      </a>
+      <% site.categories.sort('name').map(function(category){ %>
+        <% if(category.name == 'blog' ) { %>
+          <% category.posts.sort('date', -1).each(function(post, i) {%>
+          <p style="margin:0.3rem 0; text-align: left;opacity: 0.6; font-size: 0.9rem;">
+            <a href="<%- url_for(post.path)%>" style="text-decoration: none"><%- post.title %></a>
+          </p>
+        <%})%>
+      <%}%>
+    <%})%>
+  </details>
+
+  <details <% if (page.category && (page.category === 'featured' || page.category === 'projects')) {%>open<%}%> >
+    <summary>Projects
+      <!-- <a href="/projects"> -->
+        <!-- <h3 style="font-weight:400;margin-bottom: 0.5rem;">Projects</h3> -->
+      <!-- </a> -->
+    </summary>
+      <% site.categories.sort('name').map(function(category){ %>
+        <% if(category.name == 'projects' ) { %>
+          <% category.posts.sort('date', -1).each(function(post, i) {%>
+          <p style="margin:0.3rem 0; text-align: left;opacity: 0.6; font-size: 0.9rem;">
+            <a href="<%- url_for(post.path)%>" style="text-decoration: none"><%- post.title %></a>
+          </p>
+        <%})%>
+      <%}%>
+    <%})%>
+  </details>
+
+  <a href="/archive"><h3 style="font-weight:400">Site Archive</h3></a>
   </aside>
   <div class="lg" style="margin:1rem auto;align-items: baseline;justify-content: flex-start;">
     <!-- <div class="filter-buttons">
@@ -38,7 +71,7 @@
       <a href="#" class="btn">Web Mapping</a>
     </div> -->
     <% page.posts.sort('date', -1).each(function(post, i) {%>
-        <div>
+        <div class="archive-card">
           <a rel="prefetch" href="<%- url_for(post.path) %>" style="text-decoration: none;">
             <h2 style="margin:0 0 0.5rem 0">
               <%= post.title %>
@@ -63,9 +96,9 @@
             <p><%- strip_html((post.excerpt).substring(0, 300)) %>...</p>
             <%}%>
           <%}%>
-        </div>
+
       
-      <div class="post" style="margin:0 0 1.5rem 0;width: 100%;display: flex;white-space: nowrap;flex-flow: wrap;">
+        <div class="post" style="margin:0 0 1.5rem 0;width: 100%;display: flex;white-space: nowrap;flex-flow: wrap;">
           <%- list_categories(post.categories, { show_count: false, class: 'clean category tag', separator: "|" }) %>
           <%- list_tags(post.tags, { show_count: false, class: 'clean tag' }) %>
           <ul class="tag-list">
@@ -77,6 +110,7 @@
             </li>
           </ul>
         </div>
-      <%})%>
+      </div>
+    <%})%>
   </div>
 </section>

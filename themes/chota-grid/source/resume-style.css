@@ -33,6 +33,7 @@ a:hover, a:focus, a:active {
 h1.section-title {
   letter-spacing: 2px;
   text-transform: uppercase;
+  font-weight: bold;
 }
 
 h1, h2, h3, h4, h5 {
@@ -239,6 +240,10 @@ footer a:hover {
   font-weight: 400;
 }
 
+.skills li {
+  margin-bottom: 4px
+}
+
 .section .item:last-child {
   margin-bottom: 0
 }
@@ -328,11 +333,16 @@ h1.name {
     -webkit-box-shadow: none;
     box-shadow: none
   }
+
+  h1.section-title {
+    color: #212121!important
+  }
 }
 
 .flex li {
   display: flex;
-  align-items: center;;
+  align-items: center;
+  margin-bottom: 4px;
 }
 .flex li img {
   margin-right: 2px;
@@ -343,6 +353,11 @@ h1.name {
 	a:visited {
 		text-decoration: underline;
 	}
+
+  .flex li {
+    margin-bottom: 0.5rem;
+  }
+
   .flex li a[href]:after,
   .show-print a[href]:after {
     content: ' ' attr(href) '';

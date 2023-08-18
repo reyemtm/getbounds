@@ -12,13 +12,13 @@
     </picture>
     <div class="post-card">
       <!-- <%- partial('_partial/date', {post: post}) %> -->
-        <h2 style="font-weight: 300">
+        <h2 style="margin-bottom:0.5rem">
           <%= post.title %>
         </h2>
-        <h3 class="card-subtitle" style="font-weight:200">
+        <h3 class="card-subtitle">
           <%= post.subtitle %>
         </h3>
-        <p style="font-weight:300;text-decoration: none;color: black"><%- strip_html((post.excerpt).substring(0, 200)) %></p>
+        <p style="text-decoration: none;color: #212121"><%- strip_html((post.excerpt).substring(0, 225)) %>...</p>
       </div>
     </a>
   </article>

@@ -110,13 +110,13 @@ function listRelatedPosts(options) {
         }
         result += `
         <a rel="prefetch" href="/${post.path}" class="">
-          <article class="">
+          <article>
             <img src="/assets/img/md_${post.img.split(".")[0]}.webp" alt="${post.img.replace(".png", "")}" loading=lazy>
             <div>
-              <h2 style="font-weight:400">
+              <h2 style="font-weight:400;margin-bottom:0.5rem;opacity:0.9">
               ${post.title}
               </h2>
-              <p>
+              <p style="opacity:0.8">
                 ${post.subtitle}
               </p>
             </div>

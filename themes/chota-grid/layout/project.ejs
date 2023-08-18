@@ -1,5 +1,5 @@
 <article class="post" style="margin:2rem auto">
-  <header>
+  <header style="margin-bottom:1rem">
     <span>
       <%- partial('_partial/date', {post: page}) %>
     </span>
@@ -12,7 +12,10 @@
     </h2>
     <p class="post--meta">
       Client | <%= page.project[0].client %>
-    </p> 
+    </p>
+    <p class="post--meta" style="margin-top:-0.5rem;margin-bottom:0;">
+      <a href="/projects" class="btn" style="opacity:0.8">All Projects</a>
+    </p>
     <!-- <span>
       <%- list_tags(page.tags, { show_count: false, class: 'clean tag' }) %>
     </span> -->
@@ -29,7 +32,7 @@
       <%- markdown(page.project[0].description) %>
     </p>
     <p>
-      <% if (project.url) {%><a href="<%= project.url %>" target="_blank"  style="display:inline-flex;align-items:center"><img src="/assets/icons/external-link.svg" alt="project-link">&nbsp;Project Link</a><%}%>
+      <% if (project.url) {%><a href="<%= project.url %>" target="_blank"  style="display:inline-flex;align-items:center"><img src="/assets/icons/external-link.svg" alt="project-link">&nbsp;Live Demo</a><%}%>
     </p>
     <p>
       <% for (i = 0; i < page.project[0].tech.length; i++) {%>
