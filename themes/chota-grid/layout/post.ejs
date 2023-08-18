@@ -50,35 +50,13 @@
     label="utterance-comment" crossorigin="anonymous" async>
     </script>
 </aside>
-<section class="post--pager">
-
-  <% var currentPost = page.title; %>
-  <% let total = 0; %>
-  <% let index = 0; %>
-  <% let newerPost = null; %>
-  <% let olderPost = null; %>
+<section class="post--pager"> <% var currentPost = page.title; %><% let total = 0; %><% let index = 0; %><% let newerPost = null; %><% let olderPost = null; %>
   <% site.categories.sort('name').map(function(category){ %>
     <% if(category.name == 'blog' ) { %>
       <% category.posts.sort('date', -1).each(function(post, i) {%>
-        <% if (post.title === currentPost) { %>
-          <% index = i; %>
-        <% } %>
-      <%})%>
-    <% } %>
-  <% }) %>
+        <% if (post.title === currentPost) { %><% index = i; %><% } %><%})%><% } %><% }) %>
   <% site.categories.sort('name').map(function(category){ %>
-    <% if(category.name == 'blog' ) { %>
-      <% category.posts.sort('date', -1).each(function(post, i) {%>
-        <% if (i === index - 1) { %>
-          <% newerPost = post; %>
-        <% } %>
-        <% if (i === index + 1) { %>
-          <% olderPost = post; %>
-        <% } %>
-      <% }) %>
-    <% } %>
-  <% }) %>
-  
+    <% if(category.name == 'blog' ) { %><% category.posts.sort('date', -1).each(function(post, i) {%>        <% if (i === index - 1) { %>          <% newerPost = post; %>        <% } %>        <% if (i === index + 1) { %>          <% olderPost = post; %><% } %><% }) %>    <% } %><% }) %> 
   <% if (newerPost) { %>
     <a href="<%- url_for(newerPost.path) %>"><span style="color:gray">Newer Post</span><br><span
       style="text-decoration: underline;">
@@ -92,13 +70,10 @@
     </span>
     </a>
   <% } %>
-
 </section>
-
 <section class="inverse" style="background-image: linear-gradient(135deg, hsl(0, 52%, 0%), hsla(314, 52%, 0%, 0.8)), url(/assets/bg-3.jpg);">
   <h2 class="section--heading">Related Posts</h2>
   <div class="featured">
-
     <%- list_related_posts({ maxCount: 2, orderBy: 'random'}) %>
   </div>
 </section>
