@@ -86,7 +86,7 @@ article.post header {
 }
 
 .post .category.tag-list-item a:not(:hover) {
-  background-color: var(--color-gray);
+  background-color: var(--color-accent-lighter);
   color: var(--color-dark);
 }
 
@@ -173,14 +173,15 @@ post pager
   grid-gap: 1rem;
   margin-bottom: 4rem;
   padding: 1rem 1rem 4rem;
-  width: 80ch;
+  width: 65ch;
   max-width: calc(100% - 2rem);
   margin: 0 auto;
 }
 
 .post--pager a {
+  opacity: 0.6;
   padding: 1rem 2rem;
-  border: solid thin var(--color-dark);
+  border: solid thin var(--color-gray);
   border-radius: var(--border-radius);
   text-decoration: none;
 }
