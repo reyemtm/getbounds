@@ -6,6 +6,7 @@ author: Malcolm Meyer
 img: potockivodka.png
 tags:
   - mapbox
+  - web maps
 categories: 
  - projects
  - featured

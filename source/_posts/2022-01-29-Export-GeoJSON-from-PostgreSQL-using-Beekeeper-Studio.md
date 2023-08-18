@@ -1,16 +1,13 @@
----
 img: beekeeper.png
 author: Malcolm Meyer
 title: Export GeoJSON from PostgreSQL using Beekeeper Studio
 subtitle: Query > Download > Copy > Paste!
-date: 2022-01-29 12:25:00
 tags:
-  - postgres
   - postgis
-  - open data
 featured: true
 categories:
   - blog
+date: 2022-01-29 12:25:00
 ---
 [Beekeeper Studio](https://www.beekeeperstudio.io/) is an open source SQL editor written in NodeJS and Vue JS. The UI is clean and simple, and it has just the right amount of tools to get the job done. The query interface even has a handy **Download** button to export the results of a query. Using the ~~Copy to Clipboard~~ **Copy Cell** option we can extract GeoJSON directly from a PostGIS enabled PostgreSQL database to a computer without having to open QGIS or another GIS desktop or command-line tool.
 

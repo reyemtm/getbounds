@@ -24,11 +24,20 @@
               <%}%>
                 <div style="margin-bottom: 20px;">
                   <iframe src="<%= iframe %>" allowfullscreen="true" mozallowfullscreen="true"
-                    webkitallowfullscreen="true" height="700" frameborder="0"></iframe>
+                    webkitallowfullscreen="true" height="800" frameborder="0"></iframe>
                   <br>
-                  <em style="font-size: smaller;"><a href="<%= iframe %>" target="_blank">View this presentation
-                      fullscreen in a new tab.</a></em>
+                  <button style="float:right;border=none;background:transparent;cursor:pointer"><em>View fullscreen</em></button>
+                  <!-- <em style="font-size: smaller;"><a href="<%= iframe %>" target="_blank">View this presentation
+                      fullscreen in a new tab.</a></em> -->
                 </div>
+
+                <script>
+                  const iframe = document.querySelector("iframe");
+                  const button = document.querySelector('em');
+                  button.addEventListener('click', () => {
+                    iframe.requestFullscreen()
+                  })
+                </script> 
                 <%}else{%>
                   <!-- <picture>
         <img src="/assets/img/16x9_<% if (page.img) {%><%- (page.img).replace('.png', '.webp').replace('.jpg', '.webp') %><%}%>" alt="<%- page.img %>" loading=lazy />

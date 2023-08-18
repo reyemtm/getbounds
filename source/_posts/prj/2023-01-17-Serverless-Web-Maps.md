@@ -6,6 +6,7 @@ author: Malcolm Meyer
 img: mbtiles-serverless.netlify.png
 tags:
   - mapbox
+  - web maps
 categories: 
  - projects
  - featured

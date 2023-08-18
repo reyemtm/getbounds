@@ -8,9 +8,7 @@ tags:
   - qgis
   - gdal
   - imagery
-  - rasters
   - web maps
-  - open data
 featured: true
 slides: https://slides.getbounds.com/2021-creating-raster-tiles-with-gdal/#/
 categories: ["blog"]

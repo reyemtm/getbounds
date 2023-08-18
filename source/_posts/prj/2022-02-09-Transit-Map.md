@@ -8,6 +8,7 @@ tags:
   - mapbox
   - nodejs
   - open source
+  - web maps
 categories: 
  - projects
  - featured

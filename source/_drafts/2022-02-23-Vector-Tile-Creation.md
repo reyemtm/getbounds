@@ -6,7 +6,6 @@ author: Malcolm Meyer
 tags:
   - vector tiles
   - mapbox
-  - open data
 date: 2022-09-15 09:54:00
 ---
 ## Tools

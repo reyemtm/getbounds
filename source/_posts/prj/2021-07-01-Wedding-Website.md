@@ -6,8 +6,7 @@ author: Malcolm Meyer
 img: wedding.jpg
 date: 2021-07-01
 tags:
-  - mapbox
-  - demo
+  - web design
 categories: 
  - projects
 published: true

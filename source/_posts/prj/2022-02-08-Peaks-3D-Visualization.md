@@ -8,6 +8,7 @@ date: 2022-02-08
 tags:
   - mapbox
   - demo
+  - web maps
 categories: 
  - projects
  - featured
