@@ -6,7 +6,9 @@ author: Malcolm Meyer
 img: potockivodka.png
 tags:
   - mapbox
+  - turf js
   - web maps
+  - client projects
 categories: 
  - projects
  - featured

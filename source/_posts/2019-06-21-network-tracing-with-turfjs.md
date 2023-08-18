@@ -11,7 +11,7 @@ description: >-
 netlify-img: /images/post-img/original/trace.jpg
 img: trace.png
 tags:
-  - turfjs
+  - turf js
   - mapbox
 featured: true
 categories: ["blog"]

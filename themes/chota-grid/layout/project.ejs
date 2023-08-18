@@ -10,15 +10,16 @@
     <h2 class="post--subtitle">
       <%- page.subtitle %>
     </h2>
+    <span>
+      <%- list_tags(page.tags, { show_count: false, class: 'clean tag' }) %>
+    </span>
+    <p></p>
     <p class="post--meta">
       Client | <%= page.project[0].client %>
     </p>
     <p class="post--meta" style="margin-top:-0.5rem;margin-bottom:0;">
       <a href="/projects" class="btn" style="opacity:0.8">All Projects</a>
     </p>
-    <!-- <span>
-      <%- list_tags(page.tags, { show_count: false, class: 'clean tag' }) %>
-    </span> -->
   </header>
 
   <main>
@@ -26,7 +27,9 @@
     <% images = project.images %>
     <% tech = page.project[0].tech %>
     <p>
-      <img id="project-images" src="/assets/img/md_<%= project.images[0] %>.webp" alt="<%= page.title %>">
+      <% if (project.url) {%><a href="<%= project.url %>" target="_blank" class="img"><%}%>
+        <img id="project-images" src="/assets/img/md_<%= project.images[0] %>.webp" alt="<%= page.title %>">
+      <% if (project.url) {%></a><%}%>
     </p>
     <p>
       <%- markdown(page.project[0].description) %>

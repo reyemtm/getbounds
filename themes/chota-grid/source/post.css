@@ -74,7 +74,6 @@ article.post header {
 }
 
 .post .tag-list-item a {
-  /* background: var(--color-accent-light); */
   border-radius: var(--border-radius);
   color: var(--color-muted);
   font-weight: 300;
@@ -82,7 +81,10 @@ article.post header {
   text-decoration: none;
   margin-right: 0.5rem;
   padding: 0.2rem;
-  outline: solid thin;
+  background: hsl(314deg 52% 5% / 10%);
+  background: var(--color-accent-dark);
+  color: var(--color-gray);
+  /* outline: solid thin; */
 }
 
 .post .category.tag-list-item a:not(:hover) {
@@ -106,12 +108,13 @@ article.post header {
  font-weight: 600;
 }
 
-.post a:hover, .post a:active, .post a:focus {
+.post a:not(.img):hover, .post a:active, .post a:focus {
   background-color: var(--color-accent);
   color: white;
 }
 
 .post img {
+  background-color: transparent;
   border-radius: var(--border-radius);
   margin: 0.25rem 0;
   max-width: 100%;
