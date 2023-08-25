@@ -71,7 +71,7 @@
           <span class="grid--icon">
             <img src="/assets/icons/grid-icons/reports.svg" alt="Charts">
           </span>
-          <p>Maps are just the beginning. <a href="/#map-visuals">Interactive visuals</a> help communicate the story behind the data.</p>
+          <p>Maps are just the beginning. <a id="animated-modal-trigger" href="/#map-visuals">Interactive visuals</a> help communicate the story behind the data.</p>
         </div>
         <div class="grid--card">
           <h3>Mapbox GL JS Maps</h3>
@@ -240,7 +240,7 @@
   <div class="modal-content">
     <div class="grid grid-2">
       <figure>
-        <iframe src="/sample-apps/animated.html" frameborder="none"></iframe>
+        <iframe id="animated-modal" src="/sample-apps/animated.html" frameborder="none"></iframe>
         <figcaption>A map animation highlighting the smooth scroll and pitch effects available in modern mapping libraries.</figcaption>
       </figure>
       <figure>
@@ -292,3 +292,15 @@
     </figure>
   </div>
 </div> -->
+
+<script>
+const trigger = document.getElementById('animated-modal-trigger');
+const iframe = document.getElementById('animated-modal');
+trigger.addEventListener('click', function() {
+  iframe.src = "/sample-apps/animated.html#animate"
+});
+const modalOverlay = document.querySelector(".modal-overlay");
+modalOverlay.addEventListener("click", () => {
+  iframe.src = "/sample-apps/animated.html"
+})
+</script>

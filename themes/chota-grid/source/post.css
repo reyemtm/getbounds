@@ -189,6 +189,12 @@ post pager
   text-decoration: none;
 }
 
+@media screen  and (max-width: 768px) {
+  .post--pager {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* RELATED AND FEATURED POSTS AND PROJECTS */
 
 section div.featured {
