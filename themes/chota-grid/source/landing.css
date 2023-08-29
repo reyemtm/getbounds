@@ -558,9 +558,16 @@ a:active .post-card h2 {
   text-decoration: underline;
 }
 
+.post-card--excerpt {
+  display: none;
+}
+
 @media screen and (min-width: 768px) {
   .post-card {
     padding: 0.5rem 1rem;
+  }
+  .post-card--excerpt {
+    display: block;
   }
 }
 
@@ -639,9 +646,16 @@ a:active .post-card h2 {
   display: flex;
   flex: 1;
   margin: 0 auto;
-  width: calc(100% - 4rem);
   max-width: 1200px;
-  padding: 2rem;
+  padding: 0.5rem;
+  width: calc(100% - 1rem)
+}
+
+@media screen and (min-width: 768px) {
+  #archive {
+    padding: 2rem;
+    width: calc(100% - 4rem)
+  }
 }
 
 .archive-card {
@@ -656,7 +670,7 @@ a:active .post-card h2 {
   }
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1000px) {
   #archive-recent-posts {
     display: none;
   }
@@ -738,7 +752,7 @@ section.inverse {
 }
 
 section .section--heading {
-  font-size: clamp(2.5rem, 5vw, 2.8rem);
+  font-size: clamp(1.7rem, 5vw, 2.8rem);
   font-weight: 500;
   letter-spacing: 0.5rem;
   margin: 0 0.5rem;
@@ -748,6 +762,11 @@ section .section--heading {
 
 section p {
   text-align: justify;
+  color: var(--text-color);
+}
+
+section.inverse p, section.inverse article main {
+  color: rgba(255,255,255, 0.8);
 }
 
 section:not(.full)>div {

@@ -27,7 +27,7 @@ project:
     - Turf
     - Leaflet
     - Google Sheets
-    images: ["projects-shagbark"]
+    images: ["projects-shagbark", "shagbark-ii"]
     client: "Shagbark"
     description: >-
       Using the original Mapbox JS store locator example as a starting point, the Shagbark map adds a couple of unique features including store text search and a nearest store locator. The project pulls data from a Google Sheet in NodeJS while building. This allows the client to easily update store locations and available products. Custom icons with the client logo are used to mark store locations. An open source version of this store locator is available on [GitHub](https://github.com/reyemtm/leaflet-store-locator).

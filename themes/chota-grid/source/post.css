@@ -70,26 +70,30 @@ article.post header {
   font-size: 0.8rem;
   list-style: none;
   padding: 0;
-  margin: 0.3rem 0;
+  margin: 0.1rem 0;
+  flex-wrap: wrap;
 }
 
 .post .tag-list-item a {
   border-radius: var(--border-radius);
   color: var(--color-muted);
-  font-weight: 300;
+  font-weight: 400;
   font-size: 0.7rem;
   text-decoration: none;
   margin-right: 0.5rem;
-  padding: 0.2rem;
-  background: hsl(314deg 52% 5% / 10%);
-  background: var(--color-accent-dark);
-  color: var(--color-gray);
+  padding: 0.2rem 0.4rem;
+  background: gainsboro;
+  color: var(--color-dark);
   /* outline: solid thin; */
 }
 
 .post .category.tag-list-item a:not(:hover) {
   background-color: var(--color-accent-lighter);
   color: var(--color-dark);
+}
+
+.post .tag-list-item {
+  margin-bottom: 0.25rem;
 }
 
 .post .category ul {

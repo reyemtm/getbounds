@@ -18,7 +18,7 @@
         <h3 class="card-subtitle">
           <%= post.subtitle %>
         </h3>
-        <p style="text-decoration: none;color: #212121"><%- strip_html((post.excerpt).substring(0, 225)) %>...</p>
+        <p class="post-card--excerpt" style="text-decoration: none;color: #212121"><%- strip_html((post.excerpt).substring(0, 150)) %>...</p>
       </div>
     </a>
   </article>

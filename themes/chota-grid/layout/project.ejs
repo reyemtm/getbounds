@@ -1,4 +1,4 @@
-<article class="post" style="margin:2rem auto">
+<article class="post">
   <header style="margin-bottom:1rem">
     <span>
       <%- partial('_partial/date', {post: page}) %>
@@ -18,7 +18,7 @@
       Client | <%= page.project[0].client %>
     </p>
     <p class="post--meta" style="margin-top:-0.5rem;margin-bottom:0;">
-      <a href="/projects" class="btn" style="opacity:0.8">All Projects</a>
+      <a href="/projects" class="btn" style="opacity:0.9">All Projects</a>
     </p>
   </header>
 
@@ -65,16 +65,16 @@
   </div>
 </section>
 
-<% if (images.length == 2) {%>
+<% if (images.length > 1 ) {%>
   <script>
     const images = ["<%= project.images[0] %>","<%= project.images[1] %>"];
     const div = document.querySelector("#project-images");
     div.style.cursor = "pointer"
     let currentImage = 0;
-    div.addEventListener("click", () => {
+    setInterval(() => {
       currentImage = (!currentImage) ? 1 : 0;
       div.src = "/assets/img/md_" + images[currentImage] + ".webp"
-    })
+    }, 4000);
   </script>
 <%}%>
 

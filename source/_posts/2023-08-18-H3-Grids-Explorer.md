@@ -7,6 +7,7 @@ tags:
 categories:
   - blog
 date: 2023-08-18 07:45:00
+updated: 2023-08-18
 ---
 What are [H3 grids](https://h3geo.org/)? Created by Uber Engineering, the H3 grid system divides the Earth's surface into a hierarchical hexagon grid structure. Each hexagon is assigned a unique index based on its position in the hierarchy, allowing for efficient spatial indexing and querying.
 
