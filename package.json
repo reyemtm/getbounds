@@ -12,8 +12,8 @@
     "gen": "hexo generate",
     "clean": "hexo clean",
     "deploy": "hexo deploy",
-    "serve": "hexo server",
-    "start": "node github && hexo server",
+    "serve": "hexo server -p 4001",
+    "start": "node github && hexo server -p 4001",
     "dev": "node github && hexo server --draft",
     "drafts": "hexo generate --draft --watch & live-server --port=4000 public",
     "avif": "avif --input='public/assets/img/*.{jpg, png}' --speed=0 --quality=80"

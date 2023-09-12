@@ -660,6 +660,7 @@ a:active .post-card h2 {
 
 .archive-card {
   margin-bottom: 1.5rem;
+  max-width: calc(100% - 0.5rem);
 }
 
 @media screen and (min-width: 1200px) {

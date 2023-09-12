@@ -35,6 +35,7 @@ timezone: America/New_York
 defaultimage: "serving-vector-tiles.jpg"
 headerimg: "serving-vector-tiles.jpg"
 img: cover_dem_rivers_wide.png
+port: 4001
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
