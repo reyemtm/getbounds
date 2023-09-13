@@ -1,22 +1,13 @@
-<nav id="nav-links-mobile" class="nav-links-mobile">
-  <a href="/#">Home</a>
-  <a href="/#projects">Projects</a>
-  <a href="/blog/">Blog</a>
-  <a href="/#contact">Contact</a>
-  <a href="#close" class="nav-links-mobile--close"></a>
-</nav>
 <nav class="<% if (is_post()) {%>inverse-nav<%}%>">
-  <div>
+  <div class="container flex">
     <a class="brand" href="/">
       <img src="/assets/logo.svg" />
       <span>getBounds</span>
     </a>
-    <a href="#nav-links-mobile" class="nav-links-mobile--button"
-      style="background-image: url(/assets/icons/menu.svg);"></a>
-    <div class="nav-links float-right">
+    <div class="nav-links">
       <a href="/#projects">Projects</a>
       <a href="/blog/">Blog</a>
       <a href="/#contact">Contact</a>
     </div>
-  </div>
+    </div>
 </nav>

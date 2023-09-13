@@ -23,7 +23,7 @@ fetch("https://api.github.com/users/reyemtm/repos?per_page=100")
 .then(res => res.json())
 .then(async data => {
   // fs.writeFileSync("repos.json", JSON.stringify(data,0,2))
-  const repos = await filterRepos(data);
+  const repos = filterRepos(data);
   console.log(repos[0])
 })
 .catch(err => {
@@ -32,7 +32,7 @@ fetch("https://api.github.com/users/reyemtm/repos?per_page=100")
 
 function filterRepos(data) {
   const filtered = data.filter(d => { 
-    return !d.fork && !d.archived && (d.forks > 2 || d.watchers > 4 || d.startgazers_count > 2)&& new Date(d.updated_at) > new Date(new Date().setFullYear(new Date().getFullYear() - 1))
+    return !d.fork && !d.archived && (d.forks > 4 || d.watchers > 5 || d.startgazers_count > 5)&& new Date(d.updated_at) > new Date(new Date().setFullYear(new Date().getFullYear() - 1))
   })
   console.log(filtered.length)
   const repos = [];

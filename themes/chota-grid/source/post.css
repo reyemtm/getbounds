@@ -206,6 +206,8 @@ section div.featured {
   grid-gap:4rem;
   flex-direction:column;
   align-items:flex-start;
+  width: var(--container-width);
+  max-width: calc(100% - 4rem);
 }
 
 section div.featured article img {
