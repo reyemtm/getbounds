@@ -199,7 +199,6 @@ nav .container {
   z-index: 1;
   padding: 0.5rem 1rem;
   width: var(--container-width);
-  max-width: 100%;
   margin: 0 auto;
 }
 
@@ -262,7 +261,7 @@ nav.inverse-nav:not(.nav-links-mobile):not(.brand) a:hover {
 }
 
 @media screen and (max-width: 468px) {
-  nav {
+  nav .container {
     display: block;
   }
   nav .brand {
