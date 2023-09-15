@@ -643,6 +643,10 @@ a:active .post-card h2 {
   max-width: 1800px;
 }
 
+.image-grid img {
+  border-radius: var(--border-radius);
+}
+
 .image-grid--caption {
   position: absolute;
   bottom: 7px;
@@ -652,6 +656,7 @@ a:active .post-card h2 {
   color: white;
   transition: all 0.1s ease-in;
   pointer-events: none;
+  border-radius: 0 0 var(--border-radius) var(--border-radius);
 }
 
 .image-grid--title {
@@ -669,7 +674,8 @@ a:active .post-card h2 {
 }
 
 .image-grid--image:hover {
-  filter: saturate(1.2) drop-shadow(2px 4px 8px rgba(0, 0, 0, 0.6));
+  filter: saturate(1.4) drop-shadow(2px 4px 8px rgba(0, 0, 0, 0.6));
+  transform: scale(1.01);
 }
 
 .image-grid--image:hover .image-grid--caption {
