@@ -46,16 +46,19 @@ article.post header {
 }
 
 .post--title {
-  font-size: clamp(2rem, 5vw, 2.8rem);
+  font-size: clamp(1.6rem, 5vw, 2.8rem);
+  margin-bottom: 0.5rem;
 }
 
 .post--subtitle {
-  font-weight: 400;
+  margin-top: 0;
+  font-weight: 300;
+  font-size: clamp(1.2rem, 3vw, 1.6rem);
 }
 
 .post--meta {
   font-size: 0.9rem;
-  opacity: 0.7;
+  opacity: 0.8;
 }
 
 .project-tag {
@@ -84,7 +87,8 @@ article.post header {
   padding: 0.2rem 0.4rem;
   background: gainsboro;
   color: var(--color-dark);
-  /* outline: solid thin; */
+  /* outline: solid thin var(--color-gray); */
+  opacity: 0.5;
 }
 
 .post .category.tag-list-item a:not(:hover) {
