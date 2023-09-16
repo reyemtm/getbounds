@@ -1,4 +1,4 @@
-<article class="post">
+<article class="post project">
   <header style="margin-bottom:1rem">
     <span>
       <%- partial('_partial/date', {post: page}) %>
@@ -25,20 +25,23 @@
     <% tech = page.project[0].tech %>
     <p>
       <% if (project.url) {%><a href="<%= project.url %>" target="_blank" class="img"><%}%>
-        <img id="project-images" src="/assets/img/md_<%= project.images[0] %>.webp" alt="<%= page.title %>">
+        <img id="project-images" class="project--image" src="/assets/img/md_<%= project.images[0] %>.webp" alt="<%= page.title %>">
       <% if (project.url) {%></a><%}%>
     </p>
     <p>
       <%- markdown(page.project[0].description) %>
     </p>
     <% if (page.project[0].iframe) {%>
-      <p><iframe src="<%= project.url %>" frameborder="0" allowfullscreen width="100%" height="500"></iframe></p>
+      <p><iframe src="<%= project.url %>" frameborder="0" allowfullscreen width="100%" height="550" scrolling="no" style="overflow: hidden" ></iframe></p>
     <% } %>
     <p>
-      <% if (project.url) {%><a href="<%= project.url %>" target="_blank"  style="display:inline-flex;align-items:center"><img src="/assets/icons/external-link.svg" alt="project-link">&nbsp;Live Demo</a><%}%>
+      <% if (project.url) {%><a href="<%= project.url %>" target="_blank"  style="display:inline-flex;align-items:center"><img  style="margin-right: 5px" src="/assets/icons/external-link.svg" alt="project-link">&nbsp;Live Demo</a><%}%>
+    </p>
+    <p>
+      <% if (project.repo) {%><a href="<%= project.repo %>" target="_blank"  style="display:inline-flex;align-items:center;"><img style="margin-right: 5px" src="https://icongr.am/fontawesome/github.svg?size=22&color=currentColor" alt="project-link">GitHub</a><%}%>
     </p>
     <!-- <p>
-      <% for (i = 0; i < page.project[0].tech.length; i++) {%>
+      <% for (i = 0; i < page.project[0]?.tech?.length; i++) {%>
         <span class="project-tag"><%= tech[i] %></span>
       <%}%>
     </p>    -->
