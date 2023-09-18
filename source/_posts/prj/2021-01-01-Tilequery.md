@@ -32,7 +32,7 @@ project:
       A pre-built version is available on [GitHub](https://github.com/reyemtm/tilequery/tree/master/docs/dist) and [npm](https://www.npmjs.com/package/tilequery) and can be used directly in the browser with the global variable tilequery or in Node JS. The example below highlights points within 0.1 miles of the mouse pointer and returns feature properties in the sidebar.
 
 
-      Similar projects include the [vtquery](https://github.com/mapbox/vtquery) tool by Mapbox.
+      This project is based in part on the [vtquery](https://github.com/mapbox/vtquery) tool by Mapbox.
     
 
 ---

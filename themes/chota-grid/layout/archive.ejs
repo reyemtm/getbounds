@@ -11,22 +11,23 @@
     </h1>
   </div>
 </header>
+
 <!-- <% if (is_archive()) {%>archive<%}%>-->
 <section id="archive">
-  <aside id="archive-recent-posts">
-    <h3>Recent Posts</h3>
-    <% site.categories.sort('name').map(function(category){ %>
-      <% if(category.name == 'blog' ) { %>
-        <% category.posts.sort('date', -1).each(function(post, i) {%>
-        <% if (i < 4) {%>
-        <p style="margin:0.3rem 0; text-align: left;opacity: 0.6; font-size: 0.9rem;">
-          <a href="<%- url_for(post.path)%>" style="text-decoration: none"><%- post.title %></a>
-        </p>
-      <%}%>
-      <%})%>
+  <aside id="archive-recent-posts" class="archive-sidebar">
+    <!--  RECENT POSTS AND PROJECTS -->
+    <div>
+      <h3 style="margin-bottom:0.5rem">Recent</h3>
+      <% site.posts.sort('date', -1).each(function(post, i) {%>
+      <% if (i < 5) {%>
+      <p style="margin:0.3rem 0; text-align: left;opacity: 0.6; font-size: 0.9rem;">
+        <a href="<%- url_for(post.path)%>" style="text-decoration: none"><%- post.title %></a>
+      </p>
     <%}%>
-  <%})%>
+    <%})%>
+  </div>
 
+  <!-- POSTS -->
   <details>
     <summary>Posts
     </summary>
@@ -44,6 +45,7 @@
     <%})%>
   </details>
 
+  <!-- PROJECTS -->
   <details <% if (page.category && (page.category === 'featured' || page.category === 'projects')) {%>open<%}%> >
     <summary>Projects
       <!-- <a href="/projects"> -->
@@ -62,16 +64,26 @@
   </details>
 
   <a href="/archive"><h3 style="font-weight:400">Site Archive</h3></a>
+
+  <!-- TAG CLOUD -->
+  <div style="display: flex; align-items: center; flex-wrap: wrap;max-width: 280px;">
+    <%- tagcloud(site.tags, {
+      min_font: 14,
+      max_font: 20,
+      class: 'tagcloud ',
+      start_color: 'lightgray',
+      end_color: '#000',
+      color: true
+    }) %>
+  </div>
+
   </aside>
+
   <div class="lg" style="margin:1rem auto;align-items: baseline;justify-content: flex-start;">
-    <!-- <div class="filter-buttons">
-      <a href="#" class="btn">Analysis</a>
-      <a href="#" class="btn">Data Processing</a>
-      <a href="#" class="btn">Data Visualization</a>
-      <a href="#" class="btn">Web Mapping</a>
-    </div> -->
     <% page.posts.sort('date', -1).each(function(post, i) {%>
         <div class="archive-card">
+          <%- partial('_partial/date', {post: post}) %>
+          
           <a rel="prefetch" href="<%- url_for(post.path) %>" style="text-decoration: none;">
             <h2 style="margin:0 0 0.5rem 0">
               <%= post.title %>
@@ -80,12 +92,21 @@
           <h3 style="margin-top:0;margin-bottom:0.5rem;font-weight:300">
             <% if (post.subtitle) {%>
               <%= post.subtitle %>
-            <br />
             <%}%>
-            <%- partial('_partial/date', {post: post}) %>
           </h3>
+
+          <div class="post" style="margin:0 0 1rem 0;width: 100%;display: flex;white-space: nowrap;flex-flow: wrap;">
+            <%- list_categories(post.categories, { show_count: false, class: 'clean category tag', separator: "|" }) %>
+            <%- list_tags(post.tags, { show_count: false, class: 'clean tag' }) %>
+            <ul class="tag-list">
+              <li class="tag-list-item">
+                <a class="clean tag-list-link" href="/archive/" rel="tag">view all</a>
+              </li>
+            </ul>
+          </div>
+
           <% if (!is_archive()) {%>
-            <% if (post.project) {%>
+            <% if (post?.project) {%>
 
             <% if (post.project[0].images) {%>
             <a rel="prefetch" href="<%- url_for(post.path) %>" style="text-decoration: none;">
@@ -93,25 +114,19 @@
             </a>
             <%}%>
             <p style="text-align: left"><%- markdown(post.project[0].description) %></p>
-            <% if (post.project[0].url) {%><div style="display:inline-flex;margin-bottom: 1rem;"><img src="/assets/icons/external-link.svg" alt="project-link">&nbsp;<a href="<%=post.project[0].url%>" >Live Demo</a></div><%}%>
+            <% if (post.project[0].url) {%><div style="display:inline-flex;margin-bottom: 1rem;"><img src="/assets/icons/external-link.svg" alt="project-link">&nbsp;<a href="<%=post.project[0].url%>" >Live Demo</a></div>
+            <% if (post.repo) {%><p><a href="<%= project.repo %>" target="_blank"  style="display:inline-flex;align-items:center;"><img style="margin-right: 5px" src="https://icongr.am/fontawesome/github.svg?size=22&color=currentColor" alt="project-link">GitHub</a></p><%}%>
+
+            <%}%>
             <%}else{%>
+            <% if (post?.img) {%>
+            <a rel="prefetch" href="<%- url_for(post.path) %>" style="text-decoration: none;">
+              <img id="project-images" src="/assets/img/md_<%= (post.img).replace(".png", ".webp").replace(".jpg", ".webp" ) %>" style="width:100%">
+            </a>
+            <%}%>
             <p><%- strip_html((post.excerpt).substring(0, 150)) %>...</p>
             <%}%>
           <%}%>
-
-      
-        <div class="post" style="margin:0 0 1.5rem 0;width: 100%;display: flex;white-space: nowrap;flex-flow: wrap;">
-          <%- list_categories(post.categories, { show_count: false, class: 'clean category tag', separator: "|" }) %>
-          <%- list_tags(post.tags, { show_count: false, class: 'clean tag' }) %>
-          <ul class="tag-list">
-            <!-- <li class="tag-list-item">
-              <a class="clean tag-list-link" href="/blog/" rel="tag">posts</a>
-            </li> -->
-            <li class="tag-list-item">
-              <a class="clean tag-list-link" href="/archive/" rel="tag">view all</a>
-            </li>
-          </ul>
-        </div>
       </div>
     <%})%>
   </div>

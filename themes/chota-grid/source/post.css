@@ -151,7 +151,7 @@ article.post header {
   .post iframe,
   .post .img-lg {
     width: calc(100vw);
-    margin: 0 calc((786.5px - 100vw)/2);
+    margin: 0 calc((786.5px - 100vw)/2) 1rem;
   }
 }
 
@@ -160,7 +160,7 @@ article.post header {
   .post .img-lg {
     border-radius: var(--border-radius);
     width: 140%;
-    margin: 0 -20%;
+    margin: 0 -20% 1rem;
   }
 }
 

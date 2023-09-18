@@ -1,7 +1,10 @@
 ---
 title: "Intro to Turf JS"
 subtitle: Geospatial Analysis for the Browser, Desktop & Server
-tags: ["turfjs", "slides", "mapbox"]
+tags:
+ - turf js
+ - slides
+ - mapbox
 img: intro-to-turfjs.png
 slides: 'https://slides.getbounds.com/2018-intro-to-turfjs/'
 published: true

@@ -8,7 +8,6 @@ tags:
  - mapbox
  - esri
  - qgis
- - hardware
 featured: false
 categories: ["blog"]
 ---

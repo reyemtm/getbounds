@@ -3,7 +3,6 @@ title: Beyond Blogging
 subtitle: Publishing Webmaps with Static Site Generators
 tags:
   - hexo
-  - jekyll
   - leaflet
   - mapbox
 published: false

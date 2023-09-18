@@ -37,9 +37,8 @@
     <p>
       <% if (project.url) {%><a href="<%= project.url %>" target="_blank"  style="display:inline-flex;align-items:center"><img  style="margin-right: 5px" src="/assets/icons/external-link.svg" alt="project-link">&nbsp;Live Demo</a><%}%>
     </p>
-    <p>
-      <% if (project.repo) {%><a href="<%= project.repo %>" target="_blank"  style="display:inline-flex;align-items:center;"><img style="margin-right: 5px" src="https://icongr.am/fontawesome/github.svg?size=22&color=currentColor" alt="project-link">GitHub</a><%}%>
-    </p>
+
+    <% if (project.repo) {%><p><a href="<%= project.repo %>" target="_blank"  style="display:inline-flex;align-items:center;"><img style="margin-right: 5px" src="https://icongr.am/fontawesome/github.svg?size=22&color=currentColor" alt="project-link">GitHub</a></p><%}%>
     <!-- <p>
       <% for (i = 0; i < page.project[0]?.tech?.length; i++) {%>
         <span class="project-tag"><%= tech[i] %></span>

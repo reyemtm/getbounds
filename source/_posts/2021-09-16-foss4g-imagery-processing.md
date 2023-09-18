@@ -7,7 +7,7 @@ img: rastertiles.png
 tags:
   - qgis
   - gdal
-  - imagery
+  - rasters
   - web maps
 featured: true
 slides: https://slides.getbounds.com/2021-creating-raster-tiles-with-gdal/#/

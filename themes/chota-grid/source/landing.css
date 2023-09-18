@@ -1,5 +1,5 @@
 @import url(/sofia/sofia-pro.css);
-@import url(modals.css);
+/* @import url(modals.css); */
 
 /*
 teal, hsl(181deg 100% 41%);
@@ -625,6 +625,10 @@ a:active .post-card h2 {
   }
 }
 
+#archive-recent-posts {
+  padding-right: 1rem;
+}
+
 @media screen and (max-width: 1000px) {
   #archive-recent-posts {
     display: none;
@@ -995,4 +999,8 @@ footer.footer {
   .no-mobile {
     display: none;
   }
+}
+
+.tagcloud {
+  margin-right: 0.5rem;
 }

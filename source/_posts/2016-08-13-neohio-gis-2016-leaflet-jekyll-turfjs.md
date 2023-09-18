@@ -2,7 +2,6 @@
 title: "Jekyll, Leaflet and TurfJS"
 date: 2016-08-13 00:00:00 Z
 tags:
-- jekyll
 - leaflet
 - slides
 layout: post

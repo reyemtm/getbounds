@@ -5,7 +5,6 @@ subtitle: A Client-Side Parcel Viewer built with Leaflet
 date: 2019-04-05 12:08:56
 tags:
  - leaflet
- - projects
 img: open-parcel-viewer-web.png
 code: https://github.com/ovrdc/parcel-viewer
 demo: https://ovrdc.github.io/parcel-viewer

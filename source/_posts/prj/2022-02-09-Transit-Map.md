@@ -6,7 +6,7 @@ author: Malcolm Meyer
 img: projects-transit.png
 tags:
   - mapbox
-  - nodejs
+  - node js
   - open source
   - web maps
 categories: 

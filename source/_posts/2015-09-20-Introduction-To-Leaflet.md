@@ -6,7 +6,6 @@ description: "A presentation given at the 2015 Ohio GIS Conference on the Leafle
 tags:
 - leaflet
 - slides
-- jekyll
 external: true
 subtitle: A Presentation for the 2015 Ohio GIS Conference
 header-img: cdbdark.png

@@ -11,7 +11,7 @@ img: agol-cache2.png
 image: 'https://www.getbounds.com/assets/img/agol-cache2.png'
 tags:
   - esri
-  - nodejs
+  - node js
 featured: false
 categories: ["blog"]
 date: 2020-04-27 23:32:00

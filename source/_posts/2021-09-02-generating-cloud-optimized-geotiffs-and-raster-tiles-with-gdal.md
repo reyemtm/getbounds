@@ -7,7 +7,7 @@ date_updated: 2022-03-22
 img: tiles.png
 tags:
  - gdal
- - imagery
+ - rasters
 style:
   code: ""
 featured: true

@@ -7,8 +7,7 @@ img: projects-shagbark.png
 date: 2016-01-01
 tags:
   - leaflet
-  - nodejs
-  - google
+  - node js
   - turf js
   - client projects
   - open source

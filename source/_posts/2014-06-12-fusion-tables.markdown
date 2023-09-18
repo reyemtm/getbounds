@@ -2,7 +2,6 @@
 title: Google Drive Fusion Tables
 tags:
   - esri
-  - google
 layout: post
 categories: ["blog"]
 author: ''
