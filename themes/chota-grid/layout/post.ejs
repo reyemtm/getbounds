@@ -26,14 +26,14 @@
                   <iframe src="<%= iframe %>" allowfullscreen="true" mozallowfullscreen="true"
                     webkitallowfullscreen="true" height="800" frameborder="0"></iframe>
                   <br>
-                  <button style="float:right;border=none;background:transparent;cursor:pointer"><em>View fullscreen</em></button>
+                  <button style="float:right;border=none;background:transparent;cursor:pointer" class="js-fullscreen-button"><em>View fullscreen</em></button>
                   <!-- <em style="font-size: smaller;"><a href="<%= iframe %>" target="_blank">View this presentation
                       fullscreen in a new tab.</a></em> -->
                 </div>
 
                 <script>
                   const iframe = document.querySelector("iframe");
-                  const button = document.querySelector('em');
+                  const button = document.querySelector('.js-fullscreen-button');
                   button.addEventListener('click', () => {
                     iframe.requestFullscreen()
                   })
