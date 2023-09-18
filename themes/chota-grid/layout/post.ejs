@@ -11,7 +11,8 @@
     <h2 class="post--subtitle">
       <%- page.subtitle %>
     </h2>
-    <span>
+    <span style="display: flex;flex-wrap: wrap;">
+      <%- list_categories(page.categories, { show_count: false, class: 'clean category tag', separator: "|" }) %>
       <%- list_tags(page.tags, { show_count: false, class: 'clean tag' }) %>
     </span>
   </header>
