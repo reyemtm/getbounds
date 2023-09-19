@@ -46,7 +46,7 @@ While this would work for some layers, a few exceed the default `maxRecordsCount
 ]
 ```
 
-This tool [agol-cache](https://www.npmjs.com/package/agol-cache) is available on npm and GitHub. It has not been thoroughly tested, as it does exactly what I need and nothing more. For example, while it would be possible to extract domains and values, this tool simply extracts the raw layer properties. 
+This project [agol-cache](https://www.npmjs.com/package/agol-cache) is available on npm and GitHub. ~~It has not been thoroughly tested, as it does exactly what I need and nothing more. For example, while it would be possible to extract domains and values, this tool simply extracts the raw layer properties.~~ The tool now supports decoding domain values and is used in multiple production environments.
 
 A sample query using `agol-cache`.
 
@@ -61,4 +61,4 @@ cache(urls[0], { folder: './agol-cache' })
 ```
 
 
-*The tool works with ArcGIS Online Feature Services and has not been tested with Map Services or services published from ArcGIS Server.* 
+*The tool works with ArcGIS Online/Portal/Enterprise Feature Services and Map Services that have support for GeoJSON exporting.* 
