@@ -70,3 +70,20 @@ MODALS
   width: 80%;
   margin: 0 auto;
 }
+
+.modal .close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: transparent;
+  box-shadow: none;
+  border: none;
+  color: white;
+  font-weight: 900;
+  text-transform: capitalize;
+  font-size: 1.2rem;
+}
+
+.close-button::after {
+  content: "X";
+}

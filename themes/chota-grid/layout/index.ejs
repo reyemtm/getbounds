@@ -226,17 +226,19 @@
 
 </main>
 
-<div class="modal">
+<!-- <div class="modal">
   <div class="modal-content">
     <picture>
       <img src="" alt="Portfolio Image">
     </picture>
     <figcaption></figcaption>
   </div>
-</div>
+</div> -->
 
 <div id="map-visuals" class="modal">
   <a class="modal-overlay" href="#close" aria-label="Close"></a>
+  <button class="close-button"></button>
+
   <div class="modal-content">
     <div class="grid grid-2">
       <figure>
@@ -253,22 +255,19 @@
 
 <div id="tileserver-custom" class="modal">
   <a class="modal-overlay" href="#close" aria-label="Close"></a>
+  <button class="close-button"></button>
+
   <div class="modal-content">
-    <!-- <div class="grid grid-2"> -->
       <figure>
         <img src="/assets/img/tileserver-custom.png">
         <figcaption>Custom Node JS mbtiles server with built-in preview.</figcaption>
       </figure>
-      <!-- <figure>
-        <img src="/assets/img/md_map-styles-dark-3d.webp">
-        <figcaption>Dark-themed map style based on kiosk print maps in downtown Cleveland, Ohio.</figcaption>
-      </figure> -->
-    <!-- </div> -->
   </div>
 </div>
 
 <div id="map-styles" class="modal">
   <a class="modal-overlay" href="#close" aria-label="Close"></a>
+  <button class="close-button"></button>
   <div class="modal-content">
     <div class="grid grid-2">
       <figure>
@@ -283,15 +282,17 @@
   </div>
 </div>
 
-<!-- <div id="tile-server" class="modal">
+<div id="tile-server" class="modal">
   <a class="modal-overlay" href="#close" aria-label="Close"></a>
+  <button class="close-button"></button>
+
   <div class="modal-content">
     <figure>
       <iframe src="https://tiles.zerospatial.com/nhd_streams/map#9.67/39.2484/-82.8376" frameborder="0"></iframe>
       <figcaption>SAAS vector tile server with support for API key or IP-based limiting.</figcaption>
     </figure>
   </div>
-</div> -->
+</div>
 
 <script>
 const trigger = document.getElementById('animated-modal-trigger');
@@ -302,5 +303,12 @@ trigger.addEventListener('click', function() {
 const modalOverlay = document.querySelector(".modal-overlay");
 modalOverlay.addEventListener("click", () => {
   iframe.src = "/sample-apps/animated.html"
+})
+
+const closeButtons = document.querySelectorAll(".close-button");
+closeButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    window.location.hash = "#close";
+  })
 })
 </script>
