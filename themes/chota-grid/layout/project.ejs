@@ -33,8 +33,12 @@
       <%- markdown(page.project[0].description) %>
     </p>
     <% if (page.project[0].iframe) {%>
-      <p><iframe src="<%= project.url %>" frameborder="0" allowfullscreen width="100%" height="550" scrolling="no" style="overflow: hidden" ></iframe></p>
-    <% } %>
+      <p>
+        <iframe src="<%= project.url %>" frameborder="0" allowfullscreen width="100%" height="550" scrolling="no" style="overflow: hidden" ></iframe>
+        <button style="float:right;background:transparent;cursor:pointer;margin-top:-5px" class="js-fullscreen-button"><em>View fullscreen</em></button>
+      </p>
+    
+      <% } %>
     <p>
       <% if (project.url) {%><a href="<%= project.url %>" target="_blank"  style="display:inline-flex;align-items:center"><img  style="margin-right: 5px" src="/assets/icons/external-link.svg" alt="project-link">&nbsp;Live Demo</a><%}%>
     </p>
@@ -80,4 +84,10 @@
 
 <script>
   const iframe = document.querySelector("iframe");
+  const button = document.querySelector('.js-fullscreen-button');
+  if (button && iframe) {
+    button.addEventListener('click', () => {
+      iframe.requestFullscreen()
+    })
+  }
 </script>

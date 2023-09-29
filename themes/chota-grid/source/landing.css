@@ -834,9 +834,16 @@ section .blog {
   filter: drop-shadow(2px 4px 8px rgba(0, 0, 0, 0.2));
 }
 
+
+code {
+  background: #1c1b1b;
+  color: white;
+  padding: 0 0.2rem;
+}
+
 .code article {
   padding: 1rem;
-  background: #212121;
+  background: #1c1b1b;
   border-radius: var(--border-radius);
   margin-bottom: 2rem;
   width: calc(100% - 2rem);
