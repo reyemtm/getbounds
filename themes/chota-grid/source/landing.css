@@ -675,6 +675,10 @@ a:active .post-card h2 {
 
 .image-grid--image {
   transition: all 0.1s ease-in;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-image: url('');
+  aspect-ratio: 5/3;
 }
 
 .image-grid--image:hover {
