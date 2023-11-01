@@ -1,0 +1,33 @@
+<header class="hero hero-sm">
+  <img class="hero--background-img" src="/assets/bg-3.jpg"
+    alt="Background Image of a River"></img>
+  <div>
+    <div class="hero--inner inner-container">
+      <div style="padding: 1rem 1.5rem">
+        <h1 class="hero--title" style="display:inline-flex;align-items:center;margin-top:0">
+          <img class="logo" src="/assets/logo.svg" /> <%- config.title %> <span style="font-size: 1rem"></span>
+        </h1>
+        <h2 class="hero--subtitle">
+          <%- config.tagline %>
+        </h2>
+        <!-- <a class="hero--btn" style="width:100%" href="#contact">Contact</a> -->
+      </div>
+      <div id="post-preview" class="grid--card" style="background-color: var(--color-accent-light)">
+        <h3 style="font-weight:100;font-size:1rem;opacity: 0.8;">Latest from the Blog</h3>
+        <% site.categories.sort('name').map(function(category){ %>
+          <% if(category.name == 'blog' ) { %>
+            <% category.posts.sort('date', -1).each(function(post, i) {%>
+              <% if (i < 1) {%>
+                <a href="<%- url_for(post.path)%>" style="text-decoration: none";><h3 style="margin-bottom:0.5rem"><%- post.title %></h3>
+                <span class="grid--icon">
+                  <img src="/assets/icons/grid-icons/grid-view.svg" alt="Data Servers">
+                </span>
+                <p><%- post.subtitle %></p></a>
+              <%}%>
+            <%})%>
+          <% } %>
+        <% }) %>
+      </div>
+    </div>
+  </div>
+</header>

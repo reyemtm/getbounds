@@ -1,0 +1,37 @@
+<section id="contact">
+  <h2 class="section--heading">Contact</h2>
+  <div class="side-by-side">
+    <div style="direction: ltr;margin:1rem 0">
+      <p>
+        <%- config.description_title %>
+        <br/><br/>
+        <%- config.description %> Reach out with your project idea and let me help bring you data to life!
+      </p>
+    </div>
+    <div style="direction: ltr;width: 100%">
+      <form
+        name="contact"
+        method="POST"
+        netlify-honeypot="bot-field"
+        data-netlify="true"
+        >
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" placeholder="Jane Doe">
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="jdoe@email.com">
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" placeholder="Tell me about your project..." style="height:200px"></textarea>
+
+        <span class="hidden" style="height:20px">
+          <label>
+            Bot Field <input name="bot-field" />
+          </label>
+        </span>
+
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+  </div>
+</section>

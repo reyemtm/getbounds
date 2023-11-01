@@ -17,11 +17,13 @@
 
   };
   var modal = document.getElementsByClassName("modal")[0];
-  modal.addEventListener("click", function (e) {
-    if (!e.target.src) {
-      modal.classList.remove("modal-active")
-    }
-  })
+  if (modal) {
+      modal.addEventListener("click", function (e) {
+      if (!e.target.src) {
+        modal.classList.remove("modal-active")
+      }
+    })
+  }
   var leftX = 0,
     topY = 0;
   document.addEventListener('mousedown', function (e) {

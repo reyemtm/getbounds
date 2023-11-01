@@ -3,6 +3,8 @@ const fetch = require("node-fetch")
 class Repo {
   constructor(data) {
     this.name = data.name
+    this.title = capitalizeWords(data.name.replace(/-/g, " "))
+    this.subtitle = data.description
     this.description = data.description
     this.repo = data.html_url
     this.language = data.language
@@ -14,7 +16,25 @@ class Repo {
     this.updated = data.updated_at
     this.archived = data.archived
     this.forked = data.forked
+    this.date = data.created_at
+    this.categories = [{name: "GitHub"}]
   }
+}
+
+function capitalizeWords(text) {
+  // Split the text into words based on spaces
+  const words = text.split(' ');
+
+  // Capitalize the first letter of each word
+  const capitalizedWords = words.map(word => {
+    if (word.length > 0) {
+      return word.charAt(0).toUpperCase() + word.slice(1);
+    }
+    return word;
+  });
+
+  // Join the capitalized words back into a single string
+  return capitalizedWords.join(' ');
 }
 
 if (!fs.existsSync("./public")) fs.mkdirSync("./public");
