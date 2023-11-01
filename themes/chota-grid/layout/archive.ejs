@@ -52,6 +52,9 @@
         <!-- <h3 style="font-weight:400;margin-bottom: 0.5rem;">Projects</h3> -->
       <!-- </a> -->
     </summary>
+    <a href="/projects">
+      <h3 style="font-weight:400;margin-bottom: 0.5rem;font-size:1rem">Project Archive</h3>
+    </a>
       <% site.categories.sort('name').map(function(category){ %>
         <% if(category.name == 'projects' ) { %>
           <% category.posts.sort('date', -1).each(function(post, i) {%>
@@ -63,7 +66,15 @@
     <%})%>
   </details>
 
+  <!-- GITHUB -->
+  <span style="display: flex;align-items: center;">
+    <img src="https://icongr.am/fontawesome/external-link-square.svg?size=18&color=currentColor" alt="external-link" style="margin-right:4px">
+    <a href="https://github.com/reyemtm" style="text-decoration: none">GitHub</a>
+  </span>
+
+  <% if (!is_archive()) {%>
   <a href="/archive"><h3 style="font-weight:400">Site Archive</h3></a>
+  <%}%>
 
   <!-- TAG CLOUD -->
   <div style="display: flex; align-items: center; flex-wrap: wrap;max-width: 280px;">

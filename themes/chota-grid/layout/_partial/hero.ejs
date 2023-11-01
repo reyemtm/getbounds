@@ -1,0 +1,26 @@
+<header class="hero hero-sm">
+  <img class="hero--background-img" src="/assets/bg-3.jpg"
+    alt="Background Image of a River"></img>
+  <div>
+    <div class="hero--inner inner-container">
+      <div style="padding: 1rem 1.5rem">
+        <h1 class="hero--title" style="display:inline-flex;align-items:center;margin-top:0">
+          <img class="logo" src="/assets/logo.svg" /> <%- config.title %> <span style="font-size: 1rem"></span>
+        </h1>
+        <h2 class="hero--subtitle">
+          <%- config.tagline %>
+        </h2>
+      </div>
+      <div id="post-preview" class="grid--card" style="background-color: var(--color-accent-light)">
+        <span class="grid--icon">
+          <img src="/assets/icons/grid-icons/tracking.svg" alt="Data Servers">
+        </span>
+        <h3 style="margin-right:30px"><%- config.description_title %></h3>
+        <%- config.description %>
+      </div>
+      <div id="post-mobile-preview" style="background-color: var(--color-accent-light);padding: 1rem;font-size:0.8rem">
+        <%- config.description %>
+      </div>
+    </div>
+  </div>
+</header>
