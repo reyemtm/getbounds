@@ -15,8 +15,8 @@
       <%- list_tags(page.tags, { show_count: false, class: 'clean tag' }) %>
     </span>
     <p></p>
-    <p class="post--meta">
-      Client | <%= page.project[0].client %>
+    <p class="post--meta" style="display: inline-flex; align-items: center;">
+      Client | <%= page.project[0].client %>     <% if (project.repo) {%> |&nbsp;<a href="<%= project.repo %>" target="_blank"  style="display:inline-flex;align-items:center;">GitHub</a><%}%>
     </p>
   </header>
 
@@ -34,23 +34,23 @@
     </p>
     <% if (page.project[0].iframe) {%>
       <p>
-        <iframe src="<%= project.url %>" frameborder="0" allowfullscreen width="100%" height="550" scrolling="no" style="overflow: hidden" ></iframe>
+        <iframe src="<%= project.url %>" frameborder="0" allowfullscreen width="100%" height="<%= page?.iframeHeight || 500 %>" scrolling="no" style="overflow: hidden" ></iframe>
         <button style="float:right;background:transparent;cursor:pointer;margin-top:-5px" class="js-fullscreen-button"><em>View fullscreen</em></button>
       </p>
     
       <% } %>
     <p>
-      <% if (project.url) {%><a href="<%= project.url %>" target="_blank"  style="display:inline-flex;align-items:center"><img  style="margin-right: 5px" src="/assets/icons/external-link.svg" alt="project-link">&nbsp;Live Demo</a><%}%>
+      <% if (project.url && !project.iframe) {%><a href="<%= project.url %>" target="_blank"  style="display:inline-flex;align-items:center"><img  style="margin-right: 5px" src="/assets/icons/external-link.svg" alt="project-link">&nbsp;Live Demo</a><%}%>
     </p>
 
-    <% if (project.repo) {%><p><a href="<%= project.repo %>" target="_blank"  style="display:inline-flex;align-items:center;"><img style="margin-right: 5px" src="https://icongr.am/fontawesome/github.svg?size=22&color=currentColor" alt="project-link">GitHub</a></p><%}%>
+    <!-- <% if (project.repo) {%><p><a href="<%= project.repo %>" target="_blank"  style="display:inline-flex;align-items:center;"><img style="margin-right: 5px" src="https://icongr.am/fontawesome/github.svg?size=22&color=currentColor" alt="project-link">GitHub</a></p><%}%> -->
     <!-- <p>
       <% for (i = 0; i < page.project[0]?.tech?.length; i++) {%>
         <span class="project-tag"><%= tech[i] %></span>
       <%}%>
     </p>    -->
     <p style="margin-top:4rem">
-      <a href="/projects" class="btn">More Projects</a>
+      <a href="/projects" class="btn">Project Archive</a>
     </p>
   </main>
 </article>
