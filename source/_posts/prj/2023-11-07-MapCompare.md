@@ -19,7 +19,7 @@ project:
     repo: https://github.com/reyemtm/map-compare
     images: ["map-compare", "map-compare-ii"]
     description: >-
-      MapCompare was originally created as a demonstration to compare the overall experience of utilizing vector tiles in various web map libraries. During FOSS4G2024 I added a comparison of loading cloud-optimized GeoTIFFs directly from object storage. I could only find COG support for OpenLayers and Leaflet, but will update the project if other libraries add support in the future.
+      MapCompare was originally created as a demonstration to compare the overall experience of utilizing vector tiles in various web map libraries. During FOSS4GNA 2024 I added a comparison of loading cloud-optimized GeoTIFFs directly from object storage. I could only find COG support for OpenLayers and Leaflet, but will update the project if other libraries add support in the future.
       
       
       While I have not done any true performance testing, in the case of vector tiles, Mapbox feels the smoothest of all four libraries, and has one of the fastest if not the fastest load times. For the COG rendering, OpenLayers has a clear advantage over Leaflet, with sharper rendered tiles and faster load times for subsequent zoom levels. 
