@@ -126,7 +126,7 @@
             <%}%>
             <p style="text-align: left"><%- markdown(post.project[0].description) %></p>
             <% if (post.project[0].url) {%><div style="display:inline-flex;margin-bottom: 1rem;"><img src="/assets/icons/external-link.svg" alt="project-link">&nbsp;<a href="<%=post.project[0].url%>" >Live Demo</a></div>
-            <% if (post.repo) {%><p><a href="<%= project.repo %>" target="_blank"  style="display:inline-flex;align-items:center;"><img style="margin-right: 5px" src="https://icongr.am/fontawesome/github.svg?size=22&color=currentColor" alt="project-link">GitHub</a></p><%}%>
+            <% if (post.repo) {%><p><a href="<%= post.repo %>" target="_blank"  style="display:inline-flex;align-items:center;"><img style="margin-right: 5px" src="https://icongr.am/fontawesome/github.svg?size=22&color=currentColor" alt="project-link">GitHub</a></p><%}%>
 
             <%}%>
             <%}else{%>
