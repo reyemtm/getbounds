@@ -94,6 +94,25 @@
     </select>
     <label for="message">Message</label>
     <textarea id="message" name="message" placeholder="A brief summary of your project scope." style="height:200px" required></textarea>
-    <input type="submit" value="Connect" >
+    <input type="submit" value="Connect" id="connectSubmit">
   </form>
 </section>
+<script>
+  const connectSubmit = document.getElementById('connectSubmit');
+  connectSubmit.addEventListener('click', function() {
+    gtag_report_conversion();
+  });
+  function gtag_report_conversion(url) {
+    var callback = function () {
+      if (typeof(url) != 'undefined') {
+        window.location = url;
+      }
+    };
+    gtag('event', 'conversion', {
+        'send_to': 'AW-11412573641/3j80CI7E8fYYEMmb-MEq',
+        'event_callback': callback
+    });
+    return false;
+  }
+  </script>
+  
