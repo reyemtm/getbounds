@@ -1,0 +1,96 @@
+
+<header class="hero" style="height: calc(35vh - 40px);">
+  <img class="hero--background-img" src="/assets/img/lg_cover_dem_rivers_wide.webp"
+    alt="Background Image of a River"></img>
+  <div class="hero--inner">
+    <h1 class="hero--title">Connect
+    </h1>
+    <div id="post-preview" class="grid--card" style="background-color: var(--color-accent-light)">
+      <span class="grid--icon">
+        <img src="/assets/icons/grid-icons/tracking.svg" alt="Data Servers">
+      </span>
+      <h3 style="margin-right:30px"><%- config.description_title %></h3>
+      <%- config.description %>
+    </div>
+    <div id="post-mobile-preview" style="background-color: var(--color-accent-light);padding: 1rem;font-size:0.8rem">
+      <%- config.description %>
+    </div>
+  </div>
+</header>
+<style>
+  .logos {
+    display: none;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    padding-bottom: 0;
+    gap: 2rem;
+
+  }
+  .logos img {
+    height: 80px;
+    margin: 0 1rem;
+  }
+  @media  screen and (max-width: 768px) {
+    .logos img {
+      height: 50px;
+      margin: 0 0.5rem;
+    }
+  }
+  @media screen and (min-width: 468px) {
+    .logos {
+      display: flex;
+    }
+  }
+  em {
+    margin: 2rem 0;
+    opacity: 0.6;
+    font-size: 0.8rem;
+    display: flex;
+    justify-content: center;
+  }
+</style>
+<!-- <section class="logos" style="margin: 0 auto;width: 65ch;max-width: calc(100vw - 4rem);flex:1">
+<h2>Technologies</h2>
+</section> -->
+<section class="logos" style="margin: 1rem auto;width: 65ch;max-width: calc(100vw - 4rem);padding-top:1rem">
+  <img src="https://seeklogo.com/images/L/leaflet-logo-0CE53915C1-seeklogo.com.png" alt="Leaflet JS Logo">
+  <img src="https://seeklogo.com/images/M/mapbox-logo-D6FDDD219C-seeklogo.com.png" alt="Mapbox Logo">
+
+  <img src="https://seeklogo.com/images/Q/qgis-logo-E3C8191C7F-seeklogo.com.png" alt="QGIS Logo">
+  <img src="https://seeklogo.com/images/O/openlayers-logo-F0CB4AE348-seeklogo.com.png" alt="OpenLayers Logo">
+  <img src="https://seeklogo.com/images/P/postgresql-logo-5309879B58-seeklogo.com.png" alt="PostgreSQL Logo">
+  <!-- <img src="https://seeklogo.com/images/D/docker-logo-CF97D0124B-seeklogo.com.png" alt="Docker Logo"> -->
+</section>
+<div style="margin: 0.5rem auto;width: 65ch;max-width: calc(100vw - 4rem);">
+  <blockquote>I have experinece building web maps in both React and Vanilla JS with Leaflet, Mapbox, MapLibre and OpenLayers, print maps with ArcMap/Pro and QGIS, setting up data pipelines and backends with PostgreSQL/PostGIS, and deploying production applications with Docker.</blockquote>
+</div>
+<section style="margin: 0 auto;width: 65ch;max-width: calc(100vw - 4rem);flex:1;padding-top: 0rem;">
+  <p>I am <strong>curently seeking new projects</strong> and have ability in late winter/early spring of 2024. Have a project idea or need help with an existing web map or GIS proejct? The best way to start a conversation is with a quick call or online meeting. Select a time that works for you and give a short description of you project idea and let's get started.</p>
+  <form class="grid" style="grid-row-gap: 0" name="connect" method="POST" data-netlify="true">
+    <label for="name">Name</label>
+    <input type="text" id="name" name="name" placeholder="John Smith" required/>
+    <label for="email">Email</label>
+    <input type="email" id="email" name="email" placeholder="john@email.com" required>
+    <!-- below i want them to select a date and time with options of m-f 11 or 11:15, 11:30 1145 or  for half hour mtg and i want them to be radio buttons select only one -->
+    <label for="date">Preferred Date</label>
+    <select id="date" name="date" style="font-size:0.7rem;padding:0.5rem;margin-bottom:1rem" required>
+      <option value="Monday" selected>Monday</option>
+      <option value="Tuesday">Tuesday</option>
+      <option value="Wednesday">Wednesday</option>
+      <option value="Thursday">Thursday</option>
+      <option value="Friday">Friday</option>
+    </select>
+    
+    <label for="time">Preferred Time</label>
+    <select id="time" name="time" style="font-size:0.7rem;padding:0.5rem;margin-bottom: 1rem;" required>
+      <option value="11:00am" selected>11:00am</option>
+      <option value="11:15am">11:15am</option>
+      <option value="11:30am">11:30am</option>
+      <option value="11:45am">11:45am</option>
+    </select>
+    <label for="message">Message</label>
+    <textarea id="message" name="message" placeholder="A brief summary of your project scope." style="height:200px" required></textarea>
+    <input type="submit" value="Connect" >
+  </form>
+</section>
