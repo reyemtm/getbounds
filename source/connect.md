@@ -1,7 +1,7 @@
 ---
 layout: connect
 title: Connect | Find a Web Map Developer
-img: connect.jpg
+img: connect.webp
 img_width: 960
 img_height: 960
 description: >- 
