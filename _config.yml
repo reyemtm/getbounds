@@ -183,6 +183,9 @@ responsive_images:
       2x1:
         width: 340
         height: 170
+      twitter_square:
+        width: 960
+        height: 960
 
 #feed hexo-generator-feed
 feed:
