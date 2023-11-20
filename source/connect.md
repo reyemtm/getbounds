@@ -1,7 +1,7 @@
 ---
 layout: connect
 title: Connect | Find a Web Map Developer
-img: twitter_square_connect.jpg
+img: connect.jpg
 img_width: 960
 img_height: 960
 description: >- 
