@@ -17,7 +17,7 @@ tagline: Data | GIS | Maps | Web
 description_title: >-
   <strong>getBounds</strong> | Spatial Solutions for the Web
 description: >-
-  getBounds is a solo developer agency founded by Malcolm Meyer. I provide geospatial consulting services for data analysis and visualization, using tools such as PostgreSQL/PostGIS, Mapbox GL & MapLibre, and React/Next JS.
+  getBounds provides geospatial consulting services for data analysis and visualization, using tools such as PostgreSQL/PostGIS, Mapbox GL & MapLibre, and React/Next JS. Reach out and let me help you with your next project.
 twitter: getbounds
 keywords:
   [
@@ -39,7 +39,7 @@ keywords:
     "mapbox gl js",
     "mapbox developer",
     "maplibre developer",
-    "openlayers developer"
+    "openlayers developer",
   ]
 author: Malcolm Meyer
 language: en
@@ -160,13 +160,13 @@ responsive_images:
         width: 1440
         height:
       # Original 1440x960 4x3 with a ratio of 1.5
-      md: 
+      md:
         width: 960
         height: 540
       # sm: #16x9
       #   width: 640
       #   height: 360
-      sm2: 
+      sm2:
         width: 500
         height: 300
       thumb2:
@@ -175,7 +175,7 @@ responsive_images:
       # thumb:
       #   width: 80
       #   height: 45
-      # md: 
+      # md:
       #   width: 860
       #   height: 574
       # 16x9:
@@ -306,6 +306,5 @@ html_prettify:
 #resume
 resume:
   title: Data & Geospatial Analyst
-
 # grid icons
 # https://www.reshot.com/free-svg-icons/item/admin-dashboard-line-green-black-icons-s2-G5EX79VWFN/

@@ -2,32 +2,34 @@
 layout: post
 title: Generating Cloud Optimized GeoTIFFs and Raster Tiles with GDAL
 subtitle: "TLDR: gdalbuildvrt, gdal_translate, gdal_warp and gdaladdo"
-date: 2021-09-02T17:38:58.483Z
-date_updated: 2022-03-22
 img: tiles.png
 tags:
- - gdal
- - rasters
+  - gdal
+  - rasters
 style:
-  code: ""
+code: ""
 featured: true
-categories: ["blog"]
+categories:
+  - blog
+date: 2021-09-02 17:38:58
+date_updated: 2023-11-27 00:00:00
 ---
+
+_Update 2023-11-27 In the creation options in gdal_translate, using `SPARSE_OK=TRUE` can lead to errors when rendering the COG with certain software. To avoid these errors use `SPARSE_OK=FALSE`. See [this GitHub issue](https://github.com/GeoTIFF/georaster/issues/85) for more details._
+
 The following outlines the basic steps for generating Cloud Optimized GeoTIFFs and raster tiles from one or more raw TIFF files.
 
 ## Create the Mosaic
-
 
 [GDAL Build VRT Reference](https://gdal.org/programs/gdalbuildvrt.html)
 
 > Separate the bands and add an alpha band that gdal can use.
 
-
 ```bash
 gdalbuildvrt mosaic.vrt -b 1 -b 2 -b 3 -addalpha //path/to/tif/files/*.tif
 ```
 
-*Update 3/22/2022 - If you run into the error "gdalbuildvrt does not support heterogeneous projection" you can warp all the source TIFF files into the desired projection, then run the command above, using the warped vrt files as the source files. See [this Stack Exchange post](https://gis.stackexchange.com/questions/394249/gdalbuildvrt-does-not-support-heterogeneous-projection)*
+_Update 3/22/2022 - If you run into the error "gdalbuildvrt does not support heterogeneous projection" you can warp all the source TIFF files into the desired projection, then run the command above, using the warped vrt files as the source files. See [this Stack Exchange post](https://gis.stackexchange.com/questions/394249/gdalbuildvrt-does-not-support-heterogeneous-projection)_
 
 ```
 for %%i IN ("\\192.168.168.23\2009_Orthos\*.tif") do (
@@ -45,11 +47,9 @@ gdalbuildvrt mosaic.vrt -b 1 -b 2 -b 3 -addalpha //path/to/tif/files/*_nad83.tif
 
 [COG Driver Reference](https://gdal.org/drivers/raster/cog.html)
 
-
-
 > Force the NAD83 projection using either EPSG:6551 (NAD83 2011) or 3735.
 
-*Update 2/10/2022 - For Desktop GIS usage, higher clarity may be found by using the NEAREST resampling method at the expense of pixelation. When using this method, set the resampling to `bilinear` or `cubic` in the GIS software when adding the COG.*
+_Update 2/10/2022 - For Desktop GIS usage, higher clarity may be found by using the NEAREST resampling method at the expense of pixelation. When using this method, set the resampling to `bilinear` or `cubic` in the GIS software when adding the COG._
 
 ```bash
 gdal_translate mosaic.vrt cog.tif ^
@@ -75,17 +75,15 @@ gdalwarp mosaic.vrt web.vrt ^
 -overwrite
 ```
 
-
-
 ## Create the COG in WebMercator for use in a COG Server
 
 [GDAL Warp Reference](https://gdal.org/programs/gdalwarp.html)
 
-*If you want to use the COG in ArcGIS Server then use JPEG compression.*
+_If you want to use the COG in ArcGIS Server then use JPEG compression._
 
 > Using the default resampling works fine as does AVERAGE, BILINEAR and CUBIC (default).
 
-*Update 2/10/2022 - Using AVERAGE may provide more clarity for the overviews.*
+_Update 2/10/2022 - Using AVERAGE may provide more clarity for the overviews._
 
 ```bash
 gdal_translate web.vrt cog_web.tif ^
@@ -137,10 +135,10 @@ gdaladdo tiles.mbtiles -r average 2 4 8 16 32 64 128 256
 
 ## Other Methods
 
-These methods create satisfactory outputs and can be faster, but can cause projection shifts. These may still be satisfactory for imagery where precise accuracy is not as important. In addition, the QGIS tool exports the rendered map, not just the raster, allowing for the creation of tiled custom basemaps. 
+These methods create satisfactory outputs and can be faster, but can cause projection shifts. These may still be satisfactory for imagery where precise accuracy is not as important. In addition, the QGIS tool exports the rendered map, not just the raster, allowing for the creation of tiled custom basemaps.
 
-* gdal2tiles
-* QGIS Generate XYZ Tiles (directory & mbtiles)
+- gdal2tiles
+- QGIS Generate XYZ Tiles (directory & mbtiles)
 
 ```bash
 python.exe scripts/gdal2tiles.py -xyz -z 0-18 input/cog.tif output/tiles
@@ -149,7 +147,6 @@ python.exe scripts/gdal2tiles.py -xyz -z 0-18 input/cog.tif output/tiles
 ## Resources
 
 [@basemaps cog server](https://github.com/linz/basemaps)
-
 
 [cogeotiff cli tool](https://github.com/blacha/cogeotiff)
 
