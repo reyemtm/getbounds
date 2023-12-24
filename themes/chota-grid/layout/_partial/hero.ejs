@@ -1,27 +1,41 @@
 <header class="hero hero-sm" style="height: auto">
-  <img class="hero--background-img" src="/assets/bg-3.jpg"
+  <img class="hero--background-img" src="/assets/img/lg_header-hero-image.webp"
     alt="Background Image of a River"></img>
   <div>
     <div class="hero--inner inner-container">
       <div style="padding: 1rem 1.5rem">
-        <h1 class="hero--title" style="display:inline-flex;align-items:center;margin-top:0">
-          <img class="logo" src="/assets/logo.svg" /> <%- config.title %> <span style="font-size: 1rem"></span>
+        <h1 class="hero--title" style="display: inline-flex; align-items: center; margin-top: 0">
+          <img class="logo" src="/assets/logo.svg" alt="logo" /> <%- config.title %>
+          <span style="font-size: 1rem"></span>
         </h1>
-        <h2 class="hero--subtitle">
-          <%- config.tagline %>
-        </h2>
+        <h2 class="hero--subtitle"><%- config.tagline %></h2>
       </div>
       <div id="post-preview" class="grid--card" style="background-color: var(--color-accent-light)">
         <span class="grid--icon">
-          <img src="/assets/icons/grid-icons/tracking.svg" alt="Data Servers">
+          <img src="/assets/icons/grid-icons/tracking.svg" alt="Data Servers" />
         </span>
-        <h3 style="margin-right:30px"><%- config.description_title %></h3>
+        <h3 style="margin-right: 30px"><%- config.description_title %></h3>
         <%- config.description %>
-        <br>
-        <a href="/connect" style="border:solid thin white;background:transparent;padding: 0.25rem 0.5rem;color: white;text-decoration: none;cursor:pointer;margin-top:0.5rem;float:right">Connect</a>
-
+        <br />
+        <a
+          href="/connect"
+          style="
+            border: solid thin white;
+            background: transparent;
+            padding: 0.25rem 0.5rem;
+            color: white;
+            text-decoration: none;
+            cursor: pointer;
+            margin-top: 0.5rem;
+            float: right;
+          "
+          >Connect</a
+        >
       </div>
-      <div id="post-mobile-preview" style="background-color: var(--color-accent-light);padding: 1rem;font-size:0.8rem">
+      <div
+        id="post-mobile-preview"
+        style="background-color: var(--color-accent-light); padding: 1rem; font-size: 0.8rem"
+      >
         <%- config.description %>
       </div>
       <!-- <br>
@@ -36,19 +50,14 @@
         <span class="grid--icon">
           <img src="/assets/icons/grid-icons/reports.svg" alt="Charts" />
         </span>
-        <p>
-          Custom geospatial web applications for visualizing and analyzing geospatial data.
-        </p>
+        <p>Custom geospatial web applications for visualizing and analyzing geospatial data.</p>
       </div>
       <div class="grid--card">
         <h3>Mapbox GL JS Styles</h3>
         <span class="grid--icon">
           <img src="/assets/icons/grid-icons/maps.svg" alt="Map" />
         </span>
-        <p>
-          Brand matters. Enhance user experience with
-          custom map designs to match your brand.
-        </p>
+        <p>Brand matters. Enhance user experience with custom map designs to match your brand.</p>
       </div>
       <div class="grid--card">
         <h3>Spatial Analysis</h3>
@@ -66,8 +75,8 @@
           <img src="/assets/icons/grid-icons/manage-data.svg" alt="Data Servers" />
         </span>
         <p>
-          Take control of web map data with a database-to-map pipeline and hosted
-         vector or raster data.
+          Take control of web map data with a database-to-map pipeline and hosted vector or raster
+          data.
         </p>
       </div>
     </div>

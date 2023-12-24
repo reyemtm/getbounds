@@ -30,6 +30,7 @@ hsl(181deg 100% 21% / 10%);
   font-size: 20px;
   line-height: 1.4;
   font-weight: 300;
+  font-display: swap;
 }
 
 /* GLOBAL SETTINGS MAIN ELEMENTS */

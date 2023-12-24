@@ -1,10 +1,3 @@
-# TODO [ ] check all slides
-# TODO [ ] add apps check if needed
-# TODO [ ] finish serving vector tiles post
-# TODO [ ] add more to leaflet store locator post
-# TODO [ ] clean up all titles, dates and subtitles to be the same
-# TODO [ ] Fix code highlighting
-# TODO [ ] Make tag link buttons smaller
 # Palanquin Dark
 
 # Hexo Configuration
@@ -155,6 +148,7 @@ excerpt:
 responsive_images:
   - pattern: "**/*.+(png|jpg|jpeg)"
     withoutEnlargement: false
+    quality: 80
     sizes:
       lg:
         width: 1440
@@ -163,27 +157,12 @@ responsive_images:
       md:
         width: 960
         height: 540
-      # sm: #16x9
-      #   width: 640
-      #   height: 360
       sm2:
-        width: 500
-        height: 300
+        width: 1200
+        height: 720
       thumb2:
         width: 80
         height: 40
-      # thumb:
-      #   width: 80
-      #   height: 45
-      # md:
-      #   width: 860
-      #   height: 574
-      # 16x9:
-      #   width: 870
-      #   height: 490
-      2x1:
-        width: 340
-        height: 170
       twitter_square:
         width: 960
         height: 960
