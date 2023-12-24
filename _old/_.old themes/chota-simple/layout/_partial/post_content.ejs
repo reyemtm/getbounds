@@ -1,37 +1,30 @@
-
 <article class="post">
   <header>
-    <h1 class="title">
-      <%- post.title %>
-    </h1>
+    <h1 class="title"><%- post.title %></h1>
     <% if (post.subtitle) {%>
     <h3><%- post.subtitle %></h3>
-    <%}%>
-    <%- partial('_partial/post_date') %>
+    <%}%> <%- partial('_partial/post_date') %>
   </header>
 
-  <% if (!post.slides) {%>
-    <% if (post.img) {%>
+  <% if (!post.slides) {%> <% if (post.img) {%>
   <figure>
-  <img src="/assets/img/<%- post.img %>"> 
+    <img src="/assets/img/<%- post.img %>" />
   </figure>
-    <%}%>
-  <%}else{%>
-    <iframe src="<%- post.slides %>" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true" width="100%" height="700" frameborder="0"></iframe>
-  <%}%>
-  <%- post.content %>
+  <%}%> <%}else{%>
+  <iframe
+    src="<%- post.slides %>"
+    allowfullscreen="true"
+    mozallowfullscreen="true"
+    webkitallowfullscreen="true"
+    width="100%"
+    height="700"
+    frameborder="0"
+  ></iframe>
+  <%}%> <%- post.content %>
 </article>
 
 <div>
-<%- list_related_posts({
-  maxCount: 2, 
-  orderBy: 'random', 
-  pClass: 'post-realted-p',
-  ulClass: 'post-related-ul',
-  liClass: 'post-related-li',
-  aClass: 'post-related-a',
-  generateAbstract: true,
-  abstractClass: 'post-related-abstract',
-  abstractLength: 200
-  }) %>
+  <%- list_related_posts({ maxCount: 4, orderBy: 'random', pClass: 'post-realted-p', ulClass:
+  'post-related-ul', liClass: 'post-related-li', aClass: 'post-related-a', generateAbstract: true,
+  abstractClass: 'post-related-abstract', abstractLength: 200 }) %>
 </div>

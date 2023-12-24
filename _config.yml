@@ -157,7 +157,7 @@ responsive_images:
       md:
         width: 960
         height: 540
-      sm2:
+      sm:
         width: 1200
         height: 720
       thumb2:

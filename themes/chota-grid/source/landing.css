@@ -746,10 +746,10 @@ a:active .post-card h2 {
   }
 }
 
-@media screen and (min-width: 1400px) {
+@media screen and (min-width: 1000px) {
   .image-grid {
     grid-template-columns: 1fr 1fr 1fr;
-    gap: 0.8rem;
+    gap: 1.25rem;
   }
 }
 
@@ -820,7 +820,7 @@ section .section--heading {
 
 @media screen and (min-width: 480px) {
   section .section--heading {
-    margin-bottom: 5rem;
+    margin-bottom: 2rem;
   }
   section {
     padding: 4rem 0;
@@ -897,8 +897,8 @@ section .blog {
 }
 
 code {
-  background: #1c1b1b;
-  color: white;
+  background: #1c1b1b14;
+  color: var(--color-accent-dark);
   padding: 0.1rem 0.2rem;
   border-radius: var(--border-radius);
   font-size: 0.8rem;
@@ -1122,4 +1122,38 @@ ul.taglist {
 .grid--card-button:active {
   color: "black";
   background-color: white;
+}
+
+.heading-with-lines {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.heading-line {
+  flex: 1;
+  height: 4px;
+  background-color: var(--color-dark);
+  margin: 0 20px;
+  max-width: 200px;
+  display: none;
+}
+.heading-with-lines h2 {
+  margin: 0;
+  font-size: 2rem;
+}
+section.section--heading {
+  margin-bottom: 2rem;
+}
+@media screen and (min-width: 768px) {
+  .section--heading {
+    margin-bottom: 4rem;
+  }
+  .heading-with-lines h2 {
+    font-size: 2.5rem;
+  }
+  .heading-line {
+    display: block;
+  }
 }

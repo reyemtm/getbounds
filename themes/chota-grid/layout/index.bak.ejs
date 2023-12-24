@@ -46,7 +46,7 @@
                 <% if (post.project[0].images) {%>
                 <div style="position:relative;background-image:url(/assets/img/thumb2_<%= post.project[0].images[0] %>.webp)"" class="image-grid--image" >
                   <a rel="prefetch" href="<%- url_for(post.path) %>" style="text-decoration: none;">
-                    <img id="project-images" src="/assets/img/sm2_<%= post.project[0].images[0] %>.webp" alt="<%= post.title %>" style="width:100%" loading="lazy" />
+                    <img id="project-images" src="/assets/img/sm_<%= post.project[0].images[0] %>.webp" alt="<%= post.title %>" style="width:100%" loading="lazy" />
                   </a>
                   <div class="image-grid--caption"><div class="image-grid--title"><%= post.title %></div><span style="font-size:0.8rem" class="image-grid--subtitle"><%= post.subtitle %></span></div>
                 </div>

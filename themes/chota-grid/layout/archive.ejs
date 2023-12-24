@@ -121,7 +121,7 @@
 
             <% if (post.project[0].images) {%>
             <a rel="prefetch" href="<%- url_for(post.path) %>" style="text-decoration: none;">
-              <img id="project-images" src="/assets/img/sm2_<%= post.project[0].images[0] %>.webp" style="width:100%">
+              <img id="project-images" src="/assets/img/sm_<%= post.project[0].images[0] %>.webp" style="width:100%">
             </a>
             <%}%>
             <p style="text-align: left"><%- markdown(post.project[0].description) %></p>

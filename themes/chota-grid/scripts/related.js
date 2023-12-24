@@ -66,6 +66,7 @@ function listRelatedPosts(options) {
       orderBy: "date",
       isAscending: false,
       card: true,
+      categories: [],
     },
     options
   );
@@ -76,9 +77,18 @@ function listRelatedPosts(options) {
   }
 
   var postList = [];
+  const categories = options.categories || [];
+
   this.page.tags.each(function (tag) {
     tag.posts.each(function (post) {
-      postList.push(post);
+      if (categories.length > 0) {
+        const pageCategories = post.categories.map((c) => c.name);
+        if (pageCategories.some((c) => categories.includes(c))) {
+          postList.push(post);
+        }
+      } else {
+        postList.push(post);
+      }
     });
   });
 
@@ -115,17 +125,17 @@ function listRelatedPosts(options) {
         result += `
         <a rel="prefetch" href="/${post.path}" class="">
           <article>
-            <img src="/assets/img/md_${post.img.split(".")[0]}.webp" alt="${post.img.replace(
+            <img src="/assets/img/sm_${post.img.split(".")[0]}.webp" alt="${post.img.replace(
           ".png",
           ""
         )}" loading=lazy>
             <div>
-              <h2 style="font-weight:400;margin-bottom:0.5rem;">
+              <h2 style="font-weight:400;margin-bottom:0;margin-top:0">
               ${post.title}
               </h2>
-              <p>
+              <span>
                 ${post.subtitle}
-              </p>
+              </span>
             </div>
           </article>
         </a>
