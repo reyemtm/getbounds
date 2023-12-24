@@ -1105,3 +1105,21 @@ ul.taglist {
   background-color: var(--color-accent);
   color: white;
 }
+
+.grid--card-button {
+  border: solid thin white;
+  background: transparent;
+  padding: 0.25rem 0.5rem;
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+  margin-top: 0.5rem;
+  float: right;
+}
+
+.grid--card-button:hover,
+.grid--card-button:focus,
+.grid--card-button:active {
+  color: "black";
+  background-color: white;
+}
