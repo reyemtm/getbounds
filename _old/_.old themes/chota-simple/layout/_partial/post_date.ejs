@@ -1,5 +1,14 @@
-<span style="font-size:smaller;opacity:0.8;">
-  <% if (page.date_updated) {%>Posted <time datetime="<%= date_xml(page.date) %>" itemprop="datePublished"><%= date(page.date, null) %></time> | Updated <time datetime="<%= date_xml(page.date_updated) %>" itemprop="dateUpdated"><%= date(page.date_updated, null) %></time><%}else{%>
-    Posted <time datetime="<%= date_xml(page.date) %>" itemprop="datePublished"><%= date(page.date, null) %></time>
+<span style="font-size: smaller">
+  <% if (page.date_updated) {%>Posted
+  <time datetime="<%= date_xml(page.date) %>" itemprop="datePublished"
+    ><%= date(page.date, null) %></time
+  >
+  | Updated
+  <time datetime="<%= date_xml(page.date_updated) %>" itemprop="dateUpdated"
+    ><%= date(page.date_updated, null) %></time
+  ><%}else{%> Posted
+  <time datetime="<%= date_xml(page.date) %>" itemprop="datePublished"
+    ><%= date(page.date, null) %></time
+  >
   <%}%>
 </span>

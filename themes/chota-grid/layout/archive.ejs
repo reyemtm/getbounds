@@ -20,7 +20,7 @@
       <h3 style="margin-bottom:0.5rem">Recent</h3>
       <% site.posts.sort('date', -1).each(function(post, i) {%>
       <% if (i < 5) {%>
-      <p style="margin:0.3rem 0; text-align: left;opacity: 0.6; font-size: 0.9rem;">
+      <p style="margin:0.3rem 0; text-align: left;opacity: 0.9; font-size: 0.9rem;">
         <a href="<%- url_for(post.path)%>" style="text-decoration: none"><%- post.title %></a>
       </p>
     <%}%>
@@ -37,7 +37,7 @@
       <% site.categories.sort('name').map(function(category){ %>
         <% if(category.name == 'blog' ) { %>
           <% category.posts.sort('date', -1).each(function(post, i) {%>
-          <p style="margin:0.3rem 0; text-align: left;opacity: 0.6; font-size: 0.9rem;">
+          <p style="margin:0.3rem 0; text-align: left;opacity: 0.9; font-size: 0.9rem;">
             <a href="<%- url_for(post.path)%>" style="text-decoration: none"><%- post.title %></a>
           </p>
         <%})%>
@@ -58,7 +58,7 @@
       <% site.categories.sort('name').map(function(category){ %>
         <% if(category.name == 'projects' ) { %>
           <% category.posts.sort('date', -1).each(function(post, i) {%>
-          <p style="margin:0.3rem 0; text-align: left;opacity: 0.6; font-size: 0.9rem;">
+          <p style="margin:0.3rem 0; text-align: left;opacity: 0.9; font-size: 0.9rem;">
             <a href="<%- url_for(post.path)%>" style="text-decoration: none"><%- post.title %></a>
           </p>
         <%})%>
@@ -82,7 +82,7 @@
       min_font: 14,
       max_font: 20,
       class: 'tagcloud ',
-      start_color: 'lightgray',
+      start_color: 'gray',
       end_color: '#000',
       color: true
     }) %>

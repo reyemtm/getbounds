@@ -1,39 +1,49 @@
 <%- partial('_partial/hero') %>
 <main>
   <div class="image-grid" id="projects">
-    <% var alldata = [] %>
-    <% site.data.repos.forEach(post => { %>
-      <% alldata.push(post) %>
-    <% }) %>
-    <% site.posts.forEach(post => { %>
-      <% alldata.push(post) %>
-    <% }) %>
-    <% alldata.sort(function(a, b) {
-        return new Date(b.date) - new Date(a.date);
-      }).map(function(post) {%>
-      <% if (post.subtitle) { %>
-        <% var cat %>
-        <% if (post.categories && post.categories.length > 0) { %>
-          <% post.categories.forEach(function(category,i) { %>
-            <% if (i < 1) {%>
-              <% cat = category.name %>  
-            <%}%>
-          <% }); %>
-      <%}%>
-      <% var img %>
-      <% if (post.img) {%><% img = (post.img).replace(".png", ".webp").replace(".jpg", ".webp")%><%}else{%><% img = (config.defaultimage).replace(".jpg", ".webp") %><%}%>
-        <div class="image-grid--image" style="background-image:url(/assets/img/thumb2_<%= img %>">
-          <a rel="prefetch" href="<% if (post.path) {%><%- url_for(post.path) %><%}else{%><%= post.repo %><%}%>" style="text-decoration: none;">
-            <img src="/assets/img/sm2_<%= img %>" alt="<%= post.title %>" style="width:100%" loading="lazy" />
-          </a>
-          <div class="image-grid--caption">
-            <div class="image-grid--title"><%= post.title %></div>
-            <span style="font-size:0.8rem" class="image-grid--subtitle"><%= post.subtitle %></span>
-          </div>
-          <a href="<% if (cat === 'GitHub') {%>https://github.com/reyemtm<%}else{%><%= cat %><%}%>" class="tag card-tag-link"><%= cat %></a>
+    <% var alldata = [] %> <% site.data.repos.forEach(post => { %> <% alldata.push(post) %> <% }) %>
+    <% site.posts.forEach(post => { %> <% alldata.push(post) %> <% }) %> <% alldata.sort(function(a,
+    b) { return new Date(b.date) - new Date(a.date); }).map(function(post) {%> <% if (post.subtitle)
+    { %> <% var cat %> <% if (post.categories && post.categories.length > 0) { %> <%
+    post.categories.forEach(function(category,i) { %> <% if (i < 1) {%> <% cat = category.name %>
+    <%}%> <% }); %> <%}%> <% var img %> <% if (post.img) {%><% img = (post.img).replace(".png",
+    ".webp").replace(".jpg", ".webp")%><%}else{%><% img = (config.defaultimage).replace(".jpg",
+    ".webp") %><%}%>
+    <div class="image-grid--image" style="background-image: url(/assets/img/thumb2_<%= img %>">
+      <a
+        rel="prefetch"
+        href="<% if (post.path) {%><%- url_for(post.path) %><%}else{%><%= post.repo %><%}%>"
+        style="text-decoration: none"
+      >
+        <img
+          src="/assets/img/sm2_<%= img %>"
+          alt="<%= post.title %>"
+          style="width: 100%"
+          loading="lazy"
+        />
+        <div class="image-grid--caption">
+          <div class="image-grid--title"><%= post.title %></div>
+          <span class="image-grid--subtitle"><%= post.subtitle %></span>
         </div>
-    <%}%>
-    <%})%>
+      </a>
+      <a
+        href="<% if (cat === 'GitHub') {%>https://github.com/reyemtm<%}else{%><%= cat %><%}%>"
+        class="tag card-tag-link"
+        ><%= cat %></a
+      >
+    </div>
+    <%}%> <%})%>
   </div>
 </main>
 <%- partial('_partial/contact')%>
+
+<script>
+  document.onreadystatechange = function () {
+    if (document.readyState === "complete") {
+      var images = document.querySelectorAll(".image-grid--image");
+      images.forEach(function (image) {
+        image.style.backgroundImage = "none";
+      });
+    }
+  };
+</script>

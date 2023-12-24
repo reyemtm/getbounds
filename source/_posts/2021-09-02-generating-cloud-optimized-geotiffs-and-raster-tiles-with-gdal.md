@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Generating Cloud Optimized GeoTIFFs and Raster Tiles with GDAL
-subtitle: "TLDR: gdalbuildvrt, gdal_translate, gdal_warp and gdaladdo"
+subtitle: "TL;DR gdalbuildvrt, gdal_translate, gdal_warp and gdaladdo"
 img: tiles.png
 tags:
   - gdal

@@ -1,80 +1,90 @@
 <article class="post">
   <header>
+    <span class="post--meta"> <%- partial('_partial/date', {post: page}) %> </span>
 
-    <span class="post--meta">
-      <%- partial('_partial/date', {post: page}) %>
-    </span>
-
-    <h1 class="post--title">
-      <%- page.title %>
-    </h1>
-    <h2 class="post--subtitle">
-      <%- page.subtitle %>
-    </h2>
-    <span style="display: flex;flex-wrap: wrap;">
-      <%- list_categories(page.categories, { show_count: false, class: 'clean category tag', separator: "|" }) %>
-      <%- list_tags(page.tags, { show_count: false, class: 'clean tag' }) %>
+    <h1 class="post--title"><%- page.title %></h1>
+    <h2 class="post--subtitle"><%- page.subtitle %></h2>
+    <span style="display: flex; flex-wrap: wrap">
+      <%- list_categories(page.categories, { show_count: false, class: 'clean category tag',
+      separator: "|" }) %> <%- list_tags(page.tags, { show_count: false, class: 'clean tag' }) %>
     </span>
   </header>
-  <%- page.content %>
-    <% if (page.slides || page.iframe) { %>
-      <% if (page.slides) { %>
-        <% var iframe=(page.slides) %>
-          <%}else{%>
-            <% var iframe=(page.iframe) %>
-              <%}%>
-                <div style="margin-bottom: 20px;">
-                  <iframe src="<%= iframe %>" allowfullscreen="true" mozallowfullscreen="true"
-                    webkitallowfullscreen="true" height="800" frameborder="0"></iframe>
-                  <br>
-                  <button style="float:right;margin-top:-5px;background:transparent;cursor:pointer" class="js-fullscreen-button"><em>View fullscreen</em></button>
-                  <!-- <em style="font-size: smaller;"><a href="<%= iframe %>" target="_blank">View this presentation
+  <%- page.content %> <% if (page.slides || page.iframe) { %> <% if (page.slides) { %> <% var
+  iframe=(page.slides) %> <%}else{%> <% var iframe=(page.iframe) %> <%}%>
+  <div style="margin-bottom: 20px">
+    <iframe
+      src="<%= iframe %>"
+      allowfullscreen="true"
+      mozallowfullscreen="true"
+      webkitallowfullscreen="true"
+      height="800"
+      frameborder="0"
+    ></iframe>
+    <br />
+    <button
+      style="float: right; margin-top: -5px; background: transparent; cursor: pointer"
+      class="js-fullscreen-button"
+    >
+      <em>View fullscreen</em>
+    </button>
+    <!-- <em style="font-size: smaller;"><a href="<%= iframe %>" target="_blank">View this presentation
                       fullscreen in a new tab.</a></em> -->
-                </div>
+  </div>
 
-                <script>
-                  const iframe = document.querySelector("iframe");
-                  const button = document.querySelector('.js-fullscreen-button');
-                  button.addEventListener('click', () => {
-                    iframe.requestFullscreen()
-                  })
-                </script> 
-                <%}else{%>
-                  <!-- <picture>
+  <script>
+    const iframe = document.querySelector("iframe");
+    const button = document.querySelector(".js-fullscreen-button");
+    button.addEventListener("click", () => {
+      iframe.requestFullscreen();
+    });
+  </script>
+  <%}else{%>
+  <!-- <picture>
         <img src="/assets/img/16x9_<% if (page.img) {%><%- (page.img).replace('.png', '.webp').replace('.jpg', '.webp') %><%}%>" alt="<%- page.img %>" loading=lazy />
       </picture> -->
-                  <%}%>
+  <%}%>
 </article>
 
-<aside style="margin: 0 auto; max-width: 80ch;padding: 1rem;width:90%">
-  <script src="https://utteranc.es/client.js" repo="reyemtm/getbounds" issue-term="og:title" theme="github-light"
-    label="utterance-comment" crossorigin="anonymous" async>
-    </script>
+<aside style="margin: 0 auto; max-width: 80ch; padding: 1rem; width: 90%">
+  <script
+    src="https://utteranc.es/client.js"
+    repo="reyemtm/getbounds"
+    issue-term="og:title"
+    theme="github-light"
+    label="utterance-comment"
+    crossorigin="anonymous"
+    async
+  ></script>
 </aside>
-<section class="post--pager"> <% var currentPost = page.title; %><% let total = 0; %><% let index = 0; %><% let newerPost = null; %><% let olderPost = null; %>
-  <% site.categories.sort('name').map(function(category){ %>
-    <% if(category.name == 'blog' ) { %>
-      <% category.posts.sort('date', -1).each(function(post, i) {%>
-        <% if (post.title === currentPost) { %><% index = i; %><% } %><%})%><% } %><% }) %>
-  <% site.categories.sort('name').map(function(category){ %>
-    <% if(category.name == 'blog' ) { %><% category.posts.sort('date', -1).each(function(post, i) {%>        <% if (i === index - 1) { %>          <% newerPost = post; %>        <% } %>        <% if (i === index + 1) { %>          <% olderPost = post; %><% } %><% }) %>    <% } %><% }) %> 
-  <% if (newerPost) { %>
-    <a href="<%- url_for(newerPost.path) %>"><span style="color:gray">Newer Post</span><br><span
-      style="text-decoration: underline;">
+<section class="post--pager">
+  <% var currentPost = page.title; %><% let total = 0; %><% let index = 0; %><% let newerPost =
+  null; %><% let olderPost = null; %> <% site.categories.sort('name').map(function(category){ %> <%
+  if(category.name == 'blog' ) { %> <% category.posts.sort('date', -1).each(function(post, i) {%> <%
+  if (post.title === currentPost) { %><% index = i; %><% } %><%})%><% } %><% }) %> <%
+  site.categories.sort('name').map(function(category){ %> <% if(category.name == 'blog' ) { %><%
+  category.posts.sort('date', -1).each(function(post, i) {%> <% if (i === index - 1) { %> <%
+  newerPost = post; %> <% } %> <% if (i === index + 1) { %> <% olderPost = post; %><% } %><% }) %>
+  <% } %><% }) %> <% if (newerPost) { %>
+  <a href="<%- url_for(newerPost.path) %>"
+    ><span>Newer Post</span><br /><span style="text-decoration: underline">
       <%= newerPost.title %>
     </span>
-  </a>  <% } %>
-  <% if (olderPost) { %>
-    <a href="<%- url_for(olderPost.path) %>"><span style="color:gray">Older Post</span><br><span
-      style="text-decoration: underline;">
+  </a>
+  <% } %> <% if (olderPost) { %>
+  <a href="<%- url_for(olderPost.path) %>"
+    ><span>Older Post</span><br /><span style="text-decoration: underline">
       <%= olderPost.title %>
     </span>
-    </a>
+  </a>
   <% } %>
 </section>
-<section class="inverse" style="background-image: linear-gradient(135deg, hsl(0, 52%, 0%), hsla(314, 52%, 0%, 0.8)), url(/assets/bg-3.jpg);">
+<section
+  class="inverse"
+  style="
+    background-image: linear-gradient(135deg, hsl(0, 52%, 0%), hsla(314, 52%, 0%, 0.8)),
+      url(/assets/bg-3.jpg);
+  "
+>
   <h2 class="section--heading">Related Posts</h2>
-  <div class="featured">
-    <%- list_related_posts({ maxCount: 2, orderBy: 'random'}) %>
-  </div>
+  <div class="featured"><%- list_related_posts({ maxCount: 2, orderBy: 'random'}) %></div>
 </section>
