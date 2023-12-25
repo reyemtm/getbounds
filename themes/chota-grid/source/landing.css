@@ -198,9 +198,15 @@ nav .container {
   justify-content: space-between;
   align-items: center;
   z-index: 1;
-  padding: 0.5rem 1rem;
+  padding: 0 1rem;
   width: var(--container-width);
   margin: 0 auto;
+}
+
+@media screen and (min-width: 468px) {
+  nav .container {
+    padding: 0.5rem 2rem;
+  }
 }
 
 nav .brand {
