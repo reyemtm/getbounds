@@ -10,7 +10,7 @@ tagline: Data | GIS | Maps | Web
 description_title: >-
   <strong>getBounds</strong> | Spatial Solutions for the Web
 description: >-
-  getBounds provides geospatial consulting services for data analysis and visualization, using tools such as PostgreSQL/PostGIS, Mapbox GL & MapLibre, and React/Next JS. Reach out and let me help you with your next project.
+  getBounds provides geospatial consulting services for data analysis and visualization, using tools such as PostgreSQL/PostGIS, Mapbox GL & MapLibre, and React/Next JS. Reach out with your scope of work and let's build something together.
 twitter: getbounds
 keywords:
   [
@@ -287,3 +287,10 @@ resume:
   title: Data & Geospatial Analyst
 # grid icons
 # https://www.reshot.com/free-svg-icons/item/admin-dashboard-line-green-black-icons-s2-G5EX79VWFN/
+
+minify:
+  enable: false
+more_css:
+  enable: true
+  exclude: "*.min.css"
+  radical: true
