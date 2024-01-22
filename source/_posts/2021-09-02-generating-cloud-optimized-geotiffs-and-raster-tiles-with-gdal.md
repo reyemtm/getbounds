@@ -15,11 +15,17 @@ date: 2021-09-02 17:38:58
 date_updated: 2023-11-27 00:00:00
 ---
 
-_Update 2023-11-27 In the creation options in gdal_translate, using `SPARSE_OK=TRUE` can lead to errors when rendering the COG with certain software. To avoid these errors use `SPARSE_OK=FALSE`. See [this GitHub issue](https://github.com/GeoTIFF/georaster/issues/85) for more details._
+## What is the Cloud-Optimized GeoTIFF Format
+
+A Cloud Optimized GeoTIFF (COG) is a cloud-native geospatial raster data format designed for efficient storage and retrieval in cloud environments. COG files are structured to allow for selective access to specific portions of the raster data without the need to download the entire file. This is achieved by organizing the data into smaller blocks and using HTTP range requests to retrieve only the required portions. COGs are well-suited for cloud storage platforms, enabling faster and more cost-effective data access, particularly in applications involving large-scale geospatial datasets and distributed computing resources. 
+
+*See the [COG website](https://www.cogeo.org/in-depth.html) for more in-depth information, and the [COG-Explorer](https://geotiffjs.github.io/cog-explorer/#long=-63.049&lat=18.025&zoom=17&scene=https://oin-hotosm.s3.amazonaws.com/59c66c5223c8440011d7b1e4/0/7ad397c0-bba2-4f98-a08a-931ec3a6e943.tif&bands=&pipeline=) for a sample COG viewer.*
+
+## How to Create a COG
 
 The following outlines the basic steps for generating Cloud Optimized GeoTIFFs and raster tiles from one or more raw TIFF files.
 
-## Create the Mosaic
+### Create the Mosaic
 
 [GDAL Build VRT Reference](https://gdal.org/programs/gdalbuildvrt.html)
 
@@ -41,7 +47,7 @@ for %%i IN ("\\192.168.168.23\2009_Orthos\*.tif") do (
 gdalbuildvrt mosaic.vrt -b 1 -b 2 -b 3 -addalpha //path/to/tif/files/*_nad83.tif
 ```
 
-## Create the Desktop Cloud Optimized GeoTIFF
+### Create the Desktop Cloud Optimized GeoTIFF
 
 [GDAL Translate Reference](https://gdal.org/programs/gdal_translate.html)
 
@@ -60,7 +66,7 @@ gdal_translate mosaic.vrt cog.tif ^
 --config GDAL_NUM_THREADS ALL_CPUS
 ```
 
-## Create a Mosaic in WebMercator from the Original Mosaic
+### Create a Mosaic in WebMercator from the Original Mosaic
 
 > Use the ITRF00 transformation suitable for both 6551 and 3735.
 
@@ -75,7 +81,7 @@ gdalwarp mosaic.vrt web.vrt ^
 -overwrite
 ```
 
-## Create the COG in WebMercator for use in a COG Server
+### Create the COG in WebMercator for use in a COG Server
 
 [GDAL Warp Reference](https://gdal.org/programs/gdalwarp.html)
 
@@ -84,6 +90,8 @@ _If you want to use the COG in ArcGIS Server then use JPEG compression._
 > Using the default resampling works fine as does AVERAGE, BILINEAR and CUBIC (default).
 
 _Update 2/10/2022 - Using AVERAGE may provide more clarity for the overviews._
+
+_Update 11/27/2023 - In the creation options in gdal_translate, using `SPARSE_OK=TRUE` can lead to errors when rendering the COG with certain software. To avoid these errors use `SPARSE_OK=FALSE`. See [this GitHub issue](https://github.com/GeoTIFF/georaster/issues/85) for more details._
 
 ```bash
 gdal_translate web.vrt cog_web.tif ^
@@ -102,7 +110,7 @@ gdal_translate web.vrt cog_web.tif ^
 --config GDAL_NUM_THREADS ALL_CPUS
 ```
 
-## Check your COG with the `coggeotiff` cli tool
+### Check your COG with the `coggeotiff` cli tool
 
 ```bash
 cogeotiff --info -f cog_web.tif -t
@@ -110,7 +118,7 @@ cogeotiff --info -f cog_web.tif -t
 
 ---
 
-## Generate Tiles with gdal_translate and gdaladdo
+### Generate Tiles with gdal_translate and gdaladdo
 
 [GDAL Translate Reference](https://gdal.org/programs/gdal_translate.html)
 
@@ -133,7 +141,7 @@ gdaladdo tiles.mbtiles -r average 2 4 8 16 32 64 128 256
 
 ---
 
-## Other Methods
+### Other Methods
 
 These methods create satisfactory outputs and can be faster, but can cause projection shifts. These may still be satisfactory for imagery where precise accuracy is not as important. In addition, the QGIS tool exports the rendered map, not just the raster, allowing for the creation of tiled custom basemaps.
 

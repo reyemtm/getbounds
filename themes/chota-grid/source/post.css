@@ -97,7 +97,7 @@ article.post header {
 }
 
 .post a {
-  font-weight: 600;
+  font-weight: 400;
 }
 
 .post a:not(.img):hover,
