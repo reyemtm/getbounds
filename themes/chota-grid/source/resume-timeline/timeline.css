@@ -1,0 +1,174 @@
+@import url("https://fonts.googleapis.com/css2?family=Homemade+Apple&family=Inter:wght@300&family=Major+Mono+Display&family=Montserrat+Subrayada:wght@400;700&family=Montserrat:wght@700;800&family=Palanquin+Dark:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@200;400;600;800&family=Protest+Guerrilla&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap");
+
+* {
+  font-family: "Urbanist", sans-serif;
+  color: #0f172a;
+}
+
+/* :root {
+ font-size: 10px;
+
+}  */
+
+html,
+body {
+  margin: 0;
+  height: 100%;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.resume {
+  position: relative;
+}
+
+h1 {
+  font-family: "Urbanist", sans-serif;
+  /*  font-family: "Palanquin Dark"; */
+  /*  font-weight: 400; */
+  letter-spacing: 0.75rem;
+  text-transform: uppercase;
+  font-size: 3rem;
+  margin: 2rem 2rem 0;
+  align-self: flex-start;
+}
+h2 {
+  margin: 0 2rem;
+  font-weight: 200;
+  font-size: 2.5rem;
+  align-self: flex-start;
+  letter-spacing: 0.25rem;
+}
+h3 {
+  font-weight: 300;
+  font-size: 2rem;
+  margin: 0;
+  margin-bottom: 0.25rem;
+}
+a {
+  color: inherit;
+}
+a:hover {
+  color: dodgerblue;
+  filter: brightness(0.8);
+}
+.placeholder {
+  display: none;
+}
+.resume {
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  margin: 2rem auto;
+  width: calc(11in * 1.3);
+  height: calc(8.5in * 1.3);
+  outline: solid thin lightgray;
+  box-shadow: 2px 2px 10px #aaa;
+}
+@media print {
+  .resume {
+    margin: 0 1rem;
+    box-shadow: none;
+    outline: none;
+  }
+  .hidden {
+    display: none !important;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .placeholder {
+    display: block;
+  }
+  .resume {
+    display: none;
+  }
+}
+.skills {
+  position: absolute;
+  left: 2.5rem;
+  bottom: 2.5rem;
+  outline: solid black 3px;
+  padding: 0.5rem 1rem;
+  box-shadow: rgb(255, 255, 255) 10px 10px 0px -3px, rgb(0, 0, 0) 10px 10px;
+}
+.skills p {
+  margin: 0 0 0.5rem 0;
+}
+.skills ul {
+  padding: 0 0 0 1rem;
+}
+.skills ul li {
+  margin: 0.15rem 0;
+  list-style-type: square;
+}
+
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2rem 0;
+}
+
+#timeline,
+#work {
+  width: calc(100% - 200px);
+  margin: 0 2.5rem 0 2.5rem;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+img {
+  outline: solid 2px #212121;
+}
+.resume img {
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  width: auto;
+  object-fit: cover;
+  object-position: center;
+  outline: solid 2px #212121;
+  border-radius: 0px;
+  margin: 0.3rem 0.15rem 0 0.15rem;
+  transition: transform 0.15s ease-in-out;
+}
+
+.js-preview {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  width: 400px;
+}
+.hidden img {
+  opacity: 0;
+  transition: transform 0.15s ease-in-out, opacity 0.1s ease-in-out;
+}
+
+.modal.modal-active {
+  background-color: rgba(255, 255, 255, 0.95);
+}
+footer {
+  /* color: #475569; */
+  margin: 2rem 2.5rem;
+  font-size: 0.9rem;
+  display: flex;
+  justify-content: flex-end;
+  opacity: 0.75;
+}
+/* MILSETONE */
+.milestones__group__label__text__title {
+  font-size: 0.8rem;
+}
+.milestones__group {
+  font-size: 0.8rem;
+}
+.milestones-label::after {
+  content: " ";
+  white-space: pre;
+}
