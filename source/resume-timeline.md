@@ -37,7 +37,7 @@ Leaflet, Mapbox GL JS, OpenLayers, TurfJS
    </main>
    <footer><a href="/">getBounds</a>&nbsp;| malcolm at getbounds.com</footer>
    <aside style="display:flex;justify-content:space-around;margin-top:5rem;max-width:300px;opacity:0.75;font-size: 0.8rem" class="hidden">
-    <a href="/resume-timeline/resume-timeline.pdf">View PDF</a>
+    <a href="/resume-timeline/mmeyer-resume-timeline.pdf">View PDF</a>
     <a href="/resume.html" title="Traditional Resume">Traditional Resume</a>
    </aside>
 </div>
