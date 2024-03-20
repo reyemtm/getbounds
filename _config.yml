@@ -48,6 +48,7 @@ url: "https://www.getBounds.com"
 root: /
 permalink: :category/:title/
 permalink_defaults:
+  pages: /:path/
 
 # Directory
 source_dir: source
