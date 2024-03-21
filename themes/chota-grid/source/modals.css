@@ -26,6 +26,7 @@ MODALS
   z-index: 11;
 }
 
+.modal.modal-active .modal-overlay,
 .modal.active .modal-overlay,
 .modal:target .modal-overlay {
   bottom: 0;
@@ -43,21 +44,21 @@ MODALS
   max-width: 100%;
   height: calc((100vw - 4rem) / 2 / 1.5);
   max-height: 570px;
-  border-radius:3px
+  border-radius: 3px;
 }
 
 @media screen and (max-width: 768px) {
   .modal iframe {
     width: 100%;
     height: calc(100vw / 1.5);
-    border-radius:3px
+    border-radius: 3px;
   }
 }
 
 .modal:not(picture):not(figcaption) {
   cursor: pointer;
 }
-.modal picture>img,
+.modal picture > img,
 .modal .modal-content img {
   border-radius: var(--border-radius);
   cursor: auto;

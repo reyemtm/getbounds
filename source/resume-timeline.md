@@ -13,8 +13,8 @@ permalink: /resume-timeline/index.html
   <header>
     <h1>Malcolm Meyer</h1>
     <span>
-    <h2>Geospatial Web Developer</h2>
-    <p style="margin: 0.25rem 2.5rem 0;opacity: 0.75;text-transform:uppercase;letter-spacing: 8px;">selected work</p>
+    <h2>Data Analyst & Web Developer</h2>
+    <p class="subheading">selected work</p>
     </span>
   </header>
   <aside class="js-preview hidden">
@@ -23,13 +23,13 @@ permalink: /resume-timeline/index.html
   <aside class="skills">
 
 - **Database Management**
-  SQL Server, PostgreSQL/PostGIS, SQLite
+  PostgreSQL/PostGIS, SQL Server, SQLite
 - **Desktop GIS**
-  ArcMap, ArcGIS Pro, QGIS
+  ArcMap, ArcGIS Pro, GDAL, QGIS
 - **Software Engineering**
   Docker, JavaScript, Node JS, React/NextJS
 - **Web GIS**
-Leaflet, Mapbox GL JS, OpenLayers, TurfJS
+ArcGIS Enterprise/AGOL, Leaflet, Mapbox, OpenLayers
    </aside>
    <main>
      <div id="work"></div>
@@ -44,10 +44,23 @@ Leaflet, Mapbox GL JS, OpenLayers, TurfJS
 
 <div class="modal" id="preview">
   <a class="modal-overlay" href="#close" aria-label="Close"></a>
+  <div style="max-width: 1440px;
+    margin: 0 auto;
+    position: relative;
+    width: 100%;
+    position: absolute;
+    top: 20px;
+    display: flex;
+    justify-content: flex-end;">
+    <a class="modal-close" href="#" aria-label="Close">
+      <img src="https://icongr.am/feather/x.svg?size=36&color=currentColor" alt="X" />
+    </a>
+  </div>
   <div class="modal-content">
     <picture>
-      <img src="" alt="Preview Image">
+      <img src="" alt="Preview Image" class="modal-img">
     </picture>
-    <figcaption></figcaption>
+    <div id="caption"></div>
+    <div id="caption-link"></div>
   </div>
 </div>
