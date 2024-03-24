@@ -173,6 +173,16 @@ const portfolio = [
   },
 
   {
+    cover: "/assets/timeline/4x3_timeline-gpx.png",
+    timestamp: "2018-09-01",
+    info: "This pojects uses the medium of GPS tracks to explore the linking of charts and maps. The application has a dark and light theme with custom map styles for each. The display can be exported to a an image by clicking in the upper right corner of the visualization.\n\nThe application was developed with Mapbox GL JS and Chart JS.",
+    link: "https://reyemtm.github.io/gpx-visualize/?theme=dark",
+  },
+  {
+    cover: "GPX Viewer",
+    timestamp: "2018-09-01",
+  },
+  {
     cover: "/assets/timeline/4x3_timeline-zanesville-zoning-interactive-web-map.jpg",
     timestamp: "2018-09-01",
     info: "Created to replace the traditional paper zoning map, this web map allows users to easily find zoning information for any property in the city of Zanesville. The interface won the Best Interactive Map award at the 2018 Ohio GIS Conference.\n\nThe application was developed with Mapbox GL JS, PostgreSQL, and a custom vector tile server.",
@@ -193,6 +203,16 @@ const portfolio = [
     link: "https://www2.ci.lancaster.oh.us/geoportal/apps/sewer-trace/",
   },
 
+  {
+    cover: "/assets/timeline/4x3_timeline-h3.png",
+    timestamp: "2023-02-01",
+    info: "This tool allows a user to explore H3 grid indices at various zoom levels to help determine the appropriate index for data visualization and analysis. \n\nThe tool was developed with Mapbox GL JS, h3-js and Turf JS.",
+    link: "https://h3grids.getbounds.com/#11.86/39.97106/-82.98344",
+  },
+  {
+    cover: "H3 Grids",
+    timestamp: "2023-02-01",
+  },
   {
     cover: "/assets/timeline/4x3_potockivodka.jpg",
     timestamp: "2023-02-01",
@@ -245,7 +265,7 @@ function reformatTimeline() {
   const resume = document.querySelector(".resume");
   const width = window.innerWidth;
   if (width < 1340) {
-    resume.style.transform = `scale(${width / 1360})`;
+    resume.style.transform = `scale(${width / 1380})`;
   } else {
     resume.style.transform = "scale(1)";
   }
