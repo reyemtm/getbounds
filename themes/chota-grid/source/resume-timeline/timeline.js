@@ -264,8 +264,11 @@ const workTimeline = document.querySelector("#work .milestones");
 function reformatTimeline() {
   const resume = document.querySelector(".resume");
   const width = window.innerWidth;
-  if (width < 1340) {
-    resume.style.transform = `scale(${width / 1380})`;
+  const height = window.innerHeight;
+  if (width < 1440 || height < 1100) {
+    const _scale = width / 1380;
+    const scale = _scale > 1 ? 0.95 : _scale
+    resume.style.transform = `scale(${scale})`;
   } else {
     resume.style.transform = "scale(1)";
   }
