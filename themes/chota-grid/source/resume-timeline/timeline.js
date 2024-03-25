@@ -86,7 +86,7 @@ const work = [
     title: "MA International Affairs|2005-2007",
     start_date: "2005-02-01",
     end_date: "2007",
-    employer: "Ohio Univeristy",
+    employer: "Ohio University",
   },
 ];
 
@@ -101,7 +101,7 @@ const portfolio = [
     info: "This map was part of a series of projects for my graduate research around Mexican migration to the United States. This piece in particular highlights coffee production in the southern state of Oaxaca along with household migration. The thesis was that a higher level of coffee production would lead to greater community cohesion and thus less household migration. \n\nThe map was prepared with ArcGIS Desktop.",
   },
   {
-    cover: "Mexican Coffe & Migration\nGraduate Project Final Map",
+    cover: "Mexican Coffee & Migration\nGraduate Project Final Map",
     timestamp: "2007-02-01",
   },
   {
@@ -169,13 +169,13 @@ const portfolio = [
   {
     cover: "/assets/timeline/4x3_timeline-bridge-to-bridge.png",
     timestamp: "2017-02-01",
-    info: "This map was created for Socito County for the Bridge to Bridge bike trail. It won the Best Small Format map award at the 2017 Ohio GIS Conference.\n\nThe map was prepared using ArcGIS Pro.",
+    info: "This map was created for Scioto County for the Bridge to Bridge bike trail. It won the Best Small Format map award at the 2017 Ohio GIS Conference.\n\nThe map was prepared using ArcGIS Pro.",
   },
 
   {
     cover: "/assets/timeline/4x3_timeline-gpx.png",
     timestamp: "2018-09-01",
-    info: "This pojects uses the medium of GPS tracks to explore the linking of charts and maps. The application has a dark and light theme with custom map styles for each. The display can be exported to a an image by clicking in the upper right corner of the visualization.\n\nThe application was developed with Mapbox GL JS and Chart JS.",
+    info: "This project uses the medium of GPS tracks to explore the linking of charts and maps. The application has a dark and light theme with custom map styles for each. The display can be exported to a an image by clicking in the upper right corner of the visualization.\n\nThe application was developed with Mapbox GL JS and Chart JS.",
     link: "https://reyemtm.github.io/gpx-visualize/?theme=dark",
   },
   {
