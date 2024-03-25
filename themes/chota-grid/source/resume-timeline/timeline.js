@@ -138,7 +138,7 @@ const portfolio = [
     info: "As part of my work as the Transportation Coordinator at OVRDC, I created this visualization to highlight the results of a safety study.\n\nThe map was prepared with ArcGIS Desktop and MS Office.",
   },
   {
-    cover: "Safety Study Print Template",
+    cover: "Safety Study",
     timestamp: "2016-04-01",
   },
   {
@@ -149,7 +149,7 @@ const portfolio = [
   },
 
   {
-    cover: "Savvy Web Map Award|Vehicle Crash Explorer",
+    cover: "Savvy Web Map|Vehicle Crash Explorer",
     timestamp: "2016-04-01",
   },
   {
