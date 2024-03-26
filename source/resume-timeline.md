@@ -35,7 +35,7 @@ ArcGIS Enterprise/AGOL, Leaflet, Mapbox, OpenLayers
      <div id="work"></div>
      <div id="timeline"></div>
    </main>
-   <footer><a href="/">getBounds</a>&nbsp;| malcolm at getbounds.com</footer>
+   <footer><a href="/">getBounds</a>&nbsp;| malcolm at getbounds.com |&nbsp;<a href="/connect">contact</a></footer>
    <aside style="display:flex;justify-content:space-around;margin-top:5rem;max-width:300px;opacity:0.75;font-size: 0.8rem" class="hidden">
     <a href="/resume-timeline/mmeyer-resume-timeline.pdf">View PDF</a>
     <a href="/resume.html" title="Traditional Resume">Traditional Resume</a>
