@@ -202,7 +202,16 @@ const portfolio = [
     info: "Created as an internal tool to assist with finding errors in the digitized sanitary sewer network, this web application uses a tool I built while working at the City of Zanesville that traces linear networks in the browser.\n\nThe application was developed with Mapbox GL JS and static data.",
     link: "https://www2.ci.lancaster.oh.us/geoportal/apps/sewer-trace/",
   },
-
+  {
+    cover: "Pandemix",
+    timestamp: "2021-02-01",
+  },
+  {
+    cover: "/assets/timeline/4x3_timeline-pandemix.png",
+    timestamp: "2021-02-01",
+    info: "This project was inspired by the amazing map Brazilian Lupa. It uses a dot density visualization to represent deaths in the US attributed to COVID-19, clustered in one geographic area. The populations are based on US Census Block Groups, with one dot representing 20 US deaths. All statistics are generated client-side using vector tiles and web-workers.",
+    link: "https://pandemix.getbounds.com",
+  },
   {
     cover: "/assets/timeline/4x3_timeline-h3.png",
     timestamp: "2023-02-01",
@@ -267,7 +276,7 @@ function reformatTimeline() {
   const height = window.innerHeight;
   if (width < 1440 || height < 1100) {
     const _scale = width / 1380;
-    const scale = _scale > 1 ? 0.95 : _scale
+    const scale = _scale > 1 ? 0.95 : _scale;
     resume.style.transform = `scale(${scale})`;
   } else {
     resume.style.transform = "scale(1)";
