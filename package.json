@@ -11,7 +11,7 @@
     "css": "parcel build public/style.css --dist-dir public/",
     "gen": "hexo generate",
     "clean": "hexo clean",
-    "deploy": "hexo deploy",
+    "deploy": "git add . && git commit -m 'auto-deploy' && git push",
     "serve": "hexo server -p 4001",
     "start": "node cleanCSS.js && node github && hexo server -p 4001",
     "dev": "node github && hexo server --draft",
