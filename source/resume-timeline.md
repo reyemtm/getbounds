@@ -56,11 +56,11 @@ ArcGIS Enterprise/AGOL, Leaflet, Mapbox, OpenLayers
       <img src="https://icongr.am/feather/x.svg?size=36&color=currentColor" alt="X" />
     </a>
   </div>
-  <div class="modal-content">
-    <picture>
-      <img src="" alt="Preview Image" class="modal-img">
-    </picture>
-    <div id="caption"></div>
-    <div id="caption-link"></div>
+  <div class="modal-content" style="max-height:80%;display: flex;
+    justify-content: center;
+    flex-direction: column;">
+    <img src="" alt="Preview Image" class="modal-img" style="height:100%;margin:0 auto" />
+    <div id="caption">&nbsp;</div>
+    <div id="caption-link" style="width:100%">&nbsp;</div>
   </div>
 </div>

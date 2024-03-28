@@ -173,13 +173,15 @@ const portfolio = [
   },
 
   {
-    cover: "/assets/timeline/4x3_timeline-gpx.png",
+    cover: "/assets/timeline/4x3_timeline_vacancy.png",
+    portrait: true,
     timestamp: "2018-09-01",
-    info: "This project uses the medium of GPS tracks to explore the linking of charts and maps. The application has a dark and light theme with custom map styles for each. The display can be exported to a an image by clicking in the upper right corner of the visualization.\n\nThe application was developed with Mapbox GL JS and Chart JS.",
-    link: "https://reyemtm.github.io/gpx-visualize/?theme=dark",
+    // info: "This project uses the medium of GPS tracks to explore the linking of charts and maps. The application has a dark and light theme with custom map styles for each. The display can be exported to a an image by clicking in the upper right corner of the visualization.\n\nThe application was developed with Mapbox GL JS and Chart JS.",
+    // link: "https://reyemtm.github.io/gpx-visualize/?theme=dark",
+    info: "This print map was part of a series examining ownership, vacancy, and zoning in an historic African-American community in Zanesville, OH.",
   },
   {
-    cover: "GPX Viewer",
+    cover: "Greater Putnam Project",
     timestamp: "2018-09-01",
   },
   {
@@ -351,6 +353,11 @@ imgT.onEventClick((d) => {
   );
   console.log(text);
   imgPreview.querySelector("#caption").innerText = text?.info || "";
+  if (text?.portrait) {
+    imgPreview.querySelector(".modal-img").style.width = "fit-content";
+  } else {
+    imgPreview.querySelector(".modal-img").style.width = "100%";
+  }
   if (text?.link) {
     imgPreview.querySelector(
       "#caption-link"
