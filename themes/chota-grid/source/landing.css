@@ -208,6 +208,7 @@ nav .container {
 @media screen and (min-width: 468px) {
   nav .container {
     padding: 0.5rem 2rem;
+    max-width: calc(100vw - 4.5rem);
   }
 }
 
@@ -269,7 +270,7 @@ nav.inverse-nav:not(.nav-links-mobile):not(.brand) a:hover {
   }
 }
 
-@media screen and (max-width: 468px) {
+@media screen and (max-width: 500px) {
   nav .container {
     display: block;
   }
@@ -672,13 +673,15 @@ a:active .post-card h2 {
 
 .image-grid {
   position: relative;
-  display: grid;
-  /* letter-spacing: -0.05rem; */
-  grid-template-columns: 1fr;
+  display: flex;
+  letter-spacing: -0.05rem;
+  /* grid-template-columns: 1fr; */
   gap: 1rem;
   margin: 1rem auto;
   padding: 0 1rem;
-  max-width: 1800px;
+  max-width: calc(100vw - 2rem);
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .image-grid img {
@@ -709,11 +712,13 @@ a:active .post-card h2 {
   background-repeat: no-repeat;
   background-size: contain;
   background-image: url("");
-  aspect-ratio: 5/3;
+  /* aspect-ratio: 8/7; */
+  width: calc(100% - 2rem);
 }
 
 .image-grid--image img {
   transition: all 0.25s ease-in;
+  aspect-ratio: 5/3;
 }
 
 .image-grid--image img:hover {
@@ -746,6 +751,9 @@ a:active .post-card h2 {
     grid-template-columns: 1fr 1fr;
     margin-top: 2rem;
   }
+  .image-grid--image {
+    width: calc(50% - 1rem);
+  }
   .image-grid--title {
     font-size: 1.25rem;
   }
@@ -759,12 +767,18 @@ a:active .post-card h2 {
     grid-template-columns: 1fr 1fr 1fr;
     gap: 1.25rem;
   }
+  .image-grid--image {
+    width: calc(33.333% - 1rem);
+  }
 }
 
 @media screen and (min-width: 1920px) {
   .image-grid {
     margin-top: 4rem;
     grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+  .image-grid--image {
+    width: calc(25% - 1rem);
   }
 }
 
