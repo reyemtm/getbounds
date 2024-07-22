@@ -9,6 +9,7 @@
         </h1>
         <h2 class="hero--subtitle"><%- config.tagline %></h2>
       </div>
+      <% if (config?.services) {%>
       <div id="post-preview" class="grid--card" style="background-color: var(--color-accent-light)">
         <span class="grid--icon">
           <img src="/assets/icons/grid-icons/tracking.svg" alt="Data Servers" />
@@ -18,14 +19,34 @@
           <br />
           <a href="/connect" class="grid--card-button">Connect</a>
       </div>
+      <%}else{%>
+      <div id="post-preview" class="grid--card" style="background-color: var(--color-accent-light)">
+        <h3 style="font-weight:100;font-size:1rem;opacity: 0.8;">Latest from the Blog</h3>
+        <% site.categories.sort('name').map(function(category){ %>
+          <% if(category.name == 'blog' ) { %>
+            <% category.posts.sort('date', -1).each(function(post, i) {%>
+              <% if (i < 1) {%>
+                <a href="<%- url_for(post.path)%>" style="text-decoration: none";><h3 style="margin-bottom:0.5rem"><%- post.title %></h3>
+                <span class="grid--icon">
+                  <img src="/assets/icons/grid-icons/grid-view.svg" alt="Data Servers">
+                </span>
+                <p><%- post.subtitle %></p></a>
+              <%}%>
+            <%})%>
+          <% } %>
+        <% }) %>
+      </div>
+      <%}%>
       <div id="post-mobile-preview"
         style="background-color: var(--color-accent-light); padding: 1rem; font-size: 0.8rem">
         <%- config.description %>
       </div>
+
       <!-- <br>
       <a href="/connect" style="border:solid thin white;background:transparent;padding: 0.25rem 0.5rem;color: white;text-decoration: none;cursor:pointer;margin-top:0.5rem;float:right">Connect</a> -->
     </div>
   </div>
+  <% if (config?.services) {%>
   <div id="services" class="container" style="z-index: 1">
     <!-- <h2 class="section--heading" id="projects">Services</h2> -->
     <div class="grid grid-2">
@@ -66,4 +87,5 @@
       </div>
     </div>
   </div>
+  <%}%>
 </header>

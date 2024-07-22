@@ -12,6 +12,7 @@ description_title: >-
 description: >-
   getBounds provides geospatial consulting services for data analysis and visualization, using tools such as PostgreSQL/PostGIS, Mapbox GL & MapLibre, and React/Next JS, as well as custom web development.
 twitter: getbounds
+services: false
 keywords:
   [
     "gis",
