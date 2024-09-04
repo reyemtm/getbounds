@@ -7,7 +7,7 @@ tags:
   - turf js
 categories:
   - blog
-date: 2024-12-24
+date: 2023-12-24
 canonical: https://observablehq.com/@reyemtm/finding-perpendicular-lines-with-turfjs
 img: 90degline.jpg
 excerpt: "In a recent project I needed to determine the perpendicular distance from a single point (C) to a line created by two other points (A and B)."
