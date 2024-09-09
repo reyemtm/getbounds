@@ -139,6 +139,7 @@ include:
   - _redirects
   - admin/config.yml
   - _headers
+  - _snippets
 
 #Hexo Exceprt Plugin
 excerpt:

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Geohash Map with MapLibre GL</title>
+  <link href="https://unpkg.com/maplibre-gl@2.3.0/dist/maplibre-gl.css" rel="stylesheet">
+  <style>
+    body, html { margin: 0; padding: 0; height: 100%; width: 100%; }
+    #map { position: absolute; top: 0; bottom: 0; width: 100%; }
+  </style>
+</head>
+<body>
+  <div id="map"></div>
+  <script src="https://unpkg.com/maplibre-gl@2.3.0/dist/maplibre-gl.js"></script>
+  <script src="https://unpkg.com/js-geohash@1.0.0/geohash.js"></script>
+  <script>
+    // Initialize MapLibre GL map
+    const map = new maplibregl.Map({
+      container: 'map',
+      style: {
+        "version": 8,
+        "sources": {},
+        "layers": []
+      },
+      center: [-89,32],
+      zoom: 8
+    });
+    let Geohash = geohash || null;
+    console.log(geohash)
+
+    function calculateBoundingBox(lat, lon, precision) {
+      const base32 = '0123456789bcdefghjkmnpqrstuvwxyz';
+      const bitSize = 5;
+      const maxLat = 90;
+      const maxLon = 180;
+      const minLat = -90;
+      const minLon = -180;
+      const latInterval = (maxLat - minLat) / Math.pow(2, precision * bitSize / 2);
+      const lonInterval = (maxLon - minLon) / Math.pow(2, precision * bitSize / 2);
+
+      let latMin = lat - latInterval / 2;
+      let latMax = lat + latInterval / 2;
+      let lonMin = lon - lonInterval / 2;
+      let lonMax = lon + lonInterval / 2;
+
+      return [latMin, lonMin, latMax, lonMax];
+    }
+
+    // Function to generate geohashes based on map bounds and zoom level
+    function generateGeohashes() {
+      const bounds = map.getBounds();
+      const precision = Math.max(1, Math.min(2, Math.floor(map.getZoom())));
+      const southWest = bounds.getSouthWest();
+      const northEast = bounds.getNorthEast();
+      
+      // Generating geohashes for the bounding box
+      const geohashes = [];
+      const step = 1; // This can be adjusted to control the grid density
+      for (let lat = southWest.lat; lat <= northEast.lat; lat += step) {
+        for (let lon = southWest.lng; lon <= northEast.lng; lon += step) {
+          geohashes.push(geohash.encode(lat, lon, precision));
+        }
+      }
+      console.log(geohashes)
+
+      const features = geohashes.map(hash => {
+        const [lat, lon] = Geohash.decode(hash);
+        const bbox = calculateBoundingBox(lat, lon, precision);
+        return {
+          type: 'Feature',
+          properties: { geohash: hash },
+          geometry: {
+            type: 'Polygon',
+            coordinates: [[
+              [bbox[1], bbox[0]], // [west, south]
+              [bbox[1], bbox[2]], // [west, north]
+              [bbox[3], bbox[2]], // [east, north]
+              [bbox[3], bbox[0]], // [east, south]
+              [bbox[1], bbox[0]]  // [west, south]
+            ]]
+          }
+        };
+      });
+
+      return {
+        type: 'FeatureCollection',
+        features
+      };
+    }
+
+    // Add geohashes layer
+    function updateGeohashLayer() {
+      const geojson = generateGeohashes();
+      if (map.getSource('geohashes')) {
+        map.getSource('geohashes').setData(geojson);
+      } else {
+        map.addSource('geohashes', {
+          type: 'geojson',
+          data: geojson
+        });
+
+        map.addLayer({
+          id: 'geohashes-layer',
+          type: 'line',
+          source: 'geohashes',
+          layout: {},
+          paint: {
+            'line-color': '#888',
+            'line-width': 2
+          }
+        });
+      }
+    }
+
+    map.on('load', updateGeohashLayer);
+    map.on('moveend', updateGeohashLayer);
+  </script>
+</body>
+</html>
