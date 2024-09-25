@@ -3,9 +3,9 @@ title: Snippets
 layout: snippets
 ---
 
-# Code Snippets
+# Snippets
 
-##### 2024-09-08
+## 2024-09-20
 
 ```javascript
 function example() {

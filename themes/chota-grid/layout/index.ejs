@@ -9,7 +9,7 @@
     <%}%> <% }); %> <%}%> <% var img %> <% if (post.img) {%><% img = (post.img).replace(".png",
     ".webp").replace(".jpg", ".webp")%><%}else{%><% img = (config.defaultimage).replace(".jpg",
     ".webp") %><%}%>
-    <div class="image-grid--image" style="background-image: url(/assets/img/thumb2_<%= img %>">
+    <div class="image-grid--image" style="background-image: url(/assets/img/thumbnail_<%= img %>">
       <a
         rel="prefetch"
         href="<% if (post.path) {%><%- url_for(post.path) %><%}else{%><%= post.repo %><%}%>"

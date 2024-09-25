@@ -166,9 +166,9 @@ responsive_images:
       sm:
         width: 1080
         height: 648
-      thumb2:
+      thumbnail:
         width: 100
-        height: 60
+        height: 100
       twitter_square:
         width: 960
         height: 960
