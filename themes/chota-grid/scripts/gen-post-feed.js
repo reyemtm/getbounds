@@ -7,7 +7,7 @@ hexo.extend.generator.register("postsjson", function (locals) {
     const thumbnail = image ? `${url}/assets/img/thumbnail_${image.split(".")[0]}.webp` : "";
     return {
       title: post.title,
-      subtitle: post?.subtitle || "",
+      subtitle: post?.subtitle || null,
       slug: post.slug,
       date: post.date.format("YYYY-MM-DD"),
       thumbnail,
@@ -19,6 +19,7 @@ hexo.extend.generator.register("postsjson", function (locals) {
           .substring(0, 200)
           .trim() + (post.content.length > 200 ? "..." : ""),
       url: post.permalink,
+      project_url: post?.project ? post.project[0].url : null,
     };
   });
   return {
