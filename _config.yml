@@ -153,6 +153,9 @@ responsive_images:
     withoutEnlargement: false
     quality: 90
     sizes:
+      xl:
+        width: 1800
+        height: 1200
       lg:
         width: 1440
         height:

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meyer | Heritage Map</title>
+  <link rel="stylesheet" href="./halfmoon.min.css">
+  <script src="https://kit.fontawesome.com/e222fd7f73.js" crossorigin="anonymous"></script>
+
+  <style>
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+    }
+
+    #app {
+      flex: 1;
+      display: flex;
+      background-color: transparent;
+    }
+
+    .maplibregl-popup {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+
+    @media screen and (min-width: 400px) {
+      .maplibregl-popup {
+        max-width: 320px;
+      }
+    }
+
+    .maplibregl-popup p {
+      margin: 0;
+      padding: 0;
+    }
+
+    /* when data-bs-theme=dark invert .mapblibre-canvas */
+    [data-bs-theme="dark"] .maplibregl-canvas {
+      filter: invert(1);
+    }
+
+    [data-bs-theme="dark"] .maplibregl-ctrl.maplibregl-compact-show {
+      filter: invert(1);
+    }
+
+    [data-bs-theme="dark"] .maplibregl-popup {
+      color: black;
+    }
+  </style>
+</head>
+
+<body>
+
+  <body class="ps-xxl-sbwidth">
+    <!-- Sidebar -->
+    <nav class="sidebar offcanvas-start offcanvas-xxl" tabindex="-1" id="sidebar">
+      <div class="offcanvas-header border-bottom border-secondary border-opacity-25 d-flex"
+        style="justify-content: space-between;">
+        <a class="sidebar-brand" href="#">
+          <!-- <img src="..." alt="Logo" width="24" height="24" class="d-inline-block align-text-top"> -->
+          Heritage Map
+        </a>
+        <button type="button" class="btn-close js-sidebar-toggle d-xxl-none" data-bs-dismiss="offcanvas"
+          aria-label="Close" data-bs-target="#sidebar"></button>
+        <button type="button" class="btn btn-secondary btn-square d-none d-lg-inline-block"
+          aria-label="Toggle dark mode" id="theme-toggle">
+          <i class="fa-solid fa-moon" aria-hidden="true"></i>
+        </button>
+      </div>
+      <div class="offcanvas-body">
+        <div class="mt-2 mb-3">
+          <input type="text" class="form-control" placeholder="Search">
+        </div>
+        <div class="list-group" id="generation-filter">
+        </div>
+        <!-- <ul class="sidebar-nav">
+          <li>
+            <h6 class="sidebar-header">Getting started</h6>
+          </li>
+          <li>
+            <hr class="sidebar-divider">
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="#" aria-current="page">Installation</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">CLI commands</a>
+          </li>
+          <li class="mt-3">
+            <h6 class="sidebar-header">Components</h6>
+          </li>
+          <li>
+            <hr class="sidebar-divider">
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">File explorer</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Spreadsheet</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Maps</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Messenger</a>
+          </li>
+        </ul> -->
+      </div>
+    </nav>
+
+    <!-- Sidebar toggle -->
+    <button type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebar"
+      class="btn btn-secondary d-xxl-none js-sidebar-toggle" style="width:32px;position: absolute;z-index:1">
+      <i class="fa-light fa-sidebar me-1"></i>
+    </button>
+
+    <div id="app">
+      <div class="d-flex justify-content-center align-items-center" style="z-index:1;flex:1;align-items:center"
+        id="spinner">
+        <div class="spinner-grow text-primary specific-w-50 specific-h-50" role="status">
+          <span class="visually-hidden"></span>
+        </div>
+      </div>
+    </div>
+  </body>
+
+  <script type="module" src="./app.js"></script>
+</body>
+
+</html>

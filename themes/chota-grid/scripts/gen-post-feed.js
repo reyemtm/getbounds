@@ -8,7 +8,6 @@ hexo.extend.generator.register("postsjson", function (locals) {
     return {
       title: post.title,
       subtitle: post?.subtitle || null,
-      slug: post.slug,
       date: post.date.format("YYYY-MM-DD"),
       thumbnail,
       img,
