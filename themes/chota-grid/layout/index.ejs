@@ -1,64 +1,77 @@
 <%- partial('_partial/hero') %>
-<main>
-  <div class="image-grid" id="projects">
-    <% var alldata = [] %> <% site.data.repos.forEach(post => { %> <% alldata.push(post) %> <% }) %>
-    <% site.posts.forEach(post => { %> <% alldata.push(post) %> <% }) %> <% alldata.sort(function(a,
-    b) { return new Date(b.date) - new Date(a.date); }).map(function(post) {%> <% if (post.subtitle)
-    { %> <% var cat %> <% if (post.categories && post.categories.length > 0) { %> <%
-    post.categories.forEach(function(category,i) { %> <% if (i < 1) {%> <% cat = category.name %>
-    <%}%> <% }); %> <%}%> <% var img %> <% if (post.img) {%><% img = (post.img).replace(".png",
-    ".webp").replace(".jpg", ".webp")%><%}else{%><% img = (config.defaultimage).replace(".jpg",
-    ".webp") %><%}%>
-    <div class="image-grid--image" style="background-image: url(/assets/img/thumbnail_<%= img %>">
-      <a
-        rel="prefetch"
-        href="<% if (post.path) {%><%- url_for(post.path) %><%}else{%><%= post.repo %><%}%>"
-        style="text-decoration: none"
-      >
-        <img
-          src="/assets/img/sm_<%= img %>"
-          alt="<%= post.title %>"
-          style="width: 100%"
-          loading="lazy"
-        />
-        <div class="image-grid--caption">
-          <div class="image-grid--title"><%= post.title %></div>
-          <span class="image-grid--subtitle"><%= post.subtitle %></span>
-        </div>
-      </a>
-      <a
-        href="<% if (cat === 'GitHub') {%>https://github.com/reyemtm<%}else{%><%= cat %><%}%>"
-        class="tag card-tag-link"
-        ><%= cat %></a
-      >
+  <main>
+    <div class="image-grid" id="projects">
+      <% var alldata=[] %>
+        <% site.data.repos.forEach(post=> { %> <% alldata.push(post) %>
+            <% }) %>
+              <% site.posts.forEach(post=> { %> <% alldata.push(post) %>
+                  <% }) %>
+                    <% alldata.sort(function(a, b) { return new Date(b.date) - new Date(a.date); }).map(function(post)
+                      {%>
+                      <% if (post.subtitle) { %>
+                        <% var cat %>
+                          <% if (post.categories && post.categories.length> 0) { %> <%
+                              post.categories.forEach(function(category,i) { %>
+                              <% if (i < 1) {%>
+                                <% cat=category.name %>
+                                  <%}%>
+                                    <% }); %>
+                                      <%}%>
+                                        <% var img %>
+                                          <% if (post.img) {%>
+                                            <% img=(post.img).replace(".png", ".webp" ).replace(".jpg", ".webp" )%>
+                                              <%}else{%>
+                                                <% img=(config.defaultimage).replace(".jpg", ".webp" ) %>
+                                                  <%}%>
+                                                    <div class="image-grid--image">
+                                                      <a rel="prefetch"
+                                                        href="<% if (post.path) {%><%- url_for(post.path) %><%}else{%><%= post.repo %><%}%>"
+                                                        style="text-decoration: none">
+                                                        <img src="/assets/img/sm_<%= img %>" alt="<%= post.title %>"
+                                                          style="width: 100%;background-image: url(/assets/img/blurred_<%= img %>);background-repeat:no-repeat;background-size:cover;"
+                                                          loading="lazy" />
+                                                        <div class="image-grid--caption">
+                                                          <div class="image-grid--title">
+                                                            <%= post.title %>
+                                                          </div>
+                                                          <span class="image-grid--subtitle">
+                                                            <%= post.subtitle %>
+                                                          </span>
+                                                        </div>
+                                                      </a>
+                                                      <a href="<% if (cat === 'GitHub') {%>https://github.com/reyemtm<%}else{%><%= cat %><%}%>"
+                                                        class="tag card-tag-link">
+                                                        <%= cat %>
+                                                      </a>
+                                                    </div>
+                                                    <%}%>
+                                                      <%})%>
     </div>
-    <%}%> <%})%>
-  </div>
-</main>
-<%- partial('_partial/contact')%>
+  </main>
+  <%- partial('_partial/contact')%>
 
-<script>
-  document.onreadystatechange = function () {
-    if (document.readyState === "complete") {
-      var images = document.querySelectorAll(".image-grid--image");
-      images.forEach(function (image) {
-        image.style.backgroundImage = "none";
-      });
-    }
-    //   var css = [];
-    //   for (var i = 0; i < document.styleSheets.length; i++) {
-    //     var sheet = document.styleSheets[i];
-    //     var rules = "cssRules" in sheet ? sheet.cssRules : sheet.rules;
-    //     if (rules) {
-    //       css.push("\n/* Stylesheet : " + (sheet.href || "[inline styles]") + " */");
-    //       for (var j = 0; j < rules.length; j++) {
-    //         var rule = rules[j];
-    //         if ("cssText" in rule) css.push(rule.cssText);
-    //         else css.push(rule.selectorText + " {\n" + rule.style.cssText + "\n}\n");
-    //       }
-    //     }
-    //   }
-    //   var cssInline = css.join("\n") + "\n";
-    //   console.log(cssInline);
-  };
-</script>
+    <script>
+      document.onreadystatechange = function () {
+        if (document.readyState === "complete") {
+          var images = document.querySelectorAll(".image-grid--image");
+          // images.forEach(function (image) {
+          //   image.style.backgroundImage = "none";
+          // });
+        }
+        //   var css = [];
+        //   for (var i = 0; i < document.styleSheets.length; i++) {
+        //     var sheet = document.styleSheets[i];
+        //     var rules = "cssRules" in sheet ? sheet.cssRules : sheet.rules;
+        //     if (rules) {
+        //       css.push("\n/* Stylesheet : " + (sheet.href || "[inline styles]") + " */");
+        //       for (var j = 0; j < rules.length; j++) {
+        //         var rule = rules[j];
+        //         if ("cssText" in rule) css.push(rule.cssText);
+        //         else css.push(rule.selectorText + " {\n" + rule.style.cssText + "\n}\n");
+        //       }
+        //     }
+        //   }
+        //   var cssInline = css.join("\n") + "\n";
+        //   console.log(cssInline);
+      };
+    </script>

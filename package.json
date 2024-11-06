@@ -8,7 +8,7 @@
   "scripts": {
     "build": "node cleanCSS.js && node github && hexo clean && hexo generate",
     "build:watch": "node github && hexo clean && hexo generate --watch",
-    "css": "parcel build public/style.css --dist-dir public/",
+    "css": "node cleanCSS.js",
     "gen": "hexo generate",
     "clean": "hexo clean",
     "deploy": "git add . && git commit -m 'auto-deploy' && git push",

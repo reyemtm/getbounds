@@ -172,6 +172,9 @@ responsive_images:
       thumbnail:
         width: 100
         height: 100
+      blurred:
+        width: 20
+        height: 20
       twitter_square:
         width: 960
         height: 960

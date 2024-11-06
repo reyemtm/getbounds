@@ -918,6 +918,10 @@ section .blog {
   filter: drop-shadow(2px 4px 8px rgba(0, 0, 0, 0.2));
 }
 
+pre {
+  margin: 0.5em 0;
+}
+
 code {
   background: #1c1b1b14;
   color: var(--color-accent-dark);
@@ -935,6 +939,10 @@ pre code {
   border-radius: var(--border-radius);
   margin-bottom: 2rem;
   width: calc(100% - 2rem);
+}
+
+.post .highlight table {
+  padding: 0.5rem;
 }
 
 /* FORMS */

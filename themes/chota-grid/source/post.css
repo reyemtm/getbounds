@@ -135,6 +135,30 @@ article.post header {
   max-width: 100%;
 }
 
+.post img.wide {
+  width: 100%;
+  max-width: 100vw;
+  object-fit: cover;
+  object-position: center;
+}
+@media screen and (min-width: 1080px) {
+  .post img.wide {
+    margin-left: -100px;
+    width: calc(100% + 200px);
+  }
+}
+
+.post .side-by-side {
+  display: flex;
+  gap: 1rem;
+}
+.post .side-by-side p {
+  max-width: calc(100% - 0.5rem);
+}
+.post .side-by-side img {
+  height: 100%;
+}
+
 .post em:not(strong) {
   font-size: smaller;
   opacity: 0.8;
