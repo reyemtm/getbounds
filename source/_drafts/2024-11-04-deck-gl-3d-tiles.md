@@ -12,7 +12,7 @@ img: deckgl-tiles.jpg
 
 <figure>
 <img id="fig-1" class="wide" src="https://www.getBounds.com/assets/img/lg_deckgl-tiles.webp" alt="Deck GL and 3D Tiles" style="height:400px;margin-bottom:2rem;cursor:pointer" tabindex="0"/>
-<iframe src="https://getbounds.com/apps/deckgl-3dtiles" width="100%" height="500px" style="display:none"></iframe>
+<iframe src="/apps/deckgl-3dtiles" width="100%" height="500px" style="display:none"></iframe>
 <figcaption>Click the image to view the 3D visualization.</figcaption>
 </figure>
 
