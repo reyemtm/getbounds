@@ -3,7 +3,7 @@
   "version": "3.0.0",
   "private": true,
   "hexo": {
-    "version": "6.0.0"
+    "version": "6.3.0"
   },
   "scripts": {
     "build": "node cleanCSS.js && node github && hexo clean && hexo generate",
@@ -14,7 +14,7 @@
     "deploy": "git add . && git commit -m 'auto-deploy' && git push",
     "serve": "hexo server -p 4001",
     "start": "node cleanCSS.js && node github && hexo server -p 4001",
-    "dev": "node github && hexo server --draft",
+    "dev": "node cleanCSS.js && node github && hexo server --draft",
     "drafts": "hexo generate --draft --watch & live-server --port=4000 public",
     "avif": "avif --input='public/assets/img/*.{jpg, png}' --speed=0 --quality=80"
   },
@@ -23,7 +23,7 @@
     "bluebird": "^3.7.2",
     "chota": "^0.8.0",
     "csso": "^5.0.5",
-    "hexo": "^6.0.0",
+    "hexo": "^6.3.0",
     "hexo-admin": "^2.3.0",
     "hexo-excerpt": "^1.2.1",
     "hexo-generator-archive": "^1.0.0",

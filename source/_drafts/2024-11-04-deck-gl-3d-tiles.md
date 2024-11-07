@@ -10,9 +10,20 @@ date: 2024-11-04
 img: deckgl-tiles.jpg 
 ---
 
-<img class="wide" src="https://www.getBounds.com/assets/img/lg_deckgl-tiles.webp" alt="Deck GL and 3D Tiles" style="height:400px;margin-bottom:2rem" />
+<figure>
+<img id="fig-1" class="wide" src="https://www.getBounds.com/assets/img/lg_deckgl-tiles.webp" alt="Deck GL and 3D Tiles" style="height:400px;margin-bottom:2rem;cursor:pointer" tabindex="0"/>
+<iframe src="https://getbounds.com/apps/deckgl-3dtiles" width="100%" height="500px" style="display:none"></iframe>
+<figcaption>Click the image to view the 3D visualization.</figcaption>
+</figure>
 
-<!-- <iframe src="https://getbounds.com/apps/deckgl-3dtiles" width="100%" height="600px"> -->
+<script>
+document.getElementById('fig-1').addEventListener('click', function(e) {
+  e.preventDefault();
+  e.target.style.display = 'none';  
+  document.querySelector('iframe').style.display = 'block';
+});
+</script>
+
 
 This post walks you through the process of creating colorized 3D Tiles suitable for displaying on a web map from LiDAR and ortho imagery. For this example we will use LiDAR from the [Elevation Source Data (3DEP) - Lidar, IfSAR](https://github.com/mfbonfigli/gocesiumtiler) dataset, high-resolution ortho imagery from [Ohio's open imagery program](https://gis1.oit.ohio.gov/geodatadownload/), and the command-line geospatial tools pdal, gdal, and gocesiumtiler.
 
@@ -58,13 +69,19 @@ Next we need to download the data. In this example we will use data for the Ohio
 
 *For simplicity we will rename the laz file to input.laz and the tiff file to ortho.tif.*
 
+```sh
+mv USGS_LPC_OH_Columbus_2019_B19_BS822728.laz input.laz
+unzip S1820725.zip
+mv S1820725.tif ortho.tif && mv S1820725.tfw ortho.tfw && mv S1820725.tif.xml ortho.tif.xml
+```
+
 In order to ensure the imagery will color the lidar correctly, we need to verify the EPSG code for each dataset. For the LiDAR data, we can use PDAL:
 
 ```sh
 pdal info --metadata input.laz
 ```
 
-This will export a large amount of metadata about the LAS file, but in this case we are interested in the cartesion coordinate system. 
+This will export a large amount of metadata about the LAS file, but in this case we are interested only in the cartesion coordinate system. 
 
 ```
 ...
@@ -74,7 +91,7 @@ This will export a large amount of metadata about the LAS file, but in this case
   }
 ```
 
-To check the EPSG code of your orthoimage (TIFF file), use `gdalinfo`:
+Assuming we have gdal installed, we can check the EPSG code of the orthoimage (TIFF file), using `gdalinfo`:
 
 ```sh
 gdalinfo ortho.tif
@@ -92,9 +109,9 @@ gdalinfo ortho.tif
     ID["EPSG",6551]
 ```
 
-In this instance the two coordinate systems are very close - which can be verified by overlaying the two in QGIS and checking if there are any discrepancies when using the default transformation, if any.
+In this instance the two coordinate systems are very close - which can be verified by overlaying the two in QGIS and checking if there are any discrepancies when using the default transformation, or see if there are any transformations present at all.
 
-Next, we need to create a pipeline to colorize the LiDAR data, convert it to Web Mercator, and force it into LAS version 1.3. To do this, create a PDAL pipeline JSON file with the following content:
+Now that we know our two datasets will align in the same coordinate system, we need to create out PDAL pipeline file to colorize the point cloud, and transform it into Web Mercator. We will also force the las file into version 1.3 so it is compatible with gocesiumtiler. To do this, create a PDAL pipeline JSON file with the following content:
 
 ```json
 {
@@ -124,13 +141,13 @@ Next, we need to create a pipeline to colorize the LiDAR data, convert it to Web
       "minor_version": 3,
       "dataformat_id": 3,
       "discard_high_return_numbers": true,
-      "filename": "output_lidar_data_3857.las"
+      "filename": "output.las"
     }
   ]
 }
 ```
 
-Save this as `pipeline.json`. Then run the pipeline with PDAL:
+Save this as `pipeline.json`, then run the pipeline with PDAL:
 
 ```sh
 pdal pipeline pipeline.json
@@ -164,30 +181,43 @@ pdal info input.laz --stats
 Look for the minimum value under the `Z` dimension in the output. Use this value to clamp the tiles to the ground under the `-z` flag:
 
 ```sh
-./gocesiumtiler file -out ./cesium-tiles -epsg 3857 -r 1 -z -663 -d 20 -m 5000 ./input.las
+./gocesiumtiler file -out ./cesium-tiles -epsg 3857 -r 1 -z -663 -d 20 -m 5000 --8-bit ./output.las
 ```
 
-The resulting 3D tiles can be viewed in a Mapbox or MapLibre map using the `deck.gl` library and the MapboxOverlay. The following code snippet demonstrates how to load the 3D tiles into a deck.gl layer:
+*The --8-bit flag reads the colors in 8bit color space, which you may omit depending on your data sources.*
+
+The following code snippet demonstrates how to load the 3D tiles into a deck.gl layer:
 
 ```javascript
-import {Deck} from '@deck.gl/core';
-import {MapboxOverlay} from '@deck.gl/mapbox';
-import {Tile3DLayer} from '@deck.gl/geo-layers';
+import { Deck } from "@deck.gl/core";
+import { Tile3DLayer } from "@deck.gl/geo-layers";
+import { Tiles3DLoader } from "@loaders.gl/3d-tiles";
 
-const deck = new Deck({
-  map: new MapboxOverlay({
-    style: 'mapbox://styles/mapbox/light-v10',
-    accessToken
-  }),
+new Deck({
+  initialViewState: {
+    longitude: -83.0195,
+    latitude: 40.002,
+    zoom: 17,
+    pitch: 50,
+    bearing: -30,
+  },
+  container: "map",
+  controller: true,
   layers: [
     new Tile3DLayer({
-      data: 'https://example.com/cesium-tiles/tileset.json',
-      loader: 'cesium',
+      data: "./cesium-tiles/tileset.json",
       onTilesetLoad: (tileset) => {
         console.log(tileset);
-      }
-    })
-  ] 
+      },
+      loaders: [Tiles3DLoader],
+    }),
+  ],
 });
 ```
+
+Here is the final result:
+
+![OSU Stadium 3D Tiles](/assets/img/deckgl-tiles-color.jpg)
+
+
 

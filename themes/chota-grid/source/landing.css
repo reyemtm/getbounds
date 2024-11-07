@@ -772,9 +772,8 @@ a:active .post-card h2 {
   }
 }
 
-@media screen and (min-width: 1920px) {
+@media screen and (min-width: 1440px) {
   .image-grid {
-    margin-top: 4rem;
     grid-template-columns: 1fr 1fr 1fr 1fr;
   }
   .image-grid--image {
@@ -782,9 +781,10 @@ a:active .post-card h2 {
   }
 }
 
-@media screen and (min-width: 2100px) {
+@media screen and (min-width: 1820px) {
   .image-grid {
-    max-width: 2000px;
+    /* margin-top: 4rem; */
+    max-width: 1800px;
   }
 }
 
