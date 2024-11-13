@@ -8,6 +8,7 @@ categories:
   - blog
 date: 2024-11-04
 img: deckgl-tiles.jpg 
+description: Generate Colorized 3D Tiles from LiDAR and Ortho Imagery
 ---
 
 <figure>
