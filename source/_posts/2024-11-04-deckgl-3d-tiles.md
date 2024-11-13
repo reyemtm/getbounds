@@ -11,20 +11,9 @@ img: deckgl-tiles.jpg
 ---
 
 <figure>
-<img id="fig-1" class="wide" src="https://www.getBounds.com/assets/img/lg_deckgl-tiles.webp" alt="Deck GL and 3D Tiles" style="height:400px;margin-bottom:2rem;cursor:pointer" tabindex="0"/>
-<iframe src="/apps/deckgl-3dtiles" width="100%" height="500px" style="display:none"></iframe>
-<figcaption id="fig-cap" style="margin-top:-2rem">Click the image to view the 3D visualization.</figcaption>
+  <img id="fig-1" class="wide" src="https://www.getBounds.com/assets/img/lg_deckgl-tiles.webp" alt="Deck GL and 3D Tiles" style="height:400px;margin-bottom:2rem;cursor:pointer" tabindex="0"/>
+  <figcaption id="fig-cap" style="margin-top:-2rem">Click <a href="https://www.getbounds.com/apps/deckgl-3dtiles" target="_blank">here</a> to view the 3D visualization.</figcaption>
 </figure>
-
-<script>
-document.getElementById('fig-1').addEventListener('click', function(e) {
-  e.preventDefault();
-  e.target.style.display = 'none';  
-  document.querySelector('#fig-cap').style.display = 'none';
-  document.querySelector('iframe').style.display = 'block';
-});
-</script>
-
 
 This post walks you through the process of creating colorized 3D Tiles suitable for displaying on a web map from LiDAR and ortho imagery. For this example we will use LiDAR from the [Elevation Source Data (3DEP) - Lidar, IfSAR](https://apps.nationalmap.gov/downloader/) dataset, high-resolution ortho imagery from [Ohio's open imagery program](https://gis1.oit.ohio.gov/geodatadownload/), and the command-line geospatial tools [pdal](https://pdal.io/), [gdal](https://gdal.org/en/latest/), and [gocesiumtiler](https://github.com/mfbonfigli/gocesiumtiler).
 
