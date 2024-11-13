@@ -498,6 +498,11 @@ a.btn:hover,
   -moz-text-fill-color: transparent;
 }
 
+#post-preview {
+  border: solid thin white;
+  border-color: var(--color-muted);
+}
+
 #post-mobile-preview {
   display: none;
 }
@@ -931,6 +936,7 @@ code {
 }
 pre code {
   padding: 0;
+  font-size: 0.75rem;
 }
 
 .code article {
@@ -942,7 +948,7 @@ pre code {
 }
 
 .post .highlight table {
-  padding: 0.5rem;
+  padding: 0 0.5rem;
 }
 
 /* FORMS */

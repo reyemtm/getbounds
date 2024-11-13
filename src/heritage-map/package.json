@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "rm dist.zip && npx vite build && zip -vr dist.zip dist/ -x '*.DS_Store' "
   },
   "keywords": [],
   "author": "",

@@ -13,22 +13,23 @@ img: deckgl-tiles.jpg
 <figure>
 <img id="fig-1" class="wide" src="https://www.getBounds.com/assets/img/lg_deckgl-tiles.webp" alt="Deck GL and 3D Tiles" style="height:400px;margin-bottom:2rem;cursor:pointer" tabindex="0"/>
 <iframe src="/apps/deckgl-3dtiles" width="100%" height="500px" style="display:none"></iframe>
-<figcaption>Click the image to view the 3D visualization.</figcaption>
+<figcaption id="fig-cap" style="margin-top:-2rem">Click the image to view the 3D visualization.</figcaption>
 </figure>
 
 <script>
 document.getElementById('fig-1').addEventListener('click', function(e) {
   e.preventDefault();
   e.target.style.display = 'none';  
+  document.querySelector('#fig-cap').style.display = 'none';
   document.querySelector('iframe').style.display = 'block';
 });
 </script>
 
 
-This post walks you through the process of creating colorized 3D Tiles suitable for displaying on a web map from LiDAR and ortho imagery. For this example we will use LiDAR from the [Elevation Source Data (3DEP) - Lidar, IfSAR](https://github.com/mfbonfigli/gocesiumtiler) dataset, high-resolution ortho imagery from [Ohio's open imagery program](https://gis1.oit.ohio.gov/geodatadownload/), and the command-line geospatial tools pdal, gdal, and gocesiumtiler.
+This post walks you through the process of creating colorized 3D Tiles suitable for displaying on a web map from LiDAR and ortho imagery. For this example we will use LiDAR from the [Elevation Source Data (3DEP) - Lidar, IfSAR](https://apps.nationalmap.gov/downloader/) dataset, high-resolution ortho imagery from [Ohio's open imagery program](https://gis1.oit.ohio.gov/geodatadownload/), and the command-line geospatial tools [pdal](https://pdal.io/), [gdal](https://gdal.org/en/latest/), and [gocesiumtiler](https://github.com/mfbonfigli/gocesiumtiler).
 
 To get started, download and install PDAL and gocesiumtiler:
-*Instructions for macOS, for other operating systems please refer to the respective documentation.*
+*Instructions for macOS, for other operating systems refer to the respective documentation.*
 
 1. **PDAL Installation:**
    - Open Terminal and install PDAL using Homebrew:
@@ -56,7 +57,7 @@ To get started, download and install PDAL and gocesiumtiler:
 
 Next we need to download the data. In this example we will use data for the Ohio Buckeye's famous stadium.
 
-- [OSU LiDAR](https://rockyweb.usgs.gov/vdelivery/Datasets/Staged/Elevation/LPC/Projects/OH_Columbus_2019_B19/OH_Columbus_2019/LAZ/USGS_LPC_OH_Columbus_2019_B19_BS822728.laz)
+- [OSU Stadium LiDAR](https://rockyweb.usgs.gov/vdelivery/Datasets/Staged/Elevation/LPC/Projects/OH_Columbus_2019_B19/OH_Columbus_2019/LAZ/USGS_LPC_OH_Columbus_2019_B19_BS822728.laz)
 - [OSU Stadium TIFF](https://gis1.oit.ohio.gov/ZIPARCHIVES_III/IMAGERY/1FTGEOTIFF/_ENHANCED/FRA_2024/S1820725.zip)
 
 <div class="side-by-side">
@@ -67,7 +68,7 @@ Next we need to download the data. In this example we will use data for the Ohio
 
 </div>
 
-*For simplicity we will rename the laz file to input.laz and the tiff file to ortho.tif.*
+For simplicity we will rename the laz file to `input.laz` and the tiff file to `ortho.tif`.
 
 ```sh
 mv USGS_LPC_OH_Columbus_2019_B19_BS822728.laz input.laz
@@ -111,7 +112,7 @@ gdalinfo ortho.tif
 
 In this instance the two coordinate systems are very close - which can be verified by overlaying the two in QGIS and checking if there are any discrepancies when using the default transformation, or see if there are any transformations present at all.
 
-Now that we know our two datasets will align in the same coordinate system, we need to create out PDAL pipeline file to colorize the point cloud, and transform it into Web Mercator. We will also force the las file into version 1.3 so it is compatible with gocesiumtiler. To do this, create a PDAL pipeline JSON file with the following content:
+Now that we know our two datasets will align in the same coordinate system, we need to create a PDAL pipeline file to colorize the point cloud and transform it into Web Mercator. We will also force the las file into version 1.3 so it is compatible with gocesiumtiler. To do this, create a PDAL pipeline JSON file with the following content:
 
 ```json
 {
@@ -159,7 +160,7 @@ Now that we have the colorized LiDAR data in Web Mercator, we can use gocesiumti
 ./gocesiumtiler file -out ./cesium-tiles -epsg 3857 -r 1 -z 0 -d 20 -m 5000 ./input.las
 ```
 
-To clamp the tiles to the ground, retrieve the minimum elevation value using PDAL:
+To clamp the tiles to the ground, retrieve the minimum elevation from the las file using PDAL:
 
 ```sh
 pdal info input.laz --stats
@@ -178,15 +179,15 @@ pdal info input.laz --stats
 },
 ```
 
-Look for the minimum value under the `Z` dimension in the output. Use this value to clamp the tiles to the ground under the `-z` flag:
+Look for the minimum value under the `Z` dimension in the output. Use this value to clamp the tiles to the ground using the `-z` flag:
 
 ```sh
 ./gocesiumtiler file -out ./cesium-tiles -epsg 3857 -r 1 -z -663 -d 20 -m 5000 --8-bit ./output.las
 ```
 
-*The --8-bit flag reads the colors in 8bit color space, which you may omit depending on your data sources.*
+*The --8-bit flag reads the colors in 8bit color space, which you may omit depending on your data sources. For all options see the documentation.*
 
-The following code snippet demonstrates how to load the 3D tiles into a deck.gl layer:
+Finally, now that we have our 3D TIles, we can load them into a web map. The following code snippet demonstrates how to view the 3D tiles with deck.gl:
 
 ```javascript
 import { Deck } from "@deck.gl/core";

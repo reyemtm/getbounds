@@ -2373,9 +2373,9 @@ map.on("load", async function () {
         <p>Birth Place: ${props?.born_city ?? "Unknown"}, ${props?.born_state ?? "Unknown"}${
           props?.born_region ? `, ${props.born_region}` : ""
         }, ${props?.born_country ?? "Unknown"}</p>
-        <p>Resting Place: ${props?.died_died_city ?? "Unknown"}, ${
-          props?._died_state ?? "Unknown"
-        }, ${props?.died_country ?? "Unknown"}</p>`
+        <p>Resting Place: ${props?.died_city ?? "Unknown"}, ${props?.died_state ?? "Unknown"}, ${
+          props?.died_country ?? "Unknown"
+        }</p>`
       )
       .on("close", function () {
         map.setFilter("lines_highlight", ["==", "id", ""]);
