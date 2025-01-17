@@ -1,4 +1,5 @@
 const fs = require("fs");
+const fetch = require("node-fetch");
 class Repo {
   constructor(data) {
     this.name = data.name;
