@@ -40,7 +40,7 @@
     "hexo-util": "^2.5.0",
     "lodash.assign": "^4.2.0",
     "micromatch": "^4.0.4",
-    "node-fetch": "^3.3.2",
+    "node-fetch": "^2.7.0",
     "nunjucks": "^3.2.3",
     "parcel": "^2.2.1",
     "postcss": "^8.4.5",
