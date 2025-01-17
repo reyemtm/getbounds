@@ -13,7 +13,7 @@ style: >-
   }
 ---
 
-Inspired by [this post](https://www.linkedin.com/pulse/when-our-community-burned-where-satellite-information-pag%C3%A1n-phd-8rxwf/) on LinkedIn from Brianna R. Pagán, Ph.D., in which she describes the lack of available real-time satellite data during the 2025 Palisades Fire, I wanted to see what types of satellite data were available now, several days into the disaster. By January 16th, 2025, nine days after the start of the fire, data from several providers was made available, including Sentinel-2, Umbra, and Maxar.
+Inspired by [this post](https://www.linkedin.com/pulse/when-our-community-burned-where-satellite-information-pag%C3%A1n-phd-8rxwf/) on LinkedIn from Brianna R. Pagán, Ph.D., in which she describes the lack of available real-time satellite data during the 2025 Palisades Fire, I wanted to see what types of satellite data were available now, several days into the disaster. By January 16th, 2025, nine days after the start of the fire, data from several providers had been made available, including Sentinel-2, Umbra, and Maxar.
 
 <iframe src="/apps/fire-swipe-map/?version=open" height="600"></iframe>
 <figcaption style="margin:-1rem 0 1rem 0">Click on the visualization to interact with the map.</figcaption>
@@ -34,7 +34,7 @@ Using this higher-resolution data, we can easily make out damage to individual s
 
 Additionally, with the SAR image, you can see that the projection is slightly off, potentially due to the [slant effect](https://natural-resources.canada.ca/maps-tools-and-publications/satellite-imagery-elevation-data-and-air-photos/tutorial-fundamentals-remote-sensing/microwave-remote-sensing/radar-image-distortions/9325) of the SAR method. This is my first time working with SAR data, so it's not clear if the shift can be corrected with information from the metadata or if this is a limitation of the data itself. More information on Umbra deliverables can be found in the [Canopy Documentation](https://docs.canopy.umbra.space/docs/introduction).
 
-Finall, while you can task these commercial satellites multiple times per day, and in the case of Umbra they can even give usable results even through cloud-cover, to cover an area as large as the Palisades Fire the cost could would be significant - in the thousands to hundreds of thousands of dollars depending on the area and resolution.
+Finall, while you can task these commercial satellites multiple times per day, and in the case of Umbra they can give usable results even through cloud-cover, to cover an area as large as the Palisades Fire the cost could would be significant - in the thousands to hundreds of thousands of dollars depending on the area and resolution.
 
 ## How I Built It
 
