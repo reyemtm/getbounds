@@ -49,9 +49,9 @@ To create the first map above, I used data from the Sentinel-2 satellite constel
 ```
 <figcaption style="margin: -0.5rem 0 1rem 0">Excerpt from the Sentinel-2 image metadata</figcaption>
 
-Thanks to [Geomatica](https://github.com/geomatico/maplibre-cog-protocol) and [geotiff.js](https://geotiffjs.github.io/), we can add a cloud-optimized GeoTIFF directly into a MapLibre map. However, before we can use the Sentinel-2 imagery, we first need to convert it into a compatible compression format. The default compression used in the Sentinel-2 visual GeoTIFF imagery is `DEFLATE`, which is not supported by the browser. To convert the GeoTIFF into a compatible format, we can use `gdal_translate` from [GDAL](https://gdal.org/). For this visualization, I used a version of the script from my [previous blog post](https://www.getbounds.com/blog/generating-cloud-optimized-geotiffs-and-raster-tiles-with-gdal/) on how to create cloud-optimized GeoTIFFs.
+Thanks to [Geomatica](https://github.com/geomatico/maplibre-cog-protocol) and [geotiff.js](https://geotiffjs.github.io/), we can add a cloud-optimized GeoTIFF directly into a MapLibre map. However, before we can use the Sentinel-2 imagery, we first need to convert it into a compatible compression format. The default compression used in the Sentinel-2 visual GeoTIFF imagery is `DEFLATE`, which is not supported by the browser. To convert the GeoTIFF into a compatible format, we can use `gdal_translate` from [GDAL](https://gdal.org/). For this visualization, I used a version of the script from my [previous blog post](https://www.getbounds.com/blog/generating-cloud-optimized-geotiffs-and-raster-tiles-with-gdal/) on how to create cloud-optimized GeoTIFFs. After the conversion, I uploaded the GeoTIFFs to Cloudflare since the plugin allows for reading directly from object storage.
 
-Once the images are converted, we can simply load them into the map and enable the swipe effect using the [MapLibre Swipe Plugin](https://github.com/maplibre/maplibre-gl-compare).
+Once the images are converted, we can simply load them into the map and enable the swipe effect using the [MapLibre Swipe Plugin](https://github.com/maplibre/maplibre-gl-compare). 
 
 ---
 
