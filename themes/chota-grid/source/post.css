@@ -234,6 +234,10 @@ post pager
   }
 }
 
+.post--pager {
+  display: none;
+}
+
 /* RELATED AND FEATURED POSTS AND PROJECTS */
 
 section div.featured {

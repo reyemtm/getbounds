@@ -256,6 +256,10 @@ nav.inverse-nav:not(.nav-links-mobile):not(.brand) a:hover {
   color: white;
 }
 
+nav.inverse-nav:not(.nav-links-mobile):not(.brand) a.linked-in:hover {
+  background-color: var(--color-accent-light);
+}
+
 @media screen and (max-width: 600px) {
   nav {
     display: flex;

@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fire Swipe Map</title>
+  <link rel="stylesheet" href="https://unpkg.com/maplibre-gl/dist/maplibre-gl.css">
+  <script src="https://unpkg.com/maplibre-gl/dist/maplibre-gl.js"></script>
+  <script src="https://unpkg.com/@geomatico/maplibre-cog-protocol/dist/index.js"></script>
+  <link href='./maplibre-gl-compare.css' rel='stylesheet' />
+  <style>
+    html,
+    body {
+      margin: 0;
+      height: 100%;
+    }
+
+    body {
+      display: flex;
+      height: 100%;
+    }
+
+    .map {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 100%;
+    }
+
+    .maplibregl-compare .compare-swiper-vertical {
+      background-color: black;
+      width: 40px;
+      height: 40px;
+      left: -20px;
+      margin: -20px 1px 0;
+      background-size: contain;
+    }
+
+    .maplibregl-ctrl.maplibregl-ctrl-group {
+      filter: invert(1);
+      border: none;
+      box-shadow: none;
+
+    }
+
+    .maplibregl-ctrl.maplibregl-ctrl-attrib.maplibregl-compact.maplibregl-compact-show {
+      filter: invert(1);
+    }
+
+    #overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0);
+      pointer-events: all;
+      z-index: 1;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="overlay"></div>
+  <div id="map">
+    <div id="before" class="map"></div>
+    <div id="after" class="map"></div>
+  </div>
+  <!-- mapbox v1.3 -->
+  <!-- map swipe plugin -->
+  <script src='./maplibre-gl-compare.js'></script>
+  <!-- jquery -->
+  <!-- chroma js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/chroma-js/2.1.0/chroma.min.js"></script>
+  <script src="https://unpkg.com/@geomatico/maplibre-cog-protocol/dist/index.js"></script>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const commercial = params.get("version") === "commercial";
+    const overlay = document.getElementById("overlay");
+    overlay.addEventListener("click", () => {
+      overlay.style.display = "none";
+    });
+
+    document.body.addEventListener("mouseleave", () => {
+      overlay.style.display = "block";
+    });
+
+    var style = {
+      version: 8,
+      name: "blank",
+      sources: {},
+      layers: [
+        {
+          id: "background",
+          type: "background",
+          paint: {
+            "background-color": "#1d1f20",
+          },
+        },
+      ],
+    };
+
+    maplibregl.addProtocol("cog", MaplibreCOGProtocol.cogProtocol);
+    const center = [-118.56628, 34.05667];
+    var beforeMap = new maplibregl.Map({
+      container: "before",
+      // style: "https://basemaps.cartocdn.com/gl/dark-matter-gl-style/style.json",
+      style,
+      center,
+      zoom: 11,
+      hash: true,
+    });
+
+    var afterMap = new maplibregl.Map({
+      container: "after",
+      //cartodb dark style
+      // style: "https://basemaps.cartocdn.com/gl/dark-matter-gl-style/style.json",
+      style,
+      center,
+      zoom: 11,
+      hash: true,
+    });
+
+    var map = new maplibregl.Compare(beforeMap, afterMap, "#map", {
+
+    });
+
+    afterMap.addControl(new maplibregl.NavigationControl());
+
+    const firePaint = {
+      "fill-color": !commercial ? "#f00" : "#fff",
+      "fill-opacity": 0.05,
+      "fill-outline-color": !commercial ? "#f00" : "rgba(255,255,255,0.5)",
+    };
+    const linePaint = {
+      "line-color": !commercial ? "#f00" : "rgba(255,255,255,0.5)",
+      "line-width": 2,
+    };
+
+    console.log(window.location.search, commercial, firePaint, linePaint);
+
+    const maxarSource = {
+      type: "raster",
+      url: "cog://https://pub-f8eb68de5c274297839a4b53c410b48b.r2.dev/maxar-1050010040277500-visual_cog_web.tif",
+      tileSize: 256,
+      attribution: "Maxar | Umbra",
+    }
+
+    const umbraSource = {
+      type: "raster",
+      url: "cog://https://pub-f8eb68de5c274297839a4b53c410b48b.r2.dev/SkyFi_2503MA4F-1_2025-01-09_0634Z_SAR_VERY-HIGH_California-USA_cog_web.tif",
+      tileSize: 256,
+      attribution: "Umbra",
+    }
+
+    afterMap.on("load", function (e) {
+      console.log("map loaded");
+      const map = e.target;
+
+
+
+      if (commercial) {
+        map.addSource("maxarSource", maxarSource);
+        map.addLayer({
+          id: "maxarLayer",
+          source: "maxarSource",
+          type: "raster",
+          paint: {
+            "raster-saturation": 0.2,
+            "raster-contrast": 0.1,
+          }
+        })
+      } else {
+        map.addSource("imageSource", {
+          type: "raster",
+          url: "cog://https://pub-f8eb68de5c274297839a4b53c410b48b.r2.dev/2025-01-12-S2-TCI_cog_web.tif",
+          tileSize: 256,
+          attribution: "Sentinel-2",
+        });
+
+        map.addLayer({
+          id: "imageLayer",
+          source: "imageSource",
+          type: "raster",
+          paint: {
+            "raster-saturation": 0.2,
+            "raster-contrast": 0.1,
+          },
+        });
+      }
+
+      map.addLayer({
+        id: "fire-extent",
+        type: "fill",
+        source: {
+          type: "geojson",
+          data: "./fire-area-2025-01-12-fixed.geojson",
+          attribution: "CAL FIRE",
+        },
+        paint: firePaint,
+      });
+      map.addLayer({
+        id: "fire-extent-line",
+        type: "line",
+        source: {
+          type: "geojson",
+          data: "./fire-area-2025-01-12-fixed.geojson",
+        },
+        paint: linePaint,
+      });
+      if (!commercial) {
+        map.fitBounds([[-118.69073022144514, 34.02830099221488], [-118.47424568705753, 34.13381516908743]])
+      } else {
+        map.fitBounds([[-118.52861518475652, 34.03786192163862], [-118.51921232695798, 34.04207362578843]])
+      }
+    });
+
+    afterMap.on("contextmenu", (e) => {
+      const b = e.target.getBounds();
+      console.log(JSON.stringify(b.toArray()));
+    })
+
+    beforeMap.on("load", function (e) {
+      console.log("map loaded");
+      const map = e.target;
+
+
+      if (commercial) {
+        map.addSource("umbraSource", umbraSource);
+        map.addLayer({
+          id: "umbraLayer",
+          source: "umbraSource",
+          type: "raster",
+        })
+      } else {
+        map.addSource("imageSource", {
+          type: "raster",
+          url: "cog://https://pub-f8eb68de5c274297839a4b53c410b48b.r2.dev/2025-01-02-S2-TCI_cog_web.tif",
+          tileSize: 256,
+        });
+
+        map.addLayer({
+          id: "imageLayer",
+          source: "imageSource",
+          type: "raster",
+          paint: {
+            "raster-saturation": 0.2,
+            "raster-contrast": 0.1,
+          },
+        });
+      }
+
+      map.addLayer({
+        id: "fire-extent",
+        type: "fill",
+        source: {
+          type: "geojson",
+          data: "./fire-area-2025-01-12-fixed.geojson",
+          attribution: "CAL FIRE",
+        },
+        paint: firePaint,
+        layout: {
+          visibility: "visible",
+        },
+      });
+      map.addLayer({
+        id: "fire-extent-line",
+        type: "line",
+        source: {
+          type: "geojson",
+          data: "./fire-area-2025-01-12-fixed.geojson",
+        },
+        paint: linePaint,
+      });
+    });
+
+    /*add control in before map that toggles the fire-extent layers on and off */
+    const toggleFireExtent = document.createElement("button");
+    toggleFireExtent.id = "toggleFireExtent";
+    toggleFireExtent.textContent = "Fire Extent";
+    toggleFireExtent.style.position = "absolute";
+    toggleFireExtent.style.top = "10px";
+    toggleFireExtent.style.left = "10px";
+    toggleFireExtent.style.zIndex = "2";
+    /*broder radius 4px, background black, color white, padding 6px 12px, font size 12px, cursor pointer */
+    toggleFireExtent.style.borderRadius = "16px";
+    toggleFireExtent.style.background = "black";
+    toggleFireExtent.style.color = "white";
+    toggleFireExtent.style.padding = "6px 12px";
+    toggleFireExtent.style.fontSize = "12px";
+    toggleFireExtent.style.cursor = "pointer";
+    toggleFireExtent.style.border = "solid 2px red";
+    if (commercial) {
+      toggleFireExtent.style.border = "solid 2px white";
+    }
+    toggleFireExtent.style.boxShadow = "none";
+    toggleFireExtent.addEventListener("click", function (e) {
+      const visibility = beforeMap.getLayoutProperty("fire-extent", "visibility");
+      if (visibility === "visible" || !visibility) {
+        beforeMap.setLayoutProperty("fire-extent", "visibility", "none");
+        beforeMap.setLayoutProperty("fire-extent-line", "visibility", "none");
+        afterMap.setLayoutProperty("fire-extent", "visibility", "none");
+        afterMap.setLayoutProperty("fire-extent-line", "visibility", "none");
+        e.target.style.border = "solid thin gray";
+      } else {
+        beforeMap.setLayoutProperty("fire-extent", "visibility", "visible");
+        beforeMap.setLayoutProperty("fire-extent-line", "visibility", "visible");
+        afterMap.setLayoutProperty("fire-extent", "visibility", "visible");
+        afterMap.setLayoutProperty("fire-extent-line", "visibility", "visible");
+        e.target.style.border = "solid thin red";
+      }
+    });
+
+    //add message on bottom left about fire extent as of 2025-01-12
+    const div = document.createElement("div");
+    div.style.position = "absolute";
+    div.style.bottom = "10px";
+    div.style.left = "10px";
+    //background black color light gray padding 6px 12px font size 12px
+    div.style.background = "black";
+    div.style.color = "lightgray";
+    div.style.padding = "3px 6px";
+    div.style.fontSize = "12px";
+    div.textContent = "Fire extent as of 2025-01-12";
+    div.style.zIndex = "2";
+    div.style.borderRadius = "12px";
+    // div.style.border = "solid 1px darkgray";
+    beforeMap.getContainer().appendChild(div);
+
+    beforeMap.getContainer().appendChild(toggleFireExtent);
+
+  </script>
+</body>
+
+</html>
