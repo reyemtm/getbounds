@@ -6,8 +6,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Fire Swipe Map</title>
   <link rel="stylesheet" href="https://unpkg.com/maplibre-gl/dist/maplibre-gl.css">
-  <script src="https://unpkg.com/maplibre-gl/dist/maplibre-gl.js"></script>
-  <script src="https://unpkg.com/@geomatico/maplibre-cog-protocol/dist/index.js"></script>
   <link href='./maplibre-gl-compare.css' rel='stylesheet' />
   <style>
     html,
@@ -48,7 +46,8 @@
       filter: invert(1);
     }
 
-    #overlay {
+    #overlay,
+    #image {
       position: absolute;
       top: 0;
       left: 0;
@@ -58,10 +57,16 @@
       pointer-events: all;
       z-index: 1;
     }
+
+    #image {
+      z-index: 2;
+      background: rgba(0, 0, 0, 0.5);
+    }
   </style>
 </head>
 
 <body>
+  <div id="image"></div>
   <div id="overlay"></div>
   <div id="map">
     <div id="before" class="map"></div>
@@ -69,11 +74,11 @@
   </div>
   <!-- mapbox v1.3 -->
   <!-- map swipe plugin -->
+  <script src="https://unpkg.com/maplibre-gl/dist/maplibre-gl.js"></script>
   <script src='./maplibre-gl-compare.js'></script>
   <!-- jquery -->
   <!-- chroma js -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/chroma-js/2.1.0/chroma.min.js"></script>
-  <script src="https://unpkg.com/@geomatico/maplibre-cog-protocol/dist/index.js"></script>
+  <script src="./cog.js"></script>
 
   <script>
     const params = new URLSearchParams(window.location.search);
@@ -161,8 +166,6 @@
       console.log("map loaded");
       const map = e.target;
 
-
-
       if (commercial) {
         map.addSource("maxarSource", maxarSource);
         map.addLayer({
@@ -217,6 +220,18 @@
       } else {
         map.fitBounds([[-118.52861518475652, 34.03786192163862], [-118.51921232695798, 34.04207362578843]])
       }
+
+      const interval = setInterval(() => {
+        if (map.loaded()) {
+          document.getElementById("image").style.display = "none";
+          clearInterval(interval);
+        }
+      }, 50);
+      //set a timeout to clear the interval after 10 seconds
+      setTimeout(() => {
+        document.getElementById("image").style.display = "none";
+        clearInterval(interval);
+      }, 10000);
     });
 
     afterMap.on("contextmenu", (e) => {
