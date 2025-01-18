@@ -90,6 +90,7 @@ p {
 .blog p,
 .post p {
   color: var(--text-color);
+  text-align: justify;
 }
 
 time {
