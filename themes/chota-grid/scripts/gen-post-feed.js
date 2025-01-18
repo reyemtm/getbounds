@@ -13,6 +13,7 @@ hexo.extend.generator.register("postsjson", function (locals) {
       img,
       categories: post.categories.map((category) => category.name),
       excerpt:
+        post?.excerpt ||
         post.content
           .replace(/(<([^>]+)>)/gi, "")
           .substring(0, 200)

@@ -7,6 +7,8 @@ date: 2025-01-17 08:00:00
 categories: ["blog"]
 tags: ["gdal", "satellite-imagery"]
 img: post-palisades-fire.webp
+excerpt: >-
+  A comparison of satellite imagery from the Sentinel-2 constellation and commercial providers Umbra and Maxar showing the Palisades Fire in California.
 style: >-
   .post img {
     border: solid thin lightgray
@@ -14,7 +16,24 @@ style: >-
   body {
    overflow-x: hidden;
   }
+  @media screen and (min-width:768px) {
+    iframe {
+      height: 600px!important;
+    }
+  }
 ---
+
+<aside>
+<details>
+<summary>Quick Links</summary>
+  <ul>
+    <li><a href="#map2">Commercial Satellite Map</a></li>
+    <li><a href="#How-I-Built-It">How I Built It</a></li>
+    <li><a href="#Resources">Resources</a></li>
+    <li><a href="#featured">Related Posts</a></li>
+  </ul>
+</details>
+</aside>
 
 <iframe id="map1" src="/apps/fire-swipe-map/?version=open" height="450"></iframe>
 <figcaption style="margin:-1rem 0 1rem 0">Click on the visualization to interact with the map.</figcaption>

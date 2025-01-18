@@ -144,8 +144,8 @@ include:
 #Hexo Exceprt Plugin
 excerpt:
   depth: 1
-  excerpt_excludes: ["iframe", "img"]
-  more_excludes: ["iframe", "img"]
+  excerpt_excludes: ["iframe", "img", "figcaption", "aside"]
+  more_excludes: ["iframe", "img", "figcaption", "aside"]
   hideWholePostExcerpts: true
 
 responsive_images:
