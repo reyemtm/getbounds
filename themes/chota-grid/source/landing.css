@@ -1193,6 +1193,7 @@ ul.taglist {
 section.section--heading {
   margin-bottom: 2rem;
 }
+
 @media screen and (min-width: 768px) {
   .section--heading {
     margin-bottom: 4rem;

@@ -124,7 +124,7 @@ function listRelatedPosts(options) {
         }
         result += `
         <a rel="prefetch" href="/${post.path}" class="">
-          <article>
+          <article class="related-posts-item">
             <img src="/assets/img/sm_${post.img.split(".")[0]}.webp" alt="${post.img.replace(
           ".png",
           ""
