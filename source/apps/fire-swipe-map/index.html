@@ -111,6 +111,7 @@
       center,
       zoom: 11,
       hash: true,
+      attributionControl: false,
     });
 
     var afterMap = new maplibregl.Map({
@@ -121,6 +122,7 @@
       center,
       zoom: 11,
       hash: true,
+      // attributionControl: 
     });
 
     var map = new maplibregl.Compare(beforeMap, afterMap, "#map", {

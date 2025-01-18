@@ -27,10 +27,15 @@ hsl(181deg 100% 21% / 10%);
     Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   font-family: "Sofia Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu,
     Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  font-size: 20px;
+  font-size: 18px;
   line-height: 1.4;
   font-weight: 300;
-  font-display: swap;
+}
+
+@media screen and (min-width: 768px) {
+  :root {
+    font-size: 20px;
+  }
 }
 
 /* GLOBAL SETTINGS MAIN ELEMENTS */
@@ -281,7 +286,7 @@ nav.inverse-nav:not(.nav-links-mobile):not(.brand) a.linked-in:hover {
     justify-content: center;
   }
   .nav-links {
-    margin: 0.5rem 0.5rem 0.25rem !important;
+    margin: 0.25rem 0.5rem 0.25rem !important;
     text-align: center;
   }
 }
@@ -377,7 +382,7 @@ nav.inverse-nav:not(.nav-links-mobile):not(.brand) a.linked-in:hover {
 }
 
 .hero--title {
-  font-size: clamp(2rem, 5vw, 2.8rem);
+  font-size: clamp(1.8rem, 5vw, 2.8rem);
   font-weight: 500;
   word-break: break-word;
 }
@@ -686,8 +691,8 @@ a:active .post-card h2 {
   /* grid-template-columns: 1fr; */
   gap: 1rem;
   margin: 1rem auto;
-  padding: 0 1rem;
-  max-width: calc(100vw - 2rem);
+  /* padding: 0 1rem; */
+  /* max-width: calc(100vw - 1rem); */
   flex-wrap: wrap;
   justify-content: center;
 }
@@ -739,7 +744,7 @@ a:active .post-card h2 {
 }
 
 .image-grid--title {
-  font-size: 1rem;
+  font-size: 1.5rem;
   font-weight: 600;
 }
 
@@ -749,6 +754,9 @@ a:active .post-card h2 {
 }
 
 @media screen and (min-width: 468px) {
+  .image-grid {
+    padding: 0 1rem;
+  }
   .image-grid--subtitle {
     display: block;
   }
