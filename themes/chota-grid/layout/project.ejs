@@ -1,116 +1,97 @@
-<% project = page.project[0] %>
-<article class="post project">
-  <header style="margin-bottom: 1rem">
-    <span> <%- partial('_partial/date', {post: page}) %> </span>
+<% project=page.project[0] %>
+  <article class="post project">
+    <header style="margin-bottom: 1rem">
+      <span> <%- partial('_partial/date', {post: page}) %> </span>
 
-    <h1 class="post--title"><%- page.title %></h1>
-    <h2 class="post--subtitle"><%- page.subtitle %></h2>
-    <span style="display: flex; flex-wrap: wrap">
-      <%- list_categories(page.categories, { show_count: false, class: 'clean category tag',
-      separator: "|" }) %> <%- list_tags(page.tags, { show_count: false, class: 'clean tag' }) %>
-    </span>
-    <p></p>
-    <p class="post--meta" style="display: inline-flex; align-items: center">
-      Client | <%= page.project[0].client %> <% if (project.repo) {%> |&nbsp;<a
-        href="<%= project.repo %>"
-        target="_blank"
-        style="display: inline-flex; align-items: center"
-        >GitHub</a
-      ><%}%>
-    </p>
-  </header>
+      <h1 class="post--title"><%- page.title %></h1>
+      <h2 class="post--subtitle"><%- page.subtitle %></h2>
+      <span style="display: flex; flex-wrap: wrap">
+        <%- list_categories(page.categories, { show_count: false, class: 'clean category tag' , separator: "|" }) %> <%-
+            list_tags(page.tags, { show_count: false, class: 'clean tag' }) %>
+      </span>
+      <p></p>
+      <p class="post--meta" style="display: inline-flex; align-items: center">
+        Client | <%= page.project[0].client %>
+          <% if (project.repo) {%> |&nbsp;<a href="<%= project.repo %>" target="_blank"
+              style="display: inline-flex; align-items: center">GitHub</a>
+            <%}%>
+      </p>
+    </header>
 
-  <main>
-    <% images = project.images %> <% tech = page.project[0].tech %>
-    <p>
-      <% if (project.url) {%><a href="<%= project.url %>" target="_blank" class="img"
-        ><%}%>
-        <img
-          id="project-images"
-          class="project--image"
-          src="/assets/img/md_<%= project.images[0] %>.webp"
-          alt="<%= page.title %>"
-        />
-        <% if (project.url) {%></a
-      ><%}%>
-    </p>
-    <p><%- markdown(page.project[0].description) %></p>
-    <% if (page.project[0].iframe) {%>
-    <p>
-      <iframe
-        src="<%= project.url %>"
-        frameborder="0"
-        allowfullscreen
-        width="100%"
-        height="<%= page?.iframeHeight || 500 %>"
-        scrolling="no"
-        style="overflow: hidden"
-      ></iframe>
-      <button
-        style="float: right; background: transparent; cursor: pointer; margin-top: -5px"
-        class="js-fullscreen-button"
-      >
-        <em>View fullscreen</em>
-      </button>
-    </p>
+    <main>
+      <% images=project.images %>
+        <% tech=page.project[0].tech %>
+          <p>
+            <% if (project.url) {%><a href="<%= project.url %>" target="_blank" class="img">
+                <%}%>
+                  <img id="project-images" class="project--image" src="/assets/img/md_<%= project.images[0] %>.webp"
+                    alt="<%= page.title %>" />
+                  <% if (project.url) {%>
+              </a>
+              <%}%>
+          </p>
+          <p><%- markdown(page.project[0].description) %></p>
+          <% if (page.project[0].iframe) {%>
+            <p>
+              <iframe src="<%= project.url %>" frameborder="0" allowfullscreen width="100%"
+                height="<%= page?.iframeHeight || 500 %>" scrolling="no" style="overflow: hidden"></iframe>
+              <button style="float: right; background: transparent; cursor: pointer; margin-top: -5px"
+                class="js-fullscreen-button">
+                <em>View fullscreen</em>
+              </button>
+            </p>
 
-    <% } %>
-    <p>
-      <% if (project.url && !project.iframe) {%><a
-        href="<%= project.url %>"
-        target="_blank"
-        style="display: inline-flex; align-items: center"
-        ><img
-          style="margin-right: 5px"
-          src="/assets/icons/external-link.svg"
-          alt="project-link"
-        />&nbsp;Live Demo</a
-      ><%}%>
-    </p>
+            <% } %>
+              <p>
+                <% if (project.url && !project.iframe) {%><a href="<%= project.url %>" target="_blank"
+                    style="display: inline-flex; align-items: center"><img style="margin-right: 5px"
+                      src="/assets/icons/external-link.svg" alt="project-link" />&nbsp;Live Demo</a>
+                  <%}%>
+              </p>
 
-    <!-- <% if (project.repo) {%><p><a href="<%= project.repo %>" target="_blank"  style="display:inline-flex;align-items:center;"><img style="margin-right: 5px" src="https://icongr.am/fontawesome/github.svg?size=22&color=currentColor" alt="project-link">GitHub</a></p><%}%> -->
-    <!-- <p>
+              <!-- <% if (project.repo) {%><p><a href="<%= project.repo %>" target="_blank"  style="display:inline-flex;align-items:center;"><img style="margin-right: 5px" src="https://icongr.am/fontawesome/github.svg?size=22&color=currentColor" alt="project-link">GitHub</a></p><%}%> -->
+              <!-- <p>
       <% for (i = 0; i < page.project[0]?.tech?.length; i++) {%>
         <span class="project-tag"><%= tech[i] %></span>
       <%}%>
     </p>    -->
-    <p style="margin-top: 4rem">
+              <!-- <p style="margin-top: 4rem">
       <a href="/projects" class="btn">Project Archive</a>
-    </p>
-  </main>
-</article>
-<section>
-  <span class="section--heading">
-    <div class="heading-with-lines">
-      <div class="heading-line"></div>
-      <h2>Related Projects</h2>
-      <div class="heading-line"></div>
+    </p> -->
+    </main>
+  </article>
+  <section>
+    <span class="section--heading">
+      <div class="heading-with-lines">
+        <div class="heading-line"></div>
+        <h2>Related Projects</h2>
+        <div class="heading-line"></div>
+      </div>
+    </span>
+    <div class="featured">
+      <%- list_related_posts({ maxCount: 4, orderBy: 'random' , categories: ['projects']}) %>
     </div>
-  </span>
-  <div class="featured">
-    <%- list_related_posts({ maxCount: 4, orderBy: 'random', categories: ['projects']}) %>
-  </div>
-</section>
+  </section>
 
-<% if (images.length > 1 ) {%>
-<script>
-  const images = ["<%= project.images[0] %>", "<%= project.images[1] %>"];
-  const div = document.querySelector("#project-images");
-  div.style.cursor = "pointer";
-  let currentImage = 0;
-  setInterval(() => {
-    currentImage = !currentImage ? 1 : 0;
-    div.src = "/assets/img/md_" + images[currentImage] + ".webp";
-  }, 4000);
-</script>
-<%}%>
+  <% if (images.length> 1 ) {%>
+    <script>
+      const images = ["<%= project.images[0] %>", "<%= project.images[1] %>"];
+      const div = document.querySelector("#project-images");
+      div.style.cursor = "pointer";
+      let currentImage = 0;
+      setInterval(() => {
+        currentImage = !currentImage ? 1 : 0;
+        div.src = "/assets/img/md_" + images[currentImage] + ".webp";
+      }, 4000);
+    </script>
+    <%}%>
 
-<script>
-  const iframe = document.querySelector("iframe");
-  const button = document.querySelector(".js-fullscreen-button");
-  if (button && iframe) {
-    button.addEventListener("click", () => {
-      iframe.requestFullscreen();
-    });
-  }
-</script>
+      <script>
+        const iframe = document.querySelector("iframe");
+        const button = document.querySelector(".js-fullscreen-button");
+        if (button && iframe) {
+          button.addEventListener("click", () => {
+            iframe.requestFullscreen();
+          });
+        }
+      </script>

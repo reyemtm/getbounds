@@ -289,28 +289,3 @@ section div.featured article img {
     border: solid thin whitesmoke;
   }
 }
-
-/* @media (prefers-color-scheme: dark) {
-  body {
-    background-color: var(--color-dark);
-    color: whitesmoke;
-  }
-  footer.footer {
-    background-color: #212121;
-    color: whitesmoke;
-  }
-  .post p,
-  figcaption {
-    color: whitesmoke;
-  }
-  a {
-    color: hsl(314 52% 66% / 1);
-  }
-  a:hover {
-    color: hsl(314 52% 66% / 1);
-  }
-  .featured a {
-    background: hsl(0 0% 8% / 1);
-    color: whitesmoke;
-  }
-} */

@@ -1205,3 +1205,37 @@ section.section--heading {
     display: block;
   }
 }
+
+/* @media (prefers-color-scheme: dark) {
+  body {
+    background-color: var(--color-dark);
+    color: whitesmoke;
+  }
+  nav .container {
+    background-color: #212121;
+    color: whitesmoke;
+  }
+  a.brand img,
+  a.linked-in {
+    filter: invert(1) grayscale(1);
+  }
+  footer.footer {
+    background-color: #212121;
+    color: whitesmoke;
+  }
+  section p,
+  .post p,
+  figcaption {
+    color: whitesmoke;
+  }
+  a {
+    color: hsl(314 52% 66% / 1);
+  }
+  a:hover {
+    color: hsl(314 52% 66% / 1);
+  }
+  .featured a {
+    background: hsl(0 0% 8% / 1);
+    color: whitesmoke;
+  }
+} */
