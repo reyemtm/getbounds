@@ -13,11 +13,11 @@ hsl(181deg 100% 21% / 10%);
   --color-gray: hsl(240deg 5% 80%);
   --color-lightgray: hsl(240deg 5% 70%);
   --color-muted: hsl(0, 0%, 30%);
-  --color-accent: hsl(314 52% 40%);
+  /* --color-accent: hsl(314 52% 40%);
   --color-accent-lighter: hsl(314 100% 90%);
   --color-accent-dark: hsl(314 52% 5%);
   --color-accent-darker: hsl(240deg 5% 2% / 50%);
-  --color-accent-light: hsl(314 52% 30% / 15%);
+  --color-accent-light: hsl(314 52% 30% / 15%); */
   --container-width: 1400px;
   --max-width: calc(100% - 2rem);
   --border-radius: 3px;
@@ -30,6 +30,12 @@ hsl(181deg 100% 21% / 10%);
   font-size: 18px;
   line-height: 1.4;
   font-weight: 300;
+
+  --color-accent: cornflowerblue;
+  --color-accent-light: #6495ed14;
+  --color-accent-lighter: #6495ed61;
+  --color-accent-dark: #1e3a8a;
+  --color-accent-darker: #1e3a8a50;
 }
 
 @media screen and (min-width: 768px) {

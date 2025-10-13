@@ -1,5 +1,5 @@
 title: H3 Grids Explorer
-subtitle: A Web Tool for Exoploring H3 Grid Levels
+subtitle: A Web Tool for Exoploring H3 & Geohash Grids
 author: Malcolm Meyer
 img: h3-grids.jpg
 tags:
@@ -8,8 +8,11 @@ tags:
 categories:
   - blog
 date: 2023-08-18 07:45:00
-updated: 2023-08-18
+updated: 2025-10-13
 ---
+
+> Update October 2025: This tool has been updated to include Geohash grids as well as H3 grids. You can now toggle between the two grid systems using the button in the top right corner of the map.
+
 What are [H3 grids](https://h3geo.org/)? Created by Uber Engineering, the H3 grid system divides the Earth's surface into a hierarchical hexagon grid structure. Each hexagon is assigned a unique index based on its position in the hierarchy, allowing for efficient spatial indexing and querying.
 
 ```
