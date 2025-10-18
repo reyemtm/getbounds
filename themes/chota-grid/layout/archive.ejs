@@ -4,10 +4,11 @@
   <div class="hero--inner">
     <h1 class="hero--title">
       <% if (page.tag) {%>Topic | <%- titlecase(page.tag) %>
-      <%}else if (page.category){%><%- titlecase(page.category) %>
-        <% if (page.category === 'blog') {%><%}%>
-        <% if (page.category === 'featured') {%> Projects <%}%>
-      <%}else{%>Site Archive<%}%>
+          <%}else if (page.category){%><%- titlecase(page.category) %>
+              <% if (page.category==='blog' ) {%>
+                <%}%>
+                  <% if (page.category==='featured' ) {%> Projects <%}%>
+                      <%}else{%>Site Archive<%}%>
     </h1>
   </div>
 </header>
@@ -19,92 +20,91 @@
     <div>
       <h3 style="margin-bottom:0.5rem">Recent</h3>
       <% site.posts.sort('date', -1).each(function(post, i) {%>
-      <% if (i < 5) {%>
-      <p style="margin:0.3rem 0; text-align: left;opacity: 0.9; font-size: 0.9rem;">
-        <a href="<%- url_for(post.path)%>" style="text-decoration: none"><%- post.title %></a>
-      </p>
-    <%}%>
-    <%})%>
-  </div>
+        <% if (i < 5) {%>
+          <p style="margin:0.3rem 0; text-align: left;opacity: 0.9; font-size: 0.9rem;">
+            <a href="<%- url_for(post.path)%>" style="text-decoration: none"><%- post.title %></a>
+          </p>
+          <%}%>
+            <%})%>
+    </div>
 
-  <!-- POSTS -->
-  <details>
-    <summary>Posts
-    </summary>
+    <!-- POSTS -->
+    <details>
+      <summary>Posts
+      </summary>
       <a href="/blog">
         <h3 style="font-weight:400;margin-bottom: 0.5rem;font-size:1rem">Post Archive</h3>
       </a>
       <% site.categories.sort('name').map(function(category){ %>
-        <% if(category.name == 'blog' ) { %>
+        <% if(category.name=='blog' ) { %>
           <% category.posts.sort('date', -1).each(function(post, i) {%>
-          <p style="margin:0.3rem 0; text-align: left;opacity: 0.9; font-size: 0.9rem;">
-            <a href="<%- url_for(post.path)%>" style="text-decoration: none"><%- post.title %></a>
-          </p>
-        <%})%>
+            <p style="margin:0.3rem 0; text-align: left;opacity: 0.9; font-size: 0.9rem;">
+              <a href="<%- url_for(post.path)%>" style="text-decoration: none"><%- post.title %></a>
+            </p>
+            <%})%>
+              <%}%>
+                <%})%>
+    </details>
+
+    <!-- PROJECTS -->
+    <details <% if (page.category && (page.category==='featured' || page.category==='projects' )) {%>open<%}%> >
+        <summary>Projects
+          <!-- <a href="/projects"> -->
+          <!-- <h3 style="font-weight:400;margin-bottom: 0.5rem;">Projects</h3> -->
+          <!-- </a> -->
+        </summary>
+        <a href="/projects">
+          <h3 style="font-weight:400;margin-bottom: 0.5rem;font-size:1rem">Project Archive</h3>
+        </a>
+        <% site.categories.sort('name').map(function(category){ %>
+          <% if(category.name=='projects' ) { %>
+            <% category.posts.sort('date', -1).each(function(post, i) {%>
+              <p style="margin:0.3rem 0; text-align: left;opacity: 0.9; font-size: 0.9rem;">
+                <a href="<%- url_for(post.path)%>" style="text-decoration: none"><%- post.title %></a>
+              </p>
+              <%})%>
+                <%}%>
+                  <%})%>
+    </details>
+
+    <!-- GITHUB -->
+    <span style="display: flex;align-items: center;">
+      <img src="https://icongr.am/fontawesome/external-link-square.svg?size=18&color=currentColor" alt="external-link"
+        style="margin-right:4px">
+      <a href="https://github.com/reyemtm" style="text-decoration: none">GitHub</a>
+    </span>
+
+    <% if (!is_archive()) {%>
+      <a href="/archive">
+        <h3 style="font-weight:400">Site Archive</h3>
+      </a>
       <%}%>
-    <%})%>
-  </details>
 
-  <!-- PROJECTS -->
-  <details <% if (page.category && (page.category === 'featured' || page.category === 'projects')) {%>open<%}%> >
-    <summary>Projects
-      <!-- <a href="/projects"> -->
-        <!-- <h3 style="font-weight:400;margin-bottom: 0.5rem;">Projects</h3> -->
-      <!-- </a> -->
-    </summary>
-    <a href="/projects">
-      <h3 style="font-weight:400;margin-bottom: 0.5rem;font-size:1rem">Project Archive</h3>
-    </a>
-      <% site.categories.sort('name').map(function(category){ %>
-        <% if(category.name == 'projects' ) { %>
-          <% category.posts.sort('date', -1).each(function(post, i) {%>
-          <p style="margin:0.3rem 0; text-align: left;opacity: 0.9; font-size: 0.9rem;">
-            <a href="<%- url_for(post.path)%>" style="text-decoration: none"><%- post.title %></a>
-          </p>
-        <%})%>
-      <%}%>
-    <%})%>
-  </details>
-
-  <!-- GITHUB -->
-  <span style="display: flex;align-items: center;">
-    <img src="https://icongr.am/fontawesome/external-link-square.svg?size=18&color=currentColor" alt="external-link" style="margin-right:4px">
-    <a href="https://github.com/reyemtm" style="text-decoration: none">GitHub</a>
-  </span>
-
-  <% if (!is_archive()) {%>
-  <a href="/archive"><h3 style="font-weight:400">Site Archive</h3></a>
-  <%}%>
-
-  <!-- TAG CLOUD -->
-  <div style="display: flex; align-items: center; flex-wrap: wrap;max-width: 280px;">
-    <%- tagcloud(site.tags, {
-      min_font: 14,
-      max_font: 20,
-      class: 'tagcloud ',
-      start_color: 'gray',
-      end_color: '#000',
-      color: true
-    }) %>
-  </div>
+        <!-- TAG CLOUD -->
+        <div style="display: flex; align-items: center; flex-wrap: wrap;max-width: 280px;">
+          <%- tagcloud(site.tags, { min_font: 14, max_font: 20, class: 'tagcloud ' , start_color: 'gray' ,
+            end_color: '#000' , color: true }) %>
+        </div>
 
   </aside>
 
   <div class="lg" style="margin:1rem auto;align-items: baseline;justify-content: flex-start;">
     <% page.posts.sort('date', -1).each(function(post, i) {%>
-        <div class="archive-card">
-          <%- partial('_partial/date', {post: post}) %>
-          
-          <a rel="prefetch" href="<%- url_for(post.path) %>" style="text-decoration: none;">
+      <div class="archive-card">
+        <%- partial('_partial/date', {post: post}) %>
+
+          <a rel="prefetch" href="<% if (post.link) {%><%= post.link %><%} else {%><%- url_for(post.path) %><%}%>"
+            style="text-decoration: none;">
             <h2 style="margin:0 0 0.5rem 0">
               <%= post.title %>
             </h2>
+            <h3 style="margin-top:0;margin-bottom:0.5rem;font-weight:300">
+              <% if (post.subtitle) {%>
+                <%= post.subtitle %>
+                  <%}%>
+            </h3>
           </a>
-          <h3 style="margin-top:0;margin-bottom:0.5rem;font-weight:300">
-            <% if (post.subtitle) {%>
-              <%= post.subtitle %>
-            <%}%>
-          </h3>
+
 
           <div class="post" style="margin:0 0 1rem 0;width: 100%;display: flex;white-space: nowrap;flex-flow: wrap;">
             <!-- <%- list_categories(post.categories, { show_count: false, class: 'clean category tag', separator: "|" }) %> -->
@@ -119,27 +119,38 @@
           <% if (!is_archive()) {%>
             <% if (post?.project) {%>
 
-            <% if (post.project[0].images) {%>
-            <a rel="prefetch" href="<%- url_for(post.path) %>" style="text-decoration: none;">
-              <img id="project-images" src="/assets/img/sm_<%= post.project[0].images[0] %>.webp" style="width:100%">
-            </a>
-            <%}%>
-            <p style="text-align: left"><%- markdown(post.project[0].description) %></p>
-            <% if (post.project[0].url) {%><div style="display:inline-flex;margin-bottom: 1rem;"><img src="/assets/icons/external-link.svg" alt="project-link">&nbsp;<a href="<%=post.project[0].url%>" >Live Demo</a></div>
-            <% if (post.repo) {%><p><a href="<%= post.repo %>" target="_blank"  style="display:inline-flex;align-items:center;"><img style="margin-right: 5px" src="https://icongr.am/fontawesome/github.svg?size=22&color=currentColor" alt="project-link">GitHub</a></p><%}%>
+              <% if (post.project[0].images) {%>
+                <a rel="prefetch" href="<% if (post.link) {%><%= post.link %><%} else {%><%- url_for(post.path) %><%}%>"
+                  style="text-decoration: none;">
+                  <img id="project-images" src="/assets/img/sm_<%= post.project[0].images[0] %>.webp"
+                    style="width:100%;border:solid thin var(--color-dark);border-radius: 2px;">
+                </a>
+                <%}%>
+                  <p style="text-align: left"><%- markdown(post.project[0].description) %></p>
+                  <% if (post.project[0].url) {%>
+                    <div style="display:inline-flex;margin-bottom: 1rem;"><img src="/assets/icons/external-link.svg"
+                        alt="project-link">&nbsp;<a href="<%=post.project[0].url%>">Live Demo</a></div>
+                    <% if (post.repo) {%>
+                      <p><a href="<%= post.repo %>" target="_blank" style="display:inline-flex;align-items:center;"><img
+                            style="margin-right: 5px"
+                            src="https://icongr.am/fontawesome/github.svg?size=22&color=currentColor"
+                            alt="project-link">GitHub</a></p>
+                      <%}%>
 
-            <%}%>
-            <%}else{%>
-            <% if (post?.img) {%>
-            <a rel="prefetch" href="<%- url_for(post.path) %>" style="text-decoration: none;">
-              <img id="project-images" src="/assets/img/md_<%= (post.img).replace(".png", ".webp").replace(".jpg", ".webp" ) %>" style="width:100%">
-            </a>
-            <%}%>
-            <p>&nbsp;</p>
-            <!-- <p><%- strip_html((post.excerpt).substring(0, 150)) %>...</p> -->
-            <%}%>
-          <%}%>
+                        <%}%>
+                          <%}else{%>
+                            <% if (post?.img) {%>
+                              <a rel="prefetch" href="<%- url_for(post.path) %>" style="text-decoration: none;">
+                                <img id="project-images" src="/assets/img/md_<%= (post.img).replace(" .png", ".webp"
+                                  ).replace(".jpg", ".webp" ) %>" style="width:100%;border:solid thin
+                                var(--color-dark);border-radius: 2px;">
+                              </a>
+                              <%}%>
+                                <p>&nbsp;</p>
+                                <!-- <p><%- strip_html((post.excerpt).substring(0, 150)) %>...</p> -->
+                                <%}%>
+                                  <%}%>
       </div>
-    <%})%>
+      <%})%>
   </div>
 </section>

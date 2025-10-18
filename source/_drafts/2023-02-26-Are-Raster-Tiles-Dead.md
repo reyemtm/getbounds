@@ -4,7 +4,7 @@ subtitle: Can Cloud-Optimized GeoTIFFS Replace Raster Tiles?
 tags:
   - gdal
   - openlayers
-  - webmaps
+  - web maps
 ---
 
 ---

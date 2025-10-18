@@ -1,48 +1,38 @@
-mgl-story:
-  name:
-  repo: 
-  link:
-  
-mapbox-layer-control:
-  name:
-  repo: 
-  link:
-  
-getBounds:
-  name:
-  repo:
-  link:
-  status:
-  description:
- 
-projects:
- - tilequery
- - open-collect
- - gpx-visualize
- - staple-foods-network-map
- - leaflet-store-locator
- - open-parcel-viewer
- - vtile
- - material-maps
- - gis-tutorials
+- title: "ShpShifter"
+  subtitle: "Preview, Convert, and Filter SHP, GPKG, GeoJSON & GeoParquet in the Browser"
+  link: "https://www.shpshifter.com"
+  img: shpshifter.jpg
+  date: 2025-02-01
+  categories:
+    - name: app
+# projects:
+#  - tilequery
+#  - open-collect
+#  - gpx-visualize
+#  - staple-foods-network-map
+#  - leaflet-store-locator
+#  - open-parcel-viewer
+#  - vtile
+#  - material-maps
+#  - gis-tutorials
 
-list: 
- - pandemix
- - bg explorer
- - zanesville
- - turf network
- - zanesville zoning map
- - safety snapshot
- - gpx visualize
- - print map columbus
- - crash explorer
- - butterfly swinmer
- - shagbark
- - parcel viewer
- - print map nfpp
- - print map oaxaca
- - license plate explorer
- - out roads
- - mapbox legend
- - coz info portal
- - zanesville print map
+# list:
+#  - pandemix
+#  - bg explorer
+#  - zanesville
+#  - turf network
+#  - zanesville zoning map
+#  - safety snapshot
+#  - gpx visualize
+#  - print map columbus
+#  - crash explorer
+#  - butterfly swinmer
+#  - shagbark
+#  - parcel viewer
+#  - print map nfpp
+#  - print map oaxaca
+#  - license plate explorer
+#  - out roads
+#  - mapbox legend
+#  - coz info portal
+#  - zanesville print map

@@ -14,7 +14,8 @@
     "deploy": "git add . && git commit -m 'auto-deploy' && git push",
     "serve": "hexo server -p 4001",
     "start": "node cleanCSS.js && node github && hexo server -p 4001",
-    "dev": "node cleanCSS.js && node github && hexo server --draft",
+    "dev": "node cleanCSS.js && node github && hexo server",
+    "dev:drafts": "node cleanCSS.js && node github && hexo server --draft",
     "drafts": "hexo generate --draft --watch & live-server --port=4000 public",
     "avif": "avif --input='public/assets/img/*.{jpg, png}' --speed=0 --quality=80"
   },

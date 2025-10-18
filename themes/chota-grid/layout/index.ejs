@@ -2,50 +2,48 @@
   <main>
     <div class="image-grid" id="projects">
       <% var alldata=[] %>
-        <% site.data.repos.forEach(post=> { %> <% alldata.push(post) %>
-            <% }) %>
-              <% site.posts.forEach(post=> { %> <% alldata.push(post) %>
-                  <% }) %>
-                    <% alldata.sort(function(a, b) { return new Date(b.date) - new Date(a.date); }).map(function(post)
-                      {%>
-                      <% if (post.subtitle) { %>
-                        <% var cat %>
-                          <% if (post.categories && post.categories.length> 0) { %> <%
-                              post.categories.forEach(function(category,i) { %>
-                              <% if (i < 1) {%>
-                                <% cat=category.name %>
-                                  <%}%>
-                                    <% }); %>
+        <% site.data.repos.forEach(post=>{ %> <% alldata.push(post) %><% }) %>
+        <% site.posts.forEach(post=> { %> <% alldata.push(post) %><% }) %>
+        <% alldata.sort(function(a, b) { return new Date(b.date) - new Date(a.date); }).map(function(post){%>
+          <!-- onlly show posts with subtitles -->
+          <% if (post.subtitle) { %>
+            <% var cat %>
+              <% if (post.categories && post.categories.length > 0) { %> <%
+                  post.categories.forEach(function(category,i) { %>
+                  <% if (i < 1) {%>
+                    <% cat=category.name %>
+                      <%}%>
+                        <% }); %>
+                          <%}%>
+                            <% var img %>
+                              <% if (post.img) {%>
+                                <% img=(post.img).replace(".png", ".webp" ).replace(".jpg", ".webp" )%>
+                                  <%}else{%>
+                                    <% img=(config.defaultimage).replace(".jpg", ".webp" ) %>
                                       <%}%>
-                                        <% var img %>
-                                          <% if (post.img) {%>
-                                            <% img=(post.img).replace(".png", ".webp" ).replace(".jpg", ".webp" )%>
-                                              <%}else{%>
-                                                <% img=(config.defaultimage).replace(".jpg", ".webp" ) %>
-                                                  <%}%>
-                                                    <div class="image-grid--image">
-                                                      <a rel="prefetch"
-                                                        href="<% if (post.path) {%><%- url_for(post.path) %><%}else{%><%= post.repo %><%}%>"
-                                                        style="text-decoration: none">
-                                                        <img src="/assets/img/sm_<%= img %>" alt="<%= post.title %>"
-                                                          style="width: 100%;background-image: url(/assets/img/blurred_<%= img %>);background-repeat:no-repeat;background-size:cover;"
-                                                          loading="lazy" />
-                                                        <div class="image-grid--caption">
-                                                          <div class="image-grid--title">
-                                                            <%= post.title %>
-                                                          </div>
-                                                          <span class="image-grid--subtitle">
-                                                            <%= post.subtitle %>
-                                                          </span>
-                                                        </div>
-                                                      </a>
-                                                      <a href="<% if (cat === 'GitHub') {%>https://github.com/reyemtm<%}else{%><%= cat %><%}%>"
-                                                        class="tag card-tag-link">
-                                                        <%= cat %>
-                                                      </a>
-                                                    </div>
-                                                    <%}%>
-                                                      <%})%>
+                                        <div class="image-grid--image">
+                                          <a class="image-grid--link-card" rel="prefetch"
+                                            href="<% if (post.link) {%><%= post.link %><%}else if (post.path) {%><%- url_for(post.path) %><%}else{%><%= post.repo %><%}%>"
+                                            style="text-decoration: none">
+                                            <img src="/assets/img/sm_<%= img %>" alt="<%= post.title %>"
+                                              style="width: 100%;background-image: url(/assets/img/blurred_<%= img %>);background-repeat:no-repeat;background-size:cover;"
+                                              loading="lazy" />
+                                            <div class="image-grid--caption">
+                                              <div class="image-grid--title">
+                                                <%= post.title %>
+                                              </div>
+                                              <span class="image-grid--subtitle">
+                                                <%= post.subtitle %>
+                                              </span>
+                                            </div>
+                                          </a>
+                                          <a href="<% if (cat === 'GitHub') {%>https://github.com/reyemtm<%}else{%><%= cat %><%}%>"
+                                            class="tag card-tag-link">
+                                            <%= cat %>
+                                          </a>
+                                        </div>
+                                        <%}%>
+                                          <%})%>
     </div>
   </main>
   <%- partial('_partial/contact')%>
