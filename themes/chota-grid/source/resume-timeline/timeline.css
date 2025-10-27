@@ -128,6 +128,11 @@ main {
   justify-content: center;
   flex-direction: column;
 }
+
+#work {
+  width: calc(100% - 80px);
+}
+
 #timeline {
   margin-top: 1rem;
 }
@@ -144,6 +149,8 @@ img {
   border-radius: 0px;
   margin: 0.3rem 0.15rem 0 0.15rem;
   transition: transform 0.15s ease-in-out;
+  width: 120px;
+  height: calc(120px * 3 / 4);
 }
 .resume img:hover {
   filter: brightness(0.9);

@@ -6,13 +6,13 @@ const work = [
   {
     id: 0,
     title: " ",
-    start_date: "2024-02-01",
+    start_date: "2026-02-01",
     end_date: "Present",
     employer: " ",
   },
   {
     id: 1,
-    title: "Owner & Developer",
+    title: "Freelance Frontend Web Developer",
     start_date: "2022-02-01",
     end_date: "Present",
     employer: "- Present GETBOUNDS LLC",
@@ -31,18 +31,18 @@ const work = [
     end_date: "2021",
     employer: "City of Zanesville",
   },
-  {
-    id: 4,
-    title: "Transportation Planning Coordinator",
-    start_date: "2016-01-02",
-    end_date: "2018",
-    employer: "OVRDC",
-  },
+  // {
+  //   id: 4,
+  //   title: "Transportation Planning Coordinator",
+  //   start_date: "2016-01-02",
+  //   end_date: "2018",
+  //   employer: "OVRDC",
+  // },
   {
     id: 5,
-    title: "Research & Planning Specialist",
+    title: "Research & Planning Specialist/Transportation Planning Coordinator",
     start_date: "2015-02-01",
-    end_date: "2016",
+    end_date: "2018",
     employer: "OVRDC",
   },
   {
@@ -50,7 +50,7 @@ const work = [
     title: "GIS Technician",
     start_date: "2013-02-01",
     end_date: "2014",
-    employer: "City of Columbus ",
+    employer: "City of Columbus",
   },
 
   //  {
@@ -67,13 +67,13 @@ const work = [
     end_date: "2013",
     employer: "EMH&T",
   },
-  {
-    id: 7,
-    title: "GIS Consultant",
-    start_date: "2011-02-01",
-    end_date: "2014",
-    employer: "Freelance",
-  },
+  // {
+  //   id: 7,
+  //   title: "GIS Consultant",
+  //   start_date: "2011-02-01",
+  //   end_date: "2014",
+  //   employer: "Freelance",
+  // },
   {
     id: 9,
     title: "GIS Quality Control Technician",
@@ -87,6 +87,20 @@ const work = [
     start_date: "2005-02-01",
     end_date: "2007",
     employer: "Ohio University",
+  },
+  {
+    id: 11,
+    title: "AmeriCorps Volunteer|1999-2001",
+    start_date: "1999-02-01",
+    end_date: "2001",
+    employer: "AmeriCorps",
+  },
+  {
+    id: 12,
+    title: "BA Sociology/Urban Studies|1994-1998",
+    start_date: "1994-08-01",
+    end_date: "1998",
+    employer: "The College of Wooster",
   },
 ];
 
