@@ -244,6 +244,16 @@ const portfolio = [
     info: "Created for Etch and Licking County Transit, this Next JS fullstack app features on-demand GTFS feed generation, and an interactive map and route list.\n\nThe application was developed with Next JS and Mapbox GL JS.",
     link: "https://transit.lickingcounty.gov/",
   },
+  {
+    cover: "Atomic Lens",
+    timestamp: "2025-10-01",
+  },
+  {
+    cover: "/assets/timeline/4x3_atomic-lens.png",
+    timestamp: "2025-10-01",
+    info: "Atomic Lens is a map-based STAC browser for large-scale enterprise asset management. It allows users to easily search, filter, and visualize geospatial assets stored in custom STAC catalog.\n\nThe application (under active development) is being created with React, MapLibre GL, OpenLayers, Leaflet, and ThreeJS.",
+    link: "https://atomiclens.io",
+  },
 ];
 
 milestones("#work")
